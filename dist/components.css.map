@@ -2,11 +2,11 @@
   "version": 3,
   "file": "components.css",
   "sources": [
-    "..\\src\\components\\HelloWorld.svelte"
+    "..\\src\\components\\Dashboard.svelte"
   ],
   "sourcesContent": [
-    "<script>\r\n  import { count } from \"../store/store.js\";\r\n\r\n  /**\r\n   * Increases the count variable from the store by 1\r\n   */\r\n  function incrementCount() {\r\n    count.set($count + 1);\r\n  }\r\n</script>\r\n\r\n<style type=\"text/postcss\">.button{background-color:#2b6cb0;color:#fff;font-weight:700;padding:.5rem 1rem;border-radius:.25rem}</style>\r\n\r\n<div class=\"flex items-center justify-center h-screen bg-gray-200\">\r\n  <button class=\"button\" on:click={() => incrementCount()}>\r\n    Count is {$count}\r\n  </button>\r\n</div>\r\n"
+    "<script>\r\n  import firebase from \"firebase/app\";\r\n  import \"firebase/auth\";\r\n  import \"firebase/firestore\";\r\n  import { onMount } from \"svelte\";\r\n\r\n  let db;\r\n\r\n  onMount(() => {\r\n    const firebaseConfig = {\r\n      apiKey: \"AIzaSyAK19fHNBTzkPjyM5CZRMyR1H5LyJ8R69E\",\r\n      authDomain: \"expensetracker-fe56d.firebaseapp.com\",\r\n      databaseURL: \"https://expensetracker-fe56d.firebaseio.com\",\r\n      projectId: \"expensetracker-fe56d\",\r\n      storageBucket: \"expensetracker-fe56d.appspot.com\",\r\n      messagingSenderId: \"680552838328\",\r\n      appId: \"1:680552838328:web:d7d7ef47348fbb3920f04d\"\r\n    };\r\n\r\n    firebase.initializeApp(firebaseConfig);\r\n\r\n    db = firebase.firestore();\r\n  });\r\n\r\n  function showData() {\r\n    db.collection(\"expenses\")\r\n      .get()\r\n      .then(querySnapshot => {\r\n        console.log(querySnapshot);\r\n      });\r\n  }\r\n</script>\r\n\r\n<style type=\"text/postcss\">.button{background-color:#2b6cb0;color:#fff;font-weight:700;padding:.5rem 1rem;border-radius:.25rem}</style>\r\n\r\n<div class=\"flex items-center justify-center h-screen bg-gray-200\">\r\n  <button class=\"button\" on:click={() => showData()}>show data</button>\r\n</div>\r\n"
   ],
   "names": [],
-  "mappings": "AAW2B,qBAAO,CAAC,iBAAiB,OAAO,CAAC,MAAM,IAAI,CAAC,YAAY,GAAG,CAAC,QAAQ,KAAK,CAAC,IAAI,CAAC,cAAc,MAAM,CAAC"
+  "mappings": "AAiC2B,qBAAO,CAAC,iBAAiB,OAAO,CAAC,MAAM,IAAI,CAAC,YAAY,GAAG,CAAC,QAAQ,KAAK,CAAC,IAAI,CAAC,cAAc,MAAM,CAAC"
 }
