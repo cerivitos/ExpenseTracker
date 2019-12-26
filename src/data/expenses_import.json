@@ -1,0 +1,6744 @@
+{
+  "expenses": {
+    "-Kmg95w8OGV6z5BC2cns": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 32.4,
+      "date": "2017-06-13",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Kmg9FoY3UT4j7wnW6u9": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 13,
+      "date": "2017-06-14",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Kmg9PjlxCQzehLASKom": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 52.14,
+      "date": "2017-06-15",
+      "description": "Singtel bill",
+      "type": "Utilities"
+    },
+    "-Kmg9PjzRGlNzkbKOkTH": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 52.14,
+      "date": "2017-07-15",
+      "description": "Singtel bill",
+      "type": "Utilities"
+    },
+    "-Kmg9Pk7A4aUIaR_ovff": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 52.14,
+      "date": "2017-08-15",
+      "description": "Singtel bill",
+      "type": "Utilities"
+    },
+    "-Kmg9PkGXwVU7SSuJsHN": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 52.14,
+      "date": "2017-09-15",
+      "description": "Singtel bill",
+      "type": "Utilities"
+    },
+    "-Kmg9PkO7HfwZqBoAynr": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 52.14,
+      "date": "2017-10-15",
+      "description": "Singtel bill",
+      "type": "Utilities"
+    },
+    "-Kmg9Pkom9Cj1lnAfKzo": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 52.14,
+      "date": "2017-11-15",
+      "description": "Singtel bill",
+      "type": "Utilities"
+    },
+    "-KmgeOnk4Ze3PHXbC_Pg": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 435.64,
+      "date": "2017-06-16",
+      "description": "Nanny",
+      "type": "Household"
+    },
+    "-KmpoSw6iavsy80V7nNa": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 63.65,
+      "date": "2017-06-17",
+      "description": "Ntuc",
+      "type": "Groceries"
+    },
+    "-Kn8yDYP8gS_y5sIXKrR": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 480,
+      "date": "2017-06-18",
+      "description": "Father's day angpow",
+      "type": "Gift"
+    },
+    "-Kn9G0sqplSxBNpWOzpH": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5.45,
+      "date": "2017-06-21",
+      "description": "Milk",
+      "type": "Groceries"
+    },
+    "-KnSjLx-psysDHiNLS6p": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 100,
+      "date": "2017-06-25",
+      "description": "Roger's daughter birthday",
+      "type": "Gift"
+    },
+    "-KnUmo0uhlyw4-0JFaIi": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 55,
+      "date": "2017-06-19",
+      "description": "Part time cleaner",
+      "type": "Household"
+    },
+    "-KnjgRqnGWmzv9xAf20D": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 143.1,
+      "date": "2017-06-29",
+      "description": "Baby carrier",
+      "type": "Household"
+    },
+    "-Knjgzs_1vRTrwPOty5v": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 46.45,
+      "date": "2017-06-29",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KnjhAs0uL6gkuoUEtL5": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 100,
+      "date": "2017-06-29",
+      "description": "Jie Lin's Mother Bday",
+      "type": "Gift"
+    },
+    "-Knr7e6Qaka6D_laFiIH": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 115,
+      "date": "2017-06-30",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-Ko2aLWfbjwrz44PIAuL": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 68.6,
+      "date": "2017-07-02",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Ko2aX8YDQ8jLdFGo4Vr": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20.9,
+      "date": "2017-07-02",
+      "description": "Baby stuff",
+      "type": "Household"
+    },
+    "-KoNWWttQnlJWc_o_xtA": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 155,
+      "date": "2017-05-30",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-KoXM0XjFVBT0afuk-_J": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 29.6,
+      "date": "2017-07-08",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KoXM35TF1mATCr67D5A": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 10,
+      "date": "2017-07-08",
+      "description": "",
+      "type": "Transport"
+    },
+    "-KoXM4woUSEFNphH8tdF": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 11,
+      "date": "2017-07-08",
+      "description": "",
+      "type": "Transport"
+    },
+    "-KoXNkhO5NFbjBDlhthW": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 3.5,
+      "date": "2017-07-08",
+      "description": "Measuring tape ",
+      "type": "Household"
+    },
+    "-KoXa_eWhuYwMKNM8cpm": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 40.5,
+      "date": "2017-07-08",
+      "description": "Toby's ",
+      "type": "Food"
+    },
+    "-Kp-ghpFhbTeb4JZaIFg": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 21,
+      "date": "2017-07-14",
+      "description": "",
+      "type": "Food"
+    },
+    "-Kp0lbGAiJd1NzHrYLUN": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2017-07-10",
+      "description": "Part time cleaner",
+      "type": "Household"
+    },
+    "-Kp0lifimLpsN6ewdMZa": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 55,
+      "date": "2017-07-03",
+      "description": "Part time cleaner",
+      "type": "Household"
+    },
+    "-Kp58pTvY77zCxrCv8g9": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 45.8,
+      "date": "2017-07-15",
+      "description": "Bangkok jam",
+      "type": "Food"
+    },
+    "-Kp5nO2-p3nDQWY4n8vy": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 10.6,
+      "date": "2017-07-15",
+      "description": "Taxi to jem",
+      "type": "Transport"
+    },
+    "-Kp5nRXFPkEZW4hWy2Rr": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7.94,
+      "date": "2017-07-15",
+      "description": "Taxi from jem",
+      "type": "Transport"
+    },
+    "-Kp_tQaVSeMrhQLd3bgK": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 6,
+      "date": "2017-07-22",
+      "description": "",
+      "type": "Transport"
+    },
+    "-Kp_tSceH7ZcZfCEIxIM": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 6,
+      "date": "2017-07-22",
+      "description": "",
+      "type": "Transport"
+    },
+    "-Kp_tYPhe4YyDCSA6aWj": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 247,
+      "date": "2017-07-22",
+      "description": "Baby's immunization",
+      "type": "Healthcare"
+    },
+    "-Kp_tcOcll7Fd6qMIzQC": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 40,
+      "date": "2017-07-22",
+      "description": "",
+      "type": "Food"
+    },
+    "-KpeZHhVpKEUUuuN_Wmy": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 133,
+      "date": "2017-07-22",
+      "description": "Dinner at Star Vista",
+      "type": "Food"
+    },
+    "-KpwZW5NdP24qyaa60LM": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 96.72,
+      "date": "2017-07-26",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-KqD1In1ngpPf_3XRYGN": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 21.5,
+      "date": "2017-07-29",
+      "description": "",
+      "type": "Food"
+    },
+    "-KqIlQ1-oLdWgXGJwGWF": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 34.8,
+      "date": "2017-07-30",
+      "description": "Diapers",
+      "type": "Household"
+    },
+    "-KqqsWdn83s5wcQOACdN": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 72.55,
+      "date": "2017-08-06",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KqwIO7twIGdh9oTJPP_": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7.75,
+      "date": "2017-08-07",
+      "description": "Ridwind",
+      "type": "Healthcare"
+    },
+    "-Kr5QrryMU5WtA6V_c5z": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 32.8,
+      "date": "2017-08-09",
+      "description": "",
+      "type": "Food"
+    },
+    "-KrKqqT6LDIDbVkmNC__": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 23.1,
+      "date": "2017-08-12",
+      "description": "Macdonalds",
+      "type": "Food"
+    },
+    "-KrQ1sTGuLcD0D4pMSGn": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 41.84,
+      "date": "2017-08-13",
+      "description": "",
+      "type": "Food"
+    },
+    "-KrecOBax5rDwvIRzBYV": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 19.4,
+      "date": "2017-08-16",
+      "description": "",
+      "type": "Household"
+    },
+    "-KsS2xzFeVVfj30BsmOM": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 28,
+      "date": "2017-07-30",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KsS366aHv8TNvoSGr8S": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 13.45,
+      "date": "2017-08-24",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KsS3ESewyAsyLrR0i_H": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 67.05,
+      "date": "2017-08-25",
+      "description": "Anniversary lunch",
+      "type": "Food"
+    },
+    "-KsS3LImr7dwld7a7IJS": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 16.1,
+      "date": "2017-08-20",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KsS3T69QOZkeK0lfQTb": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 28.95,
+      "date": "2017-08-19",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KsS71FIzYIvuDLD2R6F": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 80.07,
+      "date": "2017-08-16",
+      "description": "Redmart",
+      "type": "Groceries"
+    },
+    "-KsS78n9AlEq6W1oNUzn": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 67.06,
+      "date": "2017-08-14",
+      "description": "Pupsik",
+      "type": "Household"
+    },
+    "-KsS7F3qNjtJpjLP9suv": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 219,
+      "date": "2017-08-08",
+      "description": "Baby monitor",
+      "type": "Household"
+    },
+    "-KsS7LkwGHM89bKpDHgg": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 8,
+      "date": "2017-08-06",
+      "description": "Kiddy Palace",
+      "type": "Household"
+    },
+    "-KsS7_LM3PHISH2IUh9K": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2017-08-21",
+      "description": "Part-time cleaner",
+      "type": "Household"
+    },
+    "-KsS7cjqJQNC3rM7U9te": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2017-08-13",
+      "description": "Part-time cleaner",
+      "type": "Household"
+    },
+    "-KsSA1JD6YhZkCj18w7l": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 74.07,
+      "date": "2017-07-31",
+      "description": "Pupsik",
+      "type": "Household"
+    },
+    "-KsSA76V_ZaKpb_5rypW": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 18.95,
+      "date": "2017-07-30",
+      "description": "4 Fingers",
+      "type": "Food"
+    },
+    "-KsSAEDASphFJaW8mQ5j": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 38.95,
+      "date": "2017-07-30",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KsSAJ4EcdxoEiGUyQDQ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 77.5,
+      "date": "2017-07-23",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KsSAYzbvUuUi4IAl5PB": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 67.9,
+      "date": "2017-07-16",
+      "description": "Cloth diapers",
+      "type": "Household"
+    },
+    "-KsSAd2LQZkCR_bAuO6c": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 35.25,
+      "date": "2017-07-16",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KsSAiuSGW5XBEJL8LEr": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5.8,
+      "date": "2017-07-15",
+      "description": "Epsom salt",
+      "type": "Healthcare"
+    },
+    "-KsSApG5RE7L8-fvri88": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 19.8,
+      "date": "2017-07-15",
+      "description": "Hongkai's socks",
+      "type": "Household"
+    },
+    "-KsSAwn9McVoR45oBiv8": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2017-07-17",
+      "description": "Part-time cleaner",
+      "type": "Household"
+    },
+    "-KsSB-Thg_9_kB9hUSj2": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2017-07-24",
+      "description": "Part-time cleaner",
+      "type": "Household"
+    },
+    "-KsSB3Zhx-MwjZXLFQGW": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2017-07-31",
+      "description": "Part-time cleaner",
+      "type": "Household"
+    },
+    "-KsSBlhno81Q186oLhoL": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 42.24,
+      "date": "2017-07-21",
+      "description": "Nellie's Laundry Cleaner",
+      "type": "Household"
+    },
+    "-KsSBntOh9G_Ogsubw8i": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 18.5,
+      "date": "2017-08-26",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KsSCD0x05uLJuGFW2eM": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 10.5,
+      "date": "2017-08-26",
+      "description": "Lunch from Pasar Malam",
+      "type": "Food"
+    },
+    "-KsSCKyIHNf1lpTTBEll": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 8,
+      "date": "2017-08-25",
+      "description": "Taxi to Big Box",
+      "type": "Transport"
+    },
+    "-KsfvtAH5kun4LlsnDSe": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2017-08-28",
+      "description": "Part time cleaner",
+      "type": "Household"
+    },
+    "-KswMAUgEZlYDXS6T2o3": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 4,
+      "date": "2017-08-31",
+      "description": "",
+      "type": "Transport"
+    },
+    "-KswMIviiIIDAxJW6kJP": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 4,
+      "date": "2017-08-31",
+      "description": "",
+      "type": "Transport"
+    },
+    "-KswMQZcHoJLdGUeNyZ4": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20,
+      "date": "2017-08-31",
+      "description": "Macdonalds",
+      "type": "Food"
+    },
+    "-Kt25Wdx2pT0hWtS28ax": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2017-08-28",
+      "description": "Part-time cleaner",
+      "type": "Household"
+    },
+    "-Kt25_abq_OZ_VSxwpV9": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 11.75,
+      "date": "2017-09-02",
+      "description": "",
+      "type": "Food"
+    },
+    "-Kt25kStscT3l_lwc-tb": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 14.6,
+      "date": "2017-09-02",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KtHc9r8JCQS4kq6aiPx": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 113,
+      "date": "2017-09-05",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-KtlUQV5aFkglUto8N3N": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2017-09-11",
+      "description": "Part time cleaner",
+      "type": "Household"
+    },
+    "-Kv2DrfzG7_N1SwzsNEV": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 89.67,
+      "date": "2017-10-01",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-Kv7vpNUkFBUhw3F6Upp": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 14.6,
+      "date": "2017-09-02",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Kv7vxf2XZZU58tXVy9i": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 37.35,
+      "date": "2017-09-12",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Kv7w1-Woz9deCM1mjSQ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 32.15,
+      "date": "2017-09-28",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Kv7w50Rny3SWlPsxIWM": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 22.4,
+      "date": "2017-09-28",
+      "description": "",
+      "type": "Food"
+    },
+    "-Kv7wIUdk3uDxeRdpaI8": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 15.05,
+      "date": "2017-09-19",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Kv7wOGL9YG8eBl_sc1x": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 21.3,
+      "date": "2017-09-24",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Kv7wWrQG6CKChEN__QV": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 48.65,
+      "date": "2017-09-26",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Kv7w_WLbZxn-Y_YQld0": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 16,
+      "date": "2017-09-28",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Kv7wfW2M7YwBA912Kw6": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 17.6,
+      "date": "2017-09-24",
+      "description": "",
+      "type": "Food"
+    },
+    "-Kv7woxxDaH0kuJzqf37": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 108.5,
+      "date": "2017-09-24",
+      "description": "Playpen safety gates",
+      "type": "Household"
+    },
+    "-Kv7wxUFnyRAf7yUroX_": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 83.5,
+      "date": "2017-09-28",
+      "description": "Diapers, ice pack, bottle cap converters",
+      "type": "Household"
+    },
+    "-Kv7x5Y_B_mNuZ0IjIM8": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 32.6,
+      "date": "2017-09-22",
+      "description": "Milk bag and swim diapers",
+      "type": "Household"
+    },
+    "-Kv7xEeQUZMbnNhvUK_e": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 13.99,
+      "date": "2017-09-19",
+      "description": "Real Bubee pump",
+      "type": "Household"
+    },
+    "-Kv7xKBKtFWsY12OF_t4": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 26.78,
+      "date": "2017-09-28",
+      "description": "Avent cups",
+      "type": "Household"
+    },
+    "-Kv7xOnfam77FRS3TvCv": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 78.76,
+      "date": "2017-09-28",
+      "description": "Redmart",
+      "type": "Groceries"
+    },
+    "-KvN3D1SVuZkuZ9GDoqN": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 45.05,
+      "date": "2017-10-01",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KvgXhCYLVMnWUE9jh3C": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2017-10-02",
+      "description": "Part time cleaner",
+      "type": "Household"
+    },
+    "-KvgYdj2pxhD4025gPux": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 48.85,
+      "date": "2017-10-05",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KvljhNKd0Mm77YBC8rR": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 22,
+      "date": "2017-10-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-Kw0hHIcD0q9KWrYHQXZ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 100,
+      "date": "2017-10-09",
+      "description": "Mother's birthday",
+      "type": "Gift"
+    },
+    "-KwTu0y29sMvtBILF-Kn": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 14.5,
+      "date": "2017-10-15",
+      "description": "Starbucks",
+      "type": "Food"
+    },
+    "-KwTu6bxvatjlQb2BrxN": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 100,
+      "date": "2017-10-15",
+      "description": "Wanling's baby",
+      "type": "Gift"
+    },
+    "-KwiqAnCdZM0Z60VDe2H": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5.4,
+      "date": "2017-10-18",
+      "description": "",
+      "type": "Household"
+    },
+    "-KwyNUyGrA0FIKmQr5g9": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 54,
+      "date": "2017-10-21",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KxNPZCLdHTznmuM_ofe": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 22.8,
+      "date": "2017-10-26",
+      "description": "",
+      "type": "Food"
+    },
+    "-KxSoPWFHUqopj9_xphh": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 98,
+      "date": "2017-10-27",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-KxYCLD9eEsKDs7-tqiT": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 22,
+      "date": "2017-10-28",
+      "description": "",
+      "type": "Transport"
+    },
+    "-KxYCNWKdiyvA973rM9h": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 23.85,
+      "date": "2017-10-28",
+      "description": "",
+      "type": "Transport"
+    },
+    "-Kxa7jl2jkT_grD83WAz": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5.8,
+      "date": "2017-10-29",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Kxwp79cBRyXWXH3UmyI": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 3.45,
+      "date": "2017-10-22",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KxwpLFIGQY8hPU8O5KF": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 0.65,
+      "date": "2017-10-24",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KxwpYUoFXY58G1nzp_M": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 21.5,
+      "date": "2017-10-05",
+      "description": "Kiddy Palace Fitted Sheet",
+      "type": "Household"
+    },
+    "-Ky5Dpag7lEpmjKMn09C": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 62.1,
+      "date": "2017-11-04",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-KyFJnUxTVZ5ZWANFpBs": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 15.2,
+      "date": "2017-11-06",
+      "description": "",
+      "type": "Transport"
+    },
+    "-KyG3Y5GbZan7RPbkTMN": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 24.45,
+      "date": "2017-11-06",
+      "description": "",
+      "type": "Transport"
+    },
+    "-KyZr-aK0WodT6rjG4PF": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 3,
+      "date": "2017-11-10",
+      "description": "",
+      "type": "Transport"
+    },
+    "-Ky_trubI06OGyDe4uOK": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 36,
+      "date": "2017-11-10",
+      "description": "",
+      "type": "Food"
+    },
+    "-KynCkp_fOcMHWoaZbMG": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2017-11-13",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-KynCsJc0ENoTAh5uPbA": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 18,
+      "date": "2017-11-13",
+      "description": "Book for Hongkai ",
+      "type": "Others"
+    },
+    "-KzDp9EUMmnKjnqxX-G_": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 26.8,
+      "date": "2017-11-18",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Kzq_xlud73KCreaVhYj": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 87.35,
+      "date": "2017-11-26",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Kzt41-ywmKBpRytK05Z": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 105,
+      "date": "2017-11-27",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-L-QgIba4wxF0yvFvO6r": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 15.6,
+      "date": "2017-11-13",
+      "description": "Mothercare",
+      "type": "Household"
+    },
+    "-L-u1xh-NVGiExIcupUm": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 51.8,
+      "date": "2017-12-09",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L-udPNW2pCSDLs1SDDk": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 99,
+      "date": "2017-12-09",
+      "description": "Thermos pot",
+      "type": "Household"
+    },
+    "-L0K0Yf2QfSOoBU3EN0Z": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 18.7,
+      "date": "2017-12-13",
+      "description": "From Hotel Jen",
+      "type": "Transport"
+    },
+    "-L0PtDetuIW3Q1kua2jV": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 25,
+      "date": "2017-12-12",
+      "description": "Open gym for Hongkai",
+      "type": "Entertainment"
+    },
+    "-L0PtN0pnaWkiA6pepbP": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 65.6,
+      "date": "2017-12-12",
+      "description": "",
+      "type": "Food"
+    },
+    "-L0PtU4tStzFOVPQQN-w": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 51.55,
+      "date": "2017-12-13",
+      "description": "",
+      "type": "Food"
+    },
+    "-L0U9C-0WFsyBFo4ARsz": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 36.5,
+      "date": "2017-12-16",
+      "description": "",
+      "type": "Food"
+    },
+    "-L0Yg9FYQ_P1YSLUr_Uh": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 23.3,
+      "date": "2017-12-17",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L0jQhyO0YF3GMm2_poW": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 14.8,
+      "date": "2017-12-16",
+      "description": "",
+      "type": "Food"
+    },
+    "-L15Vgn_kd4gQz4aHyLi": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 34.95,
+      "date": "2017-12-24",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L1N3b79VkPG1nWbV2A5": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 52.7,
+      "date": "2017-12-27",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L1RbEDi6vgbYSOpa8jD": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 98.47,
+      "date": "2017-12-28",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-L1ltzpLskOlD95TzBVT": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50.1,
+      "date": "2018-01-01",
+      "description": "",
+      "type": "Food"
+    },
+    "-L2AC84ILjnvCC30BZUs": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20,
+      "date": "2018-01-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-L2Av1nlQRGfm7fncggq": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 16.3,
+      "date": "2017-12-02",
+      "description": "",
+      "type": "Transport"
+    },
+    "-L2Av6SeVwr6Nroh4Yu6": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 16.5,
+      "date": "2017-12-02",
+      "description": "",
+      "type": "Transport"
+    },
+    "-L2AvPQ5w0en7JfShkqz": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 66.13,
+      "date": "2017-11-24",
+      "description": "iHERB",
+      "type": "Groceries"
+    },
+    "-L2AvSSAKt71V6uTsoDN": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60.15,
+      "date": "2018-01-06",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L2Avbr8w70e_Rzr6SQF": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 30.2,
+      "date": "2017-12-03",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L2AvpZiXRxeur03kwW-": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 13.29,
+      "date": "2017-12-12",
+      "description": "",
+      "type": "Food"
+    },
+    "-L2AvuViRVHsKC7BNAyz": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 25,
+      "date": "2017-12-12",
+      "description": "Gymboree",
+      "type": "Entertainment"
+    },
+    "-L2AvztKsn0Fi4dyYtUU": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 18.7,
+      "date": "2017-12-13",
+      "description": "",
+      "type": "Transport"
+    },
+    "-L2Aw143uxGaqUBo-VvK": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 12.3,
+      "date": "2018-01-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-L2Aw623_4UBgeUcMDkQ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 51.55,
+      "date": "2017-12-13",
+      "description": "",
+      "type": "Food"
+    },
+    "-L2AwB72Woz8kNOo_sja": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 65.6,
+      "date": "2017-12-12",
+      "description": "",
+      "type": "Food"
+    },
+    "-L2AwFVrbQfvB49gTAA-": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 28.25,
+      "date": "2017-12-13",
+      "description": "",
+      "type": "Food"
+    },
+    "-L2AwLwqrsjYiDcC_2Ph": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 31.45,
+      "date": "2017-12-14",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L2AwOo34tHmPAh7MDHb": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 14.8,
+      "date": "2018-01-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-L2AwjDyozJmLha7hsn_": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 74.25,
+      "date": "2018-01-04",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L2UhKQNNHHZbRKH1I19": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 23.55,
+      "date": "2018-01-10",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L3Iy1-cCzWQjRq4FzoZ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 21,
+      "date": "2018-01-20",
+      "description": "Avent bottles",
+      "type": "Household"
+    },
+    "-L3Iy6VxcGXNWS_yrZdH": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 20,
+      "date": "2018-01-20",
+      "description": "Hongkai’s suit",
+      "type": "Shopping"
+    },
+    "-L3IyI1wxmYf8bFWb-gl": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 299,
+      "date": "2018-01-20",
+      "description": "Photography package",
+      "type": "Entertainment"
+    },
+    "-L3IzQXFp-YKQO1gnZiM": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 20.3,
+      "date": "2018-01-20",
+      "description": "",
+      "type": "Food"
+    },
+    "-L3MHRifW_8xIOLZLrgP": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 83.9,
+      "date": "2018-01-21",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L3MLZM8KbhCVgCEqaCR": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 30,
+      "date": "2018-01-21",
+      "description": "Ironing board",
+      "type": "Household"
+    },
+    "-L3s1vqQn83FJ0g6rnKR": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 380,
+      "date": "2018-01-27",
+      "description": "Cousin wedding",
+      "type": "Gift"
+    },
+    "-L3vW7SIG2EpbmtP0Mbl": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 54,
+      "date": "2018-01-28",
+      "description": "",
+      "type": "Food"
+    },
+    "-L3vfBOndcZWgR_MTfXC": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 42.2,
+      "date": "2018-01-28",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L43tMyodEb4GEnqol21": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 95.48,
+      "date": "2018-01-30",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-L44W2slAySEhd6HXhiZ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 68.55,
+      "date": "2018-01-30",
+      "description": "Pupsik",
+      "type": "Household"
+    },
+    "-L44W9R7WVTDCshVWf-q": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 19.9,
+      "date": "2018-01-30",
+      "description": "Lazada milk bottles",
+      "type": "Household"
+    },
+    "-L4PJgm-qLNKsXreCMy9": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 46.5,
+      "date": "2018-02-03",
+      "description": "",
+      "type": "Food"
+    },
+    "-L4UWOhvLZyvKn9dVfWQ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7.05,
+      "date": "2018-02-04",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L4o3gaANtw8cvsPfhdl": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 33.55,
+      "date": "2018-02-08",
+      "description": "",
+      "type": "Food"
+    },
+    "-L4o9WL9EfILBjlPNGxf": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 68.9,
+      "date": "2018-02-08",
+      "description": "",
+      "type": "Shopping"
+    },
+    "-L4oMl3Beqb-bUIj-s7H": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 64,
+      "date": "2018-02-08",
+      "description": "Hongkai’s clothes at Next",
+      "type": "Shopping"
+    },
+    "-L54kNT9E3tK1nEoYf-t": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 65.8,
+      "date": "2018-02-12",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L5P8i9oyfKBMIHezjru": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 1064,
+      "date": "2018-02-15",
+      "description": "Ang pow",
+      "type": "Gift"
+    },
+    "-L5Y-ki6MdI0fjJQN4Kc": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 31.85,
+      "date": "2018-02-17",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L5cPHIQeft-_OTjC-RL": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 13.8,
+      "date": "2018-02-18",
+      "description": "",
+      "type": "Food"
+    },
+    "-L5lb4EPZ-tkEmeIYyCD": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 4,
+      "date": "2018-02-20",
+      "description": "",
+      "type": "Food"
+    },
+    "-L6AaZjE0CzKbEUaRqr2": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 47.79,
+      "date": "2018-02-25",
+      "description": "",
+      "type": "Food"
+    },
+    "-L6jebaDVO8P0PKmeQOY": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 54.5,
+      "date": "2018-03-04",
+      "description": "",
+      "type": "Food"
+    },
+    "-L6pmHGf5_4s1aGqLhjo": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 8.4,
+      "date": "2018-03-05",
+      "description": "",
+      "type": "Food"
+    },
+    "-L7-v9gRq1nBc7nvFL4V": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 96.41,
+      "date": "2018-02-03",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-L7JRt72Jp3cpQlGwp8v": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 56,
+      "date": "2018-03-11",
+      "description": "",
+      "type": "Food"
+    },
+    "-L7K9cCDEPKWBp7IdM7E": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 66.45,
+      "date": "2018-03-11",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L7mmi17FpTjDXsIh-qe": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 38.85,
+      "date": "2018-03-17",
+      "description": "Party materials",
+      "type": "Household"
+    },
+    "-L7mmmkcftBn8fScu6_a": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 1060,
+      "date": "2018-03-17",
+      "description": "Play gym",
+      "type": "Entertainment"
+    },
+    "-L8MtBwKePz3j5qB5Vg3": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 34.6,
+      "date": "2018-03-24",
+      "description": "",
+      "type": "Food"
+    },
+    "-L8Ps3pHxORC7_06PDNt": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 31.4,
+      "date": "2018-03-25",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L8SDFu1pAlRHCb822lT": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 428,
+      "date": "2018-02-05",
+      "description": "Aloha Loyang Resort",
+      "type": "Entertainment"
+    },
+    "-L8XeU0PzPrIBFqhtCZA": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 70,
+      "date": "2018-03-26",
+      "description": "Hongkai's passport",
+      "type": "Others"
+    },
+    "-L8bXLKv-y8DMwik4eQX": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 69.9,
+      "date": "2018-03-27",
+      "description": "Hongkai's diapers",
+      "type": "Household"
+    },
+    "-L8bXkiRENcDrdFyRN-_": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 19.6,
+      "date": "2018-03-27",
+      "description": "Hongkai's party decorations",
+      "type": "Entertainment"
+    },
+    "-L8bXtqJNwPBiMcIGa3N": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 42.12,
+      "date": "2018-03-27",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L8pbi39EN6wXeq-N_hq": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 126.65,
+      "date": "2018-03-30",
+      "description": "",
+      "type": "Food"
+    },
+    "-L9-DYiP7rQY_0rFbgRx": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 34.95,
+      "date": "2018-04-01",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L9-DacHHm_EZ-0m0MB2": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7.9,
+      "date": "2018-04-01",
+      "description": "",
+      "type": "Food"
+    },
+    "-L9-MdA0j_CtWR40fJG4": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 818,
+      "date": "2018-04-01",
+      "description": "Hongkai's birthday buffet",
+      "type": "Food"
+    },
+    "-L9-kbwFazm33V1L26fI": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 18,
+      "date": "2018-04-01",
+      "description": "",
+      "type": "Transport"
+    },
+    "-L90LCGRXtoSgcOOrgMl": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 24,
+      "date": "2018-04-01",
+      "description": "",
+      "type": "Transport"
+    },
+    "-L9kDkcQnc2asT2jSyPF": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 19.75,
+      "date": "2018-04-10",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L9kDy5zJIC1O_gg3rBJ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 57.45,
+      "date": "2018-04-10",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-L9sh6OvGi9t2HXjrcAf": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 32,
+      "date": "2018-04-12",
+      "description": "",
+      "type": "Food"
+    },
+    "-L9uAMnyUsoY0dcrZxMF": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 61,
+      "date": "2018-04-12",
+      "description": "",
+      "type": "Entertainment"
+    },
+    "-L9xh663HmX1g89KFjlr": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 28,
+      "date": "2018-04-13",
+      "description": "",
+      "type": "Food"
+    },
+    "-L9yhSk-1wbGKz5ctsno": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7,
+      "date": "2018-04-13",
+      "description": "",
+      "type": "Transport"
+    },
+    "-L9yhUWgfIKHzaJuv__w": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 8,
+      "date": "2018-04-13",
+      "description": "",
+      "type": "Transport"
+    },
+    "-L9yp4u8ayN1GkMva8yR": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39.6,
+      "date": "2018-04-13",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LA0vbLesDfShjGkAsOC": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 14.8,
+      "date": "2018-04-13",
+      "description": "",
+      "type": "Food"
+    },
+    "-LA75S4UEvDQ3dgy2g-V": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 67.56,
+      "date": "2018-04-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-LA75bZVE82qRRaIgHtY": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 10.15,
+      "date": "2018-04-15",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LA75hh0h1vmsboEEC63": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 10,
+      "date": "2018-04-15",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LA7hr4BiD5wS7vYKbbo": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 8,
+      "date": "2018-04-15",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LAAee5ESsSmeELyNpzr": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2018-04-09",
+      "description": "",
+      "type": "Household"
+    },
+    "-LAAieDx7_yJX59TkHoZ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 16.75,
+      "date": "2018-04-16",
+      "description": "Hongkai’s sack and seat",
+      "type": "Household"
+    },
+    "-LAfmJ3l55PPrapLf5sM": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7,
+      "date": "2018-04-22",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LAgEF7VsymoW_Mxn82U": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 71.8,
+      "date": "2018-04-22",
+      "description": "",
+      "type": "Food"
+    },
+    "-LAgIQheePQZMq1Tm9jt": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 8,
+      "date": "2018-04-22",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LAhFtTDmQ45eCPHGZXa": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 29.75,
+      "date": "2018-04-22",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LAow3st1iaW0QNshql8": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 85,
+      "date": "2018-04-24",
+      "description": "Stove repair ",
+      "type": "Household"
+    },
+    "-LB1MUMggK_z62jBHHiT": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 58.49,
+      "date": "2018-04-26",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LB1TpPBo0uZuSWmyhVy": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 98,
+      "date": "2018-03-30",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LBA5iOrZDxuBEGuWF5X": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20,
+      "date": "2018-04-28",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LBA5kJ-tqdndAgKA3f6": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20,
+      "date": "2018-04-28",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LBFtjYj5ao8yrpn9VFu": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 13.8,
+      "date": "2018-04-29",
+      "description": "Glass jars",
+      "type": "Household"
+    },
+    "-LBFxtFYdzmytglZy8B8": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 30.7,
+      "date": "2018-04-29",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LBPH77OIdrsVN3TGsJO": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 120,
+      "date": "2018-05-01",
+      "description": "Aircon servicing",
+      "type": "Household"
+    },
+    "-LBPIA18Wr_qUCasdBPx": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 68,
+      "date": "2018-04-28",
+      "description": "Baby first month",
+      "type": "Gift"
+    },
+    "-LBhlyrbTRiydsKDp1wr": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20,
+      "date": "2018-05-05",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LBhsbjjDP2p1UBapHA1": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 15.95,
+      "date": "2018-05-05",
+      "description": "",
+      "type": "Food"
+    },
+    "-LBjlnNQJk_lBAcs3YSW": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 2,
+      "date": "2018-05-05",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LBjlpAhNpZJcQPzO0Ku": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 2,
+      "date": "2018-05-05",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LBo0_y95aVkLzXrBKVQ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 6.9,
+      "date": "2018-05-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-LBoK7HkeVKv1IQjJoZ6": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5.8,
+      "date": "2018-05-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-LBoK9GGt8SfZOhO8Ze3": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 2,
+      "date": "2018-05-06",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LCI92guEgtbej0Qw3vw": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 44.05,
+      "date": "2018-05-12",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LCc9OFuED1Ls8inmVDB": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5,
+      "date": "2018-05-16",
+      "description": "",
+      "type": "Food"
+    },
+    "-LCwy55RCBEOQpAxtYgf": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 68,
+      "date": "2018-05-20",
+      "description": "",
+      "type": "Gift"
+    },
+    "-LD3nmAW9r2L-Dd02TaE": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-05-21",
+      "description": "",
+      "type": "Household"
+    },
+    "-LDPKv8n0uEs-YsEnjr5": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 48.28,
+      "date": "2018-05-26",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LDUMuvgaC0UHfbA2GqJ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 55,
+      "date": "2018-05-27",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LDfUSXNW3SZEygtQyxb": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 30,
+      "date": "2018-05-29",
+      "description": "",
+      "type": "Food"
+    },
+    "-LDoRCSRf_4E1o-QZogf": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 9.4,
+      "date": "2018-05-31",
+      "description": "",
+      "type": "Household"
+    },
+    "-LE2XzEPqcAt1jI8q3HZ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 78.5,
+      "date": "2018-06-03",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LE36VWfEsQq0ttuBC82": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 9,
+      "date": "2018-06-03",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LE4luXmJq6gen0sgLcI": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2018-05-28",
+      "description": "",
+      "type": "Household"
+    },
+    "-LE4m-8tqYdmqAWxzuJg": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-06-04",
+      "description": "",
+      "type": "Household"
+    },
+    "-LEV4wFwUMop-d6VaOon": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 72.75,
+      "date": "2018-06-08",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LEYEekDQiHMWvcgdtbm": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 240,
+      "date": "2018-06-09",
+      "description": "",
+      "type": "Food"
+    },
+    "-LEYs9JRDIZ0uzc5EdVA": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 54,
+      "date": "2018-06-09",
+      "description": "",
+      "type": "Food"
+    },
+    "-LEcdqBXYJ46j_Ml5nLX": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 8,
+      "date": "2018-06-10",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LEcdsMgtqSd5ca0-scS": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7.4,
+      "date": "2018-06-10",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LEdC90sanRhVrL_gFRQ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 19,
+      "date": "2018-06-10",
+      "description": "",
+      "type": "Food"
+    },
+    "-LEhoss6-GU8tn1nGf1K": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2018-06-11",
+      "description": "",
+      "type": "Household"
+    },
+    "-LEvupvyN-bGXJviWIgv": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7,
+      "date": "2018-06-13",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LEvuszs2eIIcp70OS_M": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7,
+      "date": "2018-06-13",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LEvuvr5eMGsKQRDaxu9": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7,
+      "date": "2018-06-14",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LEwEOAlWOXDO3i29Xnm": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 6.8,
+      "date": "2018-06-14",
+      "description": "",
+      "type": "Food"
+    },
+    "-LEwbCttHbGDMi2pGL5v": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 25.44,
+      "date": "2018-06-14",
+      "description": "",
+      "type": "Food"
+    },
+    "-LF59jCTuDUZ1xd0j359": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5.2,
+      "date": "2018-06-15",
+      "description": "Breakfast",
+      "type": "Food"
+    },
+    "-LF60g8QaJHjAgupsCop": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 62.06,
+      "date": "2018-06-16",
+      "description": "",
+      "type": "Food"
+    },
+    "-LF6EZpRFGSn7kwyQqsW": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 18,
+      "date": "2018-06-16",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LF6EaZW7uI_zd86cF50": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 17,
+      "date": "2018-06-16",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LFCgJRou9bA-7Rci6A4": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 34,
+      "date": "2018-06-17",
+      "description": "",
+      "type": "Food"
+    },
+    "-LFfCxAYYKdqor4WpRvA": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 38.61,
+      "date": "2018-06-23",
+      "description": "",
+      "type": "Food"
+    },
+    "-LFfXXm4lo9L5332FMPk": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 1.15,
+      "date": "2018-06-23",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LFfhrrA3fNwfr2ZmTuq": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 56,
+      "date": "2018-06-13",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LFfhxg-87oqkYxsv_zh": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 7.75,
+      "date": "2018-05-27",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LFfi2bhldDjbN_Pp9yV": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 19.45,
+      "date": "2018-06-07",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LFfi8JZCr_PT2u6SCuh": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 14.05,
+      "date": "2018-06-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-LFfiDmW1mVcQIci1_9_": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 8.35,
+      "date": "2018-06-13",
+      "description": "",
+      "type": "Food"
+    },
+    "-LFfiOL8-YwdYGXkPMEB": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 4,
+      "date": "2018-04-20",
+      "description": "",
+      "type": "Food"
+    },
+    "-LFkfNwCNFq1RHDqOUWK": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 2.6,
+      "date": "2018-06-24",
+      "description": "",
+      "type": "Food"
+    },
+    "-LFqSR8PGE8c2RHASPW_": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 34.5,
+      "date": "2018-06-25",
+      "description": "Hongkai’s milk powder",
+      "type": "Groceries"
+    },
+    "-LGKGRanSbsgu_LJtKoJ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-06-25",
+      "description": "",
+      "type": "Household"
+    },
+    "-LGKGURq_MLhUsvPas2_": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2018-07-02",
+      "description": "",
+      "type": "Household"
+    },
+    "-LGwCJ1zP901oZcYhq4G": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-07-09",
+      "description": "",
+      "type": "Household"
+    },
+    "-LGzdbJ1xqfrjDVULbmf": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 58,
+      "date": "2018-01-15",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGzdbJa0QOMoK9J8NmO": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 58,
+      "date": "2018-02-15",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGzdbJtJqe6XyLCb0_t": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 58,
+      "date": "2018-03-15",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGzdbKQ36QAEnw802T8": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 58,
+      "date": "2018-04-15",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGzdbKnuoOcPDFX6wZ5": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 58,
+      "date": "2018-05-15",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGzdbKztpNN-wQFTMjh": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 58,
+      "date": "2018-06-15",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGze1v2-Bt-O3XM7Fxi": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 48,
+      "date": "2018-07-01",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGze1wfYXcobUzpNAYg": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 48,
+      "date": "2018-11-01",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGze1wwSUnyZWaGFCny": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 48,
+      "date": "2018-12-01",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGze1x6rJJ6r_QxfkXF": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 48,
+      "date": "2019-01-01",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGze1xGl_l-kS1Pc2_Q": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 48,
+      "date": "2019-02-01",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGze1xRVjSu_dsD8ypH": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 48,
+      "date": "2019-03-01",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGze1x_qJwbwf22bfxB": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 48,
+      "date": "2019-04-01",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGze1xjAK9ct0487dDE": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 48,
+      "date": "2019-05-01",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LGze1xq3u7BDgshvSXS": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 48,
+      "date": "2019-06-01",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LH2kx6czHDltrevBfh8": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 6.9,
+      "date": "2018-07-10",
+      "description": "",
+      "type": "Food"
+    },
+    "-LH8r7iPwKEbH3lm_IS5": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 38.75,
+      "date": "2018-07-11",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LHN-n34hz7gkQO5_x3s": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 11,
+      "date": "2018-07-14",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LHN-p2TdKOcSQokk5e3": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 8,
+      "date": "2018-07-14",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LHNt0TsYzkpjrkProcD": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 24,
+      "date": "2018-07-14",
+      "description": "",
+      "type": "Food"
+    },
+    "-LHS-7Uc5Lcy-wpk6Kxv": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5.8,
+      "date": "2018-07-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-LHS4hy_2v24JE9bq2lY": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 41.42,
+      "date": "2018-07-15",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LHVCIwUQrWwTdemZxvt": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2018-07-16",
+      "description": "",
+      "type": "Household"
+    },
+    "-LHwA-TNeZQIT4pFUba1": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 17.8,
+      "date": "2018-07-21",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LI3CnywGpI7lu7FrLS_": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-07-23",
+      "description": "",
+      "type": "Household"
+    },
+    "-LIG-pOv6dBMaR5Sox1U": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5.8,
+      "date": "2018-07-25",
+      "description": "",
+      "type": "Food"
+    },
+    "-LIU2B5eSkXSKg7N_28Q": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 19.07,
+      "date": "2018-07-28",
+      "description": "",
+      "type": "Food"
+    },
+    "-LIVGd0oj7fQgLYuEvGd": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 34,
+      "date": "2018-07-28",
+      "description": "",
+      "type": "Food"
+    },
+    "-LIVZU29cxObhwX86W-W": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 95.78,
+      "date": "2018-07-28",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LIa1n12RKKJZUU0Nv0k": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 46.25,
+      "date": "2018-07-29",
+      "description": "",
+      "type": "Food"
+    },
+    "-LIagYU0NHxTjC6LI9u3": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 77.49,
+      "date": "2018-07-29",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LIjwDim1rsHtsjAWTmx": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 30,
+      "date": "2018-07-31",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LJ3fTrTYK_UjWgjQW-8": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 68,
+      "date": "2018-08-04",
+      "description": "",
+      "type": "Food"
+    },
+    "-LJ8JwZZtp6Hio028a0J": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 6.1,
+      "date": "2018-08-05",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LJTXJ50rL9UKbhwhyna": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 69,
+      "date": "2018-08-09",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LJahc6AmMW2gegIeMsW": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 15.25,
+      "date": "2018-08-11",
+      "description": "",
+      "type": "Food"
+    },
+    "-LJkQfBiaeQQ9HTgGoV3": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2018-08-06",
+      "description": "",
+      "type": "Household"
+    },
+    "-LJkQhyjRtN9Ipzq6h2W": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-08-13",
+      "description": "",
+      "type": "Household"
+    },
+    "-LJqmUyo_L_PKptipcHZ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 500,
+      "date": "2018-08-14",
+      "description": "",
+      "type": "Gift"
+    },
+    "-LJsYjW7Lg9SsaOd6kTi": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 33.2,
+      "date": "2018-08-05",
+      "description": "",
+      "type": "Food"
+    },
+    "-LJscUd7H5ZdCFUBRsnG": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 41.55,
+      "date": "2018-05-22",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LJsc_qXZQ3Ouj-BGnlo": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 69.9,
+      "date": "2018-05-22",
+      "description": "Hongkai's diapers",
+      "type": "Groceries"
+    },
+    "-LJscrXq864_YMztf7Qr": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5.4,
+      "date": "2018-06-02",
+      "description": "",
+      "type": "Food"
+    },
+    "-LJsd4rPAS1XdYL4_DUK": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 34.5,
+      "date": "2018-06-07",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LJsdLkBrbORRHN8POY3": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 2.2,
+      "date": "2018-06-08",
+      "description": "",
+      "type": "Food"
+    },
+    "-LJsdnWEBFuJN0dV1mYl": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 28.6,
+      "date": "2018-06-13",
+      "description": "",
+      "type": "Food"
+    },
+    "-LJse71_8Du93CfIAxFw": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 48.86,
+      "date": "2018-08-14",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LJseKfDrGR_XqCfuYZF": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 6.2,
+      "date": "2018-06-19",
+      "description": "",
+      "type": "Food"
+    },
+    "-LJsfIi7rgh2CkRuhe3i": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 41.91,
+      "date": "2018-06-21",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LJsfSM_5zXTOMVMoG4l": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 2.6,
+      "date": "2018-06-27",
+      "description": "",
+      "type": "Food"
+    },
+    "-LJsfYTjx8Sv0NzG4m28": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 34.5,
+      "date": "2018-06-27",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LJsfkZn_UbJC6iW5ypX": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 45.4,
+      "date": "2018-07-04",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LJsg1evjzBtgROVcebd": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5.8,
+      "date": "2018-07-12",
+      "description": "",
+      "type": "Food"
+    },
+    "-LJsgBwbW1th9vmN2f_r": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 61.5,
+      "date": "2018-07-18",
+      "description": "",
+      "type": "Food"
+    },
+    "-LK1O3uZVfhIvRRRLgIp": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 32.8,
+      "date": "2018-08-14",
+      "description": "",
+      "type": "Food"
+    },
+    "-LKJQ6O-FuY7-BePncMN": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2018-08-20",
+      "description": "",
+      "type": "Household"
+    },
+    "-LKMgdwKLwl4f1wuj084": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 67.57,
+      "date": "2018-08-20",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LKQxPSiLW2HIQiAAAYh": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 17.6,
+      "date": "2018-08-21",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LKV6oVKbKnGYayZFME6": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 64,
+      "date": "2018-08-22",
+      "description": "",
+      "type": "Food"
+    },
+    "-LKV6sD0MacA0q-x8dZQ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 211,
+      "date": "2018-08-22",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LKoZJO4-oxjAuAhWQDz": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 31.3,
+      "date": "2018-08-26",
+      "description": "",
+      "type": "Food"
+    },
+    "-LKscscufVvo4pC2YzPb": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-08-27",
+      "description": "",
+      "type": "Household"
+    },
+    "-LKtxGEg6Qxk-T3S-wwc": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 112,
+      "date": "2018-08-27",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LLS7jLbTP12EqnwywEE": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 38.6,
+      "date": "2018-09-01",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LLS7mfYW3R-Fxkro1Cz": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 69.44,
+      "date": "2018-09-02",
+      "description": "",
+      "type": "Food"
+    },
+    "-LLS7y1U5xUk8-8hL-Hz": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 248,
+      "date": "2018-09-01",
+      "description": "Breastpump",
+      "type": "Household"
+    },
+    "-LLS81e-bSefsIH3DgKf": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 99,
+      "date": "2018-09-01",
+      "description": "Steriliser",
+      "type": "Household"
+    },
+    "-LLS8G4JV_nQ1lyXiBLZ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 76.4,
+      "date": "2018-08-31",
+      "description": "Hongkai’s diapers",
+      "type": "Household"
+    },
+    "-LL_4vcNoWq0zl7Hbopw": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 61.88,
+      "date": "2018-09-04",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LLiNmsdbVoI113Q9YXe": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5.6,
+      "date": "2018-09-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-LLrgT8RKbAUWfP6EE9V": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 47.9,
+      "date": "2018-09-08",
+      "description": "",
+      "type": "Food"
+    },
+    "-LLrwTmLTchfkcdMahZ0": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 25.25,
+      "date": "2018-09-08",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LLwE9A-J3EOaXzkZCYJ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 8,
+      "date": "2018-09-09",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LM0WKlDi2I8EIHI6EUF": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2018-09-03",
+      "description": "",
+      "type": "Household"
+    },
+    "-LM0WMr2Xaq8chRuKz92": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-09-10",
+      "description": "",
+      "type": "Household"
+    },
+    "-LMPn4XLWAZ5Rs_Q-jC0": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 15.5,
+      "date": "2018-09-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-LMQXsp0_F6Xhu6PuTTo": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 126,
+      "date": "2018-09-15",
+      "description": "Mooncakes",
+      "type": "Gift"
+    },
+    "-LMQk3t9YH_LgSiMxifx": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 49.9,
+      "date": "2018-09-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-LMR04TyBwxQMf22kbtL": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5.8,
+      "date": "2018-09-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-LMZfD0ywP-4LvTYsxCE": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2018-09-17",
+      "description": "",
+      "type": "Household"
+    },
+    "-LMZubhihN4C1p4uAD95": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 89.39,
+      "date": "2018-09-17",
+      "description": "Pigeon products",
+      "type": "Household"
+    },
+    "-LMZugwpsAGxPcu3vWEp": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 269,
+      "date": "2018-09-17",
+      "description": "Urban kanga",
+      "type": "Household"
+    },
+    "-LMm8wLiY6KJ8MXBU5i3": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 22.3,
+      "date": "2018-07-21",
+      "description": "",
+      "type": "Food"
+    },
+    "-LMm97TJSCdBSTMGL0lt": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 4.8,
+      "date": "2018-07-27",
+      "description": "",
+      "type": "Food"
+    },
+    "-LMm9PNXOTmEHoY7Z2Mb": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 2.2,
+      "date": "2018-08-04",
+      "description": "",
+      "type": "Food"
+    },
+    "-LMm9YJsATrCu4zQQsUg": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 37.33,
+      "date": "2018-08-08",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LMm9i6BFMDk2Fib0oKS": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 7,
+      "date": "2018-08-11",
+      "description": "",
+      "type": "Food"
+    },
+    "-LMm9q_kESevH-6Ka9Yf": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 6.4,
+      "date": "2018-08-12",
+      "description": "",
+      "type": "Food"
+    },
+    "-LMmA3XS8TrtUNJlG00B": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 38.21,
+      "date": "2018-08-15",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LMmAF8qy0DgRzyjN1R6": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 32.8,
+      "date": "2018-08-16",
+      "description": "",
+      "type": "Food"
+    },
+    "-LMmAKxYHJIEDTRXKlCi": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 20.15,
+      "date": "2018-08-17",
+      "description": "",
+      "type": "Household"
+    },
+    "-LMzdLH27_Os_px9H87d": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7,
+      "date": "2018-09-22",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LMzdN8mRLLEjFQl2JEY": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 29.68,
+      "date": "2018-09-22",
+      "description": "",
+      "type": "Food"
+    },
+    "-LN9GcCXM15rLkc8ZF83": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 36,
+      "date": "2018-09-24",
+      "description": "",
+      "type": "Food"
+    },
+    "-LN9GevxdvRMhEeI381e": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 1.7,
+      "date": "2018-09-24",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LNDx4IkvGu7OcmfoozM": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 308.55,
+      "date": "2018-09-24",
+      "description": "Bintan Hotel",
+      "type": "Entertainment"
+    },
+    "-LNDxRyjF0B6Mid1hsXb": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 134,
+      "date": "2018-09-24",
+      "description": "Bintan resort ferry",
+      "type": "Transport"
+    },
+    "-LNDxWIZj4GhDMZXbVdy": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 15.4,
+      "date": "2018-09-24",
+      "description": "Warung Yeah",
+      "type": "Food"
+    },
+    "-LNDxaDfSs1KUP_4DHae": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 10,
+      "date": "2018-09-24",
+      "description": "Lantern Park",
+      "type": "Entertainment"
+    },
+    "-LNDxiDhabZLKr-aLUPo": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 86,
+      "date": "2018-09-25",
+      "description": "Mangrove Tour + Tips",
+      "type": "Entertainment"
+    },
+    "-LNEEBedWed7AEYFr28l": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 13.4,
+      "date": "2018-09-25",
+      "description": "",
+      "type": "Food"
+    },
+    "-LNEHew75IaS2_J2EPgT": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 2.8,
+      "date": "2018-09-25",
+      "description": "",
+      "type": "Food"
+    },
+    "-LNFh2aavnqK251Ey7eF": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 46,
+      "date": "2018-09-25",
+      "description": "",
+      "type": "Food"
+    },
+    "-LNL2fH4p9qFmH9K3xz5": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 84.6,
+      "date": "2018-09-25",
+      "description": "",
+      "type": "Food"
+    },
+    "-LNL2wmYwvriLny191yT": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 55,
+      "date": "2018-09-26",
+      "description": "Eco tour",
+      "type": "Entertainment"
+    },
+    "-LNL31swAkiTECRF-8jD": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 16.45,
+      "date": "2018-09-26",
+      "description": "",
+      "type": "Food"
+    },
+    "-LNOeTh36Rn-syHKcqlQ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 28,
+      "date": "2018-09-27",
+      "description": "",
+      "type": "Food"
+    },
+    "-LNOeVqTThYVuTq-wE9b": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 4,
+      "date": "2018-09-27",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LNTNvIMyVzoMjb6dVK4": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 3.6,
+      "date": "2018-09-28",
+      "description": "",
+      "type": "Food"
+    },
+    "-LNTpccutDxnzbSAtpp4": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 29.8,
+      "date": "2018-09-27",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LNY01guoj3uftqZ3w59": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 10,
+      "date": "2018-09-29",
+      "description": "Kidsstop",
+      "type": "Entertainment"
+    },
+    "-LNZfG-3PQvMNbUC4C-9": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 100.5,
+      "date": "2018-09-29",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LNfC9lABQE2WMQ8xMqv": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20,
+      "date": "2018-09-30",
+      "description": "Cash card top up",
+      "type": "Others"
+    },
+    "-LOaDPCFwg1l3-8gEwuW": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 68.15,
+      "date": "2018-08-25",
+      "description": "",
+      "type": "Food"
+    },
+    "-LOaDjy8tYOs0f5uiwr-": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 9.45,
+      "date": "2018-09-02",
+      "description": "",
+      "type": "Food"
+    },
+    "-LOaE-SNYOXrIvQQOBAX": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 15.65,
+      "date": "2018-09-05",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LOaE33TiyPrKnOMkIP6": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-10-01",
+      "description": "",
+      "type": "Household"
+    },
+    "-LOaE5-XOCUemLK4Eaxw": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2018-10-08",
+      "description": "",
+      "type": "Household"
+    },
+    "-LOaEXNBRFB5WmuL4HqL": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2018-08-01",
+      "description": "M1 Fibre",
+      "type": "Utilities"
+    },
+    "-LOaEXNL-KdCSh-hgd5R": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2018-09-01",
+      "description": "M1 Fibre",
+      "type": "Utilities"
+    },
+    "-LOaEXNRwF_DF-4YFgM_": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2018-10-01",
+      "description": "M1 Fibre",
+      "type": "Utilities"
+    },
+    "-LOaEXNXn2gd48FqhiIr": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2018-11-01",
+      "description": "M1 Fibre",
+      "type": "Utilities"
+    },
+    "-LOaEXNbDTMRjbKw2gPp": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2018-12-01",
+      "description": "M1 Fibre",
+      "type": "Utilities"
+    },
+    "-LOaEXNgK_cp4iWBI2tX": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2019-01-01",
+      "description": "M1 Fibre",
+      "type": "Utilities"
+    },
+    "-LOaEXNmXUrrRnhUXiyG": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2019-02-01",
+      "description": "M1 Fibre",
+      "type": "Utilities"
+    },
+    "-LOaEXNsYUp7zeDbgaiS": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2019-03-01",
+      "description": "M1 Fibre",
+      "type": "Utilities"
+    },
+    "-LOaEXO7NWJEPBP7PiYn": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2019-04-01",
+      "description": "M1 Fibre",
+      "type": "Utilities"
+    },
+    "-LOaEXOBTfBXPqUivu9R": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2019-05-01",
+      "description": "M1 Fibre",
+      "type": "Utilities"
+    },
+    "-LOaEXOFHmURfyOI4brQ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2019-06-01",
+      "description": "M1 Fibre",
+      "type": "Utilities"
+    },
+    "-LOaEXOL1YCBWRNY9ELG": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2019-07-01",
+      "description": "M1 Fibre",
+      "type": "Utilities"
+    },
+    "-LOaEdRXWGmYYy9qibC7": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 34.58,
+      "date": "2018-10-12",
+      "description": "",
+      "type": "Household"
+    },
+    "-LOaEj4C1bRCq-toWocl": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5.8,
+      "date": "2018-09-08",
+      "description": "Kiddy palace",
+      "type": "Household"
+    },
+    "-LOaFKdf7Y8omi8azxvE": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 37.01,
+      "date": "2018-09-19",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LOaFPhMYT_vy3tOMoXu": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 15.5,
+      "date": "2018-09-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-LOaFWVGR7FeIZCdL6U3": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 0.95,
+      "date": "2018-09-11",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LOaFeknsG6m22GkzoeV": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 7.7,
+      "date": "2018-09-09",
+      "description": "",
+      "type": "Food"
+    },
+    "-LOaFjleoiW1InjoAkGr": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 22.9,
+      "date": "2018-09-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-LOku5oeLw906q-TsRvn": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 44,
+      "date": "2018-10-12",
+      "description": "",
+      "type": "Food"
+    },
+    "-LOkuFlg4_O4vzqWV2zL": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 7.2,
+      "date": "2018-10-14",
+      "description": "Breakfast",
+      "type": "Food"
+    },
+    "-LOl9oqIrF-1p0qX4Yxf": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 54.75,
+      "date": "2018-10-14",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LOrVgvqnSdW9y6vpauW": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 23,
+      "date": "2018-10-15",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LP19Vevk7cnfzWPWioE": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5.5,
+      "date": "2018-10-17",
+      "description": "Fire insurance",
+      "type": "Household"
+    },
+    "-LPNv3gpL4uFpS5pMeP3": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2018-10-22",
+      "description": "",
+      "type": "Household"
+    },
+    "-LP_bJmtpwLmC2n_jtJW": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 7.6,
+      "date": "2018-10-24",
+      "description": "",
+      "type": "Food"
+    },
+    "-LPnq_FmOOW4MT32VtNk": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 14.1,
+      "date": "2018-10-27",
+      "description": "",
+      "type": "Food"
+    },
+    "-LPnqbkAliLnxXj05_L-": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 44.9,
+      "date": "2018-10-27",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LPsAbTNqLYg4WVIVcGY": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 77,
+      "date": "2018-10-28",
+      "description": "",
+      "type": "Food"
+    },
+    "-LPx4bMYd3xv6DgYOdy4": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-10-29",
+      "description": "",
+      "type": "Household"
+    },
+    "-LPy_rSvLpNW6lOIoAUq": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 30.17,
+      "date": "2018-10-29",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LQORxy8bp74nmiXodpw": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 21.95,
+      "date": "2018-11-03",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LQOS1a2AeAb3f7MxSUi": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 213.9,
+      "date": "2018-11-03",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LQOS7Z1rTVqYHv7Dgap": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 7.56,
+      "date": "2018-10-17",
+      "description": "",
+      "type": "Food"
+    },
+    "-LQOZMe4RF-77e5OqpgE": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 49.81,
+      "date": "2018-11-03",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LQYAcNRm7t9m3KUqY54": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2018-11-05",
+      "description": "",
+      "type": "Household"
+    },
+    "-LR1ri-DWjrr4ARAry1j": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-11-12",
+      "description": "",
+      "type": "Household"
+    },
+    "-LR6Rz1xtWJ7d-WFAgaO": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 78,
+      "date": "2018-11-11",
+      "description": "Camera",
+      "type": "Household"
+    },
+    "-LR6S2ZTHm-ok27YCjWV": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 49.5,
+      "date": "2018-11-11",
+      "description": "Sofa cover",
+      "type": "Household"
+    },
+    "-LRGVnCDVQ-bZSXS_wf8": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20,
+      "date": "2018-11-14",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LRUsP6zrhG7-38usb7c": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 25.05,
+      "date": "2018-11-17",
+      "description": "",
+      "type": "Household"
+    },
+    "-LR_Tc3LDE66DEiqZXqp": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 37.66,
+      "date": "2018-11-18",
+      "description": "",
+      "type": "Food"
+    },
+    "-LR_nAtn2FnTLqeG_nD-": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 88.2,
+      "date": "2018-11-18",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LRb9opFJoGCGWkshGhZ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2018-11-19",
+      "description": "",
+      "type": "Household"
+    },
+    "-LS8BussdT86rkLeNNxM": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 15.31,
+      "date": "2018-11-25",
+      "description": "",
+      "type": "Food"
+    },
+    "-LS8p2DXWAPRHW--LXpm": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 56.91,
+      "date": "2018-11-25",
+      "description": "Baby swaddle, nasal aspirator",
+      "type": "Household"
+    },
+    "-LS8pBQD60mYsUBkAWEL": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 127.95,
+      "date": "2018-11-25",
+      "description": "Mattress protector",
+      "type": "Household"
+    },
+    "-LS9BZMrjRpk-Ps0puHd": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 46.57,
+      "date": "2018-11-25",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LSC71xco3ByUONiIRtl": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-11-26",
+      "description": "",
+      "type": "Household"
+    },
+    "-LSPm40RGlR57ePuSerb": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 83.05,
+      "date": "2018-11-28",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LShmXuvrE2iSCoPwO5C": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 49.68,
+      "date": "2018-12-02",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LSj_VD_sbKn0YjhtT1m": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2018-12-03",
+      "description": "",
+      "type": "Household"
+    },
+    "-LTAeFCze0LgDXtTpUUR": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 47.81,
+      "date": "2018-12-08",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LTMOHJUtpGesQzIBlz1": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7.8,
+      "date": "2018-12-10",
+      "description": "",
+      "type": "Household"
+    },
+    "-LTpU19J-Wbq_PmJo_pt": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-12-16",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUKZjJIggMiVGgIPH0P": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 16.8,
+      "date": "2018-12-22",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUU-e9906i6eOTnP_EA": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2018-12-10",
+      "description": "",
+      "type": "Household"
+    },
+    "-LUU-gSc6UCzMRUt4R4-": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2018-12-24",
+      "description": "",
+      "type": "Household"
+    },
+    "-LUZpayXNrJErIvOVhJU": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39.07,
+      "date": "2018-12-25",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUmEI0WTpnw0t-uwu8s": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 12.86,
+      "date": "2018-12-28",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUy5fir9bMmdwmT7E5J": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 8,
+      "date": "2018-09-22",
+      "description": "Jurong Bird Park",
+      "type": "Entertainment"
+    },
+    "-LUy67XW_AHVlkJYlFR4": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 22.3,
+      "date": "2018-09-27",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUy6P9flRWPrW99dy_4": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 21.8,
+      "date": "2018-09-30",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUy9IfC52PtT0u0A4pX": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 43.78,
+      "date": "2018-10-01",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUy9Yfniwj2Xx7EUCV-": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 86.16,
+      "date": "2018-10-04",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUy9i_0OiVdp8LyVV8X": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 2.2,
+      "date": "2018-10-05",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUyAOG_cWYtnQsY8vXm": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 24.6,
+      "date": "2018-10-17",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-LUyATYhGQuP8s1TRwPm": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 53.55,
+      "date": "2018-10-16",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUyAajUYYBeNIhZ01xx": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 77.08,
+      "date": "2018-10-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUyAfA0zlDXr5iXECfp": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 2.6,
+      "date": "2018-12-30",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUyAjgvPQomt7ZwT9tX": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 37.56,
+      "date": "2018-10-10",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUyB-PRyBy4SX4rIqyi": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 67.9,
+      "date": "2018-10-09",
+      "description": "",
+      "type": "Household"
+    },
+    "-LUyB5jkR1BcxJxoyPc7": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 77.35,
+      "date": "2018-10-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUyBBapH9BDGqrrRZpN": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 7.75,
+      "date": "2018-10-05",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUyC8fhpZ1IkJ7B2rZ6": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 39.82,
+      "date": "2018-10-22",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUyCSzTm933LW7D1eiQ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 49.81,
+      "date": "2018-11-06",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUyD3QWc8N3rwtn-yfP": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 6.4,
+      "date": "2018-11-19",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-LUyFB4nEQXGcUInubxg": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 88.2,
+      "date": "2018-11-19",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUyFJPnq2CFeZUvr6Xq": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 48.5,
+      "date": "2018-11-18",
+      "description": "Kidstop membership",
+      "type": "Entertainment"
+    },
+    "-LUyFW4dpt_l-nnOB1NO": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 2.8,
+      "date": "2018-11-14",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUyFaiakgzfIDmgKSkU": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 59.32,
+      "date": "2018-11-12",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUyGJcG_Czhj6GYjngf": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 6.3,
+      "date": "2018-11-21",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUyGQuXLTyEq3dWK2Bp": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 46.57,
+      "date": "2018-11-26",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUyGgZ8HxFemg3xpujW": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 2.9,
+      "date": "2018-11-10",
+      "description": "Kiddy Palace",
+      "type": "Household"
+    },
+    "-LUyGt6l56FPcfmkXYgX": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 8,
+      "date": "2018-10-21",
+      "description": "Jurong Bird Park",
+      "type": "Entertainment"
+    },
+    "-LUyH9WpdZHYPMMD4ie9": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 30,
+      "date": "2018-11-17",
+      "description": "Hongkai's clothes",
+      "type": "Household"
+    },
+    "-LUyHdGB1WYvWPryRn1-": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 77.49,
+      "date": "2018-11-26",
+      "description": "Molly Apparel",
+      "type": "Household"
+    },
+    "-LUyHl0mlaQ48kplq3BS": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 6.45,
+      "date": "2018-11-27",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-LUyHqt6UupmR2LkmtX2": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 14.6,
+      "date": "2018-11-28",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-LUyHw4E7vGvrzAZe3DK": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 17.8,
+      "date": "2018-12-01",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUyIFS7dmmgn7Bt_6JC": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 48.69,
+      "date": "2018-12-19",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUyIInFmjQnuWjN9cRk": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 15.5,
+      "date": "2018-12-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUyIN1kGUEH3szBKjU3": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 14.75,
+      "date": "2018-12-15",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LUyITQVeeV9axr4fjf8": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 74.9,
+      "date": "2018-12-12",
+      "description": "",
+      "type": "Household"
+    },
+    "-LUyIYZrbjeGI9UWXIUF": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5,
+      "date": "2018-12-07",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUyIdIr7g2A_lPmsbhA": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 26.49,
+      "date": "2018-12-08",
+      "description": "",
+      "type": "Food"
+    },
+    "-LUyIjslg5q4-61KFuIY": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 46.21,
+      "date": "2018-12-08",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LV1ZZKo9oVgGdFBo9Q9": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 26.95,
+      "date": "2018-12-31",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LV5ywjjQUbqYy4Q349L": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 12,
+      "date": "2019-01-01",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LVBuYVUVmzJRkQeuxZ4": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 33.6,
+      "date": "2019-01-02",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LVHvnlUEKocNMaGADE-": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 12,
+      "date": "2019-01-03",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LVT5STXR-HaRS0OPNex": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 54.65,
+      "date": "2019-01-05",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LVTM-7E8ZxY5Dqn3y9F": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 30,
+      "date": "2019-01-05",
+      "description": "Confinement nanny work permit",
+      "type": "Household"
+    },
+    "-LV_cZ9beoDCWKvECZu1": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 100,
+      "date": "2019-01-07",
+      "description": "Name consultation",
+      "type": "Others"
+    },
+    "-LV_eZDCDx3stTPe_d19": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 10.25,
+      "date": "2019-01-07",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LV_f65OAjTUMnN80l-R": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 30,
+      "date": "2019-01-07",
+      "description": "Nanny permit",
+      "type": "Household"
+    },
+    "-LVbyfFkaD4QgOCuB14i": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 15.64,
+      "date": "2019-01-07",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LVjy4ty58EmLrq-hguN": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 11.1,
+      "date": "2019-01-09",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LVlQL3mmFpg-uPfJ20V": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 14,
+      "date": "2019-01-09",
+      "description": "",
+      "type": "Travel"
+    },
+    "-LVltrLvo_2JY_qD_gDN": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 12,
+      "date": "2019-01-09",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LVpCM50thcrVKpgmvdV": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 59,
+      "date": "2019-01-10",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LVqSahpSxi66jPMvr7O": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 13.2,
+      "date": "2019-01-10",
+      "description": "",
+      "type": "Household"
+    },
+    "-LVqW-0nMAwlQSF0S46w": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 4,
+      "date": "2019-01-10",
+      "description": "",
+      "type": "Household"
+    },
+    "-LVqXJ6iRhXkM7r2AG2D": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 8.9,
+      "date": "2019-01-10",
+      "description": "",
+      "type": "Household"
+    },
+    "-LVqZCk7jqdDtXT46lqN": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 4.2,
+      "date": "2019-01-10",
+      "description": "",
+      "type": "Food"
+    },
+    "-LVuIT5a09vRLY0egQd9": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 17.78,
+      "date": "2019-01-10",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LVwD_XhIc7jH8RFrwFn": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 13.6,
+      "date": "2019-01-11",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LW8le4livKh8IPUQF5C": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 30.6,
+      "date": "2019-01-14",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LWASCG3IrGruTD4FEUi": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 19.9,
+      "date": "2019-01-14",
+      "description": "",
+      "type": "Household"
+    },
+    "-LWATgXTXo7n0f7DS1ZG": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 57.8,
+      "date": "2019-01-14",
+      "description": "SD cards",
+      "type": "Household"
+    },
+    "-LWAVT2XTcIQ-6CPN8zN": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5.8,
+      "date": "2019-01-14",
+      "description": "",
+      "type": "Food"
+    },
+    "-LWZENyaevdU3cLKMCcV": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 8.36,
+      "date": "2019-01-19",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LWdNcE-8XNDxanxis8y": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 65.97,
+      "date": "2019-01-20",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LWnKQgyJnpIONRupfpP": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 44.86,
+      "date": "2019-01-22",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LWt2EKM5MafN7Y2YHXn": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 55.8,
+      "date": "2019-01-23",
+      "description": "",
+      "type": "Food"
+    },
+    "-LY4P6F9QNKG_M2QinJA": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 49.37,
+      "date": "2019-02-07",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LYFMig94EXnwAZU18YJ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 11,
+      "date": "2019-02-09",
+      "description": "",
+      "type": "Food"
+    },
+    "-LYaFkjqWC71yjFKLt7s": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 68.3,
+      "date": "2019-02-13",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LYdpyfBRAcuWRsz76PZ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 12,
+      "date": "2019-02-14",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LYkUFQstzjUjhQuD5wL": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2019-02-11",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-LYkUM1K1uiUYlXnqdOG": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 80,
+      "date": "2019-01-28",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-LYkUR5OIbftJCVpxhyx": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 7.4,
+      "date": "2018-12-21",
+      "description": "",
+      "type": "Food"
+    },
+    "-LYkUW7-BRV0Hp8XG3TG": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 54.3,
+      "date": "2018-12-23",
+      "description": "",
+      "type": "Household"
+    },
+    "-LYkUaSa3iRzhG_I-kSt": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 217.25,
+      "date": "2018-12-23",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LYkUfs48qJhPGij09HY": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 48.02,
+      "date": "2018-12-23",
+      "description": "",
+      "type": "Food"
+    },
+    "-LYkUjo7SFbh2hahHfPK": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 9.8,
+      "date": "2018-12-23",
+      "description": "",
+      "type": "Food"
+    },
+    "-LYkUnjTcvn1JGNdNZK6": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 2.2,
+      "date": "2018-12-24",
+      "description": "",
+      "type": "Food"
+    },
+    "-LYkUtJ53E-B1bHE6cRj": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 39.4,
+      "date": "2019-02-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-LYkV3pEbv1ESxYOvyhA": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 24.85,
+      "date": "2018-12-29",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LYkV9ds7FW1CqWzvxzD": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 70.11,
+      "date": "2018-12-30",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-LYkVaM7EX-D-HwsCEdZ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 40.08,
+      "date": "2019-01-12",
+      "description": "",
+      "type": "Household"
+    },
+    "-LYqQFQxFy6zAuJeqkw-": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 46.73,
+      "date": "2019-02-16",
+      "description": "",
+      "type": "Food"
+    },
+    "-LZkB9u2kWX8aBzav5X9": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 68.32,
+      "date": "2019-02-27",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-L_67l_CfnhxytGrPWqd": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2019-02-25",
+      "description": "",
+      "type": "Household"
+    },
+    "-L_7I0mqLnmovZG-n8xB": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7.1,
+      "date": "2019-03-04",
+      "description": "",
+      "type": "Food"
+    },
+    "-L_bFMKauBlzs-pH0uwP": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 31,
+      "date": "2019-03-10",
+      "description": "",
+      "type": "Food"
+    },
+    "-L_eIQTlyVc9DX49A8Xh": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 59.89,
+      "date": "2019-03-11",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-La3yC7jniI14HkGOs1M": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 47.1,
+      "date": "2019-03-16",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LaTG22FNjpwJvBtT_qC": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 14,
+      "date": "2019-03-21",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LaTXXlAUsF1jX3FTOk6": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 54.57,
+      "date": "2019-03-21",
+      "description": "",
+      "type": "Food"
+    },
+    "-LaTkDOtPK3blZ-4ZsDi": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 9,
+      "date": "2019-03-21",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LbDNkqwUVdw9qhUuuJi": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 149.01,
+      "date": "2019-03-30",
+      "description": "",
+      "type": "Food"
+    },
+    "-LbGtZdEjIGoNB08twna": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 40,
+      "date": "2019-03-31",
+      "description": "",
+      "type": "Food"
+    },
+    "-LbGvIv29YzvTXXs9VBT": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 43.8,
+      "date": "2019-03-31",
+      "description": "",
+      "type": "Food"
+    },
+    "-LbqUTF3vQyzaKQ-7hci": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 55.9,
+      "date": "2019-04-07",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lc46yj1RRxfn22hEkvv": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 73.71,
+      "date": "2019-04-10",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LcP_NGFwhRBjOShggEU": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7.2,
+      "date": "2019-04-14",
+      "description": "",
+      "type": "Food"
+    },
+    "-LdDyNrxhXuA2TqJp8Eg": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 3.8,
+      "date": "2019-04-24",
+      "description": "",
+      "type": "Food"
+    },
+    "-LdJ4Zqn-Wss8QR8y-yi": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 4.8,
+      "date": "2019-04-25",
+      "description": "",
+      "type": "Food"
+    },
+    "-LdRgmzQjuFRVlDdnBYj": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 52.36,
+      "date": "2019-04-27",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LdX7IUqQwFN7dTVtPkw": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 4.5,
+      "date": "2019-04-28",
+      "description": "",
+      "type": "Food"
+    },
+    "-Le5Oz0X2rgHycdHn5RN": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 37.55,
+      "date": "2019-05-05",
+      "description": "",
+      "type": "Food"
+    },
+    "-LeCZtm3s_E-6FDzO0QF": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 4.8,
+      "date": "2019-05-06",
+      "description": "",
+      "type": "Others"
+    },
+    "-LeaIhUBnwOi_ComP1Yi": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 19.9,
+      "date": "2019-05-11",
+      "description": "",
+      "type": "Food"
+    },
+    "-LfDgtqlyhcKO_-JK9Q4": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 41.9,
+      "date": "2019-05-19",
+      "description": "",
+      "type": "Food"
+    },
+    "-LfU6PBSilev1vL0PTnN": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 3.6,
+      "date": "2019-05-22",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lfh05OV2YIKx2TKD1WY": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 33.9,
+      "date": "2019-05-25",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lfh1vgdFpPDy4a-WdBE": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20.12,
+      "date": "2019-05-25",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lfmb5YLxISRwVKYJ7ss": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 17.2,
+      "date": "2019-05-26",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lfna_PMd6UuoWKCMU5r": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20.6,
+      "date": "2019-05-26",
+      "description": "",
+      "type": "Food"
+    },
+    "-LfqZRRgVWqccjOP2qKZ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 62.76,
+      "date": "2019-05-27",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LfwGkY-nYTUA2qc0hoq": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 47,
+      "date": "2019-05-27",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-LfwGo3AezYJFA9HXH5r": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 3.92,
+      "date": "2019-05-27",
+      "description": "",
+      "type": "Food"
+    },
+    "-LfxAzY-I2HTV6ylq0VV": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 4.53,
+      "date": "2019-05-28",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-Lfyc0O9CWO60vzcZJL9": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 18.77,
+      "date": "2019-05-28",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-Lg0gJv8m5CpO1Ki1pHV": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2019-02-18",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lg0gPOzi-weTjri8irP": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2019-03-04",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lg0gW4CMPF_tL4gNe6E": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2019-05-27",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lg0gbOG544TPgU6owmF": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2019-05-13",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lg0ge0mu8-J6tvMd5c9": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2019-05-06",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lg0ghdD6OwMlJPO7T5T": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2019-04-29",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lg0gk_d5qoIV1tA52lW": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2019-04-22",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lg0gojD9vJdDbFRFXN8": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2019-04-15",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lg0iEkfTD_12_c65fsy": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2019-04-01",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lg0iTUgpdN8DITCxsq2": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2019-03-11",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lg0iYa22VQGvVOzResZ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2019-03-18",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lg0iaMYLb_Mh-cRQclS": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2019-03-25",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lg0jj4STs7dIz0Hu9Xv": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 1183.96,
+      "date": "2019-01-21",
+      "description": "Hongjun's full month celebration",
+      "type": "Entertainment"
+    },
+    "-Lg0jugTquG5q2hZMZ9J": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 188.31,
+      "date": "2019-05-29",
+      "description": "Qoo10",
+      "type": "Household"
+    },
+    "-Lg0k2NjLtN5VA3cu2dU": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 48.75,
+      "date": "2019-01-24",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0kFWczylaDDPY0AXf": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 42.41,
+      "date": "2019-01-25",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0kKzAzxZRx43QCJj2": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 8.55,
+      "date": "2019-01-30",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0kRs9VjU6j3Rufm-P": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 2.3,
+      "date": "2019-01-31",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0kXvn8h5dW1vVyTt0": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 216.5,
+      "date": "2019-02-07",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0kcAEcHxqRgd6xLNs": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 45.54,
+      "date": "2019-03-13",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0kiTY8vDxQeUJOzKn": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 26.3,
+      "date": "2019-02-14",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0krSIakxhlf2Is34b": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5.2,
+      "date": "2019-02-16",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0kz5lHKjJwQ4JVecb": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 42.43,
+      "date": "2019-02-18",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0l5W0XP96CB-P2gzY": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 62.71,
+      "date": "2019-02-19",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lg0lBkbiStIjbJDEQ8F": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50.73,
+      "date": "2019-02-21",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0lcAslsj_mofsZ33t": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 6.8,
+      "date": "2019-02-23",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0lhtA26FSJbzgsGGb": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 10.7,
+      "date": "2019-02-23",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lg0lqnwzAN6CVFCcvSv": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 77,
+      "date": "2019-02-27",
+      "description": "KKH",
+      "type": "Healthcare"
+    },
+    "-Lg0lx0RCZ8iPjlSVXNd": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 39.11,
+      "date": "2019-02-28",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0mNMUdoatuochXYAE": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 29.47,
+      "date": "2019-03-06",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lg0mQycJGJQfAPP4ZpX": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 4.8,
+      "date": "2019-03-09",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0pjKW-yUpNO5xuawa": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 48.26,
+      "date": "2019-03-09",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0ppZwGrd7vJABDe81": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 43.39,
+      "date": "2019-03-11",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0puboQKnoBY4b6Aka": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 69.9,
+      "date": "2019-03-14",
+      "description": "Diapers",
+      "type": "Household"
+    },
+    "-Lg0q-kLKHYkWRPzCWH8": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5.34,
+      "date": "2019-03-13",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lg0q98BaW8TfIcO341P": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 211.2,
+      "date": "2019-05-15",
+      "description": "Fire insurance",
+      "type": "Utilities"
+    },
+    "-Lg0qJqESzFjXhfSW6Tg": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 72.97,
+      "date": "2019-03-17",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0rXajXzt7N_WCuEWi": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 47.13,
+      "date": "2019-03-17",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0sofhhhKqB_0cqKx0": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 63.55,
+      "date": "2019-03-23",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0szfo-3h7WqqD5Ov8": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 7.74,
+      "date": "2019-03-23",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lg0t76uvSMMOKuiUCkZ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 65.8,
+      "date": "2019-03-24",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0tFco7HwmhL9BEXKF": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 49.8,
+      "date": "2019-03-31",
+      "description": "Hongkai's bday cake",
+      "type": "Entertainment"
+    },
+    "-Lg0tOG5SC2PqB908lb1": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 128.79,
+      "date": "2019-03-31",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0tSS8_8UJab_VVsS3": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 2.95,
+      "date": "2019-03-31",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lg0uGGXL4sMI5V2ctrZ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 49.23,
+      "date": "2019-03-31",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0uQCG0gwH5B-iL0OS": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 8,
+      "date": "2019-04-07",
+      "description": "",
+      "type": "Entertainment"
+    },
+    "-Lg0ucN2p_F58JJI8ZwL": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 27.03,
+      "date": "2019-04-08",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0uh5upZpLnL9Adzoz": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 12,
+      "date": "2019-04-08",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0umb4npGWjQWj_nos": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 23.75,
+      "date": "2019-04-09",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-Lg0utHCHsNdFLT-LymF": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 13.3,
+      "date": "2019-04-10",
+      "description": "Gifts for Hongkai",
+      "type": "Entertainment"
+    },
+    "-Lg0uyn21lXL-PCP5Nn_": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 25.19,
+      "date": "2019-04-11",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0v389QlhM43Le9jpq": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 45.59,
+      "date": "2019-04-14",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0vDqOWkyAezWmXYVG": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 27,
+      "date": "2019-04-20",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0vMvGnz0IZxms9i3J": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 900,
+      "date": "2019-04-19",
+      "description": "",
+      "type": "Entertainment"
+    },
+    "-Lg0vSZx6MN5Ixl4uLgk": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 16.97,
+      "date": "2019-04-23",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0vZw8StNJ6mX5XHuQ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 27.64,
+      "date": "2019-04-25",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0vdaQq0bYXhIuhkZP": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 56.57,
+      "date": "2019-04-23",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0vkSbTWfie_CQywlr": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 93.6,
+      "date": "2019-04-28",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lg0vqLwX7LVA924Nxuv": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 56.01,
+      "date": "2019-04-28",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0vvumC4U99-Ikuk1v": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 9.8,
+      "date": "2019-04-30",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0w-eiIJqvjLdz9PQg": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 120,
+      "date": "2019-05-02",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-Lg0w5cPtUVOXM0UBiZh": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5.3,
+      "date": "2019-05-02",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lg0wA7vmNP2I3VwpEd9": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5.75,
+      "date": "2019-05-02",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0wGhM22JiJnKSMvLy": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 67.16,
+      "date": "2019-05-05",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0wPiQ-1Oc2R2rGzlo": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 49.9,
+      "date": "2019-05-04",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lg0wdj90M7QULUcaddq": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 16.97,
+      "date": "2019-05-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0wi7Nz0OipvueLre0": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 12.9,
+      "date": "2019-05-29",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lg0wnqmYBEfrxospPWy": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 3.9,
+      "date": "2019-05-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg0wsVVtK44mbG6bbcS": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 8.5,
+      "date": "2019-05-14",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0wwco7PUvR6QpA9sH": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 21.55,
+      "date": "2019-05-15",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0x0zZ1oJlPUziUghl": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 73.9,
+      "date": "2019-05-16",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lg0x5IYGXeL7v-4uyWv": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 67.02,
+      "date": "2019-05-17",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lg0xChJvzMPhb53zRv4": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 65.67,
+      "date": "2019-05-20",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lg0xQ2Li2Oj9lip1nXo": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 72,
+      "date": "2019-04-17",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-Lg0xVZ5tdjwKnJ_QKTr": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 25.7,
+      "date": "2019-04-19",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lg1yz8rm8YFFrgQlZtk": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 2.3,
+      "date": "2019-05-29",
+      "description": "",
+      "type": "Food"
+    },
+    "-LgGLhfROB5pgslU6OM3": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 31.3,
+      "date": "2019-06-01",
+      "description": "",
+      "type": "Food"
+    },
+    "-LgLhlGv2LRxh_K94zgP": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 3.3,
+      "date": "2019-06-02",
+      "description": "",
+      "type": "Food"
+    },
+    "-LgRuG7rstexx62kPZNt": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 4.3,
+      "date": "2019-06-03",
+      "description": "",
+      "type": "Food"
+    },
+    "-LgeX-TGTt69ei5VwQIu": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 78.8,
+      "date": "2019-06-06",
+      "description": "Diapers",
+      "type": "Household"
+    },
+    "-LgeX2LCXWlTgs8Nl8Nb": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5,
+      "date": "2019-06-04",
+      "description": "",
+      "type": "Food"
+    },
+    "-LgfKYRk0sq8wPCej5M5": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 67.21,
+      "date": "2019-06-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-LgfPBHmwcaUdBnAO9py": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 29.8,
+      "date": "2019-06-06",
+      "description": "",
+      "type": "Household"
+    },
+    "-LgrF0NMDCjxq8jIU98R": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 70.92,
+      "date": "2019-06-08",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LgzRP5W6S9-gBu7PfQO": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 47.72,
+      "date": "2019-06-10",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-LgzRRMWKzl_lhwr4rZI": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 3.5,
+      "date": "2019-06-10",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lh-w0syR96jqWDFRLPK": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 54.99,
+      "date": "2019-06-10",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-Lh04qckFUqTDV8shGfX": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2019-06-10",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lh8pJiv5m_V6AiUNHsG": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 32.6,
+      "date": "2019-06-12",
+      "description": "Kiddy Palace",
+      "type": "Household"
+    },
+    "-LhAr_CD2Ch4sTtFt7hS": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 137.25,
+      "date": "2019-06-12",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LhArbUMaA2kIUzn5vrT": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 9.6,
+      "date": "2019-06-12",
+      "description": "",
+      "type": "Food"
+    },
+    "-LhKHn8-QWIV0zLzbfd0": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50.28,
+      "date": "2019-06-14",
+      "description": "",
+      "type": "Household"
+    },
+    "-LhLa2dO6_tbapBKoFo8": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 79.52,
+      "date": "2019-06-14",
+      "description": "Pupsik",
+      "type": "Household"
+    },
+    "-LhOR93OBGuX7E74kloV": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 22.4,
+      "date": "2019-06-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-LhVdM3-gIykAQj_oqcd": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 33.06,
+      "date": "2019-06-16",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-Lhx9v_yjoL-5qklDFKb": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 66.9,
+      "date": "2019-06-22",
+      "description": "",
+      "type": "Food"
+    },
+    "-LhxNOxhjfQ1GsiJImYd": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20.7,
+      "date": "2019-06-22",
+      "description": "",
+      "type": "Food"
+    },
+    "-Li1tXsMW4fjBju60n20": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 15,
+      "date": "2019-06-23",
+      "description": "",
+      "type": "Food"
+    },
+    "-LiIoSVnu1kM5mHjxeob": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39.49,
+      "date": "2019-06-26",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LiSN8PAbyN0sEGl1Ouw": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 4.8,
+      "date": "2019-06-28",
+      "description": "",
+      "type": "Food"
+    },
+    "-LiSNEXVSN18U4CxoR6A": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 4.95,
+      "date": "2019-06-28",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LiWPjz1WsYv7CVik3Io": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 49.43,
+      "date": "2019-06-29",
+      "description": "",
+      "type": "Food"
+    },
+    "-LiaMeZOlM2xEGQk-VWs": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 61.76,
+      "date": "2019-06-30",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LiblfCCRjlTcwpd-Msf": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 19.6,
+      "date": "2019-06-30",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lihd1mhGEU_QNQAh_2c": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 15.98,
+      "date": "2019-07-01",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lihd62i37CAtRm6wir9": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 66,
+      "date": "2019-07-01",
+      "description": "Ear thermometer",
+      "type": "Household"
+    },
+    "-LikASgPK-2f-gs_s9kM": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 56.5,
+      "date": "2019-07-02",
+      "description": "Diapers",
+      "type": "Household"
+    },
+    "-LisY6bp4Ads3k9wx27K": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 20,
+      "date": "2019-07-03",
+      "description": "",
+      "type": "Entertainment"
+    },
+    "-LisYApAqf7x2Lx89w3d": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 4.1,
+      "date": "2019-07-03",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lj5Ii_nKt494fwU3BAW": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2019-07-01",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lj5LXrl-ILKC3lLDgEU": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2019-05-20",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lj5LdBNPsxsD7-sLhNt": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2019-06-03",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lj5LoEAbXe_8k7OPQTC": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 60,
+      "date": "2019-06-17",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lj5LvKYw4en0slEfLcJ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2019-06-24",
+      "description": "Cleaner",
+      "type": "Household"
+    },
+    "-Lj5hm4N6FmQyKQhu2uN": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 18.01,
+      "date": "2019-07-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lj9hrbFZJYjCVMHH5fk": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 22.9,
+      "date": "2019-07-07",
+      "description": "",
+      "type": "Food"
+    },
+    "-LjEhZGTi61_rVRhfo5Z": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2019-07-08",
+      "description": "",
+      "type": "Household"
+    },
+    "-LjLNr3rbGI9MLEZxGUC": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 52.46,
+      "date": "2019-07-09",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LjaxPQCdJ0ok37J9vHI": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 59.09,
+      "date": "2019-07-13",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LjfFUCHzxOFoRo5d3ki": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 22.2,
+      "date": "2019-07-13",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lji_NhhQ5UUvJ5qlidb": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 13.6,
+      "date": "2019-07-14",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lji_QnUzePV1-hH2viy": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2019-07-15",
+      "description": "",
+      "type": "Household"
+    },
+    "-LjpWpUkHrsrPxFyt22H": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 12.7,
+      "date": "2019-07-15",
+      "description": "",
+      "type": "Household"
+    },
+    "-LjpYir9M1upXk-53pzU": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7.4,
+      "date": "2019-07-15",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LkDe7MYhkphKAtv0iFS": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 6.28,
+      "date": "2019-07-20",
+      "description": "Iherb",
+      "type": "Groceries"
+    },
+    "-LkJpRS7OnwpmSWJG3ot": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 29.4,
+      "date": "2019-07-21",
+      "description": "",
+      "type": "Food"
+    },
+    "-LkJpTs2XSICOo5O-niv": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 65.69,
+      "date": "2019-07-21",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LkJpW7tCyhwLBpMxzr0": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 7.9,
+      "date": "2019-07-21",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LkLsp9uTPpUZZVXiVD0": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2019-07-22",
+      "description": "",
+      "type": "Household"
+    },
+    "-LkNg-8F7YlVZtqcB-7k": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 15,
+      "date": "2019-07-22",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LkTF3nQTtsXMZRxVT_R": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 3.6,
+      "date": "2019-07-23",
+      "description": "",
+      "type": "Food"
+    },
+    "-LkXjBWYLcBBGa7U5AYB": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 16,
+      "date": "2019-07-24",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-LkXrzs8p1jHyumzyEmk": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 17,
+      "date": "2019-07-24",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LkXs0RWCb6NiDaXEQSQ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 14,
+      "date": "2019-07-24",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LkhqREEGOO03eKOCcjk": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 6.3,
+      "date": "2019-07-26",
+      "description": "",
+      "type": "Food"
+    },
+    "-LkiI1T4Z4a5DNud_NJ7": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 18.62,
+      "date": "2019-07-26",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LklyixzqFXfRD7wNHpK": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 30.01,
+      "date": "2019-07-27",
+      "description": "",
+      "type": "Food"
+    },
+    "-LklylmMRLHdxPCeSeYS": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 41.35,
+      "date": "2019-07-27",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LkqPGQrFv0I7iXuFlRA": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20,
+      "date": "2019-07-28",
+      "description": "",
+      "type": "Transport"
+    },
+    "-Lky2YRCGuOVSw2EvlY5": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 28.95,
+      "date": "2019-07-29",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LlLtUx8xWaFUmGlTgj7": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 23.1,
+      "date": "2019-08-03",
+      "description": "",
+      "type": "Food"
+    },
+    "-LlPqFUY397G9-N3wrFc": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 17.5,
+      "date": "2019-08-04",
+      "description": "",
+      "type": "Food"
+    },
+    "-LlQXehQc7hIfggdylVP": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 80.48,
+      "date": "2019-08-04",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LlSGWQ1LtsInDpc50qR": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 15,
+      "date": "2019-08-04",
+      "description": "",
+      "type": "Food"
+    },
+    "-LlSGjqoi_O24UIf5PY3": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2019-07-29",
+      "description": "",
+      "type": "Household"
+    },
+    "-LlSGnaWnDHW06f618gL": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2019-08-05",
+      "description": "",
+      "type": "Household"
+    },
+    "-LlXYoE3diI03Q-dBKhD": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 31.1,
+      "date": "2019-08-06",
+      "description": "Nappy liner and wet bags",
+      "type": "Household"
+    },
+    "-LlfiE93UXSiFx7aKQd3": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 62.78,
+      "date": "2019-08-07",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LlospfRtrGsOxeNDdYh": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 42.2,
+      "date": "2019-08-09",
+      "description": "",
+      "type": "Food"
+    },
+    "-LlupOdeRDv8KYbA3_KZ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 12.3,
+      "date": "2019-08-10",
+      "description": "",
+      "type": "Food"
+    },
+    "-LlzDLfn7Q06KEmIKsZv": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 106,
+      "date": "2019-08-11",
+      "description": "",
+      "type": "Food"
+    },
+    "-LlzYCOrgE10nFIjcNjJ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 68.19,
+      "date": "2019-08-11",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lm3UzSaD3ykptotMOow": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 61,
+      "date": "2019-08-12",
+      "description": "",
+      "type": "Food"
+    },
+    "-LmJRsyt719q8NBWjkrn": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 4.1,
+      "date": "2019-08-12",
+      "description": "",
+      "type": "Food"
+    },
+    "-LmJSCqzjIkEKmtZN-gd": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 70.3,
+      "date": "2019-08-15",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-LmJXHBBy_jCtB25W_2z": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 98.34,
+      "date": "2019-08-15",
+      "description": "",
+      "type": "Household"
+    },
+    "-LmPXxrbgKzvJyINjrkV": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 16.25,
+      "date": "2019-08-16",
+      "description": "",
+      "type": "Household"
+    },
+    "-LmXdPPL8hJTH8Wtaq2B": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 51.34,
+      "date": "2019-08-18",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LmXdnUHr8FDSHNKLDan": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 44.45,
+      "date": "2019-08-18",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LmXuL8Nm6zpKlBHz_Qb": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20.1,
+      "date": "2019-08-18",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LmZ6MFBR380oV8XZQIF": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 27.6,
+      "date": "2019-08-18",
+      "description": "",
+      "type": "Food"
+    },
+    "-LmdMbWSeitVynS4w8X_": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 49.2,
+      "date": "2019-08-19",
+      "description": "",
+      "type": "Household"
+    },
+    "-Ln1QrJf3Wz7vgfGQY9Y": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 40.9,
+      "date": "2019-08-24",
+      "description": "",
+      "type": "Food"
+    },
+    "-Ln7rNB6AyHoQ1MdRamF": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5.3,
+      "date": "2019-08-25",
+      "description": "",
+      "type": "Food"
+    },
+    "-Ln7rj-u9tyGH6KRUgQD": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2019-08-19",
+      "description": "",
+      "type": "Household"
+    },
+    "-Ln86DCnnxGDsPMIG2e1": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 54.34,
+      "date": "2019-08-25",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Ln86FKLpiB641STn7nZ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 26.8,
+      "date": "2019-08-25",
+      "description": "",
+      "type": "Food"
+    },
+    "-Ln86I6-DVMxCqgDFfcx": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 28.98,
+      "date": "2019-08-25",
+      "description": "",
+      "type": "Food"
+    },
+    "-Ln8S1jcjE8FDuOHDoYv": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 54.69,
+      "date": "2019-08-25",
+      "description": "IHerb",
+      "type": "Groceries"
+    },
+    "-Ln9zAINHSrpLAhrpkPG": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2019-08-26",
+      "description": "",
+      "type": "Household"
+    },
+    "-LnIhhmNFzR0VMqYjy4g": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 51.6,
+      "date": "2019-08-27",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LnRUEg6ogdDv3EmHzNL": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 13.6,
+      "date": "2019-08-29",
+      "description": "",
+      "type": "Travel"
+    },
+    "-LnRUH4UgUlypTsYkYDS": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 8.9,
+      "date": "2019-08-29",
+      "description": "",
+      "type": "Food"
+    },
+    "-Ln_l9ahszVIeRDb2IPZ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 27.6,
+      "date": "2019-08-31",
+      "description": "",
+      "type": "Food"
+    },
+    "-LnanQ1YHKgKSjGsUV6d": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 42.61,
+      "date": "2019-08-31",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lnf0wuu1S1eFCT4LLOW": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 69.3,
+      "date": "2019-09-01",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lng1KYQXDrzyRbZ_zCO": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 48.76,
+      "date": "2019-09-01",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lo4EIVeA3Bn6gyJkT0E": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 78,
+      "date": "2019-09-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lo9M5N5FYPSXMkMp03v": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 38.84,
+      "date": "2019-09-07",
+      "description": "",
+      "type": "Food"
+    },
+    "-LoE5Yj0pEpBcHTG2cMc": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 9.9,
+      "date": "2019-09-08",
+      "description": "",
+      "type": "Food"
+    },
+    "-LoEwpnj76Y3TuuPaxL3": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 334.56,
+      "date": "2019-09-08",
+      "description": "Village hotel changi",
+      "type": "Entertainment"
+    },
+    "-LoFaWtvFRHQZ4wyVvAI": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60.47,
+      "date": "2019-09-08",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LoGCLw3DaXN3Ww5Mydm": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 44.97,
+      "date": "2019-09-08",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LoKb2_RHNjPOs7qko0P": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 3.7,
+      "date": "2019-09-09",
+      "description": "",
+      "type": "Food"
+    },
+    "-LoL5qlkag-pvyVUDHkH": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 21.89,
+      "date": "2019-09-09",
+      "description": "",
+      "type": "Household"
+    },
+    "-LoWFS_ZFIuCmTMNC9da": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 69.09,
+      "date": "2019-09-12",
+      "description": "",
+      "type": "Household"
+    },
+    "-LojGoMNZBgo0q8egwf0": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20,
+      "date": "2019-09-14",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LojGq72a9ZBSmOqNaOI": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 18.62,
+      "date": "2019-09-14",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lon0qplFEu2Ne8e1YHU": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 8.59,
+      "date": "2019-09-15",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LopK7Z_8xJpXkVIKVWk": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 47.05,
+      "date": "2019-09-15",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LopKEv9IP_Quns5dfuV": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 51.43,
+      "date": "2019-09-14",
+      "description": "",
+      "type": "Food"
+    },
+    "-LougDHu6DBdGQiRbCbO": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2019-09-02",
+      "description": "",
+      "type": "Household"
+    },
+    "-LougI-CnX9G4p_eIzyO": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2019-09-16",
+      "description": "",
+      "type": "Household"
+    },
+    "-LpI6wx4l0BB-xrfUeml": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 25.61,
+      "date": "2019-09-21",
+      "description": "",
+      "type": "Food"
+    },
+    "-LpLv0qHiGpDGWoNZbq8": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 8.5,
+      "date": "2019-09-22",
+      "description": "",
+      "type": "Food"
+    },
+    "-LpQE7TO27Yz6sIllg7V": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2019-09-23",
+      "description": "",
+      "type": "Household"
+    },
+    "-LpVe9djZJXl66YfpaIr": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 40.16,
+      "date": "2019-09-24",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lpd6eEAbiNZbYDvlkuQ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 46.22,
+      "date": "2019-09-25",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LpmKLuvEW_d0dAH3nj8": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5.4,
+      "date": "2019-09-27",
+      "description": "",
+      "type": "Food"
+    },
+    "-LppmP7yIB8XgNePvxo-": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 5.15,
+      "date": "2019-09-28",
+      "description": "",
+      "type": "Food"
+    },
+    "-LpwCmf_eveBNYHLiUHw": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 42.27,
+      "date": "2019-09-29",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LpzYjfxBaGjx3j1puqM": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 27.6,
+      "date": "2019-09-29",
+      "description": "",
+      "type": "Food"
+    },
+    "-LpzYmkAi_7Bgf2T63bZ": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50,
+      "date": "2019-09-30",
+      "description": "Part time cleaner",
+      "type": "Household"
+    },
+    "-LqGBVJuhaFjv8Dht9OS": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 22,
+      "date": "2019-10-03",
+      "description": "",
+      "type": "Food"
+    },
+    "-LqJvmFjVqw2Lf8GP69l": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 15.6,
+      "date": "2019-10-04",
+      "description": "",
+      "type": "Food"
+    },
+    "-LqM3k7WjzxB20YYQxLC": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2019-08-01",
+      "description": "M1 fiber",
+      "type": "Utilities"
+    },
+    "-LqM3k8heqONl3iLRq92": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2019-09-01",
+      "description": "M1 fiber",
+      "type": "Utilities"
+    },
+    "-LqM3kAETH0vYuWttdxA": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2019-10-01",
+      "description": "M1 fiber",
+      "type": "Utilities"
+    },
+    "-LqM3kAoHeNqkyecEiIs": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2019-11-01",
+      "description": "M1 fiber",
+      "type": "Utilities"
+    },
+    "-LqM3kBFqQbmyYvtn5xs": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2019-12-01",
+      "description": "M1 fiber",
+      "type": "Utilities"
+    },
+    "-LqM3kBbATsG-qG8wFJk": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2020-01-01",
+      "description": "M1 fiber",
+      "type": "Utilities"
+    },
+    "-LqM3kBoX1G3Ge32YVaw": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2020-02-01",
+      "description": "M1 fiber",
+      "type": "Utilities"
+    },
+    "-LqM3kC1lKB2jrCk9OAk": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2020-03-01",
+      "description": "M1 fiber",
+      "type": "Utilities"
+    },
+    "-LqM3kCQ6OcV9Uu3-eay": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2020-04-01",
+      "description": "M1 fiber",
+      "type": "Utilities"
+    },
+    "-LqM3kD1hFw9qHQ9L4tZ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2020-05-01",
+      "description": "M1 fiber",
+      "type": "Utilities"
+    },
+    "-LqM3kDDIYF8EyvjgSRT": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2020-06-01",
+      "description": "M1 fiber",
+      "type": "Utilities"
+    },
+    "-LqM3kDP8Pp7IzBQOREl": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 39,
+      "date": "2020-07-01",
+      "description": "M1 fiber",
+      "type": "Utilities"
+    },
+    "-LqU39GdaOwXsf280uEl": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 50.54,
+      "date": "2019-10-06",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LqU3BOZxKXqZqrah6-s": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 40.45,
+      "date": "2019-10-06",
+      "description": "",
+      "type": "Household"
+    },
+    "-LqUcu_6-hcn2ySGJ_v9": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 133,
+      "date": "2019-10-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-LqYV09BdH-FSPs5aNpF": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2019-10-07",
+      "description": "",
+      "type": "Household"
+    },
+    "-LqirRip0AKAlCmz_V-A": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 57.79,
+      "date": "2019-10-09",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-Lr2iaT0taskvJ0vNcpS": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 44.51,
+      "date": "2019-10-13",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lr2icJ-GzMFSVLkGtks": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 12,
+      "date": "2019-10-13",
+      "description": "",
+      "type": "Entertainment"
+    },
+    "-Lr3HWoep3jnPR57WTKC": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 56.57,
+      "date": "2019-10-13",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lr4Dc7Bz5JfSEBH_M0e": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2019-10-14",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lrb87L10ygi9MT-HxVO": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 14.1,
+      "date": "2019-10-20",
+      "description": "",
+      "type": "Food"
+    },
+    "-LriLDj7BbDhU6RckquI": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 3.8,
+      "date": "2019-10-21",
+      "description": "",
+      "type": "Food"
+    },
+    "-LrimqbzAj8CVxL6br3w": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 690,
+      "date": "2019-09-09",
+      "description": "Dining table",
+      "type": "Household"
+    },
+    "-LrmvJqbYT_ZFnIKbHHG": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 3.8,
+      "date": "2019-10-22",
+      "description": "",
+      "type": "Others"
+    },
+    "-Ls6OzuCpY7aEY1MszP9": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 32,
+      "date": "2019-10-26",
+      "description": "",
+      "type": "Food"
+    },
+    "-Ls6P9Pg3zlHLbC65clj": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20.87,
+      "date": "2019-10-26",
+      "description": "",
+      "type": "Food"
+    },
+    "-LsAbUa4OCz5GytRnLDc": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 37.9,
+      "date": "2019-10-27",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LsBz9svi9d_tondl9ag": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 15.07,
+      "date": "2019-10-26",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LsFOXA287emCSSaiOdQ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 3.3,
+      "date": "2019-10-27",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LsFPX_b7NDGWt57KJ3U": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 12,
+      "date": "2019-10-28",
+      "description": "",
+      "type": "Food"
+    },
+    "-LsLL1f3RD4XSWJkSr_N": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 118.29,
+      "date": "2019-10-29",
+      "description": "",
+      "type": "Food"
+    },
+    "-LsLMQsJ_qTZ_h7CHtyc": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 15,
+      "date": "2019-10-29",
+      "description": "",
+      "type": "Food"
+    },
+    "-LsV4f9DDW6nGEpEVpqx": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 8.7,
+      "date": "2019-10-31",
+      "description": "",
+      "type": "Household"
+    },
+    "-LsV8PApJjU6nx1IagMX": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 26.74,
+      "date": "2019-10-31",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LsXP1v3rYtE3DeYMs6c": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 145.5,
+      "date": "2019-10-31",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LsjG5dZe88dO5ig2RAh": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 33.4,
+      "date": "2019-11-03",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LsnYzth2InwhxvWxeFk": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 64.71,
+      "date": "2019-11-04",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LsnhNVicCuTy4y5sFZn": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2019-11-04",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lsw3zeL4X_phJJTh2BA": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 74.3,
+      "date": "2019-11-05",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lt8nfHa2EK8nSlYHjK-": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60.11,
+      "date": "2019-11-08",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LtIKAYL6_lVdRf9f-oe": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 16.95,
+      "date": "2019-11-10",
+      "description": "",
+      "type": "Shopping"
+    },
+    "-LtIMbu-FCv2EjmpmXjw": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20.12,
+      "date": "2019-11-10",
+      "description": "",
+      "type": "Food"
+    },
+    "-LtL98G_xJbaek2L0it3": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 53.1,
+      "date": "2019-11-11",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LtOnOCC4ZVucciWVUN-": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 259,
+      "date": "2019-11-11",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lts2TEPkp6grC_2kR7J": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 29.5,
+      "date": "2019-11-17",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lts2aqSClzZmpCjK5VX": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 35.07,
+      "date": "2019-11-16",
+      "description": "",
+      "type": "Food"
+    },
+    "-LtsZhQIchFO7r10HY7M": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 63.32,
+      "date": "2019-11-17",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LtsbMbXsxJ_cnLviu_Q": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 52.65,
+      "date": "2019-11-17",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lu7KJYbGDmg5keZbIbn": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 25.5,
+      "date": "2019-11-20",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-LuMnSdq80txeZpVbk8f": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 8.5,
+      "date": "2019-11-23",
+      "description": "",
+      "type": "Food"
+    },
+    "-LuR6jdI7BSGr6z7H86G": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 43.6,
+      "date": "2019-11-24",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LuR6lJGSPYm-raxHMMo": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 3.4,
+      "date": "2019-11-24",
+      "description": "",
+      "type": "Food"
+    },
+    "-LuR7ZzMmUn8Dw_GyE9A": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 7.35,
+      "date": "2019-11-24",
+      "description": "",
+      "type": "Food"
+    },
+    "-LuWH1xURLCZjW-syrf7": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 29.6,
+      "date": "2019-11-25",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LuWHDXHU_AZleJuVIBB": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 47.72,
+      "date": "2019-11-25",
+      "description": "",
+      "type": "Healthcare"
+    },
+    "-LueaviPW0ih64ZTcN9H": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 51.08,
+      "date": "2019-11-27",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LugM84y_uD8xtsCi1jH": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 23.11,
+      "date": "2019-11-27",
+      "description": "",
+      "type": "Food"
+    },
+    "-LurR10H-RTBS6__u3X_": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 109.17,
+      "date": "2019-11-29",
+      "description": "Microwave and camera",
+      "type": "Household"
+    },
+    "-LurTugtpJCadvg9bJwA": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 109.3,
+      "date": "2019-11-29",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LuuK3EOEICf3JMNV-NO": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 72.9,
+      "date": "2019-11-30",
+      "description": "Diapers",
+      "type": "Household"
+    },
+    "-LuuKRHpdSfnJSXYu752": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 99.34,
+      "date": "2019-11-30",
+      "description": "",
+      "type": "Household"
+    },
+    "-LuuOomN-f56h1D2DdL9": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 24.9,
+      "date": "2019-11-30",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lv-pnY9aTMA8AP1-5eI": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 9.9,
+      "date": "2019-12-01",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lv3LxPum1kO5VQQyCLy": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 43.95,
+      "date": "2019-12-02",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lv3ryGHfbUrKWD7dFhJ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 22.55,
+      "date": "2019-12-02",
+      "description": "",
+      "type": "Food"
+    },
+    "-LvMQK-8IbCXuRHRPMUd": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 31.69,
+      "date": "2019-12-06",
+      "description": "",
+      "type": "Household"
+    },
+    "-LvPqAlMciwMj4GyTRCA": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5.4,
+      "date": "2019-12-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-LvQTQ7L0SEXE0H4cjsU": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 28.6,
+      "date": "2019-12-06",
+      "description": "",
+      "type": "Food"
+    },
+    "-LvcUHmfrVH9bf4-2H8q": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2019-11-11",
+      "description": "",
+      "type": "Household"
+    },
+    "-LvcUOuOaIDuf6GTE8nP": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2019-11-18",
+      "description": "",
+      "type": "Household"
+    },
+    "-LvcUQkTNpYCWF4JjRV4": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2019-11-25",
+      "description": "",
+      "type": "Household"
+    },
+    "-LvcUVqedNdSesyvKXn3": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60,
+      "date": "2019-12-02",
+      "description": "",
+      "type": "Household"
+    },
+    "-LvcUXPVgBdFjDPjvrHQ": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2019-12-09",
+      "description": "",
+      "type": "Household"
+    },
+    "-LvlW6hKdMnaBtMlY3lx": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 56.19,
+      "date": "2019-12-11",
+      "description": "",
+      "type": "Utilities"
+    },
+    "-LvtiDlaSgBiM14lSZRU": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 6.1,
+      "date": "2019-12-12",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lvxp81ePYgoqdwEQf3l": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 18.1,
+      "date": "2019-12-13",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lw79dtm2PIRlu3XYRPa": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 40.96,
+      "date": "2019-12-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-Lw8R5NxORs05h4x6AjF": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 142,
+      "date": "2019-12-15",
+      "description": "",
+      "type": "Food"
+    },
+    "-LwCghcvotLsD4If-GKs": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50,
+      "date": "2019-12-16",
+      "description": "",
+      "type": "Household"
+    },
+    "-LwGkBmIxpSqTvOgflBi": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 749,
+      "date": "2019-10-01",
+      "description": "Hongjun chalet",
+      "type": "Entertainment"
+    },
+    "-LwHU9VPOdD5PG4LbcXc": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 38.6,
+      "date": "2019-12-17",
+      "description": "",
+      "type": "Food"
+    },
+    "-LwLohOnQhXvC5kFopY0": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 58.5,
+      "date": "2019-12-18",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-Lwb5J4YVbUzkGalcvQd": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 37.8,
+      "date": "2019-12-21",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lwb5Ks1szWOPHC81vbx": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 8.3,
+      "date": "2019-12-21",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LwbtilYsot12ZNzo6kB": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 27.6,
+      "date": "2019-12-21",
+      "description": "",
+      "type": "Food"
+    },
+    "-LwfP29gm-mwhl4yyM8q": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 62.16,
+      "date": "2019-12-22",
+      "description": "Dino clothes",
+      "type": "Household"
+    },
+    "-Lwg-YLkcBMn2eMLbSzF": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 8.9,
+      "date": "2019-12-21",
+      "description": "",
+      "type": "Household"
+    },
+    "-Lwhm7cePtbr2lJDmw0n": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20,
+      "date": "2019-12-22",
+      "description": "",
+      "type": "Transport"
+    },
+    "-LwhzB9gJvTFRI2e7Jgu": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 69.16,
+      "date": "2019-12-22",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LwiOqJ8WK_24_UGhplm": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 2.25,
+      "date": "2019-12-23",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LwqAIV5DPvNRFYieMP8": {
+      "addedBy": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 41.37,
+      "date": "2019-12-24",
+      "description": "",
+      "type": "Groceries"
+    },
+    "-LwsViKYxbGzIRpOswz6": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 823.9,
+      "date": "2019-12-24",
+      "description": "Hongjun’s buffet",
+      "type": "Food"
+    },
+    "-LwsYM_cHv2IfEh8sX6M": {
+      "addedBy": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 56,
+      "date": "2019-12-24",
+      "description": "",
+      "type": "Household"
+    },
+    "data_migration_1": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 14.65,
+      "date": "2016-12-11",
+      "type": "Food"
+    },
+    "data_migration_10": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 54.65,
+      "date": "2016-12-13",
+      "type": "Food"
+    },
+    "data_migration_100": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 68.4,
+      "date": "2017-05-28",
+      "type": "Groceries"
+    },
+    "data_migration_101": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 14.3,
+      "date": "2017-05-29",
+      "type": "Transport"
+    },
+    "data_migration_102": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 34.7,
+      "date": "2017-06-03",
+      "type": "Food"
+    },
+    "data_migration_103": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 47.2,
+      "date": "2017-06-03",
+      "type": "Groceries"
+    },
+    "data_migration_104": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 12.2,
+      "date": "2017-06-08",
+      "description": "Gripe water n others from Watsons",
+      "type": "Household"
+    },
+    "data_migration_105": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 21.3,
+      "date": "2017-06-08",
+      "description": "NTUC",
+      "type": "Groceries"
+    },
+    "data_migration_11": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 9.5,
+      "date": "2016-12-14",
+      "type": "Food"
+    },
+    "data_migration_12": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 15,
+      "date": "2016-12-14",
+      "type": "Food"
+    },
+    "data_migration_13": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 45.36,
+      "date": "2016-12-14",
+      "type": "Groceries"
+    },
+    "data_migration_14": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 40,
+      "date": "2016-12-16",
+      "type": "Gift"
+    },
+    "data_migration_15": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 27.35,
+      "date": "2016-12-16",
+      "type": "Groceries"
+    },
+    "data_migration_16": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 19.2,
+      "date": "2016-12-18",
+      "type": "Food"
+    },
+    "data_migration_17": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 52,
+      "date": "2016-12-22",
+      "type": "Food"
+    },
+    "data_migration_18": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 40.8,
+      "date": "2016-12-24",
+      "type": "Food"
+    },
+    "data_migration_19": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 9,
+      "date": "2016-12-24",
+      "type": "Transport"
+    },
+    "data_migration_2": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 17,
+      "date": "2016-12-12",
+      "type": "Transport"
+    },
+    "data_migration_20": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 52.14,
+      "date": "2017-01-12",
+      "description": "Singtel",
+      "type": "Utilities"
+    },
+    "data_migration_21": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 66.3,
+      "date": "2017-01-14",
+      "type": "Groceries"
+    },
+    "data_migration_22": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 530,
+      "date": "2017-01-14",
+      "description": "Baby Drawers",
+      "type": "Household"
+    },
+    "data_migration_23": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 28,
+      "date": "2017-01-19",
+      "type": "Food"
+    },
+    "data_migration_24": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 55,
+      "date": "2016-12-20",
+      "description": "Conservancy charge",
+      "type": "Others"
+    },
+    "data_migration_25": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 55,
+      "date": "2017-01-20",
+      "description": "Conservancy charge",
+      "type": "Others"
+    },
+    "data_migration_26": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 40.85,
+      "date": "2017-01-21",
+      "type": "Food"
+    },
+    "data_migration_27": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 29,
+      "date": "2017-01-21",
+      "type": "Groceries"
+    },
+    "data_migration_28": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 25.3,
+      "date": "2017-01-19",
+      "description": "McDelivery",
+      "type": "Food"
+    },
+    "data_migration_29": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 88.81,
+      "date": "2017-01-21",
+      "description": "OAC Gathering",
+      "type": "Food"
+    },
+    "data_migration_3": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 28.01,
+      "date": "2016-12-12",
+      "type": "Food"
+    },
+    "data_migration_30": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 22,
+      "date": "2017-01-19",
+      "description": "Grabcar from SGH",
+      "type": "Transport"
+    },
+    "data_migration_31": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 500,
+      "date": "2017-01-27",
+      "description": "CNY angpow",
+      "type": "Gift"
+    },
+    "data_migration_32": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 42,
+      "date": "2017-02-04",
+      "type": "Food"
+    },
+    "data_migration_33": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 31.3,
+      "date": "2017-02-12",
+      "type": "Food"
+    },
+    "data_migration_34": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 80,
+      "date": "2017-02-04",
+      "type": "Groceries"
+    },
+    "data_migration_35": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 350.35,
+      "date": "2017-02-02",
+      "description": "Antenatal Class",
+      "type": "Household"
+    },
+    "data_migration_36": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 45.3,
+      "date": "2017-02-26",
+      "type": "Food"
+    },
+    "data_migration_37": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 16,
+      "date": "2017-02-26",
+      "type": "Transport"
+    },
+    "data_migration_38": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 19,
+      "date": "2017-02-26",
+      "type": "Transport"
+    },
+    "data_migration_39": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 85,
+      "date": "2017-02-27",
+      "description": "Baby stuff",
+      "type": "Household"
+    },
+    "data_migration_4": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 49.7,
+      "date": "2016-12-12",
+      "type": "Food"
+    },
+    "data_migration_40": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 38,
+      "date": "2017-03-04",
+      "type": "Food"
+    },
+    "data_migration_41": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 18.9,
+      "date": "2017-03-04",
+      "type": "Food"
+    },
+    "data_migration_42": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 25,
+      "date": "2017-03-04",
+      "type": "Transport"
+    },
+    "data_migration_43": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 160,
+      "date": "2017-03-13",
+      "description": "Wall fans",
+      "type": "Household"
+    },
+    "data_migration_44": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 19,
+      "date": "2017-03-14",
+      "description": "Grab to SGH",
+      "type": "Transport"
+    },
+    "data_migration_45": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 14.5,
+      "date": "2017-03-15",
+      "description": "Grab from SGH home",
+      "type": "Transport"
+    },
+    "data_migration_46": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 32.28,
+      "date": "2017-03-15",
+      "description": "Spizza Home Delivery",
+      "type": "Food"
+    },
+    "data_migration_47": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 33,
+      "date": "2017-03-17",
+      "type": "Food"
+    },
+    "data_migration_48": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 63,
+      "date": "2017-03-17",
+      "type": "Groceries"
+    },
+    "data_migration_49": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 17,
+      "date": "2017-03-18",
+      "description": "To BOCA restaurant",
+      "type": "Transport"
+    },
+    "data_migration_5": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 6.5,
+      "date": "2016-12-12",
+      "type": "Food"
+    },
+    "data_migration_50": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 17,
+      "date": "2017-03-20",
+      "description": "From BOCA Restaurant",
+      "type": "Transport"
+    },
+    "data_migration_51": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 3,
+      "date": "2017-03-17",
+      "description": "Grocery shopping from JP",
+      "type": "Transport"
+    },
+    "data_migration_52": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 22.9,
+      "date": "2017-03-20",
+      "type": "Groceries"
+    },
+    "data_migration_53": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 35,
+      "date": "2017-03-21",
+      "type": "Food"
+    },
+    "data_migration_54": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 2,
+      "date": "2017-03-21",
+      "type": "Food"
+    },
+    "data_migration_55": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 40,
+      "date": "2017-03-22",
+      "type": "Household"
+    },
+    "data_migration_56": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 20,
+      "date": "2017-03-23",
+      "type": "Food"
+    },
+    "data_migration_57": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 8,
+      "date": "2017-03-23",
+      "type": "Household"
+    },
+    "data_migration_58": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 60.9,
+      "date": "2017-03-26",
+      "type": "Household"
+    },
+    "data_migration_59": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 50.8,
+      "date": "2017-03-26",
+      "type": "Groceries"
+    },
+    "data_migration_6": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 36.15,
+      "date": "2016-12-13",
+      "type": "Food"
+    },
+    "data_migration_60": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 12,
+      "date": "2017-03-27",
+      "description": "To SGH",
+      "type": "Transport"
+    },
+    "data_migration_61": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 12,
+      "date": "2017-03-29",
+      "description": "To SGH",
+      "type": "Transport"
+    },
+    "data_migration_62": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 51,
+      "date": "2017-03-29",
+      "type": "Food"
+    },
+    "data_migration_63": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 12,
+      "date": "2017-03-31",
+      "description": "Grabhitch to SGH",
+      "type": "Transport"
+    },
+    "data_migration_64": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 57.55,
+      "date": "2017-04-01",
+      "type": "Food"
+    },
+    "data_migration_65": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 25,
+      "date": "2017-04-02",
+      "type": "Groceries"
+    },
+    "data_migration_66": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 13,
+      "date": "2017-04-05",
+      "description": "Taka to Home",
+      "type": "Transport"
+    },
+    "data_migration_67": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 12,
+      "date": "2017-04-01",
+      "description": "Hitch to SGH",
+      "type": "Transport"
+    },
+    "data_migration_68": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 34,
+      "date": "2017-04-06",
+      "type": "Groceries"
+    },
+    "data_migration_69": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 52,
+      "date": "2017-04-07",
+      "type": "Food"
+    },
+    "data_migration_7": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 15,
+      "date": "2016-12-13",
+      "type": "Entertainment"
+    },
+    "data_migration_70": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 46,
+      "date": "2017-04-08",
+      "type": "Food"
+    },
+    "data_migration_71": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5.8,
+      "date": "2017-04-08",
+      "type": "Food"
+    },
+    "data_migration_72": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 13,
+      "date": "2017-04-10",
+      "description": "Grab to SGH",
+      "type": "Transport"
+    },
+    "data_migration_73": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 15.8,
+      "date": "2017-04-10",
+      "type": "Food"
+    },
+    "data_migration_74": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 25,
+      "date": "2017-04-10",
+      "type": "Groceries"
+    },
+    "data_migration_75": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 135,
+      "date": "2017-04-22",
+      "type": "Groceries"
+    },
+    "data_migration_76": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 7.72,
+      "date": "2017-04-26",
+      "description": "Back from polyclinic",
+      "type": "Transport"
+    },
+    "data_migration_77": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 8.18,
+      "date": "2017-04-26",
+      "description": "To polyclinic",
+      "type": "Transport"
+    },
+    "data_migration_78": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 31,
+      "date": "2017-04-29",
+      "type": "Utilities"
+    },
+    "data_migration_79": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 18.8,
+      "date": "2017-04-21",
+      "description": "BB's Polyclinic Visit",
+      "type": "Healthcare"
+    },
+    "data_migration_8": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 546,
+      "date": "2016-12-12",
+      "description": "Amara Sanctuary Resort x 2 nights",
+      "type": "Entertainment"
+    },
+    "data_migration_80": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 14,
+      "date": "2017-04-26",
+      "description": "BB's Polyclinic Visit",
+      "type": "Healthcare"
+    },
+    "data_migration_81": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 62.5,
+      "date": "2017-04-27",
+      "description": "Baby's clothes from Uniqlo",
+      "type": "Shopping"
+    },
+    "data_migration_82": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 45.75,
+      "date": "2017-04-25",
+      "type": "Groceries"
+    },
+    "data_migration_83": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 97.05,
+      "date": "2017-04-29",
+      "type": "Groceries"
+    },
+    "data_migration_84": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 10.23,
+      "date": "2017-05-02",
+      "description": "Shears nappy liners (Lazada)",
+      "type": "Household"
+    },
+    "data_migration_85": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 22.4,
+      "date": "2017-04-23",
+      "description": "Baby's milestone cards",
+      "type": "Shopping"
+    },
+    "data_migration_86": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 29,
+      "date": "2017-04-30",
+      "description": "Taxi friendly locking clip",
+      "type": "Household"
+    },
+    "data_migration_87": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 763.98,
+      "date": "2017-05-02",
+      "description": "Stamford Catering for BB's Full Month",
+      "type": "Food"
+    },
+    "data_migration_88": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 678,
+      "date": "2017-05-02",
+      "description": "Mummy's Massage",
+      "type": "Healthcare"
+    },
+    "data_migration_89": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 15.9,
+      "date": "2017-05-06",
+      "description": "Baby party decorations",
+      "type": "Shopping"
+    },
+    "data_migration_9": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 380.16,
+      "date": "2016-12-13",
+      "type": "Healthcare"
+    },
+    "data_migration_90": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 25.5,
+      "date": "2017-05-03",
+      "description": "Baby party decorations",
+      "type": "Shopping"
+    },
+    "data_migration_91": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 400,
+      "date": "2017-05-06",
+      "description": "Baby photography",
+      "type": "Gift"
+    },
+    "data_migration_92": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 100.25,
+      "date": "2017-05-06",
+      "type": "Groceries"
+    },
+    "data_migration_93": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 35.3,
+      "date": "2017-05-07",
+      "type": "Groceries"
+    },
+    "data_migration_94": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 84,
+      "date": "2017-05-10",
+      "type": "Groceries"
+    },
+    "data_migration_95": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 13.3,
+      "date": "2017-05-10",
+      "type": "Food"
+    },
+    "data_migration_96": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 40,
+      "date": "2017-05-10",
+      "description": "Bengawon Solo vouchers",
+      "type": "Gift"
+    },
+    "data_migration_97": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 5.4,
+      "date": "2017-05-12",
+      "type": "Groceries"
+    },
+    "data_migration_98": {
+      "addedby": "9K1QQfYAg7QoIMbxzUy26INrpbX2",
+      "amount": 4.5,
+      "date": "2017-05-16",
+      "type": "Healthcare"
+    },
+    "data_migration_99": {
+      "addedby": "gFXkte7327XubCmrGXL1MydQ3zU2",
+      "amount": 18,
+      "date": "2017-05-18",
+      "description": "Taxi for nanny",
+      "type": "Transport"
+    }
+  }
+}
