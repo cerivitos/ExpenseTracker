@@ -1,3 +1,3 @@
-.navbar.svelte-1hbnokz{box-shadow:0 -3px 8px 0 hsla(0,0%,83.9%,.9);height:72px;width:100%;display:flex;position:fixed;bottom:0;background-color:#fff;fill:currentColor}.navbar.svelte-1hbnokz .active.svelte-1hbnokz{color:hsl(var(--secondary-hue),50%,50%)}.navbar.svelte-1hbnokz .inactive.svelte-1hbnokz{color:hsl(var(--primary-hue),50%,50%)}.content.svelte-1hbnokz{position:absolute;width:100%;top:0;bottom:72px}
+.navbar.svelte-1eivmf{box-shadow:0 -3px 8px 0 hsla(0,0%,83.9%,.9);height:72px;width:100%;display:flex;position:fixed;bottom:0;background-color:#fff;fill:currentColor}.navbar.svelte-1eivmf .active.svelte-1eivmf{color:hsl(var(--primary-hue),65%,45%)}.navbar.svelte-1eivmf .inactive.svelte-1eivmf{color:#a0aec0}.content.svelte-1eivmf{position:absolute;width:100%;top:0;bottom:72px}
 
 /*# sourceMappingURL=components.css.map */
