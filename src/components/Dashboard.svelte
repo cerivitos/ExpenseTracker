@@ -1,9 +1,19 @@
 <script>
   import { onMount } from "svelte";
+  import firebase from "firebase/app";
+  import "firebase/firestore";
 
   let db;
 
-  onMount(() => {});
+  onMount(() => {
+    db = firebase.firestore();
+
+    db.collection("expenses")
+      .get()
+      .then(querySnapshot => {
+        console.log(querySnapshot);
+      });
+  });
 </script>
 
 <style type="text/postcss">

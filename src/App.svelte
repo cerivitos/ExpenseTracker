@@ -1,6 +1,7 @@
 <script>
   import Dashboard from "./components/Dashboard.svelte";
   import Router from "./components/Router.svelte";
+  import Scaffold from "./components/Scaffold.svelte";
   import firebase from "firebase/app";
   import "firebase/auth";
   import "firebase/firestore";
@@ -24,14 +25,6 @@
     };
 
     firebase.initializeApp(firebaseConfig);
-
-    db = firebase.firestore();
-
-    db.collection("expenses")
-      .get()
-      .then(querySnapshot => {
-        console.log(querySnapshot);
-      });
   });
 </script>
 
@@ -41,5 +34,5 @@
 
 <main class="overflow-hidden">
   <Router />
-  <Dashboard />
+  <Scaffold />
 </main>
