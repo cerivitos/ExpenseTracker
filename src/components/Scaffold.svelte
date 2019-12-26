@@ -10,7 +10,15 @@
   .navbar {
     box-shadow: 0px -3px 8px 0px rgba(214, 214, 214, 0.9);
     height: 72px;
-    @apply w-full flex fixed bottom-0 bg-white;
+    @apply w-full flex fixed bottom-0 bg-white fill-current;
+  }
+
+  .navbar .active {
+    color: hsl(var(--secondary-hue), 50%, 50%);
+  }
+
+  .navbar .inactive {
+    color: hsl(var(--primary-hue), 50%, 50%);
   }
 
   .content {
@@ -24,7 +32,7 @@
 </div>
 <nav class="navbar">
   <button
-    class="flex flex-col items-center w-1/2 py-2"
+    class="flex flex-col items-center w-1/2 py-2 active {$view === 'entry' ? 'active' : 'inactive'}"
     on:click={() => setView('entry')}>
     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24">
       <path fill="none" d="M0 0h24v24H0V0z" />
@@ -38,7 +46,7 @@
     <span>New</span>
   </button>
   <button
-    class="flex flex-col items-center w-1/2 py-2"
+    class="flex flex-col items-center w-1/2 py-2 {$view === 'dashboard' ? 'active' : 'inactive'}"
     on:click={() => setView('dashboard')}>
     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24">
       <path fill="none" d="M0 0h24v24H0V0z" />

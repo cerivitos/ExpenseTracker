@@ -36,6 +36,20 @@
     	return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
     }
 
+    function validate_store(store, name) {
+    	if (!store || typeof store.subscribe !== 'function') {
+    		throw new Error(`'${name}' is not a store with a 'subscribe' method`);
+    	}
+    }
+
+    function subscribe(component, store, callback) {
+    	const unsub = store.subscribe(callback);
+
+    	component.$$.on_destroy.push(unsub.unsubscribe
+    		? () => unsub.unsubscribe()
+    		: unsub);
+    }
+
     function create_slot(definition, ctx, fn) {
     	if (definition) {
     		const slot_ctx = get_slot_context(definition, ctx, fn);
@@ -25955,7 +25969,7 @@
     const file = "src\\components\\Scaffold.svelte";
 
     function create_fragment$1(ctx) {
-    	var div, t0, nav, button0, svg0, path0, path1, t1, span0, t3, button1, svg1, path2, path3, t4, span1, current, dispose;
+    	var div, t0, nav, button0, svg0, path0, path1, t1, span0, button0_class_value, t3, button1, svg1, path2, path3, t4, span1, button1_class_value, current, dispose;
 
     	const default_slot_1 = ctx.$$slots.default;
     	const default_slot = create_slot(default_slot_1, ctx, null);
@@ -25983,34 +25997,34 @@
     			span1 = element("span");
     			span1.textContent = "Dashboard";
 
-    			div.className = "content svelte-q0fmvs";
-    			add_location(div, file, 10, 0, 360);
+    			div.className = "content svelte-1hbnokz";
+    			add_location(div, file, 10, 0, 490);
     			attr(path0, "fill", "none");
     			attr(path0, "d", "M0 0h24v24H0V0z");
-    			add_location(path0, file, 18, 6, 615);
+    			add_location(path0, file, 18, 6, 796);
     			attr(path1, "d", "M12 7c-.55 0-1 .45-1 1v3H8c-.55 0-1 .45-1 1s.45 1 1 1h3v3c0 .55.45 1\r\n        1 1s1-.45 1-1v-3h3c.55 0 1-.45\r\n        1-1s-.45-1-1-1h-3V8c0-.55-.45-1-1-1zm0-5C6.48 2 2 6.48 2 12s4.48 10 10\r\n        10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59\r\n        8 8-3.59 8-8 8z");
-    			add_location(path1, file, 19, 6, 663);
+    			add_location(path1, file, 19, 6, 844);
     			attr(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr(svg0, "class", "h-8 w-8");
     			attr(svg0, "viewBox", "0 0 24 24");
-    			add_location(svg0, file, 17, 4, 531);
-    			add_location(span0, file, 26, 4, 998);
-    			button0.className = "flex flex-col items-center w-1/2 py-2";
-    			add_location(button0, file, 14, 2, 427);
+    			add_location(svg0, file, 17, 4, 712);
+    			add_location(span0, file, 26, 4, 1179);
+    			button0.className = button0_class_value = "flex flex-col items-center w-1/2 py-2 active " + (ctx.$view === 'entry' ? 'active' : 'inactive') + " svelte-1hbnokz";
+    			add_location(button0, file, 14, 2, 557);
     			attr(path2, "fill", "none");
     			attr(path2, "d", "M0 0h24v24H0V0z");
-    			add_location(path2, file, 32, 6, 1223);
+    			add_location(path2, file, 32, 6, 1452);
     			attr(path3, "d", "M8 17c-.55 0-1-.45-1-1v-5c0-.55.45-1 1-1s1 .45 1 1v5c0 .55-.45 1-1\r\n        1zm4 0c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1s1 .45 1 1v8c0 .55-.45 1-1 1zm4\r\n        0c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1s1 .45 1 1v2c0 .55-.45 1-1 1zm2\r\n        2H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45\r\n        1-1 1zm1-16H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9\r\n        2-2V5c0-1.1-.9-2-2-2z");
-    			add_location(path3, file, 33, 6, 1271);
+    			add_location(path3, file, 33, 6, 1500);
     			attr(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr(svg1, "class", "h-8 w-8");
     			attr(svg1, "viewBox", "0 0 24 24");
-    			add_location(svg1, file, 31, 4, 1139);
-    			add_location(span1, file, 41, 4, 1715);
-    			button1.className = "flex flex-col items-center w-1/2 py-2";
-    			add_location(button1, file, 28, 2, 1031);
-    			nav.className = "navbar svelte-q0fmvs";
-    			add_location(nav, file, 13, 0, 403);
+    			add_location(svg1, file, 31, 4, 1368);
+    			add_location(span1, file, 41, 4, 1944);
+    			button1.className = button1_class_value = "flex flex-col items-center w-1/2 py-2 " + (ctx.$view === 'dashboard' ? 'active' : 'inactive') + " svelte-1hbnokz";
+    			add_location(button1, file, 28, 2, 1212);
+    			nav.className = "navbar svelte-1hbnokz";
+    			add_location(nav, file, 13, 0, 533);
 
     			dispose = [
     				listen(button0, "click", ctx.click_handler),
@@ -26052,6 +26066,14 @@
     			if (default_slot && default_slot.p && changed.$$scope) {
     				default_slot.p(get_slot_changes(default_slot_1, ctx, changed, null), get_slot_context(default_slot_1, ctx, null));
     			}
+
+    			if ((!current || changed.$view) && button0_class_value !== (button0_class_value = "flex flex-col items-center w-1/2 py-2 active " + (ctx.$view === 'entry' ? 'active' : 'inactive') + " svelte-1hbnokz")) {
+    				button0.className = button0_class_value;
+    			}
+
+    			if ((!current || changed.$view) && button1_class_value !== (button1_class_value = "flex flex-col items-center w-1/2 py-2 " + (ctx.$view === 'dashboard' ? 'active' : 'inactive') + " svelte-1hbnokz")) {
+    				button1.className = button1_class_value;
+    			}
     		},
 
     		i: function intro(local) {
@@ -26087,6 +26109,11 @@
     }
 
     function instance$1($$self, $$props, $$invalidate) {
+    	let $view;
+
+    	validate_store(view, 'view');
+    	subscribe($$self, view, $$value => { $view = $$value; $$invalidate('$view', $view); });
+
     	let { $$slots = {}, $$scope } = $$props;
 
     	function click_handler() {
@@ -26102,6 +26129,7 @@
     	};
 
     	return {
+    		$view,
     		click_handler,
     		click_handler_1,
     		$$slots,
