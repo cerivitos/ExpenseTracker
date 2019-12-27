@@ -21,7 +21,8 @@
     class="fixed w-full flex items-center justify-center"
     style="bottom: {yPos}px">
     <div
-      class="rounded-full text-center text-white px-4 py-2 max-w-lg truncate"
+      class="rounded-full text-center text-white px-4 py-2 max-w-lg truncate
+      mx-4"
       style="background-color:hsl(var(--accent-hue), 40%, 60%)"
       out:fly={{ y: 30, duration: 150 }}>
       {message}
