@@ -65,6 +65,10 @@
 </script>
 
 <style type="text/postcss">
+  #entry-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
   input {
     outline: none !important;
     @apply px-2 py-1 mr-4 w-2/3 appearance-none text-right font-bold text-gray-600;
