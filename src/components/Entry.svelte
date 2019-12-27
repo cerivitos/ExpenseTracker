@@ -1,5 +1,6 @@
 <script>
   import { view } from "../store/store";
+  import { onMount } from "svelte";
   import TypeButton from "./TypeButton.svelte";
 
   let description = "";
@@ -10,6 +11,11 @@
   let amountValid = false;
   let dateValid = false;
   let typeValid = false;
+
+  onMount(() => {
+    document.getElementById("amount-input").focus();
+    document.execCommand("selectall", null, false);
+  });
 
   function setDate(dateToSet) {
     if (dateToSet === "today") {
