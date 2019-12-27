@@ -1,5 +1,5 @@
 <script>
-  import { view, sendStatus } from "../store/store";
+  import { view, sendStatus, userInfo } from "../store/store";
   import { onMount } from "svelte";
   import TypeButton from "./TypeButton.svelte";
   import LoadingSpinner from "./LoadingSpinner.svelte";
@@ -60,7 +60,7 @@
         date: date,
         desc: description,
         type: type,
-        addedBy: "Test"
+        addedBy: userInfo.uid
       })
       .then(() => {
         sendStatus.set("Expense created!");
