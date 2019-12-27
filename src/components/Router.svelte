@@ -7,11 +7,8 @@
   window.onload = function() {
     if (window.location.search.length > 0) {
       const params = window.location.search.substr(1);
-      params.split("&").forEach(param => {
-        const key = param.split("=")[0];
-        const value = parseFloat(param.split("=")[1]);
-        console.log(`Parameter of ${key} is ${value}`);
-      });
+      const page = params.split("=")[1];
+      view.set(page);
     }
   };
 
