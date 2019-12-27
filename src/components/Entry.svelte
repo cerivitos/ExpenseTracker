@@ -13,7 +13,18 @@
   let dateValid = false;
   let typeValid = false;
 
+  let wrapperEl;
+
   onMount(() => {
+    wrapperEl = document.getElementById("entry-wrapper");
+    //Scroll down a little so that we can set the trigger to dismiss is scrollY = 0
+    wrapperEl.scrollTop = 50;
+    wrapperEl.onscroll = () => {
+      if (wrapperEl.scrollTop === 0) {
+        window.history.back();
+      }
+    };
+
     document.getElementById("amount-input").focus();
     document.execCommand("selectall", null, false);
   });
@@ -92,12 +103,13 @@
 </style>
 
 <div
+  id="entry-wrapper"
   class="absolute top-0 w-full h-screen z-10 overflow-x-hidden"
   style="background-color: rgba(0,0,0,0.2)"
   transition:fade={{ duration: 180 }}>
   <div
     transition:fly={{ y: 300, duration: 250 }}
-    class="flex flex-col items-start justify-around bg-white mt-8"
+    class="flex flex-col items-start justify-around bg-white mt-24"
     style="border-top-left-radius: 1rem; border-top-right-radius: 1rem">
     <div class="input-row">
       <label for="amount-input">Amount</label>
