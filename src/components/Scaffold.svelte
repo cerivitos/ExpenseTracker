@@ -22,21 +22,24 @@
 <style type="text/postcss">
   .navbar {
     box-shadow: 0px -3px 8px 0px rgba(214, 214, 214, 0.9);
-    height: 72px;
+    height: 64px;
     @apply w-full flex fixed bottom-0 bg-white fill-current;
   }
 
   .navbar .active {
     color: hsl(var(--primary-hue), 65%, 45%);
+    transition: all 180ms;
+    @apply text-base;
   }
 
   .navbar .inactive {
-    @apply text-gray-500;
+    transition: all 180ms;
+    @apply text-gray-500 text-sm;
   }
 
   .content {
     @apply absolute w-full top-0 overflow-x-hidden;
-    bottom: 72px;
+    bottom: 64px;
   }
 </style>
 
@@ -48,7 +51,7 @@
 </div>
 <nav class="navbar">
   <button
-    class="flex flex-col items-center w-1/2 py-2 {$view === 'dashboard' ? 'active' : 'inactive'}"
+    class="flex flex-col items-center justify-center w-1/2 py-1 {$view === 'dashboard' ? 'active' : 'inactive'}"
     on:click={() => setView('dashboard')}>
     <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24">
       <path fill="none" d="M0 0h24v24H0V0z" />
@@ -62,12 +65,9 @@
     <span>Dashboard</span>
   </button>
   <button
-    class="flex flex-col items-center w-1/2 py-2 {$view === 'settings' ? 'active' : 'inactive'}"
+    class="flex flex-col items-center justify-center w-1/2 py-1 {$view === 'settings' ? 'active' : 'inactive'}"
     on:click={() => setView('settings')}>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-8 h--8"
-      viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24">
       <path d="M0 0h24v24H0z" fill="none" />
       <path
         d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm7-7H5c-1.11 0-2

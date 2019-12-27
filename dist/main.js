@@ -28023,7 +28023,7 @@
     	return block;
     }
 
-    // (110:0) {#if $view === 'entry'}
+    // (107:0) {#if $view === 'entry'}
     function create_if_block$1(ctx) {
     	let div;
     	let current;
@@ -28033,7 +28033,7 @@
     		c: function create() {
     			div = element("div");
     			create_component(entry.$$.fragment);
-    			add_location(div, file$3, 110, 2, 4723);
+    			add_location(div, file$3, 107, 2, 4804);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -28059,7 +28059,7 @@
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(110:0) {#if $view === 'entry'}",
+    		source: "(107:0) {#if $view === 'entry'}",
     		ctx
     	});
 
@@ -28151,72 +28151,72 @@
     			t8 = space();
     			if (if_block1) if_block1.c();
     			if_block1_anchor = empty();
-    			attr_dev(div0, "class", "content svelte-jr7n7f");
-    			add_location(div0, file$3, 23, 0, 767);
+    			attr_dev(div0, "class", "content svelte-17h5p2k");
+    			add_location(div0, file$3, 23, 0, 840);
     			attr_dev(path0, "fill", "none");
     			attr_dev(path0, "d", "M0 0h24v24H0V0z");
-    			add_location(path0, file$3, 34, 6, 1148);
+    			add_location(path0, file$3, 34, 6, 1236);
     			attr_dev(path1, "d", "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9\r\n        2-2V5c0-1.1-.9-2-2-2zM8 17c-.55 0-1-.45-1-1v-5c0-.55.45-1 1-1s1 .45 1\r\n        1v5c0 .55-.45 1-1 1zm4 0c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1s1 .45 1 1v8c0\r\n        .55-.45 1-1 1zm4 0c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1s1 .45 1 1v2c0\r\n        .55-.45 1-1 1z");
-    			add_location(path1, file$3, 35, 6, 1196);
+    			add_location(path1, file$3, 35, 6, 1284);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "class", "w-8 h-8");
     			attr_dev(svg0, "viewBox", "0 0 24 24");
-    			add_location(svg0, file$3, 33, 4, 1064);
-    			add_location(span0, file$3, 42, 4, 1552);
-    			attr_dev(button0, "class", button0_class_value = "flex flex-col items-center w-1/2 py-2 " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-jr7n7f");
-    			add_location(button0, file$3, 30, 2, 908);
+    			add_location(svg0, file$3, 33, 4, 1152);
+    			add_location(span0, file$3, 42, 4, 1640);
+    			attr_dev(button0, "class", button0_class_value = "flex flex-col items-center justify-center w-1/2 py-1 " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-17h5p2k");
+    			add_location(button0, file$3, 30, 2, 981);
     			attr_dev(path2, "d", "M0 0h24v24H0z");
     			attr_dev(path2, "fill", "none");
-    			add_location(path2, file$3, 51, 6, 1851);
+    			add_location(path2, file$3, 48, 6, 1932);
     			attr_dev(path3, "d", "M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm7-7H5c-1.11 0-2\r\n        .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-1.75 9c0\r\n        .23-.02.46-.05.68l1.48 1.16c.13.11.17.3.08.45l-1.4\r\n        2.42c-.09.15-.27.21-.43.15l-1.74-.7c-.36.28-.76.51-1.18.69l-.26\r\n        1.85c-.03.17-.18.3-.35.3h-2.8c-.17\r\n        0-.32-.13-.35-.29l-.26-1.85c-.43-.18-.82-.41-1.18-.69l-1.74.7c-.16.06-.34\r\n        0-.43-.15l-1.4-2.42c-.09-.15-.05-.34.08-.45l1.48-1.16c-.03-.23-.05-.46-.05-.69\r\n        0-.23.02-.46.05-.68l-1.48-1.16c-.13-.11-.17-.3-.08-.45l1.4-2.42c.09-.15.27-.21.43-.15l1.74.7c.36-.28.76-.51\r\n        1.18-.69l.26-1.85c.03-.17.18-.3.35-.3h2.8c.17 0 .32.13.35.29l.26\r\n        1.85c.43.18.82.41 1.18.69l1.74-.7c.16-.06.34 0 .43.15l1.4\r\n        2.42c.09.15.05.34-.08.45l-1.48 1.16c.03.23.05.46.05.69z");
-    			add_location(path3, file$3, 52, 6, 1897);
+    			add_location(path3, file$3, 49, 6, 1978);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg1, "class", "w-8 h--8");
+    			attr_dev(svg1, "class", "w-8 h-8");
     			attr_dev(svg1, "viewBox", "0 0 24 24");
-    			add_location(svg1, file$3, 47, 4, 1745);
-    			add_location(span1, file$3, 65, 4, 2756);
-    			attr_dev(button1, "class", button1_class_value = "flex flex-col items-center w-1/2 py-2 " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-jr7n7f");
-    			add_location(button1, file$3, 44, 2, 1591);
-    			attr_dev(nav, "class", "navbar svelte-jr7n7f");
-    			add_location(nav, file$3, 29, 0, 884);
+    			add_location(svg1, file$3, 47, 4, 1848);
+    			add_location(span1, file$3, 62, 4, 2837);
+    			attr_dev(button1, "class", button1_class_value = "flex flex-col items-center justify-center w-1/2 py-1 " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-17h5p2k");
+    			add_location(button1, file$3, 44, 2, 1679);
+    			attr_dev(nav, "class", "navbar svelte-17h5p2k");
+    			add_location(nav, file$3, 29, 0, 957);
     			attr_dev(rect0, "fill", "none");
     			attr_dev(rect0, "width", "24");
     			attr_dev(rect0, "height", "24");
-    			add_location(rect0, file$3, 85, 8, 3440);
+    			add_location(rect0, file$3, 82, 8, 3521);
     			attr_dev(rect1, "fill", "none");
     			attr_dev(rect1, "width", "24");
     			attr_dev(rect1, "height", "24");
-    			add_location(rect1, file$3, 86, 8, 3493);
+    			add_location(rect1, file$3, 83, 8, 3574);
     			attr_dev(g0, "id", "Bounding_Box");
-    			add_location(g0, file$3, 84, 6, 3409);
+    			add_location(g0, file$3, 81, 6, 3490);
     			attr_dev(g1, "id", "ui_x5F_spec_x5F_header_copy_2");
-    			add_location(g1, file$3, 89, 8, 3579);
+    			add_location(g1, file$3, 86, 8, 3660);
     			attr_dev(path4, "d", "M18,12c-0.55,0-1,0.45-1,1v5.22c0,0.55-0.45,1-1,1H6c-0.55,0-1-0.45-1-1V8c0-0.55,0.45-1,1-1h5c0.55,0,1-0.45,1-1\r\n            c0-0.55-0.45-1-1-1H5C3.9,5,3,5.9,3,7v12c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-6C19,12.45,18.55,12,18,12z");
-    			add_location(path4, file$3, 91, 10, 3644);
+    			add_location(path4, file$3, 88, 10, 3725);
     			attr_dev(path5, "d", "M21.02,5H19V2.98C19,2.44,18.56,2,18.02,2h-0.03C17.44,2,17,2.44,17,2.98V5h-2.01C14.45,5,14.01,5.44,14,5.98\r\n            c0,0.01,0,0.02,0,0.03C14,6.56,14.44,7,14.99,7H17v2.01c0,0.54,0.44,0.99,0.99,0.98c0.01,0,0.02,0,0.03,0\r\n            c0.54,0,0.98-0.44,0.98-0.98V7h2.02C21.56,7,22,6.56,22,6.02V5.98C22,5.44,21.56,5,21.02,5z");
-    			add_location(path5, file$3, 94, 10, 3907);
+    			add_location(path5, file$3, 91, 10, 3988);
     			attr_dev(path6, "d", "M14,9H8c-0.55,0-1,0.45-1,1c0,0.55,0.45,1,1,1h6c0.55,0,1-0.45,1-1C15,9.45,14.55,9,14,9z");
-    			add_location(path6, file$3, 98, 10, 4267);
+    			add_location(path6, file$3, 95, 10, 4348);
     			attr_dev(path7, "d", "M14,12H8c-0.55,0-1,0.45-1,1c0,0.55,0.45,1,1,1h6c0.55,0,1-0.45,1-1C15,12.45,14.55,12,14,12z");
-    			add_location(path7, file$3, 100, 10, 4391);
+    			add_location(path7, file$3, 97, 10, 4472);
     			attr_dev(path8, "d", "M14,15H8c-0.55,0-1,0.45-1,1c0,0.55,0.45,1,1,1h6c0.55,0,1-0.45,1-1C15,15.45,14.55,15,14,15z");
-    			add_location(path8, file$3, 102, 10, 4519);
-    			add_location(g2, file$3, 90, 8, 3629);
+    			add_location(path8, file$3, 99, 10, 4600);
+    			add_location(g2, file$3, 87, 8, 3710);
     			attr_dev(g3, "id", "Flat");
-    			add_location(g3, file$3, 88, 6, 3556);
+    			add_location(g3, file$3, 85, 6, 3637);
     			attr_dev(svg2, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg2, "class", "h-8 w-8");
     			attr_dev(svg2, "viewBox", "0 0 24 24");
     			attr_dev(svg2, "enable-background", "new 0 0 24 24");
     			attr_dev(svg2, "xml:space", "preserve");
-    			add_location(svg2, file$3, 78, 4, 3235);
+    			add_location(svg2, file$3, 75, 4, 3316);
     			attr_dev(button2, "id", "entry-button");
     			attr_dev(button2, "class", "rounded-full w-16 h-16 flex items-center p-4 fill-current text-white\r\n    shadow-lg pointer-events-auto");
     			set_style(button2, "background-color", "hsl(var(--accent-hue), 50%, 50%)");
     			set_style(button2, "box-shadow", "0px\r\n    10px 15px 0px hsla(var(--accent-hue), 35%, 75%,0.85)");
-    			add_location(button2, file$3, 71, 2, 2903);
+    			add_location(button2, file$3, 68, 2, 2984);
     			attr_dev(div1, "class", "fixed bottom-0 w-full flex items-center justify-center mb-6\r\n  pointer-events-none");
-    			add_location(div1, file$3, 68, 0, 2800);
+    			add_location(div1, file$3, 65, 0, 2881);
 
     			dispose = [
     				listen_dev(button0, "click", /*click_handler*/ ctx[4], false, false, false),
@@ -28296,11 +28296,11 @@
     				check_outros();
     			}
 
-    			if (!current || dirty & /*$view*/ 2 && button0_class_value !== (button0_class_value = "flex flex-col items-center w-1/2 py-2 " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-jr7n7f")) {
+    			if (!current || dirty & /*$view*/ 2 && button0_class_value !== (button0_class_value = "flex flex-col items-center justify-center w-1/2 py-1 " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-17h5p2k")) {
     				attr_dev(button0, "class", button0_class_value);
     			}
 
-    			if (!current || dirty & /*$view*/ 2 && button1_class_value !== (button1_class_value = "flex flex-col items-center w-1/2 py-2 " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-jr7n7f")) {
+    			if (!current || dirty & /*$view*/ 2 && button1_class_value !== (button1_class_value = "flex flex-col items-center justify-center w-1/2 py-1 " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-17h5p2k")) {
     				attr_dev(button1, "class", button1_class_value);
     			}
 
