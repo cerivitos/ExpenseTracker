@@ -1,7 +1,6 @@
 <script>
   import { view } from "../store/store";
   import Entry from "./Entry.svelte";
-  import { fly } from "svelte/transition";
 
   function setView(viewToSet) {
     view.set(viewToSet);
@@ -121,7 +120,7 @@
   </button>
 </div>
 {#if $view === 'entry'}
-  <div class="z-10" transition:fly={{ y: 300 }}>
+  <div>
     <Entry />
   </div>
 {/if}

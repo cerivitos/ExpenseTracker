@@ -2,6 +2,7 @@
   import { view } from "../store/store";
   import { onMount } from "svelte";
   import TypeButton from "./TypeButton.svelte";
+  import { fly, fade } from "svelte/transition";
 
   let description = "";
   let amount = 0;
@@ -91,9 +92,11 @@
 </style>
 
 <div
-  class="absolute top-0 w-full h-screen"
-  style="background-color: rgba(0,0,0,0.2)">
+  class="absolute top-0 w-full h-screen z-10"
+  style="background-color: rgba(0,0,0,0.2)"
+  transition:fade={{ duration: 180 }}>
   <div
+    transition:fly={{ y: 300, duration: 250 }}
     class="flex flex-col items-start justify-around bg-white mt-8"
     style="border-top-left-radius: 1rem; border-top-right-radius: 1rem">
     <div class="input-row">
