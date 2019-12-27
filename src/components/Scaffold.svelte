@@ -3,8 +3,8 @@
   import Entry from "./Entry.svelte";
 
   function setView(viewToSet) {
-    view.set(viewToSet);
     handleRouting(viewToSet);
+    view.set(viewToSet);
   }
 
   function handleRouting(newPage) {
@@ -81,10 +81,12 @@
     <span>Settings</span>
   </button>
 </nav>
-<div class="fixed bottom-0 w-full flex items-center justify-center mb-6">
+<div
+  class="fixed bottom-0 w-full flex items-center justify-center mb-6
+  pointer-events-none">
   <button
     class="rounded-full w-16 h-16 flex items-center p-4 fill-current text-white
-    shadow-lg"
+    shadow-lg pointer-events-auto"
     style="background-color:hsl(var(--accent-hue), 50%, 50%); box-shadow: 0px
     10px 15px 0px hsla(var(--accent-hue), 35%, 75%,0.85);"
     on:click={() => setView('entry')}>
