@@ -1,6 +1,7 @@
 <script>
-  import { view } from "../store/store";
+  import { view, sendStatus } from "../store/store";
   import Entry from "./Entry.svelte";
+  import Toast from "./Toast.svelte";
 
   function setView(viewToSet) {
     handleRouting(viewToSet);
@@ -41,6 +42,9 @@
 
 <div class="content">
   <slot />
+  <!-- {#if $sendStatus !== ''} -->
+  <Toast message={$sendStatus} />
+  <!-- {/if} -->
 </div>
 <nav class="navbar">
   <button
@@ -85,6 +89,7 @@
   class="fixed bottom-0 w-full flex items-center justify-center mb-6
   pointer-events-none">
   <button
+    id="entry-button"
     class="rounded-full w-16 h-16 flex items-center p-4 fill-current text-white
     shadow-lg pointer-events-auto"
     style="background-color:hsl(var(--accent-hue), 50%, 50%); box-shadow: 0px

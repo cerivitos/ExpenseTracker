@@ -1,8 +1,11 @@
 <script>
-  import { view } from "../store/store";
+  import { view, sendStatus } from "../store/store";
   import { onMount } from "svelte";
   import TypeButton from "./TypeButton.svelte";
+  import LoadingSpinner from "./LoadingSpinner.svelte";
   import { fly, fade } from "svelte/transition";
+  import firebase from "firebase/app";
+  import "firebase/firestore";
 
   let description = "";
   let amount = 0;
@@ -43,6 +46,28 @@
 
   function receiveType(e) {
     type = e.detail.selectedType;
+  }
+
+  function sendEntry() {
+    sendStatus.set("Sending expense...");
+    window.history.back();
+
+    const db = firebase.firestore();
+    db.collection("expenses")
+      .doc()
+      .set({
+        amount: amount,
+        date: date,
+        desc: description,
+        type: type,
+        addedBy: "Test"
+      })
+      .then(() => {
+        sendStatus.set("Expense created!");
+      })
+      .catch(error => {
+        sendStatus.set(error);
+      });
   }
 
   $: if (amount <= 0 || amount === undefined) {
@@ -340,6 +365,7 @@
       <button
         class="rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-12
         mb-8 bg-gray-300"
+        on:click={() => sendEntry()}
         style={typeValid && dateValid && amountValid ? 'background-color:hsl(var(--accent-hue), 50%, 50%)' : ''}>
         Submit
       </button>

@@ -7,8 +7,6 @@
   import "firebase/firestore";
   import { onMount } from "svelte";
 
-  let db;
-
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/service-worker.js");
   }
