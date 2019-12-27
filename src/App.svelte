@@ -34,35 +34,12 @@
       if (user) {
         userInfo.set({
           name: user.displayName,
-          photo: user.photoURL
+          photo: user.photoURL,
+          uid: user.uid
         });
-      } else {
-        signIn();
       }
     });
   });
-
-  function signIn() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then(function(result) {
-        const user = result.user;
-        userInfo.set({
-          name: user.displayName,
-          photo: user.photoURL
-        });
-      })
-      .catch(function(error) {
-        console.error(error);
-
-        userInfo.set({});
-        signInError = true;
-        errorMsg = error.message;
-        setTimeout(() => (signInError = false), 3000);
-      });
-  }
 </script>
 
 <style lang="postcss">

@@ -60,7 +60,7 @@
         date: date,
         desc: description,
         type: type,
-        addedBy: userInfo.uid
+        addedBy: $userInfo.uid
       })
       .then(() => {
         sendStatus.set("Expense created!");
