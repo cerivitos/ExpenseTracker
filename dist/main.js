@@ -28978,7 +28978,7 @@
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "class", "mr-2");
     			add_location(a, file$4, 91, 4, 2792);
-    			attr_dev(span, "class", "text-gray-600 text-center mb-8 ml-2");
+    			attr_dev(span, "class", "text-center mb-8 ml-2");
     			add_location(span, file$4, 95, 4, 2897);
     			attr_dev(div0, "class", "w-full text-center my-8 flex flex-row justify-center");
     			add_location(div0, file$4, 90, 2, 2720);
