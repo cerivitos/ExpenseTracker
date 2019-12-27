@@ -6,10 +6,15 @@
   import "firebase/auth";
   import "firebase/firestore";
   import { onMount } from "svelte";
+  import { userInfo } from "./store/store";
+  import Toast from "./components/Toast.svelte";
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/service-worker.js");
   }
+
+  let signInError = false;
+  let errorMsg = "";
 
   onMount(() => {
     const firebaseConfig = {
@@ -23,7 +28,32 @@
     };
 
     firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        userInfo.set(user);
+      } else {
+        signIn();
+      }
+    });
   });
+
+  function signIn() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then(function(result) {
+        const user = result.user;
+        userInfo.set(user);
+      })
+      .catch(function(error) {
+        console.error(error);
+        signInError = true;
+        errorMsg = error.message;
+        setTimeout(() => (signInError = false), 3000);
+      });
+  }
 </script>
 
 <style lang="postcss">
@@ -33,4 +63,7 @@
 <main class="overflow-hidden">
   <Router />
   <Scaffold />
+  {#if signInError}
+    <Toast message={errorMsg} />
+  {/if}
 </main>
