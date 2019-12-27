@@ -5,6 +5,17 @@
 
   function setView(viewToSet) {
     view.set(viewToSet);
+    handleRouting(viewToSet);
+  }
+
+  function handleRouting(newPage) {
+    window.history.pushState(
+      {
+        page: newPage
+      },
+      null,
+      "?page=" + newPage
+    );
   }
 </script>
 
