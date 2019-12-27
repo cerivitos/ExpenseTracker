@@ -6,8 +6,9 @@
   import "firebase/auth";
   import "firebase/firestore";
   import { onMount } from "svelte";
-  import { userInfo } from "./store/store";
+  import { view, userInfo } from "./store/store";
   import Toast from "./components/Toast.svelte";
+  import Settings from "./components/Settings.svelte";
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/service-worker.js");
@@ -31,7 +32,10 @@
 
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        userInfo.set(user);
+        userInfo.set({
+          name: user.displayName,
+          photo: user.photoURL
+        });
       } else {
         signIn();
       }
@@ -45,10 +49,15 @@
       .signInWithPopup(provider)
       .then(function(result) {
         const user = result.user;
-        userInfo.set(user);
+        userInfo.set({
+          name: user.displayName,
+          photo: user.photoURL
+        });
       })
       .catch(function(error) {
         console.error(error);
+
+        userInfo.set({});
         signInError = true;
         errorMsg = error.message;
         setTimeout(() => (signInError = false), 3000);
@@ -62,7 +71,13 @@
 
 <main class="overflow-hidden">
   <Router />
-  <Scaffold />
+  <Scaffold>
+    {#if $view === 'settings'}
+      <Settings />
+    {:else if $view === 'dashboard'}
+      <div />
+    {/if}
+  </Scaffold>
   {#if signInError}
     <Toast message={errorMsg} />
   {/if}

@@ -5,4 +5,4 @@ export const view = writable("dashboard");
 export const sendStatus = writable("");
 
 //user info
-export const userInfo = writable();
+export const userInfo = writable({});
