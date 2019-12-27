@@ -26300,8 +26300,8 @@
     	let span_id_value;
     	let current;
     	let dispose;
-    	const default_slot_template = /*$$slots*/ ctx[6].default;
-    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[5], null);
+    	const default_slot_template = /*$$slots*/ ctx[7].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[6], null);
 
     	const block = {
     		c: function create() {
@@ -26315,17 +26315,17 @@
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "class", "svelte-12eeuhm");
-    			add_location(svg, file, 53, 4, 1705);
+    			add_location(svg, file, 62, 4, 1889);
     			attr_dev(button, "class", "type-button svelte-12eeuhm");
     			attr_dev(button, "title", /*label*/ ctx[0]);
     			attr_dev(button, "id", button_id_value = "" + (/*label*/ ctx[0] + "-button"));
-    			add_location(button, file, 48, 2, 1585);
+    			add_location(button, file, 57, 2, 1769);
     			attr_dev(span, "class", "text-gray-400");
     			attr_dev(span, "id", span_id_value = "" + (/*label*/ ctx[0] + "-label"));
-    			add_location(span, file, 57, 2, 1810);
+    			add_location(span, file, 66, 2, 1994);
     			attr_dev(div, "class", "wrapper svelte-12eeuhm");
-    			add_location(div, file, 47, 0, 1560);
-    			dispose = listen_dev(button, "click", /*click_handler*/ ctx[7], false, false, false);
+    			add_location(div, file, 56, 0, 1744);
+    			dispose = listen_dev(button, "click", /*click_handler*/ ctx[8], false, false, false);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -26345,8 +26345,8 @@
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (default_slot && default_slot.p && dirty & /*$$scope*/ 32) {
-    				default_slot.p(get_slot_context(default_slot_template, ctx, /*$$scope*/ ctx[5], null), get_slot_changes(default_slot_template, /*$$scope*/ ctx[5], dirty, null));
+    			if (default_slot && default_slot.p && dirty & /*$$scope*/ 64) {
+    				default_slot.p(get_slot_context(default_slot_template, ctx, /*$$scope*/ ctx[6], null), get_slot_changes(default_slot_template, /*$$scope*/ ctx[6], dirty, null));
     			}
 
     			if (!current || dirty & /*label*/ 1) {
@@ -26394,10 +26394,27 @@
     	let { label = "" } = $$props;
     	let { colorHue = 180 } = $$props;
     	let { isActive = false } = $$props;
+
+    	onMount(() => {
+    		setButtonColors(isActive);
+    	});
+
     	const dispatch = createEventDispatcher();
 
     	function dispatchType() {
     		dispatch("dispatchType", { selectedType: label });
+    	}
+
+    	function setButtonColors(buttonActive) {
+    		if (buttonActive) {
+    			document.getElementById(label + "-button").style.setProperty("background-color", "hsl(" + colorHue + ", 50%, 80%)");
+    			document.getElementById(label + "-button").style.setProperty("color", "hsl(" + colorHue + ", 65%, 40%)");
+    			document.getElementById(label + "-label").style.setProperty("color", "hsl(" + colorHue + ", 65%, 40%)");
+    		} else {
+    			document.getElementById(label + "-button").style.setProperty("background-color", "#edf2f7");
+    			document.getElementById(label + "-button").style.setProperty("color", "#cbd5e0");
+    			document.getElementById(label + "-label").style.setProperty("color", "#cbd5e0");
+    		}
     	}
 
     	const writable_props = ["label", "colorHue", "isActive"];
@@ -26413,7 +26430,7 @@
     		if ("label" in $$props) $$invalidate(0, label = $$props.label);
     		if ("colorHue" in $$props) $$invalidate(2, colorHue = $$props.colorHue);
     		if ("isActive" in $$props) $$invalidate(3, isActive = $$props.isActive);
-    		if ("$$scope" in $$props) $$invalidate(5, $$scope = $$props.$$scope);
+    		if ("$$scope" in $$props) $$invalidate(6, $$scope = $$props.$$scope);
     	};
 
     	$$self.$capture_state = () => {
@@ -26427,17 +26444,9 @@
     	};
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*label, isActive, colorHue*/ 13) {
+    		if ($$self.$$.dirty & /*label, isActive*/ 9) {
     			$: if (document.getElementById(label + "-button")) {
-    				if (isActive) {
-    					document.getElementById(label + "-button").style.setProperty("background-color", "hsl(" + colorHue + ", 50%, 80%)");
-    					document.getElementById(label + "-button").style.setProperty("color", "hsl(" + colorHue + ", 65%, 40%)");
-    					document.getElementById(label + "-label").style.setProperty("color", "hsl(" + colorHue + ", 65%, 40%)");
-    				} else {
-    					document.getElementById(label + "-button").style.setProperty("background-color", "#edf2f7");
-    					document.getElementById(label + "-button").style.setProperty("color", "#cbd5e0");
-    					document.getElementById(label + "-label").style.setProperty("color", "#cbd5e0");
-    				}
+    				setButtonColors(isActive);
     			}
     		}
     	};
@@ -26448,6 +26457,7 @@
     		colorHue,
     		isActive,
     		dispatch,
+    		setButtonColors,
     		$$scope,
     		$$slots,
     		click_handler

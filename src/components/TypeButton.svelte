@@ -1,9 +1,14 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import { onMount } from "svelte";
 
   export let label = "";
   export let colorHue = 180;
   export let isActive = false;
+
+  onMount(() => {
+    setButtonColors(isActive);
+  });
 
   const dispatch = createEventDispatcher();
 
@@ -13,8 +18,8 @@
     });
   }
 
-  $: if (document.getElementById(label + "-button")) {
-    if (isActive) {
+  function setButtonColors(buttonActive) {
+    if (buttonActive) {
       document
         .getElementById(label + "-button")
         .style.setProperty(
@@ -40,6 +45,10 @@
         .getElementById(label + "-label")
         .style.setProperty("color", "#cbd5e0");
     }
+  }
+
+  $: if (document.getElementById(label + "-button")) {
+    setButtonColors(isActive);
   }
 </script>
 
