@@ -18,7 +18,7 @@
   onMount(() => {
     wrapperEl = document.getElementById("entry-wrapper");
     //Scroll down a little so that we can set the trigger to dismiss is scrollY = 0
-    wrapperEl.scrollTop = 50;
+    wrapperEl.scrollTop = 120;
     wrapperEl.onscroll = () => {
       if (wrapperEl.scrollTop === 0) {
         window.history.back();
@@ -109,7 +109,7 @@
   transition:fade={{ duration: 180 }}>
   <div
     transition:fly={{ y: 300, duration: 250 }}
-    class="flex flex-col items-start justify-around bg-white mt-24"
+    class="flex flex-col items-start justify-around bg-white mt-32"
     style="border-top-left-radius: 1rem; border-top-right-radius: 1rem">
     <div class="input-row">
       <label for="amount-input">Amount</label>
@@ -340,5 +340,11 @@
         Submit
       </button>
     </div>
+    <button
+      class="w-full text-center mb-8 bg-transparent"
+      style="color: hsl(var(--secondary-hue), 50%, 50%)"
+      on:click={() => window.history.back()}>
+      Cancel
+    </button>
   </div>
 </div>
