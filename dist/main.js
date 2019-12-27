@@ -111,6 +111,9 @@
             input.value = value;
         }
     }
+    function set_style(node, key, value, important) {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
     function custom_event(type, detail) {
         const e = document.createEvent('CustomEvent');
         e.initCustomEvent(type, false, false, detail);
@@ -27400,7 +27403,7 @@
     const file$2 = "src\\components\\Scaffold.svelte";
 
     function create_fragment$3(ctx) {
-    	let div;
+    	let div0;
     	let t0;
     	let nav;
     	let button0;
@@ -27418,13 +27421,28 @@
     	let t4;
     	let span1;
     	let button1_class_value;
+    	let t6;
+    	let div1;
+    	let button2;
+    	let svg2;
+    	let g0;
+    	let rect0;
+    	let rect1;
+    	let g3;
+    	let g1;
+    	let g2;
+    	let path4;
+    	let path5;
+    	let path6;
+    	let path7;
+    	let path8;
     	let current;
     	let dispose;
     	const entry = new Entry({ $$inline: true });
 
     	const block = {
     		c: function create() {
-    			div = element("div");
+    			div0 = element("div");
     			create_component(entry.$$.fragment);
     			t0 = space();
     			nav = element("nav");
@@ -27434,7 +27452,7 @@
     			path1 = svg_element("path");
     			t1 = space();
     			span0 = element("span");
-    			span0.textContent = "New";
+    			span0.textContent = "Dashboard";
     			t3 = space();
     			button1 = element("button");
     			svg1 = svg_element("svg");
@@ -27442,47 +27460,100 @@
     			path3 = svg_element("path");
     			t4 = space();
     			span1 = element("span");
-    			span1.textContent = "Dashboard";
-    			attr_dev(div, "class", "content svelte-jr7n7f");
-    			add_location(div, file$2, 11, 0, 521);
+    			span1.textContent = "Settings";
+    			t6 = space();
+    			div1 = element("div");
+    			button2 = element("button");
+    			svg2 = svg_element("svg");
+    			g0 = svg_element("g");
+    			rect0 = svg_element("rect");
+    			rect1 = svg_element("rect");
+    			g3 = svg_element("g");
+    			g1 = svg_element("g");
+    			g2 = svg_element("g");
+    			path4 = svg_element("path");
+    			path5 = svg_element("path");
+    			path6 = svg_element("path");
+    			path7 = svg_element("path");
+    			path8 = svg_element("path");
+    			attr_dev(div0, "class", "content svelte-jr7n7f");
+    			add_location(div0, file$2, 11, 0, 521);
     			attr_dev(path0, "fill", "none");
     			attr_dev(path0, "d", "M0 0h24v24H0V0z");
-    			add_location(path0, file$2, 19, 6, 828);
-    			attr_dev(path1, "d", "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4\r\n        11h-3v3c0 .55-.45 1-1 1s-1-.45-1-1v-3H8c-.55 0-1-.45-1-1s.45-1\r\n        1-1h3V8c0-.55.45-1 1-1s1 .45 1 1v3h3c.55 0 1 .45 1 1s-.45 1-1 1z");
-    			add_location(path1, file$2, 20, 6, 876);
+    			add_location(path0, file$2, 19, 6, 829);
+    			attr_dev(path1, "d", "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9\r\n        2-2V5c0-1.1-.9-2-2-2zM8 17c-.55 0-1-.45-1-1v-5c0-.55.45-1 1-1s1 .45 1\r\n        1v5c0 .55-.45 1-1 1zm4 0c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1s1 .45 1 1v8c0\r\n        .55-.45 1-1 1zm4 0c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1s1 .45 1 1v2c0\r\n        .55-.45 1-1 1z");
+    			add_location(path1, file$2, 20, 6, 877);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "class", "w-8 h-8");
     			attr_dev(svg0, "viewBox", "0 0 24 24");
-    			add_location(svg0, file$2, 18, 4, 744);
-    			add_location(span0, file$2, 25, 4, 1130);
-    			attr_dev(button0, "class", button0_class_value = "flex flex-col items-center w-1/2 py-2 active " + (/*$view*/ ctx[0] === "entry" ? "active" : "inactive") + " svelte-jr7n7f");
+    			add_location(svg0, file$2, 18, 4, 745);
+    			add_location(span0, file$2, 27, 4, 1233);
+    			attr_dev(button0, "class", button0_class_value = "flex flex-col items-center w-1/2 py-2 " + (/*$view*/ ctx[0] === "dashboard" ? "active" : "inactive") + " svelte-jr7n7f");
     			add_location(button0, file$2, 15, 2, 589);
+    			attr_dev(path2, "d", "M0 0h24v24H0z");
     			attr_dev(path2, "fill", "none");
-    			attr_dev(path2, "d", "M0 0h24v24H0V0z");
-    			add_location(path2, file$2, 31, 6, 1403);
-    			attr_dev(path3, "d", "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9\r\n        2-2V5c0-1.1-.9-2-2-2zM8 17c-.55 0-1-.45-1-1v-5c0-.55.45-1 1-1s1 .45 1\r\n        1v5c0 .55-.45 1-1 1zm4 0c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1s1 .45 1 1v8c0\r\n        .55-.45 1-1 1zm4 0c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1s1 .45 1 1v2c0\r\n        .55-.45 1-1 1z");
-    			add_location(path3, file$2, 32, 6, 1451);
+    			add_location(path2, file$2, 36, 6, 1532);
+    			attr_dev(path3, "d", "M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm7-7H5c-1.11 0-2\r\n        .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-1.75 9c0\r\n        .23-.02.46-.05.68l1.48 1.16c.13.11.17.3.08.45l-1.4\r\n        2.42c-.09.15-.27.21-.43.15l-1.74-.7c-.36.28-.76.51-1.18.69l-.26\r\n        1.85c-.03.17-.18.3-.35.3h-2.8c-.17\r\n        0-.32-.13-.35-.29l-.26-1.85c-.43-.18-.82-.41-1.18-.69l-1.74.7c-.16.06-.34\r\n        0-.43-.15l-1.4-2.42c-.09-.15-.05-.34.08-.45l1.48-1.16c-.03-.23-.05-.46-.05-.69\r\n        0-.23.02-.46.05-.68l-1.48-1.16c-.13-.11-.17-.3-.08-.45l1.4-2.42c.09-.15.27-.21.43-.15l1.74.7c.36-.28.76-.51\r\n        1.18-.69l.26-1.85c.03-.17.18-.3.35-.3h2.8c.17 0 .32.13.35.29l.26\r\n        1.85c.43.18.82.41 1.18.69l1.74-.7c.16-.06.34 0 .43.15l1.4\r\n        2.42c.09.15.05.34-.08.45l-1.48 1.16c.03.23.05.46.05.69z");
+    			add_location(path3, file$2, 37, 6, 1578);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg1, "class", "w-8 h-8");
+    			attr_dev(svg1, "class", "w-8 h--8");
     			attr_dev(svg1, "viewBox", "0 0 24 24");
-    			add_location(svg1, file$2, 30, 4, 1319);
-    			add_location(span1, file$2, 39, 4, 1807);
-    			attr_dev(button1, "class", button1_class_value = "flex flex-col items-center w-1/2 py-2 " + (/*$view*/ ctx[0] === "dashboard" ? "active" : "inactive") + " svelte-jr7n7f");
-    			add_location(button1, file$2, 27, 2, 1163);
+    			add_location(svg1, file$2, 32, 4, 1426);
+    			add_location(span1, file$2, 50, 4, 2437);
+    			attr_dev(button1, "class", button1_class_value = "flex flex-col items-center w-1/2 py-2 " + (/*$view*/ ctx[0] === "settings" ? "active" : "inactive") + " svelte-jr7n7f");
+    			add_location(button1, file$2, 29, 2, 1272);
     			attr_dev(nav, "class", "navbar svelte-jr7n7f");
     			add_location(nav, file$2, 14, 0, 565);
+    			attr_dev(rect0, "fill", "none");
+    			attr_dev(rect0, "width", "24");
+    			attr_dev(rect0, "height", "24");
+    			add_location(rect0, file$2, 67, 8, 3052);
+    			attr_dev(rect1, "fill", "none");
+    			attr_dev(rect1, "width", "24");
+    			attr_dev(rect1, "height", "24");
+    			add_location(rect1, file$2, 68, 8, 3105);
+    			attr_dev(g0, "id", "Bounding_Box");
+    			add_location(g0, file$2, 66, 6, 3021);
+    			attr_dev(g1, "id", "ui_x5F_spec_x5F_header_copy_2");
+    			add_location(g1, file$2, 71, 8, 3191);
+    			attr_dev(path4, "d", "M18,12c-0.55,0-1,0.45-1,1v5.22c0,0.55-0.45,1-1,1H6c-0.55,0-1-0.45-1-1V8c0-0.55,0.45-1,1-1h5c0.55,0,1-0.45,1-1\r\n            c0-0.55-0.45-1-1-1H5C3.9,5,3,5.9,3,7v12c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-6C19,12.45,18.55,12,18,12z");
+    			add_location(path4, file$2, 73, 10, 3256);
+    			attr_dev(path5, "d", "M21.02,5H19V2.98C19,2.44,18.56,2,18.02,2h-0.03C17.44,2,17,2.44,17,2.98V5h-2.01C14.45,5,14.01,5.44,14,5.98\r\n            c0,0.01,0,0.02,0,0.03C14,6.56,14.44,7,14.99,7H17v2.01c0,0.54,0.44,0.99,0.99,0.98c0.01,0,0.02,0,0.03,0\r\n            c0.54,0,0.98-0.44,0.98-0.98V7h2.02C21.56,7,22,6.56,22,6.02V5.98C22,5.44,21.56,5,21.02,5z");
+    			add_location(path5, file$2, 76, 10, 3519);
+    			attr_dev(path6, "d", "M14,9H8c-0.55,0-1,0.45-1,1c0,0.55,0.45,1,1,1h6c0.55,0,1-0.45,1-1C15,9.45,14.55,9,14,9z");
+    			add_location(path6, file$2, 80, 10, 3879);
+    			attr_dev(path7, "d", "M14,12H8c-0.55,0-1,0.45-1,1c0,0.55,0.45,1,1,1h6c0.55,0,1-0.45,1-1C15,12.45,14.55,12,14,12z");
+    			add_location(path7, file$2, 82, 10, 4003);
+    			attr_dev(path8, "d", "M14,15H8c-0.55,0-1,0.45-1,1c0,0.55,0.45,1,1,1h6c0.55,0,1-0.45,1-1C15,15.45,14.55,15,14,15z");
+    			add_location(path8, file$2, 84, 10, 4131);
+    			add_location(g2, file$2, 72, 8, 3241);
+    			attr_dev(g3, "id", "Flat");
+    			add_location(g3, file$2, 70, 6, 3168);
+    			attr_dev(svg2, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg2, "class", "h-8 w-8");
+    			attr_dev(svg2, "viewBox", "0 0 24 24");
+    			attr_dev(svg2, "enable-background", "new 0 0 24 24");
+    			attr_dev(svg2, "xml:space", "preserve");
+    			add_location(svg2, file$2, 60, 4, 2847);
+    			attr_dev(button2, "class", "rounded-full w-16 h-16 flex items-center p-4 fill-current text-white\r\n    shadow-lg");
+    			set_style(button2, "background-color", "hsl(var(--accent-hue), 50%, 50%)");
+    			set_style(button2, "box-shadow", "0px\r\n    10px 15px 0px hsla(var(--accent-hue), 35%, 75%,0.85)");
+    			add_location(button2, file$2, 54, 2, 2558);
+    			attr_dev(div1, "class", "fixed bottom-0 w-full flex items-center justify-center mb-6");
+    			add_location(div1, file$2, 53, 0, 2481);
 
     			dispose = [
     				listen_dev(button0, "click", /*click_handler*/ ctx[1], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_1*/ ctx[2], false, false, false)
+    				listen_dev(button1, "click", /*click_handler_1*/ ctx[2], false, false, false),
+    				listen_dev(button2, "click", /*click_handler_2*/ ctx[3], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(entry, div, null);
+    			insert_dev(target, div0, anchor);
+    			mount_component(entry, div0, null);
     			insert_dev(target, t0, anchor);
     			insert_dev(target, nav, anchor);
     			append_dev(nav, button0);
@@ -27498,14 +27569,29 @@
     			append_dev(svg1, path3);
     			append_dev(button1, t4);
     			append_dev(button1, span1);
+    			insert_dev(target, t6, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, button2);
+    			append_dev(button2, svg2);
+    			append_dev(svg2, g0);
+    			append_dev(g0, rect0);
+    			append_dev(g0, rect1);
+    			append_dev(svg2, g3);
+    			append_dev(g3, g1);
+    			append_dev(g3, g2);
+    			append_dev(g2, path4);
+    			append_dev(g2, path5);
+    			append_dev(g2, path6);
+    			append_dev(g2, path7);
+    			append_dev(g2, path8);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*$view*/ 1 && button0_class_value !== (button0_class_value = "flex flex-col items-center w-1/2 py-2 active " + (/*$view*/ ctx[0] === "entry" ? "active" : "inactive") + " svelte-jr7n7f")) {
+    			if (!current || dirty & /*$view*/ 1 && button0_class_value !== (button0_class_value = "flex flex-col items-center w-1/2 py-2 " + (/*$view*/ ctx[0] === "dashboard" ? "active" : "inactive") + " svelte-jr7n7f")) {
     				attr_dev(button0, "class", button0_class_value);
     			}
 
-    			if (!current || dirty & /*$view*/ 1 && button1_class_value !== (button1_class_value = "flex flex-col items-center w-1/2 py-2 " + (/*$view*/ ctx[0] === "dashboard" ? "active" : "inactive") + " svelte-jr7n7f")) {
+    			if (!current || dirty & /*$view*/ 1 && button1_class_value !== (button1_class_value = "flex flex-col items-center w-1/2 py-2 " + (/*$view*/ ctx[0] === "settings" ? "active" : "inactive") + " svelte-jr7n7f")) {
     				attr_dev(button1, "class", button1_class_value);
     			}
     		},
@@ -27519,10 +27605,12 @@
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div0);
     			destroy_component(entry);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(nav);
+    			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(div1);
     			run_all(dispose);
     		}
     	};
@@ -27546,8 +27634,9 @@
     	let $view;
     	validate_store(view, "view");
     	component_subscribe($$self, view, $$value => $$invalidate(0, $view = $$value));
-    	const click_handler = () => setView("entry");
-    	const click_handler_1 = () => setView("dashboard");
+    	const click_handler = () => setView("dashboard");
+    	const click_handler_1 = () => setView("settings");
+    	const click_handler_2 = () => setView("entry");
 
     	$$self.$capture_state = () => {
     		return {};
@@ -27557,7 +27646,7 @@
     		if ("$view" in $$props) view.set($view = $$props.$view);
     	};
 
-    	return [$view, click_handler, click_handler_1];
+    	return [$view, click_handler, click_handler_1, click_handler_2];
     }
 
     class Scaffold extends SvelteComponentDev {
