@@ -97,7 +97,7 @@
 
   input {
     outline: none !important;
-    @apply px-2 py-1 mr-4 w-2/3 appearance-none text-right font-bold text-gray-600;
+    @apply px-2 py-1 mr-4 w-2/3 appearance-none text-right font-bold text-gray-600 bg-transparent;
   }
 
   .input-error {
