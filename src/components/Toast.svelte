@@ -22,8 +22,8 @@
     style="bottom: {yPos}px">
     <div
       class="rounded-full text-center text-white px-4 py-2"
-      style="background-color:hsl(var(--accent-hue), 50%, 50%)"
-      transition:fly={{ y: 30, duration: 150 }}>
+      style="background-color:hsl(var(--accent-hue), 40%, 60%)"
+      out:fly={{ y: 30, duration: 150 }}>
       {message}
     </div>
   </div>

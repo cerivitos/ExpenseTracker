@@ -49,8 +49,8 @@
   }
 
   function sendEntry() {
-    sendStatus.set("Sending expense...");
     window.history.back();
+    sendStatus.set("Submitting...");
 
     const db = firebase.firestore();
     db.collection("expenses")
@@ -64,6 +64,7 @@
       })
       .then(() => {
         sendStatus.set("Expense created!");
+        setTimeout(() => sendStatus.set(""), 1000);
       })
       .catch(error => {
         sendStatus.set(error);

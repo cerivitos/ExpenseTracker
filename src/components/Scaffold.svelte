@@ -42,9 +42,9 @@
 
 <div class="content">
   <slot />
-  <!-- {#if $sendStatus !== ''} -->
-  <Toast message={$sendStatus} />
-  <!-- {/if} -->
+  {#if $sendStatus !== ''}
+    <Toast message={$sendStatus} />
+  {/if}
 </div>
 <nav class="navbar">
   <button
