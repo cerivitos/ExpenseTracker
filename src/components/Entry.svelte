@@ -92,7 +92,7 @@
 </style>
 
 <div
-  class="absolute top-0 w-full h-screen z-10"
+  class="absolute top-0 w-full h-screen z-10 overflow-x-hidden"
   style="background-color: rgba(0,0,0,0.2)"
   transition:fade={{ duration: 180 }}>
   <div
