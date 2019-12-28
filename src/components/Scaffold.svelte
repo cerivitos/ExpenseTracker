@@ -1,5 +1,5 @@
 <script>
-  import { view, sendStatus } from "../store/store";
+  import { view, toastMessage } from "../store/store";
   import Entry from "./Entry.svelte";
   import Toast from "./Toast.svelte";
 
@@ -45,8 +45,8 @@
 
 <div class="content">
   <slot />
-  {#if $sendStatus !== ''}
-    <Toast message={$sendStatus} />
+  {#if $toastMessage !== ''}
+    <Toast message={$toastMessage} />
   {/if}
 </div>
 <nav class="navbar">

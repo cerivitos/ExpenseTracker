@@ -1,5 +1,5 @@
 <script>
-  import { view, sendStatus, userInfo } from "../store/store";
+  import { view, toastMessage, userInfo } from "../store/store";
   import { onMount } from "svelte";
   import TypeButton from "./TypeButton.svelte";
   import LoadingSpinner from "./LoadingSpinner.svelte";
@@ -50,7 +50,7 @@
 
   function sendEntry() {
     window.history.back();
-    sendStatus.set("Submitting...");
+    toastMessage.set("Submitting...");
 
     const db = firebase.firestore();
     db.collection("expenses")
@@ -63,11 +63,12 @@
         addedBy: $userInfo.uid
       })
       .then(() => {
-        sendStatus.set("Expense created!");
-        setTimeout(() => sendStatus.set(""), 1000);
+        toastMessage.set("Expense created!");
+        setTimeout(() => toastMessage.set(""), 1000);
       })
       .catch(error => {
-        sendStatus.set(error);
+        toastMessage.set(error);
+        setTimeout(() => toastMessage.set(""), 3000);
       });
   }
 
