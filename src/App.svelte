@@ -16,6 +16,7 @@
 
   let signInError = false;
   let errorMsg = "";
+  let app;
 
   onMount(() => {
     const firebaseConfig = {
@@ -28,7 +29,7 @@
       appId: "1:680552838328:web:d7d7ef47348fbb3920f04d"
     };
 
-    firebase.initializeApp(firebaseConfig);
+    app = firebase.initializeApp(firebaseConfig);
 
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -51,8 +52,8 @@
   <Scaffold>
     {#if $view === 'settings'}
       <Settings />
-    {:else if $view === 'dashboard'}
-      <div />
+    {:else if $view === 'dashboard' && app}
+      <Dashboard />
     {/if}
   </Scaffold>
   {#if signInError}

@@ -2,16 +2,24 @@
   import { onMount } from "svelte";
   import firebase from "firebase/app";
   import "firebase/firestore";
+  import { toastMessage } from "../store/store";
 
   let db;
 
   onMount(() => {
     db = firebase.firestore();
 
+    toastMessage.set("Updating...");
+
     db.collection("expenses")
       .get()
       .then(querySnapshot => {
+        toastMessage.set("");
         console.log(querySnapshot);
+      })
+      .catch(err => {
+        toastMessage.set(err);
+        setTimeout(() => toastMessage.set(""), 3000);
       });
   });
 </script>
@@ -22,4 +30,4 @@
   }
 </style>
 
-<div class="flex items-center justify-center h-screen bg-gray-200" />
+<div class="flex flex-col mx-4 my-8" />
