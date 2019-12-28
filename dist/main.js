@@ -26311,7 +26311,7 @@
     	return child_ctx;
     }
 
-    // (98:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
+    // (106:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
     function create_each_block(ctx) {
     	let button;
     	let t0;
@@ -26333,7 +26333,7 @@
     			? "active"
     			: "") + " svelte-f0nlgm");
 
-    			add_location(button, file, 98, 6, 3014);
+    			add_location(button, file, 106, 6, 3302);
     			dispose = listen_dev(button, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -26360,7 +26360,7 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(98:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
+    		source: "(106:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
     		ctx
     	});
 
@@ -26401,15 +26401,15 @@
     			}
 
     			attr_dev(span0, "class", "w-full mb-1 text-4xl text-center font-bold");
-    			add_location(span0, file, 91, 2, 2663);
+    			add_location(span0, file, 99, 2, 2951);
     			attr_dev(span1, "class", "w-full text-center text-gray-600 text-sm font-light mb-8");
-    			add_location(span1, file, 92, 2, 2744);
+    			add_location(span1, file, 100, 2, 3032);
     			attr_dev(div0, "class", "w-full h-64 bg-gray-400 mb-8");
-    			add_location(div0, file, 95, 2, 2847);
+    			add_location(div0, file, 103, 2, 3135);
     			attr_dev(div1, "class", "flex flex-row justify-around overflow-x-scroll");
-    			add_location(div1, file, 96, 2, 2895);
+    			add_location(div1, file, 104, 2, 3183);
     			attr_dev(div2, "class", "flex flex-col mx-4 my-8");
-    			add_location(div2, file, 90, 0, 2622);
+    			add_location(div2, file, 98, 0, 2910);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -26480,7 +26480,7 @@
     	} else if (interval === "1Y") {
     		queryDate = new Date(currentDate.setMonth(0));
     	} else if (interval === "All") {
-    		return "1999-01-01";
+    		queryDate = new Date("1999-01-01");
     	}
 
     	return parseDateString(queryDate.getFullYear(), queryDate.getMonth() + 1, queryDate.getDate());
@@ -26507,7 +26507,7 @@
     function instance($$self, $$props, $$invalidate) {
     	let db;
     	let currentInterval = "1M";
-    	let queryInterval = getQueryInterval(currentInterval);
+    	let queryInterval;
     	let totalSpend = 0;
 
     	onMount(() => {
@@ -26515,13 +26515,19 @@
     			$$invalidate(0, currentInterval = localStorage.getItem("interval"));
     		}
 
-    		$$invalidate(3, db = firebase$1.firestore());
+    		db = firebase$1.firestore();
+    		queryInterval = getQueryInterval(currentInterval);
+
+    		db.collection("expenses").where("date", ">=", queryInterval).where("date", "<=", new Date().toISOString().substring(0, 10)).onSnapshot(snapshot => {
+    			localStorage.setItem("cache", JSON.stringify(snapshot.docs));
+    		});
     	});
 
     	function changeInterval(interval) {
     		$$invalidate(0, currentInterval = interval);
     		localStorage.setItem("interval", currentInterval);
-    		$$invalidate(4, queryInterval = getQueryInterval(currentInterval));
+    		queryInterval = getQueryInterval(currentInterval);
+    		fetchData(queryInterval);
     	}
 
     	function fetchData(queryInterval) {
@@ -26546,16 +26552,10 @@
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("db" in $$props) $$invalidate(3, db = $$props.db);
+    		if ("db" in $$props) db = $$props.db;
     		if ("currentInterval" in $$props) $$invalidate(0, currentInterval = $$props.currentInterval);
-    		if ("queryInterval" in $$props) $$invalidate(4, queryInterval = $$props.queryInterval);
+    		if ("queryInterval" in $$props) queryInterval = $$props.queryInterval;
     		if ("totalSpend" in $$props) $$invalidate(1, totalSpend = $$props.totalSpend);
-    	};
-
-    	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*db, queryInterval*/ 24) {
-    			$: if (db) fetchData(queryInterval);
-    		}
     	};
 
     	return [

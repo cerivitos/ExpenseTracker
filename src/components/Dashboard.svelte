@@ -7,7 +7,7 @@
 
   let db;
   let currentInterval = "1M";
-  let queryInterval = getQueryInterval(currentInterval);
+  let queryInterval;
   let totalSpend = 0;
 
   onMount(() => {
@@ -16,12 +16,22 @@
     }
 
     db = firebase.firestore();
+
+    queryInterval = getQueryInterval(currentInterval);
+
+    db.collection("expenses")
+      .where("date", ">=", queryInterval)
+      .where("date", "<=", new Date().toISOString().substring(0, 10))
+      .onSnapshot(snapshot => {
+        localStorage.setItem("cache", JSON.stringify(snapshot.docs));
+      });
   });
 
   function changeInterval(interval) {
     currentInterval = interval;
     localStorage.setItem("interval", currentInterval);
     queryInterval = getQueryInterval(currentInterval);
+    fetchData(queryInterval);
   }
 
   function getQueryInterval(interval) {
@@ -36,7 +46,7 @@
     } else if (interval === "1Y") {
       queryDate = new Date(currentDate.setMonth(0));
     } else if (interval === "All") {
-      return "1999-01-01";
+      queryDate = new Date("1999-01-01");
     }
 
     return parseDateString(
@@ -82,8 +92,6 @@
         setTimeout(() => toastMessage.set(""), 3000);
       });
   }
-
-  $: if (db) fetchData(queryInterval);
 </script>
 
 <style type="text/postcss">
