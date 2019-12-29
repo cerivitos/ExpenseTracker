@@ -5,9 +5,8 @@
   import { toastMessage } from "../store/store";
   import ApexCharts from "apexcharts";
 
-  let db;
+  let db, queryInterval, dbListener, dataToDisplay;
   let currentInterval = "1M";
-  let queryInterval;
   let totalSpend = 0;
 
   onMount(() => {
@@ -15,16 +14,15 @@
       currentInterval = localStorage.getItem("interval");
     }
 
+    if (localStorage.getItem("cache")) {
+      dataToDisplay = JSON.parse(localStorage.getItem("cache"));
+    }
+
     db = firebase.firestore();
 
     queryInterval = getQueryInterval(currentInterval);
 
-    db.collection("expenses")
-      .where("date", ">=", queryInterval)
-      .where("date", "<=", new Date().toISOString().substring(0, 10))
-      .onSnapshot(snapshot => {
-        localStorage.setItem("cache", JSON.stringify(snapshot.docs));
-      });
+    fetchData(queryInterval);
   });
 
   function changeInterval(interval) {
@@ -80,17 +78,26 @@
     db.collection("expenses")
       .where("date", ">=", queryInterval)
       .where("date", "<=", new Date().toISOString().substring(0, 10))
-      .get()
-      .then(querySnapshot => {
-        toastMessage.set("");
-        querySnapshot.forEach(query => {
-          console.log(query.data());
-        });
-      })
-      .catch(err => {
-        toastMessage.set(err);
-        setTimeout(() => toastMessage.set(""), 3000);
-      });
+      .onSnapshot(
+        snapshot => {
+          let cacheObj = [];
+
+          snapshot.forEach(doc => {
+            const data = doc.data();
+            data.id = doc.id;
+            cacheObj.push(data);
+          });
+
+          toastMessage.set("");
+
+          localStorage.setItem("cache", JSON.stringify(cacheObj));
+          dataToDisplay = cacheObj;
+        },
+        error => {
+          toastMessage.set(error);
+          setTimeout(() => toastMessage.set(""), 3000);
+        }
+      );
   }
 </script>
 

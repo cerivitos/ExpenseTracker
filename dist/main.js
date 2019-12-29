@@ -26307,11 +26307,11 @@
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[7] = list[i];
+    	child_ctx[9] = list[i];
     	return child_ctx;
     }
 
-    // (106:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
+    // (113:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
     function create_each_block(ctx) {
     	let button;
     	let t0;
@@ -26320,20 +26320,20 @@
     	let dispose;
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[6](/*interval*/ ctx[7], ...args);
+    		return /*click_handler*/ ctx[8](/*interval*/ ctx[9], ...args);
     	}
 
     	const block = {
     		c: function create() {
     			button = element("button");
-    			t0 = text(/*interval*/ ctx[7]);
+    			t0 = text(/*interval*/ ctx[9]);
     			t1 = space();
 
-    			attr_dev(button, "class", button_class_value = "interval-button " + (/*currentInterval*/ ctx[0] === /*interval*/ ctx[7]
+    			attr_dev(button, "class", button_class_value = "interval-button " + (/*currentInterval*/ ctx[0] === /*interval*/ ctx[9]
     			? "active"
     			: "") + " svelte-f0nlgm");
 
-    			add_location(button, file, 106, 6, 3302);
+    			add_location(button, file, 113, 6, 3427);
     			dispose = listen_dev(button, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -26344,7 +26344,7 @@
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*currentInterval*/ 1 && button_class_value !== (button_class_value = "interval-button " + (/*currentInterval*/ ctx[0] === /*interval*/ ctx[7]
+    			if (dirty & /*currentInterval*/ 1 && button_class_value !== (button_class_value = "interval-button " + (/*currentInterval*/ ctx[0] === /*interval*/ ctx[9]
     			? "active"
     			: "") + " svelte-f0nlgm")) {
     				attr_dev(button, "class", button_class_value);
@@ -26360,7 +26360,7 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(106:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
+    		source: "(113:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
     		ctx
     	});
 
@@ -26401,15 +26401,15 @@
     			}
 
     			attr_dev(span0, "class", "w-full mb-1 text-4xl text-center font-bold");
-    			add_location(span0, file, 99, 2, 2951);
+    			add_location(span0, file, 106, 2, 3076);
     			attr_dev(span1, "class", "w-full text-center text-gray-600 text-sm font-light mb-8");
-    			add_location(span1, file, 100, 2, 3032);
+    			add_location(span1, file, 107, 2, 3157);
     			attr_dev(div0, "class", "w-full h-64 bg-gray-400 mb-8");
-    			add_location(div0, file, 103, 2, 3135);
+    			add_location(div0, file, 110, 2, 3260);
     			attr_dev(div1, "class", "flex flex-row justify-around overflow-x-scroll");
-    			add_location(div1, file, 104, 2, 3183);
+    			add_location(div1, file, 111, 2, 3308);
     			attr_dev(div2, "class", "flex flex-col mx-4 my-8");
-    			add_location(div2, file, 98, 0, 2910);
+    			add_location(div2, file, 105, 0, 3035);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -26505,9 +26505,8 @@
     }
 
     function instance($$self, $$props, $$invalidate) {
-    	let db;
+    	let db, queryInterval, dbListener, dataToDisplay;
     	let currentInterval = "1M";
-    	let queryInterval;
     	let totalSpend = 0;
 
     	onMount(() => {
@@ -26515,12 +26514,13 @@
     			$$invalidate(0, currentInterval = localStorage.getItem("interval"));
     		}
 
+    		if (localStorage.getItem("cache")) {
+    			dataToDisplay = JSON.parse(localStorage.getItem("cache"));
+    		}
+
     		db = firebase$1.firestore();
     		queryInterval = getQueryInterval(currentInterval);
-
-    		db.collection("expenses").where("date", ">=", queryInterval).where("date", "<=", new Date().toISOString().substring(0, 10)).onSnapshot(snapshot => {
-    			localStorage.setItem("cache", JSON.stringify(snapshot.docs));
-    		});
+    		fetchData(queryInterval);
     	});
 
     	function changeInterval(interval) {
@@ -26533,16 +26533,25 @@
     	function fetchData(queryInterval) {
     		toastMessage.set("Updating...");
 
-    		db.collection("expenses").where("date", ">=", queryInterval).where("date", "<=", new Date().toISOString().substring(0, 10)).get().then(querySnapshot => {
-    			toastMessage.set("");
+    		db.collection("expenses").where("date", ">=", queryInterval).where("date", "<=", new Date().toISOString().substring(0, 10)).onSnapshot(
+    			snapshot => {
+    				let cacheObj = [];
 
-    			querySnapshot.forEach(query => {
-    				console.log(query.data());
-    			});
-    		}).catch(err => {
-    			toastMessage.set(err);
-    			setTimeout(() => toastMessage.set(""), 3000);
-    		});
+    				snapshot.forEach(doc => {
+    					const data = doc.data();
+    					data.id = doc.id;
+    					cacheObj.push(data);
+    				});
+
+    				toastMessage.set("");
+    				localStorage.setItem("cache", JSON.stringify(cacheObj));
+    				dataToDisplay = cacheObj;
+    			},
+    			error => {
+    				toastMessage.set(error);
+    				setTimeout(() => toastMessage.set(""), 3000);
+    			}
+    		);
     	}
 
     	const click_handler = interval => changeInterval(interval);
@@ -26553,8 +26562,10 @@
 
     	$$self.$inject_state = $$props => {
     		if ("db" in $$props) db = $$props.db;
-    		if ("currentInterval" in $$props) $$invalidate(0, currentInterval = $$props.currentInterval);
     		if ("queryInterval" in $$props) queryInterval = $$props.queryInterval;
+    		if ("dbListener" in $$props) dbListener = $$props.dbListener;
+    		if ("dataToDisplay" in $$props) dataToDisplay = $$props.dataToDisplay;
+    		if ("currentInterval" in $$props) $$invalidate(0, currentInterval = $$props.currentInterval);
     		if ("totalSpend" in $$props) $$invalidate(1, totalSpend = $$props.totalSpend);
     	};
 
@@ -26564,6 +26575,8 @@
     		changeInterval,
     		db,
     		queryInterval,
+    		dataToDisplay,
+    		dbListener,
     		fetchData,
     		click_handler
     	];
