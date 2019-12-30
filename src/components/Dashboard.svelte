@@ -105,7 +105,8 @@
               type: type,
               data: [],
               sum: 0,
-              items: 0
+              items: 0,
+              percentage: 0
             });
           });
 
@@ -129,6 +130,15 @@
 
           //Sort by category sum
           categorizedData.sort((a, b) => b.sum - a.sum);
+
+          //Get percentage proportion for each category
+          const totalSpend = categorizedData.reduce(
+            (a, b) => (a.sum ? a.sum : a + b.sum),
+            0
+          );
+          categorizedData.forEach(data => {
+            data.percentage = (data.sum / totalSpend) * 100;
+          });
 
           localStorage.setItem(
             "categorizedCache",

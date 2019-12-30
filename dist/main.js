@@ -26317,7 +26317,7 @@
     	return child_ctx;
     }
 
-    // (157:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
+    // (167:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
     function create_each_block_1(ctx) {
     	let button;
     	let t0;
@@ -26339,7 +26339,7 @@
     			? "active"
     			: "") + " svelte-f0nlgm");
 
-    			add_location(button, file, 157, 6, 4683);
+    			add_location(button, file, 167, 6, 5029);
     			dispose = listen_dev(button, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -26366,14 +26366,14 @@
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(157:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
+    		source: "(167:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (165:2) {#each categorizedData as data}
+    // (175:2) {#each categorizedData as data}
     function create_each_block(ctx) {
     	let div2;
     	let div0;
@@ -26409,15 +26409,15 @@
     			t4 = text(t4_value);
     			t5 = space();
     			attr_dev(div0, "class", "rounded-full w-8 h-8 bg-gray-500 mr-2");
-    			add_location(div0, file, 166, 6, 4976);
+    			add_location(div0, file, 176, 6, 5322);
     			attr_dev(span0, "class", "font-bold");
-    			add_location(span0, file, 168, 8, 5109);
+    			add_location(span0, file, 178, 8, 5455);
     			attr_dev(div1, "class", "flex flex-col justify-between truncate flex-grow");
-    			add_location(div1, file, 167, 6, 5037);
+    			add_location(div1, file, 177, 6, 5383);
     			attr_dev(span1, "class", "font-bold text-gray-700 text-lg mx-2");
-    			add_location(span1, file, 170, 6, 5173);
+    			add_location(span1, file, 180, 6, 5519);
     			attr_dev(div2, "class", "py-4 flex flex-row items-center");
-    			add_location(div2, file, 165, 4, 4923);
+    			add_location(div2, file, 175, 4, 5269);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -26450,7 +26450,7 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(165:2) {#each categorizedData as data}",
+    		source: "(175:2) {#each categorizedData as data}",
     		ctx
     	});
 
@@ -26505,15 +26505,15 @@
     			}
 
     			attr_dev(span0, "class", "w-full mb-1 text-4xl text-center font-bold");
-    			add_location(span0, file, 150, 2, 4327);
+    			add_location(span0, file, 160, 2, 4673);
     			attr_dev(span1, "class", "w-full text-center text-gray-600 text-sm font-light mb-8");
-    			add_location(span1, file, 151, 2, 4408);
+    			add_location(span1, file, 161, 2, 4754);
     			attr_dev(div0, "class", "w-full h-64 bg-gray-400 mb-8");
-    			add_location(div0, file, 154, 2, 4511);
+    			add_location(div0, file, 164, 2, 4857);
     			attr_dev(div1, "class", "flex flex-row justify-around overflow-x-scroll mb-8");
-    			add_location(div1, file, 155, 2, 4559);
+    			add_location(div1, file, 165, 2, 4905);
     			attr_dev(div2, "class", "flex flex-col mx-4 my-8");
-    			add_location(div2, file, 149, 0, 4286);
+    			add_location(div2, file, 159, 0, 4632);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -26687,7 +26687,13 @@
     				const types = [...new Set(rawData.map(item => item.type))];
 
     				types.forEach(type => {
-    					categorizedData.push({ type, data: [], sum: 0, items: 0 });
+    					categorizedData.push({
+    						type,
+    						data: [],
+    						sum: 0,
+    						items: 0,
+    						percentage: 0
+    					});
     				});
 
     				categorizedData.forEach(categoryData => {
@@ -26708,6 +26714,12 @@
     				});
 
     				categorizedData.sort((a, b) => b.sum - a.sum);
+    				const totalSpend = categorizedData.reduce((a, b) => a.sum ? a.sum : a + b.sum, 0);
+
+    				categorizedData.forEach(data => {
+    					data.percentage = data.sum / totalSpend * 100;
+    				});
+
     				localStorage.setItem("categorizedCache", JSON.stringify(categorizedData));
     				console.log(categorizedData);
     			},
