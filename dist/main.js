@@ -26493,6 +26493,7 @@
     	let t11;
     	let t12;
     	let div3;
+    	let div3_intro;
     	let div4_intro;
     	let div4_outro;
     	let current;
@@ -26522,24 +26523,24 @@
     			t12 = space();
     			div3 = element("div");
     			attr_dev(div0, "class", "rounded-full w-8 h-8 bg-gray-500 ml-4 mr-2");
-    			add_location(div0, file, 11, 2, 253);
+    			add_location(div0, file, 11, 2, 257);
     			attr_dev(span0, "class", "font-bold");
-    			add_location(span0, file, 13, 4, 383);
+    			add_location(span0, file, 13, 4, 387);
     			attr_dev(span1, "class", "font-light text-gray-600");
-    			add_location(span1, file, 14, 4, 431);
+    			add_location(span1, file, 14, 4, 435);
     			attr_dev(div1, "class", "flex flex-col justify-between truncate flex-grow");
-    			add_location(div1, file, 12, 2, 315);
-    			add_location(span2, file, 19, 4, 625);
+    			add_location(div1, file, 12, 2, 319);
+    			add_location(span2, file, 19, 4, 629);
     			attr_dev(span3, "class", "font-light text-gray-600");
-    			add_location(span3, file, 20, 4, 667);
+    			add_location(span3, file, 20, 4, 671);
     			attr_dev(div2, "class", "flex flex-col justify-between items-end ml-2 mr-4");
-    			add_location(div2, file, 18, 2, 556);
-    			attr_dev(div3, "class", "absolute left-0 top-0 h-full bg-blue-200");
+    			add_location(div2, file, 18, 2, 560);
+    			attr_dev(div3, "class", "absolute left-0 top-0 h-full bg-blue-200 rounded-r");
     			set_style(div3, "width", window.innerWidth * /*data*/ ctx[0].percentage / 100 + "px");
     			set_style(div3, "z-index", "-1");
-    			add_location(div3, file, 22, 2, 757);
+    			add_location(div3, file, 22, 2, 761);
     			attr_dev(div4, "class", "relative py-4 flex flex-row items-center");
-    			add_location(div4, file, 7, 0, 111);
+    			add_location(div4, file, 7, 0, 116);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -26583,12 +26584,24 @@
     		i: function intro(local) {
     			if (current) return;
 
+    			if (!div3_intro) {
+    				add_render_callback(() => {
+    					div3_intro = create_in_transition(div3, fly, {
+    						x: -(window.innerWidth * /*data*/ ctx[0].percentage) / 100,
+    						duration: 180,
+    						delay: /*index*/ ctx[1] * 80
+    					});
+
+    					div3_intro.start();
+    				});
+    			}
+
     			add_render_callback(() => {
     				if (div4_outro) div4_outro.end(1);
 
     				if (!div4_intro) div4_intro = create_in_transition(div4, fade, {
-    					duration: 180,
-    					delay: /*index*/ ctx[1] * 80
+    					duration: 80,
+    					delay: /*index*/ ctx[1] * 50
     				});
 
     				div4_intro.start();
