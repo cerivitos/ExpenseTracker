@@ -11,6 +11,9 @@
             tar[k] = src[k];
         return tar;
     }
+    function is_promise(value) {
+        return value && typeof value === 'object' && typeof value.then === 'function';
+    }
     function add_location(element, file, line, column, char) {
         element.__svelte_meta = {
             loc: { file, line, column, char }
@@ -518,6 +521,72 @@
                 running_program = pending_program = null;
             }
         };
+    }
+
+    function handle_promise(promise, info) {
+        const token = info.token = {};
+        function update(type, index, key, value) {
+            if (info.token !== token)
+                return;
+            info.resolved = value;
+            let child_ctx = info.ctx;
+            if (key !== undefined) {
+                child_ctx = child_ctx.slice();
+                child_ctx[key] = value;
+            }
+            const block = type && (info.current = type)(child_ctx);
+            let needs_flush = false;
+            if (info.block) {
+                if (info.blocks) {
+                    info.blocks.forEach((block, i) => {
+                        if (i !== index && block) {
+                            group_outros();
+                            transition_out(block, 1, 1, () => {
+                                info.blocks[i] = null;
+                            });
+                            check_outros();
+                        }
+                    });
+                }
+                else {
+                    info.block.d(1);
+                }
+                block.c();
+                transition_in(block, 1);
+                block.m(info.mount(), info.anchor);
+                needs_flush = true;
+            }
+            info.block = block;
+            if (info.blocks)
+                info.blocks[index] = block;
+            if (needs_flush) {
+                flush();
+            }
+        }
+        if (is_promise(promise)) {
+            const current_component = get_current_component();
+            promise.then(value => {
+                set_current_component(current_component);
+                update(info.then, 1, info.value, value);
+                set_current_component(null);
+            }, error => {
+                set_current_component(current_component);
+                update(info.catch, 2, info.error, error);
+                set_current_component(null);
+            });
+            // if we previously had a then/catch block, destroy it
+            if (info.current !== info.pending) {
+                update(info.pending, 0);
+                return true;
+            }
+        }
+        else {
+            if (info.current !== info.then) {
+                update(info.then, 1, info.value, promise);
+                return true;
+            }
+            info.resolved = promise;
+        }
     }
     function create_component(block) {
         block && block.c();
@@ -26302,8 +26371,43 @@
     /*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js */
     "document"in self&&("classList"in document.createElement("_")&&(!document.createElementNS||"classList"in document.createElementNS("http://www.w3.org/2000/svg","g"))||function(t){if("Element"in t){var e=t.Element.prototype,i=Object,s=String.prototype.trim||function(){return this.replace(/^\s+|\s+$/g,"")},a=Array.prototype.indexOf||function(t){for(var e=0,i=this.length;e<i;e++)if(e in this&&this[e]===t)return e;return -1},r=function(t,e){this.name=t,this.code=DOMException[t],this.message=e;},n=function(t,e){if(""===e)throw new r("SYNTAX_ERR","The token must not be empty.");if(/\s/.test(e))throw new r("INVALID_CHARACTER_ERR","The token must not contain space characters.");return a.call(t,e)},o=function(t){for(var e=s.call(t.getAttribute("class")||""),i=e?e.split(/\s+/):[],a=0,r=i.length;a<r;a++)this.push(i[a]);this._updateClassName=function(){t.setAttribute("class",this.toString());};},l=o.prototype=[],h=function(){return new o(this)};if(r.prototype=Error.prototype,l.item=function(t){return this[t]||null},l.contains=function(t){return ~n(this,t+"")},l.add=function(){var t,e=arguments,i=0,s=e.length,a=!1;do{t=e[i]+"",~n(this,t)||(this.push(t),a=!0);}while(++i<s);a&&this._updateClassName();},l.remove=function(){var t,e,i=arguments,s=0,a=i.length,r=!1;do{for(t=i[s]+"",e=n(this,t);~e;)this.splice(e,1),r=!0,e=n(this,t);}while(++s<a);r&&this._updateClassName();},l.toggle=function(t,e){var i=this.contains(t),s=i?!0!==e&&"remove":!1!==e&&"add";return s&&this[s](t),!0===e||!1===e?e:!i},l.replace=function(t,e){var i=n(t+"");~i&&(this.splice(i,1,e),this._updateClassName());},l.toString=function(){return this.join(" ")},i.defineProperty){var c={get:h,enumerable:!0,configurable:!0};try{i.defineProperty(e,"classList",c);}catch(t){void 0!==t.number&&-2146823252!==t.number||(c.enumerable=!1,i.defineProperty(e,"classList",c));}}else i.prototype.__defineGetter__&&e.__defineGetter__("classList",h);}}(self),function(){var t=document.createElement("_");if(t.classList.add("c1","c2"),!t.classList.contains("c2")){var e=function(t){var e=DOMTokenList.prototype[t];DOMTokenList.prototype[t]=function(t){var i,s=arguments.length;for(i=0;i<s;i++)t=arguments[i],e.call(this,t);};};e("add"),e("remove");}if(t.classList.toggle("c3",!1),t.classList.contains("c3")){var i=DOMTokenList.prototype.toggle;DOMTokenList.prototype.toggle=function(t,e){return 1 in arguments&&!this.contains(t)==!e?e:i.call(this,t)};}"replace"in document.createElement("_").classList||(DOMTokenList.prototype.replace=function(t,e){var i=this.toString().split(" "),s=i.indexOf(t+"");~s&&(i=i.slice(s),this.remove.apply(this,i),this.add(e),this.add.apply(this,i.slice(1)));}),t=null;}()),function(){function t(t){var e=t.__resizeTriggers__,i=e.firstElementChild,s=e.lastElementChild,a=i.firstElementChild;s.scrollLeft=s.scrollWidth,s.scrollTop=s.scrollHeight,a.style.width=i.offsetWidth+1+"px",a.style.height=i.offsetHeight+1+"px",i.scrollLeft=i.scrollWidth,i.scrollTop=i.scrollHeight;}function e(e){var i=this;t(this),this.__resizeRAF__&&r(this.__resizeRAF__),this.__resizeRAF__=a((function(){(function(t){return t.offsetWidth!=t.__resizeLast__.width||t.offsetHeight!=t.__resizeLast__.height})(i)&&(i.__resizeLast__.width=i.offsetWidth,i.__resizeLast__.height=i.offsetHeight,i.__resizeListeners__.forEach((function(t){t.call(e);})));}));}var i,s,a=(i=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||function(t){return window.setTimeout(t,20)},function(t){return i(t)}),r=(s=window.cancelAnimationFrame||window.mozCancelAnimationFrame||window.webkitCancelAnimationFrame||window.clearTimeout,function(t){return s(t)}),n=!1,o="animationstart",l="Webkit Moz O ms".split(" "),h="webkitAnimationStart animationstart oAnimationStart MSAnimationStart".split(" "),c=document.createElement("fakeelement");if(void 0!==c.style.animationName&&(n=!0),!1===n)for(var d=0;d<l.length;d++)if(void 0!==c.style[l[d]+"AnimationName"]){o=h[d];break}window.addResizeListener=function(i,s){i.__resizeTriggers__||("static"==getComputedStyle(i).position&&(i.style.position="relative"),i.__resizeLast__={},i.__resizeListeners__=[],(i.__resizeTriggers__=document.createElement("div")).className="resize-triggers",i.__resizeTriggers__.innerHTML='<div class="expand-trigger"><div></div></div><div class="contract-trigger"></div>',i.appendChild(i.__resizeTriggers__),t(i),i.addEventListener("scroll",e,!0),o&&i.__resizeTriggers__.addEventListener(o,(function(e){"resizeanim"==e.animationName&&t(i);}))),i.__resizeListeners__.push(s);},window.removeResizeListener=function(t,i){t&&(t.__resizeListeners__.splice(t.__resizeListeners__.indexOf(i),1),t.__resizeListeners__.length||(t.removeEventListener("scroll",e),t.__resizeTriggers__=!t.removeChild(t.__resizeTriggers__)));};}(),window.Apex={};var ApexCharts$1=function(){function t(e,i){_classCallCheck(this,t),this.opts=i,this.ctx=this,this.w=new Base(i).init(),this.el=e,this.w.globals.cuid=Utils.randomId(),this.w.globals.chartID=this.w.config.chart.id?this.w.config.chart.id:this.w.globals.cuid,this.eventList=["mousedown","mousemove","touchstart","touchmove","mouseup","touchend"],this.initModules(),this.create=Utils.bind(this.create,this),this.documentEvent=Utils.bind(this.documentEvent,this),this.windowResizeHandler=this.windowResize.bind(this);}return _createClass(t,[{key:"render",value:function(){var t=this;return new Promise$1((function(e,i){if(null!==t.el){void 0===Apex._chartInstances&&(Apex._chartInstances=[]),t.w.config.chart.id&&Apex._chartInstances.push({id:t.w.globals.chartID,group:t.w.config.chart.group,chart:t}),t.setLocale(t.w.config.chart.defaultLocale);var s=t.w.config.chart.events.beforeMount;"function"==typeof s&&s(t,t.w),t.fireEvent("beforeMount",[t,t.w]),window.addEventListener("resize",t.windowResizeHandler),window.addResizeListener(t.el.parentNode,t.parentResizeCallback.bind(t));var a=t.create(t.w.config.series,{});if(!a)return e(t);t.mount(a).then((function(){e(a),"function"==typeof t.w.config.chart.events.mounted&&t.w.config.chart.events.mounted(t,t.w),t.fireEvent("mounted",[t,t.w]);})).catch((function(t){i(t);}));}else i(new Error("Element not found"));}))}},{key:"initModules",value:function(){this.animations=new Animations(this),this.axes=new Axes(this),this.core=new Core(this.el,this),this.data=new Data(this),this.grid=new Grid(this),this.coreUtils=new CoreUtils(this),this.config=new Config({}),this.crosshairs=new Crosshairs(this),this.options=new Options,this.responsive=new Responsive(this),this.series=new Series(this),this.theme=new Theme(this),this.formatters=new Formatters(this),this.titleSubtitle=new TitleSubtitle(this),this.legend=new Legend(this),this.toolbar=new Toolbar(this),this.dimensions=new Dimensions(this),this.zoomPanSelection=new ZoomPanSelection(this),this.w.globals.tooltip=new Tooltip(this);}},{key:"addEventListener",value:function(t,e){var i=this.w;i.globals.events.hasOwnProperty(t)?i.globals.events[t].push(e):i.globals.events[t]=[e];}},{key:"removeEventListener",value:function(t,e){var i=this.w;if(i.globals.events.hasOwnProperty(t)){var s=i.globals.events[t].indexOf(e);-1!==s&&i.globals.events[t].splice(s,1);}}},{key:"fireEvent",value:function(t,e){var i=this.w;if(i.globals.events.hasOwnProperty(t)){e&&e.length||(e=[]);for(var s=i.globals.events[t],a=s.length,r=0;r<a;r++)s[r].apply(null,e);}}},{key:"create",value:function(t,e){var i=this.w;this.initModules();var s=this.w.globals;if(s.noData=!1,s.animationEnded=!1,this.responsive.checkResponsiveConfig(e),null===this.el)return s.animationEnded=!0,null;if(this.core.setupElements(),0===s.svgWidth)return s.animationEnded=!0,null;var a=CoreUtils.checkComboSeries(t);s.comboCharts=a.comboCharts,s.comboChartsHasBars=a.comboChartsHasBars,(0===t.length||1===t.length&&t[0].data&&0===t[0].data.length)&&this.series.handleNoData(),this.setupEventHandlers(),this.data.parseData(t),this.theme.init(),new Markers(this).setGlobalMarkerSize(),this.formatters.setLabelFormatters(),this.titleSubtitle.draw(),s.noData&&s.collapsedSeries.length!==s.series.length||this.legend.init(),this.series.hasAllSeriesEqualX(),s.axisCharts&&(this.core.coreCalculations(),"category"!==i.config.xaxis.type&&this.formatters.setLabelFormatters()),this.formatters.heatmapLabelFormatters(),this.dimensions.plotCoords();var r=this.core.xySettings();this.grid.createGridMask();var n=this.core.plotChartType(t,r);this.core.shiftGraphPosition();var o={plot:{left:i.globals.translateX,top:i.globals.translateY,width:i.globals.gridWidth,height:i.globals.gridHeight}};return {elGraph:n,xyRatios:r,elInner:i.globals.dom.elGraphical,dimensions:o}}},{key:"mount",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null,e=this,i=e.w;return new Promise$1((function(s,a){if(null===e.el)return a(new Error("Not enough data to display or target element not found"));if((null===t||i.globals.allSeriesCollapsed)&&e.series.handleNoData(),e.annotations=new Annotations(e),e.axes.drawAxis(i.config.chart.type,t.xyRatios),e.grid=new Grid(e),"back"===i.config.grid.position&&e.grid.drawGrid(),"back"===i.config.annotations.position&&e.annotations.drawAnnotations(),t.elGraph instanceof Array)for(var r=0;r<t.elGraph.length;r++)i.globals.dom.elGraphical.add(t.elGraph[r]);else i.globals.dom.elGraphical.add(t.elGraph);if("front"===i.config.grid.position&&e.grid.drawGrid(),"front"===i.config.xaxis.crosshairs.position&&e.crosshairs.drawXCrosshairs(),"front"===i.config.yaxis[0].crosshairs.position&&e.crosshairs.drawYCrosshairs(),"front"===i.config.annotations.position&&e.annotations.drawAnnotations(),!i.globals.noData){if(i.config.tooltip.enabled&&!i.globals.noData&&e.w.globals.tooltip.drawTooltip(t.xyRatios),i.globals.axisCharts&&i.globals.isXNumeric)(i.config.chart.zoom.enabled||i.config.chart.selection&&i.config.chart.selection.enabled||i.config.chart.pan&&i.config.chart.pan.enabled)&&e.zoomPanSelection.init({xyRatios:t.xyRatios});else{var n=i.config.chart.toolbar.tools;n.zoom=!1,n.zoomin=!1,n.zoomout=!1,n.selection=!1,n.pan=!1,n.reset=!1;}i.config.chart.toolbar.show&&!i.globals.allSeriesCollapsed&&e.toolbar.createToolbar();}i.globals.memory.methodsToExec.length>0&&i.globals.memory.methodsToExec.forEach((function(t){t.method(t.params,!1,t.context);})),i.globals.axisCharts||i.globals.noData||e.core.resizeNonAxisCharts(),s(e);}))}},{key:"clearPreviousPaths",value:function(){var t=this.w;t.globals.previousPaths=[],t.globals.allSeriesCollapsed=!1,t.globals.collapsedSeries=[],t.globals.collapsedSeriesIndices=[];}},{key:"updateOptions",value:function(t){var e=arguments.length>1&&void 0!==arguments[1]&&arguments[1],i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2],s=!(arguments.length>3&&void 0!==arguments[3])||arguments[3],a=!(arguments.length>4&&void 0!==arguments[4])||arguments[4],r=this.w;return t.series&&(this.resetSeries(!1),t.series.length&&t.series[0].data&&(t.series=t.series.map((function(t,e){return _objectSpread2({},r.config.series[e],{name:t.name?t.name:r.config.series[e]&&r.config.series[e].name,type:t.type?t.type:r.config.series[e]&&r.config.series[e].type,data:t.data?t.data:r.config.series[e]&&r.config.series[e].data})}))),this.revertDefaultAxisMinMax()),t.xaxis&&((t.xaxis.min||t.xaxis.max)&&this.forceXAxisUpdate(t),t.xaxis.categories&&t.xaxis.categories.length&&r.config.xaxis.convertedCatToNumeric&&(t=Defaults.convertCatToNumeric(t))),r.globals.collapsedSeriesIndices.length>0&&this.clearPreviousPaths(),t.theme&&(t=this.theme.updateThemeOptions(t)),this._updateOptions(t,e,i,s,a)}},{key:"_updateOptions",value:function(t){var e=arguments.length>1&&void 0!==arguments[1]&&arguments[1],i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2],s=!(arguments.length>3&&void 0!==arguments[3])||arguments[3],a=arguments.length>4&&void 0!==arguments[4]&&arguments[4],r=[this];s&&(r=this.getSyncedCharts()),this.w.globals.isExecCalled&&(r=[this],this.w.globals.isExecCalled=!1),r.forEach((function(s){var r=s.w;return r.globals.shouldAnimate=i,e||(r.globals.resized=!0,r.globals.dataChanged=!0,i&&s.series.getPreviousPaths()),t&&"object"===_typeof(t)&&(s.config=new Config(t),t=CoreUtils.extendArrayProps(s.config,t),r.config=Utils.extend(r.config,t),a&&(r.globals.initialConfig=Utils.extend({},r.config),r.globals.initialSeries=JSON.parse(JSON.stringify(r.config.series)))),s.update(t)}));}},{key:"updateSeries",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];return this.resetSeries(!1),this.revertDefaultAxisMinMax(),this._updateSeries(t,e,i)}},{key:"appendSeries",value:function(t){var e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2],s=this.w.config.series.slice();return s.push(t),this.resetSeries(!1),this.revertDefaultAxisMinMax(),this._updateSeries(s,e,i)}},{key:"_updateSeries",value:function(t,e){var i,s=arguments.length>2&&void 0!==arguments[2]&&arguments[2],a=this.w;return this.w.globals.shouldAnimate=e,a.globals.dataChanged=!0,a.globals.allSeriesCollapsed&&(a.globals.allSeriesCollapsed=!1),e&&this.series.getPreviousPaths(),a.globals.axisCharts?(0===(i=t.map((function(t,e){return _objectSpread2({},a.config.series[e],{name:t.name?t.name:a.config.series[e]&&a.config.series[e].name,type:t.type?t.type:a.config.series[e]&&a.config.series[e].type,data:t.data?t.data:a.config.series[e]&&a.config.series[e].data})}))).length&&(i=[{data:[]}]),a.config.series=i):a.config.series=t.slice(),s&&(a.globals.initialConfig.series=JSON.parse(JSON.stringify(a.config.series)),a.globals.initialSeries=JSON.parse(JSON.stringify(a.config.series))),this.update()}},{key:"getSyncedCharts",value:function(){var t=this.getGroupedCharts(),e=[this];return t.length&&(e=[],t.forEach((function(t){e.push(t);}))),e}},{key:"getGroupedCharts",value:function(){var t=this;return Apex._chartInstances.filter((function(t){if(t.group)return !0})).map((function(e){return t.w.config.chart.group===e.group?e.chart:t}))}},{key:"appendData",value:function(t){var e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],i=this;i.w.globals.dataChanged=!0,i.series.getPreviousPaths();for(var s=i.w.config.series.slice(),a=0;a<s.length;a++)if(void 0!==t[a])for(var r=0;r<t[a].data.length;r++)s[a].data.push(t[a].data[r]);return i.w.config.series=s,e&&(i.w.globals.initialSeries=JSON.parse(JSON.stringify(i.w.config.series))),this.update()}},{key:"update",value:function(t){var e=this;return new Promise$1((function(i,s){e.clear();var a=e.create(e.w.config.series,t);if(!a)return i(e);e.mount(a).then((function(){"function"==typeof e.w.config.chart.events.updated&&e.w.config.chart.events.updated(e,e.w),e.fireEvent("updated",[e,e.w]),e.w.globals.isDirty=!0,i(e);})).catch((function(t){s(t);}));}))}},{key:"forceXAxisUpdate",value:function(t){var e=this.w;void 0!==t.xaxis.min&&(e.config.xaxis.min=t.xaxis.min),void 0!==t.xaxis.max&&(e.config.xaxis.max=t.xaxis.max);}},{key:"revertDefaultAxisMinMax",value:function(){var t=this,e=this.w;e.config.xaxis.min=this.opts.xaxis.min||Apex.xaxis&&Apex.xaxis.min,e.config.xaxis.max=this.opts.xaxis.max||Apex.xaxis&&Apex.xaxis.max,e.config.yaxis.map((function(i,s){e.globals.zoomed&&void 0!==t.opts.yaxis[s]&&(i.min=t.opts.yaxis[s].min,i.max=t.opts.yaxis[s].max);}));}},{key:"clear",value:function(){this.zoomPanSelection&&this.zoomPanSelection.destroy(),this.toolbar&&this.toolbar.destroy(),this.animations=null,this.axes=null,this.annotations=null,this.core=null,this.data=null,this.grid=null,this.series=null,this.responsive=null,this.theme=null,this.formatters=null,this.titleSubtitle=null,this.legend=null,this.dimensions=null,this.options=null,this.crosshairs=null,this.zoomPanSelection=null,this.toolbar=null,this.w.globals.tooltip=null,this.clearDomElements();}},{key:"killSVG",value:function(t){return new Promise$1((function(e,i){t.each((function(t,e){this.removeClass("*"),this.off(),this.stop();}),!0),t.ungroup(),t.clear(),e("done");}))}},{key:"clearDomElements",value:function(){var t=this;this.eventList.forEach((function(e){document.removeEventListener(e,t.documentEvent);}));var e=this.w.globals.dom;if(null!==this.el)for(;this.el.firstChild;)this.el.removeChild(this.el.firstChild);this.killSVG(e.Paper),e.Paper.remove(),e.elWrap=null,e.elGraphical=null,e.elLegendWrap=null,e.baseEl=null,e.elGridRect=null,e.elGridRectMask=null,e.elGridRectMarkerMask=null,e.elDefs=null;}},{key:"destroy",value:function(){this.clear();var t=this.w.config.chart.id;t&&Apex._chartInstances.forEach((function(e,i){e.id===t&&Apex._chartInstances.splice(i,1);})),window.removeEventListener("resize",this.windowResizeHandler),window.removeResizeListener(this.el.parentNode,this.parentResizeCallback.bind(this));}},{key:"toggleSeries",value:function(t){var e=this.series.isSeriesHidden(t);return this.legend.toggleDataSeries(e.realIndex,e.isHidden),e.isHidden}},{key:"showSeries",value:function(t){var e=this.series.isSeriesHidden(t);e.isHidden&&this.legend.toggleDataSeries(e.realIndex,!0);}},{key:"hideSeries",value:function(t){var e=this.series.isSeriesHidden(t);e.isHidden||this.legend.toggleDataSeries(e.realIndex,!1);}},{key:"resetSeries",value:function(){var t=!(arguments.length>0&&void 0!==arguments[0])||arguments[0];this.series.resetSeries(t);}},{key:"setupEventHandlers",value:function(){var t=this,e=this.w,i=this,s=e.globals.dom.baseEl.querySelector(e.globals.chartClass);this.eventListHandlers=[],this.eventList.forEach((function(t){s.addEventListener(t,(function(t){var s=Object.assign({},e,{seriesIndex:e.globals.capturedSeriesIndex,dataPointIndex:e.globals.capturedDataPointIndex});"mousemove"===t.type||"touchmove"===t.type?"function"==typeof e.config.chart.events.mouseMove&&e.config.chart.events.mouseMove(t,i,s):("mouseup"===t.type&&1===t.which||"touchend"===t.type)&&("function"==typeof e.config.chart.events.click&&e.config.chart.events.click(t,i,s),i.fireEvent("click",[t,i,s]));}),{capture:!1,passive:!0});})),this.eventList.forEach((function(e){document.addEventListener(e,t.documentEvent);})),this.core.setupBrushHandler();}},{key:"documentEvent",value:function(t){var e=this.w;e.globals.clientX="touchmove"===t.type?t.touches[0].clientX:t.clientX,e.globals.clientY="touchmove"===t.type?t.touches[0].clientY:t.clientY;}},{key:"addXaxisAnnotation",value:function(t){var e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:void 0,s=this;i&&(s=i),s.annotations.addXaxisAnnotationExternal(t,e,s);}},{key:"addYaxisAnnotation",value:function(t){var e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:void 0,s=this;i&&(s=i),s.annotations.addYaxisAnnotationExternal(t,e,s);}},{key:"addPointAnnotation",value:function(t){var e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:void 0,s=this;i&&(s=i),s.annotations.addPointAnnotationExternal(t,e,s);}},{key:"clearAnnotations",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:void 0,e=this;t&&(e=t),e.annotations.clearAnnotations(e);}},{key:"removeAnnotation",value:function(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:void 0,i=this;e&&(i=e),i.annotations.removeAnnotation(i,t);}},{key:"addText",value:function(t){var e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:void 0,s=this;i&&(s=i),s.annotations.addText(t,e,s);}},{key:"getChartArea",value:function(){return this.w.globals.dom.baseEl.querySelector(".apexcharts-inner")}},{key:"getSeriesTotalXRange",value:function(t,e){return this.coreUtils.getSeriesTotalsXRange(t,e)}},{key:"getHighestValueInSeries",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:0,e=new Range$1(this.ctx),i=e.getMinYMaxY(t);return i.highestY}},{key:"getLowestValueInSeries",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:0,e=new Range$1(this.ctx),i=e.getMinYMaxY(t);return i.lowestY}},{key:"getSeriesTotal",value:function(){return this.w.globals.seriesTotals}},{key:"setLocale",value:function(t){this.setCurrentLocaleValues(t);}},{key:"toggleDataPointSelection",value:function(t,e){var i=this.w,s=null;i.globals.axisCharts?s=i.globals.dom.Paper.select(".apexcharts-series[data\\:realIndex='".concat(t,"'] path[j='").concat(e,"'], .apexcharts-series[data\\:realIndex='").concat(t,"'] circle[j='").concat(e,"'], .apexcharts-series[data\\:realIndex='").concat(t,"'] rect[j='").concat(e,"']")).members[0]:(s=i.globals.dom.Paper.select(".apexcharts-series[data\\:realIndex='".concat(t,"']")).members[0],("pie"===i.config.chart.type||"donut"===i.config.chart.type)&&new Pie(this.ctx).pieClicked(t));s?new Graphics(this.ctx).pathMouseDown(s,null):console.warn("toggleDataPointSelection: Element not found");return s.node?s.node:null}},{key:"setCurrentLocaleValues",value:function(t){var e=this.w.config.chart.locales;window.Apex.chart&&window.Apex.chart.locales&&window.Apex.chart.locales.length>0&&(e=this.w.config.chart.locales.concat(window.Apex.chart.locales));var i=e.filter((function(e){return e.name===t}))[0];if(!i)throw new Error("Wrong locale name provided. Please make sure you set the correct locale name in options");var s=Utils.extend(en,i);this.w.globals.locale=s.options;}},{key:"dataURI",value:function(){return new Exports(this.ctx).dataURI()}},{key:"paper",value:function(){return this.w.globals.dom.Paper}},{key:"parentResizeCallback",value:function(){this.w.globals.animationEnded&&this.windowResize();}},{key:"windowResize",value:function(){var t=this;clearTimeout(this.w.globals.resizeTimer),this.w.globals.resizeTimer=window.setTimeout((function(){t.w.globals.resized=!0,t.w.globals.dataChanged=!1,t.update();}),150);}}],[{key:"initOnLoad",value:function(){for(var e=document.querySelectorAll("[data-apexcharts]"),i=0;i<e.length;i++){new t(e[i],JSON.parse(e[i].getAttribute("data-options"))).render();}}},{key:"exec",value:function(t,e){var i=this.getChartByID(t);if(i){i.w.globals.isExecCalled=!0;var s=["updateOptions","updateSeries","appendData","appendSeries","toggleSeries","resetSeries","toggleDataPointSelection","dataURI","addXaxisAnnotation","addYaxisAnnotation","addPointAnnotation","addText","clearAnnotations","removeAnnotation","paper","destroy"],a=null;if(-1!==s.indexOf(e)){for(var r=arguments.length,n=new Array(r>2?r-2:0),o=2;o<r;o++)n[o-2]=arguments[o];a=i[e].apply(i,n);}return a}}},{key:"merge",value:function(t,e){return Utils.extend(t,e)}},{key:"getChartByID",value:function(t){return Apex._chartInstances.filter((function(e){return e.id===t}))[0].chart}}]),t}();
 
+    function cubicOut(t) {
+        const f = t - 1.0;
+        return f * f * f + 1.0;
+    }
+
+    function fade(node, { delay = 0, duration = 400, easing = identity }) {
+        const o = +getComputedStyle(node).opacity;
+        return {
+            delay,
+            duration,
+            easing,
+            css: t => `opacity: ${t * o}`
+        };
+    }
+    function fly(node, { delay = 0, duration = 400, easing = cubicOut, x = 0, y = 0, opacity = 0 }) {
+        const style = getComputedStyle(node);
+        const target_opacity = +style.opacity;
+        const transform = style.transform === 'none' ? '' : style.transform;
+        const od = target_opacity * (1 - opacity);
+        return {
+            delay,
+            duration,
+            easing,
+            css: (t, u) => `
+			transform: ${transform} translate(${(1 - t) * x}px, ${(1 - t) * y}px);
+			opacity: ${target_opacity - (od * u)}`
+        };
+    }
+
     /* src\components\Dashboard.svelte generated by Svelte v3.16.7 */
     const file = "src\\components\\Dashboard.svelte";
+
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[10] = list[i];
+    	return child_ctx;
+    }
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
@@ -26311,14 +26415,14 @@
     	return child_ctx;
     }
 
-    function get_each_context_1(ctx, list, i) {
+    function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[13] = list[i];
+    	child_ctx[15] = list[i];
     	return child_ctx;
     }
 
-    // (167:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
-    function create_each_block_1(ctx) {
+    // (160:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
+    function create_each_block_2(ctx) {
     	let button;
     	let t0;
     	let t1;
@@ -26326,20 +26430,20 @@
     	let dispose;
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[9](/*interval*/ ctx[13], ...args);
+    		return /*click_handler*/ ctx[8](/*interval*/ ctx[15], ...args);
     	}
 
     	const block = {
     		c: function create() {
     			button = element("button");
-    			t0 = text(/*interval*/ ctx[13]);
+    			t0 = text(/*interval*/ ctx[15]);
     			t1 = space();
 
-    			attr_dev(button, "class", button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[13]
+    			attr_dev(button, "class", button_class_value = "interval-button " + (/*currentInterval*/ ctx[2] === /*interval*/ ctx[15]
     			? "active"
     			: "") + " svelte-f0nlgm");
 
-    			add_location(button, file, 167, 6, 5029);
+    			add_location(button, file, 160, 6, 4677);
     			dispose = listen_dev(button, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -26350,7 +26454,7 @@
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*currentInterval*/ 2 && button_class_value !== (button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[13]
+    			if (dirty & /*currentInterval*/ 4 && button_class_value !== (button_class_value = "interval-button " + (/*currentInterval*/ ctx[2] === /*interval*/ ctx[15]
     			? "active"
     			: "") + " svelte-f0nlgm")) {
     				attr_dev(button, "class", button_class_value);
@@ -26364,16 +26468,303 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_each_block_1.name,
+    		id: create_each_block_2.name,
     		type: "each",
-    		source: "(167:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
+    		source: "(160:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (175:2) {#each categorizedData as data}
+    // (1:0) <script>    import { onMount }
+    function create_catch_block(ctx) {
+    	const block = {
+    		c: noop,
+    		m: noop,
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: noop
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_catch_block.name,
+    		type: "catch",
+    		source: "(1:0) <script>    import { onMount }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (180:2) {:then result}
+    function create_then_block(ctx) {
+    	let each_1_anchor;
+    	let current;
+    	let each_value_1 = /*result*/ ctx[9];
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*getDataPromise*/ 1) {
+    				each_value_1 = /*result*/ ctx[9];
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_1(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value_1.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value_1.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_then_block.name,
+    		type: "then",
+    		source: "(180:2) {:then result}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (181:4) {#each result as data}
+    function create_each_block_1(ctx) {
+    	let div2;
+    	let div0;
+    	let t0;
+    	let div1;
+    	let span0;
+    	let t1_value = /*data*/ ctx[10].type + "";
+    	let t1;
+    	let t2;
+    	let span1;
+    	let t3;
+
+    	let t4_value = (/*data*/ ctx[10].sum.toString().split(".")[1]
+    	? /*data*/ ctx[10].sum.toString().split(".")[1].length === 1
+    		? /*data*/ ctx[10].sum + "0"
+    		: /*data*/ ctx[10].sum
+    	: /*data*/ ctx[10].sum) + "";
+
+    	let t4;
+    	let t5;
+    	let div2_transition;
+    	let current;
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			t0 = space();
+    			div1 = element("div");
+    			span0 = element("span");
+    			t1 = text(t1_value);
+    			t2 = space();
+    			span1 = element("span");
+    			t3 = text("$");
+    			t4 = text(t4_value);
+    			t5 = space();
+    			attr_dev(div0, "class", "rounded-full w-8 h-8 bg-gray-500 mr-2");
+    			add_location(div0, file, 184, 8, 5604);
+    			attr_dev(span0, "class", "font-bold");
+    			add_location(span0, file, 186, 10, 5741);
+    			attr_dev(div1, "class", "flex flex-col justify-between truncate flex-grow");
+    			add_location(div1, file, 185, 8, 5667);
+    			attr_dev(span1, "class", "font-bold text-gray-700 text-lg mx-2");
+    			add_location(span1, file, 188, 8, 5809);
+    			attr_dev(div2, "class", "py-4 flex flex-row items-center");
+    			add_location(div2, file, 181, 6, 5495);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div2, t0);
+    			append_dev(div2, div1);
+    			append_dev(div1, span0);
+    			append_dev(span0, t1);
+    			append_dev(div2, t2);
+    			append_dev(div2, span1);
+    			append_dev(span1, t3);
+    			append_dev(span1, t4);
+    			append_dev(div2, t5);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if ((!current || dirty & /*getDataPromise*/ 1) && t1_value !== (t1_value = /*data*/ ctx[10].type + "")) set_data_dev(t1, t1_value);
+
+    			if ((!current || dirty & /*getDataPromise*/ 1) && t4_value !== (t4_value = (/*data*/ ctx[10].sum.toString().split(".")[1]
+    			? /*data*/ ctx[10].sum.toString().split(".")[1].length === 1
+    				? /*data*/ ctx[10].sum + "0"
+    				: /*data*/ ctx[10].sum
+    			: /*data*/ ctx[10].sum) + "")) set_data_dev(t4, t4_value);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			add_render_callback(() => {
+    				if (!div2_transition) div2_transition = create_bidirectional_transition(div2, fade, { duration: 180 }, true);
+    				div2_transition.run(1);
+    			});
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			if (!div2_transition) div2_transition = create_bidirectional_transition(div2, fade, { duration: 180 }, false);
+    			div2_transition.run(0);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			if (detaching && div2_transition) div2_transition.end();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(181:4) {#each result as data}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (168:25)       {#each categorizedData as data}
+    function create_pending_block(ctx) {
+    	let each_1_anchor;
+    	let each_value = /*categorizedData*/ ctx[1];
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*categorizedData*/ 2) {
+    				each_value = /*categorizedData*/ ctx[1];
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_pending_block.name,
+    		type: "pending",
+    		source: "(168:25)       {#each categorizedData as data}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (169:4) {#each categorizedData as data}
     function create_each_block(ctx) {
     	let div2;
     	let div0;
@@ -26409,15 +26800,15 @@
     			t4 = text(t4_value);
     			t5 = space();
     			attr_dev(div0, "class", "rounded-full w-8 h-8 bg-gray-500 mr-2");
-    			add_location(div0, file, 176, 6, 5322);
+    			add_location(div0, file, 170, 8, 5003);
     			attr_dev(span0, "class", "font-bold");
-    			add_location(span0, file, 178, 8, 5455);
+    			add_location(span0, file, 172, 10, 5140);
     			attr_dev(div1, "class", "flex flex-col justify-between truncate flex-grow");
-    			add_location(div1, file, 177, 6, 5383);
+    			add_location(div1, file, 171, 8, 5066);
     			attr_dev(span1, "class", "font-bold text-gray-700 text-lg mx-2");
-    			add_location(span1, file, 180, 6, 5519);
+    			add_location(span1, file, 174, 8, 5208);
     			attr_dev(div2, "class", "py-4 flex flex-row items-center");
-    			add_location(div2, file, 175, 4, 5269);
+    			add_location(div2, file, 169, 6, 4948);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -26433,9 +26824,9 @@
     			append_dev(div2, t5);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*categorizedData*/ 1 && t1_value !== (t1_value = /*data*/ ctx[10].type + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*categorizedData*/ 2 && t1_value !== (t1_value = /*data*/ ctx[10].type + "")) set_data_dev(t1, t1_value);
 
-    			if (dirty & /*categorizedData*/ 1 && t4_value !== (t4_value = (/*data*/ ctx[10].sum.toString().split(".")[1]
+    			if (dirty & /*categorizedData*/ 2 && t4_value !== (t4_value = (/*data*/ ctx[10].sum.toString().split(".")[1]
     			? /*data*/ ctx[10].sum.toString().split(".")[1].length === 1
     				? /*data*/ ctx[10].sum + "0"
     				: /*data*/ ctx[10].sum
@@ -26450,7 +26841,7 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(175:2) {#each categorizedData as data}",
+    		source: "(169:4) {#each categorizedData as data}",
     		ctx
     	});
 
@@ -26467,25 +26858,33 @@
     	let t5;
     	let div1;
     	let t6;
-    	let each_value_1 = ["1M", "6M", "1Y", "All"];
-    	let each_blocks_1 = [];
-
-    	for (let i = 0; i < 4; i += 1) {
-    		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
-    	}
-
-    	let each_value = /*categorizedData*/ ctx[0];
+    	let promise;
+    	let current;
+    	let each_value_2 = ["1M", "6M", "1Y", "All"];
     	let each_blocks = [];
 
-    	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	for (let i = 0; i < 4; i += 1) {
+    		each_blocks[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
     	}
+
+    	let info = {
+    		ctx,
+    		current: null,
+    		token: null,
+    		pending: create_pending_block,
+    		then: create_then_block,
+    		catch: create_catch_block,
+    		value: 9,
+    		blocks: [,,,]
+    	};
+
+    	handle_promise(promise = /*getDataPromise*/ ctx[0], info);
 
     	const block = {
     		c: function create() {
     			div2 = element("div");
     			span0 = element("span");
-    			span0.textContent = `\$${/*totalSpend*/ ctx[2]}`;
+    			span0.textContent = `\$${/*totalSpend*/ ctx[3]}`;
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Total spend";
@@ -26495,25 +26894,21 @@
     			div1 = element("div");
 
     			for (let i = 0; i < 4; i += 1) {
-    				each_blocks_1[i].c();
-    			}
-
-    			t6 = space();
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
+    			t6 = space();
+    			info.block.c();
     			attr_dev(span0, "class", "w-full mb-1 text-4xl text-center font-bold");
-    			add_location(span0, file, 160, 2, 4673);
+    			add_location(span0, file, 153, 2, 4321);
     			attr_dev(span1, "class", "w-full text-center text-gray-600 text-sm font-light mb-8");
-    			add_location(span1, file, 161, 2, 4754);
+    			add_location(span1, file, 154, 2, 4402);
     			attr_dev(div0, "class", "w-full h-64 bg-gray-400 mb-8");
-    			add_location(div0, file, 164, 2, 4857);
+    			add_location(div0, file, 157, 2, 4505);
     			attr_dev(div1, "class", "flex flex-row justify-around overflow-x-scroll mb-8");
-    			add_location(div1, file, 165, 2, 4905);
+    			add_location(div1, file, 158, 2, 4553);
     			attr_dev(div2, "class", "flex flex-col mx-4 my-8");
-    			add_location(div2, file, 159, 0, 4632);
+    			add_location(div2, file, 152, 0, 4280);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -26529,66 +26924,66 @@
     			append_dev(div2, div1);
 
     			for (let i = 0; i < 4; i += 1) {
-    				each_blocks_1[i].m(div1, null);
+    				each_blocks[i].m(div1, null);
     			}
 
     			append_dev(div2, t6);
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div2, null);
-    			}
+    			info.block.m(div2, info.anchor = null);
+    			info.mount = () => div2;
+    			info.anchor = null;
+    			current = true;
     		},
-    		p: function update(ctx, [dirty]) {
-    			if (dirty & /*currentInterval, changeInterval*/ 10) {
-    				each_value_1 = ["1M", "6M", "1Y", "All"];
+    		p: function update(new_ctx, [dirty]) {
+    			ctx = new_ctx;
+
+    			if (dirty & /*currentInterval, changeInterval*/ 20) {
+    				each_value_2 = ["1M", "6M", "1Y", "All"];
     				let i;
 
     				for (i = 0; i < 4; i += 1) {
-    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
-
-    					if (each_blocks_1[i]) {
-    						each_blocks_1[i].p(child_ctx, dirty);
-    					} else {
-    						each_blocks_1[i] = create_each_block_1(child_ctx);
-    						each_blocks_1[i].c();
-    						each_blocks_1[i].m(div1, null);
-    					}
-    				}
-
-    				for (; i < 4; i += 1) {
-    					each_blocks_1[i].d(1);
-    				}
-    			}
-
-    			if (dirty & /*categorizedData*/ 1) {
-    				each_value = /*categorizedData*/ ctx[0];
-    				let i;
-
-    				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context(ctx, each_value, i);
+    					const child_ctx = get_each_context_2(ctx, each_value_2, i);
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(child_ctx, dirty);
     					} else {
-    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i] = create_each_block_2(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(div2, null);
+    						each_blocks[i].m(div1, null);
     					}
     				}
 
-    				for (; i < each_blocks.length; i += 1) {
+    				for (; i < 4; i += 1) {
     					each_blocks[i].d(1);
     				}
+    			}
 
-    				each_blocks.length = each_value.length;
+    			info.ctx = ctx;
+
+    			if (dirty & /*getDataPromise*/ 1 && promise !== (promise = /*getDataPromise*/ ctx[0]) && handle_promise(promise, info)) ; else {
+    				const child_ctx = ctx.slice();
+    				child_ctx[9] = info.resolved;
+    				info.block.p(child_ctx, dirty);
     			}
     		},
-    		i: noop,
-    		o: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(info.block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			for (let i = 0; i < 3; i += 1) {
+    				const block = info.blocks[i];
+    				transition_out(block);
+    			}
+
+    			current = false;
+    		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div2);
-    			destroy_each(each_blocks_1, detaching);
     			destroy_each(each_blocks, detaching);
+    			info.block.d();
+    			info.token = null;
+    			info = null;
     		}
     	};
 
@@ -26639,95 +27034,87 @@
     }
 
     function instance($$self, $$props, $$invalidate) {
-    	let db, queryInterval, dbListener;
+    	let db, queryInterval;
+    	let getDataPromise = fetchData(queryInterval);
     	let categorizedData = [];
-    	let rawData = [];
     	let currentInterval = "1M";
     	let totalSpend = 0;
 
     	onMount(() => {
     		if (localStorage.getItem("interval")) {
-    			$$invalidate(1, currentInterval = localStorage.getItem("interval"));
+    			$$invalidate(2, currentInterval = localStorage.getItem("interval"));
     		}
 
     		if (localStorage.getItem("categorizedCache")) {
-    			$$invalidate(0, categorizedData = JSON.parse(localStorage.getItem("categorizedCache")));
+    			$$invalidate(1, categorizedData = JSON.parse(localStorage.getItem("categorizedCache")));
     		}
 
     		db = firebase$1.firestore();
     		queryInterval = getQueryInterval(currentInterval);
-    		fetchData(queryInterval);
+    		$$invalidate(0, getDataPromise = fetchData(queryInterval));
     	});
 
     	function changeInterval(interval) {
-    		$$invalidate(1, currentInterval = interval);
+    		$$invalidate(2, currentInterval = interval);
     		localStorage.setItem("interval", currentInterval);
     		queryInterval = getQueryInterval(currentInterval);
-    		fetchData(queryInterval);
+    		$$invalidate(0, getDataPromise = fetchData(queryInterval));
     	}
 
-    	function fetchData(queryInterval) {
+    	async function fetchData(queryInterval) {
     		toastMessage.set("Updating...");
-    		rawData = [];
-    		$$invalidate(0, categorizedData = []);
+    		let rawData = [];
+    		let categorizedData = [];
+    		const snapshot = await db.collection("expenses").where("date", ">=", queryInterval).where("date", "<=", new Date().toISOString().substring(0, 10)).get();
+    		let rawCache = [];
 
-    		db.collection("expenses").where("date", ">=", queryInterval).where("date", "<=", new Date().toISOString().substring(0, 10)).onSnapshot(
-    			snapshot => {
-    				let rawCache = [];
+    		snapshot.forEach(doc => {
+    			const data = doc.data();
+    			data.id = doc.id;
+    			rawCache.push(data);
+    		});
 
-    				snapshot.forEach(doc => {
-    					const data = doc.data();
-    					data.id = doc.id;
-    					rawCache.push(data);
-    				});
+    		toastMessage.set("");
+    		localStorage.setItem("rawCache", JSON.stringify(rawCache));
+    		rawData = rawCache;
+    		const types = [...new Set(rawData.map(item => item.type))];
 
-    				toastMessage.set("");
-    				localStorage.setItem("rawCache", JSON.stringify(rawCache));
-    				rawData = rawCache;
-    				const types = [...new Set(rawData.map(item => item.type))];
+    		types.forEach(type => {
+    			categorizedData.push({
+    				type,
+    				data: [],
+    				sum: 0,
+    				items: 0,
+    				percentage: 0
+    			});
+    		});
 
-    				types.forEach(type => {
-    					categorizedData.push({
-    						type,
-    						data: [],
-    						sum: 0,
-    						items: 0,
-    						percentage: 0
-    					});
-    				});
+    		categorizedData.forEach(categoryData => {
+    			rawData.forEach(data => {
+    				if (data.type === categoryData.type) {
+    					categoryData.data.push(data);
+    				}
+    			});
 
-    				categorizedData.forEach(categoryData => {
-    					rawData.forEach(data => {
-    						if (data.type === categoryData.type) {
-    							categoryData.data.push(data);
-    						}
-    					});
+    			let sum = 0;
 
-    					let sum = 0;
+    			categoryData.data.forEach(data => {
+    				sum += data.amount;
+    			});
 
-    					categoryData.data.forEach(data => {
-    						sum += data.amount;
-    					});
+    			categoryData.sum = Math.round(sum * 100) / 100;
+    			categoryData.items = categoryData.data.length;
+    		});
 
-    					categoryData.sum = Math.round(sum * 100) / 100;
-    					categoryData.items = categoryData.data.length;
-    				});
+    		categorizedData.sort((a, b) => b.sum - a.sum);
+    		const totalSpend = categorizedData.reduce((a, b) => a.sum ? a.sum : a + b.sum, 0);
 
-    				categorizedData.sort((a, b) => b.sum - a.sum);
-    				const totalSpend = categorizedData.reduce((a, b) => a.sum ? a.sum : a + b.sum, 0);
+    		categorizedData.forEach(data => {
+    			data.percentage = data.sum / totalSpend * 100;
+    		});
 
-    				categorizedData.forEach(data => {
-    					data.percentage = data.sum / totalSpend * 100;
-    				});
-
-    				localStorage.setItem("categorizedCache", JSON.stringify(categorizedData));
-    				console.log(categorizedData);
-    			},
-    			error => {
-    				toastMessage.set(error);
-    				setTimeout(() => toastMessage.set(""), 3000);
-    			}
-    		);
+    		localStorage.setItem("categorizedCache", JSON.stringify(categorizedData));
+    		return categorizedData;
     	}
 
     	const click_handler = interval => changeInterval(interval);
@@ -26739,22 +27126,20 @@
     	$$self.$inject_state = $$props => {
     		if ("db" in $$props) db = $$props.db;
     		if ("queryInterval" in $$props) queryInterval = $$props.queryInterval;
-    		if ("dbListener" in $$props) dbListener = $$props.dbListener;
-    		if ("categorizedData" in $$props) $$invalidate(0, categorizedData = $$props.categorizedData);
-    		if ("rawData" in $$props) rawData = $$props.rawData;
-    		if ("currentInterval" in $$props) $$invalidate(1, currentInterval = $$props.currentInterval);
-    		if ("totalSpend" in $$props) $$invalidate(2, totalSpend = $$props.totalSpend);
+    		if ("getDataPromise" in $$props) $$invalidate(0, getDataPromise = $$props.getDataPromise);
+    		if ("categorizedData" in $$props) $$invalidate(1, categorizedData = $$props.categorizedData);
+    		if ("currentInterval" in $$props) $$invalidate(2, currentInterval = $$props.currentInterval);
+    		if ("totalSpend" in $$props) $$invalidate(3, totalSpend = $$props.totalSpend);
     	};
 
     	return [
+    		getDataPromise,
     		categorizedData,
     		currentInterval,
     		totalSpend,
     		changeInterval,
     		db,
     		queryInterval,
-    		rawData,
-    		dbListener,
     		fetchData,
     		click_handler
     	];
@@ -27059,35 +27444,6 @@
     }
 
     /* src\components\LoadingSpinner.svelte generated by Svelte v3.16.7 */
-
-    function cubicOut(t) {
-        const f = t - 1.0;
-        return f * f * f + 1.0;
-    }
-
-    function fade(node, { delay = 0, duration = 400, easing = identity }) {
-        const o = +getComputedStyle(node).opacity;
-        return {
-            delay,
-            duration,
-            easing,
-            css: t => `opacity: ${t * o}`
-        };
-    }
-    function fly(node, { delay = 0, duration = 400, easing = cubicOut, x = 0, y = 0, opacity = 0 }) {
-        const style = getComputedStyle(node);
-        const target_opacity = +style.opacity;
-        const transform = style.transform === 'none' ? '' : style.transform;
-        const od = target_opacity * (1 - opacity);
-        return {
-            delay,
-            duration,
-            easing,
-            css: (t, u) => `
-			transform: ${transform} translate(${(1 - t) * x}px, ${(1 - t) * y}px);
-			opacity: ${target_opacity - (od * u)}`
-        };
-    }
 
     /* src\components\Entry.svelte generated by Svelte v3.16.7 */
     const file$2 = "src\\components\\Entry.svelte";

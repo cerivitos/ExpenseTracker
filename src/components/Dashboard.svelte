@@ -4,10 +4,11 @@
   import "firebase/firestore";
   import { toastMessage } from "../store/store";
   import ApexCharts from "apexcharts";
+  import { fade } from "svelte/transition";
 
-  let db, queryInterval, dbListener;
+  let db, queryInterval;
+  let getDataPromise = fetchData(queryInterval);
   let categorizedData = [];
-  let rawData = [];
   let currentInterval = "1M";
   let totalSpend = 0;
 
@@ -24,14 +25,14 @@
 
     queryInterval = getQueryInterval(currentInterval);
 
-    fetchData(queryInterval);
+    getDataPromise = fetchData(queryInterval);
   });
 
   function changeInterval(interval) {
     currentInterval = interval;
     localStorage.setItem("interval", currentInterval);
     queryInterval = getQueryInterval(currentInterval);
-    fetchData(queryInterval);
+    getDataPromise = fetchData(queryInterval);
   }
 
   function getQueryInterval(interval) {
@@ -74,84 +75,76 @@
     return year + "-" + monthString + "-" + dateString;
   }
 
-  function fetchData(queryInterval) {
+  async function fetchData(queryInterval) {
     toastMessage.set("Updating...");
 
-    rawData = [];
-    categorizedData = [];
+    let rawData = [];
+    let categorizedData = [];
 
-    db.collection("expenses")
+    const snapshot = await db
+      .collection("expenses")
       .where("date", ">=", queryInterval)
       .where("date", "<=", new Date().toISOString().substring(0, 10))
-      .onSnapshot(
-        snapshot => {
-          let rawCache = [];
+      .get();
 
-          snapshot.forEach(doc => {
-            const data = doc.data();
-            data.id = doc.id;
-            rawCache.push(data);
-          });
+    let rawCache = [];
 
-          toastMessage.set("");
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      data.id = doc.id;
+      rawCache.push(data);
+    });
 
-          localStorage.setItem("rawCache", JSON.stringify(rawCache));
-          rawData = rawCache;
+    toastMessage.set("");
 
-          const types = [...new Set(rawData.map(item => item.type))];
+    localStorage.setItem("rawCache", JSON.stringify(rawCache));
+    rawData = rawCache;
 
-          types.forEach(type => {
-            categorizedData.push({
-              type: type,
-              data: [],
-              sum: 0,
-              items: 0,
-              percentage: 0
-            });
-          });
+    const types = [...new Set(rawData.map(item => item.type))];
 
-          categorizedData.forEach(categoryData => {
-            rawData.forEach(data => {
-              if (data.type === categoryData.type) {
-                categoryData.data.push(data);
-              }
-            });
+    types.forEach(type => {
+      categorizedData.push({
+        type: type,
+        data: [],
+        sum: 0,
+        items: 0,
+        percentage: 0
+      });
+    });
 
-            //Get sum of amounts for each category
-            let sum = 0;
-            categoryData.data.forEach(data => {
-              sum += data.amount;
-            });
-            categoryData.sum = Math.round(sum * 100) / 100;
-
-            //Get number of data items for each category
-            categoryData.items = categoryData.data.length;
-          });
-
-          //Sort by category sum
-          categorizedData.sort((a, b) => b.sum - a.sum);
-
-          //Get percentage proportion for each category
-          const totalSpend = categorizedData.reduce(
-            (a, b) => (a.sum ? a.sum : a + b.sum),
-            0
-          );
-          categorizedData.forEach(data => {
-            data.percentage = (data.sum / totalSpend) * 100;
-          });
-
-          localStorage.setItem(
-            "categorizedCache",
-            JSON.stringify(categorizedData)
-          );
-
-          console.log(categorizedData);
-        },
-        error => {
-          toastMessage.set(error);
-          setTimeout(() => toastMessage.set(""), 3000);
+    categorizedData.forEach(categoryData => {
+      rawData.forEach(data => {
+        if (data.type === categoryData.type) {
+          categoryData.data.push(data);
         }
-      );
+      });
+
+      //Get sum of amounts for each category
+      let sum = 0;
+      categoryData.data.forEach(data => {
+        sum += data.amount;
+      });
+      categoryData.sum = Math.round(sum * 100) / 100;
+
+      //Get number of data items for each category
+      categoryData.items = categoryData.data.length;
+    });
+
+    //Sort by category sum
+    categorizedData.sort((a, b) => b.sum - a.sum);
+
+    //Get percentage proportion for each category
+    const totalSpend = categorizedData.reduce(
+      (a, b) => (a.sum ? a.sum : a + b.sum),
+      0
+    );
+    categorizedData.forEach(data => {
+      data.percentage = (data.sum / totalSpend) * 100;
+    });
+
+    localStorage.setItem("categorizedCache", JSON.stringify(categorizedData));
+
+    return categorizedData;
   }
 </script>
 
@@ -185,15 +178,31 @@
       </button>
     {/each}
   </div>
-  {#each categorizedData as data}
-    <div class="py-4 flex flex-row items-center">
-      <div class="rounded-full w-8 h-8 bg-gray-500 mr-2" />
-      <div class="flex flex-col justify-between truncate flex-grow">
-        <span class="font-bold">{data.type}</span>
+  {#await getDataPromise}
+    {#each categorizedData as data}
+      <div class="py-4 flex flex-row items-center">
+        <div class="rounded-full w-8 h-8 bg-gray-500 mr-2" />
+        <div class="flex flex-col justify-between truncate flex-grow">
+          <span class="font-bold">{data.type}</span>
+        </div>
+        <span class="font-bold text-gray-700 text-lg mx-2">
+          ${data.sum.toString().split('.')[1] ? (data.sum.toString().split('.')[1].length === 1 ? data.sum + '0' : data.sum) : data.sum}
+        </span>
       </div>
-      <span class="font-bold text-gray-700 text-lg mx-2">
-        ${data.sum.toString().split('.')[1] ? (data.sum.toString().split('.')[1].length === 1 ? data.sum + '0' : data.sum) : data.sum}
-      </span>
-    </div>
-  {/each}
+    {/each}
+  {:then result}
+    {#each result as data}
+      <div
+        class="py-4 flex flex-row items-center"
+        transition:fade={{ duration: 180 }}>
+        <div class="rounded-full w-8 h-8 bg-gray-500 mr-2" />
+        <div class="flex flex-col justify-between truncate flex-grow">
+          <span class="font-bold">{data.type}</span>
+        </div>
+        <span class="font-bold text-gray-700 text-lg mx-2">
+          ${data.sum.toString().split('.')[1] ? (data.sum.toString().split('.')[1].length === 1 ? data.sum + '0' : data.sum) : data.sum}
+        </span>
+      </div>
+    {/each}
+  {/await}
 </div>
