@@ -17,10 +17,6 @@
       currentInterval = localStorage.getItem("interval");
     }
 
-    if (localStorage.getItem("categorizedCache")) {
-      categorizedData = JSON.parse(localStorage.getItem("categorizedCache"));
-    }
-
     db = firebase.firestore();
 
     queryInterval = getQueryInterval(currentInterval);
@@ -178,19 +174,7 @@
       </button>
     {/each}
   </div>
-  {#await getDataPromise}
-    {#each categorizedData as data}
-      <div class="py-4 flex flex-row items-center">
-        <div class="rounded-full w-8 h-8 bg-gray-500 mr-2" />
-        <div class="flex flex-col justify-between truncate flex-grow">
-          <span class="font-bold">{data.type}</span>
-        </div>
-        <span class="font-bold text-gray-700 text-lg mx-2">
-          ${data.sum.toString().split('.')[1] ? (data.sum.toString().split('.')[1].length === 1 ? data.sum + '0' : data.sum) : data.sum}
-        </span>
-      </div>
-    {/each}
-  {:then result}
+  {#await getDataPromise then result}
     {#each result as data}
       <div
         class="py-4 flex flex-row items-center"
