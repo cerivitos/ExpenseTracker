@@ -17,9 +17,7 @@
     </span>
   </div>
   <div class="flex flex-col justify-between items-end ml-2 mr-4">
-    <span>
-      ${data.sum.toString().split('.')[1] ? (data.sum.toString().split('.')[1].length === 1 ? data.sum + '0' : data.sum) : data.sum}
-    </span>
+    <span>${Math.round(data.sum)}</span>
     <span class="font-light text-gray-600">{Math.round(data.percentage)}%</span>
   </div>
   <div

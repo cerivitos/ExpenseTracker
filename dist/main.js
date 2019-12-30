@@ -26484,13 +26484,7 @@
     	let div2;
     	let span2;
     	let t7;
-
-    	let t8_value = (/*data*/ ctx[0].sum.toString().split(".")[1]
-    	? /*data*/ ctx[0].sum.toString().split(".")[1].length === 1
-    		? /*data*/ ctx[0].sum + "0"
-    		: /*data*/ ctx[0].sum
-    	: /*data*/ ctx[0].sum) + "";
-
+    	let t8_value = Math.round(/*data*/ ctx[0].sum) + "";
     	let t8;
     	let t9;
     	let span3;
@@ -26537,13 +26531,13 @@
     			add_location(div1, file, 12, 2, 315);
     			add_location(span2, file, 19, 4, 625);
     			attr_dev(span3, "class", "font-light text-gray-600");
-    			add_location(span3, file, 22, 4, 784);
+    			add_location(span3, file, 20, 4, 667);
     			attr_dev(div2, "class", "flex flex-col justify-between items-end ml-2 mr-4");
     			add_location(div2, file, 18, 2, 556);
     			attr_dev(div3, "class", "absolute left-0 top-0 h-full bg-blue-200");
     			set_style(div3, "width", window.innerWidth * /*data*/ ctx[0].percentage / 100 + "px");
     			set_style(div3, "z-index", "-1");
-    			add_location(div3, file, 24, 2, 874);
+    			add_location(div3, file, 22, 2, 757);
     			attr_dev(div4, "class", "relative py-4 flex flex-row items-center");
     			add_location(div4, file, 7, 0, 111);
     		},
@@ -26579,13 +26573,7 @@
     			if ((!current || dirty & /*data*/ 1) && t1_value !== (t1_value = /*data*/ ctx[0].type + "")) set_data_dev(t1, t1_value);
     			if ((!current || dirty & /*data*/ 1) && t3_value !== (t3_value = /*data*/ ctx[0].items + "")) set_data_dev(t3, t3_value);
     			if ((!current || dirty & /*data*/ 1) && t5_value !== (t5_value = (/*data*/ ctx[0].items > 1 ? "entries" : "entry") + "")) set_data_dev(t5, t5_value);
-
-    			if ((!current || dirty & /*data*/ 1) && t8_value !== (t8_value = (/*data*/ ctx[0].sum.toString().split(".")[1]
-    			? /*data*/ ctx[0].sum.toString().split(".")[1].length === 1
-    				? /*data*/ ctx[0].sum + "0"
-    				: /*data*/ ctx[0].sum
-    			: /*data*/ ctx[0].sum) + "")) set_data_dev(t8, t8_value);
-
+    			if ((!current || dirty & /*data*/ 1) && t8_value !== (t8_value = Math.round(/*data*/ ctx[0].sum) + "")) set_data_dev(t8, t8_value);
     			if ((!current || dirty & /*data*/ 1) && t10_value !== (t10_value = Math.round(/*data*/ ctx[0].percentage) + "")) set_data_dev(t10, t10_value);
 
     			if (!current || dirty & /*data*/ 1) {
