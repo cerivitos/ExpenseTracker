@@ -6,6 +6,7 @@
   import ApexCharts from "apexcharts";
   import { fade } from "svelte/transition";
   import CategoryListTile from "./CategoryListTile.svelte";
+  import { CountUp } from "countup.js";
 
   let db, queryInterval;
   let getDataPromise = fetchData(queryInterval);
@@ -131,7 +132,7 @@
     categorizedData.sort((a, b) => b.sum - a.sum);
 
     //Get percentage proportion for each category
-    const totalSpend = categorizedData.reduce(
+    totalSpend = categorizedData.reduce(
       (a, b) => (a.sum ? a.sum : a + b.sum),
       0
     );
@@ -140,6 +141,12 @@
     });
 
     localStorage.setItem("categorizedCache", JSON.stringify(categorizedData));
+
+    const counter = new CountUp("totalSpend", totalSpend, {
+      prefix: "$",
+      duration: 1
+    });
+    counter.start();
 
     return categorizedData;
   }
@@ -161,7 +168,9 @@
 </style>
 
 <div class="flex flex-col my-8">
-  <span class="w-full mb-1 text-4xl text-center font-bold">${totalSpend}</span>
+  <span class="w-full mb-1 text-4xl text-center font-bold" id="totalSpend">
+    $0
+  </span>
   <span class="w-full text-center text-gray-600 text-sm font-light mb-8">
     Total spend
   </span>

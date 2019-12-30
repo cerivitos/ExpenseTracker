@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "apexcharts": "^3.11.2",
+    "countup.js": "^2.0.4",
     "firebase": "^7.6.1"
   }
 }
