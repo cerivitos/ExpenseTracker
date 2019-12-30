@@ -20,3 +20,61 @@ export function debounce(fn, wait, callFirst) {
     }
   };
 }
+
+export const typeDesigns = [
+  {
+    type: "Food",
+    hue: 250,
+    materialIcon: "restaurant"
+  },
+  {
+    type: "Groceries",
+    hue: 230,
+    materialIcon: "local_grocery_store"
+  },
+  {
+    type: "Transport",
+    hue: 210,
+    materialIcon: "directions_transit"
+  },
+  {
+    type: "Household",
+    hue: 190,
+    materialIcon: "house"
+  },
+  {
+    type: "Entertainment",
+    hue: 170,
+    materialIcon: "local_movies"
+  },
+  {
+    type: "Healthcare",
+    hue: 150,
+    materialIcon: "local_hospital"
+  },
+  {
+    type: "Utilities",
+    hue: 130,
+    materialIcon: "router"
+  },
+  {
+    type: "Shopping",
+    hue: 110,
+    materialIcon: "shopping_basket"
+  },
+  {
+    type: "Travel",
+    hue: 90,
+    materialIcon: "airplanemode_active"
+  },
+  {
+    type: "Gift",
+    hue: 70,
+    materialIcon: "card_giftcard"
+  },
+  {
+    type: "Others",
+    hue: 50,
+    materialIcon: "format_list_bulleted"
+  }
+];
