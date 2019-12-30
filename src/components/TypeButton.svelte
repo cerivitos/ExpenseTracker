@@ -5,6 +5,7 @@
   export let label = "";
   export let colorHue = 180;
   export let isActive = false;
+  export let materialIcon = "";
 
   onMount(() => {
     setButtonColors(isActive);
@@ -60,11 +61,11 @@
   }
 
   .type-button {
-    @apply rounded-full p-2 fill-current bg-gray-200 text-gray-400;
+    @apply rounded-full p-2 fill-current bg-gray-200 text-gray-400 text-center align-middle;
   }
 
-  .type-button svg {
-    @apply w-8 h-8;
+  .type-button i {
+    display: block !important;
   }
 </style>
 
@@ -74,9 +75,7 @@
     title={label}
     id="{label}-button"
     on:click={() => dispatchType()}>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <slot />
-    </svg>
+    <i class="material-icons">{materialIcon}</i>
   </button>
   <span class="text-gray-400" id="{label}-label">{label}</span>
 </div>
