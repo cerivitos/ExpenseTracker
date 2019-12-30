@@ -2,19 +2,21 @@
   import { fade } from "svelte/transition";
 
   export let data;
+  export let index;
 </script>
 
 <div
   class="relative py-4 flex flex-row items-center"
-  transition:fade={{ duration: 180 }}>
-  <div class="rounded-full w-8 h-8 bg-gray-500 mr-2" />
+  in:fade={{ duration: 180, delay: index * 80 }}
+  out:fade={{ duration: 80 }}>
+  <div class="rounded-full w-8 h-8 bg-gray-500 ml-4 mr-2" />
   <div class="flex flex-col justify-between truncate flex-grow">
     <span class="font-bold">{data.type}</span>
     <span class="font-light text-gray-600">
       {data.items} {data.items > 1 ? 'entries' : 'entry'}
     </span>
   </div>
-  <div class="flex flex-col justify-between items-end mx-2">
+  <div class="flex flex-col justify-between items-end ml-2 mr-4">
     <span>
       ${data.sum.toString().split('.')[1] ? (data.sum.toString().split('.')[1].length === 1 ? data.sum + '0' : data.sum) : data.sum}
     </span>

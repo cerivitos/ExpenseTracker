@@ -160,13 +160,13 @@
   }
 </style>
 
-<div class="flex flex-col mx-4 my-8">
+<div class="flex flex-col my-8">
   <span class="w-full mb-1 text-4xl text-center font-bold">${totalSpend}</span>
   <span class="w-full text-center text-gray-600 text-sm font-light mb-8">
     Total spend
   </span>
   <div class="w-full h-64 bg-gray-400 mb-8" />
-  <div class="flex flex-row justify-around overflow-x-scroll mb-8">
+  <div class="flex flex-row justify-around overflow-x-scroll mb-8 mx-4">
     {#each ['1M', '6M', '1Y', 'All'] as interval}
       <button
         class="interval-button {currentInterval === interval ? 'active' : ''}"
@@ -176,8 +176,8 @@
     {/each}
   </div>
   {#await getDataPromise then result}
-    {#each result as data}
-      <CategoryListTile {data} />
+    {#each result as data, index}
+      <CategoryListTile {data} {index} />
     {/each}
   {/await}
 </div>

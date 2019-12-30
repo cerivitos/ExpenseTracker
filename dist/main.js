@@ -361,6 +361,68 @@
         }
     }
     const null_transition = { duration: 0 };
+    function create_in_transition(node, fn, params) {
+        let config = fn(node, params);
+        let running = false;
+        let animation_name;
+        let task;
+        let uid = 0;
+        function cleanup() {
+            if (animation_name)
+                delete_rule(node, animation_name);
+        }
+        function go() {
+            const { delay = 0, duration = 300, easing = identity, tick = noop, css } = config || null_transition;
+            if (css)
+                animation_name = create_rule(node, 0, 1, duration, delay, easing, css, uid++);
+            tick(0, 1);
+            const start_time = now() + delay;
+            const end_time = start_time + duration;
+            if (task)
+                task.abort();
+            running = true;
+            add_render_callback(() => dispatch(node, true, 'start'));
+            task = loop(now => {
+                if (running) {
+                    if (now >= end_time) {
+                        tick(1, 0);
+                        dispatch(node, true, 'end');
+                        cleanup();
+                        return running = false;
+                    }
+                    if (now >= start_time) {
+                        const t = easing((now - start_time) / duration);
+                        tick(t, 1 - t);
+                    }
+                }
+                return running;
+            });
+        }
+        let started = false;
+        return {
+            start() {
+                if (started)
+                    return;
+                delete_rule(node);
+                if (is_function(config)) {
+                    config = config();
+                    wait().then(go);
+                }
+                else {
+                    go();
+                }
+            },
+            invalidate() {
+                started = false;
+            },
+            end() {
+                if (running) {
+                    cleanup();
+                    running = false;
+                }
+            }
+        };
+    }
     function create_out_transition(node, fn, params) {
         let config = fn(node, params);
         let running = true;
@@ -26437,7 +26499,8 @@
     	let t11;
     	let t12;
     	let div3;
-    	let div4_transition;
+    	let div4_intro;
+    	let div4_outro;
     	let current;
 
     	const block = {
@@ -26464,25 +26527,25 @@
     			t11 = text("%");
     			t12 = space();
     			div3 = element("div");
-    			attr_dev(div0, "class", "rounded-full w-8 h-8 bg-gray-500 mr-2");
-    			add_location(div0, file, 9, 2, 190);
+    			attr_dev(div0, "class", "rounded-full w-8 h-8 bg-gray-500 ml-4 mr-2");
+    			add_location(div0, file, 11, 2, 253);
     			attr_dev(span0, "class", "font-bold");
-    			add_location(span0, file, 11, 4, 315);
+    			add_location(span0, file, 13, 4, 383);
     			attr_dev(span1, "class", "font-light text-gray-600");
-    			add_location(span1, file, 12, 4, 363);
+    			add_location(span1, file, 14, 4, 431);
     			attr_dev(div1, "class", "flex flex-col justify-between truncate flex-grow");
-    			add_location(div1, file, 10, 2, 247);
-    			add_location(span2, file, 17, 4, 552);
+    			add_location(div1, file, 12, 2, 315);
+    			add_location(span2, file, 19, 4, 625);
     			attr_dev(span3, "class", "font-light text-gray-600");
-    			add_location(span3, file, 20, 4, 711);
-    			attr_dev(div2, "class", "flex flex-col justify-between items-end mx-2");
-    			add_location(div2, file, 16, 2, 488);
+    			add_location(span3, file, 22, 4, 784);
+    			attr_dev(div2, "class", "flex flex-col justify-between items-end ml-2 mr-4");
+    			add_location(div2, file, 18, 2, 556);
     			attr_dev(div3, "class", "absolute left-0 top-0 h-full bg-blue-200");
     			set_style(div3, "width", window.innerWidth * /*data*/ ctx[0].percentage / 100 + "px");
     			set_style(div3, "z-index", "-1");
-    			add_location(div3, file, 22, 2, 801);
+    			add_location(div3, file, 24, 2, 874);
     			attr_dev(div4, "class", "relative py-4 flex flex-row items-center");
-    			add_location(div4, file, 6, 0, 90);
+    			add_location(div4, file, 7, 0, 111);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -26533,20 +26596,26 @@
     			if (current) return;
 
     			add_render_callback(() => {
-    				if (!div4_transition) div4_transition = create_bidirectional_transition(div4, fade, { duration: 180 }, true);
-    				div4_transition.run(1);
+    				if (div4_outro) div4_outro.end(1);
+
+    				if (!div4_intro) div4_intro = create_in_transition(div4, fade, {
+    					duration: 180,
+    					delay: /*index*/ ctx[1] * 80
+    				});
+
+    				div4_intro.start();
     			});
 
     			current = true;
     		},
     		o: function outro(local) {
-    			if (!div4_transition) div4_transition = create_bidirectional_transition(div4, fade, { duration: 180 }, false);
-    			div4_transition.run(0);
+    			if (div4_intro) div4_intro.invalidate();
+    			div4_outro = create_out_transition(div4, fade, { duration: 80 });
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div4);
-    			if (detaching && div4_transition) div4_transition.end();
+    			if (detaching && div4_outro) div4_outro.end();
     		}
     	};
 
@@ -26563,7 +26632,8 @@
 
     function instance($$self, $$props, $$invalidate) {
     	let { data } = $$props;
-    	const writable_props = ["data"];
+    	let { index } = $$props;
+    	const writable_props = ["data", "index"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<CategoryListTile> was created with unknown prop '${key}'`);
@@ -26571,23 +26641,25 @@
 
     	$$self.$set = $$props => {
     		if ("data" in $$props) $$invalidate(0, data = $$props.data);
+    		if ("index" in $$props) $$invalidate(1, index = $$props.index);
     	};
 
     	$$self.$capture_state = () => {
-    		return { data };
+    		return { data, index };
     	};
 
     	$$self.$inject_state = $$props => {
     		if ("data" in $$props) $$invalidate(0, data = $$props.data);
+    		if ("index" in $$props) $$invalidate(1, index = $$props.index);
     	};
 
-    	return [data];
+    	return [data, index];
     }
 
     class CategoryListTile extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, { data: 0 });
+    		init(this, options, instance, create_fragment, safe_not_equal, { data: 0, index: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -26602,6 +26674,10 @@
     		if (/*data*/ ctx[0] === undefined && !("data" in props)) {
     			console.warn("<CategoryListTile> was created without expected prop 'data'");
     		}
+
+    		if (/*index*/ ctx[1] === undefined && !("index" in props)) {
+    			console.warn("<CategoryListTile> was created without expected prop 'index'");
+    		}
     	}
 
     	get data() {
@@ -26609,6 +26685,14 @@
     	}
 
     	set data(value) {
+    		throw new Error("<CategoryListTile>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get index() {
+    		throw new Error("<CategoryListTile>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set index(value) {
     		throw new Error("<CategoryListTile>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -26619,6 +26703,7 @@
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[10] = list[i];
+    	child_ctx[12] = i;
     	return child_ctx;
     }
 
@@ -26706,7 +26791,7 @@
     	return block;
     }
 
-    // (165:37)       {#each result as data}
+    // (165:37)       {#each result as data, index}
     function create_then_block(ctx) {
     	let each_1_anchor;
     	let current;
@@ -26793,19 +26878,22 @@
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(165:37)       {#each result as data}",
+    		source: "(165:37)       {#each result as data, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (166:4) {#each result as data}
+    // (166:4) {#each result as data, index}
     function create_each_block(ctx) {
     	let current;
 
     	const categorylisttile = new CategoryListTile({
-    			props: { data: /*data*/ ctx[10] },
+    			props: {
+    				data: /*data*/ ctx[10],
+    				index: /*index*/ ctx[12]
+    			},
     			$$inline: true
     		});
 
@@ -26840,7 +26928,7 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(166:4) {#each result as data}",
+    		source: "(166:4) {#each result as data, index}",
     		ctx
     	});
 
@@ -26921,14 +27009,14 @@
     			t6 = space();
     			info.block.c();
     			attr_dev(span0, "class", "w-full mb-1 text-4xl text-center font-bold");
-    			add_location(span0, file$1, 150, 2, 4241);
+    			add_location(span0, file$1, 150, 2, 4236);
     			attr_dev(span1, "class", "w-full text-center text-gray-600 text-sm font-light mb-8");
-    			add_location(span1, file$1, 151, 2, 4322);
+    			add_location(span1, file$1, 151, 2, 4317);
     			attr_dev(div0, "class", "w-full h-64 bg-gray-400 mb-8");
-    			add_location(div0, file$1, 154, 2, 4425);
-    			attr_dev(div1, "class", "flex flex-row justify-around overflow-x-scroll mb-8");
-    			add_location(div1, file$1, 155, 2, 4473);
-    			attr_dev(div2, "class", "flex flex-col mx-4 my-8");
+    			add_location(div0, file$1, 154, 2, 4420);
+    			attr_dev(div1, "class", "flex flex-row justify-around overflow-x-scroll mb-8 mx-4");
+    			add_location(div1, file$1, 155, 2, 4468);
+    			attr_dev(div2, "class", "flex flex-col my-8");
     			add_location(div2, file$1, 149, 0, 4200);
     		},
     		l: function claim(nodes) {
