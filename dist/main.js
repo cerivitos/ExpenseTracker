@@ -26307,12 +26307,18 @@
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[10] = list[i];
     	return child_ctx;
     }
 
-    // (113:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
-    function create_each_block(ctx) {
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[13] = list[i];
+    	return child_ctx;
+    }
+
+    // (157:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
+    function create_each_block_1(ctx) {
     	let button;
     	let t0;
     	let t1;
@@ -26320,20 +26326,20 @@
     	let dispose;
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[8](/*interval*/ ctx[9], ...args);
+    		return /*click_handler*/ ctx[9](/*interval*/ ctx[13], ...args);
     	}
 
     	const block = {
     		c: function create() {
     			button = element("button");
-    			t0 = text(/*interval*/ ctx[9]);
+    			t0 = text(/*interval*/ ctx[13]);
     			t1 = space();
 
-    			attr_dev(button, "class", button_class_value = "interval-button " + (/*currentInterval*/ ctx[0] === /*interval*/ ctx[9]
+    			attr_dev(button, "class", button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[13]
     			? "active"
     			: "") + " svelte-f0nlgm");
 
-    			add_location(button, file, 113, 6, 3427);
+    			add_location(button, file, 157, 6, 4683);
     			dispose = listen_dev(button, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -26344,7 +26350,7 @@
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*currentInterval*/ 1 && button_class_value !== (button_class_value = "interval-button " + (/*currentInterval*/ ctx[0] === /*interval*/ ctx[9]
+    			if (dirty & /*currentInterval*/ 2 && button_class_value !== (button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[13]
     			? "active"
     			: "") + " svelte-f0nlgm")) {
     				attr_dev(button, "class", button_class_value);
@@ -26358,9 +26364,93 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(157:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (165:2) {#each categorizedData as data}
+    function create_each_block(ctx) {
+    	let div2;
+    	let div0;
+    	let t0;
+    	let div1;
+    	let span0;
+    	let t1_value = /*data*/ ctx[10].type + "";
+    	let t1;
+    	let t2;
+    	let span1;
+    	let t3;
+
+    	let t4_value = (/*data*/ ctx[10].sum.toString().split(".")[1]
+    	? /*data*/ ctx[10].sum.toString().split(".")[1].length === 1
+    		? /*data*/ ctx[10].sum + "0"
+    		: /*data*/ ctx[10].sum
+    	: /*data*/ ctx[10].sum) + "";
+
+    	let t4;
+    	let t5;
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			t0 = space();
+    			div1 = element("div");
+    			span0 = element("span");
+    			t1 = text(t1_value);
+    			t2 = space();
+    			span1 = element("span");
+    			t3 = text("$");
+    			t4 = text(t4_value);
+    			t5 = space();
+    			attr_dev(div0, "class", "rounded-full w-8 h-8 bg-gray-500 mr-2");
+    			add_location(div0, file, 166, 6, 4976);
+    			attr_dev(span0, "class", "font-bold");
+    			add_location(span0, file, 168, 8, 5109);
+    			attr_dev(div1, "class", "flex flex-col justify-between truncate flex-grow");
+    			add_location(div1, file, 167, 6, 5037);
+    			attr_dev(span1, "class", "font-bold text-gray-700 text-lg mx-2");
+    			add_location(span1, file, 170, 6, 5173);
+    			attr_dev(div2, "class", "py-4 flex flex-row items-center");
+    			add_location(div2, file, 165, 4, 4923);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div2, t0);
+    			append_dev(div2, div1);
+    			append_dev(div1, span0);
+    			append_dev(span0, t1);
+    			append_dev(div2, t2);
+    			append_dev(div2, span1);
+    			append_dev(span1, t3);
+    			append_dev(span1, t4);
+    			append_dev(div2, t5);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*categorizedData*/ 1 && t1_value !== (t1_value = /*data*/ ctx[10].type + "")) set_data_dev(t1, t1_value);
+
+    			if (dirty & /*categorizedData*/ 1 && t4_value !== (t4_value = (/*data*/ ctx[10].sum.toString().split(".")[1]
+    			? /*data*/ ctx[10].sum.toString().split(".")[1].length === 1
+    				? /*data*/ ctx[10].sum + "0"
+    				: /*data*/ ctx[10].sum
+    			: /*data*/ ctx[10].sum) + "")) set_data_dev(t4, t4_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(113:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
+    		source: "(165:2) {#each categorizedData as data}",
     		ctx
     	});
 
@@ -26376,10 +26466,18 @@
     	let div0;
     	let t5;
     	let div1;
-    	let each_value = ["1M", "6M", "1Y", "All"];
-    	let each_blocks = [];
+    	let t6;
+    	let each_value_1 = ["1M", "6M", "1Y", "All"];
+    	let each_blocks_1 = [];
 
     	for (let i = 0; i < 4; i += 1) {
+    		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	let each_value = /*categorizedData*/ ctx[0];
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
     		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
     	}
 
@@ -26387,7 +26485,7 @@
     		c: function create() {
     			div2 = element("div");
     			span0 = element("span");
-    			span0.textContent = `\$${/*totalSpend*/ ctx[1]}`;
+    			span0.textContent = `\$${/*totalSpend*/ ctx[2]}`;
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Total spend";
@@ -26397,19 +26495,25 @@
     			div1 = element("div");
 
     			for (let i = 0; i < 4; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t6 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
     			attr_dev(span0, "class", "w-full mb-1 text-4xl text-center font-bold");
-    			add_location(span0, file, 106, 2, 3076);
+    			add_location(span0, file, 150, 2, 4327);
     			attr_dev(span1, "class", "w-full text-center text-gray-600 text-sm font-light mb-8");
-    			add_location(span1, file, 107, 2, 3157);
+    			add_location(span1, file, 151, 2, 4408);
     			attr_dev(div0, "class", "w-full h-64 bg-gray-400 mb-8");
-    			add_location(div0, file, 110, 2, 3260);
-    			attr_dev(div1, "class", "flex flex-row justify-around overflow-x-scroll");
-    			add_location(div1, file, 111, 2, 3308);
+    			add_location(div0, file, 154, 2, 4511);
+    			attr_dev(div1, "class", "flex flex-row justify-around overflow-x-scroll mb-8");
+    			add_location(div1, file, 155, 2, 4559);
     			attr_dev(div2, "class", "flex flex-col mx-4 my-8");
-    			add_location(div2, file, 105, 0, 3035);
+    			add_location(div2, file, 149, 0, 4286);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -26425,15 +26529,42 @@
     			append_dev(div2, div1);
 
     			for (let i = 0; i < 4; i += 1) {
-    				each_blocks[i].m(div1, null);
+    				each_blocks_1[i].m(div1, null);
+    			}
+
+    			append_dev(div2, t6);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div2, null);
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*currentInterval, changeInterval*/ 5) {
-    				each_value = ["1M", "6M", "1Y", "All"];
+    			if (dirty & /*currentInterval, changeInterval*/ 10) {
+    				each_value_1 = ["1M", "6M", "1Y", "All"];
     				let i;
 
     				for (i = 0; i < 4; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_1[i] = create_each_block_1(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(div1, null);
+    					}
+    				}
+
+    				for (; i < 4; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+    			}
+
+    			if (dirty & /*categorizedData*/ 1) {
+    				each_value = /*categorizedData*/ ctx[0];
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
     					const child_ctx = get_each_context(ctx, each_value, i);
 
     					if (each_blocks[i]) {
@@ -26441,19 +26572,22 @@
     					} else {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(div1, null);
+    						each_blocks[i].m(div2, null);
     					}
     				}
 
-    				for (; i < 4; i += 1) {
+    				for (; i < each_blocks.length; i += 1) {
     					each_blocks[i].d(1);
     				}
+
+    				each_blocks.length = each_value.length;
     			}
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div2);
+    			destroy_each(each_blocks_1, detaching);
     			destroy_each(each_blocks, detaching);
     		}
     	};
@@ -26505,17 +26639,19 @@
     }
 
     function instance($$self, $$props, $$invalidate) {
-    	let db, queryInterval, dbListener, dataToDisplay;
+    	let db, queryInterval, dbListener;
+    	let categorizedData = [];
+    	let rawData = [];
     	let currentInterval = "1M";
     	let totalSpend = 0;
 
     	onMount(() => {
     		if (localStorage.getItem("interval")) {
-    			$$invalidate(0, currentInterval = localStorage.getItem("interval"));
+    			$$invalidate(1, currentInterval = localStorage.getItem("interval"));
     		}
 
-    		if (localStorage.getItem("cache")) {
-    			dataToDisplay = JSON.parse(localStorage.getItem("cache"));
+    		if (localStorage.getItem("categorizedCache")) {
+    			$$invalidate(0, categorizedData = JSON.parse(localStorage.getItem("categorizedCache")));
     		}
 
     		db = firebase$1.firestore();
@@ -26524,7 +26660,7 @@
     	});
 
     	function changeInterval(interval) {
-    		$$invalidate(0, currentInterval = interval);
+    		$$invalidate(1, currentInterval = interval);
     		localStorage.setItem("interval", currentInterval);
     		queryInterval = getQueryInterval(currentInterval);
     		fetchData(queryInterval);
@@ -26532,20 +26668,48 @@
 
     	function fetchData(queryInterval) {
     		toastMessage.set("Updating...");
+    		rawData = [];
+    		$$invalidate(0, categorizedData = []);
 
     		db.collection("expenses").where("date", ">=", queryInterval).where("date", "<=", new Date().toISOString().substring(0, 10)).onSnapshot(
     			snapshot => {
-    				let cacheObj = [];
+    				let rawCache = [];
 
     				snapshot.forEach(doc => {
     					const data = doc.data();
     					data.id = doc.id;
-    					cacheObj.push(data);
+    					rawCache.push(data);
     				});
 
     				toastMessage.set("");
-    				localStorage.setItem("cache", JSON.stringify(cacheObj));
-    				dataToDisplay = cacheObj;
+    				localStorage.setItem("rawCache", JSON.stringify(rawCache));
+    				rawData = rawCache;
+    				const types = [...new Set(rawData.map(item => item.type))];
+
+    				types.forEach(type => {
+    					categorizedData.push({ type, data: [], sum: 0, items: 0 });
+    				});
+
+    				categorizedData.forEach(categoryData => {
+    					rawData.forEach(data => {
+    						if (data.type === categoryData.type) {
+    							categoryData.data.push(data);
+    						}
+    					});
+
+    					let sum = 0;
+
+    					categoryData.data.forEach(data => {
+    						sum += data.amount;
+    					});
+
+    					categoryData.sum = Math.round(sum * 100) / 100;
+    					categoryData.items = categoryData.data.length;
+    				});
+
+    				categorizedData.sort((a, b) => b.sum - a.sum);
+    				localStorage.setItem("categorizedCache", JSON.stringify(categorizedData));
+    				console.log(categorizedData);
     			},
     			error => {
     				toastMessage.set(error);
@@ -26564,18 +26728,20 @@
     		if ("db" in $$props) db = $$props.db;
     		if ("queryInterval" in $$props) queryInterval = $$props.queryInterval;
     		if ("dbListener" in $$props) dbListener = $$props.dbListener;
-    		if ("dataToDisplay" in $$props) dataToDisplay = $$props.dataToDisplay;
-    		if ("currentInterval" in $$props) $$invalidate(0, currentInterval = $$props.currentInterval);
-    		if ("totalSpend" in $$props) $$invalidate(1, totalSpend = $$props.totalSpend);
+    		if ("categorizedData" in $$props) $$invalidate(0, categorizedData = $$props.categorizedData);
+    		if ("rawData" in $$props) rawData = $$props.rawData;
+    		if ("currentInterval" in $$props) $$invalidate(1, currentInterval = $$props.currentInterval);
+    		if ("totalSpend" in $$props) $$invalidate(2, totalSpend = $$props.totalSpend);
     	};
 
     	return [
+    		categorizedData,
     		currentInterval,
     		totalSpend,
     		changeInterval,
     		db,
     		queryInterval,
-    		dataToDisplay,
+    		rawData,
     		dbListener,
     		fetchData,
     		click_handler

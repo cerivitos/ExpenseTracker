@@ -5,7 +5,9 @@
   import { toastMessage } from "../store/store";
   import ApexCharts from "apexcharts";
 
-  let db, queryInterval, dbListener, dataToDisplay;
+  let db, queryInterval, dbListener;
+  let categorizedData = [];
+  let rawData = [];
   let currentInterval = "1M";
   let totalSpend = 0;
 
@@ -14,8 +16,8 @@
       currentInterval = localStorage.getItem("interval");
     }
 
-    if (localStorage.getItem("cache")) {
-      dataToDisplay = JSON.parse(localStorage.getItem("cache"));
+    if (localStorage.getItem("categorizedCache")) {
+      categorizedData = JSON.parse(localStorage.getItem("categorizedCache"));
     }
 
     db = firebase.firestore();
@@ -75,23 +77,65 @@
   function fetchData(queryInterval) {
     toastMessage.set("Updating...");
 
+    rawData = [];
+    categorizedData = [];
+
     db.collection("expenses")
       .where("date", ">=", queryInterval)
       .where("date", "<=", new Date().toISOString().substring(0, 10))
       .onSnapshot(
         snapshot => {
-          let cacheObj = [];
+          let rawCache = [];
 
           snapshot.forEach(doc => {
             const data = doc.data();
             data.id = doc.id;
-            cacheObj.push(data);
+            rawCache.push(data);
           });
 
           toastMessage.set("");
 
-          localStorage.setItem("cache", JSON.stringify(cacheObj));
-          dataToDisplay = cacheObj;
+          localStorage.setItem("rawCache", JSON.stringify(rawCache));
+          rawData = rawCache;
+
+          const types = [...new Set(rawData.map(item => item.type))];
+
+          types.forEach(type => {
+            categorizedData.push({
+              type: type,
+              data: [],
+              sum: 0,
+              items: 0
+            });
+          });
+
+          categorizedData.forEach(categoryData => {
+            rawData.forEach(data => {
+              if (data.type === categoryData.type) {
+                categoryData.data.push(data);
+              }
+            });
+
+            //Get sum of amounts for each category
+            let sum = 0;
+            categoryData.data.forEach(data => {
+              sum += data.amount;
+            });
+            categoryData.sum = Math.round(sum * 100) / 100;
+
+            //Get number of data items for each category
+            categoryData.items = categoryData.data.length;
+          });
+
+          //Sort by category sum
+          categorizedData.sort((a, b) => b.sum - a.sum);
+
+          localStorage.setItem(
+            "categorizedCache",
+            JSON.stringify(categorizedData)
+          );
+
+          console.log(categorizedData);
         },
         error => {
           toastMessage.set(error);
@@ -122,7 +166,7 @@
     Total spend
   </span>
   <div class="w-full h-64 bg-gray-400 mb-8" />
-  <div class="flex flex-row justify-around overflow-x-scroll">
+  <div class="flex flex-row justify-around overflow-x-scroll mb-8">
     {#each ['1M', '6M', '1Y', 'All'] as interval}
       <button
         class="interval-button {currentInterval === interval ? 'active' : ''}"
@@ -131,4 +175,15 @@
       </button>
     {/each}
   </div>
+  {#each categorizedData as data}
+    <div class="py-4 flex flex-row items-center">
+      <div class="rounded-full w-8 h-8 bg-gray-500 mr-2" />
+      <div class="flex flex-col justify-between truncate flex-grow">
+        <span class="font-bold">{data.type}</span>
+      </div>
+      <span class="font-bold text-gray-700 text-lg mx-2">
+        ${data.sum.toString().split('.')[1] ? (data.sum.toString().split('.')[1].length === 1 ? data.sum + '0' : data.sum) : data.sum}
+      </span>
+    </div>
+  {/each}
 </div>
