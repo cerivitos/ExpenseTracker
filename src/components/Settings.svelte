@@ -3,6 +3,7 @@
   import firebase from "firebase/app";
   import "firebase/auth";
   import { fade } from "svelte/transition";
+  import exportedData from "../assets/expensetracker-fe56d-export.json";
 
   function signOut() {
     firebase
@@ -34,6 +35,32 @@
         errorMsg = error.message;
         setTimeout(() => (signInError = false), 3000);
       });
+  }
+
+  function importData() {
+    const expenses =
+      exportedData.boards["9K1QQfYAg7QoIMbxzUy26INrpbX21497536405497"].expenses;
+    const keys = Object.keys(expenses);
+    let newDataObj = [];
+    const db = firebase.firestore();
+
+    for (let i = 0; i < keys.length; i++) {
+      const expense = expenses[keys[i]];
+
+      db.collection("expenses")
+        .doc()
+        .set({
+          amount: expense.amount,
+          date: expense.date,
+          desc: expense.description ? expense.description : "",
+          type: expense.type,
+          addedBy:
+            expense.addedBy === "9K1QQfYAg7QoIMbxzUy26INrpbX2"
+              ? "Wai Kit Chan"
+              : "Jie Lin Soong",
+          addedOn: expense.date
+        });
+    }
   }
 </script>
 
@@ -95,4 +122,5 @@
     •
     <span class="text-center mb-8 ml-2">v0.1</span>
   </div>
+  <button on:click={() => importData()}>Import</button>
 </div>

@@ -10,6 +10,8 @@ import builtins from "rollup-plugin-node-builtins";
 import globals from "rollup-plugin-node-globals";
 import copy from "rollup-plugin-copy-assets";
 
+import json from "@rollup/plugin-json";
+
 const production = !process.env.ROLLUP_WATCH;
 export default {
   input: "src/main.js",
@@ -41,7 +43,8 @@ export default {
       extract: true
     }),
     !production && livereload("dist"),
-    production && terser()
+    production && terser(),
+    json()
   ]
   // watch: {
   //    clearScreen: false,
