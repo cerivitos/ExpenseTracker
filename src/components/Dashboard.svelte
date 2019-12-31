@@ -10,6 +10,7 @@
 
   let db, queryInterval;
   let getDataPromise = fetchData(queryInterval);
+  let rawData = [];
   let categorizedData = [];
   let currentInterval = "1M";
   let totalSpend = 0;
@@ -19,18 +20,46 @@
       currentInterval = localStorage.getItem("interval");
     }
 
-    db = firebase.firestore();
+    if (localStorage.getItem("categorizedCache")) {
+      categorizedData = JSON.parse(localStorage.getItem("categorizedCache"));
+    }
 
-    queryInterval = getQueryInterval(currentInterval);
-
-    getDataPromise = fetchData(queryInterval);
+    changeInterval(currentInterval);
   });
 
   function changeInterval(interval) {
     currentInterval = interval;
     localStorage.setItem("interval", currentInterval);
+
+    if (localStorage.getItem("rawCache")) {
+      rawData = JSON.parse(localStorage.getItem("rawCache"));
+    }
+
+    db = firebase.firestore();
+
     queryInterval = getQueryInterval(currentInterval);
-    getDataPromise = fetchData(queryInterval);
+
+    if (rawData.length > 0) {
+      const sortedRawData = rawData.sort(
+        (a, b) => new Date(a.addedOn) - new Date(b.addedOn)
+      );
+      const earliestDate = sortedRawData[0].addedOn;
+      const lastDate = sortedRawData[sortedRawData.length - 1].addedOn;
+      const currentDate = new Date().toISOString().substring(0, 10);
+
+      if (queryInterval >= earliestDate) {
+        //Existing data already covers queryInterval, only get new data after last date
+        getDataPromise = fetchData(lastDate, currentDate);
+      } else {
+        //Only get the missing portion between queryInterval and the earliest existing data
+        getDataPromise = fetchData(queryInterval, earliestDate);
+      }
+    } else {
+      getDataPromise = fetchData(
+        queryInterval,
+        new Date().toISOString().substring(0, 10)
+      );
+    }
   }
 
   function getQueryInterval(interval) {
@@ -73,30 +102,52 @@
     return year + "-" + monthString + "-" + dateString;
   }
 
-  async function fetchData(queryInterval) {
+  async function fetchData(queryInterval, endDate) {
     toastMessage.set("Updating...");
 
     let rawData = [];
     let categorizedData = [];
+    let snapshot;
 
-    const snapshot = await db
-      .collection("expenses")
-      .where("date", ">=", queryInterval)
-      .where("date", "<=", new Date().toISOString().substring(0, 10))
-      .get();
+    try {
+      snapshot = await db
+        .collection("expenses")
+        .where("date", ">=", queryInterval)
+        .where("date", "<=", endDate)
+        .get();
+
+      console.log(queryInterval, endDate, snapshot.size);
+    } catch (error) {
+      toastMessage.set(error.message);
+      setTimeout(() => toastMessage.set(""), 3000);
+    }
 
     let rawCache = [];
 
+    if (localStorage.getItem("rawCache")) {
+      rawCache = JSON.parse(localStorage.getItem("rawCache"));
+    }
+
+    //Only append new data if they do not exist in rawCache
     snapshot.forEach(doc => {
       const data = doc.data();
-      data.id = doc.id;
-      rawCache.push(data);
+      if (rawCache.filter(rawData => rawData.id === data.id).length === 0) {
+        data.id = doc.id;
+        rawCache.push(data);
+      }
     });
+
+    //Only keep data that is at or after the real queryInterval (not the modified queryInterval which is to reduce firestore reads)
+    rawData = rawCache.filter(
+      rawData => rawData.date >= getQueryInterval(currentInterval)
+    );
 
     toastMessage.set("");
 
     localStorage.setItem("rawCache", JSON.stringify(rawCache));
-    rawData = rawCache;
+    //rawData = rawCache;
+
+    // createChart(rawData, queryInterval);
 
     const types = [...new Set(rawData.map(item => item.type))];
 
@@ -150,6 +201,66 @@
 
     return categorizedData;
   }
+
+  async function createChart(datas, queryInterval) {
+    let seriesData = [];
+
+    datas.forEach((data, i) => {
+      seriesData.push({
+        x: new Date(data.date).getTime(),
+        y: data.amount
+      });
+    });
+
+    console.log(seriesData);
+
+    let summedData = [];
+
+    seriesData.forEach((data, i, arry) => {
+      if (i === 0) {
+        summedData.push(data);
+      } else if (i > 0 && data.x === arry[i - 1].x) {
+        console.log(summedData, i);
+        summedData[i - 1].y = summedData[i - 1].y + data.y;
+      } else {
+        summedData.push(data);
+      }
+    });
+
+    console.log(summedData);
+
+    const options = {
+      chart: {
+        type: "line",
+        toolbar: {
+          show: false
+        }
+      },
+      series: [
+        {
+          name: queryInterval,
+          data: summedData
+        }
+      ],
+      xaxis: {
+        type: "datetime"
+      },
+      yaxis: {
+        show: false
+      },
+      grid: {
+        show: false
+      },
+      stroke: {
+        curve: "smooth",
+        lineCap: "round"
+      }
+    };
+
+    const chart = new ApexCharts(document.querySelector("#chart"), options);
+
+    await chart.render();
+  }
 </script>
 
 <style type="text/postcss">
@@ -174,7 +285,7 @@
   <span class="w-full text-center text-gray-600 text-sm font-light mb-8">
     Total spend
   </span>
-  <div class="w-full h-64 bg-gray-400 mb-8" />
+  <div class="w-full mb-8" id="chart" />
   <div class="flex flex-row justify-around overflow-x-scroll mb-8 mx-4">
     {#each ['1M', '6M', '1Y', 'All'] as interval}
       <button
