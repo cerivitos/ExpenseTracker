@@ -61,7 +61,8 @@
         date: date,
         desc: description,
         type: type,
-        addedBy: $userInfo.uid
+        addedBy: $userInfo.uid,
+        addedOn: new Date().toISOString().substring(0, 10)
       })
       .then(() => {
         toastMessage.set("Expense created!");
