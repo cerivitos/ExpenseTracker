@@ -3,10 +3,10 @@
   import firebase from "firebase/app";
   import "firebase/firestore";
   import { toastMessage } from "../store/store";
-  import ApexCharts from "apexcharts";
   import { fade } from "svelte/transition";
   import CategoryListTile from "./CategoryListTile.svelte";
   import { CountUp } from "countup.js";
+  import Chart from "./Chart.svelte";
 
   let db, queryInterval;
   let getDataPromise = fetchData(queryInterval);
@@ -145,9 +145,6 @@
     toastMessage.set("");
 
     localStorage.setItem("rawCache", JSON.stringify(rawCache));
-    //rawData = rawCache;
-
-    // createChart(rawData, queryInterval);
 
     const types = [...new Set(rawData.map(item => item.type))];
 
@@ -201,66 +198,6 @@
 
     return categorizedData;
   }
-
-  async function createChart(datas, queryInterval) {
-    let seriesData = [];
-
-    datas.forEach((data, i) => {
-      seriesData.push({
-        x: new Date(data.date).getTime(),
-        y: data.amount
-      });
-    });
-
-    console.log(seriesData);
-
-    let summedData = [];
-
-    seriesData.forEach((data, i, arry) => {
-      if (i === 0) {
-        summedData.push(data);
-      } else if (i > 0 && data.x === arry[i - 1].x) {
-        console.log(summedData, i);
-        summedData[i - 1].y = summedData[i - 1].y + data.y;
-      } else {
-        summedData.push(data);
-      }
-    });
-
-    console.log(summedData);
-
-    const options = {
-      chart: {
-        type: "line",
-        toolbar: {
-          show: false
-        }
-      },
-      series: [
-        {
-          name: queryInterval,
-          data: summedData
-        }
-      ],
-      xaxis: {
-        type: "datetime"
-      },
-      yaxis: {
-        show: false
-      },
-      grid: {
-        show: false
-      },
-      stroke: {
-        curve: "smooth",
-        lineCap: "round"
-      }
-    };
-
-    const chart = new ApexCharts(document.querySelector("#chart"), options);
-
-    await chart.render();
-  }
 </script>
 
 <style type="text/postcss">
@@ -285,7 +222,7 @@
   <span class="w-full text-center text-gray-600 text-sm font-light mb-8">
     Total spend
   </span>
-  <div class="w-full mb-8" id="chart" />
+  <!-- <Chart datas={rawData} queryInterval={getQueryInterval(currentInterval)} /> -->
   <div class="flex flex-row justify-around overflow-x-scroll mb-8 mx-4">
     {#each ['1M', '6M', '1Y', 'All'] as interval}
       <button
