@@ -55,14 +55,15 @@
 
     const db = firebase.firestore();
     db.collection("expenses")
-      .doc()
+      .doc(Date.now().toString() + amount)
       .set({
         amount: amount,
         date: date,
         desc: description,
         type: type,
         addedBy: $userInfo.displayName,
-        addedOn: new Date().toISOString().substring(0, 10)
+        addedOn: new Date().toISOString().substring(0, 10),
+        id: Date.now().toString() + amount
       })
       .then(() => {
         toastMessage.set("Expense created!");

@@ -48,7 +48,7 @@
       const expense = expenses[keys[i]];
 
       db.collection("expenses")
-        .doc()
+        .doc(keys[i])
         .set({
           amount: expense.amount,
           date: expense.date,
@@ -58,7 +58,8 @@
             expense.addedBy === "9K1QQfYAg7QoIMbxzUy26INrpbX2"
               ? "Wai Kit Chan"
               : "Jie Lin Soong",
-          addedOn: expense.date
+          addedOn: expense.date,
+          id: keys[i]
         });
     }
   }
