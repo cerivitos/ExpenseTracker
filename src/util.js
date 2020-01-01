@@ -21,6 +21,16 @@ export function debounce(fn, wait, callFirst) {
   };
 }
 
+export function handleRouting(newPage) {
+  window.history.pushState(
+    {
+      page: newPage
+    },
+    null,
+    "?page=" + newPage
+  );
+}
+
 export const typeDesigns = [
   {
     type: "Food",
