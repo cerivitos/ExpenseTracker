@@ -9,6 +9,7 @@
   import { view, userInfo } from "./store/store";
   import Toast from "./components/Toast.svelte";
   import Settings from "./components/Settings.svelte";
+  import PageScaffold from "./components/PageScaffold.svelte";
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/service-worker.js");
@@ -56,6 +57,9 @@
       <Dashboard />
     {/if}
   </Scaffold>
+  {#if $view === 'detail'}
+    <PageScaffold />
+  {/if}
   {#if signInError}
     <Toast message={errorMsg} />
   {/if}
