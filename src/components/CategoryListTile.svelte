@@ -2,7 +2,7 @@
   import { fade, fly } from "svelte/transition";
   import { onMount } from "svelte";
   import { typeDesigns, handleRouting } from "../util";
-  import { view, detailData, originPositions } from "../store/store";
+  import { view, detailData } from "../store/store";
 
   export let data;
   export let index;
@@ -21,23 +21,6 @@
 
   function viewDetails() {
     detailData.set(data);
-
-    const iconPosX = document.getElementById("icon").getBoundingClientRect()
-      .left;
-    const iconPosY = document.getElementById("icon").getBoundingClientRect()
-      .top;
-    const labelPosX = document.getElementById("label").getBoundingClientRect()
-      .left;
-    const labelPosY = document.getElementById("label").getBoundingClientRect()
-      .top;
-
-    originPositions.set({
-      iconX: iconPosX,
-      iconY: iconPosY,
-      labelX: labelPosX,
-      labelY: labelPosY
-    });
-
     handleRouting("detail#" + data.type);
     view.set("detail");
   }
