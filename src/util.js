@@ -31,6 +31,10 @@ export function handleRouting(newPage) {
   );
 }
 
+export function convertRemToPixels(rem) {
+  return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+}
+
 export const typeDesigns = [
   {
     type: "Food",

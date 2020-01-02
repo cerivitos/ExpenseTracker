@@ -9,11 +9,11 @@
   import { view, userInfo } from "./store/store";
   import Toast from "./components/Toast.svelte";
   import Settings from "./components/Settings.svelte";
-  import PageScaffold from "./components/PageScaffold.svelte";
+  import DetailPage from "./components/DetailPage.svelte";
 
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/service-worker.js");
-  }
+  // if ("serviceWorker" in navigator) {
+  //   navigator.serviceWorker.register("/service-worker.js");
+  // }
 
   let signInError = false;
   let errorMsg = "";
@@ -58,7 +58,7 @@
     {/if}
   </Scaffold>
   {#if $view === 'detail'}
-    <PageScaffold />
+    <DetailPage />
   {/if}
   {#if signInError}
     <Toast message={errorMsg} />
