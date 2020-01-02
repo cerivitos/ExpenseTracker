@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { fly, fade, scale, crossfade } from "svelte/transition";
   import { typeDesigns, convertRemToPixels } from "../util";
-  import { detailData, originPositions } from "../store/store";
+  import { detailData } from "../store/store";
   import { quintOut } from "svelte/easing";
   import { flip } from "svelte/animate";
 
@@ -205,9 +205,9 @@
                 </div>
                 <div
                   class="flex flex-col flex-grow items-start justify-around
-                  truncate">
-                  <span class="font-bold mr-4">{data.addedBy}</span>
-                  <span class="text-gray-600">{data.desc}</span>
+                  truncate mr-4">
+                  <span class="font-bold w-full truncate">{data.addedBy}</span>
+                  <span class="text-gray-600 w-full truncate">{data.desc}</span>
                 </div>
                 <span>${data.amount.toFixed(2)}</span>
               </div>
