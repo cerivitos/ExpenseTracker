@@ -37139,7 +37139,7 @@
     	return child_ctx;
     }
 
-    // (176:8) {#each typeDesigns as typeDesign}
+    // (175:8) {#each typeDesigns as typeDesign}
     function create_each_block$2(ctx) {
     	let current;
 
@@ -37186,7 +37186,7 @@
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(176:8) {#each typeDesigns as typeDesign}",
+    		source: "(175:8) {#each typeDesigns as typeDesign}",
     		ctx
     	});
 
@@ -37304,70 +37304,70 @@
     			button3.textContent = "Cancel";
     			attr_dev(label0, "for", "amount-input");
     			attr_dev(label0, "class", "svelte-1hg711n");
-    			add_location(label0, file$7, 130, 6, 5045);
+    			add_location(label0, file$7, 129, 6, 5029);
     			attr_dev(input0, "id", "amount-input");
     			attr_dev(input0, "class", "amount text-2xl svelte-1hg711n");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$7, 131, 6, 5093);
+    			add_location(input0, file$7, 130, 6, 5077);
     			attr_dev(div0, "class", "input-row svelte-1hg711n");
-    			add_location(div0, file$7, 129, 4, 5014);
+    			add_location(div0, file$7, 128, 4, 4998);
     			attr_dev(label1, "for", "date-input");
     			attr_dev(label1, "class", "svelte-1hg711n");
-    			add_location(label1, file$7, 140, 6, 5353);
+    			add_location(label1, file$7, 139, 6, 5337);
     			attr_dev(button0, "id", "today-button");
     			attr_dev(button0, "class", "date-button active svelte-1hg711n");
-    			add_location(button0, file$7, 142, 8, 5425);
+    			add_location(button0, file$7, 141, 8, 5409);
     			attr_dev(button1, "id", "yesterday-button");
     			attr_dev(button1, "class", "date-button svelte-1hg711n");
-    			add_location(button1, file$7, 148, 8, 5591);
+    			add_location(button1, file$7, 147, 8, 5575);
     			attr_dev(div1, "class", "mr-4");
-    			add_location(div1, file$7, 141, 6, 5397);
+    			add_location(div1, file$7, 140, 6, 5381);
     			attr_dev(div2, "class", "input-row svelte-1hg711n");
-    			add_location(div2, file$7, 139, 4, 5322);
-    			add_location(span, file$7, 159, 6, 5901);
+    			add_location(div2, file$7, 138, 4, 5306);
+    			add_location(span, file$7, 158, 6, 5885);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "svelte-1hg711n");
-    			add_location(input1, file$7, 160, 6, 5932);
+    			add_location(input1, file$7, 159, 6, 5916);
     			attr_dev(div3, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n      text-gray-600 ml-4");
-    			add_location(div3, file$7, 156, 4, 5784);
+    			add_location(div3, file$7, 155, 4, 5768);
     			attr_dev(label2, "for", "description-input");
     			attr_dev(label2, "class", "svelte-1hg711n");
-    			add_location(label2, file$7, 163, 6, 6036);
+    			add_location(label2, file$7, 162, 6, 6020);
     			attr_dev(input2, "class", "truncate text-2xl svelte-1hg711n");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "...");
-    			add_location(input2, file$7, 164, 6, 6094);
+    			add_location(input2, file$7, 163, 6, 6078);
     			attr_dev(div4, "class", "input-row svelte-1hg711n");
-    			add_location(div4, file$7, 162, 4, 6005);
+    			add_location(div4, file$7, 161, 4, 5989);
     			attr_dev(label3, "class", "svelte-1hg711n");
-    			add_location(label3, file$7, 173, 6, 6383);
+    			add_location(label3, file$7, 172, 6, 6367);
     			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div5, file$7, 174, 6, 6410);
+    			add_location(div5, file$7, 173, 6, 6394);
     			attr_dev(div6, "class", "mt-8 flex flex-col");
-    			add_location(div6, file$7, 172, 4, 6343);
+    			add_location(div6, file$7, 171, 4, 6327);
     			attr_dev(button2, "class", "rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-12\r\n        mb-8 bg-gray-300");
 
     			attr_dev(button2, "style", button2_style_value = /*typeValid*/ ctx[6] && /*dateValid*/ ctx[5] && /*amountValid*/ ctx[4]
     			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
     			: "");
 
-    			add_location(button2, file$7, 186, 6, 6852);
+    			add_location(button2, file$7, 185, 6, 6836);
     			attr_dev(div7, "class", "w-full text-center block");
-    			add_location(div7, file$7, 185, 4, 6806);
+    			add_location(div7, file$7, 184, 4, 6790);
     			attr_dev(button3, "class", "w-full text-center mb-8 bg-transparent");
     			set_style(button3, "color", "hsl(var(--secondary-hue), 50%, 50%)");
-    			add_location(button3, file$7, 194, 4, 7171);
+    			add_location(button3, file$7, 193, 4, 7155);
     			attr_dev(div8, "class", "flex flex-col items-start justify-around bg-white mt-32");
     			set_style(div8, "border-top-left-radius", "1rem");
     			set_style(div8, "border-top-right-radius", "1rem");
-    			add_location(div8, file$7, 125, 2, 4813);
+    			add_location(div8, file$7, 124, 2, 4797);
     			attr_dev(div9, "id", "entry-wrapper");
     			attr_dev(div9, "class", "absolute top-0 w-full h-screen z-10 overflow-x-hidden svelte-1hg711n");
     			set_style(div9, "background-color", "rgba(0,0,0,0.2)");
-    			add_location(div9, file$7, 120, 0, 4633);
+    			add_location(div9, file$7, 119, 0, 4617);
 
     			dispose = [
     				listen_dev(input0, "input", input0_input_handler),
@@ -37548,7 +37548,6 @@
 
     	onMount(() => {
     		if (Object.keys($entryData).length > 0) {
-    			console.log($entryData);
     			$$invalidate(0, description = $entryData.desc);
     			$$invalidate(1, amount = $entryData.amount);
     			$$invalidate(2, date = $entryData.date);
@@ -37571,8 +37570,7 @@
     			document.getElementById("yesterday-button").classList.remove("active");
     		};
 
-    		document.getElementById("amount-input").focus();
-    		document.execCommand("selectall", null, false);
+    		document.getElementById("amount-input").select();
     	});
 
     	onDestroy(() => {

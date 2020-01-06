@@ -20,8 +20,8 @@
   let wrapperEl;
 
   onMount(() => {
+    //Use existing data to be edited if user came from Detail view
     if (Object.keys($entryData).length > 0) {
-      console.log($entryData);
       description = $entryData.desc;
       amount = $entryData.amount;
       date = $entryData.date;
@@ -47,8 +47,7 @@
     };
 
     //Get focus on Amount input field
-    document.getElementById("amount-input").focus();
-    document.execCommand("selectall", null, false);
+    document.getElementById("amount-input").select();
   });
 
   onDestroy(() => {
