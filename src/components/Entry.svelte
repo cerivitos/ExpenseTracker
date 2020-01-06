@@ -1,6 +1,6 @@
 <script>
-  import { view, toastMessage, userInfo } from "../store/store";
-  import { onMount } from "svelte";
+  import { view, toastMessage, userInfo, entryData } from "../store/store";
+  import { onMount, onDestroy } from "svelte";
   import TypeButton from "./TypeButton.svelte";
   import LoadingSpinner from "./LoadingSpinner.svelte";
   import { typeDesigns } from "../util";
@@ -20,6 +20,17 @@
   let wrapperEl;
 
   onMount(() => {
+    if (Object.keys($entryData).length > 0) {
+      console.log($entryData);
+      description = $entryData.desc;
+      amount = $entryData.amount;
+      date = $entryData.date;
+      type = $entryData.type;
+
+      document.getElementById("today-button").classList.remove("active");
+      document.getElementById("yesterday-button").classList.remove("active");
+    }
+
     wrapperEl = document.getElementById("entry-wrapper");
     //Scroll down a little so that we can set the trigger to dismiss is scrollY = 0
     wrapperEl.scrollTop = 120;
@@ -29,8 +40,19 @@
       }
     };
 
+    //Remove higlight for Today and Yesterday date shortcut buttons since user wants to enter own date
+    document.getElementById("date-input").oninput = () => {
+      document.getElementById("today-button").classList.remove("active");
+      document.getElementById("yesterday-button").classList.remove("active");
+    };
+
+    //Get focus on Amount input field
     document.getElementById("amount-input").focus();
     document.execCommand("selectall", null, false);
+  });
+
+  onDestroy(() => {
+    entryData.set({});
   });
 
   function setDate(dateToSet) {
@@ -55,15 +77,15 @@
 
     const db = firebase.firestore();
     db.collection("expenses")
-      .doc(Date.now().toString() + amount)
+      .doc($entryData.id ? $entryData.id : Date.now().toString() + amount)
       .set({
         amount: amount,
         date: date,
         desc: description,
         type: type,
-        addedBy: $userInfo.displayName,
+        addedBy: $userInfo.name,
         addedOn: new Date().toISOString().substring(0, 10),
-        id: Date.now().toString() + amount
+        id: $entryData.id ? $entryData.id : Date.now().toString() + amount
       })
       .then(() => {
         toastMessage.set("Expense created!");

@@ -308,6 +308,9 @@
     function onMount(fn) {
         get_current_component().$$.on_mount.push(fn);
     }
+    function onDestroy(fn) {
+        get_current_component().$$.on_destroy.push(fn);
+    }
     function createEventDispatcher() {
         const component = get_current_component();
         return (type, detail) => {
@@ -26564,11 +26567,15 @@
 
     //ui state - 'settings' or 'dashboard'
     const view = writable("dashboard");
+
     //ui state (separate from above so that the settings or dashboard page is not destroyed when showing entry or detail page) - 'entry' or 'detail'
     const overlay = writable("");
 
     //Handle passing of data for Detail page
     const detailData = writable({});
+
+    //Handle passing of data to Entry page for editing
+    const entryData = writable({});
 
     //Message to show in toast
     const toastMessage = writable("");
@@ -35891,18 +35898,18 @@
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[17] = list[i];
+    	child_ctx[18] = list[i];
     	return child_ctx;
     }
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[14] = list[i];
-    	child_ctx[16] = i;
+    	child_ctx[15] = list[i];
+    	child_ctx[17] = i;
     	return child_ctx;
     }
 
-    // (132:8) {:else}
+    // (138:8) {:else}
     function create_else_block$1(ctx) {
     	let i;
     	let i_intro;
@@ -35912,7 +35919,7 @@
     			i = element("i");
     			i.textContent = "attach_money";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$5, 132, 10, 3695);
+    			add_location(i, file$5, 138, 10, 3854);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -35935,14 +35942,14 @@
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(132:8) {:else}",
+    		source: "(138:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (128:8) {#if sortByDate}
+    // (134:8) {#if sortByDate}
     function create_if_block_2(ctx) {
     	let i;
     	let i_intro;
@@ -35952,7 +35959,7 @@
     			i = element("i");
     			i.textContent = "date_range";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$5, 128, 10, 3560);
+    			add_location(i, file$5, 134, 10, 3719);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -35975,7 +35982,7 @@
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(128:8) {#if sortByDate}",
+    		source: "(134:8) {#if sortByDate}",
     		ctx
     	});
 
@@ -36004,11 +36011,11 @@
     	return block;
     }
 
-    // (160:43)         {#each buckets as bucket, index}
+    // (166:43)         {#each buckets as bucket, index}
     function create_then_block$1(ctx) {
     	let each_1_anchor;
     	let current;
-    	let each_value = /*buckets*/ ctx[13];
+    	let each_value = /*buckets*/ ctx[14];
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -36036,8 +36043,8 @@
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*sortedData, getBucketsPromise, backgroundColor, iconColor, Date, convertRemToPixels*/ 77) {
-    				each_value = /*buckets*/ ctx[13];
+    			if (dirty & /*sortedData, showEditDetail, getBucketsPromise, backgroundColor, iconColor, Date, convertRemToPixels*/ 77) {
+    				each_value = /*buckets*/ ctx[14];
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
@@ -36091,17 +36098,17 @@
     		block,
     		id: create_then_block$1.name,
     		type: "then",
-    		source: "(160:43)         {#each buckets as bucket, index}",
+    		source: "(166:43)         {#each buckets as bucket, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (162:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
+    // (168:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
     function create_if_block_1(ctx) {
     	let span;
-    	let t_value = /*bucket*/ ctx[14].year + "";
+    	let t_value = /*bucket*/ ctx[15].year + "";
     	let t;
 
     	const block = {
@@ -36110,14 +36117,14 @@
     			t = text(t_value);
     			attr_dev(span, "class", "rounded-full bg-gray-600 text-white font-bold px-4 py-2 my-4\r\n            sticky top-0 z-10 m-auto");
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
-    			add_location(span, file$5, 162, 10, 4723);
+    			add_location(span, file$5, 168, 10, 4882);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
     			append_dev(span, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*getBucketsPromise*/ 1 && t_value !== (t_value = /*bucket*/ ctx[14].year + "")) set_data_dev(t, t_value);
+    			if (dirty & /*getBucketsPromise*/ 1 && t_value !== (t_value = /*bucket*/ ctx[15].year + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(span);
@@ -36128,37 +36135,37 @@
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(162:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
+    		source: "(168:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (186:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
+    // (193:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
     function create_if_block$3(ctx) {
     	let div2;
     	let div0;
     	let span0;
-    	let t0_value = new Date(2019, /*bucket*/ ctx[14].month - 1, 1).toDateString().substring(4, 7) + "";
+    	let t0_value = new Date(2019, /*bucket*/ ctx[15].month - 1, 1).toDateString().substring(4, 7) + "";
     	let t0;
     	let t1;
     	let span1;
-    	let t2_value = new Date(/*data*/ ctx[17].date).getDate() + "";
+    	let t2_value = new Date(/*data*/ ctx[18].date).getDate() + "";
     	let t2;
     	let t3;
     	let div1;
     	let span2;
-    	let t4_value = /*data*/ ctx[17].addedBy + "";
+    	let t4_value = /*data*/ ctx[18].addedBy + "";
     	let t4;
     	let t5;
     	let span3;
-    	let t6_value = /*data*/ ctx[17].desc + "";
+    	let t6_value = /*data*/ ctx[18].desc + "";
     	let t6;
     	let t7;
     	let span4;
     	let t8;
-    	let t9_value = /*data*/ ctx[17].amount.toFixed(2) + "";
+    	let t9_value = /*data*/ ctx[18].amount.toFixed(2) + "";
     	let t9;
 
     	const block = {
@@ -36182,22 +36189,22 @@
     			t8 = text("$");
     			t9 = text(t9_value);
     			attr_dev(span0, "class", "font-bold text-xs");
-    			add_location(span0, file$5, 191, 20, 6063);
+    			add_location(span0, file$5, 198, 20, 6275);
     			attr_dev(span1, "class", "font-bold");
-    			add_location(span1, file$5, 196, 20, 6290);
+    			add_location(span1, file$5, 203, 20, 6502);
     			attr_dev(div0, "class", "w-10 rounded-lg flex flex-col items-center\r\n                    justify-between py-1 mr-4");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[2]);
     			set_style(div0, "color", /*iconColor*/ ctx[3]);
-    			add_location(div0, file$5, 187, 18, 5834);
+    			add_location(div0, file$5, 194, 18, 6046);
     			attr_dev(span2, "class", "font-bold w-full truncate");
-    			add_location(span2, file$5, 203, 20, 6586);
+    			add_location(span2, file$5, 210, 20, 6798);
     			attr_dev(span3, "class", "text-gray-600 w-full truncate");
-    			add_location(span3, file$5, 206, 20, 6715);
+    			add_location(span3, file$5, 213, 20, 6927);
     			attr_dev(div1, "class", "flex flex-col flex-grow items-start justify-around\r\n                    truncate mr-4");
-    			add_location(div1, file$5, 200, 18, 6444);
-    			add_location(span4, file$5, 210, 18, 6869);
+    			add_location(div1, file$5, 207, 18, 6656);
+    			add_location(span4, file$5, 217, 18, 7081);
     			attr_dev(div2, "class", "flex flex-row p-4 items-center");
-    			add_location(div2, file$5, 186, 16, 5770);
+    			add_location(div2, file$5, 193, 16, 5982);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -36220,8 +36227,8 @@
     			append_dev(span4, t9);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*getBucketsPromise*/ 1 && t0_value !== (t0_value = new Date(2019, /*bucket*/ ctx[14].month - 1, 1).toDateString().substring(4, 7) + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*sortedData*/ 64 && t2_value !== (t2_value = new Date(/*data*/ ctx[17].date).getDate() + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*getBucketsPromise*/ 1 && t0_value !== (t0_value = new Date(2019, /*bucket*/ ctx[15].month - 1, 1).toDateString().substring(4, 7) + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*sortedData*/ 64 && t2_value !== (t2_value = new Date(/*data*/ ctx[18].date).getDate() + "")) set_data_dev(t2, t2_value);
 
     			if (dirty & /*backgroundColor*/ 4) {
     				set_style(div0, "background-color", /*backgroundColor*/ ctx[2]);
@@ -36231,9 +36238,9 @@
     				set_style(div0, "color", /*iconColor*/ ctx[3]);
     			}
 
-    			if (dirty & /*sortedData*/ 64 && t4_value !== (t4_value = /*data*/ ctx[17].addedBy + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*sortedData*/ 64 && t6_value !== (t6_value = /*data*/ ctx[17].desc + "")) set_data_dev(t6, t6_value);
-    			if (dirty & /*sortedData*/ 64 && t9_value !== (t9_value = /*data*/ ctx[17].amount.toFixed(2) + "")) set_data_dev(t9, t9_value);
+    			if (dirty & /*sortedData*/ 64 && t4_value !== (t4_value = /*data*/ ctx[18].addedBy + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*sortedData*/ 64 && t6_value !== (t6_value = /*data*/ ctx[18].desc + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*sortedData*/ 64 && t9_value !== (t9_value = /*data*/ ctx[18].amount.toFixed(2) + "")) set_data_dev(t9, t9_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div2);
@@ -36244,23 +36251,28 @@
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(186:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
+    		source: "(193:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (180:10) {#each sortedData as data (data.id)}
+    // (186:10) {#each sortedData as data (data.id)}
     function create_each_block_1$1(key_1, ctx) {
     	let div;
-    	let show_if = /*data*/ ctx[17].date.substring(0, 4) == /*bucket*/ ctx[14].year && /*data*/ ctx[17].date.substring(5, 7) == /*bucket*/ ctx[14].month;
+    	let show_if = /*data*/ ctx[18].date.substring(0, 4) == /*bucket*/ ctx[15].year && /*data*/ ctx[18].date.substring(5, 7) == /*bucket*/ ctx[15].month;
     	let div_intro;
     	let div_outro;
     	let rect;
     	let stop_animation = noop;
     	let current;
+    	let dispose;
     	let if_block = show_if && create_if_block$3(ctx);
+
+    	function click_handler_2(...args) {
+    		return /*click_handler_2*/ ctx[13](/*data*/ ctx[18], ...args);
+    	}
 
     	const block = {
     		key: key_1,
@@ -36269,7 +36281,8 @@
     			div = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div, "class", "w-full bg-white");
-    			add_location(div, file$5, 180, 12, 5465);
+    			add_location(div, file$5, 186, 12, 5624);
+    			dispose = listen_dev(div, "click", click_handler_2, false, false, false);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -36277,8 +36290,9 @@
     			if (if_block) if_block.m(div, null);
     			current = true;
     		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*sortedData, getBucketsPromise*/ 65) show_if = /*data*/ ctx[17].date.substring(0, 4) == /*bucket*/ ctx[14].year && /*data*/ ctx[17].date.substring(5, 7) == /*bucket*/ ctx[14].month;
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty & /*sortedData, getBucketsPromise*/ 65) show_if = /*data*/ ctx[18].date.substring(0, 4) == /*bucket*/ ctx[15].year && /*data*/ ctx[18].date.substring(5, 7) == /*bucket*/ ctx[15].month;
 
     			if (show_if) {
     				if (if_block) {
@@ -36310,7 +36324,7 @@
 
     			add_render_callback(() => {
     				if (div_outro) div_outro.end(1);
-    				if (!div_intro) div_intro = create_in_transition(div, /*receive*/ ctx[9], { key: /*data*/ ctx[17].id });
+    				if (!div_intro) div_intro = create_in_transition(div, /*receive*/ ctx[9], { key: /*data*/ ctx[18].id });
     				div_intro.start();
     			});
 
@@ -36318,13 +36332,14 @@
     		},
     		o: function outro(local) {
     			if (div_intro) div_intro.invalidate();
-    			div_outro = create_out_transition(div, /*send*/ ctx[8], { key: /*data*/ ctx[17].id });
+    			div_outro = create_out_transition(div, /*send*/ ctx[8], { key: /*data*/ ctx[18].id });
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
     			if (if_block) if_block.d();
     			if (detaching && div_outro) div_outro.end();
+    			dispose();
     		}
     	};
 
@@ -36332,20 +36347,20 @@
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(180:10) {#each sortedData as data (data.id)}",
+    		source: "(186:10) {#each sortedData as data (data.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (161:6) {#each buckets as bucket, index}
+    // (167:6) {#each buckets as bucket, index}
     function create_each_block$1(ctx) {
     	let t0;
     	let div1;
     	let div0;
     	let span;
-    	let t1_value = new Date(2019, /*bucket*/ ctx[14].month - 1, 1).toDateString().substring(4, 7) + "";
+    	let t1_value = new Date(2019, /*bucket*/ ctx[15].month - 1, 1).toDateString().substring(4, 7) + "";
     	let t1;
     	let t2;
     	let each_blocks = [];
@@ -36353,9 +36368,9 @@
     	let t3;
     	let div1_intro;
     	let current;
-    	let if_block = (/*index*/ ctx[16] === 0 || /*index*/ ctx[16] > 0 && /*buckets*/ ctx[13][/*index*/ ctx[16] - 1].year !== /*bucket*/ ctx[14].year) && create_if_block_1(ctx);
+    	let if_block = (/*index*/ ctx[17] === 0 || /*index*/ ctx[17] > 0 && /*buckets*/ ctx[14][/*index*/ ctx[17] - 1].year !== /*bucket*/ ctx[15].year) && create_if_block_1(ctx);
     	let each_value_1 = /*sortedData*/ ctx[6];
-    	const get_key = ctx => /*data*/ ctx[17].id;
+    	const get_key = ctx => /*data*/ ctx[18].id;
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
     		let child_ctx = get_each_context_1$1(ctx, each_value_1, i);
@@ -36379,11 +36394,11 @@
 
     			t3 = space();
     			attr_dev(span, "class", "relative text-gray-600 font-bold bg-white px-4");
-    			add_location(span, file$5, 173, 12, 5183);
+    			add_location(span, file$5, 179, 12, 5342);
     			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-oee9xi");
-    			add_location(div0, file$5, 172, 10, 5113);
+    			add_location(div0, file$5, 178, 10, 5272);
     			attr_dev(div1, "class", "flex flex-col justify-center items-center");
-    			add_location(div1, file$5, 169, 8, 4977);
+    			add_location(div1, file$5, 175, 8, 5136);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -36402,7 +36417,7 @@
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (/*index*/ ctx[16] === 0 || /*index*/ ctx[16] > 0 && /*buckets*/ ctx[13][/*index*/ ctx[16] - 1].year !== /*bucket*/ ctx[14].year) {
+    			if (/*index*/ ctx[17] === 0 || /*index*/ ctx[17] > 0 && /*buckets*/ ctx[14][/*index*/ ctx[17] - 1].year !== /*bucket*/ ctx[15].year) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -36415,7 +36430,7 @@
     				if_block = null;
     			}
 
-    			if ((!current || dirty & /*getBucketsPromise*/ 1) && t1_value !== (t1_value = new Date(2019, /*bucket*/ ctx[14].month - 1, 1).toDateString().substring(4, 7) + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty & /*getBucketsPromise*/ 1) && t1_value !== (t1_value = new Date(2019, /*bucket*/ ctx[15].month - 1, 1).toDateString().substring(4, 7) + "")) set_data_dev(t1, t1_value);
     			const each_value_1 = /*sortedData*/ ctx[6];
     			group_outros();
     			for (let i = 0; i < each_blocks.length; i += 1) each_blocks[i].r();
@@ -36461,7 +36476,7 @@
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(161:6) {#each buckets as bucket, index}",
+    		source: "(167:6) {#each buckets as bucket, index}",
     		ctx
     	});
 
@@ -36534,7 +36549,7 @@
     		pending: create_pending_block$1,
     		then: create_then_block$1,
     		catch: create_catch_block$1,
-    		value: 13,
+    		value: 14,
     		blocks: [,,,]
     	};
 
@@ -36563,35 +36578,35 @@
     			info.block.c();
     			attr_dev(i0, "class", "material-icons fill-current");
     			set_style(i0, "color", /*iconColor*/ ctx[3]);
-    			add_location(i0, file$5, 114, 4, 3125);
+    			add_location(i0, file$5, 120, 4, 3284);
     			attr_dev(div0, "class", "relative");
-    			add_location(div0, file$5, 126, 6, 3500);
+    			add_location(div0, file$5, 132, 6, 3659);
     			attr_dev(button, "class", "fill-current");
     			set_style(button, "color", /*iconColor*/ ctx[3]);
-    			add_location(button, file$5, 121, 4, 3337);
+    			add_location(button, file$5, 127, 4, 3496);
     			attr_dev(div1, "class", div1_class_value = "w-full flex flex-row p-4 bg-white " + (/*scrolling*/ ctx[4] ? "shadow" : "") + " fixed\r\n    top-0 justify-between z-20");
     			set_style(div1, "height", "56px");
-    			add_location(div1, file$5, 110, 2, 2975);
+    			add_location(div1, file$5, 116, 2, 3134);
     			attr_dev(i1, "class", "material-icons fill-current");
     			set_style(i1, "display", "block", 1);
     			set_style(i1, "color", /*iconColor*/ ctx[3]);
     			set_style(i1, "font-size", "64px");
-    			add_location(i1, file$5, 146, 8, 4155);
+    			add_location(i1, file$5, 152, 8, 4314);
     			attr_dev(div2, "class", "icon rounded-full p-6 mt-20 mb-4");
     			attr_dev(div2, "id", "icon");
     			set_style(div2, "background-color", /*backgroundColor*/ ctx[2]);
-    			add_location(div2, file$5, 141, 6, 3955);
+    			add_location(div2, file$5, 147, 6, 4114);
     			attr_dev(span, "class", "text-2xl font-bold mb-8");
     			set_style(span, "color", /*iconColor*/ ctx[3]);
-    			add_location(span, file$5, 152, 6, 4348);
+    			add_location(span, file$5, 158, 6, 4507);
     			attr_dev(div3, "class", "flex flex-col items-center");
-    			add_location(div3, file$5, 140, 4, 3907);
+    			add_location(div3, file$5, 146, 4, 4066);
     			attr_dev(div4, "id", "content");
     			attr_dev(div4, "class", "flex flex-col");
-    			add_location(div4, file$5, 139, 2, 3861);
+    			add_location(div4, file$5, 145, 2, 4020);
     			attr_dev(div5, "id", "detail-page");
     			attr_dev(div5, "class", "h-screen w-full bg-white relative overflow-auto");
-    			add_location(div5, file$5, 106, 0, 2827);
+    			add_location(div5, file$5, 112, 0, 2986);
 
     			dispose = [
     				listen_dev(i0, "click", /*click_handler*/ ctx[11], false, false, false),
@@ -36671,7 +36686,7 @@
 
     			if (dirty & /*getBucketsPromise*/ 1 && promise !== (promise = /*getBucketsPromise*/ ctx[0]) && handle_promise(promise, info)) ; else {
     				const child_ctx = ctx.slice();
-    				child_ctx[13] = info.resolved;
+    				child_ctx[14] = info.resolved;
     				info.block.p(child_ctx, dirty);
     			}
     		},
@@ -36747,6 +36762,12 @@
     	});
 
     	return block;
+    }
+
+    function showEditDetail(data) {
+    	overlay.set("entry");
+    	handleRouting("entry");
+    	entryData.set(data);
     }
 
     function instance$5($$self, $$props, $$invalidate) {
@@ -36829,6 +36850,7 @@
 
     	const click_handler = () => window.history.back();
     	const click_handler_1 = () => $$invalidate(5, sortByDate = !sortByDate);
+    	const click_handler_2 = data => showEditDetail(data);
 
     	$$self.$capture_state = () => {
     		return {};
@@ -36876,7 +36898,8 @@
     		receive,
     		createBuckets,
     		click_handler,
-    		click_handler_1
+    		click_handler_1,
+    		click_handler_2
     	];
     }
 
@@ -37112,20 +37135,20 @@
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[21] = list[i];
+    	child_ctx[22] = list[i];
     	return child_ctx;
     }
 
-    // (154:8) {#each typeDesigns as typeDesign}
+    // (176:8) {#each typeDesigns as typeDesign}
     function create_each_block$2(ctx) {
     	let current;
 
     	const typebutton = new TypeButton({
     			props: {
-    				label: /*typeDesign*/ ctx[21].type,
-    				colorHue: /*typeDesign*/ ctx[21].hue,
-    				isActive: /*type*/ ctx[3] === /*typeDesign*/ ctx[21].type,
-    				materialIcon: /*typeDesign*/ ctx[21].materialIcon
+    				label: /*typeDesign*/ ctx[22].type,
+    				colorHue: /*typeDesign*/ ctx[22].hue,
+    				isActive: /*type*/ ctx[3] === /*typeDesign*/ ctx[22].type,
+    				materialIcon: /*typeDesign*/ ctx[22].materialIcon
     			},
     			$$inline: true
     		});
@@ -37142,7 +37165,7 @@
     		},
     		p: function update(ctx, dirty) {
     			const typebutton_changes = {};
-    			if (dirty & /*type*/ 8) typebutton_changes.isActive = /*type*/ ctx[3] === /*typeDesign*/ ctx[21].type;
+    			if (dirty & /*type*/ 8) typebutton_changes.isActive = /*type*/ ctx[3] === /*typeDesign*/ ctx[22].type;
     			typebutton.$set(typebutton_changes);
     		},
     		i: function intro(local) {
@@ -37163,7 +37186,7 @@
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(154:8) {#each typeDesigns as typeDesign}",
+    		source: "(176:8) {#each typeDesigns as typeDesign}",
     		ctx
     	});
 
@@ -37215,7 +37238,7 @@
 
     	function input0_input_handler() {
     		input0_updating = true;
-    		/*input0_input_handler*/ ctx[12].call(input0);
+    		/*input0_input_handler*/ ctx[13].call(input0);
     	}
 
     	let each_value = typeDesigns;
@@ -37281,81 +37304,81 @@
     			button3.textContent = "Cancel";
     			attr_dev(label0, "for", "amount-input");
     			attr_dev(label0, "class", "svelte-1hg711n");
-    			add_location(label0, file$7, 108, 6, 4165);
+    			add_location(label0, file$7, 130, 6, 5045);
     			attr_dev(input0, "id", "amount-input");
     			attr_dev(input0, "class", "amount text-2xl svelte-1hg711n");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$7, 109, 6, 4213);
+    			add_location(input0, file$7, 131, 6, 5093);
     			attr_dev(div0, "class", "input-row svelte-1hg711n");
-    			add_location(div0, file$7, 107, 4, 4134);
+    			add_location(div0, file$7, 129, 4, 5014);
     			attr_dev(label1, "for", "date-input");
     			attr_dev(label1, "class", "svelte-1hg711n");
-    			add_location(label1, file$7, 118, 6, 4473);
+    			add_location(label1, file$7, 140, 6, 5353);
     			attr_dev(button0, "id", "today-button");
     			attr_dev(button0, "class", "date-button active svelte-1hg711n");
-    			add_location(button0, file$7, 120, 8, 4545);
+    			add_location(button0, file$7, 142, 8, 5425);
     			attr_dev(button1, "id", "yesterday-button");
     			attr_dev(button1, "class", "date-button svelte-1hg711n");
-    			add_location(button1, file$7, 126, 8, 4711);
+    			add_location(button1, file$7, 148, 8, 5591);
     			attr_dev(div1, "class", "mr-4");
-    			add_location(div1, file$7, 119, 6, 4517);
+    			add_location(div1, file$7, 141, 6, 5397);
     			attr_dev(div2, "class", "input-row svelte-1hg711n");
-    			add_location(div2, file$7, 117, 4, 4442);
-    			add_location(span, file$7, 137, 6, 5021);
+    			add_location(div2, file$7, 139, 4, 5322);
+    			add_location(span, file$7, 159, 6, 5901);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "svelte-1hg711n");
-    			add_location(input1, file$7, 138, 6, 5052);
+    			add_location(input1, file$7, 160, 6, 5932);
     			attr_dev(div3, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n      text-gray-600 ml-4");
-    			add_location(div3, file$7, 134, 4, 4904);
+    			add_location(div3, file$7, 156, 4, 5784);
     			attr_dev(label2, "for", "description-input");
     			attr_dev(label2, "class", "svelte-1hg711n");
-    			add_location(label2, file$7, 141, 6, 5156);
+    			add_location(label2, file$7, 163, 6, 6036);
     			attr_dev(input2, "class", "truncate text-2xl svelte-1hg711n");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "...");
-    			add_location(input2, file$7, 142, 6, 5214);
+    			add_location(input2, file$7, 164, 6, 6094);
     			attr_dev(div4, "class", "input-row svelte-1hg711n");
-    			add_location(div4, file$7, 140, 4, 5125);
+    			add_location(div4, file$7, 162, 4, 6005);
     			attr_dev(label3, "class", "svelte-1hg711n");
-    			add_location(label3, file$7, 151, 6, 5503);
+    			add_location(label3, file$7, 173, 6, 6383);
     			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div5, file$7, 152, 6, 5530);
+    			add_location(div5, file$7, 174, 6, 6410);
     			attr_dev(div6, "class", "mt-8 flex flex-col");
-    			add_location(div6, file$7, 150, 4, 5463);
+    			add_location(div6, file$7, 172, 4, 6343);
     			attr_dev(button2, "class", "rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-12\r\n        mb-8 bg-gray-300");
 
     			attr_dev(button2, "style", button2_style_value = /*typeValid*/ ctx[6] && /*dateValid*/ ctx[5] && /*amountValid*/ ctx[4]
     			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
     			: "");
 
-    			add_location(button2, file$7, 164, 6, 5972);
+    			add_location(button2, file$7, 186, 6, 6852);
     			attr_dev(div7, "class", "w-full text-center block");
-    			add_location(div7, file$7, 163, 4, 5926);
+    			add_location(div7, file$7, 185, 4, 6806);
     			attr_dev(button3, "class", "w-full text-center mb-8 bg-transparent");
     			set_style(button3, "color", "hsl(var(--secondary-hue), 50%, 50%)");
-    			add_location(button3, file$7, 172, 4, 6291);
+    			add_location(button3, file$7, 194, 4, 7171);
     			attr_dev(div8, "class", "flex flex-col items-start justify-around bg-white mt-32");
     			set_style(div8, "border-top-left-radius", "1rem");
     			set_style(div8, "border-top-right-radius", "1rem");
-    			add_location(div8, file$7, 103, 2, 3933);
+    			add_location(div8, file$7, 125, 2, 4813);
     			attr_dev(div9, "id", "entry-wrapper");
     			attr_dev(div9, "class", "absolute top-0 w-full h-screen z-10 overflow-x-hidden svelte-1hg711n");
     			set_style(div9, "background-color", "rgba(0,0,0,0.2)");
-    			add_location(div9, file$7, 98, 0, 3753);
+    			add_location(div9, file$7, 120, 0, 4633);
 
     			dispose = [
     				listen_dev(input0, "input", input0_input_handler),
-    				listen_dev(input0, "click", /*click_handler*/ ctx[13], false, false, false),
-    				listen_dev(button0, "click", /*click_handler_1*/ ctx[14], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_2*/ ctx[15], false, false, false),
-    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[16]),
-    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[17]),
-    				listen_dev(input2, "click", /*click_handler_3*/ ctx[18], false, false, false),
-    				listen_dev(button2, "click", /*click_handler_4*/ ctx[19], false, false, false),
-    				listen_dev(button3, "click", /*click_handler_5*/ ctx[20], false, false, false)
+    				listen_dev(input0, "click", /*click_handler*/ ctx[14], false, false, false),
+    				listen_dev(button0, "click", /*click_handler_1*/ ctx[15], false, false, false),
+    				listen_dev(button1, "click", /*click_handler_2*/ ctx[16], false, false, false),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[17]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[18]),
+    				listen_dev(input2, "click", /*click_handler_3*/ ctx[19], false, false, false),
+    				listen_dev(button2, "click", /*click_handler_4*/ ctx[20], false, false, false),
+    				listen_dev(button3, "click", /*click_handler_5*/ ctx[21], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
@@ -37508,9 +37531,12 @@
     }
 
     function instance$7($$self, $$props, $$invalidate) {
+    	let $entryData;
     	let $userInfo;
+    	validate_store(entryData, "entryData");
+    	component_subscribe($$self, entryData, $$value => $$invalidate(11, $entryData = $$value));
     	validate_store(userInfo, "userInfo");
-    	component_subscribe($$self, userInfo, $$value => $$invalidate(11, $userInfo = $$value));
+    	component_subscribe($$self, userInfo, $$value => $$invalidate(12, $userInfo = $$value));
     	let description = "";
     	let amount = 0;
     	let date = new Date().toISOString().substring(0, 10);
@@ -37521,6 +37547,16 @@
     	let wrapperEl;
 
     	onMount(() => {
+    		if (Object.keys($entryData).length > 0) {
+    			console.log($entryData);
+    			$$invalidate(0, description = $entryData.desc);
+    			$$invalidate(1, amount = $entryData.amount);
+    			$$invalidate(2, date = $entryData.date);
+    			$$invalidate(3, type = $entryData.type);
+    			document.getElementById("today-button").classList.remove("active");
+    			document.getElementById("yesterday-button").classList.remove("active");
+    		}
+
     		wrapperEl = document.getElementById("entry-wrapper");
     		wrapperEl.scrollTop = 120;
 
@@ -37530,8 +37566,17 @@
     			}
     		};
 
+    		document.getElementById("date-input").oninput = () => {
+    			document.getElementById("today-button").classList.remove("active");
+    			document.getElementById("yesterday-button").classList.remove("active");
+    		};
+
     		document.getElementById("amount-input").focus();
     		document.execCommand("selectall", null, false);
+    	});
+
+    	onDestroy(() => {
+    		entryData.set({});
     	});
 
     	function setDate(dateToSet) {
@@ -37555,14 +37600,18 @@
     		toastMessage.set("Submitting...");
     		const db = firebase$1.firestore();
 
-    		db.collection("expenses").doc(Date.now().toString() + amount).set({
+    		db.collection("expenses").doc($entryData.id
+    		? $entryData.id
+    		: Date.now().toString() + amount).set({
     			amount,
     			date,
     			desc: description,
     			type,
-    			addedBy: $userInfo.displayName,
+    			addedBy: $userInfo.name,
     			addedOn: new Date().toISOString().substring(0, 10),
-    			id: Date.now().toString() + amount
+    			id: $entryData.id
+    			? $entryData.id
+    			: Date.now().toString() + amount
     		}).then(() => {
     			toastMessage.set("Expense created!");
     			setTimeout(() => toastMessage.set(""), 1000);
@@ -37608,6 +37657,7 @@
     		if ("dateValid" in $$props) $$invalidate(5, dateValid = $$props.dateValid);
     		if ("typeValid" in $$props) $$invalidate(6, typeValid = $$props.typeValid);
     		if ("wrapperEl" in $$props) wrapperEl = $$props.wrapperEl;
+    		if ("$entryData" in $$props) entryData.set($entryData = $$props.$entryData);
     		if ("$userInfo" in $$props) userInfo.set($userInfo = $$props.$userInfo);
     	};
 
@@ -37649,6 +37699,7 @@
     		receiveType,
     		sendEntry,
     		wrapperEl,
+    		$entryData,
     		$userInfo,
     		input0_input_handler,
     		click_handler,

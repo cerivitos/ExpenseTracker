@@ -1,8 +1,8 @@
 <script>
   import { onMount } from "svelte";
   import { fly, fade, scale, crossfade } from "svelte/transition";
-  import { typeDesigns, convertRemToPixels } from "../util";
-  import { detailData } from "../store/store";
+  import { typeDesigns, convertRemToPixels, handleRouting } from "../util";
+  import { detailData, overlay, entryData } from "../store/store";
   import { quintOut } from "svelte/easing";
   import { flip } from "svelte/animate";
 
@@ -85,6 +85,12 @@
     });
 
     return buckets;
+  }
+
+  function showEditDetail(data) {
+    overlay.set("entry");
+    handleRouting("entry");
+    entryData.set(data);
   }
 
   $: if ($detailData.data) {
@@ -192,7 +198,8 @@
               in:receive={{ key: data.id }}
               out:send={{ key: data.id }}
               animate:flip={{ duration: 350 }}
-              class="w-full bg-white">
+              class="w-full bg-white"
+              on:click={() => showEditDetail(data)}>
               {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
                 <div class="flex flex-row p-4 items-center">
                   <div
