@@ -13,6 +13,7 @@
   let categorizedData = [];
   let currentInterval = "1M";
   let totalSpend = 0;
+  let currentCounterValue = 0;
 
   onMount(() => {
     if (localStorage.getItem("interval")) {
@@ -191,9 +192,12 @@
 
     const counter = new CountUp("totalSpend", totalSpend, {
       prefix: "$",
-      duration: 1
+      duration: 1,
+      startVal: currentCounterValue
     });
     counter.start();
+
+    currentCounterValue = totalSpend;
 
     return categorizedData;
   }
@@ -222,7 +226,7 @@
     Total spend
   </span>
   <!-- <Chart datas={rawData} queryInterval={getQueryInterval(currentInterval)} /> -->
-  <div class="flex flex-row justify-around overflow-x-scroll mb-8 mx-4">
+  <div class="flex flex-row justify-around overflow-x-hidden mb-8 mx-4">
     {#each ['1M', '6M', '1Y', 'All'] as interval}
       <button
         class="interval-button {currentInterval === interval ? 'active' : ''}"
@@ -231,19 +235,9 @@
       </button>
     {/each}
   </div>
-  {#await getDataPromise}
-    {#each categorizedData as data, index}
+  {#await getDataPromise then result}
+    {#each result as data, index}
       <CategoryListTile {data} {index} />
     {/each}
-  {:then result}
-    {#if JSON.stringify(categorizedData) !== JSON.stringify(result)}
-      {#each result as data, index}
-        <CategoryListTile {data} {index} />
-      {/each}
-    {:else}
-      {#each categorizedData as data, index}
-        <CategoryListTile {data} {index} />
-      {/each}
-    {/if}
   {/await}
 </div>
