@@ -35891,14 +35891,14 @@
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[16] = list[i];
+    	child_ctx[17] = list[i];
     	return child_ctx;
     }
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[13] = list[i];
-    	child_ctx[15] = i;
+    	child_ctx[14] = list[i];
+    	child_ctx[16] = i;
     	return child_ctx;
     }
 
@@ -35912,7 +35912,7 @@
     			i = element("i");
     			i.textContent = "attach_money";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$5, 132, 10, 3687);
+    			add_location(i, file$5, 132, 10, 3695);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -35952,7 +35952,7 @@
     			i = element("i");
     			i.textContent = "date_range";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$5, 128, 10, 3552);
+    			add_location(i, file$5, 128, 10, 3560);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -35982,26 +35982,142 @@
     	return block;
     }
 
-    // (161:6) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
+    // (1:0) <script>    import { onMount }
+    function create_catch_block$1(ctx) {
+    	const block = {
+    		c: noop,
+    		m: noop,
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: noop
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_catch_block$1.name,
+    		type: "catch",
+    		source: "(1:0) <script>    import { onMount }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (160:43)         {#each buckets as bucket, index}
+    function create_then_block$1(ctx) {
+    	let each_1_anchor;
+    	let current;
+    	let each_value = /*buckets*/ ctx[13];
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*sortedData, getBucketsPromise, backgroundColor, iconColor, Date, convertRemToPixels*/ 77) {
+    				each_value = /*buckets*/ ctx[13];
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$1(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_then_block$1.name,
+    		type: "then",
+    		source: "(160:43)         {#each buckets as bucket, index}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (162:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
     function create_if_block_1(ctx) {
     	let span;
-    	let t_value = /*bucket*/ ctx[13].year + "";
+    	let t_value = /*bucket*/ ctx[14].year + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			span = element("span");
     			t = text(t_value);
-    			attr_dev(span, "class", "rounded-full bg-gray-600 text-white font-bold px-4 py-2 my-4\r\n          sticky top-0 z-10 m-auto");
+    			attr_dev(span, "class", "rounded-full bg-gray-600 text-white font-bold px-4 py-2 my-4\r\n            sticky top-0 z-10 m-auto");
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
-    			add_location(span, file$5, 161, 8, 4666);
+    			add_location(span, file$5, 162, 10, 4723);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
     			append_dev(span, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*buckets*/ 1 && t_value !== (t_value = /*bucket*/ ctx[13].year + "")) set_data_dev(t, t_value);
+    			if (dirty & /*getBucketsPromise*/ 1 && t_value !== (t_value = /*bucket*/ ctx[14].year + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(span);
@@ -36012,37 +36128,37 @@
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(161:6) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
+    		source: "(162:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (183:12) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
+    // (186:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
     function create_if_block$3(ctx) {
     	let div2;
     	let div0;
     	let span0;
-    	let t0_value = new Date(2019, /*bucket*/ ctx[13].month - 1, 1).toDateString().substring(4, 7) + "";
+    	let t0_value = new Date(2019, /*bucket*/ ctx[14].month - 1, 1).toDateString().substring(4, 7) + "";
     	let t0;
     	let t1;
     	let span1;
-    	let t2_value = new Date(/*data*/ ctx[16].date).getDate() + "";
+    	let t2_value = new Date(/*data*/ ctx[17].date).getDate() + "";
     	let t2;
     	let t3;
     	let div1;
     	let span2;
-    	let t4_value = /*data*/ ctx[16].addedBy + "";
+    	let t4_value = /*data*/ ctx[17].addedBy + "";
     	let t4;
     	let t5;
     	let span3;
-    	let t6_value = /*data*/ ctx[16].desc + "";
+    	let t6_value = /*data*/ ctx[17].desc + "";
     	let t6;
     	let t7;
     	let span4;
     	let t8;
-    	let t9_value = /*data*/ ctx[16].amount.toFixed(2) + "";
+    	let t9_value = /*data*/ ctx[17].amount.toFixed(2) + "";
     	let t9;
 
     	const block = {
@@ -36066,22 +36182,22 @@
     			t8 = text("$");
     			t9 = text(t9_value);
     			attr_dev(span0, "class", "font-bold text-xs");
-    			add_location(span0, file$5, 188, 18, 5909);
+    			add_location(span0, file$5, 191, 20, 6063);
     			attr_dev(span1, "class", "font-bold");
-    			add_location(span1, file$5, 193, 18, 6126);
-    			attr_dev(div0, "class", "w-10 rounded-lg flex flex-col items-center\r\n                  justify-between py-1 mr-4");
+    			add_location(span1, file$5, 196, 20, 6290);
+    			attr_dev(div0, "class", "w-10 rounded-lg flex flex-col items-center\r\n                    justify-between py-1 mr-4");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[2]);
     			set_style(div0, "color", /*iconColor*/ ctx[3]);
-    			add_location(div0, file$5, 184, 16, 5688);
+    			add_location(div0, file$5, 187, 18, 5834);
     			attr_dev(span2, "class", "font-bold w-full truncate");
-    			add_location(span2, file$5, 198, 18, 6366);
+    			add_location(span2, file$5, 203, 20, 6586);
     			attr_dev(span3, "class", "text-gray-600 w-full truncate");
-    			add_location(span3, file$5, 199, 18, 6447);
-    			attr_dev(div1, "class", "flex flex-col flex-grow items-start justify-around\r\n                  truncate mr-4");
-    			add_location(div1, file$5, 195, 16, 6230);
-    			add_location(span4, file$5, 201, 16, 6551);
+    			add_location(span3, file$5, 206, 20, 6715);
+    			attr_dev(div1, "class", "flex flex-col flex-grow items-start justify-around\r\n                    truncate mr-4");
+    			add_location(div1, file$5, 200, 18, 6444);
+    			add_location(span4, file$5, 210, 18, 6869);
     			attr_dev(div2, "class", "flex flex-row p-4 items-center");
-    			add_location(div2, file$5, 183, 14, 5626);
+    			add_location(div2, file$5, 186, 16, 5770);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -36104,8 +36220,8 @@
     			append_dev(span4, t9);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*buckets*/ 1 && t0_value !== (t0_value = new Date(2019, /*bucket*/ ctx[13].month - 1, 1).toDateString().substring(4, 7) + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*sortedData*/ 64 && t2_value !== (t2_value = new Date(/*data*/ ctx[16].date).getDate() + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*getBucketsPromise*/ 1 && t0_value !== (t0_value = new Date(2019, /*bucket*/ ctx[14].month - 1, 1).toDateString().substring(4, 7) + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*sortedData*/ 64 && t2_value !== (t2_value = new Date(/*data*/ ctx[17].date).getDate() + "")) set_data_dev(t2, t2_value);
 
     			if (dirty & /*backgroundColor*/ 4) {
     				set_style(div0, "background-color", /*backgroundColor*/ ctx[2]);
@@ -36115,9 +36231,9 @@
     				set_style(div0, "color", /*iconColor*/ ctx[3]);
     			}
 
-    			if (dirty & /*sortedData*/ 64 && t4_value !== (t4_value = /*data*/ ctx[16].addedBy + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*sortedData*/ 64 && t6_value !== (t6_value = /*data*/ ctx[16].desc + "")) set_data_dev(t6, t6_value);
-    			if (dirty & /*sortedData*/ 64 && t9_value !== (t9_value = /*data*/ ctx[16].amount.toFixed(2) + "")) set_data_dev(t9, t9_value);
+    			if (dirty & /*sortedData*/ 64 && t4_value !== (t4_value = /*data*/ ctx[17].addedBy + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*sortedData*/ 64 && t6_value !== (t6_value = /*data*/ ctx[17].desc + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*sortedData*/ 64 && t9_value !== (t9_value = /*data*/ ctx[17].amount.toFixed(2) + "")) set_data_dev(t9, t9_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div2);
@@ -36128,17 +36244,17 @@
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(183:12) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
+    		source: "(186:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (177:8) {#each sortedData as data (data.id)}
+    // (180:10) {#each sortedData as data (data.id)}
     function create_each_block_1$1(key_1, ctx) {
     	let div;
-    	let show_if = /*data*/ ctx[16].date.substring(0, 4) == /*bucket*/ ctx[13].year && /*data*/ ctx[16].date.substring(5, 7) == /*bucket*/ ctx[13].month;
+    	let show_if = /*data*/ ctx[17].date.substring(0, 4) == /*bucket*/ ctx[14].year && /*data*/ ctx[17].date.substring(5, 7) == /*bucket*/ ctx[14].month;
     	let div_intro;
     	let div_outro;
     	let rect;
@@ -36153,7 +36269,7 @@
     			div = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div, "class", "w-full bg-white");
-    			add_location(div, file$5, 177, 10, 5333);
+    			add_location(div, file$5, 180, 12, 5465);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -36162,7 +36278,7 @@
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*sortedData, buckets*/ 65) show_if = /*data*/ ctx[16].date.substring(0, 4) == /*bucket*/ ctx[13].year && /*data*/ ctx[16].date.substring(5, 7) == /*bucket*/ ctx[13].month;
+    			if (dirty & /*sortedData, getBucketsPromise*/ 65) show_if = /*data*/ ctx[17].date.substring(0, 4) == /*bucket*/ ctx[14].year && /*data*/ ctx[17].date.substring(5, 7) == /*bucket*/ ctx[14].month;
 
     			if (show_if) {
     				if (if_block) {
@@ -36194,7 +36310,7 @@
 
     			add_render_callback(() => {
     				if (div_outro) div_outro.end(1);
-    				if (!div_intro) div_intro = create_in_transition(div, /*receive*/ ctx[9], { key: /*data*/ ctx[16].id });
+    				if (!div_intro) div_intro = create_in_transition(div, /*receive*/ ctx[9], { key: /*data*/ ctx[17].id });
     				div_intro.start();
     			});
 
@@ -36202,7 +36318,7 @@
     		},
     		o: function outro(local) {
     			if (div_intro) div_intro.invalidate();
-    			div_outro = create_out_transition(div, /*send*/ ctx[8], { key: /*data*/ ctx[16].id });
+    			div_outro = create_out_transition(div, /*send*/ ctx[8], { key: /*data*/ ctx[17].id });
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -36216,20 +36332,20 @@
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(177:8) {#each sortedData as data (data.id)}",
+    		source: "(180:10) {#each sortedData as data (data.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (160:4) {#each buckets as bucket, index}
+    // (161:6) {#each buckets as bucket, index}
     function create_each_block$1(ctx) {
     	let t0;
     	let div1;
     	let div0;
     	let span;
-    	let t1_value = new Date(2019, /*bucket*/ ctx[13].month - 1, 1).toDateString().substring(4, 7) + "";
+    	let t1_value = new Date(2019, /*bucket*/ ctx[14].month - 1, 1).toDateString().substring(4, 7) + "";
     	let t1;
     	let t2;
     	let each_blocks = [];
@@ -36237,9 +36353,9 @@
     	let t3;
     	let div1_intro;
     	let current;
-    	let if_block = (/*index*/ ctx[15] === 0 || /*index*/ ctx[15] > 0 && /*buckets*/ ctx[0][/*index*/ ctx[15] - 1].year !== /*bucket*/ ctx[13].year) && create_if_block_1(ctx);
+    	let if_block = (/*index*/ ctx[16] === 0 || /*index*/ ctx[16] > 0 && /*buckets*/ ctx[13][/*index*/ ctx[16] - 1].year !== /*bucket*/ ctx[14].year) && create_if_block_1(ctx);
     	let each_value_1 = /*sortedData*/ ctx[6];
-    	const get_key = ctx => /*data*/ ctx[16].id;
+    	const get_key = ctx => /*data*/ ctx[17].id;
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
     		let child_ctx = get_each_context_1$1(ctx, each_value_1, i);
@@ -36263,11 +36379,11 @@
 
     			t3 = space();
     			attr_dev(span, "class", "relative text-gray-600 font-bold bg-white px-4");
-    			add_location(span, file$5, 172, 10, 5097);
+    			add_location(span, file$5, 173, 12, 5183);
     			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-oee9xi");
-    			add_location(div0, file$5, 171, 8, 5029);
+    			add_location(div0, file$5, 172, 10, 5113);
     			attr_dev(div1, "class", "flex flex-col justify-center items-center");
-    			add_location(div1, file$5, 168, 6, 4906);
+    			add_location(div1, file$5, 169, 8, 4977);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -36286,7 +36402,7 @@
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (/*index*/ ctx[15] === 0 || /*index*/ ctx[15] > 0 && /*buckets*/ ctx[0][/*index*/ ctx[15] - 1].year !== /*bucket*/ ctx[13].year) {
+    			if (/*index*/ ctx[16] === 0 || /*index*/ ctx[16] > 0 && /*buckets*/ ctx[13][/*index*/ ctx[16] - 1].year !== /*bucket*/ ctx[14].year) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -36299,7 +36415,7 @@
     				if_block = null;
     			}
 
-    			if ((!current || dirty & /*buckets*/ 1) && t1_value !== (t1_value = new Date(2019, /*bucket*/ ctx[13].month - 1, 1).toDateString().substring(4, 7) + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty & /*getBucketsPromise*/ 1) && t1_value !== (t1_value = new Date(2019, /*bucket*/ ctx[14].month - 1, 1).toDateString().substring(4, 7) + "")) set_data_dev(t1, t1_value);
     			const each_value_1 = /*sortedData*/ ctx[6];
     			group_outros();
     			for (let i = 0; i < each_blocks.length; i += 1) each_blocks[i].r();
@@ -36316,7 +36432,7 @@
 
     			if (!div1_intro) {
     				add_render_callback(() => {
-    					div1_intro = create_in_transition(div1, fade, { duration: 140, delay: 120 });
+    					div1_intro = create_in_transition(div1, fly, { y: 180, duration: 180, delay: 160 });
     					div1_intro.start();
     				});
     			}
@@ -36345,7 +36461,29 @@
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(160:4) {#each buckets as bucket, index}",
+    		source: "(161:6) {#each buckets as bucket, index}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (1:0) <script>    import { onMount }
+    function create_pending_block$1(ctx) {
+    	const block = {
+    		c: noop,
+    		m: noop,
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: noop
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_pending_block$1.name,
+    		type: "pending",
+    		source: "(1:0) <script>    import { onMount }",
     		ctx
     	});
 
@@ -36376,6 +36514,7 @@
     	let t5;
     	let span_intro;
     	let t6;
+    	let promise;
     	let div5_transition;
     	let current;
     	let dispose;
@@ -36387,16 +36526,19 @@
 
     	let current_block_type = select_block_type(ctx, -1);
     	let if_block = current_block_type(ctx);
-    	let each_value = /*buckets*/ ctx[0];
-    	let each_blocks = [];
 
-    	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
-    	}
+    	let info = {
+    		ctx,
+    		current: null,
+    		token: null,
+    		pending: create_pending_block$1,
+    		then: create_then_block$1,
+    		catch: create_catch_block$1,
+    		value: 13,
+    		blocks: [,,,]
+    	};
 
-    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
-    		each_blocks[i] = null;
-    	});
+    	handle_promise(promise = /*getBucketsPromise*/ ctx[0], info);
 
     	const block = {
     		c: function create() {
@@ -36418,42 +36560,38 @@
     			span = element("span");
     			t5 = text(t5_value);
     			t6 = space();
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].c();
-    			}
-
+    			info.block.c();
     			attr_dev(i0, "class", "material-icons fill-current");
     			set_style(i0, "color", /*iconColor*/ ctx[3]);
-    			add_location(i0, file$5, 114, 4, 3117);
+    			add_location(i0, file$5, 114, 4, 3125);
     			attr_dev(div0, "class", "relative");
-    			add_location(div0, file$5, 126, 6, 3492);
+    			add_location(div0, file$5, 126, 6, 3500);
     			attr_dev(button, "class", "fill-current");
     			set_style(button, "color", /*iconColor*/ ctx[3]);
-    			add_location(button, file$5, 121, 4, 3329);
+    			add_location(button, file$5, 121, 4, 3337);
     			attr_dev(div1, "class", div1_class_value = "w-full flex flex-row p-4 bg-white " + (/*scrolling*/ ctx[4] ? "shadow" : "") + " fixed\r\n    top-0 justify-between z-20");
     			set_style(div1, "height", "56px");
-    			add_location(div1, file$5, 110, 2, 2967);
+    			add_location(div1, file$5, 110, 2, 2975);
     			attr_dev(i1, "class", "material-icons fill-current");
     			set_style(i1, "display", "block", 1);
     			set_style(i1, "color", /*iconColor*/ ctx[3]);
     			set_style(i1, "font-size", "64px");
-    			add_location(i1, file$5, 146, 8, 4149);
+    			add_location(i1, file$5, 146, 8, 4155);
     			attr_dev(div2, "class", "icon rounded-full p-6 mt-20 mb-4");
     			attr_dev(div2, "id", "icon");
     			set_style(div2, "background-color", /*backgroundColor*/ ctx[2]);
-    			add_location(div2, file$5, 141, 6, 3947);
+    			add_location(div2, file$5, 141, 6, 3955);
     			attr_dev(span, "class", "text-2xl font-bold mb-8");
     			set_style(span, "color", /*iconColor*/ ctx[3]);
-    			add_location(span, file$5, 152, 6, 4342);
+    			add_location(span, file$5, 152, 6, 4348);
     			attr_dev(div3, "class", "flex flex-col items-center");
-    			add_location(div3, file$5, 140, 4, 3899);
+    			add_location(div3, file$5, 140, 4, 3907);
     			attr_dev(div4, "id", "content");
     			attr_dev(div4, "class", "flex flex-col");
-    			add_location(div4, file$5, 139, 2, 3853);
+    			add_location(div4, file$5, 139, 2, 3861);
     			attr_dev(div5, "id", "detail-page");
     			attr_dev(div5, "class", "h-screen w-full bg-white relative overflow-auto");
-    			add_location(div5, file$5, 106, 0, 2819);
+    			add_location(div5, file$5, 106, 0, 2827);
 
     			dispose = [
     				listen_dev(i0, "click", /*click_handler*/ ctx[11], false, false, false),
@@ -36482,14 +36620,14 @@
     			append_dev(div3, span);
     			append_dev(span, t5);
     			append_dev(div4, t6);
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div4, null);
-    			}
-
+    			info.block.m(div4, info.anchor = null);
+    			info.mount = () => div4;
+    			info.anchor = null;
     			current = true;
     		},
-    		p: function update(ctx, [dirty]) {
+    		p: function update(new_ctx, [dirty]) {
+    			ctx = new_ctx;
+
     			if (!current || dirty & /*iconColor*/ 8) {
     				set_style(i0, "color", /*iconColor*/ ctx[3]);
     			}
@@ -36529,31 +36667,12 @@
     				set_style(span, "color", /*iconColor*/ ctx[3]);
     			}
 
-    			if (dirty & /*sortedData, buckets, backgroundColor, iconColor, Date, convertRemToPixels*/ 77) {
-    				each_value = /*buckets*/ ctx[0];
-    				let i;
+    			info.ctx = ctx;
 
-    				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$1(ctx, each_value, i);
-
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(child_ctx, dirty);
-    						transition_in(each_blocks[i], 1);
-    					} else {
-    						each_blocks[i] = create_each_block$1(child_ctx);
-    						each_blocks[i].c();
-    						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(div4, null);
-    					}
-    				}
-
-    				group_outros();
-
-    				for (i = each_value.length; i < each_blocks.length; i += 1) {
-    					out(i);
-    				}
-
-    				check_outros();
+    			if (dirty & /*getBucketsPromise*/ 1 && promise !== (promise = /*getBucketsPromise*/ ctx[0]) && handle_promise(promise, info)) ; else {
+    				const child_ctx = ctx.slice();
+    				child_ctx[13] = info.resolved;
+    				info.block.p(child_ctx, dirty);
     			}
     		},
     		i: function intro(local) {
@@ -36577,21 +36696,19 @@
 
     			if (!div2_intro) {
     				add_render_callback(() => {
-    					div2_intro = create_in_transition(div2, scale, { initial: 0.25, duration: 180, delay: 100 });
+    					div2_intro = create_in_transition(div2, scale, { initial: 0, duration: 240, delay: 80 });
     					div2_intro.start();
     				});
     			}
 
     			if (!span_intro) {
     				add_render_callback(() => {
-    					span_intro = create_in_transition(span, fly, { y: 32, duration: 100, delay: 120 });
+    					span_intro = create_in_transition(span, fly, { y: 48, duration: 140, delay: 120 });
     					span_intro.start();
     				});
     			}
 
-    			for (let i = 0; i < each_value.length; i += 1) {
-    				transition_in(each_blocks[i]);
-    			}
+    			transition_in(info.block);
 
     			add_render_callback(() => {
     				if (!div5_transition) div5_transition = create_bidirectional_transition(div5, fly, { y: window.innerHeight, duration: 80 }, true);
@@ -36601,10 +36718,9 @@
     			current = true;
     		},
     		o: function outro(local) {
-    			each_blocks = each_blocks.filter(Boolean);
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				transition_out(each_blocks[i]);
+    			for (let i = 0; i < 3; i += 1) {
+    				const block = info.blocks[i];
+    				transition_out(block);
     			}
 
     			if (!div5_transition) div5_transition = create_bidirectional_transition(div5, fly, { y: window.innerHeight, duration: 80 }, false);
@@ -36614,7 +36730,9 @@
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div5);
     			if_block.d();
-    			destroy_each(each_blocks, detaching);
+    			info.block.d();
+    			info.token = null;
+    			info = null;
     			if (detaching && div5_transition) div5_transition.end();
     			run_all(dispose);
     		}
@@ -36635,7 +36753,7 @@
     	let $detailData;
     	validate_store(detailData, "detailData");
     	component_subscribe($$self, detailData, $$value => $$invalidate(7, $detailData = $$value));
-    	let buckets = [];
+    	let getBucketsPromise = createBuckets();
     	let materialIcon, backgroundColor, iconColor;
     	let scrolling = false;
     	let sortByDate = true;
@@ -36655,7 +36773,6 @@
     	});
 
     	onMount(() => {
-    		createBuckets().then(result => $$invalidate(0, buckets = result));
     		const typeDesign = typeDesigns.filter(obj => obj.type === $detailData.type)[0];
     		const hue = typeDesign.hue;
     		$$invalidate(1, materialIcon = typeDesign.materialIcon);
@@ -36667,6 +36784,8 @@
     			? $$invalidate(4, scrolling = true)
     			: $$invalidate(4, scrolling = false);
     		});
+
+    		$$invalidate(0, getBucketsPromise = createBuckets());
     	});
 
     	async function createBuckets() {
@@ -36716,7 +36835,7 @@
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("buckets" in $$props) $$invalidate(0, buckets = $$props.buckets);
+    		if ("getBucketsPromise" in $$props) $$invalidate(0, getBucketsPromise = $$props.getBucketsPromise);
     		if ("materialIcon" in $$props) $$invalidate(1, materialIcon = $$props.materialIcon);
     		if ("backgroundColor" in $$props) $$invalidate(2, backgroundColor = $$props.backgroundColor);
     		if ("iconColor" in $$props) $$invalidate(3, iconColor = $$props.iconColor);
@@ -36745,7 +36864,7 @@
     	};
 
     	return [
-    		buckets,
+    		getBucketsPromise,
     		materialIcon,
     		backgroundColor,
     		iconColor,

@@ -6,7 +6,7 @@
   import { quintOut } from "svelte/easing";
   import { flip } from "svelte/animate";
 
-  let buckets = [];
+  let getBucketsPromise = createBuckets();
   let materialIcon, backgroundColor, iconColor;
   let scrolling = false;
   let sortByDate = true;
@@ -27,8 +27,6 @@
   });
 
   onMount(() => {
-    createBuckets().then(result => (buckets = result));
-
     const typeDesign = typeDesigns.filter(
       obj => obj.type === $detailData.type
     )[0];
@@ -40,6 +38,8 @@
     document.getElementById("detail-page").addEventListener("scroll", ev => {
       ev.target.scrollTop > 0 ? (scrolling = true) : (scrolling = false);
     });
+
+    getBucketsPromise = createBuckets();
   });
 
   async function createBuckets() {
@@ -152,7 +152,7 @@
       <div
         class="icon rounded-full p-6 mt-20 mb-4"
         id="icon"
-        in:scale={{ initial: 0.25, duration: 180, delay: 100 }}
+        in:scale={{ initial: 0.0, duration: 240, delay: 80 }}
         style="background-color: {backgroundColor}">
         <i
           class="material-icons fill-current"
@@ -162,60 +162,70 @@
       </div>
       <span
         class="text-2xl font-bold mb-8"
-        in:fly={{ y: 32, duration: 100, delay: 120 }}
+        in:fly={{ y: 48, duration: 140, delay: 120 }}
         style="color: {iconColor}">
         {$detailData.type}
       </span>
     </div>
-    {#each buckets as bucket, index}
-      {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
-        <span
-          class="rounded-full bg-gray-600 text-white font-bold px-4 py-2 my-4
-          sticky top-0 z-10 m-auto"
-          style="top: {56 + convertRemToPixels(1)}px">
-          {bucket.year}
-        </span>
-      {/if}
-      <div
-        class="flex flex-col justify-center items-center"
-        in:fade={{ duration: 140, delay: 120 }}>
-        <div class="wrap w-full relative text-center mt-4 mb-2">
-          <span class="relative text-gray-600 font-bold bg-white px-4">
-            {new Date(2019, bucket.month - 1, 1).toDateString().substring(4, 7)}
+    {#await getBucketsPromise then buckets}
+      {#each buckets as bucket, index}
+        {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
+          <span
+            class="rounded-full bg-gray-600 text-white font-bold px-4 py-2 my-4
+            sticky top-0 z-10 m-auto"
+            style="top: {56 + convertRemToPixels(1)}px">
+            {bucket.year}
           </span>
-        </div>
-        {#each sortedData as data (data.id)}
-          <div
-            in:receive={{ key: data.id }}
-            out:send={{ key: data.id }}
-            animate:flip={{ duration: 350 }}
-            class="w-full bg-white">
-            {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
-              <div class="flex flex-row p-4 items-center">
-                <div
-                  class="w-10 rounded-lg flex flex-col items-center
-                  justify-between py-1 mr-4"
-                  style="background-color:{backgroundColor}; color:{iconColor}">
-                  <span class="font-bold text-xs">
-                    {new Date(2019, bucket.month - 1, 1)
-                      .toDateString()
-                      .substring(4, 7)}
-                  </span>
-                  <span class="font-bold">{new Date(data.date).getDate()}</span>
-                </div>
-                <div
-                  class="flex flex-col flex-grow items-start justify-around
-                  truncate mr-4">
-                  <span class="font-bold w-full truncate">{data.addedBy}</span>
-                  <span class="text-gray-600 w-full truncate">{data.desc}</span>
-                </div>
-                <span>${data.amount.toFixed(2)}</span>
-              </div>
-            {/if}
+        {/if}
+        <div
+          class="flex flex-col justify-center items-center"
+          in:fly={{ y: 180, duration: 180, delay: 160 }}>
+          <div class="wrap w-full relative text-center mt-4 mb-2">
+            <span class="relative text-gray-600 font-bold bg-white px-4">
+              {new Date(2019, bucket.month - 1, 1)
+                .toDateString()
+                .substring(4, 7)}
+            </span>
           </div>
-        {/each}
-      </div>
-    {/each}
+          {#each sortedData as data (data.id)}
+            <div
+              in:receive={{ key: data.id }}
+              out:send={{ key: data.id }}
+              animate:flip={{ duration: 350 }}
+              class="w-full bg-white">
+              {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
+                <div class="flex flex-row p-4 items-center">
+                  <div
+                    class="w-10 rounded-lg flex flex-col items-center
+                    justify-between py-1 mr-4"
+                    style="background-color:{backgroundColor}; color:{iconColor}">
+                    <span class="font-bold text-xs">
+                      {new Date(2019, bucket.month - 1, 1)
+                        .toDateString()
+                        .substring(4, 7)}
+                    </span>
+                    <span class="font-bold">
+                      {new Date(data.date).getDate()}
+                    </span>
+                  </div>
+                  <div
+                    class="flex flex-col flex-grow items-start justify-around
+                    truncate mr-4">
+                    <span class="font-bold w-full truncate">
+                      {data.addedBy}
+                    </span>
+                    <span class="text-gray-600 w-full truncate">
+                      {data.desc}
+                    </span>
+                  </div>
+                  <span>${data.amount.toFixed(2)}</span>
+                </div>
+              {/if}
+            </div>
+          {/each}
+        </div>
+      {/each}
+    {/await}
   </div>
 
 </div>
