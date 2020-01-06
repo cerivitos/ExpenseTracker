@@ -6,7 +6,6 @@
   import { fade } from "svelte/transition";
   import CategoryListTile from "./CategoryListTile.svelte";
   import { CountUp } from "countup.js";
-  import Chart from "./Chart.svelte";
 
   let db, queryInterval;
   let getDataPromise = fetchData(queryInterval);
@@ -232,9 +231,19 @@
       </button>
     {/each}
   </div>
-  {#await getDataPromise then result}
-    {#each result as data, index}
+  {#await getDataPromise}
+    {#each categorizedData as data, index}
       <CategoryListTile {data} {index} />
     {/each}
+  {:then result}
+    {#if JSON.stringify(categorizedData) !== JSON.stringify(result)}
+      {#each result as data, index}
+        <CategoryListTile {data} {index} />
+      {/each}
+    {:else}
+      {#each categorizedData as data, index}
+        <CategoryListTile {data} {index} />
+      {/each}
+    {/if}
   {/await}
 </div>

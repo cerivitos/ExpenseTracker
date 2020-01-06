@@ -1,21 +1,16 @@
 <script>
-  import { view, toastMessage } from "../store/store";
-  import Entry from "./Entry.svelte";
+  import { view, toastMessage, overlay } from "../store/store";
   import Toast from "./Toast.svelte";
+  import { handleRouting } from "../util";
 
   function setView(viewToSet) {
     handleRouting(viewToSet);
-    view.set(viewToSet);
-  }
-
-  function handleRouting(newPage) {
-    window.history.pushState(
-      {
-        page: newPage
-      },
-      null,
-      "?page=" + newPage
-    );
+    if (viewToSet === "entry") {
+      overlay.set(viewToSet);
+    } else {
+      overlay.set("");
+      view.set(viewToSet);
+    }
   }
 </script>
 
@@ -126,8 +121,3 @@
     </svg>
   </button>
 </div>
-{#if $view === 'entry'}
-  <div>
-    <Entry />
-  </div>
-{/if}

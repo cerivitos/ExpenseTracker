@@ -1,14 +1,19 @@
 <script>
-  import { view } from "../store/store";
+  import { view, overlay } from "../store/store";
 
   /**Renderless component to act as a simple router using the History API
    *On browser load, parse the url and extract parameters
    */
   window.onload = function() {
-    if (window.location.search.length > 0) {
-      const params = window.location.search.substr(1);
-      const page = params.split("=")[1];
+    const page = window.location.search.replace("?page=");
+    if (page === "dashboard" || page === "settings") {
       view.set(page);
+      overlay.set("");
+    } else if (page === "detail" || page === "entry") {
+      overlay.set(page);
+    } else {
+      view.set("dashboard");
+      overlay.set("");
     }
   };
 
@@ -16,10 +21,15 @@
    * Handle broswer back events here
    */
   window.onpopstate = function(event) {
-    if (event.state) {
-      view.set(event.state.page);
+    const page = window.location.search.replace("?page=");
+    if (page === "dashboard" || page === "settings") {
+      view.set(page);
+      overlay.set("");
+    } else if (page === "detail" || page === "entry") {
+      overlay.set(page);
     } else {
       view.set("dashboard");
+      overlay.set("");
     }
   };
 </script>

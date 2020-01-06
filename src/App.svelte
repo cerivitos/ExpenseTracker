@@ -6,10 +6,12 @@
   import "firebase/auth";
   import "firebase/firestore";
   import { onMount } from "svelte";
-  import { view, userInfo } from "./store/store";
+  import { view, userInfo, overlay, detailData } from "./store/store";
   import Toast from "./components/Toast.svelte";
   import Settings from "./components/Settings.svelte";
   import DetailPage from "./components/DetailPage.svelte";
+  import Entry from "./components/Entry.svelte";
+  import { handleRouting } from "./util";
 
   // if ("serviceWorker" in navigator) {
   //   navigator.serviceWorker.register("/service-worker.js");
@@ -41,7 +43,43 @@
         });
       }
     });
+
+    //Parse url to ui state on app load
+    const page = window.location.search.substring(1);
+    handleRouting(page);
+    if (page === "dashboard" || page === "settings") {
+      view.set(page);
+      overlay.set("");
+    } else if (page === "detail") {
+      view.set("dashboard");
+      overlay.set("");
+    } else if (page === "entry") {
+      view.set("dashboard");
+      overlay.set("entry");
+    } else {
+      view.set("dashboard");
+      overlay.set("");
+    }
   });
+
+  //Listen to back history events and parse url to ui state
+  window.onpopstate = function(event) {
+    const page = window.location.search.substring(1);
+    handleRouting(page);
+    if (page === "dashboard" || page === "settings") {
+      view.set(page);
+      overlay.set("");
+    } else if (page === "detail") {
+      view.set("dashboard");
+      overlay.set("");
+    } else if (page === "entry") {
+      view.set("dashboard");
+      overlay.set("entry");
+    } else {
+      view.set("dashboard");
+      overlay.set("");
+    }
+  };
 </script>
 
 <style lang="postcss">
@@ -49,7 +87,6 @@
 </style>
 
 <main class="overflow-hidden">
-  <Router />
   <Scaffold>
     {#if $view === 'settings'}
       <Settings />
@@ -57,10 +94,15 @@
       <Dashboard />
     {/if}
   </Scaffold>
-  {#if $view === 'detail'}
+  {#if $overlay === 'detail'}
     <DetailPage />
   {/if}
   {#if signInError}
     <Toast message={errorMsg} />
+  {/if}
+  {#if $overlay === 'entry'}
+    <div>
+      <Entry />
+    </div>
   {/if}
 </main>

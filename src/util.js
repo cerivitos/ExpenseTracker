@@ -27,7 +27,7 @@ export function handleRouting(newPage) {
       page: newPage
     },
     null,
-    "?page=" + newPage
+    newPage === "" ? "" : "?" + newPage
   );
 }
 

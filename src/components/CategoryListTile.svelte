@@ -2,7 +2,7 @@
   import { fade, fly } from "svelte/transition";
   import { onMount } from "svelte";
   import { typeDesigns, handleRouting } from "../util";
-  import { view, detailData } from "../store/store";
+  import { view, detailData, overlay } from "../store/store";
 
   export let data;
   export let index;
@@ -22,7 +22,7 @@
   function viewDetails() {
     detailData.set(data);
     handleRouting("detail#" + data.type);
-    view.set("detail");
+    overlay.set("detail");
   }
 </script>
 
