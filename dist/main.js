@@ -36993,22 +36993,22 @@
     			t8 = text("$");
     			t9 = text(t9_value);
     			attr_dev(span0, "class", "font-bold text-xs");
-    			add_location(span0, file$7, 188, 18, 5900);
+    			add_location(span0, file$7, 188, 18, 5909);
     			attr_dev(span1, "class", "font-bold");
-    			add_location(span1, file$7, 193, 18, 6117);
+    			add_location(span1, file$7, 193, 18, 6126);
     			attr_dev(div0, "class", "w-10 rounded-lg flex flex-col items-center\r\n                  justify-between py-1 mr-4");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[2]);
     			set_style(div0, "color", /*iconColor*/ ctx[3]);
-    			add_location(div0, file$7, 184, 16, 5679);
+    			add_location(div0, file$7, 184, 16, 5688);
     			attr_dev(span2, "class", "font-bold w-full truncate");
-    			add_location(span2, file$7, 198, 18, 6357);
+    			add_location(span2, file$7, 198, 18, 6366);
     			attr_dev(span3, "class", "text-gray-600 w-full truncate");
-    			add_location(span3, file$7, 199, 18, 6438);
+    			add_location(span3, file$7, 199, 18, 6447);
     			attr_dev(div1, "class", "flex flex-col flex-grow items-start justify-around\r\n                  truncate mr-4");
-    			add_location(div1, file$7, 195, 16, 6221);
-    			add_location(span4, file$7, 201, 16, 6542);
+    			add_location(div1, file$7, 195, 16, 6230);
+    			add_location(span4, file$7, 201, 16, 6551);
     			attr_dev(div2, "class", "flex flex-row p-4 items-center");
-    			add_location(div2, file$7, 183, 14, 5617);
+    			add_location(div2, file$7, 183, 14, 5626);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -37079,7 +37079,7 @@
     		c: function create() {
     			div = element("div");
     			if (if_block) if_block.c();
-    			attr_dev(div, "class", "w-full");
+    			attr_dev(div, "class", "w-full bg-white");
     			add_location(div, file$7, 177, 10, 5333);
     			this.first = div;
     		},
@@ -37114,7 +37114,7 @@
     		},
     		a: function animate() {
     			stop_animation();
-    			stop_animation = create_animation(div, rect, flip, { duration: 200 });
+    			stop_animation = create_animation(div, rect, flip, { duration: 350 });
     		},
     		i: function intro(local) {
     			if (current) return;

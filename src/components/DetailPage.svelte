@@ -188,8 +188,8 @@
           <div
             in:receive={{ key: data.id }}
             out:send={{ key: data.id }}
-            animate:flip={{ duration: 200 }}
-            class="w-full">
+            animate:flip={{ duration: 350 }}
+            class="w-full bg-white">
             {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
               <div class="flex flex-row p-4 items-center">
                 <div
