@@ -1,5 +1,11 @@
 <script>
-  import { view, toastMessage, userInfo, entryData } from "../store/store";
+  import {
+    view,
+    toastMessage,
+    userInfo,
+    entryData,
+    dashboardShouldReload
+  } from "../store/store";
   import { onMount, onDestroy } from "svelte";
   import TypeButton from "./TypeButton.svelte";
   import LoadingSpinner from "./LoadingSpinner.svelte";
@@ -94,6 +100,7 @@
       .then(() => {
         toastMessage.set("Expense created!");
         setTimeout(() => toastMessage.set(""), 1000);
+        dashboardShouldReload.set(true);
       })
       .catch(error => {
         toastMessage.set(error);

@@ -26570,6 +26570,7 @@
 
     //ui state (separate from above so that the settings or dashboard page is not destroyed when showing entry or detail page) - 'entry' or 'detail'
     const overlay = writable("");
+    const dashboardShouldReload = writable(false);
 
     //Handle passing of data for Detail page
     const detailData = writable({});
@@ -27096,18 +27097,18 @@
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
-    	child_ctx[14] = i;
+    	child_ctx[13] = list[i];
+    	child_ctx[15] = i;
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[15] = list[i];
+    	child_ctx[16] = list[i];
     	return child_ctx;
     }
 
-    // (223:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
+    // (230:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
     function create_each_block_1(ctx) {
     	let button;
     	let t0;
@@ -27116,20 +27117,20 @@
     	let dispose;
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[10](/*interval*/ ctx[15], ...args);
+    		return /*click_handler*/ ctx[11](/*interval*/ ctx[16], ...args);
     	}
 
     	const block = {
     		c: function create() {
     			button = element("button");
-    			t0 = text(/*interval*/ ctx[15]);
+    			t0 = text(/*interval*/ ctx[16]);
     			t1 = space();
 
-    			attr_dev(button, "class", button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[15]
+    			attr_dev(button, "class", button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[16]
     			? "active"
     			: "") + " svelte-f0nlgm");
 
-    			add_location(button, file$1, 223, 6, 6667);
+    			add_location(button, file$1, 230, 6, 6905);
     			dispose = listen_dev(button, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -27140,7 +27141,7 @@
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*currentInterval*/ 2 && button_class_value !== (button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[15]
+    			if (dirty & /*currentInterval*/ 2 && button_class_value !== (button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[16]
     			? "active"
     			: "") + " svelte-f0nlgm")) {
     				attr_dev(button, "class", button_class_value);
@@ -27156,7 +27157,7 @@
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(223:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
+    		source: "(230:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
     		ctx
     	});
 
@@ -27185,11 +27186,11 @@
     	return block;
     }
 
-    // (231:37)       {#each result as data, index}
+    // (238:37)       {#each result as data, index}
     function create_then_block(ctx) {
     	let each_1_anchor;
     	let current;
-    	let each_value = /*result*/ ctx[11];
+    	let each_value = /*result*/ ctx[12];
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -27218,7 +27219,7 @@
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*getDataPromise*/ 1) {
-    				each_value = /*result*/ ctx[11];
+    				each_value = /*result*/ ctx[12];
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
@@ -27272,21 +27273,21 @@
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(231:37)       {#each result as data, index}",
+    		source: "(238:37)       {#each result as data, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (232:4) {#each result as data, index}
+    // (239:4) {#each result as data, index}
     function create_each_block(ctx) {
     	let current;
 
     	const categorylisttile = new CategoryListTile({
     			props: {
-    				data: /*data*/ ctx[12],
-    				index: /*index*/ ctx[14]
+    				data: /*data*/ ctx[13],
+    				index: /*index*/ ctx[15]
     			},
     			$$inline: true
     		});
@@ -27301,7 +27302,7 @@
     		},
     		p: function update(ctx, dirty) {
     			const categorylisttile_changes = {};
-    			if (dirty & /*getDataPromise*/ 1) categorylisttile_changes.data = /*data*/ ctx[12];
+    			if (dirty & /*getDataPromise*/ 1) categorylisttile_changes.data = /*data*/ ctx[13];
     			categorylisttile.$set(categorylisttile_changes);
     		},
     		i: function intro(local) {
@@ -27322,7 +27323,7 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(232:4) {#each result as data, index}",
+    		source: "(239:4) {#each result as data, index}",
     		ctx
     	});
 
@@ -27375,7 +27376,7 @@
     		pending: create_pending_block,
     		then: create_then_block,
     		catch: create_catch_block,
-    		value: 11,
+    		value: 12,
     		blocks: [,,,]
     	};
 
@@ -27400,13 +27401,13 @@
     			info.block.c();
     			attr_dev(span0, "class", "w-full mb-1 text-4xl text-center font-bold");
     			attr_dev(span0, "id", "totalSpend");
-    			add_location(span0, file$1, 214, 2, 6259);
+    			add_location(span0, file$1, 221, 2, 6497);
     			attr_dev(span1, "class", "w-full text-center text-gray-600 font-light mb-8");
-    			add_location(span1, file$1, 217, 2, 6355);
+    			add_location(span1, file$1, 224, 2, 6593);
     			attr_dev(div0, "class", "flex flex-row justify-around overflow-x-hidden mb-8 mx-4");
-    			add_location(div0, file$1, 221, 2, 6538);
+    			add_location(div0, file$1, 228, 2, 6776);
     			attr_dev(div1, "class", "flex flex-col my-8");
-    			add_location(div1, file$1, 213, 0, 6223);
+    			add_location(div1, file$1, 220, 0, 6461);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -27457,7 +27458,7 @@
 
     			if (dirty & /*getDataPromise*/ 1 && promise !== (promise = /*getDataPromise*/ ctx[0]) && handle_promise(promise, info)) ; else {
     				const child_ctx = ctx.slice();
-    				child_ctx[11] = info.resolved;
+    				child_ctx[12] = info.resolved;
     				info.block.p(child_ctx, dirty);
     			}
     		},
@@ -27530,6 +27531,9 @@
     }
 
     function instance$1($$self, $$props, $$invalidate) {
+    	let $dashboardShouldReload;
+    	validate_store(dashboardShouldReload, "dashboardShouldReload");
+    	component_subscribe($$self, dashboardShouldReload, $$value => $$invalidate(9, $dashboardShouldReload = $$value));
     	let db, queryInterval;
     	let getDataPromise = fetchData(queryInterval);
     	let rawData = [];
@@ -27683,6 +27687,17 @@
     		if ("currentInterval" in $$props) $$invalidate(1, currentInterval = $$props.currentInterval);
     		if ("totalSpend" in $$props) totalSpend = $$props.totalSpend;
     		if ("currentCounterValue" in $$props) currentCounterValue = $$props.currentCounterValue;
+    		if ("$dashboardShouldReload" in $$props) dashboardShouldReload.set($dashboardShouldReload = $$props.$dashboardShouldReload);
+    	};
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*$dashboardShouldReload, currentInterval*/ 514) {
+    			$: if ($dashboardShouldReload) {
+    				localStorage.removeItem("rawCache");
+    				changeInterval(currentInterval);
+    				dashboardShouldReload.set(false);
+    			}
+    		}
     	};
 
     	return [
@@ -27695,6 +27710,7 @@
     		categorizedData,
     		totalSpend,
     		currentCounterValue,
+    		$dashboardShouldReload,
     		fetchData,
     		click_handler
     	];
@@ -37147,7 +37163,7 @@
     	return child_ctx;
     }
 
-    // (180:8) {#each typeDesigns as typeDesign}
+    // (187:8) {#each typeDesigns as typeDesign}
     function create_each_block$2(ctx) {
     	let current;
 
@@ -37194,7 +37210,7 @@
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(180:8) {#each typeDesigns as typeDesign}",
+    		source: "(187:8) {#each typeDesigns as typeDesign}",
     		ctx
     	});
 
@@ -37313,70 +37329,70 @@
     			button3.textContent = "Cancel";
     			attr_dev(label0, "for", "amount-input");
     			attr_dev(label0, "class", "svelte-1wqb46g");
-    			add_location(label0, file$7, 134, 6, 5190);
+    			add_location(label0, file$7, 141, 6, 5283);
     			attr_dev(input0, "id", "amount-input");
     			attr_dev(input0, "class", "amount text-2xl svelte-1wqb46g");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$7, 135, 6, 5238);
+    			add_location(input0, file$7, 142, 6, 5331);
     			attr_dev(div0, "class", "input-row svelte-1wqb46g");
-    			add_location(div0, file$7, 133, 4, 5159);
+    			add_location(div0, file$7, 140, 4, 5252);
     			attr_dev(label1, "for", "date-input");
     			attr_dev(label1, "class", "svelte-1wqb46g");
-    			add_location(label1, file$7, 144, 6, 5498);
+    			add_location(label1, file$7, 151, 6, 5591);
     			attr_dev(button0, "id", "today-button");
     			attr_dev(button0, "class", "date-button active svelte-1wqb46g");
-    			add_location(button0, file$7, 146, 8, 5570);
+    			add_location(button0, file$7, 153, 8, 5663);
     			attr_dev(button1, "id", "yesterday-button");
     			attr_dev(button1, "class", "date-button svelte-1wqb46g");
-    			add_location(button1, file$7, 152, 8, 5736);
+    			add_location(button1, file$7, 159, 8, 5829);
     			attr_dev(div1, "class", "mr-4");
-    			add_location(div1, file$7, 145, 6, 5542);
+    			add_location(div1, file$7, 152, 6, 5635);
     			attr_dev(div2, "class", "input-row svelte-1wqb46g");
-    			add_location(div2, file$7, 143, 4, 5467);
-    			add_location(span, file$7, 163, 6, 6046);
+    			add_location(div2, file$7, 150, 4, 5560);
+    			add_location(span, file$7, 170, 6, 6139);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "svelte-1wqb46g");
-    			add_location(input1, file$7, 164, 6, 6077);
+    			add_location(input1, file$7, 171, 6, 6170);
     			attr_dev(div3, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n      text-gray-600 ml-4");
-    			add_location(div3, file$7, 160, 4, 5929);
+    			add_location(div3, file$7, 167, 4, 6022);
     			attr_dev(label2, "for", "description-input");
     			attr_dev(label2, "class", "svelte-1wqb46g");
-    			add_location(label2, file$7, 167, 6, 6181);
+    			add_location(label2, file$7, 174, 6, 6274);
     			attr_dev(input2, "class", "truncate text-2xl svelte-1wqb46g");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "(Optional)");
-    			add_location(input2, file$7, 168, 6, 6239);
+    			add_location(input2, file$7, 175, 6, 6332);
     			attr_dev(div4, "class", "input-row svelte-1wqb46g");
-    			add_location(div4, file$7, 166, 4, 6150);
+    			add_location(div4, file$7, 173, 4, 6243);
     			attr_dev(label3, "class", "svelte-1wqb46g");
-    			add_location(label3, file$7, 177, 6, 6535);
+    			add_location(label3, file$7, 184, 6, 6628);
     			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div5, file$7, 178, 6, 6562);
+    			add_location(div5, file$7, 185, 6, 6655);
     			attr_dev(div6, "class", "mt-8 flex flex-col");
-    			add_location(div6, file$7, 176, 4, 6495);
+    			add_location(div6, file$7, 183, 4, 6588);
     			attr_dev(button2, "class", "rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-12\r\n        mb-8 bg-gray-300");
 
     			attr_dev(button2, "style", button2_style_value = /*typeValid*/ ctx[6] && /*dateValid*/ ctx[5] && /*amountValid*/ ctx[4]
     			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
     			: "");
 
-    			add_location(button2, file$7, 190, 6, 7004);
+    			add_location(button2, file$7, 197, 6, 7097);
     			attr_dev(div7, "class", "w-full text-center block");
-    			add_location(div7, file$7, 189, 4, 6958);
+    			add_location(div7, file$7, 196, 4, 7051);
     			attr_dev(button3, "class", "w-full text-center mb-8 bg-transparent");
     			set_style(button3, "color", "hsl(var(--secondary-hue), 50%, 50%)");
-    			add_location(button3, file$7, 198, 4, 7349);
+    			add_location(button3, file$7, 205, 4, 7442);
     			attr_dev(div8, "class", "flex flex-col items-start justify-around bg-white mt-32");
     			set_style(div8, "border-top-left-radius", "1rem");
     			set_style(div8, "border-top-right-radius", "1rem");
-    			add_location(div8, file$7, 129, 2, 4958);
+    			add_location(div8, file$7, 136, 2, 5051);
     			attr_dev(div9, "id", "entry-wrapper");
     			attr_dev(div9, "class", "absolute top-0 w-full h-screen z-10 overflow-x-hidden svelte-1wqb46g");
     			set_style(div9, "background-color", "rgba(0,0,0,0.2)");
-    			add_location(div9, file$7, 124, 0, 4778);
+    			add_location(div9, file$7, 131, 0, 4871);
 
     			dispose = [
     				listen_dev(input0, "input", input0_input_handler),
@@ -37627,6 +37643,7 @@
     		}).then(() => {
     			toastMessage.set("Expense created!");
     			setTimeout(() => toastMessage.set(""), 1000);
+    			dashboardShouldReload.set(true);
     		}).catch(error => {
     			toastMessage.set(error);
     			setTimeout(() => toastMessage.set(""), 3000);

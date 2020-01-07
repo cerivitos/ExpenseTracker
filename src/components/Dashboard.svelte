@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import firebase from "firebase/app";
   import "firebase/firestore";
-  import { toastMessage } from "../store/store";
+  import { toastMessage, dashboardShouldReload } from "../store/store";
   import { fade } from "svelte/transition";
   import CategoryListTile from "./CategoryListTile.svelte";
   import { CountUp } from "countup.js";
@@ -130,6 +130,7 @@
     snapshot.forEach(doc => {
       const data = doc.data();
       if (rawCache.filter(rawData => rawData.id === data.id).length === 0) {
+        //Doc doesn't exist, push it to local cache
         data.id = doc.id;
         rawCache.push(data);
       }
@@ -206,6 +207,12 @@
     currentCounterValue = totalSpend;
 
     return categorizedData;
+  }
+
+  $: if ($dashboardShouldReload) {
+    localStorage.removeItem("rawCache");
+    changeInterval(currentInterval);
+    dashboardShouldReload.set(false);
   }
 </script>
 
