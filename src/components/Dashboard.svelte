@@ -115,8 +115,6 @@
         .where("date", ">=", queryInterval)
         .where("date", "<=", endDate)
         .get();
-
-      console.log(queryInterval, endDate, snapshot.size);
     } catch (error) {
       toastMessage.set(error.message);
       setTimeout(() => toastMessage.set(""), 3000);
@@ -141,6 +139,14 @@
     rawData = rawCache.filter(
       rawData => rawData.date >= getQueryInterval(currentInterval)
     );
+
+    rawData.sort((a, b) => {
+      if (b.date > a.date) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
 
     toastMessage.set("");
 
@@ -222,7 +228,7 @@
   <span class="w-full mb-1 text-4xl text-center font-bold" id="totalSpend">
     $0
   </span>
-  <span class="w-full text-center text-gray-600 text-sm font-light mb-8">
+  <span class="w-full text-center text-gray-600 font-light mb-8">
     Total spend
   </span>
   <!-- <Chart datas={rawData} queryInterval={getQueryInterval(currentInterval)} /> -->

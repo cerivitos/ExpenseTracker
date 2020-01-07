@@ -27107,7 +27107,7 @@
     	return child_ctx;
     }
 
-    // (217:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
+    // (223:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
     function create_each_block_1(ctx) {
     	let button;
     	let t0;
@@ -27129,7 +27129,7 @@
     			? "active"
     			: "") + " svelte-f0nlgm");
 
-    			add_location(button, file$1, 217, 6, 6601);
+    			add_location(button, file$1, 223, 6, 6667);
     			dispose = listen_dev(button, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -27156,7 +27156,7 @@
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(217:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
+    		source: "(223:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
     		ctx
     	});
 
@@ -27185,7 +27185,7 @@
     	return block;
     }
 
-    // (225:37)       {#each result as data, index}
+    // (231:37)       {#each result as data, index}
     function create_then_block(ctx) {
     	let each_1_anchor;
     	let current;
@@ -27272,14 +27272,14 @@
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(225:37)       {#each result as data, index}",
+    		source: "(231:37)       {#each result as data, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (226:4) {#each result as data, index}
+    // (232:4) {#each result as data, index}
     function create_each_block(ctx) {
     	let current;
 
@@ -27322,7 +27322,7 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(226:4) {#each result as data, index}",
+    		source: "(232:4) {#each result as data, index}",
     		ctx
     	});
 
@@ -27400,13 +27400,13 @@
     			info.block.c();
     			attr_dev(span0, "class", "w-full mb-1 text-4xl text-center font-bold");
     			attr_dev(span0, "id", "totalSpend");
-    			add_location(span0, file$1, 208, 2, 6185);
-    			attr_dev(span1, "class", "w-full text-center text-gray-600 text-sm font-light mb-8");
-    			add_location(span1, file$1, 211, 2, 6281);
+    			add_location(span0, file$1, 214, 2, 6259);
+    			attr_dev(span1, "class", "w-full text-center text-gray-600 font-light mb-8");
+    			add_location(span1, file$1, 217, 2, 6355);
     			attr_dev(div0, "class", "flex flex-row justify-around overflow-x-hidden mb-8 mx-4");
-    			add_location(div0, file$1, 215, 2, 6472);
+    			add_location(div0, file$1, 221, 2, 6538);
     			attr_dev(div1, "class", "flex flex-col my-8");
-    			add_location(div1, file$1, 207, 0, 6149);
+    			add_location(div1, file$1, 213, 0, 6223);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -27585,7 +27585,6 @@
 
     		try {
     			snapshot = await db.collection("expenses").where("date", ">=", queryInterval).where("date", "<=", endDate).get();
-    			console.log(queryInterval, endDate, snapshot.size);
     		} catch(error) {
     			toastMessage.set(error.message);
     			setTimeout(() => toastMessage.set(""), 3000);
@@ -27607,6 +27606,15 @@
     		});
 
     		rawData = rawCache.filter(rawData => rawData.date >= getQueryInterval(currentInterval));
+
+    		rawData.sort((a, b) => {
+    			if (b.date > a.date) {
+    				return 1;
+    			} else {
+    				return -1;
+    			}
+    		});
+
     		toastMessage.set("");
     		localStorage.setItem("rawCache", JSON.stringify(rawCache));
     		const types = [...new Set(rawData.map(item => item.type))];
