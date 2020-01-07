@@ -37135,25 +37135,25 @@
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[22] = list[i];
+    	child_ctx[23] = list[i];
     	return child_ctx;
     }
 
-    // (175:8) {#each typeDesigns as typeDesign}
+    // (180:8) {#each typeDesigns as typeDesign}
     function create_each_block$2(ctx) {
     	let current;
 
     	const typebutton = new TypeButton({
     			props: {
-    				label: /*typeDesign*/ ctx[22].type,
-    				colorHue: /*typeDesign*/ ctx[22].hue,
-    				isActive: /*type*/ ctx[3] === /*typeDesign*/ ctx[22].type,
-    				materialIcon: /*typeDesign*/ ctx[22].materialIcon
+    				label: /*typeDesign*/ ctx[23].type,
+    				colorHue: /*typeDesign*/ ctx[23].hue,
+    				isActive: /*type*/ ctx[3] === /*typeDesign*/ ctx[23].type,
+    				materialIcon: /*typeDesign*/ ctx[23].materialIcon
     			},
     			$$inline: true
     		});
 
-    	typebutton.$on("dispatchType", /*receiveType*/ ctx[8]);
+    	typebutton.$on("dispatchType", /*receiveType*/ ctx[9]);
 
     	const block = {
     		c: function create() {
@@ -37165,7 +37165,7 @@
     		},
     		p: function update(ctx, dirty) {
     			const typebutton_changes = {};
-    			if (dirty & /*type*/ 8) typebutton_changes.isActive = /*type*/ ctx[3] === /*typeDesign*/ ctx[22].type;
+    			if (dirty & /*type*/ 8) typebutton_changes.isActive = /*type*/ ctx[3] === /*typeDesign*/ ctx[23].type;
     			typebutton.$set(typebutton_changes);
     		},
     		i: function intro(local) {
@@ -37186,7 +37186,7 @@
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(175:8) {#each typeDesigns as typeDesign}",
+    		source: "(180:8) {#each typeDesigns as typeDesign}",
     		ctx
     	});
 
@@ -37227,6 +37227,7 @@
     	let t17;
     	let div7;
     	let button2;
+    	let t18_value = (/*isUpdate*/ ctx[7] ? "Update" : "Submit") + "";
     	let t18;
     	let button2_style_value;
     	let t19;
@@ -37238,7 +37239,7 @@
 
     	function input0_input_handler() {
     		input0_updating = true;
-    		/*input0_input_handler*/ ctx[13].call(input0);
+    		/*input0_input_handler*/ ctx[14].call(input0);
     	}
 
     	let each_value = typeDesigns;
@@ -37298,87 +37299,87 @@
     			t17 = space();
     			div7 = element("div");
     			button2 = element("button");
-    			t18 = text("Submit");
+    			t18 = text(t18_value);
     			t19 = space();
     			button3 = element("button");
     			button3.textContent = "Cancel";
     			attr_dev(label0, "for", "amount-input");
-    			attr_dev(label0, "class", "svelte-1hg711n");
-    			add_location(label0, file$7, 129, 6, 5029);
+    			attr_dev(label0, "class", "svelte-1wqb46g");
+    			add_location(label0, file$7, 134, 6, 5190);
     			attr_dev(input0, "id", "amount-input");
-    			attr_dev(input0, "class", "amount text-2xl svelte-1hg711n");
+    			attr_dev(input0, "class", "amount text-2xl svelte-1wqb46g");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$7, 130, 6, 5077);
-    			attr_dev(div0, "class", "input-row svelte-1hg711n");
-    			add_location(div0, file$7, 128, 4, 4998);
+    			add_location(input0, file$7, 135, 6, 5238);
+    			attr_dev(div0, "class", "input-row svelte-1wqb46g");
+    			add_location(div0, file$7, 133, 4, 5159);
     			attr_dev(label1, "for", "date-input");
-    			attr_dev(label1, "class", "svelte-1hg711n");
-    			add_location(label1, file$7, 139, 6, 5337);
+    			attr_dev(label1, "class", "svelte-1wqb46g");
+    			add_location(label1, file$7, 144, 6, 5498);
     			attr_dev(button0, "id", "today-button");
-    			attr_dev(button0, "class", "date-button active svelte-1hg711n");
-    			add_location(button0, file$7, 141, 8, 5409);
+    			attr_dev(button0, "class", "date-button active svelte-1wqb46g");
+    			add_location(button0, file$7, 146, 8, 5570);
     			attr_dev(button1, "id", "yesterday-button");
-    			attr_dev(button1, "class", "date-button svelte-1hg711n");
-    			add_location(button1, file$7, 147, 8, 5575);
+    			attr_dev(button1, "class", "date-button svelte-1wqb46g");
+    			add_location(button1, file$7, 152, 8, 5736);
     			attr_dev(div1, "class", "mr-4");
-    			add_location(div1, file$7, 140, 6, 5381);
-    			attr_dev(div2, "class", "input-row svelte-1hg711n");
-    			add_location(div2, file$7, 138, 4, 5306);
-    			add_location(span, file$7, 158, 6, 5885);
+    			add_location(div1, file$7, 145, 6, 5542);
+    			attr_dev(div2, "class", "input-row svelte-1wqb46g");
+    			add_location(div2, file$7, 143, 4, 5467);
+    			add_location(span, file$7, 163, 6, 6046);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
-    			attr_dev(input1, "class", "svelte-1hg711n");
-    			add_location(input1, file$7, 159, 6, 5916);
+    			attr_dev(input1, "class", "svelte-1wqb46g");
+    			add_location(input1, file$7, 164, 6, 6077);
     			attr_dev(div3, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n      text-gray-600 ml-4");
-    			add_location(div3, file$7, 155, 4, 5768);
+    			add_location(div3, file$7, 160, 4, 5929);
     			attr_dev(label2, "for", "description-input");
-    			attr_dev(label2, "class", "svelte-1hg711n");
-    			add_location(label2, file$7, 162, 6, 6020);
-    			attr_dev(input2, "class", "truncate text-2xl svelte-1hg711n");
+    			attr_dev(label2, "class", "svelte-1wqb46g");
+    			add_location(label2, file$7, 167, 6, 6181);
+    			attr_dev(input2, "class", "truncate text-2xl svelte-1wqb46g");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
-    			attr_dev(input2, "placeholder", "...");
-    			add_location(input2, file$7, 163, 6, 6078);
-    			attr_dev(div4, "class", "input-row svelte-1hg711n");
-    			add_location(div4, file$7, 161, 4, 5989);
-    			attr_dev(label3, "class", "svelte-1hg711n");
-    			add_location(label3, file$7, 172, 6, 6367);
+    			attr_dev(input2, "placeholder", "(Optional)");
+    			add_location(input2, file$7, 168, 6, 6239);
+    			attr_dev(div4, "class", "input-row svelte-1wqb46g");
+    			add_location(div4, file$7, 166, 4, 6150);
+    			attr_dev(label3, "class", "svelte-1wqb46g");
+    			add_location(label3, file$7, 177, 6, 6535);
     			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div5, file$7, 173, 6, 6394);
+    			add_location(div5, file$7, 178, 6, 6562);
     			attr_dev(div6, "class", "mt-8 flex flex-col");
-    			add_location(div6, file$7, 171, 4, 6327);
+    			add_location(div6, file$7, 176, 4, 6495);
     			attr_dev(button2, "class", "rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-12\r\n        mb-8 bg-gray-300");
 
     			attr_dev(button2, "style", button2_style_value = /*typeValid*/ ctx[6] && /*dateValid*/ ctx[5] && /*amountValid*/ ctx[4]
     			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
     			: "");
 
-    			add_location(button2, file$7, 185, 6, 6836);
+    			add_location(button2, file$7, 190, 6, 7004);
     			attr_dev(div7, "class", "w-full text-center block");
-    			add_location(div7, file$7, 184, 4, 6790);
+    			add_location(div7, file$7, 189, 4, 6958);
     			attr_dev(button3, "class", "w-full text-center mb-8 bg-transparent");
     			set_style(button3, "color", "hsl(var(--secondary-hue), 50%, 50%)");
-    			add_location(button3, file$7, 193, 4, 7155);
+    			add_location(button3, file$7, 198, 4, 7349);
     			attr_dev(div8, "class", "flex flex-col items-start justify-around bg-white mt-32");
     			set_style(div8, "border-top-left-radius", "1rem");
     			set_style(div8, "border-top-right-radius", "1rem");
-    			add_location(div8, file$7, 124, 2, 4797);
+    			add_location(div8, file$7, 129, 2, 4958);
     			attr_dev(div9, "id", "entry-wrapper");
-    			attr_dev(div9, "class", "absolute top-0 w-full h-screen z-10 overflow-x-hidden svelte-1hg711n");
+    			attr_dev(div9, "class", "absolute top-0 w-full h-screen z-10 overflow-x-hidden svelte-1wqb46g");
     			set_style(div9, "background-color", "rgba(0,0,0,0.2)");
-    			add_location(div9, file$7, 119, 0, 4617);
+    			add_location(div9, file$7, 124, 0, 4778);
 
     			dispose = [
     				listen_dev(input0, "input", input0_input_handler),
-    				listen_dev(input0, "click", /*click_handler*/ ctx[14], false, false, false),
-    				listen_dev(button0, "click", /*click_handler_1*/ ctx[15], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_2*/ ctx[16], false, false, false),
-    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[17]),
-    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[18]),
-    				listen_dev(input2, "click", /*click_handler_3*/ ctx[19], false, false, false),
-    				listen_dev(button2, "click", /*click_handler_4*/ ctx[20], false, false, false),
-    				listen_dev(button3, "click", /*click_handler_5*/ ctx[21], false, false, false)
+    				listen_dev(input0, "click", /*click_handler*/ ctx[15], false, false, false),
+    				listen_dev(button0, "click", /*click_handler_1*/ ctx[16], false, false, false),
+    				listen_dev(button1, "click", /*click_handler_2*/ ctx[17], false, false, false),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[18]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[19]),
+    				listen_dev(input2, "click", /*click_handler_3*/ ctx[20], false, false, false),
+    				listen_dev(button2, "click", /*click_handler_4*/ ctx[21], false, false, false),
+    				listen_dev(button3, "click", /*click_handler_5*/ ctx[22], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
@@ -37445,7 +37446,7 @@
     				set_input_value(input2, /*description*/ ctx[0]);
     			}
 
-    			if (dirty & /*typeDesigns, type, receiveType*/ 264) {
+    			if (dirty & /*typeDesigns, type, receiveType*/ 520) {
     				each_value = typeDesigns;
     				let i;
 
@@ -37471,6 +37472,8 @@
 
     				check_outros();
     			}
+
+    			if ((!current || dirty & /*isUpdate*/ 128) && t18_value !== (t18_value = (/*isUpdate*/ ctx[7] ? "Update" : "Submit") + "")) set_data_dev(t18, t18_value);
 
     			if (!current || dirty & /*typeValid, dateValid, amountValid*/ 112 && button2_style_value !== (button2_style_value = /*typeValid*/ ctx[6] && /*dateValid*/ ctx[5] && /*amountValid*/ ctx[4]
     			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
@@ -37534,9 +37537,9 @@
     	let $entryData;
     	let $userInfo;
     	validate_store(entryData, "entryData");
-    	component_subscribe($$self, entryData, $$value => $$invalidate(11, $entryData = $$value));
+    	component_subscribe($$self, entryData, $$value => $$invalidate(12, $entryData = $$value));
     	validate_store(userInfo, "userInfo");
-    	component_subscribe($$self, userInfo, $$value => $$invalidate(12, $userInfo = $$value));
+    	component_subscribe($$self, userInfo, $$value => $$invalidate(13, $userInfo = $$value));
     	let description = "";
     	let amount = 0;
     	let date = new Date().toISOString().substring(0, 10);
@@ -37544,10 +37547,12 @@
     	let amountValid = false;
     	let dateValid = false;
     	let typeValid = false;
+    	let isUpdate = false;
     	let wrapperEl;
 
     	onMount(() => {
     		if (Object.keys($entryData).length > 0) {
+    			$$invalidate(7, isUpdate = true);
     			$$invalidate(0, description = $entryData.desc);
     			$$invalidate(1, amount = $entryData.amount);
     			$$invalidate(2, date = $entryData.date);
@@ -37570,6 +37575,7 @@
     			document.getElementById("yesterday-button").classList.remove("active");
     		};
 
+    		document.getElementById("amount-input").focus();
     		document.getElementById("amount-input").select();
     	});
 
@@ -37654,6 +37660,7 @@
     		if ("amountValid" in $$props) $$invalidate(4, amountValid = $$props.amountValid);
     		if ("dateValid" in $$props) $$invalidate(5, dateValid = $$props.dateValid);
     		if ("typeValid" in $$props) $$invalidate(6, typeValid = $$props.typeValid);
+    		if ("isUpdate" in $$props) $$invalidate(7, isUpdate = $$props.isUpdate);
     		if ("wrapperEl" in $$props) wrapperEl = $$props.wrapperEl;
     		if ("$entryData" in $$props) entryData.set($entryData = $$props.$entryData);
     		if ("$userInfo" in $$props) userInfo.set($userInfo = $$props.$userInfo);
@@ -37693,6 +37700,7 @@
     		amountValid,
     		dateValid,
     		typeValid,
+    		isUpdate,
     		setDate,
     		receiveType,
     		sendEntry,

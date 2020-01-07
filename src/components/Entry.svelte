@@ -17,11 +17,15 @@
   let dateValid = false;
   let typeValid = false;
 
+  let isUpdate = false;
+
   let wrapperEl;
 
   onMount(() => {
     //Use existing data to be edited if user came from Detail view
     if (Object.keys($entryData).length > 0) {
+      isUpdate = true;
+
       description = $entryData.desc;
       amount = $entryData.amount;
       date = $entryData.date;
@@ -47,6 +51,7 @@
     };
 
     //Get focus on Amount input field
+    document.getElementById("amount-input").focus();
     document.getElementById("amount-input").select();
   });
 
@@ -123,6 +128,10 @@
   input {
     outline: none !important;
     @apply px-2 py-1 mr-4 w-2/3 appearance-none text-right font-bold text-gray-600 bg-transparent;
+  }
+
+  #description-input {
+    @apply text-lg font-normal;
   }
 
   .input-error {
@@ -205,7 +214,7 @@
         class="truncate text-2xl"
         id="description-input"
         type="text"
-        placeholder="..."
+        placeholder="(Optional)"
         bind:value={description}
         on:click={() => document.execCommand('selectall', null, false)} />
     </div>
@@ -228,7 +237,7 @@
         mb-8 bg-gray-300"
         on:click={() => sendEntry()}
         style={typeValid && dateValid && amountValid ? 'background-color:hsl(var(--accent-hue), 50%, 50%)' : ''}>
-        Submit
+        {isUpdate ? 'Update' : 'Submit'}
       </button>
     </div>
     <button
