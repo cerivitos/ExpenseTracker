@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { fly, fade, scale, crossfade } from "svelte/transition";
   import { typeDesigns, convertRemToPixels, handleRouting } from "../util";
-  import { detailData, overlay, entryData } from "../store/store";
+  import { detailData, overlay, entryData, view } from "../store/store";
   import { quintOut } from "svelte/easing";
   import { flip } from "svelte/animate";
 
@@ -88,9 +88,10 @@
   }
 
   function showEditDetail(data) {
-    overlay.set("entry");
+    view.set("");
     handleRouting("entry");
     entryData.set(data);
+    overlay.set("entry");
   }
 
   $: if ($detailData.data) {
@@ -123,7 +124,7 @@
 <div
   id="detail-page"
   class="h-screen w-full bg-white relative overflow-auto"
-  transition:fly={{ y: window.innerHeight, duration: 80 }}>
+  transition:fade={{ duration: 80 }}>
   <div
     class="w-full flex flex-row p-4 bg-white {scrolling ? 'shadow' : ''} fixed
     top-0 justify-between z-20"
@@ -131,8 +132,11 @@
     <i
       class="material-icons fill-current"
       style="color:{iconColor}"
-      in:fly={{ x: -24, duration: 80, delay: 100 }}
-      on:click={() => window.history.back()}>
+      on:click={() => {
+        handleRouting('dashboard');
+        view.set('dashboard');
+        overlay.set('');
+      }}>
       arrow_back
     </i>
     <button
@@ -168,7 +172,7 @@
       </div>
       <span
         class="text-2xl font-bold mb-8"
-        in:fly={{ y: 48, duration: 140, delay: 120 }}
+        in:fly={{ y: 48, duration: 180, delay: 180 }}
         style="color: {iconColor}">
         {$detailData.type}
       </span>
@@ -185,7 +189,7 @@
         {/if}
         <div
           class="flex flex-col justify-center items-center"
-          in:fly={{ y: 180, duration: 180, delay: 160 }}>
+          in:fly={{ y: 180, duration: 120, delay: 280 }}>
           <div class="wrap w-full relative text-center mt-4 mb-2">
             <span class="relative text-gray-600 font-bold bg-white px-4">
               {new Date(2019, bucket.month - 1, 1)

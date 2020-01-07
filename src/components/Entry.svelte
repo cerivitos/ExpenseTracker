@@ -4,15 +4,19 @@
     toastMessage,
     userInfo,
     entryData,
-    dashboardShouldReload
+    dashboardShouldReload,
+    overlay,
+    detailData
   } from "../store/store";
   import { onMount, onDestroy } from "svelte";
   import TypeButton from "./TypeButton.svelte";
   import LoadingSpinner from "./LoadingSpinner.svelte";
-  import { typeDesigns } from "../util";
+  import { typeDesigns, handleRouting } from "../util";
   import { fly, fade } from "svelte/transition";
   import firebase from "firebase/app";
   import "firebase/firestore";
+
+  let scrolling = false;
 
   let description = "";
   let amount = 0;
@@ -41,14 +45,10 @@
       document.getElementById("yesterday-button").classList.remove("active");
     }
 
-    wrapperEl = document.getElementById("entry-wrapper");
-    //Scroll down a little so that we can set the trigger to dismiss is scrollY = 0
-    wrapperEl.scrollTop = 120;
-    wrapperEl.onscroll = () => {
-      if (wrapperEl.scrollTop === 0) {
-        window.history.back();
-      }
-    };
+    wrapperEl = document.getElementById("entry-page");
+    wrapperEl.addEventListener("scroll", ev => {
+      ev.target.scrollTop > 0 ? (scrolling = true) : (scrolling = false);
+    });
 
     //Remove higlight for Today and Yesterday date shortcut buttons since user wants to enter own date
     document.getElementById("date-input").oninput = () => {
@@ -174,13 +174,25 @@
 </style>
 
 <div
-  id="entry-wrapper"
-  class="absolute top-0 w-full h-screen z-10 overflow-x-hidden"
-  style="background-color: rgba(0,0,0,0.2)"
-  transition:fade={{ duration: 180 }}>
+  id="entry-page"
+  class="h-screen w-full bg-white relative overflow-auto"
+  transition:fade={{ duration: 80 }}>
   <div
-    transition:fly={{ y: 300, duration: 250 }}
-    class="flex flex-col items-start justify-around bg-white mt-32"
+    class="w-full flex flex-row p-4 bg-white {scrolling ? 'shadow' : ''} fixed
+    top-0 justify-between z-20"
+    style="height: 56px">
+    <i
+      class="material-icons fill-current"
+      style="color: hsl(var(--primary-hue), 50%, 50%)"
+      on:click={() => {
+        handleRouting('detail#' + $detailData.type);
+        overlay.set('detail');
+      }}>
+      arrow_back
+    </i>
+  </div>
+  <div
+    class="flex flex-col items-start justify-around bg-white mt-8"
     style="border-top-left-radius: 1rem; border-top-right-radius: 1rem">
     <div class="input-row">
       <label for="amount-input">Amount</label>
@@ -250,7 +262,10 @@
     <button
       class="w-full text-center mb-8 bg-transparent"
       style="color: hsl(var(--secondary-hue), 50%, 50%)"
-      on:click={() => window.history.back()}>
+      on:click={() => {
+        handleRouting('detail#' + $detailData.type);
+        overlay.set('detail');
+      }}>
       Cancel
     </button>
   </div>

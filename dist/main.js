@@ -35933,7 +35933,7 @@
     	return child_ctx;
     }
 
-    // (138:8) {:else}
+    // (142:8) {:else}
     function create_else_block$1(ctx) {
     	let i;
     	let i_intro;
@@ -35943,7 +35943,7 @@
     			i = element("i");
     			i.textContent = "attach_money";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$5, 138, 10, 3854);
+    			add_location(i, file$5, 142, 10, 3888);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -35966,14 +35966,14 @@
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(138:8) {:else}",
+    		source: "(142:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (134:8) {#if sortByDate}
+    // (138:8) {#if sortByDate}
     function create_if_block_2(ctx) {
     	let i;
     	let i_intro;
@@ -35983,7 +35983,7 @@
     			i = element("i");
     			i.textContent = "date_range";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$5, 134, 10, 3719);
+    			add_location(i, file$5, 138, 10, 3753);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -36006,7 +36006,7 @@
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(134:8) {#if sortByDate}",
+    		source: "(138:8) {#if sortByDate}",
     		ctx
     	});
 
@@ -36035,7 +36035,7 @@
     	return block;
     }
 
-    // (166:43)         {#each buckets as bucket, index}
+    // (170:43)         {#each buckets as bucket, index}
     function create_then_block$1(ctx) {
     	let each_1_anchor;
     	let current;
@@ -36122,14 +36122,14 @@
     		block,
     		id: create_then_block$1.name,
     		type: "then",
-    		source: "(166:43)         {#each buckets as bucket, index}",
+    		source: "(170:43)         {#each buckets as bucket, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (168:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
+    // (172:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
     function create_if_block_1(ctx) {
     	let span;
     	let t_value = /*bucket*/ ctx[15].year + "";
@@ -36141,7 +36141,7 @@
     			t = text(t_value);
     			attr_dev(span, "class", "rounded-full bg-gray-600 text-white font-bold px-4 py-2 my-4\r\n            sticky top-0 z-10 m-auto");
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
-    			add_location(span, file$5, 168, 10, 4882);
+    			add_location(span, file$5, 172, 10, 4916);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -36159,14 +36159,14 @@
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(168:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
+    		source: "(172:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (193:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
+    // (197:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
     function create_if_block$3(ctx) {
     	let div2;
     	let div0;
@@ -36213,22 +36213,22 @@
     			t8 = text("$");
     			t9 = text(t9_value);
     			attr_dev(span0, "class", "font-bold text-xs");
-    			add_location(span0, file$5, 198, 20, 6275);
+    			add_location(span0, file$5, 202, 20, 6309);
     			attr_dev(span1, "class", "font-bold");
-    			add_location(span1, file$5, 203, 20, 6502);
+    			add_location(span1, file$5, 207, 20, 6536);
     			attr_dev(div0, "class", "w-10 rounded-lg flex flex-col items-center\r\n                    justify-between py-1 mr-4");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[2]);
     			set_style(div0, "color", /*iconColor*/ ctx[3]);
-    			add_location(div0, file$5, 194, 18, 6046);
+    			add_location(div0, file$5, 198, 18, 6080);
     			attr_dev(span2, "class", "font-bold w-full truncate");
-    			add_location(span2, file$5, 210, 20, 6798);
+    			add_location(span2, file$5, 214, 20, 6832);
     			attr_dev(span3, "class", "text-gray-600 w-full truncate");
-    			add_location(span3, file$5, 213, 20, 6927);
+    			add_location(span3, file$5, 217, 20, 6961);
     			attr_dev(div1, "class", "flex flex-col flex-grow items-start justify-around\r\n                    truncate mr-4");
-    			add_location(div1, file$5, 207, 18, 6656);
-    			add_location(span4, file$5, 217, 18, 7081);
+    			add_location(div1, file$5, 211, 18, 6690);
+    			add_location(span4, file$5, 221, 18, 7115);
     			attr_dev(div2, "class", "flex flex-row p-4 items-center");
-    			add_location(div2, file$5, 193, 16, 5982);
+    			add_location(div2, file$5, 197, 16, 6016);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -36275,14 +36275,14 @@
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(193:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
+    		source: "(197:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (186:10) {#each sortedData as data (data.id)}
+    // (190:10) {#each sortedData as data (data.id)}
     function create_each_block_1$1(key_1, ctx) {
     	let div;
     	let show_if = /*data*/ ctx[18].date.substring(0, 4) == /*bucket*/ ctx[15].year && /*data*/ ctx[18].date.substring(5, 7) == /*bucket*/ ctx[15].month;
@@ -36305,7 +36305,7 @@
     			div = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div, "class", "w-full bg-white");
-    			add_location(div, file$5, 186, 12, 5624);
+    			add_location(div, file$5, 190, 12, 5658);
     			dispose = listen_dev(div, "click", click_handler_2, false, false, false);
     			this.first = div;
     		},
@@ -36371,14 +36371,14 @@
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(186:10) {#each sortedData as data (data.id)}",
+    		source: "(190:10) {#each sortedData as data (data.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (167:6) {#each buckets as bucket, index}
+    // (171:6) {#each buckets as bucket, index}
     function create_each_block$1(ctx) {
     	let t0;
     	let div1;
@@ -36418,11 +36418,11 @@
 
     			t3 = space();
     			attr_dev(span, "class", "relative text-gray-600 font-bold bg-white px-4");
-    			add_location(span, file$5, 179, 12, 5342);
+    			add_location(span, file$5, 183, 12, 5376);
     			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-oee9xi");
-    			add_location(div0, file$5, 178, 10, 5272);
+    			add_location(div0, file$5, 182, 10, 5306);
     			attr_dev(div1, "class", "flex flex-col justify-center items-center");
-    			add_location(div1, file$5, 175, 8, 5136);
+    			add_location(div1, file$5, 179, 8, 5170);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -36471,7 +36471,7 @@
 
     			if (!div1_intro) {
     				add_render_callback(() => {
-    					div1_intro = create_in_transition(div1, fly, { y: 180, duration: 180, delay: 160 });
+    					div1_intro = create_in_transition(div1, fly, { y: 180, duration: 120, delay: 280 });
     					div1_intro.start();
     				});
     			}
@@ -36500,7 +36500,7 @@
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(167:6) {#each buckets as bucket, index}",
+    		source: "(171:6) {#each buckets as bucket, index}",
     		ctx
     	});
 
@@ -36534,7 +36534,6 @@
     	let div1;
     	let i0;
     	let t0;
-    	let i0_intro;
     	let t1;
     	let button;
     	let div0;
@@ -36602,35 +36601,35 @@
     			info.block.c();
     			attr_dev(i0, "class", "material-icons fill-current");
     			set_style(i0, "color", /*iconColor*/ ctx[3]);
-    			add_location(i0, file$5, 120, 4, 3284);
+    			add_location(i0, file$5, 121, 4, 3287);
     			attr_dev(div0, "class", "relative");
-    			add_location(div0, file$5, 132, 6, 3659);
+    			add_location(div0, file$5, 136, 6, 3693);
     			attr_dev(button, "class", "fill-current");
     			set_style(button, "color", /*iconColor*/ ctx[3]);
-    			add_location(button, file$5, 127, 4, 3496);
+    			add_location(button, file$5, 131, 4, 3530);
     			attr_dev(div1, "class", div1_class_value = "w-full flex flex-row p-4 bg-white " + (/*scrolling*/ ctx[4] ? "shadow" : "") + " fixed\r\n    top-0 justify-between z-20");
     			set_style(div1, "height", "56px");
-    			add_location(div1, file$5, 116, 2, 3134);
+    			add_location(div1, file$5, 117, 2, 3137);
     			attr_dev(i1, "class", "material-icons fill-current");
     			set_style(i1, "display", "block", 1);
     			set_style(i1, "color", /*iconColor*/ ctx[3]);
     			set_style(i1, "font-size", "64px");
-    			add_location(i1, file$5, 152, 8, 4314);
+    			add_location(i1, file$5, 156, 8, 4348);
     			attr_dev(div2, "class", "icon rounded-full p-6 mt-20 mb-4");
     			attr_dev(div2, "id", "icon");
     			set_style(div2, "background-color", /*backgroundColor*/ ctx[2]);
-    			add_location(div2, file$5, 147, 6, 4114);
+    			add_location(div2, file$5, 151, 6, 4148);
     			attr_dev(span, "class", "text-2xl font-bold mb-8");
     			set_style(span, "color", /*iconColor*/ ctx[3]);
-    			add_location(span, file$5, 158, 6, 4507);
+    			add_location(span, file$5, 162, 6, 4541);
     			attr_dev(div3, "class", "flex flex-col items-center");
-    			add_location(div3, file$5, 146, 4, 4066);
+    			add_location(div3, file$5, 150, 4, 4100);
     			attr_dev(div4, "id", "content");
     			attr_dev(div4, "class", "flex flex-col");
-    			add_location(div4, file$5, 145, 2, 4020);
+    			add_location(div4, file$5, 149, 2, 4054);
     			attr_dev(div5, "id", "detail-page");
     			attr_dev(div5, "class", "h-screen w-full bg-white relative overflow-auto");
-    			add_location(div5, file$5, 112, 0, 2986);
+    			add_location(div5, file$5, 113, 0, 3011);
 
     			dispose = [
     				listen_dev(i0, "click", /*click_handler*/ ctx[11], false, false, false),
@@ -36716,14 +36715,6 @@
     		},
     		i: function intro(local) {
     			if (current) return;
-
-    			if (!i0_intro) {
-    				add_render_callback(() => {
-    					i0_intro = create_in_transition(i0, fly, { x: -24, duration: 80, delay: 100 });
-    					i0_intro.start();
-    				});
-    			}
-
     			transition_in(if_block);
 
     			if (!button_intro) {
@@ -36742,7 +36733,7 @@
 
     			if (!span_intro) {
     				add_render_callback(() => {
-    					span_intro = create_in_transition(span, fly, { y: 48, duration: 140, delay: 120 });
+    					span_intro = create_in_transition(span, fly, { y: 48, duration: 180, delay: 180 });
     					span_intro.start();
     				});
     			}
@@ -36750,7 +36741,7 @@
     			transition_in(info.block);
 
     			add_render_callback(() => {
-    				if (!div5_transition) div5_transition = create_bidirectional_transition(div5, fly, { y: window.innerHeight, duration: 80 }, true);
+    				if (!div5_transition) div5_transition = create_bidirectional_transition(div5, fade, { duration: 80 }, true);
     				div5_transition.run(1);
     			});
 
@@ -36762,7 +36753,7 @@
     				transition_out(block);
     			}
 
-    			if (!div5_transition) div5_transition = create_bidirectional_transition(div5, fly, { y: window.innerHeight, duration: 80 }, false);
+    			if (!div5_transition) div5_transition = create_bidirectional_transition(div5, fade, { duration: 80 }, false);
     			div5_transition.run(0);
     			current = false;
     		},
@@ -36789,9 +36780,10 @@
     }
 
     function showEditDetail(data) {
-    	overlay.set("entry");
+    	view.set("");
     	handleRouting("entry");
     	entryData.set(data);
+    	overlay.set("entry");
     }
 
     function instance$5($$self, $$props, $$invalidate) {
@@ -36872,7 +36864,12 @@
     		return buckets;
     	}
 
-    	const click_handler = () => window.history.back();
+    	const click_handler = () => {
+    		handleRouting("dashboard");
+    		view.set("dashboard");
+    		overlay.set("");
+    	};
+
     	const click_handler_1 = () => $$invalidate(5, sortByDate = !sortByDate);
     	const click_handler_2 = data => showEditDetail(data);
 
@@ -37159,25 +37156,25 @@
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[23] = list[i];
+    	child_ctx[26] = list[i];
     	return child_ctx;
     }
 
-    // (187:8) {#each typeDesigns as typeDesign}
+    // (199:8) {#each typeDesigns as typeDesign}
     function create_each_block$2(ctx) {
     	let current;
 
     	const typebutton = new TypeButton({
     			props: {
-    				label: /*typeDesign*/ ctx[23].type,
-    				colorHue: /*typeDesign*/ ctx[23].hue,
-    				isActive: /*type*/ ctx[3] === /*typeDesign*/ ctx[23].type,
-    				materialIcon: /*typeDesign*/ ctx[23].materialIcon
+    				label: /*typeDesign*/ ctx[26].type,
+    				colorHue: /*typeDesign*/ ctx[26].hue,
+    				isActive: /*type*/ ctx[4] === /*typeDesign*/ ctx[26].type,
+    				materialIcon: /*typeDesign*/ ctx[26].materialIcon
     			},
     			$$inline: true
     		});
 
-    	typebutton.$on("dispatchType", /*receiveType*/ ctx[9]);
+    	typebutton.$on("dispatchType", /*receiveType*/ ctx[11]);
 
     	const block = {
     		c: function create() {
@@ -37189,7 +37186,7 @@
     		},
     		p: function update(ctx, dirty) {
     			const typebutton_changes = {};
-    			if (dirty & /*type*/ 8) typebutton_changes.isActive = /*type*/ ctx[3] === /*typeDesign*/ ctx[23].type;
+    			if (dirty & /*type*/ 16) typebutton_changes.isActive = /*type*/ ctx[4] === /*typeDesign*/ ctx[26].type;
     			typebutton.$set(typebutton_changes);
     		},
     		i: function intro(local) {
@@ -37210,7 +37207,7 @@
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(187:8) {#each typeDesigns as typeDesign}",
+    		source: "(199:8) {#each typeDesigns as typeDesign}",
     		ctx
     	});
 
@@ -37218,52 +37215,55 @@
     }
 
     function create_fragment$7(ctx) {
-    	let div9;
-    	let div8;
+    	let div10;
     	let div0;
-    	let label0;
+    	let i;
+    	let div0_class_value;
     	let t1;
+    	let div9;
+    	let div1;
+    	let label0;
+    	let t3;
     	let input0;
     	let input0_updating = false;
-    	let t2;
-    	let div2;
-    	let label1;
     	let t4;
-    	let div1;
-    	let button0;
-    	let t6;
-    	let button1;
-    	let t8;
     	let div3;
-    	let span;
+    	let label1;
+    	let t6;
+    	let div2;
+    	let button0;
+    	let t8;
+    	let button1;
     	let t10;
-    	let input1;
-    	let t11;
     	let div4;
-    	let label2;
+    	let span;
+    	let t12;
+    	let input1;
     	let t13;
-    	let input2;
-    	let t14;
-    	let div6;
-    	let label3;
-    	let t16;
     	let div5;
-    	let t17;
+    	let label2;
+    	let t15;
+    	let input2;
+    	let t16;
     	let div7;
-    	let button2;
-    	let t18_value = (/*isUpdate*/ ctx[7] ? "Update" : "Submit") + "";
+    	let label3;
     	let t18;
-    	let button2_style_value;
+    	let div6;
     	let t19;
+    	let div8;
+    	let button2;
+    	let t20_value = (/*isUpdate*/ ctx[8] ? "Update" : "Submit") + "";
+    	let t20;
+    	let button2_style_value;
+    	let t21;
     	let button3;
-    	let div8_transition;
-    	let div9_transition;
+    	let div10_transition;
     	let current;
     	let dispose;
 
     	function input0_input_handler() {
     		input0_updating = true;
-    		/*input0_input_handler*/ ctx[14].call(input0);
+    		/*input0_input_handler*/ ctx[17].call(input0);
     	}
 
     	let each_value = typeDesigns;
@@ -37279,198 +37279,215 @@
 
     	const block = {
     		c: function create() {
-    			div9 = element("div");
-    			div8 = element("div");
+    			div10 = element("div");
     			div0 = element("div");
+    			i = element("i");
+    			i.textContent = "arrow_back";
+    			t1 = space();
+    			div9 = element("div");
+    			div1 = element("div");
     			label0 = element("label");
     			label0.textContent = "Amount";
-    			t1 = space();
+    			t3 = space();
     			input0 = element("input");
-    			t2 = space();
-    			div2 = element("div");
+    			t4 = space();
+    			div3 = element("div");
     			label1 = element("label");
     			label1.textContent = "Date";
-    			t4 = space();
-    			div1 = element("div");
+    			t6 = space();
+    			div2 = element("div");
     			button0 = element("button");
     			button0.textContent = "Today";
-    			t6 = space();
+    			t8 = space();
     			button1 = element("button");
     			button1.textContent = "Yesterday";
-    			t8 = space();
-    			div3 = element("div");
+    			t10 = space();
+    			div4 = element("div");
     			span = element("span");
     			span.textContent = "Other date";
-    			t10 = space();
+    			t12 = space();
     			input1 = element("input");
-    			t11 = space();
-    			div4 = element("div");
+    			t13 = space();
+    			div5 = element("div");
     			label2 = element("label");
     			label2.textContent = "Description";
-    			t13 = space();
+    			t15 = space();
     			input2 = element("input");
-    			t14 = space();
-    			div6 = element("div");
+    			t16 = space();
+    			div7 = element("div");
     			label3 = element("label");
     			label3.textContent = "Type";
-    			t16 = space();
-    			div5 = element("div");
+    			t18 = space();
+    			div6 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t17 = space();
-    			div7 = element("div");
-    			button2 = element("button");
-    			t18 = text(t18_value);
     			t19 = space();
+    			div8 = element("div");
+    			button2 = element("button");
+    			t20 = text(t20_value);
+    			t21 = space();
     			button3 = element("button");
     			button3.textContent = "Cancel";
+    			attr_dev(i, "class", "material-icons fill-current");
+    			set_style(i, "color", "hsl(var(--primary-hue), 50%, 50%)");
+    			add_location(i, file$7, 139, 4, 5111);
+    			attr_dev(div0, "class", div0_class_value = "w-full flex flex-row p-4 bg-white " + (/*scrolling*/ ctx[0] ? "shadow" : "") + " fixed\r\n    top-0 justify-between z-20");
+    			set_style(div0, "height", "56px");
+    			add_location(div0, file$7, 135, 2, 4961);
     			attr_dev(label0, "for", "amount-input");
     			attr_dev(label0, "class", "svelte-1wqb46g");
-    			add_location(label0, file$7, 141, 6, 5283);
+    			add_location(label0, file$7, 153, 6, 5559);
     			attr_dev(input0, "id", "amount-input");
     			attr_dev(input0, "class", "amount text-2xl svelte-1wqb46g");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$7, 142, 6, 5331);
-    			attr_dev(div0, "class", "input-row svelte-1wqb46g");
-    			add_location(div0, file$7, 140, 4, 5252);
+    			add_location(input0, file$7, 154, 6, 5607);
+    			attr_dev(div1, "class", "input-row svelte-1wqb46g");
+    			add_location(div1, file$7, 152, 4, 5528);
     			attr_dev(label1, "for", "date-input");
     			attr_dev(label1, "class", "svelte-1wqb46g");
-    			add_location(label1, file$7, 151, 6, 5591);
+    			add_location(label1, file$7, 163, 6, 5867);
     			attr_dev(button0, "id", "today-button");
     			attr_dev(button0, "class", "date-button active svelte-1wqb46g");
-    			add_location(button0, file$7, 153, 8, 5663);
+    			add_location(button0, file$7, 165, 8, 5939);
     			attr_dev(button1, "id", "yesterday-button");
     			attr_dev(button1, "class", "date-button svelte-1wqb46g");
-    			add_location(button1, file$7, 159, 8, 5829);
-    			attr_dev(div1, "class", "mr-4");
-    			add_location(div1, file$7, 152, 6, 5635);
-    			attr_dev(div2, "class", "input-row svelte-1wqb46g");
-    			add_location(div2, file$7, 150, 4, 5560);
-    			add_location(span, file$7, 170, 6, 6139);
+    			add_location(button1, file$7, 171, 8, 6105);
+    			attr_dev(div2, "class", "mr-4");
+    			add_location(div2, file$7, 164, 6, 5911);
+    			attr_dev(div3, "class", "input-row svelte-1wqb46g");
+    			add_location(div3, file$7, 162, 4, 5836);
+    			add_location(span, file$7, 182, 6, 6415);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "svelte-1wqb46g");
-    			add_location(input1, file$7, 171, 6, 6170);
-    			attr_dev(div3, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n      text-gray-600 ml-4");
-    			add_location(div3, file$7, 167, 4, 6022);
+    			add_location(input1, file$7, 183, 6, 6446);
+    			attr_dev(div4, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n      text-gray-600 ml-4");
+    			add_location(div4, file$7, 179, 4, 6298);
     			attr_dev(label2, "for", "description-input");
     			attr_dev(label2, "class", "svelte-1wqb46g");
-    			add_location(label2, file$7, 174, 6, 6274);
+    			add_location(label2, file$7, 186, 6, 6550);
     			attr_dev(input2, "class", "truncate text-2xl svelte-1wqb46g");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "(Optional)");
-    			add_location(input2, file$7, 175, 6, 6332);
-    			attr_dev(div4, "class", "input-row svelte-1wqb46g");
-    			add_location(div4, file$7, 173, 4, 6243);
+    			add_location(input2, file$7, 187, 6, 6608);
+    			attr_dev(div5, "class", "input-row svelte-1wqb46g");
+    			add_location(div5, file$7, 185, 4, 6519);
     			attr_dev(label3, "class", "svelte-1wqb46g");
-    			add_location(label3, file$7, 184, 6, 6628);
-    			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div5, file$7, 185, 6, 6655);
-    			attr_dev(div6, "class", "mt-8 flex flex-col");
-    			add_location(div6, file$7, 183, 4, 6588);
+    			add_location(label3, file$7, 196, 6, 6904);
+    			attr_dev(div6, "class", "w-full flex flex-row flex-wrap justify-start");
+    			add_location(div6, file$7, 197, 6, 6931);
+    			attr_dev(div7, "class", "mt-8 flex flex-col");
+    			add_location(div7, file$7, 195, 4, 6864);
     			attr_dev(button2, "class", "rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-12\r\n        mb-8 bg-gray-300");
 
-    			attr_dev(button2, "style", button2_style_value = /*typeValid*/ ctx[6] && /*dateValid*/ ctx[5] && /*amountValid*/ ctx[4]
+    			attr_dev(button2, "style", button2_style_value = /*typeValid*/ ctx[7] && /*dateValid*/ ctx[6] && /*amountValid*/ ctx[5]
     			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
     			: "");
 
-    			add_location(button2, file$7, 197, 6, 7097);
-    			attr_dev(div7, "class", "w-full text-center block");
-    			add_location(div7, file$7, 196, 4, 7051);
+    			add_location(button2, file$7, 209, 6, 7373);
+    			attr_dev(div8, "class", "w-full text-center block");
+    			add_location(div8, file$7, 208, 4, 7327);
     			attr_dev(button3, "class", "w-full text-center mb-8 bg-transparent");
     			set_style(button3, "color", "hsl(var(--secondary-hue), 50%, 50%)");
-    			add_location(button3, file$7, 205, 4, 7442);
-    			attr_dev(div8, "class", "flex flex-col items-start justify-around bg-white mt-32");
-    			set_style(div8, "border-top-left-radius", "1rem");
-    			set_style(div8, "border-top-right-radius", "1rem");
-    			add_location(div8, file$7, 136, 2, 5051);
-    			attr_dev(div9, "id", "entry-wrapper");
-    			attr_dev(div9, "class", "absolute top-0 w-full h-screen z-10 overflow-x-hidden svelte-1wqb46g");
-    			set_style(div9, "background-color", "rgba(0,0,0,0.2)");
-    			add_location(div9, file$7, 131, 0, 4871);
+    			add_location(button3, file$7, 217, 4, 7718);
+    			attr_dev(div9, "class", "flex flex-col items-start justify-around bg-white mt-8");
+    			set_style(div9, "border-top-left-radius", "1rem");
+    			set_style(div9, "border-top-right-radius", "1rem");
+    			add_location(div9, file$7, 149, 2, 5376);
+    			attr_dev(div10, "id", "entry-page");
+    			attr_dev(div10, "class", "h-screen w-full bg-white relative overflow-auto");
+    			add_location(div10, file$7, 131, 0, 4836);
 
     			dispose = [
+    				listen_dev(i, "click", /*click_handler*/ ctx[16], false, false, false),
     				listen_dev(input0, "input", input0_input_handler),
-    				listen_dev(input0, "click", /*click_handler*/ ctx[15], false, false, false),
-    				listen_dev(button0, "click", /*click_handler_1*/ ctx[16], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_2*/ ctx[17], false, false, false),
-    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[18]),
-    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[19]),
-    				listen_dev(input2, "click", /*click_handler_3*/ ctx[20], false, false, false),
-    				listen_dev(button2, "click", /*click_handler_4*/ ctx[21], false, false, false),
-    				listen_dev(button3, "click", /*click_handler_5*/ ctx[22], false, false, false)
+    				listen_dev(input0, "click", /*click_handler_1*/ ctx[18], false, false, false),
+    				listen_dev(button0, "click", /*click_handler_2*/ ctx[19], false, false, false),
+    				listen_dev(button1, "click", /*click_handler_3*/ ctx[20], false, false, false),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[21]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[22]),
+    				listen_dev(input2, "click", /*click_handler_4*/ ctx[23], false, false, false),
+    				listen_dev(button2, "click", /*click_handler_5*/ ctx[24], false, false, false),
+    				listen_dev(button3, "click", /*click_handler_6*/ ctx[25], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div9, anchor);
-    			append_dev(div9, div8);
-    			append_dev(div8, div0);
-    			append_dev(div0, label0);
-    			append_dev(div0, t1);
-    			append_dev(div0, input0);
-    			set_input_value(input0, /*amount*/ ctx[1]);
-    			append_dev(div8, t2);
-    			append_dev(div8, div2);
-    			append_dev(div2, label1);
-    			append_dev(div2, t4);
-    			append_dev(div2, div1);
-    			append_dev(div1, button0);
-    			append_dev(div1, t6);
-    			append_dev(div1, button1);
-    			append_dev(div8, t8);
-    			append_dev(div8, div3);
-    			append_dev(div3, span);
-    			append_dev(div3, t10);
-    			append_dev(div3, input1);
-    			set_input_value(input1, /*date*/ ctx[2]);
-    			append_dev(div8, t11);
-    			append_dev(div8, div4);
-    			append_dev(div4, label2);
-    			append_dev(div4, t13);
-    			append_dev(div4, input2);
-    			set_input_value(input2, /*description*/ ctx[0]);
-    			append_dev(div8, t14);
-    			append_dev(div8, div6);
-    			append_dev(div6, label3);
-    			append_dev(div6, t16);
-    			append_dev(div6, div5);
+    			insert_dev(target, div10, anchor);
+    			append_dev(div10, div0);
+    			append_dev(div0, i);
+    			append_dev(div10, t1);
+    			append_dev(div10, div9);
+    			append_dev(div9, div1);
+    			append_dev(div1, label0);
+    			append_dev(div1, t3);
+    			append_dev(div1, input0);
+    			set_input_value(input0, /*amount*/ ctx[2]);
+    			append_dev(div9, t4);
+    			append_dev(div9, div3);
+    			append_dev(div3, label1);
+    			append_dev(div3, t6);
+    			append_dev(div3, div2);
+    			append_dev(div2, button0);
+    			append_dev(div2, t8);
+    			append_dev(div2, button1);
+    			append_dev(div9, t10);
+    			append_dev(div9, div4);
+    			append_dev(div4, span);
+    			append_dev(div4, t12);
+    			append_dev(div4, input1);
+    			set_input_value(input1, /*date*/ ctx[3]);
+    			append_dev(div9, t13);
+    			append_dev(div9, div5);
+    			append_dev(div5, label2);
+    			append_dev(div5, t15);
+    			append_dev(div5, input2);
+    			set_input_value(input2, /*description*/ ctx[1]);
+    			append_dev(div9, t16);
+    			append_dev(div9, div7);
+    			append_dev(div7, label3);
+    			append_dev(div7, t18);
+    			append_dev(div7, div6);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div5, null);
+    				each_blocks[i].m(div6, null);
     			}
 
-    			append_dev(div8, t17);
-    			append_dev(div8, div7);
-    			append_dev(div7, button2);
-    			append_dev(button2, t18);
-    			append_dev(div8, t19);
-    			append_dev(div8, button3);
+    			append_dev(div9, t19);
+    			append_dev(div9, div8);
+    			append_dev(div8, button2);
+    			append_dev(button2, t20);
+    			append_dev(div9, t21);
+    			append_dev(div9, button3);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!input0_updating && dirty & /*amount*/ 2) {
-    				set_input_value(input0, /*amount*/ ctx[1]);
+    			if (!current || dirty & /*scrolling*/ 1 && div0_class_value !== (div0_class_value = "w-full flex flex-row p-4 bg-white " + (/*scrolling*/ ctx[0] ? "shadow" : "") + " fixed\r\n    top-0 justify-between z-20")) {
+    				attr_dev(div0, "class", div0_class_value);
+    			}
+
+    			if (!input0_updating && dirty & /*amount*/ 4) {
+    				set_input_value(input0, /*amount*/ ctx[2]);
     			}
 
     			input0_updating = false;
 
-    			if (dirty & /*date*/ 4) {
-    				set_input_value(input1, /*date*/ ctx[2]);
+    			if (dirty & /*date*/ 8) {
+    				set_input_value(input1, /*date*/ ctx[3]);
     			}
 
-    			if (dirty & /*description*/ 1 && input2.value !== /*description*/ ctx[0]) {
-    				set_input_value(input2, /*description*/ ctx[0]);
+    			if (dirty & /*description*/ 2 && input2.value !== /*description*/ ctx[1]) {
+    				set_input_value(input2, /*description*/ ctx[1]);
     			}
 
-    			if (dirty & /*typeDesigns, type, receiveType*/ 520) {
+    			if (dirty & /*typeDesigns, type, receiveType*/ 2064) {
     				each_value = typeDesigns;
     				let i;
 
@@ -37484,7 +37501,7 @@
     						each_blocks[i] = create_each_block$2(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(div5, null);
+    						each_blocks[i].m(div6, null);
     					}
     				}
 
@@ -37497,9 +37514,9 @@
     				check_outros();
     			}
 
-    			if ((!current || dirty & /*isUpdate*/ 128) && t18_value !== (t18_value = (/*isUpdate*/ ctx[7] ? "Update" : "Submit") + "")) set_data_dev(t18, t18_value);
+    			if ((!current || dirty & /*isUpdate*/ 256) && t20_value !== (t20_value = (/*isUpdate*/ ctx[8] ? "Update" : "Submit") + "")) set_data_dev(t20, t20_value);
 
-    			if (!current || dirty & /*typeValid, dateValid, amountValid*/ 112 && button2_style_value !== (button2_style_value = /*typeValid*/ ctx[6] && /*dateValid*/ ctx[5] && /*amountValid*/ ctx[4]
+    			if (!current || dirty & /*typeValid, dateValid, amountValid*/ 224 && button2_style_value !== (button2_style_value = /*typeValid*/ ctx[7] && /*dateValid*/ ctx[6] && /*amountValid*/ ctx[5]
     			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
     			: "")) {
     				attr_dev(button2, "style", button2_style_value);
@@ -37513,13 +37530,8 @@
     			}
 
     			add_render_callback(() => {
-    				if (!div8_transition) div8_transition = create_bidirectional_transition(div8, fly, { y: 300, duration: 250 }, true);
-    				div8_transition.run(1);
-    			});
-
-    			add_render_callback(() => {
-    				if (!div9_transition) div9_transition = create_bidirectional_transition(div9, fade, { duration: 180 }, true);
-    				div9_transition.run(1);
+    				if (!div10_transition) div10_transition = create_bidirectional_transition(div10, fade, { duration: 80 }, true);
+    				div10_transition.run(1);
     			});
 
     			current = true;
@@ -37531,17 +37543,14 @@
     				transition_out(each_blocks[i]);
     			}
 
-    			if (!div8_transition) div8_transition = create_bidirectional_transition(div8, fly, { y: 300, duration: 250 }, false);
-    			div8_transition.run(0);
-    			if (!div9_transition) div9_transition = create_bidirectional_transition(div9, fade, { duration: 180 }, false);
-    			div9_transition.run(0);
+    			if (!div10_transition) div10_transition = create_bidirectional_transition(div10, fade, { duration: 80 }, false);
+    			div10_transition.run(0);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div9);
+    			if (detaching) detach_dev(div10);
     			destroy_each(each_blocks, detaching);
-    			if (detaching && div8_transition) div8_transition.end();
-    			if (detaching && div9_transition) div9_transition.end();
+    			if (detaching && div10_transition) div10_transition.end();
     			run_all(dispose);
     		}
     	};
@@ -37560,10 +37569,14 @@
     function instance$7($$self, $$props, $$invalidate) {
     	let $entryData;
     	let $userInfo;
+    	let $detailData;
     	validate_store(entryData, "entryData");
-    	component_subscribe($$self, entryData, $$value => $$invalidate(12, $entryData = $$value));
+    	component_subscribe($$self, entryData, $$value => $$invalidate(14, $entryData = $$value));
     	validate_store(userInfo, "userInfo");
-    	component_subscribe($$self, userInfo, $$value => $$invalidate(13, $userInfo = $$value));
+    	component_subscribe($$self, userInfo, $$value => $$invalidate(15, $userInfo = $$value));
+    	validate_store(detailData, "detailData");
+    	component_subscribe($$self, detailData, $$value => $$invalidate(9, $detailData = $$value));
+    	let scrolling = false;
     	let description = "";
     	let amount = 0;
     	let date = new Date().toISOString().substring(0, 10);
@@ -37576,23 +37589,22 @@
 
     	onMount(() => {
     		if (Object.keys($entryData).length > 0) {
-    			$$invalidate(7, isUpdate = true);
-    			$$invalidate(0, description = $entryData.desc);
-    			$$invalidate(1, amount = $entryData.amount);
-    			$$invalidate(2, date = $entryData.date);
-    			$$invalidate(3, type = $entryData.type);
+    			$$invalidate(8, isUpdate = true);
+    			$$invalidate(1, description = $entryData.desc);
+    			$$invalidate(2, amount = $entryData.amount);
+    			$$invalidate(3, date = $entryData.date);
+    			$$invalidate(4, type = $entryData.type);
     			document.getElementById("today-button").classList.remove("active");
     			document.getElementById("yesterday-button").classList.remove("active");
     		}
 
-    		wrapperEl = document.getElementById("entry-wrapper");
-    		wrapperEl.scrollTop = 120;
+    		wrapperEl = document.getElementById("entry-page");
 
-    		wrapperEl.onscroll = () => {
-    			if (wrapperEl.scrollTop === 0) {
-    				window.history.back();
-    			}
-    		};
+    		wrapperEl.addEventListener("scroll", ev => {
+    			ev.target.scrollTop > 0
+    			? $$invalidate(0, scrolling = true)
+    			: $$invalidate(0, scrolling = false);
+    		});
 
     		document.getElementById("date-input").oninput = () => {
     			document.getElementById("today-button").classList.remove("active");
@@ -37609,18 +37621,18 @@
 
     	function setDate(dateToSet) {
     		if (dateToSet === "today") {
-    			$$invalidate(2, date = new Date().toISOString().substring(0, 10));
+    			$$invalidate(3, date = new Date().toISOString().substring(0, 10));
     			document.getElementById("today-button").classList.add("active");
     			document.getElementById("yesterday-button").classList.remove("active");
     		} else if (dateToSet === "yesterday") {
-    			$$invalidate(2, date = new Date(Date.now() - 86400000).toISOString().substring(0, 10));
+    			$$invalidate(3, date = new Date(Date.now() - 86400000).toISOString().substring(0, 10));
     			document.getElementById("yesterday-button").classList.add("active");
     			document.getElementById("today-button").classList.remove("active");
     		}
     	}
 
     	function receiveType(e) {
-    		$$invalidate(3, type = e.detail.selectedType);
+    		$$invalidate(4, type = e.detail.selectedType);
     	}
 
     	function sendEntry() {
@@ -37650,74 +37662,86 @@
     		});
     	}
 
+    	const click_handler = () => {
+    		handleRouting("detail#" + $detailData.type);
+    		overlay.set("detail");
+    	};
+
     	function input0_input_handler() {
     		amount = to_number(this.value);
-    		$$invalidate(1, amount);
+    		$$invalidate(2, amount);
     	}
 
-    	const click_handler = () => document.execCommand("selectall", null, false);
-    	const click_handler_1 = () => setDate("today");
-    	const click_handler_2 = () => setDate("yesterday");
+    	const click_handler_1 = () => document.execCommand("selectall", null, false);
+    	const click_handler_2 = () => setDate("today");
+    	const click_handler_3 = () => setDate("yesterday");
 
     	function input1_input_handler() {
     		date = this.value;
-    		$$invalidate(2, date);
+    		$$invalidate(3, date);
     	}
 
     	function input2_input_handler() {
     		description = this.value;
-    		$$invalidate(0, description);
+    		$$invalidate(1, description);
     	}
 
-    	const click_handler_3 = () => document.execCommand("selectall", null, false);
-    	const click_handler_4 = () => sendEntry();
-    	const click_handler_5 = () => window.history.back();
+    	const click_handler_4 = () => document.execCommand("selectall", null, false);
+    	const click_handler_5 = () => sendEntry();
+
+    	const click_handler_6 = () => {
+    		handleRouting("detail#" + $detailData.type);
+    		overlay.set("detail");
+    	};
 
     	$$self.$capture_state = () => {
     		return {};
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("description" in $$props) $$invalidate(0, description = $$props.description);
-    		if ("amount" in $$props) $$invalidate(1, amount = $$props.amount);
-    		if ("date" in $$props) $$invalidate(2, date = $$props.date);
-    		if ("type" in $$props) $$invalidate(3, type = $$props.type);
-    		if ("amountValid" in $$props) $$invalidate(4, amountValid = $$props.amountValid);
-    		if ("dateValid" in $$props) $$invalidate(5, dateValid = $$props.dateValid);
-    		if ("typeValid" in $$props) $$invalidate(6, typeValid = $$props.typeValid);
-    		if ("isUpdate" in $$props) $$invalidate(7, isUpdate = $$props.isUpdate);
+    		if ("scrolling" in $$props) $$invalidate(0, scrolling = $$props.scrolling);
+    		if ("description" in $$props) $$invalidate(1, description = $$props.description);
+    		if ("amount" in $$props) $$invalidate(2, amount = $$props.amount);
+    		if ("date" in $$props) $$invalidate(3, date = $$props.date);
+    		if ("type" in $$props) $$invalidate(4, type = $$props.type);
+    		if ("amountValid" in $$props) $$invalidate(5, amountValid = $$props.amountValid);
+    		if ("dateValid" in $$props) $$invalidate(6, dateValid = $$props.dateValid);
+    		if ("typeValid" in $$props) $$invalidate(7, typeValid = $$props.typeValid);
+    		if ("isUpdate" in $$props) $$invalidate(8, isUpdate = $$props.isUpdate);
     		if ("wrapperEl" in $$props) wrapperEl = $$props.wrapperEl;
     		if ("$entryData" in $$props) entryData.set($entryData = $$props.$entryData);
     		if ("$userInfo" in $$props) userInfo.set($userInfo = $$props.$userInfo);
+    		if ("$detailData" in $$props) detailData.set($detailData = $$props.$detailData);
     	};
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*amount*/ 2) {
+    		if ($$self.$$.dirty & /*amount*/ 4) {
     			$: if (amount <= 0 || amount === undefined) {
-    				$$invalidate(4, amountValid = false);
+    				$$invalidate(5, amountValid = false);
     			} else {
-    				$$invalidate(4, amountValid = true);
+    				$$invalidate(5, amountValid = true);
     			}
     		}
 
-    		if ($$self.$$.dirty & /*date*/ 4) {
+    		if ($$self.$$.dirty & /*date*/ 8) {
     			$: if (date !== "") {
-    				$$invalidate(5, dateValid = true);
+    				$$invalidate(6, dateValid = true);
     			} else {
-    				$$invalidate(5, dateValid = false);
+    				$$invalidate(6, dateValid = false);
     			}
     		}
 
-    		if ($$self.$$.dirty & /*type*/ 8) {
+    		if ($$self.$$.dirty & /*type*/ 16) {
     			$: if (type !== "") {
-    				$$invalidate(6, typeValid = true);
+    				$$invalidate(7, typeValid = true);
     			} else {
-    				$$invalidate(6, typeValid = false);
+    				$$invalidate(7, typeValid = false);
     			}
     		}
     	};
 
     	return [
+    		scrolling,
     		description,
     		amount,
     		date,
@@ -37726,21 +37750,23 @@
     		dateValid,
     		typeValid,
     		isUpdate,
+    		$detailData,
     		setDate,
     		receiveType,
     		sendEntry,
     		wrapperEl,
     		$entryData,
     		$userInfo,
-    		input0_input_handler,
     		click_handler,
+    		input0_input_handler,
     		click_handler_1,
     		click_handler_2,
+    		click_handler_3,
     		input1_input_handler,
     		input2_input_handler,
-    		click_handler_3,
     		click_handler_4,
-    		click_handler_5
+    		click_handler_5,
+    		click_handler_6
     	];
     }
 
@@ -37761,7 +37787,7 @@
     /* src\App.svelte generated by Svelte v3.16.7 */
     const file$8 = "src\\App.svelte";
 
-    // (91:43) 
+    // (96:43) 
     function create_if_block_4(ctx) {
     	let current;
     	const dashboard = new Dashboard({ $$inline: true });
@@ -37792,14 +37818,14 @@
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(91:43) ",
+    		source: "(96:43) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (89:4) {#if $view === 'settings'}
+    // (94:4) {#if $view === 'settings'}
     function create_if_block_3(ctx) {
     	let current;
     	const settings = new Settings({ $$inline: true });
@@ -37830,14 +37856,14 @@
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(89:4) {#if $view === 'settings'}",
+    		source: "(94:4) {#if $view === 'settings'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (88:2) <Scaffold>
+    // (93:2) <Scaffold>
     function create_default_slot(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -37921,14 +37947,14 @@
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(88:2) <Scaffold>",
+    		source: "(93:2) <Scaffold>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:2) {#if $overlay === 'detail'}
+    // (100:2) {#if $overlay === 'detail'}
     function create_if_block_2$1(ctx) {
     	let current;
     	const detailpage = new DetailPage({ $$inline: true });
@@ -37959,14 +37985,14 @@
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(95:2) {#if $overlay === 'detail'}",
+    		source: "(100:2) {#if $overlay === 'detail'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (98:2) {#if signInError}
+    // (103:2) {#if signInError}
     function create_if_block_1$1(ctx) {
     	let current;
 
@@ -38002,14 +38028,14 @@
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(98:2) {#if signInError}",
+    		source: "(103:2) {#if signInError}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (101:2) {#if $overlay === 'entry'}
+    // (106:2) {#if $overlay === 'entry'}
     function create_if_block$4(ctx) {
     	let div;
     	let current;
@@ -38019,7 +38045,7 @@
     		c: function create() {
     			div = element("div");
     			create_component(entry.$$.fragment);
-    			add_location(div, file$8, 101, 4, 2983);
+    			add_location(div, file$8, 106, 4, 3148);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -38045,7 +38071,7 @@
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(101:2) {#if $overlay === 'entry'}",
+    		source: "(106:2) {#if $overlay === 'entry'}",
     		ctx
     	});
 
@@ -38082,7 +38108,7 @@
     			t2 = space();
     			if (if_block2) if_block2.c();
     			attr_dev(main, "class", "overflow-hidden");
-    			add_location(main, file$8, 86, 0, 2635);
+    			add_location(main, file$8, 91, 0, 2800);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -38101,7 +38127,7 @@
     		p: function update(ctx, [dirty]) {
     			const scaffold_changes = {};
 
-    			if (dirty & /*$$scope, $view, app*/ 35) {
+    			if (dirty & /*$$scope, $view, app*/ 67) {
     				scaffold_changes.$$scope = { dirty, ctx };
     			}
 
@@ -38183,8 +38209,11 @@
     }
 
     function instance$8($$self, $$props, $$invalidate) {
+    	let $detailData;
     	let $view;
     	let $overlay;
+    	validate_store(detailData, "detailData");
+    	component_subscribe($$self, detailData, $$value => $$invalidate(5, $detailData = $$value));
     	validate_store(view, "view");
     	component_subscribe($$self, view, $$value => $$invalidate(1, $view = $$value));
     	validate_store(overlay, "overlay");
@@ -38223,8 +38252,13 @@
     			view.set(page);
     			overlay.set("");
     		} else if (page === "detail") {
-    			view.set("dashboard");
-    			overlay.set("");
+    			if (Object.keys($detailData).length > 0) {
+    				handleRouting("detail#" + $detailData.type);
+    				overlay.set("detail");
+    			} else {
+    				view.set("dashboard");
+    				overlay.set("");
+    			}
     		} else if (page === "entry") {
     			view.set("dashboard");
     			overlay.set("entry");
@@ -38261,6 +38295,7 @@
     		if ("signInError" in $$props) $$invalidate(3, signInError = $$props.signInError);
     		if ("errorMsg" in $$props) $$invalidate(4, errorMsg = $$props.errorMsg);
     		if ("app" in $$props) $$invalidate(0, app = $$props.app);
+    		if ("$detailData" in $$props) detailData.set($detailData = $$props.$detailData);
     		if ("$view" in $$props) view.set($view = $$props.$view);
     		if ("$overlay" in $$props) overlay.set($overlay = $$props.$overlay);
     	};
