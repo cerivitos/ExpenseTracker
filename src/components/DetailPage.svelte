@@ -5,6 +5,7 @@
   import { detailData, overlay, entryData, view } from "../store/store";
   import { quintOut } from "svelte/easing";
   import { flip } from "svelte/animate";
+  import DetailListTile from "./DetailListTile.svelte";
 
   let getBucketsPromise = createBuckets();
   let materialIcon, backgroundColor, iconColor;
@@ -186,9 +187,7 @@
             {bucket.year}
           </span>
         {/if}
-        <div
-          class="flex flex-col justify-center items-center"
-          in:fly={{ y: 180, duration: 120, delay: 280 }}>
+        <div class="flex flex-col justify-center items-center">
           <div class="wrap w-full relative text-center mt-4 mb-2">
             <span class="relative text-gray-600 font-bold bg-white px-4">
               {new Date(2019, bucket.month - 1, 1)
@@ -196,7 +195,7 @@
                 .substring(4, 7)}
             </span>
           </div>
-          {#each sortedData as data (data.id)}
+          {#each sortedData as data, index (data.id)}
             <div
               in:receive={{ key: data.id }}
               out:send={{ key: data.id }}
@@ -204,32 +203,7 @@
               class="w-full bg-white"
               on:click={() => showEditDetail(data)}>
               {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
-                <div class="flex flex-row p-4 items-center">
-                  <div
-                    class="w-10 rounded-lg flex flex-col items-center
-                    justify-between py-1 mr-4"
-                    style="background-color:{backgroundColor}; color:{iconColor}">
-                    <span class="font-bold text-xs">
-                      {new Date(2019, bucket.month - 1, 1)
-                        .toDateString()
-                        .substring(4, 7)}
-                    </span>
-                    <span class="font-bold">
-                      {new Date(data.date).getDate()}
-                    </span>
-                  </div>
-                  <div
-                    class="flex flex-col flex-grow items-start justify-around
-                    truncate mr-4">
-                    <span class="font-bold w-full truncate">
-                      {data.addedBy}
-                    </span>
-                    <span class="text-gray-600 w-full truncate">
-                      {data.desc}
-                    </span>
-                  </div>
-                  <span>${data.amount.toFixed(2)}</span>
-                </div>
+                <DetailListTile {backgroundColor} {iconColor} {data} {index} />
               {/if}
             </div>
           {/each}
