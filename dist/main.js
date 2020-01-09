@@ -551,111 +551,6 @@
             }
         };
     }
-    function create_bidirectional_transition(node, fn, params, intro) {
-        let config = fn(node, params);
-        let t = intro ? 0 : 1;
-        let running_program = null;
-        let pending_program = null;
-        let animation_name = null;
-        function clear_animation() {
-            if (animation_name)
-                delete_rule(node, animation_name);
-        }
-        function init(program, duration) {
-            const d = program.b - t;
-            duration *= Math.abs(d);
-            return {
-                a: t,
-                b: program.b,
-                d,
-                duration,
-                start: program.start,
-                end: program.start + duration,
-                group: program.group
-            };
-        }
-        function go(b) {
-            const { delay = 0, duration = 300, easing = identity, tick = noop, css } = config || null_transition;
-            const program = {
-                start: now() + delay,
-                b
-            };
-            if (!b) {
-                // @ts-ignore todo: improve typings
-                program.group = outros;
-                outros.r += 1;
-            }
-            if (running_program) {
-                pending_program = program;
-            }
-            else {
-                // if this is an intro, and there's a delay, we need to do
-                // an initial tick and/or apply CSS animation immediately
-                if (css) {
-                    clear_animation();
-                    animation_name = create_rule(node, t, b, duration, delay, easing, css);
-                }
-                if (b)
-                    tick(0, 1);
-                running_program = init(program, duration);
-                add_render_callback(() => dispatch(node, b, 'start'));
-                loop(now => {
-                    if (pending_program && now > pending_program.start) {
-                        running_program = init(pending_program, duration);
-                        pending_program = null;
-                        dispatch(node, running_program.b, 'start');
-                        if (css) {
-                            clear_animation();
-                            animation_name = create_rule(node, t, running_program.b, running_program.duration, 0, easing, config.css);
-                        }
-                    }
-                    if (running_program) {
-                        if (now >= running_program.end) {
-                            tick(t = running_program.b, 1 - t);
-                            dispatch(node, running_program.b, 'end');
-                            if (!pending_program) {
-                                // we're done
-                                if (running_program.b) {
-                                    // intro — we can tidy up immediately
-                                    clear_animation();
-                                }
-                                else {
-                                    // outro — needs to be coordinated
-                                    if (!--running_program.group.r)
-                                        run_all(running_program.group.c);
-                                }
-                            }
-                            running_program = null;
-                        }
-                        else if (now >= running_program.start) {
-                            const p = now - running_program.start;
-                            t = running_program.a + running_program.d * easing(p / running_program.duration);
-                            tick(t, 1 - t);
-                        }
-                    }
-                    return !!(running_program || pending_program);
-                });
-            }
-        }
-        return {
-            run(b) {
-                if (is_function(config)) {
-                    wait().then(() => {
-                        // @ts-ignore
-                        config = config();
-                        go(b);
-                    });
-                }
-                else {
-                    go(b);
-                }
-            },
-            end() {
-                clear_animation();
-                running_program = pending_program = null;
-            }
-        };
-    }
 
     function handle_promise(promise, info) {
         const token = info.token = {};
@@ -27130,7 +27025,7 @@
     			? "active"
     			: "") + " svelte-f0nlgm");
 
-    			add_location(button, file$1, 230, 6, 6905);
+    			add_location(button, file$1, 230, 6, 6932);
     			dispose = listen_dev(button, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -27361,6 +27256,7 @@
     	let div0;
     	let t4;
     	let promise;
+    	let div1_intro;
     	let current;
     	let each_value_1 = ["1M", "6M", "1Y", "All"];
     	let each_blocks = [];
@@ -27401,11 +27297,11 @@
     			info.block.c();
     			attr_dev(span0, "class", "w-full mb-1 text-4xl text-center font-bold");
     			attr_dev(span0, "id", "totalSpend");
-    			add_location(span0, file$1, 221, 2, 6497);
+    			add_location(span0, file$1, 221, 2, 6524);
     			attr_dev(span1, "class", "w-full text-center text-gray-600 font-light mb-8");
-    			add_location(span1, file$1, 224, 2, 6593);
+    			add_location(span1, file$1, 224, 2, 6620);
     			attr_dev(div0, "class", "flex flex-row justify-around overflow-x-hidden mb-8 mx-4");
-    			add_location(div0, file$1, 228, 2, 6776);
+    			add_location(div0, file$1, 228, 2, 6803);
     			attr_dev(div1, "class", "flex flex-col my-8");
     			add_location(div1, file$1, 220, 0, 6461);
     		},
@@ -27465,6 +27361,14 @@
     		i: function intro(local) {
     			if (current) return;
     			transition_in(info.block);
+
+    			if (!div1_intro) {
+    				add_render_callback(() => {
+    					div1_intro = create_in_transition(div1, fade, { duration: 80 });
+    					div1_intro.start();
+    				});
+    			}
+
     			current = true;
     		},
     		o: function outro(local) {
@@ -35564,15 +35468,15 @@
     			if (img.src !== (img_src_value = /*$userInfo*/ ctx[0].photo)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "User photo");
     			attr_dev(img, "class", "rounded-full w-8 h-8 mr-4");
-    			add_location(img, file$4, 104, 6, 3175);
+    			add_location(img, file$4, 104, 6, 3167);
     			attr_dev(span, "class", "text-xl font-bold");
-    			add_location(span, file$4, 108, 6, 3290);
+    			add_location(span, file$4, 108, 6, 3282);
     			attr_dev(button, "class", "bg-gray-200 text-gray-700 rounded-full px-2 py-1");
-    			add_location(button, file$4, 110, 8, 3397);
+    			add_location(button, file$4, 110, 8, 3389);
     			attr_dev(div0, "class", "flex-grow text-right");
-    			add_location(div0, file$4, 109, 6, 3353);
+    			add_location(div0, file$4, 109, 6, 3345);
     			attr_dev(div1, "class", "flex flex-row items-center");
-    			add_location(div1, file$4, 103, 4, 3127);
+    			add_location(div1, file$4, 103, 4, 3119);
     			dispose = listen_dev(button, "click", /*click_handler_1*/ ctx[2], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -35642,37 +35546,37 @@
     			span.textContent = "Sign in with Google";
     			attr_dev(path0, "id", "a");
     			attr_dev(path0, "d", "M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2\r\n            0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1\r\n            29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22\r\n            0-1.3-.2-2.7-.5-4z");
-    			add_location(path0, file$4, 79, 10, 2249);
-    			add_location(defs, file$4, 78, 8, 2231);
+    			add_location(path0, file$4, 79, 10, 2241);
+    			add_location(defs, file$4, 78, 8, 2223);
     			xlink_attr(use, "xlink:href", "#a");
     			attr_dev(use, "overflow", "visible");
-    			add_location(use, file$4, 87, 10, 2585);
+    			add_location(use, file$4, 87, 10, 2577);
     			attr_dev(clipPath, "id", "b");
-    			add_location(clipPath, file$4, 86, 8, 2556);
+    			add_location(clipPath, file$4, 86, 8, 2548);
     			attr_dev(path1, "clip-path", "url(#b)");
     			attr_dev(path1, "fill", "#FBBC05");
     			attr_dev(path1, "d", "M0 37V11l17 13z");
-    			add_location(path1, file$4, 89, 8, 2658);
+    			add_location(path1, file$4, 89, 8, 2650);
     			attr_dev(path2, "clip-path", "url(#b)");
     			attr_dev(path2, "fill", "#EA4335");
     			attr_dev(path2, "d", "M0 11l17 13 7-6.1L48 14V0H0z");
-    			add_location(path2, file$4, 90, 8, 2731);
+    			add_location(path2, file$4, 90, 8, 2723);
     			attr_dev(path3, "clip-path", "url(#b)");
     			attr_dev(path3, "fill", "#34A853");
     			attr_dev(path3, "d", "M0 37l30-23 7.9 1L48 0v48H0z");
-    			add_location(path3, file$4, 94, 8, 2850);
+    			add_location(path3, file$4, 94, 8, 2842);
     			attr_dev(path4, "clip-path", "url(#b)");
     			attr_dev(path4, "fill", "#4285F4");
     			attr_dev(path4, "d", "M48 48L17 24l-4-3 35-10z");
-    			add_location(path4, file$4, 98, 8, 2969);
+    			add_location(path4, file$4, 98, 8, 2961);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg, "viewBox", "0 0 48 48");
     			attr_dev(svg, "class", "w-6 h-6 pr-2");
-    			add_location(svg, file$4, 73, 6, 2061);
-    			add_location(span, file$4, 100, 6, 3063);
+    			add_location(svg, file$4, 73, 6, 2053);
+    			add_location(span, file$4, 100, 6, 3055);
     			attr_dev(button, "class", "flex bg-white rounded shadow text-gray-700 py-2 px-4 font-bold\r\n      justify-center w-1/2 md: w-full");
-    			add_location(button, file$4, 69, 4, 1895);
+    			add_location(button, file$4, 69, 4, 1887);
     			dispose = listen_dev(button, "click", /*click_handler*/ ctx[1], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -35717,8 +35621,7 @@
     	let span;
     	let t4;
     	let button;
-    	let div1_transition;
-    	let current;
+    	let div1_intro;
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
@@ -35747,12 +35650,12 @@
     			attr_dev(a, "href", "/privacy-policy.html");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "class", "mr-2");
-    			add_location(a, file$4, 119, 4, 3661);
+    			add_location(a, file$4, 119, 4, 3653);
     			attr_dev(span, "class", "text-center mb-8 ml-2");
-    			add_location(span, file$4, 123, 4, 3766);
+    			add_location(span, file$4, 123, 4, 3758);
     			attr_dev(div0, "class", "w-full text-center my-8 flex flex-row justify-center");
-    			add_location(div0, file$4, 118, 2, 3589);
-    			add_location(button, file$4, 125, 2, 3827);
+    			add_location(div0, file$4, 118, 2, 3581);
+    			add_location(button, file$4, 125, 2, 3819);
     			attr_dev(div1, "class", "flex flex-col mx-4 my-8");
     			add_location(div1, file$4, 67, 0, 1772);
     			dispose = listen_dev(button, "click", /*click_handler_2*/ ctx[3], false, false, false);
@@ -35770,7 +35673,6 @@
     			append_dev(div0, span);
     			append_dev(div1, t4);
     			append_dev(div1, button);
-    			current = true;
     		},
     		p: function update(ctx, [dirty]) {
     			if (current_block_type === (current_block_type = select_block_type(ctx, dirty)) && if_block) {
@@ -35786,24 +35688,17 @@
     			}
     		},
     		i: function intro(local) {
-    			if (current) return;
-
-    			add_render_callback(() => {
-    				if (!div1_transition) div1_transition = create_bidirectional_transition(div1, fade, { duration: 90 }, true);
-    				div1_transition.run(1);
-    			});
-
-    			current = true;
+    			if (!div1_intro) {
+    				add_render_callback(() => {
+    					div1_intro = create_in_transition(div1, fade, { duration: 80 });
+    					div1_intro.start();
+    				});
+    			}
     		},
-    		o: function outro(local) {
-    			if (!div1_transition) div1_transition = create_bidirectional_transition(div1, fade, { duration: 90 }, false);
-    			div1_transition.run(0);
-    			current = false;
-    		},
+    		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div1);
     			if_block.d();
-    			if (detaching && div1_transition) div1_transition.end();
     			dispose();
     		}
     	};
@@ -35933,7 +35828,7 @@
     	return child_ctx;
     }
 
-    // (140:8) {:else}
+    // (141:8) {:else}
     function create_else_block$1(ctx) {
     	let i;
     	let i_intro;
@@ -35943,7 +35838,7 @@
     			i = element("i");
     			i.textContent = "attach_money";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$5, 140, 10, 3837);
+    			add_location(i, file$5, 141, 10, 3868);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -35966,14 +35861,14 @@
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(140:8) {:else}",
+    		source: "(141:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (136:8) {#if sortByDate}
+    // (137:8) {#if sortByDate}
     function create_if_block_2(ctx) {
     	let i;
     	let i_intro;
@@ -35983,7 +35878,7 @@
     			i = element("i");
     			i.textContent = "date_range";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$5, 136, 10, 3702);
+    			add_location(i, file$5, 137, 10, 3733);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -36006,7 +35901,7 @@
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(136:8) {#if sortByDate}",
+    		source: "(137:8) {#if sortByDate}",
     		ctx
     	});
 
@@ -36035,7 +35930,7 @@
     	return block;
     }
 
-    // (168:43)         {#each buckets as bucket, index}
+    // (169:43)         {#each buckets as bucket, index}
     function create_then_block$1(ctx) {
     	let each_1_anchor;
     	let current;
@@ -36122,14 +36017,14 @@
     		block,
     		id: create_then_block$1.name,
     		type: "then",
-    		source: "(168:43)         {#each buckets as bucket, index}",
+    		source: "(169:43)         {#each buckets as bucket, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (170:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
+    // (171:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
     function create_if_block_1(ctx) {
     	let span;
     	let t_value = /*bucket*/ ctx[15].year + "";
@@ -36141,7 +36036,7 @@
     			t = text(t_value);
     			attr_dev(span, "class", "rounded-full bg-gray-600 text-white font-bold px-4 py-2 my-4\r\n            sticky top-0 z-10 m-auto");
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
-    			add_location(span, file$5, 170, 10, 4865);
+    			add_location(span, file$5, 171, 10, 4896);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -36159,14 +36054,14 @@
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(170:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
+    		source: "(171:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (195:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
+    // (196:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
     function create_if_block$3(ctx) {
     	let div2;
     	let div0;
@@ -36213,22 +36108,22 @@
     			t8 = text("$");
     			t9 = text(t9_value);
     			attr_dev(span0, "class", "font-bold text-xs");
-    			add_location(span0, file$5, 200, 20, 6258);
+    			add_location(span0, file$5, 201, 20, 6289);
     			attr_dev(span1, "class", "font-bold");
-    			add_location(span1, file$5, 205, 20, 6485);
+    			add_location(span1, file$5, 206, 20, 6516);
     			attr_dev(div0, "class", "w-10 rounded-lg flex flex-col items-center\r\n                    justify-between py-1 mr-4");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[2]);
     			set_style(div0, "color", /*iconColor*/ ctx[3]);
-    			add_location(div0, file$5, 196, 18, 6029);
+    			add_location(div0, file$5, 197, 18, 6060);
     			attr_dev(span2, "class", "font-bold w-full truncate");
-    			add_location(span2, file$5, 212, 20, 6781);
+    			add_location(span2, file$5, 213, 20, 6812);
     			attr_dev(span3, "class", "text-gray-600 w-full truncate");
-    			add_location(span3, file$5, 215, 20, 6910);
+    			add_location(span3, file$5, 216, 20, 6941);
     			attr_dev(div1, "class", "flex flex-col flex-grow items-start justify-around\r\n                    truncate mr-4");
-    			add_location(div1, file$5, 209, 18, 6639);
-    			add_location(span4, file$5, 219, 18, 7064);
+    			add_location(div1, file$5, 210, 18, 6670);
+    			add_location(span4, file$5, 220, 18, 7095);
     			attr_dev(div2, "class", "flex flex-row p-4 items-center");
-    			add_location(div2, file$5, 195, 16, 5965);
+    			add_location(div2, file$5, 196, 16, 5996);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -36275,14 +36170,14 @@
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(195:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
+    		source: "(196:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (188:10) {#each sortedData as data (data.id)}
+    // (189:10) {#each sortedData as data (data.id)}
     function create_each_block_1$1(key_1, ctx) {
     	let div;
     	let show_if = /*data*/ ctx[18].date.substring(0, 4) == /*bucket*/ ctx[15].year && /*data*/ ctx[18].date.substring(5, 7) == /*bucket*/ ctx[15].month;
@@ -36305,7 +36200,7 @@
     			div = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div, "class", "w-full bg-white");
-    			add_location(div, file$5, 188, 12, 5607);
+    			add_location(div, file$5, 189, 12, 5638);
     			dispose = listen_dev(div, "click", click_handler_2, false, false, false);
     			this.first = div;
     		},
@@ -36371,14 +36266,14 @@
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(188:10) {#each sortedData as data (data.id)}",
+    		source: "(189:10) {#each sortedData as data (data.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (169:6) {#each buckets as bucket, index}
+    // (170:6) {#each buckets as bucket, index}
     function create_each_block$1(ctx) {
     	let t0;
     	let div1;
@@ -36418,11 +36313,11 @@
 
     			t3 = space();
     			attr_dev(span, "class", "relative text-gray-600 font-bold bg-white px-4");
-    			add_location(span, file$5, 181, 12, 5325);
+    			add_location(span, file$5, 182, 12, 5356);
     			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-oee9xi");
-    			add_location(div0, file$5, 180, 10, 5255);
+    			add_location(div0, file$5, 181, 10, 5286);
     			attr_dev(div1, "class", "flex flex-col justify-center items-center");
-    			add_location(div1, file$5, 177, 8, 5119);
+    			add_location(div1, file$5, 178, 8, 5150);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -36500,7 +36395,7 @@
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(169:6) {#each buckets as bucket, index}",
+    		source: "(170:6) {#each buckets as bucket, index}",
     		ctx
     	});
 
@@ -36553,6 +36448,7 @@
     	let span_intro;
     	let t6;
     	let promise;
+    	let div5_outro;
     	let current;
     	let dispose;
 
@@ -36600,32 +36496,32 @@
     			info.block.c();
     			attr_dev(i0, "class", "material-icons fill-current");
     			set_style(i0, "color", /*iconColor*/ ctx[3]);
-    			add_location(i0, file$5, 119, 4, 3236);
+    			add_location(i0, file$5, 120, 4, 3267);
     			attr_dev(div0, "class", "relative");
-    			add_location(div0, file$5, 134, 6, 3642);
+    			add_location(div0, file$5, 135, 6, 3673);
     			attr_dev(button, "class", "fill-current");
     			set_style(button, "color", /*iconColor*/ ctx[3]);
-    			add_location(button, file$5, 129, 4, 3479);
+    			add_location(button, file$5, 130, 4, 3510);
     			attr_dev(div1, "class", div1_class_value = "w-full flex flex-row p-4 bg-white " + (/*scrolling*/ ctx[4] ? "shadow" : "") + " fixed\r\n    top-0 justify-between z-20");
     			set_style(div1, "height", "56px");
-    			add_location(div1, file$5, 115, 2, 3086);
+    			add_location(div1, file$5, 116, 2, 3117);
     			attr_dev(i1, "class", "material-icons fill-current");
     			set_style(i1, "display", "block", 1);
     			set_style(i1, "color", /*iconColor*/ ctx[3]);
     			set_style(i1, "font-size", "64px");
-    			add_location(i1, file$5, 154, 8, 4297);
+    			add_location(i1, file$5, 155, 8, 4328);
     			attr_dev(div2, "class", "icon rounded-full p-6 mt-20 mb-4");
     			attr_dev(div2, "id", "icon");
     			set_style(div2, "background-color", /*backgroundColor*/ ctx[2]);
-    			add_location(div2, file$5, 149, 6, 4097);
+    			add_location(div2, file$5, 150, 6, 4128);
     			attr_dev(span, "class", "text-2xl font-bold mb-8");
     			set_style(span, "color", /*iconColor*/ ctx[3]);
-    			add_location(span, file$5, 160, 6, 4490);
+    			add_location(span, file$5, 161, 6, 4521);
     			attr_dev(div3, "class", "flex flex-col items-center");
-    			add_location(div3, file$5, 148, 4, 4049);
+    			add_location(div3, file$5, 149, 4, 4080);
     			attr_dev(div4, "id", "content");
     			attr_dev(div4, "class", "flex flex-col");
-    			add_location(div4, file$5, 147, 2, 4003);
+    			add_location(div4, file$5, 148, 2, 4034);
     			attr_dev(div5, "id", "detail-page");
     			attr_dev(div5, "class", "h-screen w-full bg-white absolute top-0 overflow-auto");
     			add_location(div5, file$5, 112, 0, 2992);
@@ -36738,6 +36634,7 @@
     			}
 
     			transition_in(info.block);
+    			if (div5_outro) div5_outro.end(1);
     			current = true;
     		},
     		o: function outro(local) {
@@ -36746,6 +36643,7 @@
     				transition_out(block);
     			}
 
+    			div5_outro = create_out_transition(div5, fade, { duration: 80 });
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -36754,6 +36652,7 @@
     			info.block.d();
     			info.token = null;
     			info = null;
+    			if (detaching && div5_outro) div5_outro.end();
     			run_all(dispose);
     		}
     	};
@@ -37149,7 +37048,7 @@
     	return child_ctx;
     }
 
-    // (218:8) {#each typeDesigns as typeDesign}
+    // (219:8) {#each typeDesigns as typeDesign}
     function create_each_block$2(ctx) {
     	let current;
 
@@ -37196,14 +37095,14 @@
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(218:8) {#each typeDesigns as typeDesign}",
+    		source: "(219:8) {#each typeDesigns as typeDesign}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (239:4) {#if Object.keys($entryData).length > 0}
+    // (240:4) {#if Object.keys($entryData).length > 0}
     function create_if_block$4(ctx) {
     	let button;
     	let dispose;
@@ -37213,7 +37112,7 @@
     			button = element("button");
     			button.textContent = "Delete";
     			attr_dev(button, "class", "w-full text-center mb-8 bg-transparent text-red-600");
-    			add_location(button, file$7, 239, 6, 8471);
+    			add_location(button, file$7, 240, 6, 8502);
     			dispose = listen_dev(button, "click", /*click_handler_6*/ ctx[25], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -37230,7 +37129,7 @@
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(239:4) {#if Object.keys($entryData).length > 0}",
+    		source: "(240:4) {#if Object.keys($entryData).length > 0}",
     		ctx
     	});
 
@@ -37286,6 +37185,7 @@
     	let div8_intro;
     	let t21;
     	let show_if = Object.keys(/*$entryData*/ ctx[9]).length > 0;
+    	let div10_outro;
     	let current;
     	let dispose;
 
@@ -37363,69 +37263,69 @@
     			attr_dev(i, "class", "material-icons fill-current");
     			set_style(i, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i, "aria-label", "Back button");
-    			add_location(i, file$7, 157, 4, 5581);
+    			add_location(i, file$7, 158, 4, 5612);
     			attr_dev(div0, "class", div0_class_value = "w-full flex flex-row p-4 bg-white " + (/*scrolling*/ ctx[0] ? "shadow" : "") + " fixed\r\n    top-0 justify-between z-20");
     			set_style(div0, "height", "56px");
-    			add_location(div0, file$7, 153, 2, 5431);
+    			add_location(div0, file$7, 154, 2, 5462);
     			attr_dev(label0, "for", "amount-input");
     			attr_dev(label0, "class", "svelte-1wqb46g");
-    			add_location(label0, file$7, 171, 6, 6046);
+    			add_location(label0, file$7, 172, 6, 6077);
     			attr_dev(input0, "id", "amount-input");
     			attr_dev(input0, "class", "amount text-2xl svelte-1wqb46g");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$7, 172, 6, 6094);
+    			add_location(input0, file$7, 173, 6, 6125);
     			attr_dev(div1, "class", "input-row svelte-1wqb46g");
-    			add_location(div1, file$7, 170, 4, 5976);
+    			add_location(div1, file$7, 171, 4, 6007);
     			attr_dev(label1, "for", "date-input");
     			attr_dev(label1, "class", "svelte-1wqb46g");
-    			add_location(label1, file$7, 181, 6, 6393);
+    			add_location(label1, file$7, 182, 6, 6424);
     			attr_dev(button0, "id", "today-button");
     			attr_dev(button0, "class", "date-button active svelte-1wqb46g");
-    			add_location(button0, file$7, 183, 8, 6465);
+    			add_location(button0, file$7, 184, 8, 6496);
     			attr_dev(button1, "id", "yesterday-button");
     			attr_dev(button1, "class", "date-button svelte-1wqb46g");
-    			add_location(button1, file$7, 189, 8, 6631);
+    			add_location(button1, file$7, 190, 8, 6662);
     			attr_dev(div2, "class", "mr-4");
-    			add_location(div2, file$7, 182, 6, 6437);
+    			add_location(div2, file$7, 183, 6, 6468);
     			attr_dev(div3, "class", "input-row svelte-1wqb46g");
-    			add_location(div3, file$7, 180, 4, 6323);
-    			add_location(span, file$7, 201, 6, 6986);
+    			add_location(div3, file$7, 181, 4, 6354);
+    			add_location(span, file$7, 202, 6, 7017);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "svelte-1wqb46g");
-    			add_location(input1, file$7, 202, 6, 7017);
+    			add_location(input1, file$7, 203, 6, 7048);
     			attr_dev(div4, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n      text-gray-600 ml-4");
-    			add_location(div4, file$7, 197, 4, 6824);
+    			add_location(div4, file$7, 198, 4, 6855);
     			attr_dev(label2, "for", "description-input");
     			attr_dev(label2, "class", "svelte-1wqb46g");
-    			add_location(label2, file$7, 205, 6, 7161);
+    			add_location(label2, file$7, 206, 6, 7192);
     			attr_dev(input2, "class", "truncate text-2xl svelte-1wqb46g");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "(Optional)");
-    			add_location(input2, file$7, 206, 6, 7219);
+    			add_location(input2, file$7, 207, 6, 7250);
     			attr_dev(div5, "class", "input-row svelte-1wqb46g");
-    			add_location(div5, file$7, 204, 4, 7090);
+    			add_location(div5, file$7, 205, 4, 7121);
     			attr_dev(label3, "class", "svelte-1wqb46g");
-    			add_location(label3, file$7, 215, 6, 7555);
+    			add_location(label3, file$7, 216, 6, 7586);
     			attr_dev(div6, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div6, file$7, 216, 6, 7582);
+    			add_location(div6, file$7, 217, 6, 7613);
     			attr_dev(div7, "class", "mt-8 flex flex-col");
-    			add_location(div7, file$7, 214, 4, 7475);
+    			add_location(div7, file$7, 215, 4, 7506);
     			attr_dev(button2, "class", "rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-12\r\n        mb-8 bg-gray-300");
 
     			attr_dev(button2, "style", button2_style_value = /*typeValid*/ ctx[7] && /*dateValid*/ ctx[6] && /*amountValid*/ ctx[5]
     			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
     			: "");
 
-    			add_location(button2, file$7, 230, 6, 8078);
+    			add_location(button2, file$7, 231, 6, 8109);
     			attr_dev(div8, "class", "w-full text-center block");
-    			add_location(div8, file$7, 227, 4, 7978);
+    			add_location(div8, file$7, 228, 4, 8009);
     			attr_dev(div9, "class", "flex flex-col items-start justify-around bg-white mt-8");
     			set_style(div9, "border-top-left-radius", "1rem");
     			set_style(div9, "border-top-right-radius", "1rem");
-    			add_location(div9, file$7, 167, 2, 5824);
+    			add_location(div9, file$7, 168, 2, 5855);
     			attr_dev(div10, "id", "entry-page");
     			attr_dev(div10, "class", "h-screen w-full bg-white absolute top-0 overflow-auto");
     			add_location(div10, file$7, 150, 0, 5338);
@@ -37612,6 +37512,7 @@
     				});
     			}
 
+    			if (div10_outro) div10_outro.end(1);
     			current = true;
     		},
     		o: function outro(local) {
@@ -37621,12 +37522,14 @@
     				transition_out(each_blocks[i]);
     			}
 
+    			div10_outro = create_out_transition(div10, fade, { duration: 80 });
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div10);
     			destroy_each(each_blocks, detaching);
     			if (if_block) if_block.d();
+    			if (detaching && div10_outro) div10_outro.end();
     			run_all(dispose);
     		}
     	};

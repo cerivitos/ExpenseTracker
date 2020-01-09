@@ -194,7 +194,8 @@
 
 <div
   id="entry-page"
-  class="h-screen w-full bg-white absolute top-0 overflow-auto">
+  class="h-screen w-full bg-white absolute top-0 overflow-auto"
+  out:fade={{ duration: 80 }}>
   <div
     class="w-full flex flex-row p-4 bg-white {scrolling ? 'shadow' : ''} fixed
     top-0 justify-between z-20"

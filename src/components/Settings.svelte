@@ -65,7 +65,7 @@
   }
 </script>
 
-<div class="flex flex-col mx-4 my-8" transition:fade={{ duration: 90 }}>
+<div class="flex flex-col mx-4 my-8" in:fade={{ duration: 80 }}>
   {#if Object.keys($userInfo).length === 0}
     <button
       class="flex bg-white rounded shadow text-gray-700 py-2 px-4 font-bold

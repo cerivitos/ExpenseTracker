@@ -231,7 +231,7 @@
   }
 </style>
 
-<div class="flex flex-col my-8">
+<div class="flex flex-col my-8" in:fade={{ duration: 80 }}>
   <span class="w-full mb-1 text-4xl text-center font-bold" id="totalSpend">
     $0
   </span>
