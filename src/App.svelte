@@ -11,6 +11,7 @@
   import Settings from "./components/Settings.svelte";
   import DetailPage from "./components/DetailPage.svelte";
   import Entry from "./components/Entry.svelte";
+  import Search from "./components/Search.svelte";
   import { handleRouting } from "./util";
 
   // if ("serviceWorker" in navigator) {
@@ -61,6 +62,9 @@
     } else if (page === "entry") {
       view.set("dashboard");
       overlay.set("entry");
+    } else if (page === "search") {
+      view.set("dashboard");
+      overlay.set("search");
     } else {
       view.set("dashboard");
       overlay.set("");
@@ -85,6 +89,9 @@
     } else if (page === "entry") {
       view.set("dashboard");
       overlay.set("entry");
+    } else if (page === "search") {
+      view.set("dashboard");
+      overlay.set("search");
     } else {
       view.set("dashboard");
       overlay.set("");
@@ -106,13 +113,12 @@
   </Scaffold>
   {#if $overlay === 'detail'}
     <DetailPage />
+  {:else if $overlay === 'entry'}
+    <Entry />
+  {:else if $overlay === 'search'}
+    <Search />
   {/if}
   {#if signInError}
     <Toast message={errorMsg} />
-  {/if}
-  {#if $overlay === 'entry'}
-    <div>
-      <Entry />
-    </div>
   {/if}
 </main>

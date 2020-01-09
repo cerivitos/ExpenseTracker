@@ -3,7 +3,7 @@ import { writable } from "svelte/store";
 //ui state - 'settings' or 'dashboard'
 export const view = writable("dashboard");
 
-//ui state (separate from above so that the settings or dashboard page is not destroyed when showing entry or detail page) - 'entry' or 'detail'
+//ui state (separate from above so that the settings or dashboard page is not destroyed when showing entry or detail page) - 'entry', 'detail' or 'search'
 export const overlay = writable("");
 export const dashboardShouldReload = writable(false);
 

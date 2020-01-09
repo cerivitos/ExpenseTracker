@@ -2,10 +2,11 @@
   import { onMount } from "svelte";
   import firebase from "firebase/app";
   import "firebase/firestore";
-  import { toastMessage, dashboardShouldReload } from "../store/store";
+  import { toastMessage, dashboardShouldReload, overlay } from "../store/store";
   import { fade } from "svelte/transition";
   import CategoryListTile from "./CategoryListTile.svelte";
   import { CountUp } from "countup.js";
+  import { handleRouting } from "../util";
 
   let db, queryInterval;
   let getDataPromise = fetchData(queryInterval);
@@ -240,13 +241,30 @@
 </style>
 
 <div class="flex flex-col my-8" in:fade={{ duration: 80 }}>
+  <div
+    class="flex items-center justify-center py-2 mx-4 mb-8 rounded-full
+    bg-gray-200 text-center text-gray-600"
+    on:click={() => {
+      handleRouting('search');
+      overlay.set('search');
+    }}>
+    <i class="material-icons fill-current">search</i>
+    Search
+  </div>
   <span class="w-full mb-1 text-4xl text-center font-bold" id="totalSpend">
     $0
   </span>
-  <span class="w-full text-center text-gray-600 font-light mb-8">
-    {firstDate.length > 0 && lastDate.length > 0 ? lastDate + ' — ' + firstDate : ''}
-  </span>
-  <!-- <Chart datas={rawData} queryInterval={getQueryInterval(currentInterval)} /> -->
+  {#if firstDate.length > 0 && lastDate.length > 0}
+    <span
+      class="w-full text-center text-gray-600 font-light mb-8"
+      in:fade={{ duration: 120 }}>
+      {lastDate + ' — ' + firstDate}
+    </span>
+  {:else}
+    <span class="w-full text-center text-transparent font-light mb-8">
+      &nbsp;
+    </span>
+  {/if}
   <div class="flex flex-row justify-around overflow-x-hidden mb-8 mx-4">
     {#each ['1M', '6M', '1Y', 'All'] as interval}
       <button
