@@ -16,9 +16,9 @@
 
 <style type="text/postcss">
   .navbar {
-    box-shadow: 0px -3px 8px 0px rgba(214, 214, 214, 0.9);
-    height: 64px;
-    @apply w-full flex fixed bottom-0 bg-white fill-current;
+    box-shadow: 0px -2px 4px 0px rgba(214, 214, 214, 0.9);
+    height: 56px;
+    @apply w-full flex fixed bottom-0 bg-white fill-current items-center;
   }
 
   .navbar .active {
@@ -34,7 +34,7 @@
 
   .content {
     @apply absolute w-full top-0 overflow-x-hidden;
-    bottom: 64px;
+    bottom: 56px;
   }
 </style>
 
@@ -48,35 +48,13 @@
   <button
     class="flex flex-col items-center justify-center w-1/2 py-1 {$view === 'dashboard' ? 'active' : 'inactive'}"
     on:click={() => setView('dashboard')}>
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24">
-      <path fill="none" d="M0 0h24v24H0V0z" />
-      <path
-        d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9
-        2-2V5c0-1.1-.9-2-2-2zM8 17c-.55 0-1-.45-1-1v-5c0-.55.45-1 1-1s1 .45 1
-        1v5c0 .55-.45 1-1 1zm4 0c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1s1 .45 1 1v8c0
-        .55-.45 1-1 1zm4 0c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1s1 .45 1 1v2c0
-        .55-.45 1-1 1z" />
-    </svg>
+    <i class="material-icons">assessment</i>
     <span>Dashboard</span>
   </button>
   <button
     class="flex flex-col items-center justify-center w-1/2 py-1 {$view === 'settings' ? 'active' : 'inactive'}"
     on:click={() => setView('settings')}>
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24">
-      <path d="M0 0h24v24H0z" fill="none" />
-      <path
-        d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm7-7H5c-1.11 0-2
-        .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-1.75 9c0
-        .23-.02.46-.05.68l1.48 1.16c.13.11.17.3.08.45l-1.4
-        2.42c-.09.15-.27.21-.43.15l-1.74-.7c-.36.28-.76.51-1.18.69l-.26
-        1.85c-.03.17-.18.3-.35.3h-2.8c-.17
-        0-.32-.13-.35-.29l-.26-1.85c-.43-.18-.82-.41-1.18-.69l-1.74.7c-.16.06-.34
-        0-.43-.15l-1.4-2.42c-.09-.15-.05-.34.08-.45l1.48-1.16c-.03-.23-.05-.46-.05-.69
-        0-.23.02-.46.05-.68l-1.48-1.16c-.13-.11-.17-.3-.08-.45l1.4-2.42c.09-.15.27-.21.43-.15l1.74.7c.36-.28.76-.51
-        1.18-.69l.26-1.85c.03-.17.18-.3.35-.3h2.8c.17 0 .32.13.35.29l.26
-        1.85c.43.18.82.41 1.18.69l1.74-.7c.16-.06.34 0 .43.15l1.4
-        2.42c.09.15.05.34-.08.45l-1.48 1.16c.03.23.05.46.05.69z" />
-    </svg>
+    <i class="material-icons">settings_applications</i>
     <span>Settings</span>
   </button>
 </nav>
