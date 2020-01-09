@@ -26992,18 +26992,18 @@
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[13] = list[i];
-    	child_ctx[15] = i;
+    	child_ctx[15] = list[i];
+    	child_ctx[17] = i;
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[16] = list[i];
+    	child_ctx[18] = list[i];
     	return child_ctx;
     }
 
-    // (230:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
+    // (238:4) {#each ['1M', '6M', '1Y', 'All'] as interval}
     function create_each_block_1(ctx) {
     	let button;
     	let t0;
@@ -27012,20 +27012,20 @@
     	let dispose;
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[11](/*interval*/ ctx[16], ...args);
+    		return /*click_handler*/ ctx[13](/*interval*/ ctx[18], ...args);
     	}
 
     	const block = {
     		c: function create() {
     			button = element("button");
-    			t0 = text(/*interval*/ ctx[16]);
+    			t0 = text(/*interval*/ ctx[18]);
     			t1 = space();
 
-    			attr_dev(button, "class", button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[16]
+    			attr_dev(button, "class", button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[18]
     			? "active"
     			: "") + " svelte-f0nlgm");
 
-    			add_location(button, file$1, 230, 6, 6932);
+    			add_location(button, file$1, 238, 6, 7227);
     			dispose = listen_dev(button, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -27036,7 +27036,7 @@
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*currentInterval*/ 2 && button_class_value !== (button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[16]
+    			if (dirty & /*currentInterval*/ 2 && button_class_value !== (button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[18]
     			? "active"
     			: "") + " svelte-f0nlgm")) {
     				attr_dev(button, "class", button_class_value);
@@ -27052,7 +27052,7 @@
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(230:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
+    		source: "(238:4) {#each ['1M', '6M', '1Y', 'All'] as interval}",
     		ctx
     	});
 
@@ -27081,11 +27081,11 @@
     	return block;
     }
 
-    // (238:37)       {#each result as data, index}
+    // (246:37)       {#each result as data, index}
     function create_then_block(ctx) {
     	let each_1_anchor;
     	let current;
-    	let each_value = /*result*/ ctx[12];
+    	let each_value = /*result*/ ctx[14];
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -27114,7 +27114,7 @@
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*getDataPromise*/ 1) {
-    				each_value = /*result*/ ctx[12];
+    				each_value = /*result*/ ctx[14];
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
@@ -27168,21 +27168,21 @@
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(238:37)       {#each result as data, index}",
+    		source: "(246:37)       {#each result as data, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (239:4) {#each result as data, index}
+    // (247:4) {#each result as data, index}
     function create_each_block(ctx) {
     	let current;
 
     	const categorylisttile = new CategoryListTile({
     			props: {
-    				data: /*data*/ ctx[13],
-    				index: /*index*/ ctx[15]
+    				data: /*data*/ ctx[15],
+    				index: /*index*/ ctx[17]
     			},
     			$$inline: true
     		});
@@ -27197,7 +27197,7 @@
     		},
     		p: function update(ctx, dirty) {
     			const categorylisttile_changes = {};
-    			if (dirty & /*getDataPromise*/ 1) categorylisttile_changes.data = /*data*/ ctx[13];
+    			if (dirty & /*getDataPromise*/ 1) categorylisttile_changes.data = /*data*/ ctx[15];
     			categorylisttile.$set(categorylisttile_changes);
     		},
     		i: function intro(local) {
@@ -27218,7 +27218,7 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(239:4) {#each result as data, index}",
+    		source: "(247:4) {#each result as data, index}",
     		ctx
     	});
 
@@ -27252,6 +27252,12 @@
     	let span0;
     	let t1;
     	let span1;
+
+    	let t2_value = (/*firstDate*/ ctx[2].length > 0 && /*lastDate*/ ctx[3].length > 0
+    	? /*lastDate*/ ctx[3] + " — " + /*firstDate*/ ctx[2]
+    	: "") + "";
+
+    	let t2;
     	let t3;
     	let div0;
     	let t4;
@@ -27272,7 +27278,7 @@
     		pending: create_pending_block,
     		then: create_then_block,
     		catch: create_catch_block,
-    		value: 12,
+    		value: 14,
     		blocks: [,,,]
     	};
 
@@ -27285,7 +27291,7 @@
     			span0.textContent = "$0";
     			t1 = space();
     			span1 = element("span");
-    			span1.textContent = "Total spend";
+    			t2 = text(t2_value);
     			t3 = space();
     			div0 = element("div");
 
@@ -27297,13 +27303,13 @@
     			info.block.c();
     			attr_dev(span0, "class", "w-full mb-1 text-4xl text-center font-bold");
     			attr_dev(span0, "id", "totalSpend");
-    			add_location(span0, file$1, 221, 2, 6524);
+    			add_location(span0, file$1, 229, 2, 6749);
     			attr_dev(span1, "class", "w-full text-center text-gray-600 font-light mb-8");
-    			add_location(span1, file$1, 224, 2, 6620);
+    			add_location(span1, file$1, 232, 2, 6845);
     			attr_dev(div0, "class", "flex flex-row justify-around overflow-x-hidden mb-8 mx-4");
-    			add_location(div0, file$1, 228, 2, 6803);
+    			add_location(div0, file$1, 236, 2, 7098);
     			attr_dev(div1, "class", "flex flex-col my-8");
-    			add_location(div1, file$1, 220, 0, 6461);
+    			add_location(div1, file$1, 228, 0, 6686);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -27313,6 +27319,7 @@
     			append_dev(div1, span0);
     			append_dev(div1, t1);
     			append_dev(div1, span1);
+    			append_dev(span1, t2);
     			append_dev(div1, t3);
     			append_dev(div1, div0);
 
@@ -27329,7 +27336,11 @@
     		p: function update(new_ctx, [dirty]) {
     			ctx = new_ctx;
 
-    			if (dirty & /*currentInterval, changeInterval*/ 6) {
+    			if ((!current || dirty & /*firstDate, lastDate*/ 12) && t2_value !== (t2_value = (/*firstDate*/ ctx[2].length > 0 && /*lastDate*/ ctx[3].length > 0
+    			? /*lastDate*/ ctx[3] + " — " + /*firstDate*/ ctx[2]
+    			: "") + "")) set_data_dev(t2, t2_value);
+
+    			if (dirty & /*currentInterval, changeInterval*/ 18) {
     				each_value_1 = ["1M", "6M", "1Y", "All"];
     				let i;
 
@@ -27354,7 +27365,7 @@
 
     			if (dirty & /*getDataPromise*/ 1 && promise !== (promise = /*getDataPromise*/ ctx[0]) && handle_promise(promise, info)) ; else {
     				const child_ctx = ctx.slice();
-    				child_ctx[12] = info.resolved;
+    				child_ctx[14] = info.resolved;
     				info.block.p(child_ctx, dirty);
     			}
     		},
@@ -27437,7 +27448,7 @@
     function instance$1($$self, $$props, $$invalidate) {
     	let $dashboardShouldReload;
     	validate_store(dashboardShouldReload, "dashboardShouldReload");
-    	component_subscribe($$self, dashboardShouldReload, $$value => $$invalidate(9, $dashboardShouldReload = $$value));
+    	component_subscribe($$self, dashboardShouldReload, $$value => $$invalidate(11, $dashboardShouldReload = $$value));
     	let db, queryInterval;
     	let getDataPromise = fetchData(queryInterval);
     	let rawData = [];
@@ -27445,6 +27456,8 @@
     	let currentInterval = "1M";
     	let totalSpend = 0;
     	let currentCounterValue = 0;
+    	let firstDate = "";
+    	let lastDate = "";
 
     	onMount(() => {
     		if (localStorage.getItem("interval")) {
@@ -27523,6 +27536,8 @@
     			}
     		});
 
+    		$$invalidate(2, firstDate = new Date(rawData[0].date).toString().substring(4, 15));
+    		$$invalidate(3, lastDate = new Date(rawData[rawData.length - 1].date).toString().substring(4, 15));
     		toastMessage.set("");
     		localStorage.setItem("rawCache", JSON.stringify(rawCache));
     		const types = [...new Set(rawData.map(item => item.type))];
@@ -27591,11 +27606,13 @@
     		if ("currentInterval" in $$props) $$invalidate(1, currentInterval = $$props.currentInterval);
     		if ("totalSpend" in $$props) totalSpend = $$props.totalSpend;
     		if ("currentCounterValue" in $$props) currentCounterValue = $$props.currentCounterValue;
+    		if ("firstDate" in $$props) $$invalidate(2, firstDate = $$props.firstDate);
+    		if ("lastDate" in $$props) $$invalidate(3, lastDate = $$props.lastDate);
     		if ("$dashboardShouldReload" in $$props) dashboardShouldReload.set($dashboardShouldReload = $$props.$dashboardShouldReload);
     	};
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*$dashboardShouldReload, currentInterval*/ 514) {
+    		if ($$self.$$.dirty & /*$dashboardShouldReload, currentInterval*/ 2050) {
     			$: if ($dashboardShouldReload) {
     				localStorage.removeItem("rawCache");
     				changeInterval(currentInterval);
@@ -27607,6 +27624,8 @@
     	return [
     		getDataPromise,
     		currentInterval,
+    		firstDate,
+    		lastDate,
     		changeInterval,
     		db,
     		queryInterval,

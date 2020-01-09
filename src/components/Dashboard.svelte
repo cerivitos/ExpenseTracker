@@ -15,6 +15,9 @@
   let totalSpend = 0;
   let currentCounterValue = 0;
 
+  let firstDate = "";
+  let lastDate = "";
+
   onMount(() => {
     if (localStorage.getItem("interval")) {
       currentInterval = localStorage.getItem("interval");
@@ -149,6 +152,11 @@
       }
     });
 
+    firstDate = new Date(rawData[0].date).toString().substring(4, 15);
+    lastDate = new Date(rawData[rawData.length - 1].date)
+      .toString()
+      .substring(4, 15);
+
     toastMessage.set("");
 
     localStorage.setItem("rawCache", JSON.stringify(rawCache));
@@ -236,7 +244,7 @@
     $0
   </span>
   <span class="w-full text-center text-gray-600 font-light mb-8">
-    Total spend
+    {firstDate.length > 0 && lastDate.length > 0 ? lastDate + ' — ' + firstDate : ''}
   </span>
   <!-- <Chart datas={rawData} queryInterval={getQueryInterval(currentInterval)} /> -->
   <div class="flex flex-row justify-around overflow-x-hidden mb-8 mx-4">
