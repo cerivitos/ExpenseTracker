@@ -108,6 +108,25 @@
       });
   }
 
+  function deleteEntry() {
+    handleRouting("dashboard");
+    overlay.set("");
+
+    const db = firebase.firestore();
+    db.collection("expenses")
+      .doc($entryData.id)
+      .delete()
+      .then(() => {
+        toastMessage.set("Entry deleted");
+        setTimeout(() => toastMessage.set(""), 1000);
+        dashboardShouldReload.set(true);
+      })
+      .catch(error => {
+        toastMessage.set(error);
+        setTimeout(() => toastMessage.set(""), 3000);
+      });
+  }
+
   $: if (amount <= 0 || amount === undefined) {
     amountValid = false;
   } else {
@@ -175,8 +194,7 @@
 
 <div
   id="entry-page"
-  class="h-screen w-full bg-white absolute top-0 overflow-auto"
-  transition:fade={{ duration: 80 }}>
+  class="h-screen w-full bg-white absolute top-0 overflow-auto">
   <div
     class="w-full flex flex-row p-4 bg-white {scrolling ? 'shadow' : ''} fixed
     top-0 justify-between z-20"
@@ -184,6 +202,7 @@
     <i
       class="material-icons fill-current"
       style="color: hsl(var(--primary-hue), 50%, 50%)"
+      aria-label="Back button"
       on:click={() => {
         window.history.back();
       }}>
@@ -261,14 +280,12 @@
         {isUpdate ? 'Update' : 'Submit'}
       </button>
     </div>
-    <button
-      class="w-full text-center mb-8 bg-transparent"
-      style="color: hsl(var(--secondary-hue), 50%, 50%)"
-      on:click={() => {
-        handleRouting('detail#' + $detailData.type);
-        overlay.set('detail');
-      }}>
-      Cancel
-    </button>
+    {#if Object.keys($entryData).length > 0}
+      <button
+        class="w-full text-center mb-8 bg-transparent text-red-600"
+        on:click={() => deleteEntry()}>
+        Delete
+      </button>
+    {/if}
   </div>
 </div>
