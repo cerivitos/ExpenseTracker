@@ -35933,7 +35933,7 @@
     	return child_ctx;
     }
 
-    // (142:8) {:else}
+    // (140:8) {:else}
     function create_else_block$1(ctx) {
     	let i;
     	let i_intro;
@@ -35943,7 +35943,7 @@
     			i = element("i");
     			i.textContent = "attach_money";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$5, 142, 10, 3894);
+    			add_location(i, file$5, 140, 10, 3837);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -35966,14 +35966,14 @@
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(142:8) {:else}",
+    		source: "(140:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (138:8) {#if sortByDate}
+    // (136:8) {#if sortByDate}
     function create_if_block_2(ctx) {
     	let i;
     	let i_intro;
@@ -35983,7 +35983,7 @@
     			i = element("i");
     			i.textContent = "date_range";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$5, 138, 10, 3759);
+    			add_location(i, file$5, 136, 10, 3702);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -36006,7 +36006,7 @@
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(138:8) {#if sortByDate}",
+    		source: "(136:8) {#if sortByDate}",
     		ctx
     	});
 
@@ -36035,7 +36035,7 @@
     	return block;
     }
 
-    // (170:43)         {#each buckets as bucket, index}
+    // (168:43)         {#each buckets as bucket, index}
     function create_then_block$1(ctx) {
     	let each_1_anchor;
     	let current;
@@ -36122,14 +36122,14 @@
     		block,
     		id: create_then_block$1.name,
     		type: "then",
-    		source: "(170:43)         {#each buckets as bucket, index}",
+    		source: "(168:43)         {#each buckets as bucket, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (172:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
+    // (170:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
     function create_if_block_1(ctx) {
     	let span;
     	let t_value = /*bucket*/ ctx[15].year + "";
@@ -36141,7 +36141,7 @@
     			t = text(t_value);
     			attr_dev(span, "class", "rounded-full bg-gray-600 text-white font-bold px-4 py-2 my-4\r\n            sticky top-0 z-10 m-auto");
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
-    			add_location(span, file$5, 172, 10, 4922);
+    			add_location(span, file$5, 170, 10, 4865);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -36159,14 +36159,14 @@
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(172:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
+    		source: "(170:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (197:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
+    // (195:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
     function create_if_block$3(ctx) {
     	let div2;
     	let div0;
@@ -36213,22 +36213,22 @@
     			t8 = text("$");
     			t9 = text(t9_value);
     			attr_dev(span0, "class", "font-bold text-xs");
-    			add_location(span0, file$5, 202, 20, 6315);
+    			add_location(span0, file$5, 200, 20, 6258);
     			attr_dev(span1, "class", "font-bold");
-    			add_location(span1, file$5, 207, 20, 6542);
+    			add_location(span1, file$5, 205, 20, 6485);
     			attr_dev(div0, "class", "w-10 rounded-lg flex flex-col items-center\r\n                    justify-between py-1 mr-4");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[2]);
     			set_style(div0, "color", /*iconColor*/ ctx[3]);
-    			add_location(div0, file$5, 198, 18, 6086);
+    			add_location(div0, file$5, 196, 18, 6029);
     			attr_dev(span2, "class", "font-bold w-full truncate");
-    			add_location(span2, file$5, 214, 20, 6838);
+    			add_location(span2, file$5, 212, 20, 6781);
     			attr_dev(span3, "class", "text-gray-600 w-full truncate");
-    			add_location(span3, file$5, 217, 20, 6967);
+    			add_location(span3, file$5, 215, 20, 6910);
     			attr_dev(div1, "class", "flex flex-col flex-grow items-start justify-around\r\n                    truncate mr-4");
-    			add_location(div1, file$5, 211, 18, 6696);
-    			add_location(span4, file$5, 221, 18, 7121);
+    			add_location(div1, file$5, 209, 18, 6639);
+    			add_location(span4, file$5, 219, 18, 7064);
     			attr_dev(div2, "class", "flex flex-row p-4 items-center");
-    			add_location(div2, file$5, 197, 16, 6022);
+    			add_location(div2, file$5, 195, 16, 5965);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -36275,14 +36275,14 @@
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(197:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
+    		source: "(195:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (190:10) {#each sortedData as data (data.id)}
+    // (188:10) {#each sortedData as data (data.id)}
     function create_each_block_1$1(key_1, ctx) {
     	let div;
     	let show_if = /*data*/ ctx[18].date.substring(0, 4) == /*bucket*/ ctx[15].year && /*data*/ ctx[18].date.substring(5, 7) == /*bucket*/ ctx[15].month;
@@ -36305,7 +36305,7 @@
     			div = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div, "class", "w-full bg-white");
-    			add_location(div, file$5, 190, 12, 5664);
+    			add_location(div, file$5, 188, 12, 5607);
     			dispose = listen_dev(div, "click", click_handler_2, false, false, false);
     			this.first = div;
     		},
@@ -36371,14 +36371,14 @@
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(190:10) {#each sortedData as data (data.id)}",
+    		source: "(188:10) {#each sortedData as data (data.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (171:6) {#each buckets as bucket, index}
+    // (169:6) {#each buckets as bucket, index}
     function create_each_block$1(ctx) {
     	let t0;
     	let div1;
@@ -36418,11 +36418,11 @@
 
     			t3 = space();
     			attr_dev(span, "class", "relative text-gray-600 font-bold bg-white px-4");
-    			add_location(span, file$5, 183, 12, 5382);
+    			add_location(span, file$5, 181, 12, 5325);
     			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-oee9xi");
-    			add_location(div0, file$5, 182, 10, 5312);
+    			add_location(div0, file$5, 180, 10, 5255);
     			attr_dev(div1, "class", "flex flex-col justify-center items-center");
-    			add_location(div1, file$5, 179, 8, 5176);
+    			add_location(div1, file$5, 177, 8, 5119);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -36500,7 +36500,7 @@
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(171:6) {#each buckets as bucket, index}",
+    		source: "(169:6) {#each buckets as bucket, index}",
     		ctx
     	});
 
@@ -36553,7 +36553,6 @@
     	let span_intro;
     	let t6;
     	let promise;
-    	let div5_transition;
     	let current;
     	let dispose;
 
@@ -36601,35 +36600,35 @@
     			info.block.c();
     			attr_dev(i0, "class", "material-icons fill-current");
     			set_style(i0, "color", /*iconColor*/ ctx[3]);
-    			add_location(i0, file$5, 121, 4, 3293);
+    			add_location(i0, file$5, 119, 4, 3236);
     			attr_dev(div0, "class", "relative");
-    			add_location(div0, file$5, 136, 6, 3699);
+    			add_location(div0, file$5, 134, 6, 3642);
     			attr_dev(button, "class", "fill-current");
     			set_style(button, "color", /*iconColor*/ ctx[3]);
-    			add_location(button, file$5, 131, 4, 3536);
+    			add_location(button, file$5, 129, 4, 3479);
     			attr_dev(div1, "class", div1_class_value = "w-full flex flex-row p-4 bg-white " + (/*scrolling*/ ctx[4] ? "shadow" : "") + " fixed\r\n    top-0 justify-between z-20");
     			set_style(div1, "height", "56px");
-    			add_location(div1, file$5, 117, 2, 3143);
+    			add_location(div1, file$5, 115, 2, 3086);
     			attr_dev(i1, "class", "material-icons fill-current");
     			set_style(i1, "display", "block", 1);
     			set_style(i1, "color", /*iconColor*/ ctx[3]);
     			set_style(i1, "font-size", "64px");
-    			add_location(i1, file$5, 156, 8, 4354);
+    			add_location(i1, file$5, 154, 8, 4297);
     			attr_dev(div2, "class", "icon rounded-full p-6 mt-20 mb-4");
     			attr_dev(div2, "id", "icon");
     			set_style(div2, "background-color", /*backgroundColor*/ ctx[2]);
-    			add_location(div2, file$5, 151, 6, 4154);
+    			add_location(div2, file$5, 149, 6, 4097);
     			attr_dev(span, "class", "text-2xl font-bold mb-8");
     			set_style(span, "color", /*iconColor*/ ctx[3]);
-    			add_location(span, file$5, 162, 6, 4547);
+    			add_location(span, file$5, 160, 6, 4490);
     			attr_dev(div3, "class", "flex flex-col items-center");
-    			add_location(div3, file$5, 150, 4, 4106);
+    			add_location(div3, file$5, 148, 4, 4049);
     			attr_dev(div4, "id", "content");
     			attr_dev(div4, "class", "flex flex-col");
-    			add_location(div4, file$5, 149, 2, 4060);
+    			add_location(div4, file$5, 147, 2, 4003);
     			attr_dev(div5, "id", "detail-page");
     			attr_dev(div5, "class", "h-screen w-full bg-white absolute top-0 overflow-auto");
-    			add_location(div5, file$5, 113, 0, 3011);
+    			add_location(div5, file$5, 112, 0, 2992);
 
     			dispose = [
     				listen_dev(i0, "click", /*click_handler*/ ctx[11], false, false, false),
@@ -36739,12 +36738,6 @@
     			}
 
     			transition_in(info.block);
-
-    			add_render_callback(() => {
-    				if (!div5_transition) div5_transition = create_bidirectional_transition(div5, fade, { duration: 80 }, true);
-    				div5_transition.run(1);
-    			});
-
     			current = true;
     		},
     		o: function outro(local) {
@@ -36753,8 +36746,6 @@
     				transition_out(block);
     			}
 
-    			if (!div5_transition) div5_transition = create_bidirectional_transition(div5, fade, { duration: 80 }, false);
-    			div5_transition.run(0);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -36763,7 +36754,6 @@
     			info.block.d();
     			info.token = null;
     			info = null;
-    			if (detaching && div5_transition) div5_transition.end();
     			run_all(dispose);
     		}
     	};
@@ -36780,7 +36770,6 @@
     }
 
     function showEditDetail(data) {
-    	view.set("");
     	handleRouting("entry");
     	entryData.set(data);
     	overlay.set("entry");
@@ -37160,7 +37149,7 @@
     	return child_ctx;
     }
 
-    // (199:8) {#each typeDesigns as typeDesign}
+    // (218:8) {#each typeDesigns as typeDesign}
     function create_each_block$2(ctx) {
     	let current;
 
@@ -37207,7 +37196,41 @@
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(199:8) {#each typeDesigns as typeDesign}",
+    		source: "(218:8) {#each typeDesigns as typeDesign}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (239:4) {#if Object.keys($entryData).length > 0}
+    function create_if_block$4(ctx) {
+    	let button;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			button = element("button");
+    			button.textContent = "Delete";
+    			attr_dev(button, "class", "w-full text-center mb-8 bg-transparent text-red-600");
+    			add_location(button, file$7, 239, 6, 8471);
+    			dispose = listen_dev(button, "click", /*click_handler_6*/ ctx[25], false, false, false);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, button, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(button);
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$4.name,
+    		type: "if",
+    		source: "(239:4) {#if Object.keys($entryData).length > 0}",
     		ctx
     	});
 
@@ -37262,8 +37285,7 @@
     	let button2_style_value;
     	let div8_intro;
     	let t21;
-    	let button3;
-    	let div10_transition;
+    	let show_if = Object.keys(/*$entryData*/ ctx[9]).length > 0;
     	let current;
     	let dispose;
 
@@ -37282,6 +37304,8 @@
     	const out = i => transition_out(each_blocks[i], 1, 1, () => {
     		each_blocks[i] = null;
     	});
+
+    	let if_block = show_if && create_if_block$4(ctx);
 
     	const block = {
     		c: function create() {
@@ -37335,79 +37359,76 @@
     			button2 = element("button");
     			t20 = text(t20_value);
     			t21 = space();
-    			button3 = element("button");
-    			button3.textContent = "Cancel";
+    			if (if_block) if_block.c();
     			attr_dev(i, "class", "material-icons fill-current");
     			set_style(i, "color", "hsl(var(--primary-hue), 50%, 50%)");
-    			add_location(i, file$7, 139, 4, 5117);
+    			attr_dev(i, "aria-label", "Back button");
+    			add_location(i, file$7, 157, 4, 5581);
     			attr_dev(div0, "class", div0_class_value = "w-full flex flex-row p-4 bg-white " + (/*scrolling*/ ctx[0] ? "shadow" : "") + " fixed\r\n    top-0 justify-between z-20");
     			set_style(div0, "height", "56px");
-    			add_location(div0, file$7, 135, 2, 4967);
+    			add_location(div0, file$7, 153, 2, 5431);
     			attr_dev(label0, "for", "amount-input");
     			attr_dev(label0, "class", "svelte-1wqb46g");
-    			add_location(label0, file$7, 152, 6, 5550);
+    			add_location(label0, file$7, 171, 6, 6046);
     			attr_dev(input0, "id", "amount-input");
     			attr_dev(input0, "class", "amount text-2xl svelte-1wqb46g");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$7, 153, 6, 5598);
+    			add_location(input0, file$7, 172, 6, 6094);
     			attr_dev(div1, "class", "input-row svelte-1wqb46g");
-    			add_location(div1, file$7, 151, 4, 5480);
+    			add_location(div1, file$7, 170, 4, 5976);
     			attr_dev(label1, "for", "date-input");
     			attr_dev(label1, "class", "svelte-1wqb46g");
-    			add_location(label1, file$7, 162, 6, 5897);
+    			add_location(label1, file$7, 181, 6, 6393);
     			attr_dev(button0, "id", "today-button");
     			attr_dev(button0, "class", "date-button active svelte-1wqb46g");
-    			add_location(button0, file$7, 164, 8, 5969);
+    			add_location(button0, file$7, 183, 8, 6465);
     			attr_dev(button1, "id", "yesterday-button");
     			attr_dev(button1, "class", "date-button svelte-1wqb46g");
-    			add_location(button1, file$7, 170, 8, 6135);
+    			add_location(button1, file$7, 189, 8, 6631);
     			attr_dev(div2, "class", "mr-4");
-    			add_location(div2, file$7, 163, 6, 5941);
+    			add_location(div2, file$7, 182, 6, 6437);
     			attr_dev(div3, "class", "input-row svelte-1wqb46g");
-    			add_location(div3, file$7, 161, 4, 5827);
-    			add_location(span, file$7, 182, 6, 6490);
+    			add_location(div3, file$7, 180, 4, 6323);
+    			add_location(span, file$7, 201, 6, 6986);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "svelte-1wqb46g");
-    			add_location(input1, file$7, 183, 6, 6521);
+    			add_location(input1, file$7, 202, 6, 7017);
     			attr_dev(div4, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n      text-gray-600 ml-4");
-    			add_location(div4, file$7, 178, 4, 6328);
+    			add_location(div4, file$7, 197, 4, 6824);
     			attr_dev(label2, "for", "description-input");
     			attr_dev(label2, "class", "svelte-1wqb46g");
-    			add_location(label2, file$7, 186, 6, 6665);
+    			add_location(label2, file$7, 205, 6, 7161);
     			attr_dev(input2, "class", "truncate text-2xl svelte-1wqb46g");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "(Optional)");
-    			add_location(input2, file$7, 187, 6, 6723);
+    			add_location(input2, file$7, 206, 6, 7219);
     			attr_dev(div5, "class", "input-row svelte-1wqb46g");
-    			add_location(div5, file$7, 185, 4, 6594);
+    			add_location(div5, file$7, 204, 4, 7090);
     			attr_dev(label3, "class", "svelte-1wqb46g");
-    			add_location(label3, file$7, 196, 6, 7059);
+    			add_location(label3, file$7, 215, 6, 7555);
     			attr_dev(div6, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div6, file$7, 197, 6, 7086);
+    			add_location(div6, file$7, 216, 6, 7582);
     			attr_dev(div7, "class", "mt-8 flex flex-col");
-    			add_location(div7, file$7, 195, 4, 6979);
+    			add_location(div7, file$7, 214, 4, 7475);
     			attr_dev(button2, "class", "rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-12\r\n        mb-8 bg-gray-300");
 
     			attr_dev(button2, "style", button2_style_value = /*typeValid*/ ctx[7] && /*dateValid*/ ctx[6] && /*amountValid*/ ctx[5]
     			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
     			: "");
 
-    			add_location(button2, file$7, 211, 6, 7582);
+    			add_location(button2, file$7, 230, 6, 8078);
     			attr_dev(div8, "class", "w-full text-center block");
-    			add_location(div8, file$7, 208, 4, 7482);
-    			attr_dev(button3, "class", "w-full text-center mb-8 bg-transparent");
-    			set_style(button3, "color", "hsl(var(--secondary-hue), 50%, 50%)");
-    			add_location(button3, file$7, 219, 4, 7927);
+    			add_location(div8, file$7, 227, 4, 7978);
     			attr_dev(div9, "class", "flex flex-col items-start justify-around bg-white mt-8");
     			set_style(div9, "border-top-left-radius", "1rem");
     			set_style(div9, "border-top-right-radius", "1rem");
-    			add_location(div9, file$7, 148, 2, 5328);
+    			add_location(div9, file$7, 167, 2, 5824);
     			attr_dev(div10, "id", "entry-page");
     			attr_dev(div10, "class", "h-screen w-full bg-white absolute top-0 overflow-auto");
-    			add_location(div10, file$7, 131, 0, 4836);
+    			add_location(div10, file$7, 150, 0, 5338);
 
     			dispose = [
     				listen_dev(i, "click", /*click_handler*/ ctx[16], false, false, false),
@@ -37418,8 +37439,7 @@
     				listen_dev(input1, "input", /*input1_input_handler*/ ctx[21]),
     				listen_dev(input2, "input", /*input2_input_handler*/ ctx[22]),
     				listen_dev(input2, "click", /*click_handler_4*/ ctx[23], false, false, false),
-    				listen_dev(button2, "click", /*click_handler_5*/ ctx[24], false, false, false),
-    				listen_dev(button3, "click", /*click_handler_6*/ ctx[25], false, false, false)
+    				listen_dev(button2, "click", /*click_handler_5*/ ctx[24], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
@@ -37471,7 +37491,7 @@
     			append_dev(div8, button2);
     			append_dev(button2, t20);
     			append_dev(div9, t21);
-    			append_dev(div9, button3);
+    			if (if_block) if_block.m(div9, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -37527,6 +37547,21 @@
     			: "")) {
     				attr_dev(button2, "style", button2_style_value);
     			}
+
+    			if (dirty & /*$entryData*/ 512) show_if = Object.keys(/*$entryData*/ ctx[9]).length > 0;
+
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$4(ctx);
+    					if_block.c();
+    					if_block.m(div9, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -37577,11 +37612,6 @@
     				});
     			}
 
-    			add_render_callback(() => {
-    				if (!div10_transition) div10_transition = create_bidirectional_transition(div10, fade, { duration: 80 }, true);
-    				div10_transition.run(1);
-    			});
-
     			current = true;
     		},
     		o: function outro(local) {
@@ -37591,14 +37621,12 @@
     				transition_out(each_blocks[i]);
     			}
 
-    			if (!div10_transition) div10_transition = create_bidirectional_transition(div10, fade, { duration: 80 }, false);
-    			div10_transition.run(0);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div10);
     			destroy_each(each_blocks, detaching);
-    			if (detaching && div10_transition) div10_transition.end();
+    			if (if_block) if_block.d();
     			run_all(dispose);
     		}
     	};
@@ -37617,13 +37645,10 @@
     function instance$7($$self, $$props, $$invalidate) {
     	let $entryData;
     	let $userInfo;
-    	let $detailData;
     	validate_store(entryData, "entryData");
-    	component_subscribe($$self, entryData, $$value => $$invalidate(14, $entryData = $$value));
+    	component_subscribe($$self, entryData, $$value => $$invalidate(9, $entryData = $$value));
     	validate_store(userInfo, "userInfo");
     	component_subscribe($$self, userInfo, $$value => $$invalidate(15, $userInfo = $$value));
-    	validate_store(detailData, "detailData");
-    	component_subscribe($$self, detailData, $$value => $$invalidate(9, $detailData = $$value));
     	let scrolling = false;
     	let description = "";
     	let amount = 0;
@@ -37710,6 +37735,21 @@
     		});
     	}
 
+    	function deleteEntry() {
+    		handleRouting("dashboard");
+    		overlay.set("");
+    		const db = firebase$1.firestore();
+
+    		db.collection("expenses").doc($entryData.id).delete().then(() => {
+    			toastMessage.set("Entry deleted");
+    			setTimeout(() => toastMessage.set(""), 1000);
+    			dashboardShouldReload.set(true);
+    		}).catch(error => {
+    			toastMessage.set(error);
+    			setTimeout(() => toastMessage.set(""), 3000);
+    		});
+    	}
+
     	const click_handler = () => {
     		window.history.back();
     	};
@@ -37735,11 +37775,7 @@
 
     	const click_handler_4 = () => document.execCommand("selectall", null, false);
     	const click_handler_5 = () => sendEntry();
-
-    	const click_handler_6 = () => {
-    		handleRouting("detail#" + $detailData.type);
-    		overlay.set("detail");
-    	};
+    	const click_handler_6 = () => deleteEntry();
 
     	$$self.$capture_state = () => {
     		return {};
@@ -37758,7 +37794,6 @@
     		if ("wrapperEl" in $$props) wrapperEl = $$props.wrapperEl;
     		if ("$entryData" in $$props) entryData.set($entryData = $$props.$entryData);
     		if ("$userInfo" in $$props) userInfo.set($userInfo = $$props.$userInfo);
-    		if ("$detailData" in $$props) detailData.set($detailData = $$props.$detailData);
     	};
 
     	$$self.$$.update = () => {
@@ -37797,12 +37832,12 @@
     		dateValid,
     		typeValid,
     		isUpdate,
-    		$detailData,
+    		$entryData,
     		setDate,
     		receiveType,
     		sendEntry,
+    		deleteEntry,
     		wrapperEl,
-    		$entryData,
     		$userInfo,
     		click_handler,
     		input0_input_handler,
@@ -38083,7 +38118,7 @@
     }
 
     // (111:2) {#if $overlay === 'entry'}
-    function create_if_block$4(ctx) {
+    function create_if_block$5(ctx) {
     	let div;
     	let current;
     	const entry = new Entry({ $$inline: true });
@@ -38116,7 +38151,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$4.name,
+    		id: create_if_block$5.name,
     		type: "if",
     		source: "(111:2) {#if $overlay === 'entry'}",
     		ctx
@@ -38142,7 +38177,7 @@
 
     	let if_block0 = /*$overlay*/ ctx[2] === "detail" && create_if_block_2$1(ctx);
     	let if_block1 = /*signInError*/ ctx[3] && create_if_block_1$1(ctx);
-    	let if_block2 = /*$overlay*/ ctx[2] === "entry" && create_if_block$4(ctx);
+    	let if_block2 = /*$overlay*/ ctx[2] === "entry" && create_if_block$5(ctx);
 
     	const block = {
     		c: function create() {
@@ -38203,7 +38238,7 @@
 
     			if (/*$overlay*/ ctx[2] === "entry") {
     				if (!if_block2) {
-    					if_block2 = create_if_block$4(ctx);
+    					if_block2 = create_if_block$5(ctx);
     					if_block2.c();
     					transition_in(if_block2, 1);
     					if_block2.m(main, null);

@@ -88,7 +88,6 @@
   }
 
   function showEditDetail(data) {
-    view.set("");
     handleRouting("entry");
     entryData.set(data);
     overlay.set("entry");
@@ -123,8 +122,7 @@
 
 <div
   id="detail-page"
-  class="h-screen w-full bg-white absolute top-0 overflow-auto"
-  transition:fade={{ duration: 80 }}>
+  class="h-screen w-full bg-white absolute top-0 overflow-auto">
   <div
     class="w-full flex flex-row p-4 bg-white {scrolling ? 'shadow' : ''} fixed
     top-0 justify-between z-20"
