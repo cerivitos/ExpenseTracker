@@ -123,7 +123,7 @@
 
 <div
   id="detail-page"
-  class="h-screen w-full bg-white relative overflow-auto"
+  class="h-screen w-full bg-white absolute top-0 overflow-auto"
   transition:fade={{ duration: 80 }}>
   <div
     class="w-full flex flex-row p-4 bg-white {scrolling ? 'shadow' : ''} fixed

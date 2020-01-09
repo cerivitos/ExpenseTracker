@@ -75,8 +75,13 @@
       view.set(page);
       overlay.set("");
     } else if (page === "detail") {
-      view.set("dashboard");
-      overlay.set("");
+      if (Object.keys($detailData).length > 0) {
+        handleRouting("detail#" + $detailData.type);
+        overlay.set("detail");
+      } else {
+        view.set("dashboard");
+        overlay.set("");
+      }
     } else if (page === "entry") {
       view.set("dashboard");
       overlay.set("entry");

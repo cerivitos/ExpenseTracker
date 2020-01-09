@@ -175,7 +175,7 @@
 
 <div
   id="entry-page"
-  class="h-screen w-full bg-white relative overflow-auto"
+  class="h-screen w-full bg-white absolute top-0 overflow-auto"
   transition:fade={{ duration: 80 }}>
   <div
     class="w-full flex flex-row p-4 bg-white {scrolling ? 'shadow' : ''} fixed
@@ -185,8 +185,7 @@
       class="material-icons fill-current"
       style="color: hsl(var(--primary-hue), 50%, 50%)"
       on:click={() => {
-        handleRouting('detail#' + $detailData.type);
-        overlay.set('detail');
+        window.history.back();
       }}>
       arrow_back
     </i>
@@ -194,7 +193,7 @@
   <div
     class="flex flex-col items-start justify-around bg-white mt-8"
     style="border-top-left-radius: 1rem; border-top-right-radius: 1rem">
-    <div class="input-row">
+    <div class="input-row" in:fade={{ duration: 120, delay: 30 }}>
       <label for="amount-input">Amount</label>
       <input
         id="amount-input"
@@ -204,7 +203,7 @@
         bind:value={amount}
         on:click={() => document.execCommand('selectall', null, false)} />
     </div>
-    <div class="input-row">
+    <div class="input-row" in:fade={{ duration: 120, delay: 60 }}>
       <label for="date-input">Date</label>
       <div class="mr-4">
         <button
@@ -223,11 +222,12 @@
     </div>
     <div
       class="flex flex-row w-full justify-between items-center mt-2 text-lg
-      text-gray-600 ml-4">
+      text-gray-600 ml-4"
+      in:fade={{ duration: 80, delay: 90 }}>
       <span>Other date</span>
       <input id="date-input" type="date" bind:value={date} />
     </div>
-    <div class="input-row">
+    <div class="input-row" in:fade={{ duration: 120, delay: 120 }}>
       <label for="description-input">Description</label>
       <input
         class="truncate text-2xl"
@@ -237,7 +237,7 @@
         bind:value={description}
         on:click={() => document.execCommand('selectall', null, false)} />
     </div>
-    <div class="mt-8 flex flex-col">
+    <div class="mt-8 flex flex-col" in:fade={{ duration: 120, delay: 150 }}>
       <label>Type</label>
       <div class="w-full flex flex-row flex-wrap justify-start">
         {#each typeDesigns as typeDesign}
@@ -250,7 +250,9 @@
         {/each}
       </div>
     </div>
-    <div class="w-full text-center block">
+    <div
+      class="w-full text-center block"
+      in:fade={{ duration: 120, delay: 180 }}>
       <button
         class="rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-12
         mb-8 bg-gray-300"
