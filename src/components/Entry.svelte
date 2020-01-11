@@ -22,6 +22,7 @@
   let amount = 0;
   let date = new Date().toISOString().substring(0, 10);
   let type = "Food";
+  let suggestedDescriptions = [];
 
   let amountValid = false;
   let dateValid = false;
@@ -30,6 +31,14 @@
   let isUpdate = false;
 
   let wrapperEl;
+
+  const commonDescriptions = new Map([
+    ["Food", ["GrabFood", "Foodpanda", "Lunch at Westgate", "Lunch at JEM"]],
+    ["Groceries", ["NTUC", "Redmart"]],
+    ["Transport", ["Grabcar", "Taxi"]],
+    ["Household", ["Cleaner", "Kid's clothes", "Diapers"]],
+    ["Utilities", ["Internet", "Electricity", "Gas/Water"]]
+  ]);
 
   onMount(() => {
     //Use existing data to be edited if user came from Detail view
@@ -141,6 +150,7 @@
 
   $: if (type !== "") {
     typeValid = true;
+    suggestedDescriptions = commonDescriptions.get(type);
   } else {
     typeValid = false;
   }
@@ -249,16 +259,6 @@
       <span>Other date</span>
       <input id="date-input" type="date" bind:value={date} />
     </div>
-    <div class="input-row" in:fade={{ duration: 120, delay: 120 }}>
-      <label for="description-input">Description</label>
-      <input
-        class="truncate text-2xl"
-        id="description-input"
-        type="text"
-        placeholder="(Optional)"
-        bind:value={description}
-        on:click={() => document.execCommand('selectall', null, false)} />
-    </div>
     <div class="mt-8 flex flex-col" in:fade={{ duration: 120, delay: 150 }}>
       <label>Type</label>
       <div class="w-full flex flex-row flex-wrap justify-start">
@@ -272,11 +272,34 @@
         {/each}
       </div>
     </div>
+    <div class="input-row" in:fade={{ duration: 120, delay: 120 }}>
+      <label for="description-input">Description</label>
+      <input
+        class="truncate text-2xl"
+        id="description-input"
+        type="text"
+        placeholder="(Optional)"
+        bind:value={description}
+        on:click={() => document.execCommand('selectall', null, false)} />
+    </div>
+    <div class="flex mt-4 mx-4 flex-wrap" style="height: 80px">
+      {#if suggestedDescriptions}
+        {#each suggestedDescriptions as suggestion, index (suggestion)}
+          <button
+            in:fade={{ duration: 180, delay: 30 * index }}
+            class="rounded-full px-3 py-1 self-start bg-gray-300 text-gray-600
+            mr-2 mt-2"
+            on:click={() => (description = suggestion)}>
+            {suggestion}
+          </button>
+        {/each}
+      {/if}
+    </div>
     <div
       class="w-full text-center block"
       in:fade={{ duration: 120, delay: 180 }}>
       <button
-        class="rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-12
+        class="rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-24
         mb-8 bg-gray-300"
         on:click={() => sendEntry()}
         style={typeValid && dateValid && amountValid ? 'background-color:hsl(var(--accent-hue), 50%, 50%)' : ''}>
