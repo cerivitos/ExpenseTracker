@@ -38,17 +38,24 @@
 
 <style type="text/postcss">
   .searchbar {
-    outline: none !important;
-    animation: 180ms search ease-out;
-    @apply mx-4 text-gray-600 flex appearance-none w-full bg-transparent text-lg;
+    height: 56px;
+    animation: 360ms search ease-out;
+    @apply fixed top-0 justify-between z-20 bg-white w-full flex flex-row p-4;
   }
 
   @keyframes search {
-    from {
-      transform: translateY(30px) scale(0.5);
+    0% {
+      transform: translateY(30px) scale(0);
+      transform-origin: bottom center;
+      border-radius: 9999px;
     }
-    to {
+    75% {
       transform: translateY(0px) scale(1);
+      background-color: #edf2f7;
+    }
+    100% {
+      border-radius: 0;
+      background-color: white;
     }
   }
 </style>
@@ -57,10 +64,7 @@
   id="search-page"
   class="h-screen w-full bg-white absolute top-0 overflow-auto"
   out:fade={{ duration: 80 }}>
-  <div
-    class="w-full flex flex-row p-4 {scrolling ? 'shadow' : ''} fixed top-0
-    justify-between z-20 bg-white"
-    style="height: 56px">
+  <div class="{scrolling ? 'shadow' : ''} searchbar">
     <i
       class="material-icons fill-current"
       style="color: hsl(var(--primary-hue), 50%, 50%)"
@@ -75,7 +79,9 @@
       type="text"
       placeholder="Search"
       bind:value={query}
-      class="searchbar" />
+      class="mx-4 text-gray-600 flex bg-transparent appearance-none w-full
+      text-lg"
+      style="outline: none !important;" />
   </div>
   <div id="content" class="w-full flex flex-col mt-16">
     {#if query.length > 0}

@@ -38077,7 +38077,7 @@
     	return child_ctx;
     }
 
-    // (66:4) {#if query.length > 0}
+    // (65:4) {#if query.length > 0}
     function create_if_block$6(ctx) {
     	let each_1_anchor;
     	let current;
@@ -38164,14 +38164,14 @@
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(66:4) {#if query.length > 0}",
+    		source: "(65:4) {#if query.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (67:6) {#each filteredDatas as data, index}
+    // (66:6) {#each filteredDatas as data, index}
     function create_each_block$3(ctx) {
     	let current;
 
@@ -38214,7 +38214,7 @@
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(67:6) {#each filteredDatas as data, index}",
+    		source: "(66:6) {#each filteredDatas as data, index}",
     		ctx
     	});
 
@@ -38249,21 +38249,21 @@
     			attr_dev(i, "class", "material-icons fill-current");
     			set_style(i, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i, "aria-label", "Back button");
-    			add_location(i, file$9, 48, 4, 1988);
+    			add_location(i, file$9, 45, 4, 2154);
     			attr_dev(input, "id", "search-input");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Search");
-    			attr_dev(input, "class", "searchbar svelte-1f6c0ds");
-    			add_location(input, file$9, 57, 4, 2223);
-    			attr_dev(div0, "class", div0_class_value = "w-full flex flex-row p-4 " + (/*scrolling*/ ctx[0] ? "shadow" : "") + " fixed top-0\r\n    justify-between z-20 bg-white");
-    			set_style(div0, "height", "56px");
-    			add_location(div0, file$9, 44, 2, 1838);
+    			attr_dev(input, "class", "mx-4 text-gray-600 flex bg-transparent appearance-none w-full\r\n      text-lg");
+    			set_style(input, "outline", "none", 1);
+    			add_location(input, file$9, 54, 4, 2389);
+    			attr_dev(div0, "class", div0_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar" + " svelte-11rh4pc"));
+    			add_location(div0, file$9, 44, 2, 2097);
     			attr_dev(div1, "id", "content");
     			attr_dev(div1, "class", "w-full flex flex-col mt-16");
-    			add_location(div1, file$9, 64, 2, 2369);
+    			add_location(div1, file$9, 63, 2, 2643);
     			attr_dev(div2, "id", "search-page");
     			attr_dev(div2, "class", "h-screen w-full bg-white absolute top-0 overflow-auto");
-    			add_location(div2, file$9, 40, 0, 1713);
+    			add_location(div2, file$9, 40, 0, 1972);
 
     			dispose = [
     				listen_dev(i, "click", /*click_handler*/ ctx[5], false, false, false),
@@ -38290,7 +38290,7 @@
     				set_input_value(input, /*query*/ ctx[1]);
     			}
 
-    			if (!current || dirty & /*scrolling*/ 1 && div0_class_value !== (div0_class_value = "w-full flex flex-row p-4 " + (/*scrolling*/ ctx[0] ? "shadow" : "") + " fixed top-0\r\n    justify-between z-20 bg-white")) {
+    			if (!current || dirty & /*scrolling*/ 1 && div0_class_value !== (div0_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar" + " svelte-11rh4pc"))) {
     				attr_dev(div0, "class", div0_class_value);
     			}
 
