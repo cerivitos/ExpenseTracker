@@ -1,8 +1,8 @@
 <script>
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
-  import { queryString } from "../store/store";
-  import { typeDesigns } from "../util";
+  import { queryString, entryData, overlay } from "../store/store";
+  import { typeDesigns, handleRouting } from "../util";
 
   export let data;
 
@@ -42,6 +42,12 @@
     );
   }
 
+  function showEditDetail(data) {
+    handleRouting("entry");
+    entryData.set(data);
+    overlay.set("entry");
+  }
+
   $: if (data.highlightKey && mounted) {
     const highlightKey = data.highlightKey;
     addedBy = data.addedBy;
@@ -58,7 +64,8 @@
 <div
   class="flex flex-row p-4 items-center"
   in:fade={{ duration: 120 }}
-  out:fade={{ duration: 80 }}>
+  out:fade={{ duration: 80 }}
+  on:click={() => showEditDetail(data)}>
   <div
     id="icon"
     class="rounded-full p-2 mr-2 fill-current {data.highlightKey === 'type' ? 'border-4 border-green-200' : ''}"

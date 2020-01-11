@@ -1,8 +1,13 @@
 <script>
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
-  import { debounce } from "../util";
-  import { queryString } from "../store/store";
+  import { debounce, handleRouting } from "../util";
+  import {
+    queryString,
+    filteredSearchData,
+    view,
+    overlay
+  } from "../store/store";
   import SearchListTile from "./SearchListTile.svelte";
 
   let scrolling = false;
@@ -32,6 +37,11 @@
       queryString.set(query);
       debounce(searchData(query), 800);
     };
+
+    if (Object.keys($filteredSearchData).length > 0) {
+      query = $queryString;
+      filteredDatas = $filteredSearchData;
+    }
   });
 
   function searchData(query) {
@@ -57,6 +67,7 @@
 
         return keep;
       });
+      filteredSearchData.set(filteredDatas);
     }
   }
 </script>
@@ -64,8 +75,11 @@
 <style type="text/postcss">
   .searchbar {
     height: 56px;
-    animation: 360ms search ease-out;
     @apply fixed top-0 justify-between z-20 bg-white w-full flex flex-row p-4;
+  }
+
+  .entry-anim {
+    animation: 360ms search ease-out;
   }
 
   @keyframes search {
@@ -89,13 +103,17 @@
   id="search-page"
   class="h-screen w-full bg-white absolute top-0 overflow-auto"
   out:fade={{ duration: 80 }}>
-  <div class="{scrolling ? 'shadow' : ''} searchbar">
+  <div
+    class="{scrolling ? 'shadow' : ''} searchbar {Object.keys($filteredSearchData).length > 0 ? '' : 'entry-anim'}">
     <i
       class="material-icons fill-current"
       style="color: hsl(var(--primary-hue), 50%, 50%)"
       aria-label="Back button"
       on:click={() => {
-        window.history.back();
+        filteredSearchData.set({});
+        handleRouting('dashboard');
+        view.set('dashboard');
+        overlay.set('');
       }}>
       arrow_back
     </i>

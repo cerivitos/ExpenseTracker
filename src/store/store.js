@@ -10,6 +10,9 @@ export const dashboardShouldReload = writable(false);
 //Handle passing of search query string to allow highlighting in DetailListTile
 export const queryString = writable("");
 
+//Save last filtered search data to restore search view when exiting Entry view
+export const filteredSearchData = writable({});
+
 //Handle passing of data for Detail page
 export const detailData = writable({});
 

@@ -26495,6 +26495,9 @@
     //Handle passing of search query string to allow highlighting in DetailListTile
     const queryString = writable("");
 
+    //Save last filtered search data to restore search view when exiting Entry view
+    const filteredSearchData = writable({});
+
     //Handle passing of data for Detail page
     const detailData = writable({});
 
@@ -38144,6 +38147,7 @@
     	let div3_intro;
     	let div3_outro;
     	let current;
+    	let dispose;
 
     	const block = {
     		c: function create() {
@@ -38165,7 +38169,7 @@
     			t6 = text("$\r\n    ");
     			attr_dev(i, "class", "material-icons md-18");
     			set_style(i, "display", "block", 1);
-    			add_location(i, file$9, 65, 4, 2016);
+    			add_location(i, file$9, 72, 4, 2216);
     			attr_dev(div0, "id", "icon");
 
     			attr_dev(div0, "class", div0_class_value = "rounded-full p-2 mr-2 fill-current " + (/*data*/ ctx[0].highlightKey === "type"
@@ -38174,22 +38178,23 @@
 
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[5]);
     			set_style(div0, "color", /*iconColor*/ ctx[6]);
-    			add_location(div0, file$9, 61, 2, 1808);
+    			add_location(div0, file$9, 68, 2, 2008);
     			attr_dev(span0, "class", "font-bold truncate mr-2");
-    			add_location(span0, file$9, 71, 6, 2248);
+    			add_location(span0, file$9, 78, 6, 2448);
     			attr_dev(span1, "class", "text-gray-600 truncate");
-    			add_location(span1, file$9, 74, 6, 2334);
+    			add_location(span1, file$9, 81, 6, 2534);
     			attr_dev(div1, "class", "flex flex-row items-start justify-around truncate");
-    			add_location(div1, file$9, 70, 4, 2177);
+    			add_location(div1, file$9, 77, 4, 2377);
     			attr_dev(span2, "class", "text-gray-600 truncate");
-    			add_location(span2, file$9, 76, 4, 2402);
+    			add_location(span2, file$9, 83, 4, 2602);
     			attr_dev(div2, "class", "flex flex-col items-start mr-4");
-    			add_location(div2, file$9, 69, 2, 2127);
+    			add_location(div2, file$9, 76, 2, 2327);
     			html_tag = new HtmlTag(raw2_value, null);
     			attr_dev(span3, "class", "flex-grow flex justify-end");
-    			add_location(span3, file$9, 80, 2, 2486);
+    			add_location(span3, file$9, 87, 2, 2686);
     			attr_dev(div3, "class", "flex flex-row p-4 items-center");
-    			add_location(div3, file$9, 57, 0, 1695);
+    			add_location(div3, file$9, 63, 0, 1854);
+    			dispose = listen_dev(div3, "click", /*click_handler*/ ctx[11], false, false, false);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -38255,6 +38260,7 @@
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div3);
     			if (detaching && div3_outro) div3_outro.end();
+    			dispose();
     		}
     	};
 
@@ -38273,6 +38279,12 @@
     	const startHighlightIndex = textToHighlight.toLowerCase().trim().indexOf(queryString);
     	const endHighlightIndex = startHighlightIndex + queryString.length;
     	return textToHighlight.slice(0, startHighlightIndex) + "<span class=\"font-bold text-green-600 bg-green-200\">" + textToHighlight.slice(startHighlightIndex, endHighlightIndex) + "</span>" + textToHighlight.slice(endHighlightIndex, textToHighlight.length);
+    }
+
+    function showEditDetail$1(data) {
+    	handleRouting("entry");
+    	entryData.set(data);
+    	overlay.set("entry");
     }
 
     function instance$9($$self, $$props, $$invalidate) {
@@ -38302,6 +38314,8 @@
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<SearchListTile> was created with unknown prop '${key}'`);
     	});
+
+    	const click_handler = () => showEditDetail$1(data);
 
     	$$self.$set = $$props => {
     		if ("data" in $$props) $$invalidate(0, data = $$props.data);
@@ -38353,7 +38367,20 @@
     		}
     	};
 
-    	return [data, date, addedBy, desc, materialIcon, backgroundColor, iconColor];
+    	return [
+    		data,
+    		date,
+    		addedBy,
+    		desc,
+    		materialIcon,
+    		backgroundColor,
+    		iconColor,
+    		mounted,
+    		amount,
+    		$queryString,
+    		iconHue,
+    		click_handler
+    	];
     }
 
     class SearchListTile extends SvelteComponentDev {
@@ -38390,18 +38417,18 @@
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[10] = list[i];
     	return child_ctx;
     }
 
-    // (90:4) {#if datas && query.length > 0}
+    // (105:4) {#if datas && query.length > 0}
     function create_if_block$6(ctx) {
     	let each_blocks = [];
     	let each_1_lookup = new Map();
     	let each_1_anchor;
     	let current;
     	let each_value = /*filteredDatas*/ ctx[2];
-    	const get_key = ctx => /*data*/ ctx[8].id;
+    	const get_key = ctx => /*data*/ ctx[10].id;
 
     	for (let i = 0; i < each_value.length; i += 1) {
     		let child_ctx = get_each_context$3(ctx, each_value, i);
@@ -38460,20 +38487,20 @@
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(90:4) {#if datas && query.length > 0}",
+    		source: "(105:4) {#if datas && query.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (91:6) {#each filteredDatas as data (data.id)}
+    // (106:6) {#each filteredDatas as data (data.id)}
     function create_each_block$3(key_1, ctx) {
     	let first;
     	let current;
 
     	const searchlisttile = new SearchListTile({
-    			props: { data: /*data*/ ctx[8] },
+    			props: { data: /*data*/ ctx[10] },
     			$$inline: true
     		});
 
@@ -38492,7 +38519,7 @@
     		},
     		p: function update(ctx, dirty) {
     			const searchlisttile_changes = {};
-    			if (dirty & /*filteredDatas*/ 4) searchlisttile_changes.data = /*data*/ ctx[8];
+    			if (dirty & /*filteredDatas*/ 4) searchlisttile_changes.data = /*data*/ ctx[10];
     			searchlisttile.$set(searchlisttile_changes);
     		},
     		i: function intro(local) {
@@ -38514,7 +38541,7 @@
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(91:6) {#each filteredDatas as data (data.id)}",
+    		source: "(106:6) {#each filteredDatas as data (data.id)}",
     		ctx
     	});
 
@@ -38549,25 +38576,29 @@
     			attr_dev(i, "class", "material-icons fill-current");
     			set_style(i, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i, "aria-label", "Back button");
-    			add_location(i, file$a, 70, 4, 2825);
+    			add_location(i, file$a, 82, 4, 3165);
     			attr_dev(input, "id", "search-input");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Search");
     			attr_dev(input, "class", "mx-4 text-gray-600 flex bg-transparent appearance-none w-full\r\n      text-lg");
     			set_style(input, "outline", "none", 1);
-    			add_location(input, file$a, 79, 4, 3060);
-    			attr_dev(div0, "class", div0_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar" + " svelte-11rh4pc"));
-    			add_location(div0, file$a, 69, 2, 2768);
+    			add_location(input, file$a, 94, 4, 3500);
+
+    			attr_dev(div0, "class", div0_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar " + (Object.keys(/*$filteredSearchData*/ ctx[4]).length > 0
+    			? ""
+    			: "entry-anim") + " svelte-pdhohd"));
+
+    			add_location(div0, file$a, 80, 2, 3037);
     			attr_dev(div1, "id", "content");
     			attr_dev(div1, "class", "w-full flex flex-col mt-16");
-    			add_location(div1, file$a, 88, 2, 3314);
+    			add_location(div1, file$a, 103, 2, 3754);
     			attr_dev(div2, "id", "search-page");
     			attr_dev(div2, "class", "h-screen w-full bg-white absolute top-0 overflow-auto");
-    			add_location(div2, file$a, 65, 0, 2643);
+    			add_location(div2, file$a, 76, 0, 2912);
 
     			dispose = [
-    				listen_dev(i, "click", /*click_handler*/ ctx[6], false, false, false),
-    				listen_dev(input, "input", /*input_input_handler*/ ctx[7])
+    				listen_dev(i, "click", /*click_handler*/ ctx[8], false, false, false),
+    				listen_dev(input, "input", /*input_input_handler*/ ctx[9])
     			];
     		},
     		l: function claim(nodes) {
@@ -38590,7 +38621,9 @@
     				set_input_value(input, /*query*/ ctx[1]);
     			}
 
-    			if (!current || dirty & /*scrolling*/ 1 && div0_class_value !== (div0_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar" + " svelte-11rh4pc"))) {
+    			if (!current || dirty & /*scrolling, $filteredSearchData*/ 17 && div0_class_value !== (div0_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar " + (Object.keys(/*$filteredSearchData*/ ctx[4]).length > 0
+    			? ""
+    			: "entry-anim") + " svelte-pdhohd"))) {
     				attr_dev(div0, "class", div0_class_value);
     			}
 
@@ -38645,6 +38678,12 @@
     }
 
     function instance$a($$self, $$props, $$invalidate) {
+    	let $filteredSearchData;
+    	let $queryString;
+    	validate_store(filteredSearchData, "filteredSearchData");
+    	component_subscribe($$self, filteredSearchData, $$value => $$invalidate(4, $filteredSearchData = $$value));
+    	validate_store(queryString, "queryString");
+    	component_subscribe($$self, queryString, $$value => $$invalidate(5, $queryString = $$value));
     	let scrolling = false;
     	let query = "";
     	let filteredDatas = [];
@@ -38673,6 +38712,11 @@
     			queryString.set(query);
     			debounce(searchData(query), 800);
     		};
+
+    		if (Object.keys($filteredSearchData).length > 0) {
+    			$$invalidate(1, query = $queryString);
+    			$$invalidate(2, filteredDatas = $filteredSearchData);
+    		}
     	});
 
     	function searchData(query) {
@@ -38695,11 +38739,16 @@
 
     				return keep;
     			}));
+
+    			filteredSearchData.set(filteredDatas);
     		}
     	}
 
     	const click_handler = () => {
-    		window.history.back();
+    		filteredSearchData.set({});
+    		handleRouting("dashboard");
+    		view.set("dashboard");
+    		overlay.set("");
     	};
 
     	function input_input_handler() {
@@ -38717,6 +38766,8 @@
     		if ("filteredDatas" in $$props) $$invalidate(2, filteredDatas = $$props.filteredDatas);
     		if ("datas" in $$props) $$invalidate(3, datas = $$props.datas);
     		if ("searchFuture" in $$props) searchFuture = $$props.searchFuture;
+    		if ("$filteredSearchData" in $$props) filteredSearchData.set($filteredSearchData = $$props.$filteredSearchData);
+    		if ("$queryString" in $$props) queryString.set($queryString = $$props.$queryString);
     	};
 
     	return [
@@ -38724,6 +38775,8 @@
     		query,
     		filteredDatas,
     		datas,
+    		$filteredSearchData,
+    		$queryString,
     		searchFuture,
     		searchData,
     		click_handler,
