@@ -2,38 +2,63 @@
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
   import { debounce } from "../util";
-  import DetailListTile from "./DetailListTile.svelte";
+  import { queryString } from "../store/store";
+  import SearchListTile from "./SearchListTile.svelte";
 
   let scrolling = false;
   let query = "";
-  let datas;
   let filteredDatas = [];
+  let datas;
+  let searchFuture;
 
   onMount(() => {
     document.getElementById("search-input").focus();
 
     datas = JSON.parse(localStorage.getItem("rawCache"));
 
+    datas.sort((a, b) => {
+      if (b.date > a.date) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+
     document.getElementById("search-page").addEventListener("scroll", ev => {
       ev.target.scrollTop > 0 ? (scrolling = true) : (scrolling = false);
     });
+
+    document.getElementById("search-input").oninput = () => {
+      queryString.set(query);
+      debounce(searchData(query), 800);
+    };
   });
 
   function searchData(query) {
-    filteredDatas = datas.filter(data => {
-      let include = false;
-      for (let key in data) {
-        const value = data[key.toString()].toString().toLowerCase();
+    if (datas && query.length > 0) {
+      filteredDatas = datas.filter(data => {
+        let keep = false;
 
-        if (value.includes(query.toLowerCase().trim()) && key !== "id") {
-          include = true;
+        for (let key in data) {
+          if (key !== "id" && key !== "addedOn" && key !== "amount") {
+            const value = data[key.toString()].toString().toLowerCase();
+
+            if (value.includes(query.toLowerCase().trim())) {
+              const startHighlightIndex = value.indexOf(
+                query.toLowerCase().trim()
+              );
+              const endHighlightIndex = startHighlightIndex + query.length;
+              data.highlightKey = key;
+
+              keep = true;
+            }
+          }
         }
-      }
-      return include;
-    });
-  }
 
-  $: if (datas) debounce(searchData(query), 800);
+        return keep;
+      });
+    }
+  }
 </script>
 
 <style type="text/postcss">
@@ -84,9 +109,9 @@
       style="outline: none !important;" />
   </div>
   <div id="content" class="w-full flex flex-col mt-16">
-    {#if query.length > 0}
-      {#each filteredDatas as data, index}
-        <DetailListTile {data} {index} />
+    {#if datas && query.length > 0}
+      {#each filteredDatas as data (data.id)}
+        <SearchListTile {data} />
       {/each}
     {/if}
   </div>

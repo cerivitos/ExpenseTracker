@@ -7,6 +7,9 @@ export const view = writable("dashboard");
 export const overlay = writable("");
 export const dashboardShouldReload = writable(false);
 
+//Handle passing of search query string to allow highlighting in DetailListTile
+export const queryString = writable("");
+
 //Handle passing of data for Detail page
 export const detailData = writable({});
 

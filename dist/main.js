@@ -170,6 +170,31 @@
         e.initCustomEvent(type, false, false, detail);
         return e;
     }
+    class HtmlTag {
+        constructor(html, anchor = null) {
+            this.e = element('div');
+            this.a = anchor;
+            this.u(html);
+        }
+        m(target, anchor = null) {
+            for (let i = 0; i < this.n.length; i += 1) {
+                insert(target, this.n[i], anchor);
+            }
+            this.t = target;
+        }
+        u(html) {
+            this.e.innerHTML = html;
+            this.n = Array.from(this.e.childNodes);
+        }
+        p(html) {
+            this.d();
+            this.u(html);
+            this.m(this.t, this.a);
+        }
+        d() {
+            this.n.forEach(detach);
+        }
+    }
 
     let stylesheet;
     let active = 0;
@@ -26467,6 +26492,9 @@
     const overlay = writable("");
     const dashboardShouldReload = writable(false);
 
+    //Handle passing of search query string to allow highlighting in DetailListTile
+    const queryString = writable("");
+
     //Handle passing of data for Detail page
     const detailData = writable({});
 
@@ -35959,11 +35987,9 @@
     	let t3;
     	let div1;
     	let span2;
-    	let t4_value = /*data*/ ctx[0].addedBy + "";
     	let t4;
     	let t5;
     	let span3;
-    	let t6_value = /*data*/ ctx[0].desc + "";
     	let t6;
     	let t7;
     	let span4;
@@ -35984,31 +36010,31 @@
     			t3 = space();
     			div1 = element("div");
     			span2 = element("span");
-    			t4 = text(t4_value);
+    			t4 = text(/*addedBy*/ ctx[4]);
     			t5 = space();
     			span3 = element("span");
-    			t6 = text(t6_value);
+    			t6 = text(/*desc*/ ctx[5]);
     			t7 = space();
     			span4 = element("span");
-    			t8 = text("$");
+    			t8 = text("$ ");
     			t9 = text(t9_value);
     			attr_dev(span0, "class", "font-bold text-xs");
-    			add_location(span0, file$5, 15, 4, 480);
+    			add_location(span0, file$5, 26, 4, 773);
     			attr_dev(span1, "class", "font-bold");
-    			add_location(span1, file$5, 18, 4, 587);
+    			add_location(span1, file$5, 29, 4, 880);
     			attr_dev(div0, "class", "w-10 rounded-lg flex flex-col items-center justify-between py-1 mr-4");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[1]);
     			set_style(div0, "color", /*iconColor*/ ctx[2]);
-    			add_location(div0, file$5, 12, 2, 320);
+    			add_location(div0, file$5, 23, 2, 613);
     			attr_dev(span2, "class", "font-bold w-full truncate");
-    			add_location(span2, file$5, 21, 4, 747);
+    			add_location(span2, file$5, 32, 4, 1040);
     			attr_dev(span3, "class", "text-gray-600 w-full truncate");
-    			add_location(span3, file$5, 22, 4, 814);
+    			add_location(span3, file$5, 33, 4, 1102);
     			attr_dev(div1, "class", "flex flex-col flex-grow items-start justify-around truncate mr-4");
-    			add_location(div1, file$5, 20, 2, 663);
-    			add_location(span4, file$5, 24, 2, 890);
+    			add_location(div1, file$5, 31, 2, 956);
+    			add_location(span4, file$5, 35, 2, 1173);
     			attr_dev(div2, "class", "flex flex-row p-4 items-center");
-    			add_location(div2, file$5, 9, 0, 219);
+    			add_location(div2, file$5, 20, 0, 512);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -36045,8 +36071,8 @@
     				set_style(div0, "color", /*iconColor*/ ctx[2]);
     			}
 
-    			if (dirty & /*data*/ 1 && t4_value !== (t4_value = /*data*/ ctx[0].addedBy + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*data*/ 1 && t6_value !== (t6_value = /*data*/ ctx[0].desc + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*addedBy*/ 16) set_data_dev(t4, /*addedBy*/ ctx[4]);
+    			if (dirty & /*desc*/ 32) set_data_dev(t6, /*desc*/ ctx[5]);
     			if (dirty & /*data*/ 1 && t9_value !== (t9_value = /*data*/ ctx[0].amount.toFixed(2) + "")) set_data_dev(t9, t9_value);
     		},
     		i: function intro(local) {
@@ -36083,6 +36109,16 @@
     	let { backgroundColor = "hsl(var(--primary-hue), 50%, 50%)" } = $$props;
     	let { iconColor = "white" } = $$props;
     	let { index = 0 } = $$props;
+    	let month, date, addedBy, desc, amount;
+
+    	onMount(() => {
+    		month = new Date(data.date).toString().substring(4, 7);
+    		date = new Date(data.date).getDate();
+    		$$invalidate(4, addedBy = data.addedBy);
+    		amount = data.amount;
+    		$$invalidate(5, desc = data.desc);
+    	});
+
     	const writable_props = ["data", "backgroundColor", "iconColor", "index"];
 
     	Object.keys($$props).forEach(key => {
@@ -36097,7 +36133,17 @@
     	};
 
     	$$self.$capture_state = () => {
-    		return { data, backgroundColor, iconColor, index };
+    		return {
+    			data,
+    			backgroundColor,
+    			iconColor,
+    			index,
+    			month,
+    			date,
+    			addedBy,
+    			desc,
+    			amount
+    		};
     	};
 
     	$$self.$inject_state = $$props => {
@@ -36105,9 +36151,14 @@
     		if ("backgroundColor" in $$props) $$invalidate(1, backgroundColor = $$props.backgroundColor);
     		if ("iconColor" in $$props) $$invalidate(2, iconColor = $$props.iconColor);
     		if ("index" in $$props) $$invalidate(3, index = $$props.index);
+    		if ("month" in $$props) month = $$props.month;
+    		if ("date" in $$props) date = $$props.date;
+    		if ("addedBy" in $$props) $$invalidate(4, addedBy = $$props.addedBy);
+    		if ("desc" in $$props) $$invalidate(5, desc = $$props.desc);
+    		if ("amount" in $$props) amount = $$props.amount;
     	};
 
-    	return [data, backgroundColor, iconColor, index];
+    	return [data, backgroundColor, iconColor, index, addedBy, desc];
     }
 
     class DetailListTile extends SvelteComponentDev {
@@ -38067,30 +38118,296 @@
     	}
     }
 
+    /* src\components\SearchListTile.svelte generated by Svelte v3.16.7 */
+    const file$9 = "src\\components\\SearchListTile.svelte";
+
+    function create_fragment$9(ctx) {
+    	let div3;
+    	let div0;
+    	let i;
+    	let t0;
+    	let div0_class_value;
+    	let t1;
+    	let div2;
+    	let div1;
+    	let span0;
+    	let t2;
+    	let span1;
+    	let t3;
+    	let t4;
+    	let span2;
+    	let t5;
+    	let span3;
+    	let t6;
+    	let html_tag;
+    	let raw2_value = /*data*/ ctx[0].amount.toFixed(2) + "";
+    	let div3_intro;
+    	let div3_outro;
+    	let current;
+
+    	const block = {
+    		c: function create() {
+    			div3 = element("div");
+    			div0 = element("div");
+    			i = element("i");
+    			t0 = text(/*materialIcon*/ ctx[4]);
+    			t1 = space();
+    			div2 = element("div");
+    			div1 = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			t3 = text(/*date*/ ctx[1]);
+    			t4 = space();
+    			span2 = element("span");
+    			t5 = space();
+    			span3 = element("span");
+    			t6 = text("$\r\n    ");
+    			attr_dev(i, "class", "material-icons md-18");
+    			set_style(i, "display", "block", 1);
+    			add_location(i, file$9, 65, 4, 2016);
+    			attr_dev(div0, "id", "icon");
+
+    			attr_dev(div0, "class", div0_class_value = "rounded-full p-2 mr-2 fill-current " + (/*data*/ ctx[0].highlightKey === "type"
+    			? "border-4 border-green-200"
+    			: ""));
+
+    			set_style(div0, "background-color", /*backgroundColor*/ ctx[5]);
+    			set_style(div0, "color", /*iconColor*/ ctx[6]);
+    			add_location(div0, file$9, 61, 2, 1808);
+    			attr_dev(span0, "class", "font-bold truncate mr-2");
+    			add_location(span0, file$9, 71, 6, 2248);
+    			attr_dev(span1, "class", "text-gray-600 truncate");
+    			add_location(span1, file$9, 74, 6, 2334);
+    			attr_dev(div1, "class", "flex flex-row items-start justify-around truncate");
+    			add_location(div1, file$9, 70, 4, 2177);
+    			attr_dev(span2, "class", "text-gray-600 truncate");
+    			add_location(span2, file$9, 76, 4, 2402);
+    			attr_dev(div2, "class", "flex flex-col items-start mr-4");
+    			add_location(div2, file$9, 69, 2, 2127);
+    			html_tag = new HtmlTag(raw2_value, null);
+    			attr_dev(span3, "class", "flex-grow flex justify-end");
+    			add_location(span3, file$9, 80, 2, 2486);
+    			attr_dev(div3, "class", "flex flex-row p-4 items-center");
+    			add_location(div3, file$9, 57, 0, 1695);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, div0);
+    			append_dev(div0, i);
+    			append_dev(i, t0);
+    			append_dev(div3, t1);
+    			append_dev(div3, div2);
+    			append_dev(div2, div1);
+    			append_dev(div1, span0);
+    			span0.innerHTML = /*addedBy*/ ctx[2];
+    			append_dev(div1, t2);
+    			append_dev(div1, span1);
+    			append_dev(span1, t3);
+    			append_dev(div2, t4);
+    			append_dev(div2, span2);
+    			span2.innerHTML = /*desc*/ ctx[3];
+    			append_dev(div3, t5);
+    			append_dev(div3, span3);
+    			append_dev(span3, t6);
+    			html_tag.m(span3);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*materialIcon*/ 16) set_data_dev(t0, /*materialIcon*/ ctx[4]);
+
+    			if (!current || dirty & /*data*/ 1 && div0_class_value !== (div0_class_value = "rounded-full p-2 mr-2 fill-current " + (/*data*/ ctx[0].highlightKey === "type"
+    			? "border-4 border-green-200"
+    			: ""))) {
+    				attr_dev(div0, "class", div0_class_value);
+    			}
+
+    			if (!current || dirty & /*backgroundColor*/ 32) {
+    				set_style(div0, "background-color", /*backgroundColor*/ ctx[5]);
+    			}
+
+    			if (!current || dirty & /*iconColor*/ 64) {
+    				set_style(div0, "color", /*iconColor*/ ctx[6]);
+    			}
+
+    			if (!current || dirty & /*addedBy*/ 4) span0.innerHTML = /*addedBy*/ ctx[2];			if (!current || dirty & /*date*/ 2) set_data_dev(t3, /*date*/ ctx[1]);
+    			if (!current || dirty & /*desc*/ 8) span2.innerHTML = /*desc*/ ctx[3];			if ((!current || dirty & /*data*/ 1) && raw2_value !== (raw2_value = /*data*/ ctx[0].amount.toFixed(2) + "")) html_tag.p(raw2_value);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			add_render_callback(() => {
+    				if (div3_outro) div3_outro.end(1);
+    				if (!div3_intro) div3_intro = create_in_transition(div3, fade, { duration: 120 });
+    				div3_intro.start();
+    			});
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			if (div3_intro) div3_intro.invalidate();
+    			div3_outro = create_out_transition(div3, fade, { duration: 80 });
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div3);
+    			if (detaching && div3_outro) div3_outro.end();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$9.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function insertHighlight(queryString, textToHighlight) {
+    	const startHighlightIndex = textToHighlight.toLowerCase().trim().indexOf(queryString);
+    	const endHighlightIndex = startHighlightIndex + queryString.length;
+    	return textToHighlight.slice(0, startHighlightIndex) + "<span class=\"font-bold text-green-600 bg-green-200\">" + textToHighlight.slice(startHighlightIndex, endHighlightIndex) + "</span>" + textToHighlight.slice(endHighlightIndex, textToHighlight.length);
+    }
+
+    function instance$9($$self, $$props, $$invalidate) {
+    	let $queryString;
+    	validate_store(queryString, "queryString");
+    	component_subscribe($$self, queryString, $$value => $$invalidate(9, $queryString = $$value));
+    	let { data } = $$props;
+    	let mounted = false;
+    	let date, addedBy, desc, amount;
+    	let iconHue, materialIcon, backgroundColor, iconColor;
+
+    	onMount(() => {
+    		$$invalidate(1, date = new Date(data.date).toString().substring(4, 15));
+    		$$invalidate(2, addedBy = data.addedBy);
+    		amount = data.amount;
+    		$$invalidate(3, desc = data.desc);
+    		const typeDesign = typeDesigns.filter(obj => obj.type === data.type)[0];
+    		const hue = typeDesign.hue;
+    		$$invalidate(4, materialIcon = typeDesign.materialIcon);
+    		$$invalidate(5, backgroundColor = "hsl(" + hue + ", 50%, 80%)");
+    		$$invalidate(6, iconColor = "hsl(" + hue + ", 65%, 40%)");
+    		$$invalidate(7, mounted = true);
+    	});
+
+    	const writable_props = ["data"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<SearchListTile> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ("data" in $$props) $$invalidate(0, data = $$props.data);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return {
+    			data,
+    			mounted,
+    			date,
+    			addedBy,
+    			desc,
+    			amount,
+    			iconHue,
+    			materialIcon,
+    			backgroundColor,
+    			iconColor,
+    			$queryString
+    		};
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ("data" in $$props) $$invalidate(0, data = $$props.data);
+    		if ("mounted" in $$props) $$invalidate(7, mounted = $$props.mounted);
+    		if ("date" in $$props) $$invalidate(1, date = $$props.date);
+    		if ("addedBy" in $$props) $$invalidate(2, addedBy = $$props.addedBy);
+    		if ("desc" in $$props) $$invalidate(3, desc = $$props.desc);
+    		if ("amount" in $$props) amount = $$props.amount;
+    		if ("iconHue" in $$props) iconHue = $$props.iconHue;
+    		if ("materialIcon" in $$props) $$invalidate(4, materialIcon = $$props.materialIcon);
+    		if ("backgroundColor" in $$props) $$invalidate(5, backgroundColor = $$props.backgroundColor);
+    		if ("iconColor" in $$props) $$invalidate(6, iconColor = $$props.iconColor);
+    		if ("$queryString" in $$props) queryString.set($queryString = $$props.$queryString);
+    	};
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*data, mounted, $queryString, addedBy, desc*/ 653) {
+    			$: if (data.highlightKey && mounted) {
+    				const highlightKey = data.highlightKey;
+    				$$invalidate(2, addedBy = data.addedBy);
+    				$$invalidate(3, desc = data.desc);
+
+    				if (highlightKey === "addedBy") {
+    					$$invalidate(2, addedBy = insertHighlight($queryString, addedBy));
+    				} else if (highlightKey === "desc") {
+    					$$invalidate(3, desc = insertHighlight($queryString, desc));
+    				}
+    			}
+    		}
+    	};
+
+    	return [data, date, addedBy, desc, materialIcon, backgroundColor, iconColor];
+    }
+
+    class SearchListTile extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$9, create_fragment$9, safe_not_equal, { data: 0 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "SearchListTile",
+    			options,
+    			id: create_fragment$9.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || ({});
+
+    		if (/*data*/ ctx[0] === undefined && !("data" in props)) {
+    			console.warn("<SearchListTile> was created without expected prop 'data'");
+    		}
+    	}
+
+    	get data() {
+    		throw new Error("<SearchListTile>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set data(value) {
+    		throw new Error("<SearchListTile>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
     /* src\components\Search.svelte generated by Svelte v3.16.7 */
-    const file$9 = "src\\components\\Search.svelte";
+    const file$a = "src\\components\\Search.svelte";
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[7] = list[i];
-    	child_ctx[9] = i;
+    	child_ctx[8] = list[i];
     	return child_ctx;
     }
 
-    // (65:4) {#if query.length > 0}
+    // (90:4) {#if datas && query.length > 0}
     function create_if_block$6(ctx) {
+    	let each_blocks = [];
+    	let each_1_lookup = new Map();
     	let each_1_anchor;
     	let current;
     	let each_value = /*filteredDatas*/ ctx[2];
-    	let each_blocks = [];
+    	const get_key = ctx => /*data*/ ctx[8].id;
 
     	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
+    		let child_ctx = get_each_context$3(ctx, each_value, i);
+    		let key = get_key(child_ctx);
+    		each_1_lookup.set(key, each_blocks[i] = create_each_block$3(key, child_ctx));
     	}
-
-    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
-    		each_blocks[i] = null;
-    	});
 
     	const block = {
     		c: function create() {
@@ -38109,32 +38426,10 @@
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*filteredDatas*/ 4) {
-    				each_value = /*filteredDatas*/ ctx[2];
-    				let i;
-
-    				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$3(ctx, each_value, i);
-
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(child_ctx, dirty);
-    						transition_in(each_blocks[i], 1);
-    					} else {
-    						each_blocks[i] = create_each_block$3(child_ctx);
-    						each_blocks[i].c();
-    						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
-    					}
-    				}
-
-    				group_outros();
-
-    				for (i = each_value.length; i < each_blocks.length; i += 1) {
-    					out(i);
-    				}
-
-    				check_outros();
-    			}
+    			const each_value = /*filteredDatas*/ ctx[2];
+    			group_outros();
+    			each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value, each_1_lookup, each_1_anchor.parentNode, outro_and_destroy_block, create_each_block$3, each_1_anchor, get_each_context$3);
+    			check_outros();
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -38146,8 +38441,6 @@
     			current = true;
     		},
     		o: function outro(local) {
-    			each_blocks = each_blocks.filter(Boolean);
-
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				transition_out(each_blocks[i]);
     			}
@@ -38155,7 +38448,10 @@
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			destroy_each(each_blocks, detaching);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].d(detaching);
+    			}
+
     			if (detaching) detach_dev(each_1_anchor);
     		}
     	};
@@ -38164,49 +38460,53 @@
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(65:4) {#if query.length > 0}",
+    		source: "(90:4) {#if datas && query.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (66:6) {#each filteredDatas as data, index}
-    function create_each_block$3(ctx) {
+    // (91:6) {#each filteredDatas as data (data.id)}
+    function create_each_block$3(key_1, ctx) {
+    	let first;
     	let current;
 
-    	const detaillisttile = new DetailListTile({
-    			props: {
-    				data: /*data*/ ctx[7],
-    				index: /*index*/ ctx[9]
-    			},
+    	const searchlisttile = new SearchListTile({
+    			props: { data: /*data*/ ctx[8] },
     			$$inline: true
     		});
 
     	const block = {
+    		key: key_1,
+    		first: null,
     		c: function create() {
-    			create_component(detaillisttile.$$.fragment);
+    			first = empty();
+    			create_component(searchlisttile.$$.fragment);
+    			this.first = first;
     		},
     		m: function mount(target, anchor) {
-    			mount_component(detaillisttile, target, anchor);
+    			insert_dev(target, first, anchor);
+    			mount_component(searchlisttile, target, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			const detaillisttile_changes = {};
-    			if (dirty & /*filteredDatas*/ 4) detaillisttile_changes.data = /*data*/ ctx[7];
-    			detaillisttile.$set(detaillisttile_changes);
+    			const searchlisttile_changes = {};
+    			if (dirty & /*filteredDatas*/ 4) searchlisttile_changes.data = /*data*/ ctx[8];
+    			searchlisttile.$set(searchlisttile_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(detaillisttile.$$.fragment, local);
+    			transition_in(searchlisttile.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(detaillisttile.$$.fragment, local);
+    			transition_out(searchlisttile.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			destroy_component(detaillisttile, detaching);
+    			if (detaching) detach_dev(first);
+    			destroy_component(searchlisttile, detaching);
     		}
     	};
 
@@ -38214,14 +38514,14 @@
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(66:6) {#each filteredDatas as data, index}",
+    		source: "(91:6) {#each filteredDatas as data (data.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    function create_fragment$9(ctx) {
+    function create_fragment$a(ctx) {
     	let div2;
     	let div0;
     	let i;
@@ -38233,7 +38533,7 @@
     	let div2_outro;
     	let current;
     	let dispose;
-    	let if_block = /*query*/ ctx[1].length > 0 && create_if_block$6(ctx);
+    	let if_block = /*datas*/ ctx[3] && /*query*/ ctx[1].length > 0 && create_if_block$6(ctx);
 
     	const block = {
     		c: function create() {
@@ -38249,25 +38549,25 @@
     			attr_dev(i, "class", "material-icons fill-current");
     			set_style(i, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i, "aria-label", "Back button");
-    			add_location(i, file$9, 45, 4, 2154);
+    			add_location(i, file$a, 70, 4, 2825);
     			attr_dev(input, "id", "search-input");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Search");
     			attr_dev(input, "class", "mx-4 text-gray-600 flex bg-transparent appearance-none w-full\r\n      text-lg");
     			set_style(input, "outline", "none", 1);
-    			add_location(input, file$9, 54, 4, 2389);
+    			add_location(input, file$a, 79, 4, 3060);
     			attr_dev(div0, "class", div0_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar" + " svelte-11rh4pc"));
-    			add_location(div0, file$9, 44, 2, 2097);
+    			add_location(div0, file$a, 69, 2, 2768);
     			attr_dev(div1, "id", "content");
     			attr_dev(div1, "class", "w-full flex flex-col mt-16");
-    			add_location(div1, file$9, 63, 2, 2643);
+    			add_location(div1, file$a, 88, 2, 3314);
     			attr_dev(div2, "id", "search-page");
     			attr_dev(div2, "class", "h-screen w-full bg-white absolute top-0 overflow-auto");
-    			add_location(div2, file$9, 40, 0, 1972);
+    			add_location(div2, file$a, 65, 0, 2643);
 
     			dispose = [
-    				listen_dev(i, "click", /*click_handler*/ ctx[5], false, false, false),
-    				listen_dev(input, "input", /*input_input_handler*/ ctx[6])
+    				listen_dev(i, "click", /*click_handler*/ ctx[6], false, false, false),
+    				listen_dev(input, "input", /*input_input_handler*/ ctx[7])
     			];
     		},
     		l: function claim(nodes) {
@@ -38294,7 +38594,7 @@
     				attr_dev(div0, "class", div0_class_value);
     			}
 
-    			if (/*query*/ ctx[1].length > 0) {
+    			if (/*datas*/ ctx[3] && /*query*/ ctx[1].length > 0) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     					transition_in(if_block, 1);
@@ -38335,7 +38635,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$9.name,
+    		id: create_fragment$a.name,
     		type: "component",
     		source: "",
     		ctx
@@ -38344,37 +38644,58 @@
     	return block;
     }
 
-    function instance$9($$self, $$props, $$invalidate) {
+    function instance$a($$self, $$props, $$invalidate) {
     	let scrolling = false;
     	let query = "";
-    	let datas;
     	let filteredDatas = [];
+    	let datas;
+    	let searchFuture;
 
     	onMount(() => {
     		document.getElementById("search-input").focus();
     		$$invalidate(3, datas = JSON.parse(localStorage.getItem("rawCache")));
+
+    		datas.sort((a, b) => {
+    			if (b.date > a.date) {
+    				return 1;
+    			} else {
+    				return -1;
+    			}
+    		});
 
     		document.getElementById("search-page").addEventListener("scroll", ev => {
     			ev.target.scrollTop > 0
     			? $$invalidate(0, scrolling = true)
     			: $$invalidate(0, scrolling = false);
     		});
+
+    		document.getElementById("search-input").oninput = () => {
+    			queryString.set(query);
+    			debounce(searchData(query), 800);
+    		};
     	});
 
     	function searchData(query) {
-    		$$invalidate(2, filteredDatas = datas.filter(data => {
-    			let include = false;
+    		if (datas && query.length > 0) {
+    			$$invalidate(2, filteredDatas = datas.filter(data => {
+    				let keep = false;
 
-    			for (let key in data) {
-    				const value = data[key.toString()].toString().toLowerCase();
+    				for (let key in data) {
+    					if (key !== "id" && key !== "addedOn" && key !== "amount") {
+    						const value = data[key.toString()].toString().toLowerCase();
 
-    				if (value.includes(query.toLowerCase().trim()) && key !== "id") {
-    					include = true;
+    						if (value.includes(query.toLowerCase().trim())) {
+    							const startHighlightIndex = value.indexOf(query.toLowerCase().trim());
+    							const endHighlightIndex = startHighlightIndex + query.length;
+    							data.highlightKey = key;
+    							keep = true;
+    						}
+    					}
     				}
-    			}
 
-    			return include;
-    		}));
+    				return keep;
+    			}));
+    		}
     	}
 
     	const click_handler = () => {
@@ -38393,14 +38714,9 @@
     	$$self.$inject_state = $$props => {
     		if ("scrolling" in $$props) $$invalidate(0, scrolling = $$props.scrolling);
     		if ("query" in $$props) $$invalidate(1, query = $$props.query);
-    		if ("datas" in $$props) $$invalidate(3, datas = $$props.datas);
     		if ("filteredDatas" in $$props) $$invalidate(2, filteredDatas = $$props.filteredDatas);
-    	};
-
-    	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*datas, query*/ 10) {
-    			$: if (datas) debounce(searchData(query), 800);
-    		}
+    		if ("datas" in $$props) $$invalidate(3, datas = $$props.datas);
+    		if ("searchFuture" in $$props) searchFuture = $$props.searchFuture;
     	};
 
     	return [
@@ -38408,6 +38724,7 @@
     		query,
     		filteredDatas,
     		datas,
+    		searchFuture,
     		searchData,
     		click_handler,
     		input_input_handler
@@ -38417,19 +38734,19 @@
     class Search extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$9, create_fragment$9, safe_not_equal, {});
+    		init(this, options, instance$a, create_fragment$a, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Search",
     			options,
-    			id: create_fragment$9.name
+    			id: create_fragment$a.name
     		});
     	}
     }
 
     /* src\App.svelte generated by Svelte v3.16.7 */
-    const file$a = "src\\App.svelte";
+    const file$b = "src\\App.svelte";
 
     // (108:43) 
     function create_if_block_5(ctx) {
@@ -38755,7 +39072,7 @@
     	return block;
     }
 
-    function create_fragment$a(ctx) {
+    function create_fragment$b(ctx) {
     	let main;
     	let t0;
     	let current_block_type_index;
@@ -38796,7 +39113,7 @@
     			t1 = space();
     			if (if_block1) if_block1.c();
     			attr_dev(main, "class", "overflow-hidden");
-    			add_location(main, file$a, 103, 0, 3211);
+    			add_location(main, file$b, 103, 0, 3211);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -38880,7 +39197,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$a.name,
+    		id: create_fragment$b.name,
     		type: "component",
     		source: "",
     		ctx
@@ -38889,7 +39206,7 @@
     	return block;
     }
 
-    function instance$a($$self, $$props, $$invalidate) {
+    function instance$b($$self, $$props, $$invalidate) {
     	let $detailData;
     	let $view;
     	let $overlay;
@@ -38998,13 +39315,13 @@
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$a, create_fragment$a, safe_not_equal, {});
+    		init(this, options, instance$b, create_fragment$b, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$a.name
+    			id: create_fragment$b.name
     		});
     	}
     }
