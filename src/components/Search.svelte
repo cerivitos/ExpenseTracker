@@ -105,18 +105,20 @@
   out:fade={{ duration: 80 }}>
   <div
     class="{scrolling ? 'shadow' : ''} searchbar {Object.keys($filteredSearchData).length > 0 ? '' : 'entry-anim'}">
-    <i
-      class="material-icons fill-current"
-      style="color: hsl(var(--primary-hue), 50%, 50%)"
-      aria-label="Back button"
-      on:click={() => {
-        filteredSearchData.set({});
-        handleRouting('dashboard');
-        view.set('dashboard');
-        overlay.set('');
-      }}>
-      arrow_back
-    </i>
+    <button>
+      <i
+        class="material-icons fill-current"
+        style="color: hsl(var(--primary-hue), 50%, 50%)"
+        aria-label="Back button"
+        on:click={() => {
+          filteredSearchData.set({});
+          handleRouting('dashboard');
+          view.set('dashboard');
+          overlay.set('');
+        }}>
+        arrow_back
+      </i>
+    </button>
     <input
       id="search-input"
       type="text"

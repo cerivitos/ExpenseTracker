@@ -241,7 +241,7 @@
 </style>
 
 <div class="flex flex-col my-8" in:fade={{ duration: 80 }}>
-  <div
+  <button
     class="flex items-center justify-center py-2 mx-4 mb-8 rounded-full
     bg-gray-200 text-center text-gray-600"
     on:click={() => {
@@ -250,7 +250,7 @@
     }}>
     <i class="material-icons fill-current">search</i>
     Search
-  </div>
+  </button>
   <span class="w-full mb-1 text-4xl text-center font-bold" id="totalSpend">
     $0
   </span>

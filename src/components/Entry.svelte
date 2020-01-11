@@ -200,15 +200,17 @@
     class="w-full flex flex-row p-4 bg-white {scrolling ? 'shadow' : ''} fixed
     top-0 justify-between z-20"
     style="height: 56px">
-    <i
-      class="material-icons fill-current"
-      style="color: hsl(var(--primary-hue), 50%, 50%)"
-      aria-label="Back button"
-      on:click={() => {
-        window.history.back();
-      }}>
-      arrow_back
-    </i>
+    <button>
+      <i
+        class="material-icons fill-current"
+        style="color: hsl(var(--primary-hue), 50%, 50%)"
+        aria-label="Back button"
+        on:click={() => {
+          window.history.back();
+        }}>
+        arrow_back
+      </i>
+    </button>
   </div>
   <div
     class="flex flex-col items-start justify-around bg-white mt-8"

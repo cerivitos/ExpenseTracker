@@ -129,16 +129,18 @@
     class="w-full flex flex-row p-4 bg-white {scrolling ? 'shadow' : ''} fixed
     top-0 justify-between z-20"
     style="height: 56px">
-    <i
-      class="material-icons fill-current"
-      style="color:{iconColor}"
-      on:click={() => {
-        handleRouting('dashboard');
-        view.set('dashboard');
-        overlay.set('');
-      }}>
-      arrow_back
-    </i>
+    <button>
+      <i
+        class="material-icons fill-current"
+        style="color:{iconColor}"
+        on:click={() => {
+          handleRouting('dashboard');
+          view.set('dashboard');
+          overlay.set('');
+        }}>
+        arrow_back
+      </i>
+    </button>
     <button
       on:click={() => (sortByDate = !sortByDate)}
       class="fill-current"
