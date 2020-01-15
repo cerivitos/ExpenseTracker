@@ -137,7 +137,7 @@
       </div>
     </div>
   {/if}
-  <div class="w-full flex flex-row items-center justify-between my-8">
+  <div class="w-full flex flex-row items-center justify-between my-12">
     <span class="label">Theme</span>
     <div>
       <button
