@@ -29427,7 +29427,7 @@
     	return child_ctx;
     }
 
-    // (144:8) {:else}
+    // (145:8) {:else}
     function create_else_block$2(ctx) {
     	let i;
     	let i_intro;
@@ -29437,7 +29437,7 @@
     			i = element("i");
     			i.textContent = "attach_money";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$6, 144, 10, 4025);
+    			add_location(i, file$6, 145, 10, 4078);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -29460,14 +29460,14 @@
     		block,
     		id: create_else_block$2.name,
     		type: "else",
-    		source: "(144:8) {:else}",
+    		source: "(145:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (140:8) {#if sortByDate}
+    // (141:8) {#if sortByDate}
     function create_if_block_2(ctx) {
     	let i;
     	let i_intro;
@@ -29477,7 +29477,7 @@
     			i = element("i");
     			i.textContent = "date_range";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$6, 140, 10, 3890);
+    			add_location(i, file$6, 141, 10, 3943);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -29500,7 +29500,7 @@
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(140:8) {#if sortByDate}",
+    		source: "(141:8) {#if sortByDate}",
     		ctx
     	});
 
@@ -29529,7 +29529,7 @@
     	return block;
     }
 
-    // (175:43)         {#each buckets as bucket, index}
+    // (176:43)         {#each buckets as bucket, index}
     function create_then_block$1(ctx) {
     	let each_1_anchor;
     	let current;
@@ -29616,14 +29616,14 @@
     		block,
     		id: create_then_block$1.name,
     		type: "then",
-    		source: "(175:43)         {#each buckets as bucket, index}",
+    		source: "(176:43)         {#each buckets as bucket, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (177:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
+    // (178:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
     function create_if_block_1(ctx) {
     	let span;
     	let t_value = /*bucket*/ ctx[15].year + "";
@@ -29637,7 +29637,7 @@
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
     			set_style(span, "color", "var(--text-color)");
     			set_style(span, "background-color", "var(--inactive-button-color)");
-    			add_location(span, file$6, 177, 10, 5118);
+    			add_location(span, file$6, 178, 10, 5171);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -29655,14 +29655,14 @@
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(177:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
+    		source: "(178:8) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (204:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
+    // (205:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
     function create_if_block$4(ctx) {
     	let current;
 
@@ -29710,14 +29710,14 @@
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(204:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
+    		source: "(205:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (197:10) {#each sortedData as data, index (data.id)}
+    // (198:10) {#each sortedData as data, index (data.id)}
     function create_each_block_1$1(key_1, ctx) {
     	let div;
     	let show_if = /*data*/ ctx[18].date.substring(0, 4) == /*bucket*/ ctx[15].year && /*data*/ ctx[18].date.substring(5, 7) == /*bucket*/ ctx[15].month;
@@ -29740,7 +29740,7 @@
     			div = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div, "class", "w-full");
-    			add_location(div, file$6, 197, 12, 5959);
+    			add_location(div, file$6, 198, 12, 6012);
     			dispose = listen_dev(div, "click", click_handler_2, false, false, false);
     			this.first = div;
     		},
@@ -29815,14 +29815,14 @@
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(197:10) {#each sortedData as data, index (data.id)}",
+    		source: "(198:10) {#each sortedData as data, index (data.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (176:6) {#each buckets as bucket, index}
+    // (177:6) {#each buckets as bucket, index}
     function create_each_block$1(ctx) {
     	let t0;
     	let div1;
@@ -29863,11 +29863,11 @@
     			attr_dev(span, "class", "relative font-bold px-4");
     			set_style(span, "color", "var(--text-color2)");
     			set_style(span, "background-color", "var(--background-color)");
-    			add_location(span, file$6, 187, 12, 5572);
+    			add_location(span, file$6, 188, 12, 5625);
     			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-120lzfm");
-    			add_location(div0, file$6, 186, 10, 5502);
+    			add_location(div0, file$6, 187, 10, 5555);
     			attr_dev(div1, "class", "flex flex-col justify-center items-center");
-    			add_location(div1, file$6, 185, 8, 5435);
+    			add_location(div1, file$6, 186, 8, 5488);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -29938,7 +29938,7 @@
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(176:6) {#each buckets as bucket, index}",
+    		source: "(177:6) {#each buckets as bucket, index}",
     		ctx
     	});
 
@@ -30041,37 +30041,38 @@
     			info.block.c();
     			attr_dev(i0, "class", "material-icons fill-current");
     			set_style(i0, "color", /*iconColor*/ ctx[3]);
-    			add_location(i0, file$6, 122, 6, 3391);
-    			add_location(button0, file$6, 121, 4, 3375);
+    			add_location(i0, file$6, 123, 6, 3444);
+    			add_location(button0, file$6, 122, 4, 3428);
     			attr_dev(div0, "class", "relative");
-    			add_location(div0, file$6, 138, 6, 3830);
+    			add_location(div0, file$6, 139, 6, 3883);
     			attr_dev(button1, "class", "fill-current");
     			set_style(button1, "color", /*iconColor*/ ctx[3]);
-    			add_location(button1, file$6, 133, 4, 3667);
+    			add_location(button1, file$6, 134, 4, 3720);
     			attr_dev(div1, "class", div1_class_value = "w-full flex flex-row p-4 " + (/*scrolling*/ ctx[4] ? "shadow" : "") + " fixed top-0\r\n    justify-between z-20");
     			set_style(div1, "height", "56px");
     			set_style(div1, "background-color", "var(--background-color)");
-    			add_location(div1, file$6, 117, 2, 3191);
+    			add_location(div1, file$6, 118, 2, 3244);
     			attr_dev(i1, "class", "material-icons fill-current");
     			set_style(i1, "display", "block", 1);
     			set_style(i1, "color", /*iconColor*/ ctx[3]);
     			set_style(i1, "font-size", "64px");
-    			add_location(i1, file$6, 161, 8, 4550);
+    			add_location(i1, file$6, 162, 8, 4603);
     			attr_dev(div2, "class", "icon rounded-full p-6 mt-20 mb-4");
     			attr_dev(div2, "id", "icon");
     			set_style(div2, "background-color", /*backgroundColor*/ ctx[2]);
-    			add_location(div2, file$6, 156, 6, 4350);
+    			add_location(div2, file$6, 157, 6, 4403);
     			attr_dev(span, "class", "text-2xl font-bold mb-8");
     			set_style(span, "color", /*iconColor*/ ctx[3]);
-    			add_location(span, file$6, 167, 6, 4743);
+    			add_location(span, file$6, 168, 6, 4796);
     			attr_dev(div3, "class", "flex flex-col items-center");
-    			add_location(div3, file$6, 155, 4, 4302);
+    			add_location(div3, file$6, 156, 4, 4355);
     			attr_dev(div4, "id", "content");
     			attr_dev(div4, "class", "flex flex-col");
     			set_style(div4, "background-color", "var(--background-color)");
-    			add_location(div4, file$6, 151, 2, 4191);
+    			add_location(div4, file$6, 152, 2, 4244);
     			attr_dev(div5, "id", "detail-page");
     			attr_dev(div5, "class", "h-screen w-full absolute top-0 overflow-auto z-10");
+    			set_style(div5, "background-color", "var(--background-color)");
     			add_location(div5, file$6, 113, 0, 3070);
 
     			dispose = [
