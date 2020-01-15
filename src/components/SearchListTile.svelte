@@ -35,7 +35,7 @@
 
     return (
       textToHighlight.slice(0, startHighlightIndex) +
-      '<span class="font-bold text-green-600 bg-green-200 rounded px-1">' +
+      '<span class="font-bold rounded px-1" style="color: hsl(var(--secondary-hue), 50%, 50%); background-color: hsl(var(--secondary-hue), 35%, 80%)">' +
       textToHighlight.slice(startHighlightIndex, endHighlightIndex) +
       "</span>" +
       textToHighlight.slice(endHighlightIndex, textToHighlight.length)
@@ -69,7 +69,7 @@
   on:click={() => showEditDetail(data)}>
   <div
     id="icon"
-    class="rounded-full p-2 mr-2 fill-current {data.highlightKey === 'type' ? 'border-4 border-green-200' : ''}"
+    class="rounded-full p-2 mr-2 fill-current"
     style="background-color: {backgroundColor}; color:{iconColor}">
     <i class="material-icons md-18" style="display:block !important">
       {materialIcon}
