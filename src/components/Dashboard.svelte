@@ -243,7 +243,7 @@
   }
 
   .searchbar {
-    @apply flex items-center justify-center py-2 mx-4 mb-8 rounded-full
+    @apply flex items-center justify-center py-2 mx-4 mb-12 rounded-full
     text-center;
     color: var(--text-color2);
     background-color: var(--inactive-button-color);
@@ -268,7 +268,7 @@
   </span>
   {#if firstDate.length > 0 && lastDate.length > 0}
     <span
-      class="w-full text-center font-light mb-8"
+      class="w-full text-center font-light mb-12"
       style="color: var(--text-color2)"
       in:fade={{ duration: 120 }}>
       {lastDate + ' — ' + firstDate}
@@ -278,7 +278,7 @@
       &nbsp;
     </span>
   {/if}
-  <div class="flex flex-row justify-around overflow-x-hidden mb-8 mx-4">
+  <div class="flex flex-row justify-around overflow-x-hidden mb-16 mx-4">
     {#each ['1M', '6M', '1Y', 'All'] as interval}
       <button
         class="interval-button {currentInterval === interval ? 'active' : ''}"

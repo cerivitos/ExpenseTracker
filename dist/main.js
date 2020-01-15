@@ -27081,7 +27081,7 @@
     			span = element("span");
     			span.textContent = " ";
     			attr_dev(span, "class", "w-full text-center text-transparent font-light mb-8");
-    			add_location(span, file$1, 253, 4, 7722);
+    			add_location(span, file$1, 253, 4, 7723);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -27116,7 +27116,7 @@
     		c: function create() {
     			span = element("span");
     			t = text(t_value);
-    			attr_dev(span, "class", "w-full text-center font-light mb-8");
+    			attr_dev(span, "class", "w-full text-center font-light mb-12");
     			set_style(span, "color", "var(--text-color2)");
     			add_location(span, file$1, 246, 4, 7522);
     		},
@@ -27172,9 +27172,9 @@
 
     			attr_dev(button, "class", button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[19]
     			? "active"
-    			: "") + " svelte-1m7n35t");
+    			: "") + " svelte-u5hm8g");
 
-    			add_location(button, file$1, 259, 6, 7957);
+    			add_location(button, file$1, 259, 6, 7959);
     			dispose = listen_dev(button, "click", click_handler_1, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -27187,7 +27187,7 @@
 
     			if (dirty & /*currentInterval*/ 2 && button_class_value !== (button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[19]
     			? "active"
-    			: "") + " svelte-1m7n35t")) {
+    			: "") + " svelte-u5hm8g")) {
     				attr_dev(button, "class", button_class_value);
     			}
     		},
@@ -27462,13 +27462,13 @@
     			info.block.c();
     			attr_dev(i, "class", "material-icons fill-current");
     			add_location(i, file$1, 239, 4, 7293);
-    			attr_dev(button, "class", "searchbar svelte-1m7n35t");
+    			attr_dev(button, "class", "searchbar svelte-u5hm8g");
     			add_location(button, file$1, 233, 2, 7163);
     			attr_dev(span, "class", "w-full mb-1 text-4xl text-center font-bold");
     			attr_dev(span, "id", "totalSpend");
     			add_location(span, file$1, 242, 2, 7371);
-    			attr_dev(div0, "class", "flex flex-row justify-around overflow-x-hidden mb-8 mx-4");
-    			add_location(div0, file$1, 257, 2, 7828);
+    			attr_dev(div0, "class", "flex flex-row justify-around overflow-x-hidden mb-16 mx-4");
+    			add_location(div0, file$1, 257, 2, 7829);
     			attr_dev(div1, "class", "flex flex-col my-8");
     			set_style(div1, "color", "var(--text-color)");
     			add_location(div1, file$1, 229, 0, 7058);
@@ -37629,7 +37629,7 @@
     			attr_dev(button, "class", "rounded-full px-3 py-1 self-start mr-2 mt-2");
     			set_style(button, "color", "var(--text-color2)");
     			set_style(button, "background-color", "var(--inactive-button-color)");
-    			add_location(button, file$8, 244, 10, 8856);
+    			add_location(button, file$8, 244, 10, 8857);
     			dispose = listen_dev(button, "click", click_handler_5, false, false, false);
     			this.first = button;
     		},
@@ -37682,7 +37682,7 @@
     			button = element("button");
     			button.textContent = "Delete";
     			attr_dev(button, "class", "w-full text-center mb-8 bg-transparent text-red-600");
-    			add_location(button, file$8, 267, 6, 9804);
+    			add_location(button, file$8, 267, 6, 9805);
     			dispose = listen_dev(button, "click", /*click_handler_7*/ ctx[28], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -37848,64 +37848,64 @@
     			set_style(div0, "background-color", "var(--background-color)");
     			add_location(div0, file$8, 165, 2, 6038);
     			attr_dev(label0, "for", "amount-input");
-    			attr_dev(label0, "class", "svelte-sd1nzd");
+    			attr_dev(label0, "class", "svelte-1c2qy6m");
     			add_location(label0, file$8, 185, 6, 6725);
     			attr_dev(input0, "id", "amount-input");
-    			attr_dev(input0, "class", "amount text-2xl svelte-sd1nzd");
+    			attr_dev(input0, "class", "amount text-2xl svelte-1c2qy6m");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
     			add_location(input0, file$8, 186, 6, 6773);
-    			attr_dev(div1, "class", "input-row svelte-sd1nzd");
+    			attr_dev(div1, "class", "input-row svelte-1c2qy6m");
     			add_location(div1, file$8, 184, 4, 6655);
     			attr_dev(label1, "for", "date-input");
-    			attr_dev(label1, "class", "svelte-sd1nzd");
+    			attr_dev(label1, "class", "svelte-1c2qy6m");
     			add_location(label1, file$8, 195, 6, 7072);
     			attr_dev(button1, "id", "today-button");
-    			attr_dev(button1, "class", "date-button active svelte-sd1nzd");
+    			attr_dev(button1, "class", "date-button active svelte-1c2qy6m");
     			add_location(button1, file$8, 197, 8, 7144);
     			attr_dev(button2, "id", "yesterday-button");
-    			attr_dev(button2, "class", "date-button svelte-sd1nzd");
+    			attr_dev(button2, "class", "date-button svelte-1c2qy6m");
     			add_location(button2, file$8, 203, 8, 7310);
     			attr_dev(div2, "class", "mr-4");
     			add_location(div2, file$8, 196, 6, 7116);
-    			attr_dev(div3, "class", "input-row svelte-sd1nzd");
+    			attr_dev(div3, "class", "input-row svelte-1c2qy6m");
     			add_location(div3, file$8, 194, 4, 7002);
     			add_location(span, file$8, 215, 6, 7685);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
-    			attr_dev(input1, "class", "svelte-sd1nzd");
+    			attr_dev(input1, "class", "svelte-1c2qy6m");
     			add_location(input1, file$8, 216, 6, 7716);
     			attr_dev(div4, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg ml-4");
     			set_style(div4, "color", "var(--text-color2)");
     			add_location(div4, file$8, 211, 4, 7503);
-    			attr_dev(label2, "class", "svelte-sd1nzd");
-    			add_location(label2, file$8, 219, 6, 7869);
+    			attr_dev(label2, "class", "svelte-1c2qy6m");
+    			add_location(label2, file$8, 219, 6, 7870);
     			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div5, file$8, 220, 6, 7896);
-    			attr_dev(div6, "class", "mt-8 flex flex-col");
+    			add_location(div5, file$8, 220, 6, 7897);
+    			attr_dev(div6, "class", "mt-12 flex flex-col");
     			add_location(div6, file$8, 218, 4, 7789);
     			attr_dev(label3, "for", "description-input");
-    			attr_dev(label3, "class", "svelte-sd1nzd");
-    			add_location(label3, file$8, 232, 6, 8363);
-    			attr_dev(input2, "class", "truncate text-2xl svelte-sd1nzd");
+    			attr_dev(label3, "class", "svelte-1c2qy6m");
+    			add_location(label3, file$8, 232, 6, 8364);
+    			attr_dev(input2, "class", "truncate text-2xl svelte-1c2qy6m");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "(Optional)");
-    			add_location(input2, file$8, 233, 6, 8421);
-    			attr_dev(div7, "class", "input-row svelte-sd1nzd");
-    			add_location(div7, file$8, 231, 4, 8292);
+    			add_location(input2, file$8, 233, 6, 8422);
+    			attr_dev(div7, "class", "input-row svelte-1c2qy6m");
+    			add_location(div7, file$8, 231, 4, 8293);
     			attr_dev(div8, "class", "flex mt-4 mx-4 flex-wrap");
     			set_style(div8, "height", "80px");
-    			add_location(div8, file$8, 241, 4, 8677);
+    			add_location(div8, file$8, 241, 4, 8678);
     			attr_dev(button3, "class", "rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-24\r\n        mb-8 bg-gray-300");
 
     			attr_dev(button3, "style", button3_style_value = /*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
     			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
     			: "background-color:hsl(var(--accent-hue), 50%, 50%); opacity: 0.3");
 
-    			add_location(button3, file$8, 258, 6, 9348);
+    			add_location(button3, file$8, 258, 6, 9349);
     			attr_dev(div9, "class", "w-full text-center block");
-    			add_location(div9, file$8, 255, 4, 9248);
+    			add_location(div9, file$8, 255, 4, 9249);
     			attr_dev(div10, "class", "flex flex-col items-start justify-around mt-8");
     			set_style(div10, "border-top-left-radius", "1rem");
     			set_style(div10, "border-top-right-radius", "1rem");

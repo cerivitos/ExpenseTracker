@@ -182,7 +182,7 @@
   }
 
   .input-row {
-    @apply flex flex-row w-full justify-between items-center mt-8;
+    @apply flex flex-row w-full justify-between items-center mt-12;
   }
 
   .date-button {
@@ -265,7 +265,7 @@
       <span>Other date</span>
       <input id="date-input" type="date" bind:value={date} />
     </div>
-    <div class="mt-8 flex flex-col" in:fade={{ duration: 120, delay: 150 }}>
+    <div class="mt-12 flex flex-col" in:fade={{ duration: 120, delay: 150 }}>
       <label>Type</label>
       <div class="w-full flex flex-row flex-wrap justify-start">
         {#each typeDesigns as typeDesign}
