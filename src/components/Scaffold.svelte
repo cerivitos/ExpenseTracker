@@ -16,9 +16,10 @@
 
 <style type="text/postcss">
   .navbar {
-    box-shadow: 0px -2px 4px 0px rgba(214, 214, 214, 0.9);
+    box-shadow: 0 0 0.5px 0 black;
     height: 56px;
-    @apply w-full flex fixed bottom-0 bg-white fill-current items-center;
+    background-color: var(--background-color);
+    @apply w-full flex fixed bottom-0 fill-current items-center;
   }
 
   .navbar .active {
@@ -35,6 +36,7 @@
   .content {
     @apply absolute w-full top-0 overflow-x-hidden;
     bottom: 56px;
+    background-color: var(--background-color);
   }
 </style>
 
@@ -66,7 +68,7 @@
     class="rounded-full w-16 h-16 flex items-center p-4 fill-current text-white
     shadow-lg pointer-events-auto"
     style="background-color:hsl(var(--accent-hue), 50%, 50%); box-shadow: 0px
-    10px 15px 0px hsla(var(--accent-hue), 35%, 75%,0.85);"
+    3px 6px 0px hsla(var(--accent-hue), 35%, 75%, 0.5);"
     on:click={() => setView('entry')}>
     <svg
       xmlns="http://www.w3.org/2000/svg"

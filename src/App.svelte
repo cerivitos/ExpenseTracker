@@ -103,7 +103,7 @@
 
 </style>
 
-<main class="overflow-hidden">
+<main class="overflow-hidden" data-theme="dark">
   <Scaffold>
     {#if $view === 'settings'}
       <Settings />

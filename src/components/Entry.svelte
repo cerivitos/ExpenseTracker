@@ -177,7 +177,8 @@
   }
 
   label {
-    @apply text-gray-800 text-2xl font-bold ml-4 mr-2 w-1/3;
+    @apply text-2xl font-bold ml-4 mr-2 w-1/3;
+    color: var(--text-color);
   }
 
   .input-row {
@@ -185,16 +186,20 @@
   }
 
   .date-button {
-    @apply rounded-full bg-gray-300 text-white px-3 py-1 font-bold;
+    @apply rounded-full px-3 py-1 font-bold;
     transition: background-color 350ms;
+    color: var(--text-color2);
+    background-color: var(--inactive-button-color);
   }
 
   .date-button.active {
     background-color: hsl(var(--secondary-hue), 50%, 50%);
+    color: whitesmoke;
   }
 
   .type-button {
-    @apply rounded-full p-2 fill-current bg-gray-400 text-gray-800 mr-4 mt-4;
+    @apply rounded-full p-2 fill-current text-gray-800 mr-4 mt-4;
+    background-color: var(--inactive-button-color);
   }
 
   .type-button svg {
@@ -204,12 +209,13 @@
 
 <div
   id="entry-page"
-  class="h-screen w-full bg-white absolute top-0 overflow-auto"
+  class="h-screen w-full absolute top-0 overflow-auto"
+  style="background-color: var(--background-color); color: var(--text-color)"
   out:fade={{ duration: 80 }}>
   <div
-    class="w-full flex flex-row p-4 bg-white {scrolling ? 'shadow' : ''} fixed
-    top-0 justify-between z-20"
-    style="height: 56px">
+    class="w-full flex flex-row p-4 {scrolling ? 'shadow' : ''} fixed top-0
+    justify-between z-20"
+    style="height: 56px; background-color: var(--background-color)">
     <button>
       <i
         class="material-icons fill-current"
@@ -223,7 +229,7 @@
     </button>
   </div>
   <div
-    class="flex flex-col items-start justify-around bg-white mt-8"
+    class="flex flex-col items-start justify-around mt-8"
     style="border-top-left-radius: 1rem; border-top-right-radius: 1rem">
     <div class="input-row" in:fade={{ duration: 120, delay: 30 }}>
       <label for="amount-input">Amount</label>
@@ -253,8 +259,8 @@
       </div>
     </div>
     <div
-      class="flex flex-row w-full justify-between items-center mt-2 text-lg
-      text-gray-600 ml-4"
+      class="flex flex-row w-full justify-between items-center mt-2 text-lg ml-4"
+      style="color: var(--text-color2)"
       in:fade={{ duration: 80, delay: 90 }}>
       <span>Other date</span>
       <input id="date-input" type="date" bind:value={date} />
@@ -287,8 +293,9 @@
         {#each suggestedDescriptions as suggestion, index (suggestion)}
           <button
             in:fade={{ duration: 180, delay: 30 * index }}
-            class="rounded-full px-3 py-1 self-start bg-gray-300 text-gray-600
-            mr-2 mt-2"
+            class="rounded-full px-3 py-1 self-start mr-2 mt-2"
+            style="color: var(--text-color2);
+            background-color:var(--inactive-button-color)"
             on:click={() => (description = suggestion)}>
             {suggestion}
           </button>
@@ -302,7 +309,7 @@
         class="rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-24
         mb-8 bg-gray-300"
         on:click={() => sendEntry()}
-        style={typeValid && dateValid && amountValid ? 'background-color:hsl(var(--accent-hue), 50%, 50%)' : ''}>
+        style={typeValid && dateValid && amountValid ? 'background-color:hsl(var(--accent-hue), 50%, 50%)' : 'background-color:hsl(var(--accent-hue), 50%, 50%); opacity: 0.3'}>
         {isUpdate ? 'Update' : 'Submit'}
       </button>
     </div>

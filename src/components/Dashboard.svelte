@@ -227,8 +227,10 @@
 
 <style type="text/postcss">
   .interval-button {
-    @apply rounded-full bg-gray-300 text-white py-1 font-bold w-1/4 flex-grow;
+    @apply rounded-full py-1 font-bold w-1/4 flex-grow;
     transition: background-color 350ms;
+    background-color: var(--inactive-button-color);
+    color: var(--text-color2);
   }
 
   .interval-button:not(:last-child) {
@@ -236,14 +238,24 @@
   }
 
   .interval-button.active {
-    background-color: hsl(var(--secondary-hue), 50%, 50%);
+    background-color: hsla(var(--secondary-hue), 50%, 50%);
+    color: whitesmoke;
+  }
+
+  .searchbar {
+    @apply flex items-center justify-center py-2 mx-4 mb-8 rounded-full
+    text-center;
+    color: var(--text-color2);
+    background-color: var(--inactive-button-color);
   }
 </style>
 
-<div class="flex flex-col my-8" in:fade={{ duration: 80 }}>
+<div
+  class="flex flex-col my-8"
+  in:fade={{ duration: 80 }}
+  style="color: var(--text-color)">
   <button
-    class="flex items-center justify-center py-2 mx-4 mb-8 rounded-full
-    bg-gray-200 text-center text-gray-600"
+    class="searchbar"
     on:click={() => {
       handleRouting('search');
       overlay.set('search');
@@ -256,7 +268,8 @@
   </span>
   {#if firstDate.length > 0 && lastDate.length > 0}
     <span
-      class="w-full text-center text-gray-600 font-light mb-8"
+      class="w-full text-center font-light mb-8"
+      style="color: var(--text-color2)"
       in:fade={{ duration: 120 }}>
       {lastDate + ' — ' + firstDate}
     </span>

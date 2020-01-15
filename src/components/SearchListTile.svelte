@@ -35,7 +35,7 @@
 
     return (
       textToHighlight.slice(0, startHighlightIndex) +
-      '<span class="font-bold text-green-600 bg-green-200">' +
+      '<span class="font-bold text-green-600 bg-green-200 rounded px-1">' +
       textToHighlight.slice(startHighlightIndex, endHighlightIndex) +
       "</span>" +
       textToHighlight.slice(endHighlightIndex, textToHighlight.length)
@@ -63,6 +63,7 @@
 
 <div
   class="flex flex-row p-4 items-center"
+  style="background-color: var(--background-color); color: var(--text-color)"
   in:fade={{ duration: 120 }}
   out:fade={{ duration: 80 }}
   on:click={() => showEditDetail(data)}>
@@ -79,9 +80,9 @@
       <span class="font-bold truncate mr-2">
         {@html addedBy}
       </span>
-      <span class="text-gray-600 truncate">{date}</span>
+      <span class="truncate" style="color: var(--text-color2)">{date}</span>
     </div>
-    <span class="text-gray-600 truncate">
+    <span class="truncate" style="color: var(--text-color2)">
       {@html desc}
     </span>
   </div>

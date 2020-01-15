@@ -111,7 +111,7 @@
 
 <style type="text/postcss">
   .wrap::before {
-    border-top: 1px solid lightgrey;
+    border-top: 1px solid var(--inactive-button-color);
     transform: translateY(-50%);
     position: absolute;
     left: 5%;
@@ -123,12 +123,12 @@
 
 <div
   id="detail-page"
-  class="h-screen w-full bg-white absolute top-0 overflow-auto"
+  class="h-screen w-full absolute top-0 overflow-auto z-10"
   out:fade={{ duration: 80 }}>
   <div
-    class="w-full flex flex-row p-4 bg-white {scrolling ? 'shadow' : ''} fixed
-    top-0 justify-between z-20"
-    style="height: 56px">
+    class="w-full flex flex-row p-4 {scrolling ? 'shadow' : ''} fixed top-0
+    justify-between z-20"
+    style="height: 56px; background-color: var(--background-color)">
     <button>
       <i
         class="material-icons fill-current"
@@ -159,7 +159,10 @@
       </div>
     </button>
   </div>
-  <div id="content" class="flex flex-col">
+  <div
+    id="content"
+    class="flex flex-col"
+    style="background-color: var(--background-color)">
     <div class="flex flex-col items-center">
       <div
         class="icon rounded-full p-6 mt-20 mb-4"
@@ -183,15 +186,19 @@
       {#each buckets as bucket, index}
         {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
           <span
-            class="rounded-full bg-gray-600 text-white font-bold px-4 py-2 my-4
-            sticky top-0 z-10 m-auto"
-            style="top: {56 + convertRemToPixels(1)}px">
+            class="rounded-full font-bold px-4 py-2 my-4 sticky top-0 z-10
+            m-auto"
+            style="top: {56 + convertRemToPixels(1)}px; color:
+            var(--text-color); background-color:var(--inactive-button-color)">
             {bucket.year}
           </span>
         {/if}
         <div class="flex flex-col justify-center items-center">
           <div class="wrap w-full relative text-center mt-4 mb-2">
-            <span class="relative text-gray-600 font-bold bg-white px-4">
+            <span
+              class="relative font-bold px-4"
+              style="color:var(--text-color2); background-color:
+              var(--background-color)">
               {new Date(2019, bucket.month - 1, 1)
                 .toDateString()
                 .substring(4, 7)}
@@ -202,7 +209,7 @@
               in:receive={{ key: data.id }}
               out:send={{ key: data.id }}
               animate:flip={{ duration: 350 }}
-              class="w-full bg-white"
+              class="w-full"
               on:click={() => showEditDetail(data)}>
               {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
                 <DetailListTile {backgroundColor} {iconColor} {data} {index} />

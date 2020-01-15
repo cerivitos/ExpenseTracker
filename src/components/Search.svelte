@@ -75,7 +75,9 @@
 <style type="text/postcss">
   .searchbar {
     height: 56px;
-    @apply fixed top-0 justify-between z-20 bg-white w-full flex flex-row p-4;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    @apply fixed top-0 justify-between z-20 w-full flex flex-row p-4;
   }
 
   .entry-anim {
@@ -90,18 +92,19 @@
     }
     75% {
       transform: translateY(0px) scale(1);
-      background-color: #edf2f7;
+      background-color: var(--inactive-button-color);
     }
     100% {
       border-radius: 0;
-      background-color: white;
+      background-color: var(--background-color);
     }
   }
 </style>
 
 <div
   id="search-page"
-  class="h-screen w-full bg-white absolute top-0 overflow-auto"
+  class="h-screen w-full absolute top-0 overflow-auto"
+  style="background-color: var(--background-color)"
   out:fade={{ duration: 80 }}>
   <div
     class="{scrolling ? 'shadow' : ''} searchbar {Object.keys($filteredSearchData).length > 0 ? '' : 'entry-anim'}">
@@ -124,9 +127,8 @@
       type="text"
       placeholder="Search"
       bind:value={query}
-      class="mx-4 text-gray-600 flex bg-transparent appearance-none w-full
-      text-lg"
-      style="outline: none !important;" />
+      class="mx-4 flex bg-transparent appearance-none w-full text-lg"
+      style="outline: none !important; color: var(--text-color2)" />
   </div>
   <div id="content" class="w-full flex flex-col mt-16">
     {#if datas && query.length > 0}

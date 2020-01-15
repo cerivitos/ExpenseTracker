@@ -65,7 +65,21 @@
   }
 </script>
 
-<div class="flex flex-col mx-4 my-8" in:fade={{ duration: 80 }}>
+<style type="text/postcss">
+  .sign-out-button {
+    @apply rounded-full px-2 py-1;
+    background-color: var(--inactive-button-color);
+  }
+
+  .name {
+    @apply text-xl font-bold;
+  }
+</style>
+
+<div
+  class="flex flex-col mx-4 my-8"
+  style="color: var(--text-color)"
+  in:fade={{ duration: 80 }}>
   {#if Object.keys($userInfo).length === 0}
     <button
       class="flex bg-white rounded shadow text-gray-700 py-2 px-4 font-bold
@@ -106,17 +120,17 @@
         src={$userInfo.photo}
         alt="User photo"
         class="rounded-full w-8 h-8 mr-4" />
-      <span class="text-xl font-bold">{$userInfo.name}</span>
+      <span class="name">{$userInfo.name}</span>
       <div class="flex-grow text-right">
-        <button
-          class="bg-gray-200 text-gray-700 rounded-full px-2 py-1"
-          on:click={() => signOut()}>
+        <button class="sign-out-button" on:click={() => signOut()}>
           Sign out
         </button>
       </div>
     </div>
   {/if}
-  <div class="w-full text-center my-8 flex flex-row justify-center">
+  <div
+    class="w-full text-center my-8 flex flex-row justify-center"
+    style="color: var(--text-color2)">
     <a href="/privacy-policy.html" target="_blank" class="mr-2">
       Privacy policy
     </a>

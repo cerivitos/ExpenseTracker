@@ -20,6 +20,7 @@
 
 <div
   class="flex flex-row p-4 items-center"
+  style="background-color: var(--background-color); color: var(--text-color)"
   in:fade={{ duration: 120, delay: index * 50 }}>
   <div
     class="w-10 rounded-lg flex flex-col items-center justify-between py-1 mr-4"
@@ -31,7 +32,9 @@
   </div>
   <div class="flex flex-col flex-grow items-start justify-around truncate mr-4">
     <span class="font-bold w-full truncate">{addedBy}</span>
-    <span class="text-gray-600 w-full truncate">{desc}</span>
+    <span class="w-full truncate" style="color: var(--text-color2)">
+      {desc}
+    </span>
   </div>
   <span>$ {data.amount.toFixed(2)}</span>
 </div>

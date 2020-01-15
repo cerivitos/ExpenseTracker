@@ -33,18 +33,18 @@
 
       document
         .getElementById(label + "-label")
-        .style.setProperty("color", "hsl(" + colorHue + ", 65%, 40%)");
+        .style.setProperty("color", "hsl(" + colorHue + ", 65%, 55%)");
     } else {
       document
         .getElementById(label + "-button")
-        .style.setProperty("background-color", "#edf2f7");
+        .style.setProperty("background-color", "var(--inactive-button-color)");
       document
         .getElementById(label + "-button")
-        .style.setProperty("color", "#cbd5e0");
+        .style.setProperty("color", "var(--text-color2)");
 
       document
         .getElementById(label + "-label")
-        .style.setProperty("color", "#cbd5e0");
+        .style.setProperty("color", "var(--text-color2)");
     }
   }
 
@@ -56,12 +56,15 @@
 <style type="text/postcss">
   .wrapper {
     @apply flex flex-col items-center justify-center w-1/3 mt-4;
+    color: var(--text-color);
     transition-timing-function: ease-in;
     transition: all 350ms;
   }
 
   .type-button {
-    @apply rounded-full p-2 fill-current bg-gray-200 text-gray-400 text-center align-middle;
+    @apply rounded-full p-2 fill-current text-center align-middle;
+    background-color: var(--inactive-button-color);
+    color: var(--text-color2);
   }
 
   .type-button i {
@@ -77,5 +80,5 @@
     on:click={() => dispatchType()}>
     <i class="material-icons">{materialIcon}</i>
   </button>
-  <span class="text-gray-400" id="{label}-label">{label}</span>
+  <span id="{label}-label">{label}</span>
 </div>
