@@ -3,7 +3,15 @@
   import firebase from "firebase/app";
   import "firebase/auth";
   import { fade } from "svelte/transition";
-  import exportedData from "../assets/expensetracker-fe56d-export.json";
+  import { onMount } from "svelte";
+
+  let selectedTheme = "bright";
+
+  onMount(() => {
+    if (localStorage.getItem("theme")) {
+      selectedTheme = localStorage.getItem("theme");
+    }
+  });
 
   function signOut() {
     firebase
@@ -67,6 +75,7 @@
   function switchTheme(theme) {
     document.getElementsByTagName("main")[0].setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
+    selectedTheme = theme;
   }
 </script>
 
@@ -82,6 +91,19 @@
 
   .label {
     @apply text-lg font-bold;
+  }
+
+  .theme-button {
+    @apply cursor-pointer rounded-full w-8 h-8;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .theme-button:not(:last-child) {
+    @apply mr-2;
+  }
+
+  .selected-theme {
+    border: 4px solid hsl(var(--primary-hue), 50%, 50%);
   }
 </style>
 
@@ -139,13 +161,13 @@
   {/if}
   <div class="w-full flex flex-row items-center justify-between my-12">
     <span class="label">Theme</span>
-    <div>
-      <button
-        class="rounded-full w-8 h-8 bg-white border border-gray-300"
-        on:click={() => switchTheme('dark')} />
-      <button
-        class="rounded-full w-8 h-8 ml-2 bg-black border border-gray-300"
+    <div class="flex flex-row">
+      <div
+        class="theme-button bg-white {selectedTheme === 'bright' ? 'selected-theme' : 'border-4 border-gray-400'}"
         on:click={() => switchTheme('bright')} />
+      <div
+        class="theme-button bg-black {selectedTheme === 'dark' ? 'selected-theme' : 'border-4 border-gray-400'}"
+        on:click={() => switchTheme('dark')} />
     </div>
   </div>
   <div
