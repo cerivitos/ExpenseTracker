@@ -28885,8 +28885,6 @@
     	let a;
     	let t6;
     	let span1;
-    	let t8;
-    	let button;
     	let div5_intro;
     	let dispose;
 
@@ -28919,9 +28917,6 @@
     			t6 = text("\r\n    •\r\n    ");
     			span1 = element("span");
     			span1.textContent = "v0.1";
-    			t8 = space();
-    			button = element("button");
-    			button.textContent = "Import";
     			attr_dev(span0, "class", "label svelte-by3eu5");
     			add_location(span0, file$4, 136, 4, 4402);
 
@@ -28949,15 +28944,13 @@
     			attr_dev(div4, "class", "w-full text-center my-8 flex flex-row justify-center");
     			set_style(div4, "color", "var(--text-color2)");
     			add_location(div4, file$4, 146, 2, 4847);
-    			add_location(button, file$4, 155, 2, 5129);
     			attr_dev(div5, "class", "flex flex-col mx-4 my-8");
     			set_style(div5, "color", "var(--text-color)");
     			add_location(div5, file$4, 83, 0, 2544);
 
     			dispose = [
     				listen_dev(div0, "click", /*click_handler_2*/ ctx[5], false, false, false),
-    				listen_dev(div1, "click", /*click_handler_3*/ ctx[6], false, false, false),
-    				listen_dev(button, "click", /*click_handler_4*/ ctx[7], false, false, false)
+    				listen_dev(div1, "click", /*click_handler_3*/ ctx[6], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
@@ -28979,8 +28972,6 @@
     			append_dev(div4, a);
     			append_dev(div4, t6);
     			append_dev(div4, span1);
-    			append_dev(div5, t8);
-    			append_dev(div5, button);
     		},
     		p: function update(ctx, [dirty]) {
     			if (current_block_type === (current_block_type = select_block_type(ctx, dirty)) && if_block) {
@@ -29060,28 +29051,6 @@
     	});
     }
 
-    function importData() {
-    	const expenses = exportedData.boards["9K1QQfYAg7QoIMbxzUy26INrpbX21497536405497"].expenses;
-    	const keys = Object.keys(expenses);
-    	const db = firebase$1.firestore();
-
-    	for (let i = 0; i < keys.length; i++) {
-    		const expense = expenses[keys[i]];
-
-    		db.collection("expenses").doc(keys[i]).set({
-    			amount: expense.amount,
-    			date: expense.date,
-    			desc: expense.description ? expense.description : "",
-    			type: expense.type,
-    			addedBy: expense.addedBy === "9K1QQfYAg7QoIMbxzUy26INrpbX2"
-    			? "Wai Kit Chan"
-    			: "Jie Lin Soong",
-    			addedOn: expense.date,
-    			id: keys[i]
-    		});
-    	}
-    }
-
     function instance$4($$self, $$props, $$invalidate) {
     	let $userInfo;
     	validate_store(userInfo, "userInfo");
@@ -29104,7 +29073,6 @@
     	const click_handler_1 = () => signOut();
     	const click_handler_2 = () => switchTheme("bright");
     	const click_handler_3 = () => switchTheme("dark");
-    	const click_handler_4 = () => importData();
 
     	$$self.$capture_state = () => {
     		return {};
@@ -29122,8 +29090,7 @@
     		click_handler,
     		click_handler_1,
     		click_handler_2,
-    		click_handler_3,
-    		click_handler_4
+    		click_handler_3
     	];
     }
 

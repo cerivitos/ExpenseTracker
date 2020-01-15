@@ -179,5 +179,4 @@
     •
     <span class="text-center mb-8 ml-2">v0.1</span>
   </div>
-  <button on:click={() => importData()}>Import</button>
 </div>
