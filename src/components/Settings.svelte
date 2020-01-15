@@ -63,6 +63,11 @@
         });
     }
   }
+
+  function switchTheme(theme) {
+    document.getElementsByTagName("main")[0].setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }
 </script>
 
 <style type="text/postcss">
@@ -73,6 +78,10 @@
 
   .name {
     @apply text-xl font-bold;
+  }
+
+  .label {
+    @apply text-lg font-bold;
   }
 </style>
 
@@ -128,6 +137,17 @@
       </div>
     </div>
   {/if}
+  <div class="w-full flex flex-row items-center justify-between my-8">
+    <span class="label">Theme</span>
+    <div>
+      <button
+        class="rounded-full w-8 h-8 bg-white border border-gray-300"
+        on:click={() => switchTheme('dark')} />
+      <button
+        class="rounded-full w-8 h-8 ml-2 bg-black border border-gray-300"
+        on:click={() => switchTheme('bright')} />
+    </div>
+  </div>
   <div
     class="w-full text-center my-8 flex flex-row justify-center"
     style="color: var(--text-color2)">

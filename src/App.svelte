@@ -45,6 +45,13 @@
       }
     });
 
+    //Set color theme
+    if (localStorage.getItem("theme")) {
+      document
+        .getElementsByTagName("main")[0]
+        .setAttribute("data-theme", localStorage.getItem("theme"));
+    }
+
     //Parse url to ui state on app load
     const page = window.location.search.substring(1);
     handleRouting(page);
