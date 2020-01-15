@@ -307,7 +307,7 @@
       in:fade={{ duration: 120, delay: 180 }}>
       <button
         class="rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-24
-        mb-8 bg-gray-300"
+        mb-12 bg-gray-300"
         on:click={() => sendEntry()}
         style={typeValid && dateValid && amountValid ? 'background-color:hsl(var(--accent-hue), 50%, 50%)' : 'background-color:hsl(var(--accent-hue), 50%, 50%); opacity: 0.3'}>
         {isUpdate ? 'Update' : 'Submit'}
@@ -315,7 +315,7 @@
     </div>
     {#if Object.keys($entryData).length > 0}
       <button
-        class="w-full text-center mb-8 bg-transparent text-red-600"
+        class="w-full text-center mb-12 bg-transparent text-red-600"
         on:click={() => deleteEntry()}>
         Delete
       </button>

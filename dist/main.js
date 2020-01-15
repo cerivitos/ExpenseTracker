@@ -30761,8 +30761,8 @@
     		c: function create() {
     			button = element("button");
     			button.textContent = "Delete";
-    			attr_dev(button, "class", "w-full text-center mb-8 bg-transparent text-red-600");
-    			add_location(button, file$8, 267, 6, 9805);
+    			attr_dev(button, "class", "w-full text-center mb-12 bg-transparent text-red-600");
+    			add_location(button, file$8, 267, 6, 9806);
     			dispose = listen_dev(button, "click", /*click_handler_7*/ ctx[28], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -30977,7 +30977,7 @@
     			attr_dev(div8, "class", "flex mt-4 mx-4 flex-wrap");
     			set_style(div8, "height", "80px");
     			add_location(div8, file$8, 241, 4, 8678);
-    			attr_dev(button3, "class", "rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-24\r\n        mb-8 bg-gray-300");
+    			attr_dev(button3, "class", "rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-24\r\n        mb-12 bg-gray-300");
 
     			attr_dev(button3, "style", button3_style_value = /*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
     			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
