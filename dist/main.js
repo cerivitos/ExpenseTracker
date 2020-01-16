@@ -31519,31 +31519,31 @@
     			t6 = text("$\r\n    ");
     			attr_dev(i, "class", "material-icons md-18");
     			set_style(i, "display", "block", 1);
-    			add_location(i, file$9, 73, 4, 2320);
+    			add_location(i, file$9, 73, 4, 2315);
     			attr_dev(div0, "id", "icon");
     			attr_dev(div0, "class", "rounded-full p-2 mr-2 fill-current");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[5]);
     			set_style(div0, "color", /*iconColor*/ ctx[6]);
-    			add_location(div0, file$9, 69, 2, 2178);
+    			add_location(div0, file$9, 69, 2, 2173);
     			attr_dev(span0, "class", "font-bold truncate mr-2");
-    			add_location(span0, file$9, 79, 6, 2552);
+    			add_location(span0, file$9, 79, 6, 2547);
     			attr_dev(span1, "class", "truncate");
     			set_style(span1, "color", "var(--text-color2)");
-    			add_location(span1, file$9, 82, 6, 2638);
+    			add_location(span1, file$9, 82, 6, 2633);
     			attr_dev(div1, "class", "flex flex-row items-start justify-around truncate");
-    			add_location(div1, file$9, 78, 4, 2481);
+    			add_location(div1, file$9, 78, 4, 2476);
     			attr_dev(span2, "class", "truncate");
     			set_style(span2, "color", "var(--text-color2)");
-    			add_location(span2, file$9, 84, 4, 2726);
+    			add_location(span2, file$9, 84, 4, 2721);
     			attr_dev(div2, "class", "flex flex-col items-start mr-4");
-    			add_location(div2, file$9, 77, 2, 2431);
+    			add_location(div2, file$9, 77, 2, 2426);
     			html_tag = new HtmlTag(raw2_value, null);
     			attr_dev(span3, "class", "flex-grow flex justify-end");
-    			add_location(span3, file$9, 88, 2, 2830);
+    			add_location(span3, file$9, 88, 2, 2825);
     			attr_dev(div3, "class", "flex flex-row p-4 items-center");
     			set_style(div3, "background-color", "var(--background-color)");
     			set_style(div3, "color", "var(--text-color)");
-    			add_location(div3, file$9, 63, 0, 1945);
+    			add_location(div3, file$9, 63, 0, 1940);
     			dispose = listen_dev(div3, "click", /*click_handler*/ ctx[11], false, false, false);
     		},
     		l: function claim(nodes) {
@@ -31622,7 +31622,7 @@
     function insertHighlight(queryString, textToHighlight) {
     	const startHighlightIndex = textToHighlight.toLowerCase().trim().indexOf(queryString);
     	const endHighlightIndex = startHighlightIndex + queryString.length;
-    	return textToHighlight.slice(0, startHighlightIndex) + "<span class=\"font-bold rounded px-1\" style=\"color: hsl(var(--secondary-hue), 50%, 50%); background-color: hsl(var(--secondary-hue), 35%, 80%)\">" + textToHighlight.slice(startHighlightIndex, endHighlightIndex) + "</span>" + textToHighlight.slice(endHighlightIndex, textToHighlight.length);
+    	return textToHighlight.slice(0, startHighlightIndex) + "<span class=\"font-bold rounded\" style=\"color: hsl(var(--secondary-hue), 50%, 50%); background-color: hsl(var(--secondary-hue), 35%, 80%)\">" + textToHighlight.slice(startHighlightIndex, endHighlightIndex) + "</span>" + textToHighlight.slice(endHighlightIndex, textToHighlight.length);
     }
 
     function showEditDetail$1(data) {

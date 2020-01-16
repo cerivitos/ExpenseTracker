@@ -35,7 +35,7 @@
 
     return (
       textToHighlight.slice(0, startHighlightIndex) +
-      '<span class="font-bold rounded px-1" style="color: hsl(var(--secondary-hue), 50%, 50%); background-color: hsl(var(--secondary-hue), 35%, 80%)">' +
+      '<span class="font-bold rounded" style="color: hsl(var(--secondary-hue), 50%, 50%); background-color: hsl(var(--secondary-hue), 35%, 80%)">' +
       textToHighlight.slice(startHighlightIndex, endHighlightIndex) +
       "</span>" +
       textToHighlight.slice(endHighlightIndex, textToHighlight.length)
