@@ -205,6 +205,16 @@
   .type-button svg {
     @apply w-8 h-8;
   }
+
+  .form-wrapper {
+    @apply flex flex-col w-full;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .form-wrapper {
+      @apply w-6/12;
+    }
+  }
 </style>
 
 <div
@@ -228,97 +238,98 @@
       </i>
     </button>
   </div>
-  <div
-    class="flex flex-col items-start justify-around mt-8"
-    style="border-top-left-radius: 1rem; border-top-right-radius: 1rem">
-    <div class="input-row" in:fade={{ duration: 120, delay: 30 }}>
-      <label for="amount-input">Amount</label>
-      <input
-        id="amount-input"
-        class="amount text-2xl"
-        type="number"
-        min="0"
-        bind:value={amount}
-        on:click={() => document.execCommand('selectall', null, false)} />
-    </div>
-    <div class="input-row" in:fade={{ duration: 120, delay: 60 }}>
-      <label for="date-input">Date</label>
-      <div class="mr-4">
-        <button
-          id="today-button"
-          class="date-button active"
-          on:click={() => setDate('today')}>
-          Today
-        </button>
-        <button
-          id="yesterday-button"
-          class="date-button"
-          on:click={() => setDate('yesterday')}>
-          Yesterday
-        </button>
+  <div class="flex flex-col items-center justify-around mt-8">
+    <div class="form-wrapper">
+      <div class="input-row" in:fade={{ duration: 120, delay: 30 }}>
+        <label for="amount-input">Amount</label>
+        <input
+          id="amount-input"
+          class="amount text-2xl"
+          type="number"
+          min="0"
+          bind:value={amount}
+          on:click={() => document.execCommand('selectall', null, false)} />
       </div>
-    </div>
-    <div
-      class="flex flex-row w-full justify-between items-center mt-2 text-lg ml-4"
-      style="color: var(--text-color2)"
-      in:fade={{ duration: 80, delay: 90 }}>
-      <span>Other date</span>
-      <input id="date-input" type="date" bind:value={date} />
-    </div>
-    <div class="mt-12 flex flex-col" in:fade={{ duration: 120, delay: 150 }}>
-      <label>Type</label>
-      <div class="w-full flex flex-row flex-wrap justify-start">
-        {#each typeDesigns as typeDesign}
-          <TypeButton
-            label={typeDesign.type}
-            colorHue={typeDesign.hue}
-            on:dispatchType={receiveType}
-            isActive={type === typeDesign.type}
-            materialIcon={typeDesign.materialIcon} />
-        {/each}
-      </div>
-    </div>
-    <div class="input-row" in:fade={{ duration: 120, delay: 120 }}>
-      <label for="description-input">Description</label>
-      <input
-        class="truncate text-2xl"
-        id="description-input"
-        type="text"
-        placeholder="(Optional)"
-        bind:value={description}
-        on:click={() => document.execCommand('selectall', null, false)} />
-    </div>
-    <div class="flex mt-4 mx-4 flex-wrap" style="height: 80px">
-      {#if suggestedDescriptions}
-        {#each suggestedDescriptions as suggestion, index (suggestion)}
+      <div class="input-row" in:fade={{ duration: 120, delay: 60 }}>
+        <label for="date-input">Date</label>
+        <div class="mr-4">
           <button
-            in:fade={{ duration: 180, delay: 30 * index }}
-            class="rounded-full px-3 py-1 self-start mr-2 mt-2"
-            style="color: var(--text-color2);
-            background-color:var(--inactive-button-color)"
-            on:click={() => (description = suggestion)}>
-            {suggestion}
+            id="today-button"
+            class="date-button active"
+            on:click={() => setDate('today')}>
+            Today
           </button>
-        {/each}
+          <button
+            id="yesterday-button"
+            class="date-button"
+            on:click={() => setDate('yesterday')}>
+            Yesterday
+          </button>
+        </div>
+      </div>
+      <div
+        class="flex flex-row w-full justify-between items-center mt-2 text-lg
+        ml-4"
+        style="color: var(--text-color2)"
+        in:fade={{ duration: 80, delay: 90 }}>
+        <span>Other date</span>
+        <input id="date-input" type="date" bind:value={date} />
+      </div>
+      <div class="mt-12 flex flex-col" in:fade={{ duration: 120, delay: 150 }}>
+        <label>Type</label>
+        <div class="w-full flex flex-row flex-wrap justify-start">
+          {#each typeDesigns as typeDesign}
+            <TypeButton
+              label={typeDesign.type}
+              colorHue={typeDesign.hue}
+              on:dispatchType={receiveType}
+              isActive={type === typeDesign.type}
+              materialIcon={typeDesign.materialIcon} />
+          {/each}
+        </div>
+      </div>
+      <div class="input-row" in:fade={{ duration: 120, delay: 120 }}>
+        <label for="description-input">Description</label>
+        <input
+          class="truncate text-2xl"
+          id="description-input"
+          type="text"
+          placeholder="(Optional)"
+          bind:value={description}
+          on:click={() => document.execCommand('selectall', null, false)} />
+      </div>
+      <div class="flex mt-4 mx-4 flex-wrap" style="height: 80px">
+        {#if suggestedDescriptions}
+          {#each suggestedDescriptions as suggestion, index (suggestion)}
+            <button
+              in:fade={{ duration: 180, delay: 30 * index }}
+              class="rounded-full px-3 py-1 self-start mr-2 mt-2"
+              style="color: var(--text-color2);
+              background-color:var(--inactive-button-color)"
+              on:click={() => (description = suggestion)}>
+              {suggestion}
+            </button>
+          {/each}
+        {/if}
+      </div>
+      <div
+        class="w-full text-center block"
+        in:fade={{ duration: 120, delay: 180 }}>
+        <button
+          class="rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5
+          mt-24 mb-12 bg-gray-300"
+          on:click={() => sendEntry()}
+          style={typeValid && dateValid && amountValid ? 'background-color:hsl(var(--accent-hue), 50%, 50%)' : 'background-color:hsl(var(--accent-hue), 50%, 50%); opacity: 0.3'}>
+          {isUpdate ? 'Update' : 'Submit'}
+        </button>
+      </div>
+      {#if Object.keys($entryData).length > 0}
+        <button
+          class="w-full text-center mb-12 bg-transparent text-red-600"
+          on:click={() => deleteEntry()}>
+          Delete
+        </button>
       {/if}
     </div>
-    <div
-      class="w-full text-center block"
-      in:fade={{ duration: 120, delay: 180 }}>
-      <button
-        class="rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-24
-        mb-12 bg-gray-300"
-        on:click={() => sendEntry()}
-        style={typeValid && dateValid && amountValid ? 'background-color:hsl(var(--accent-hue), 50%, 50%)' : 'background-color:hsl(var(--accent-hue), 50%, 50%); opacity: 0.3'}>
-        {isUpdate ? 'Update' : 'Submit'}
-      </button>
-    </div>
-    {#if Object.keys($entryData).length > 0}
-      <button
-        class="w-full text-center mb-12 bg-transparent text-red-600"
-        on:click={() => deleteEntry()}>
-        Delete
-      </button>
-    {/if}
   </div>
 </div>

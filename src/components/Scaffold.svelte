@@ -22,6 +22,10 @@
     @apply w-full flex fixed bottom-0 fill-current items-center;
   }
 
+  .nav-button {
+    @apply flex flex-col items-center justify-center w-1/2 py-1;
+  }
+
   .navbar .active {
     color: hsl(var(--primary-hue), 65%, 45%);
     transition: all 180ms;
@@ -38,6 +42,66 @@
     bottom: 56px;
     background-color: var(--background-color);
   }
+
+  .entry-wrapper {
+    @apply fixed bottom-0 w-full flex items-center justify-center mb-6 pointer-events-none;
+  }
+
+  #entry-button {
+    @apply rounded-full w-16 h-16 flex items-center justify-center p-4 fill-current text-white shadow-lg pointer-events-auto;
+    background-color: hsl(var(--accent-hue), 50%, 50%);
+    box-shadow: 0px 3px 6px 0px hsla(var(--accent-hue), 35%, 75%, 0.5);
+  }
+
+  .material-icons {
+    @apply mr-0;
+  }
+
+  #entry-button .material-icons {
+    font-size: 32px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .content {
+      bottom: 0;
+    }
+
+    .navbar {
+      box-shadow: 0 0 0 0.5px black;
+      background-color: var(--background-color);
+      @apply w-3/12 h-screen flex flex-col fixed left-0 fill-current items-start justify-center p-4;
+    }
+
+    .nav-button {
+      @apply flex flex-row items-center justify-start w-full py-1;
+    }
+
+    .navbar .active {
+      color: hsl(var(--primary-hue), 65%, 45%);
+      transition: color 180ms;
+      @apply text-xl;
+    }
+
+    .navbar .inactive {
+      transition: color 180ms;
+      @apply text-gray-500 text-xl;
+    }
+
+    .material-icons {
+      @apply mr-2 text-3xl;
+    }
+
+    .content {
+      @apply absolute w-9/12 top-0 right-0 overflow-x-hidden;
+      background-color: var(--background-color);
+    }
+
+    #entry-button {
+      @apply rounded-full w-full flex flex-row justify-center items-center fill-current text-white font-bold text-xl shadow-lg pointer-events-auto mb-8;
+      background-color: hsl(var(--accent-hue), 50%, 50%);
+      box-shadow: 0px 3px 6px 0px hsla(var(--accent-hue), 35%, 75%, 0.5);
+    }
+  }
 </style>
 
 <div class="content">
@@ -47,57 +111,29 @@
   {/if}
 </div>
 <nav class="navbar">
+  {#if window.innerWidth > 768}
+    <button id="entry-button" on:click={() => setView('entry')}>
+      <i class="material-icons">post_add</i>
+      Add spending
+    </button>
+  {/if}
   <button
-    class="flex flex-col items-center justify-center w-1/2 py-1 {$view === 'dashboard' ? 'active' : 'inactive'}"
+    class="nav-button {$view === 'dashboard' ? 'active' : 'inactive'}"
     on:click={() => setView('dashboard')}>
     <i class="material-icons">assessment</i>
     <span>Dashboard</span>
   </button>
   <button
-    class="flex flex-col items-center justify-center w-1/2 py-1 {$view === 'settings' ? 'active' : 'inactive'}"
+    class="nav-button {$view === 'settings' ? 'active' : 'inactive'}"
     on:click={() => setView('settings')}>
-    <i class="material-icons">settings_applications</i>
+    <i class="material-icons md-48">settings_applications</i>
     <span>Settings</span>
   </button>
 </nav>
-<div
-  class="fixed bottom-0 w-full flex items-center justify-center mb-6
-  pointer-events-none">
-  <button
-    id="entry-button"
-    class="rounded-full w-16 h-16 flex items-center p-4 fill-current text-white
-    shadow-lg pointer-events-auto"
-    style="background-color:hsl(var(--accent-hue), 50%, 50%); box-shadow: 0px
-    3px 6px 0px hsla(var(--accent-hue), 35%, 75%, 0.5);"
-    on:click={() => setView('entry')}>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-8 w-8"
-      viewBox="0 0 24 24"
-      enable-background="new 0 0 24 24"
-      xml:space="preserve">
-      <g id="Bounding_Box">
-        <rect fill="none" width="24" height="24" />
-        <rect fill="none" width="24" height="24" />
-      </g>
-      <g id="Flat">
-        <g id="ui_x5F_spec_x5F_header_copy_2" />
-        <g>
-          <path
-            d="M18,12c-0.55,0-1,0.45-1,1v5.22c0,0.55-0.45,1-1,1H6c-0.55,0-1-0.45-1-1V8c0-0.55,0.45-1,1-1h5c0.55,0,1-0.45,1-1
-            c0-0.55-0.45-1-1-1H5C3.9,5,3,5.9,3,7v12c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-6C19,12.45,18.55,12,18,12z" />
-          <path
-            d="M21.02,5H19V2.98C19,2.44,18.56,2,18.02,2h-0.03C17.44,2,17,2.44,17,2.98V5h-2.01C14.45,5,14.01,5.44,14,5.98
-            c0,0.01,0,0.02,0,0.03C14,6.56,14.44,7,14.99,7H17v2.01c0,0.54,0.44,0.99,0.99,0.98c0.01,0,0.02,0,0.03,0
-            c0.54,0,0.98-0.44,0.98-0.98V7h2.02C21.56,7,22,6.56,22,6.02V5.98C22,5.44,21.56,5,21.02,5z" />
-          <path
-            d="M14,9H8c-0.55,0-1,0.45-1,1c0,0.55,0.45,1,1,1h6c0.55,0,1-0.45,1-1C15,9.45,14.55,9,14,9z" />
-          <path
-            d="M14,12H8c-0.55,0-1,0.45-1,1c0,0.55,0.45,1,1,1h6c0.55,0,1-0.45,1-1C15,12.45,14.55,12,14,12z" />
-          <path
-            d="M14,15H8c-0.55,0-1,0.45-1,1c0,0.55,0.45,1,1,1h6c0.55,0,1-0.45,1-1C15,15.45,14.55,15,14,15z" />
-        </g>
-      </g>
-    </svg>
-  </button>
-</div>
+{#if window.innerWidth <= 768}
+  <div class="entry-wrapper">
+    <button id="entry-button" on:click={() => setView('entry')}>
+      <i class="material-icons md-36">post_add</i>
+    </button>
+  </div>
+{/if}

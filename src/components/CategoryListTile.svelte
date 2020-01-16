@@ -1,5 +1,6 @@
 <script>
-  import { fade, fly } from "svelte/transition";
+  import { fade } from "svelte/transition";
+  import scale from "../scale.js";
   import { onMount } from "svelte";
   import { typeDesigns, handleRouting } from "../util";
   import { view, detailData, overlay } from "../store/store";
@@ -28,7 +29,8 @@
 </script>
 
 <div
-  class="relative py-4 w-full flex flex-row items-center"
+  class="relative py-4 {window.innerWidth <= 768 ? 'w-full' : 'w-8/12'} flex
+  flex-row items-center"
   in:fade={{ duration: 80, delay: index * 50 }}
   out:fade={{ duration: 80 }}
   on:click={() => viewDetails()}>
@@ -52,7 +54,7 @@
   </div>
   <div
     class="absolute left-0 top-0 h-full rounded-r opacity-25"
-    in:fly={{ x: -(window.innerWidth * data.percentage) / 100, duration: 180, delay: index * 80 }}
+    in:scale={{ duration: 180, delay: index * 80 }}
     style="width: {(window.innerWidth * data.percentage) / 100}px;
-    background-color: {barColor}; " />
+    background-color: {barColor}" />
 </div>

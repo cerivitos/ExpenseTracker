@@ -119,6 +119,16 @@
     width: 90%;
     content: "";
   }
+
+  .content-wrapper {
+    @apply flex flex-col w-full;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .content-wrapper {
+      @apply w-6/12;
+    }
+  }
 </style>
 
 <div
@@ -162,64 +172,69 @@
   </div>
   <div
     id="content"
-    class="flex flex-col"
+    class="flex flex-col w-full items-center"
     style="background-color: var(--background-color)">
-    <div class="flex flex-col items-center">
-      <div
-        class="icon rounded-full p-6 mt-20 mb-4"
-        id="icon"
-        in:scale={{ initial: 0.0, duration: 240, delay: 80 }}
-        style="background-color: {backgroundColor}">
-        <i
-          class="material-icons fill-current"
-          style="display:block !important; color: {iconColor}; font-size: 64px">
-          {materialIcon}
-        </i>
-      </div>
-      <span
-        class="text-2xl font-bold mb-8"
-        in:fly={{ y: 48, duration: 180, delay: 180 }}
-        style="color: {iconColor}">
-        {$detailData.type}
-      </span>
-    </div>
-    {#await getBucketsPromise then buckets}
-      {#each buckets as bucket, index}
-        {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
-          <span
-            class="rounded-full font-bold px-4 py-2 my-4 sticky top-0 z-10
-            m-auto"
-            style="top: {56 + convertRemToPixels(1)}px; color:
-            var(--text-color); background-color:var(--inactive-button-color)">
-            {bucket.year}
-          </span>
-        {/if}
-        <div class="flex flex-col justify-center items-center">
-          <div class="wrap w-full relative text-center mt-4 mb-2">
-            <span
-              class="relative font-bold px-4"
-              style="color:var(--text-color2); background-color:
-              var(--background-color)">
-              {new Date(2019, bucket.month - 1, 1)
-                .toDateString()
-                .substring(4, 7)}
-            </span>
-          </div>
-          {#each sortedData as data, index (data.id)}
-            <div
-              in:receive={{ key: data.id }}
-              out:send={{ key: data.id }}
-              animate:flip={{ duration: 350 }}
-              class="w-full"
-              on:click={() => showEditDetail(data)}>
-              {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
-                <DetailListTile {backgroundColor} {iconColor} {data} {index} />
-              {/if}
-            </div>
-          {/each}
+    <div class="content-wrapper">
+      <div class="flex flex-col items-center">
+        <div
+          class="icon rounded-full p-6 mt-20 mb-4"
+          id="icon"
+          in:scale={{ initial: 0.0, duration: 240, delay: 80 }}
+          style="background-color: {backgroundColor}">
+          <i
+            class="material-icons fill-current"
+            style="display:block !important; color: {iconColor}; font-size: 64px">
+            {materialIcon}
+          </i>
         </div>
-      {/each}
-    {/await}
+        <span
+          class="text-2xl font-bold mb-8"
+          in:fly={{ y: 48, duration: 180, delay: 180 }}
+          style="color: {iconColor}">
+          {$detailData.type}
+        </span>
+      </div>
+      {#await getBucketsPromise then buckets}
+        {#each buckets as bucket, index}
+          {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
+            <span
+              class="rounded-full font-bold px-4 py-2 my-4 sticky top-0 z-10
+              m-auto"
+              style="top: {56 + convertRemToPixels(1)}px; color:
+              var(--text-color); background-color:var(--inactive-button-color)">
+              {bucket.year}
+            </span>
+          {/if}
+          <div class="flex flex-col justify-center items-center">
+            <div class="wrap w-full relative text-center mt-4 mb-2">
+              <span
+                class="relative font-bold px-4"
+                style="color:var(--text-color2); background-color:
+                var(--background-color)">
+                {new Date(2019, bucket.month - 1, 1)
+                  .toDateString()
+                  .substring(4, 7)}
+              </span>
+            </div>
+            {#each sortedData as data, index (data.id)}
+              <div
+                in:receive={{ key: data.id }}
+                out:send={{ key: data.id }}
+                animate:flip={{ duration: 350 }}
+                class="w-full"
+                on:click={() => showEditDetail(data)}>
+                {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
+                  <DetailListTile
+                    {backgroundColor}
+                    {iconColor}
+                    {data}
+                    {index} />
+                {/if}
+              </div>
+            {/each}
+          </div>
+        {/each}
+      {/await}
+    </div>
   </div>
-
 </div>

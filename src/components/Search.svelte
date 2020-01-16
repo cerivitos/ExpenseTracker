@@ -99,6 +99,26 @@
       background-color: var(--background-color);
     }
   }
+
+  #search-input {
+    @apply mx-4 flex bg-transparent appearance-none w-full text-lg;
+    outline: none !important;
+    color: var(--text-color2);
+  }
+
+  .content-wrapper {
+    @apply flex flex-col w-full;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .content-wrapper {
+      @apply w-6/12;
+    }
+
+    #search-input {
+      @apply w-6/12;
+    }
+  }
 </style>
 
 <div
@@ -126,15 +146,15 @@
       id="search-input"
       type="text"
       placeholder="Search"
-      bind:value={query}
-      class="mx-4 flex bg-transparent appearance-none w-full text-lg"
-      style="outline: none !important; color: var(--text-color2)" />
+      bind:value={query} />
   </div>
-  <div id="content" class="w-full flex flex-col mt-16">
-    {#if datas && query.length > 0}
-      {#each filteredDatas as data (data.id)}
-        <SearchListTile {data} />
-      {/each}
-    {/if}
+  <div id="content" class="w-full flex flex-col items-center mt-16">
+    <div class="content-wrapper">
+      {#if datas && query.length > 0}
+        {#each filteredDatas as data (data.id)}
+          <SearchListTile {data} />
+        {/each}
+      {/if}
+    </div>
   </div>
 </div>

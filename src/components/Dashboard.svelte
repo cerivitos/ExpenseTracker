@@ -226,6 +226,10 @@
 </script>
 
 <style type="text/postcss">
+  .interval-button-wrapper {
+    @apply flex flex-row justify-around overflow-x-hidden mb-16 mx-4;
+  }
+
   .interval-button {
     @apply rounded-full py-1 font-bold w-1/4 flex-grow;
     transition: background-color 350ms;
@@ -248,44 +252,56 @@
     color: var(--text-color2);
     background-color: var(--inactive-button-color);
   }
+
+  .overall-wrapper {
+    @apply flex flex-col w-full;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .overall-wrapper {
+      @apply w-8/12;
+    }
+  }
 </style>
 
 <div
-  class="flex flex-col my-8"
+  class="flex flex-col w-full items-center my-8"
   in:fade={{ duration: 80 }}
   style="color: var(--text-color)">
-  <button
-    class="searchbar"
-    on:click={() => {
-      handleRouting('search');
-      overlay.set('search');
-    }}>
-    <i class="material-icons fill-current">search</i>
-    Search
-  </button>
-  <span class="w-full mb-1 text-4xl text-center font-bold" id="totalSpend">
-    $0
-  </span>
-  {#if firstDate.length > 0 && lastDate.length > 0}
-    <span
-      class="w-full text-center font-light mb-12"
-      style="color: var(--text-color2)"
-      in:fade={{ duration: 120 }}>
-      {lastDate + ' — ' + firstDate}
+  <div class="overall-wrapper">
+    <button
+      class="searchbar"
+      on:click={() => {
+        handleRouting('search');
+        overlay.set('search');
+      }}>
+      <i class="material-icons fill-current">search</i>
+      Search
+    </button>
+    <span class="w-full mb-1 text-4xl text-center font-bold" id="totalSpend">
+      $0
     </span>
-  {:else}
-    <span class="w-full text-center text-transparent font-light mb-8">
-      &nbsp;
-    </span>
-  {/if}
-  <div class="flex flex-row justify-around overflow-x-hidden mb-16 mx-4">
-    {#each ['1M', '6M', '1Y', 'All'] as interval}
-      <button
-        class="interval-button {currentInterval === interval ? 'active' : ''}"
-        on:click={() => changeInterval(interval)}>
-        {interval}
-      </button>
-    {/each}
+    {#if firstDate.length > 0 && lastDate.length > 0}
+      <span
+        class="w-full text-center font-light mb-12"
+        style="color: var(--text-color2)"
+        in:fade={{ duration: 120 }}>
+        {lastDate + ' — ' + firstDate}
+      </span>
+    {:else}
+      <span class="w-full text-center text-transparent font-light mb-8">
+        &nbsp;
+      </span>
+    {/if}
+    <div class="interval-button-wrapper">
+      {#each ['1M', '6M', '1Y', 'All'] as interval}
+        <button
+          class="interval-button {currentInterval === interval ? 'active' : ''}"
+          on:click={() => changeInterval(interval)}>
+          {interval}
+        </button>
+      {/each}
+    </div>
   </div>
   {#await getDataPromise then result}
     {#each result as data, index}
