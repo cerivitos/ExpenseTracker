@@ -24,7 +24,7 @@
 
   @media only screen and (min-width: 768px) {
     .wrapper {
-      @apply w-8/12;
+      @apply w-9/12;
     }
   }
 </style>

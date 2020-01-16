@@ -27877,10 +27877,10 @@
     			t = text(/*message*/ ctx[0]);
     			attr_dev(div0, "class", "rounded-full text-center text-white px-4 py-2 max-w-lg truncate\r\n      mx-4");
     			set_style(div0, "background-color", "hsl(var(--accent-hue), 40%, 60%)");
-    			add_location(div0, file$2, 23, 4, 639);
-    			attr_dev(div1, "class", "wrapper svelte-1nmj18n");
+    			add_location(div0, file$2, 23, 4, 633);
+    			attr_dev(div1, "class", "wrapper svelte-19k4qys");
     			set_style(div1, "bottom", /*yPos*/ ctx[1] + "px");
-    			add_location(div1, file$2, 22, 2, 587);
+    			add_location(div1, file$2, 22, 2, 581);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
