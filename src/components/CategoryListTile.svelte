@@ -55,6 +55,6 @@
   <div
     class="absolute left-0 top-0 h-full rounded-r opacity-25"
     in:scale={{ duration: 180, delay: index * 80 }}
-    style="width: {(window.innerWidth * data.percentage) / 100}px;
+    style="width: {((window.innerWidth <= 768 ? window.innerWidth : (window.innerWidth * 1) / 2) * data.percentage) / 100}px;
     background-color: {barColor}" />
 </div>

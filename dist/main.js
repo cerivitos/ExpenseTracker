@@ -26843,7 +26843,11 @@
     			attr_dev(div2, "class", "flex flex-col justify-between items-end ml-2 mr-4");
     			add_location(div2, file, 50, 2, 1615);
     			attr_dev(div3, "class", "absolute left-0 top-0 h-full rounded-r opacity-25");
-    			set_style(div3, "width", window.innerWidth * /*data*/ ctx[0].percentage / 100 + "px");
+
+    			set_style(div3, "width", (window.innerWidth <= 768
+    			? window.innerWidth
+    			: window.innerWidth * 1 / 2) * /*data*/ ctx[0].percentage / 100 + "px");
+
     			set_style(div3, "background-color", /*barColor*/ ctx[5]);
     			add_location(div3, file, 54, 2, 1816);
     			attr_dev(div4, "class", div4_class_value = "relative py-4 " + (window.innerWidth <= 768 ? "w-full" : "w-8/12") + " flex\r\n  flex-row items-center");
@@ -26898,7 +26902,9 @@
     			if ((!current || dirty & /*data*/ 1) && t11_value !== (t11_value = Math.round(/*data*/ ctx[0].percentage) + "")) set_data_dev(t11, t11_value);
 
     			if (!current || dirty & /*data*/ 1) {
-    				set_style(div3, "width", window.innerWidth * /*data*/ ctx[0].percentage / 100 + "px");
+    				set_style(div3, "width", (window.innerWidth <= 768
+    				? window.innerWidth
+    				: window.innerWidth * 1 / 2) * /*data*/ ctx[0].percentage / 100 + "px");
     			}
 
     			if (!current || dirty & /*barColor*/ 32) {
