@@ -18,11 +18,6 @@
     backgroundColor = "hsl(" + hue + ", 50%, 80%)";
     iconColor = "hsl(" + hue + ", 65%, 40%)";
     barColor = "hsl(" + hue + ", 45%, 50%)";
-
-    document.getElementsByTagName("main")[0].getAttribute("data-theme") ===
-    "dark"
-      ? (barStyle = "background-color:" + barColor + "; opacity: 0.25")
-      : (barStyle = "background-color:" + barColor + "; opacity: 0.15");
   });
 
   function viewDetails() {
@@ -33,35 +28,31 @@
 </script>
 
 <div
-  class="relative py-4"
+  class="relative py-4 w-full flex flex-row items-center"
   in:fade={{ duration: 80, delay: index * 50 }}
   out:fade={{ duration: 80 }}
   on:click={() => viewDetails()}>
   <div
-    class="absolute left-0 top-0 h-full rounded-r"
-    in:fly={{ x: -(window.innerWidth * data.percentage) / 100, duration: 180, delay: index * 80 }}
-    style="width: {(window.innerWidth * data.percentage) / 100}px; {barStyle}" />
-  <div class="w-full flex flex-row items-center relative">
-    <div
-      id="icon"
-      class="rounded-full p-2 ml-4 mr-2 fill-current"
-      style="background-color: {backgroundColor}; color:{iconColor}">
-      <i class="material-icons md-18" style="display:block !important">
-        {materialIcon}
-      </i>
-    </div>
-    <div class="flex flex-col justify-between truncate flex-grow">
-      <span class="font-bold" id="label">{data.type}</span>
-      <span class="font-light text-gray-600">
-        {data.items} {data.items > 1 ? 'entries' : 'entry'}
-      </span>
-    </div>
-    <div class="flex flex-col justify-between items-end ml-2 mr-4">
-      <span>${Math.round(data.sum)}</span>
-      <span class="font-light text-gray-600">
-        {Math.round(data.percentage)}%
-      </span>
-    </div>
+    id="icon"
+    class="rounded-full p-2 ml-4 mr-2 fill-current"
+    style="background-color: {backgroundColor}; color:{iconColor}">
+    <i class="material-icons md-18" style="display:block !important">
+      {materialIcon}
+    </i>
   </div>
-
+  <div class="flex flex-col justify-between truncate flex-grow">
+    <span class="font-bold" id="label">{data.type}</span>
+    <span class="font-light text-gray-600">
+      {data.items} {data.items > 1 ? 'entries' : 'entry'}
+    </span>
+  </div>
+  <div class="flex flex-col justify-between items-end ml-2 mr-4">
+    <span>${Math.round(data.sum)}</span>
+    <span class="font-light text-gray-600">{Math.round(data.percentage)}%</span>
+  </div>
+  <div
+    class="absolute left-0 top-0 h-full rounded-r opacity-25"
+    in:fly={{ x: -(window.innerWidth * data.percentage) / 100, duration: 180, delay: index * 80 }}
+    style="width: {(window.innerWidth * data.percentage) / 100}px;
+    background-color: {barColor}; " />
 </div>

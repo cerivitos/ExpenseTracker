@@ -26740,187 +26740,186 @@
     const file = "src\\components\\CategoryListTile.svelte";
 
     function create_fragment(ctx) {
-    	let div5;
-    	let div0;
-    	let div0_style_value;
-    	let div0_intro;
-    	let t0;
     	let div4;
-    	let div1;
+    	let div0;
     	let i;
+    	let t0;
     	let t1;
-    	let t2;
-    	let div2;
+    	let div1;
     	let span0;
-    	let t3_value = /*data*/ ctx[0].type + "";
+    	let t2_value = /*data*/ ctx[0].type + "";
+    	let t2;
     	let t3;
-    	let t4;
     	let span1;
-    	let t5_value = /*data*/ ctx[0].items + "";
+    	let t4_value = /*data*/ ctx[0].items + "";
+    	let t4;
     	let t5;
+    	let t6_value = (/*data*/ ctx[0].items > 1 ? "entries" : "entry") + "";
     	let t6;
-    	let t7_value = (/*data*/ ctx[0].items > 1 ? "entries" : "entry") + "";
     	let t7;
-    	let t8;
-    	let div3;
+    	let div2;
     	let span2;
+    	let t8;
+    	let t9_value = Math.round(/*data*/ ctx[0].sum) + "";
     	let t9;
-    	let t10_value = Math.round(/*data*/ ctx[0].sum) + "";
     	let t10;
-    	let t11;
     	let span3;
-    	let t12_value = Math.round(/*data*/ ctx[0].percentage) + "";
+    	let t11_value = Math.round(/*data*/ ctx[0].percentage) + "";
+    	let t11;
     	let t12;
     	let t13;
-    	let div5_intro;
-    	let div5_outro;
+    	let div3;
+    	let div3_intro;
+    	let div4_intro;
+    	let div4_outro;
     	let current;
     	let dispose;
 
     	const block = {
     		c: function create() {
-    			div5 = element("div");
-    			div0 = element("div");
-    			t0 = space();
     			div4 = element("div");
-    			div1 = element("div");
+    			div0 = element("div");
     			i = element("i");
-    			t1 = text(/*materialIcon*/ ctx[2]);
-    			t2 = space();
-    			div2 = element("div");
+    			t0 = text(/*materialIcon*/ ctx[2]);
+    			t1 = space();
+    			div1 = element("div");
     			span0 = element("span");
-    			t3 = text(t3_value);
-    			t4 = space();
+    			t2 = text(t2_value);
+    			t3 = space();
     			span1 = element("span");
-    			t5 = text(t5_value);
-    			t6 = space();
-    			t7 = text(t7_value);
-    			t8 = space();
-    			div3 = element("div");
+    			t4 = text(t4_value);
+    			t5 = space();
+    			t6 = text(t6_value);
+    			t7 = space();
+    			div2 = element("div");
     			span2 = element("span");
-    			t9 = text("$");
-    			t10 = text(t10_value);
-    			t11 = space();
+    			t8 = text("$");
+    			t9 = text(t9_value);
+    			t10 = space();
     			span3 = element("span");
-    			t12 = text(t12_value);
-    			t13 = text("%");
-    			attr_dev(div0, "class", "absolute left-0 top-0 h-full rounded-r");
-    			attr_dev(div0, "style", div0_style_value = "width: " + window.innerWidth * /*data*/ ctx[0].percentage / 100 + "px; " + /*barStyle*/ ctx[5]);
-    			add_location(div0, file, 39, 2, 1233);
+    			t11 = text(t11_value);
+    			t12 = text("%");
+    			t13 = space();
+    			div3 = element("div");
     			attr_dev(i, "class", "material-icons md-18");
     			set_style(i, "display", "block", 1);
-    			add_location(i, file, 48, 6, 1693);
-    			attr_dev(div1, "id", "icon");
-    			attr_dev(div1, "class", "rounded-full p-2 ml-4 mr-2 fill-current");
-    			set_style(div1, "background-color", /*backgroundColor*/ ctx[3]);
-    			set_style(div1, "color", /*iconColor*/ ctx[4]);
-    			add_location(div1, file, 44, 4, 1538);
+    			add_location(i, file, 38, 4, 1176);
+    			attr_dev(div0, "id", "icon");
+    			attr_dev(div0, "class", "rounded-full p-2 ml-4 mr-2 fill-current");
+    			set_style(div0, "background-color", /*backgroundColor*/ ctx[3]);
+    			set_style(div0, "color", /*iconColor*/ ctx[4]);
+    			add_location(div0, file, 34, 2, 1029);
     			attr_dev(span0, "class", "font-bold");
     			attr_dev(span0, "id", "label");
-    			add_location(span0, file, 53, 6, 1882);
+    			add_location(span0, file, 43, 4, 1355);
     			attr_dev(span1, "class", "font-light text-gray-600");
-    			add_location(span1, file, 54, 6, 1943);
-    			attr_dev(div2, "class", "flex flex-col justify-between truncate flex-grow");
-    			add_location(div2, file, 52, 4, 1812);
-    			add_location(span2, file, 59, 6, 2147);
+    			add_location(span1, file, 44, 4, 1414);
+    			attr_dev(div1, "class", "flex flex-col justify-between truncate flex-grow");
+    			add_location(div1, file, 42, 2, 1287);
+    			add_location(span2, file, 49, 4, 1608);
     			attr_dev(span3, "class", "font-light text-gray-600");
-    			add_location(span3, file, 60, 6, 2191);
-    			attr_dev(div3, "class", "flex flex-col justify-between items-end ml-2 mr-4");
-    			add_location(div3, file, 58, 4, 2076);
-    			attr_dev(div4, "class", "w-full flex flex-row items-center relative");
-    			add_location(div4, file, 43, 2, 1476);
-    			attr_dev(div5, "class", "relative py-4");
-    			add_location(div5, file, 34, 0, 1085);
-    			dispose = listen_dev(div5, "click", /*click_handler*/ ctx[9], false, false, false);
+    			add_location(span3, file, 50, 4, 1650);
+    			attr_dev(div2, "class", "flex flex-col justify-between items-end ml-2 mr-4");
+    			add_location(div2, file, 48, 2, 1539);
+    			attr_dev(div3, "class", "absolute left-0 top-0 h-full rounded-r opacity-25");
+    			set_style(div3, "width", window.innerWidth * /*data*/ ctx[0].percentage / 100 + "px");
+    			set_style(div3, "background-color", /*barColor*/ ctx[5]);
+    			add_location(div3, file, 52, 2, 1740);
+    			attr_dev(div4, "class", "relative py-4 w-full flex flex-row items-center");
+    			add_location(div4, file, 29, 0, 847);
+    			dispose = listen_dev(div4, "click", /*click_handler*/ ctx[9], false, false, false);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div5, anchor);
-    			append_dev(div5, div0);
-    			append_dev(div5, t0);
-    			append_dev(div5, div4);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, div0);
+    			append_dev(div0, i);
+    			append_dev(i, t0);
+    			append_dev(div4, t1);
     			append_dev(div4, div1);
-    			append_dev(div1, i);
-    			append_dev(i, t1);
-    			append_dev(div4, t2);
-    			append_dev(div4, div2);
-    			append_dev(div2, span0);
-    			append_dev(span0, t3);
-    			append_dev(div2, t4);
-    			append_dev(div2, span1);
+    			append_dev(div1, span0);
+    			append_dev(span0, t2);
+    			append_dev(div1, t3);
+    			append_dev(div1, span1);
+    			append_dev(span1, t4);
     			append_dev(span1, t5);
     			append_dev(span1, t6);
-    			append_dev(span1, t7);
-    			append_dev(div4, t8);
-    			append_dev(div4, div3);
-    			append_dev(div3, span2);
+    			append_dev(div4, t7);
+    			append_dev(div4, div2);
+    			append_dev(div2, span2);
+    			append_dev(span2, t8);
     			append_dev(span2, t9);
-    			append_dev(span2, t10);
-    			append_dev(div3, t11);
-    			append_dev(div3, span3);
+    			append_dev(div2, t10);
+    			append_dev(div2, span3);
+    			append_dev(span3, t11);
     			append_dev(span3, t12);
-    			append_dev(span3, t13);
+    			append_dev(div4, t13);
+    			append_dev(div4, div3);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*data, barStyle*/ 33 && div0_style_value !== (div0_style_value = "width: " + window.innerWidth * /*data*/ ctx[0].percentage / 100 + "px; " + /*barStyle*/ ctx[5])) {
-    				attr_dev(div0, "style", div0_style_value);
-    			}
-
-    			if (!current || dirty & /*materialIcon*/ 4) set_data_dev(t1, /*materialIcon*/ ctx[2]);
+    			if (!current || dirty & /*materialIcon*/ 4) set_data_dev(t0, /*materialIcon*/ ctx[2]);
 
     			if (!current || dirty & /*backgroundColor*/ 8) {
-    				set_style(div1, "background-color", /*backgroundColor*/ ctx[3]);
+    				set_style(div0, "background-color", /*backgroundColor*/ ctx[3]);
     			}
 
     			if (!current || dirty & /*iconColor*/ 16) {
-    				set_style(div1, "color", /*iconColor*/ ctx[4]);
+    				set_style(div0, "color", /*iconColor*/ ctx[4]);
     			}
 
-    			if ((!current || dirty & /*data*/ 1) && t3_value !== (t3_value = /*data*/ ctx[0].type + "")) set_data_dev(t3, t3_value);
-    			if ((!current || dirty & /*data*/ 1) && t5_value !== (t5_value = /*data*/ ctx[0].items + "")) set_data_dev(t5, t5_value);
-    			if ((!current || dirty & /*data*/ 1) && t7_value !== (t7_value = (/*data*/ ctx[0].items > 1 ? "entries" : "entry") + "")) set_data_dev(t7, t7_value);
-    			if ((!current || dirty & /*data*/ 1) && t10_value !== (t10_value = Math.round(/*data*/ ctx[0].sum) + "")) set_data_dev(t10, t10_value);
-    			if ((!current || dirty & /*data*/ 1) && t12_value !== (t12_value = Math.round(/*data*/ ctx[0].percentage) + "")) set_data_dev(t12, t12_value);
+    			if ((!current || dirty & /*data*/ 1) && t2_value !== (t2_value = /*data*/ ctx[0].type + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty & /*data*/ 1) && t4_value !== (t4_value = /*data*/ ctx[0].items + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty & /*data*/ 1) && t6_value !== (t6_value = (/*data*/ ctx[0].items > 1 ? "entries" : "entry") + "")) set_data_dev(t6, t6_value);
+    			if ((!current || dirty & /*data*/ 1) && t9_value !== (t9_value = Math.round(/*data*/ ctx[0].sum) + "")) set_data_dev(t9, t9_value);
+    			if ((!current || dirty & /*data*/ 1) && t11_value !== (t11_value = Math.round(/*data*/ ctx[0].percentage) + "")) set_data_dev(t11, t11_value);
+
+    			if (!current || dirty & /*data*/ 1) {
+    				set_style(div3, "width", window.innerWidth * /*data*/ ctx[0].percentage / 100 + "px");
+    			}
+
+    			if (!current || dirty & /*barColor*/ 32) {
+    				set_style(div3, "background-color", /*barColor*/ ctx[5]);
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;
 
-    			if (!div0_intro) {
+    			if (!div3_intro) {
     				add_render_callback(() => {
-    					div0_intro = create_in_transition(div0, fly, {
+    					div3_intro = create_in_transition(div3, fly, {
     						x: -(window.innerWidth * /*data*/ ctx[0].percentage) / 100,
     						duration: 180,
     						delay: /*index*/ ctx[1] * 80
     					});
 
-    					div0_intro.start();
+    					div3_intro.start();
     				});
     			}
 
     			add_render_callback(() => {
-    				if (div5_outro) div5_outro.end(1);
+    				if (div4_outro) div4_outro.end(1);
 
-    				if (!div5_intro) div5_intro = create_in_transition(div5, fade, {
+    				if (!div4_intro) div4_intro = create_in_transition(div4, fade, {
     					duration: 80,
     					delay: /*index*/ ctx[1] * 50
     				});
 
-    				div5_intro.start();
+    				div4_intro.start();
     			});
 
     			current = true;
     		},
     		o: function outro(local) {
-    			if (div5_intro) div5_intro.invalidate();
-    			div5_outro = create_out_transition(div5, fade, { duration: 80 });
+    			if (div4_intro) div4_intro.invalidate();
+    			div4_outro = create_out_transition(div4, fade, { duration: 80 });
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div5);
-    			if (detaching && div5_outro) div5_outro.end();
+    			if (detaching) detach_dev(div4);
+    			if (detaching && div4_outro) div4_outro.end();
     			dispose();
     		}
     	};
@@ -26949,11 +26948,7 @@
     		$$invalidate(2, materialIcon = typeDesign.materialIcon);
     		$$invalidate(3, backgroundColor = "hsl(" + hue + ", 50%, 80%)");
     		$$invalidate(4, iconColor = "hsl(" + hue + ", 65%, 40%)");
-    		barColor = "hsl(" + hue + ", 45%, 50%)";
-
-    		document.getElementsByTagName("main")[0].getAttribute("data-theme") === "dark"
-    		? $$invalidate(5, barStyle = "background-color:" + barColor + "; opacity: 0.25")
-    		: $$invalidate(5, barStyle = "background-color:" + barColor + "; opacity: 0.15");
+    		$$invalidate(5, barColor = "hsl(" + hue + ", 45%, 50%)");
     	});
 
     	function viewDetails() {
@@ -26994,9 +26989,9 @@
     		if ("materialIcon" in $$props) $$invalidate(2, materialIcon = $$props.materialIcon);
     		if ("backgroundColor" in $$props) $$invalidate(3, backgroundColor = $$props.backgroundColor);
     		if ("iconColor" in $$props) $$invalidate(4, iconColor = $$props.iconColor);
-    		if ("barColor" in $$props) barColor = $$props.barColor;
+    		if ("barColor" in $$props) $$invalidate(5, barColor = $$props.barColor);
     		if ("expanded" in $$props) expanded = $$props.expanded;
-    		if ("barStyle" in $$props) $$invalidate(5, barStyle = $$props.barStyle);
+    		if ("barStyle" in $$props) barStyle = $$props.barStyle;
     	};
 
     	return [
@@ -27005,10 +27000,10 @@
     		materialIcon,
     		backgroundColor,
     		iconColor,
-    		barStyle,
-    		viewDetails,
     		barColor,
+    		viewDetails,
     		expanded,
+    		barStyle,
     		click_handler
     	];
     }
