@@ -16,7 +16,7 @@
 
 <style type="text/postcss">
   .navbar {
-    box-shadow: 0 0 0.5px 0 black;
+    box-shadow: 0 0 1px 0 grey;
     height: 56px;
     background-color: var(--background-color);
     @apply w-full flex fixed bottom-0 fill-current items-center;
@@ -67,8 +67,6 @@
     }
 
     .navbar {
-      box-shadow: 0 0 0 0.5px black;
-      background-color: var(--background-color);
       @apply w-3/12 h-screen flex flex-col fixed left-0 fill-current items-start justify-center p-4;
     }
 
