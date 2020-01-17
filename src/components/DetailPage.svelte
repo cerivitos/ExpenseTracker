@@ -133,7 +133,7 @@
 
 <div
   id="detail-page"
-  class="h-screen w-full absolute top-0 overflow-auto"
+  class="h-screen w-full absolute top-0 overflow-auto z-10"
   style="background-color: var(--background-color)"
   out:fade={{ duration: 80 }}>
   <div

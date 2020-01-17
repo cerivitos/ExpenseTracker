@@ -90,9 +90,11 @@
       transform-origin: bottom center;
       border-radius: 9999px;
     }
+    50% {
+      background-color: var(--inactive-button-color);
+    }
     75% {
       transform: translateY(0px) scale(1);
-      background-color: var(--inactive-button-color);
     }
     100% {
       border-radius: 0;

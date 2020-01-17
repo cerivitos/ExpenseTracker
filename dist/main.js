@@ -26761,6 +26761,7 @@
 
     function create_fragment(ctx) {
     	let div4;
+    	let div2;
     	let div0;
     	let i;
     	let t0;
@@ -26771,23 +26772,15 @@
     	let t2;
     	let t3;
     	let span1;
-    	let t4_value = /*data*/ ctx[0].items + "";
+    	let t4_value = Math.round(/*data*/ ctx[0].percentage) + "";
     	let t4;
     	let t5;
-    	let t6_value = (/*data*/ ctx[0].items > 1 ? "entries" : "entry") + "";
     	let t6;
-    	let t7;
-    	let div2;
     	let span2;
+    	let t7;
+    	let t8_value = Math.round(/*data*/ ctx[0].sum) + "";
     	let t8;
-    	let t9_value = Math.round(/*data*/ ctx[0].sum) + "";
     	let t9;
-    	let t10;
-    	let span3;
-    	let t11_value = Math.round(/*data*/ ctx[0].percentage) + "";
-    	let t11;
-    	let t12;
-    	let t13;
     	let div3;
     	let div3_intro;
     	let div4_class_value;
@@ -26799,6 +26792,7 @@
     	const block = {
     		c: function create() {
     			div4 = element("div");
+    			div2 = element("div");
     			div0 = element("div");
     			i = element("i");
     			t0 = text(/*materialIcon*/ ctx[2]);
@@ -26809,39 +26803,33 @@
     			t3 = space();
     			span1 = element("span");
     			t4 = text(t4_value);
-    			t5 = space();
-    			t6 = text(t6_value);
-    			t7 = space();
-    			div2 = element("div");
+    			t5 = text("%");
+    			t6 = space();
     			span2 = element("span");
-    			t8 = text("$");
-    			t9 = text(t9_value);
-    			t10 = space();
-    			span3 = element("span");
-    			t11 = text(t11_value);
-    			t12 = text("%");
-    			t13 = space();
+    			t7 = text("$");
+    			t8 = text(t8_value);
+    			t9 = space();
     			div3 = element("div");
     			attr_dev(i, "class", "material-icons md-18");
     			set_style(i, "display", "block", 1);
-    			add_location(i, file, 40, 4, 1252);
+    			add_location(i, file, 41, 6, 1352);
     			attr_dev(div0, "id", "icon");
-    			attr_dev(div0, "class", "rounded-full p-2 ml-4 mr-2 fill-current");
+    			attr_dev(div0, "class", "rounded-full p-2 ml-4 mr-4 fill-current");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[3]);
     			set_style(div0, "color", /*iconColor*/ ctx[4]);
-    			add_location(div0, file, 36, 2, 1105);
-    			attr_dev(span0, "class", "font-bold");
+    			add_location(div0, file, 37, 4, 1197);
+    			attr_dev(span0, "class", "mr-4");
     			attr_dev(span0, "id", "label");
-    			add_location(span0, file, 45, 4, 1431);
-    			attr_dev(span1, "class", "font-light text-gray-600");
-    			add_location(span1, file, 46, 4, 1490);
-    			attr_dev(div1, "class", "flex flex-col justify-between truncate flex-grow");
-    			add_location(div1, file, 44, 2, 1363);
-    			add_location(span2, file, 51, 4, 1684);
-    			attr_dev(span3, "class", "font-light text-gray-600");
-    			add_location(span3, file, 52, 4, 1726);
-    			attr_dev(div2, "class", "flex flex-col justify-between items-end ml-2 mr-4");
-    			add_location(div2, file, 50, 2, 1615);
+    			add_location(span0, file, 47, 6, 1567);
+    			set_style(span1, "color", "var(--text-color2)");
+    			add_location(span1, file, 48, 6, 1623);
+    			attr_dev(div1, "class", "flex flex-row justify-between truncate flex-grow text-xl font-bold ");
+    			add_location(div1, file, 45, 4, 1471);
+    			attr_dev(span2, "class", "mx-4 text-xl font-bold");
+    			add_location(span2, file, 52, 4, 1736);
+    			attr_dev(div2, "id", "items-wrapper");
+    			attr_dev(div2, "class", "z-10 flex flex-row items-center w-full");
+    			add_location(div2, file, 36, 2, 1120);
     			attr_dev(div3, "class", "absolute left-0 top-0 h-full rounded-r opacity-25");
 
     			set_style(div3, "width", (window.innerWidth <= 768
@@ -26849,8 +26837,8 @@
     			: window.innerWidth * 1 / 2) * /*data*/ ctx[0].percentage / 100 + "px");
 
     			set_style(div3, "background-color", /*barColor*/ ctx[5]);
-    			add_location(div3, file, 54, 2, 1816);
-    			attr_dev(div4, "class", div4_class_value = "relative py-4 " + (window.innerWidth <= 768 ? "w-full" : "w-8/12") + " flex\r\n  flex-row items-center");
+    			add_location(div3, file, 54, 2, 1817);
+    			attr_dev(div4, "class", div4_class_value = "relative py-6 " + (window.innerWidth <= 768 ? "w-full" : "w-8/12") + " flex\r\n  flex-row items-center cursor-pointer");
     			add_location(div4, file, 30, 0, 878);
     			dispose = listen_dev(div4, "click", /*click_handler*/ ctx[9], false, false, false);
     		},
@@ -26859,28 +26847,23 @@
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div4, anchor);
-    			append_dev(div4, div0);
+    			append_dev(div4, div2);
+    			append_dev(div2, div0);
     			append_dev(div0, i);
     			append_dev(i, t0);
-    			append_dev(div4, t1);
-    			append_dev(div4, div1);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
     			append_dev(div1, span0);
     			append_dev(span0, t2);
     			append_dev(div1, t3);
     			append_dev(div1, span1);
     			append_dev(span1, t4);
     			append_dev(span1, t5);
-    			append_dev(span1, t6);
-    			append_dev(div4, t7);
-    			append_dev(div4, div2);
+    			append_dev(div2, t6);
     			append_dev(div2, span2);
+    			append_dev(span2, t7);
     			append_dev(span2, t8);
-    			append_dev(span2, t9);
-    			append_dev(div2, t10);
-    			append_dev(div2, span3);
-    			append_dev(span3, t11);
-    			append_dev(span3, t12);
-    			append_dev(div4, t13);
+    			append_dev(div4, t9);
     			append_dev(div4, div3);
     			current = true;
     		},
@@ -26896,10 +26879,8 @@
     			}
 
     			if ((!current || dirty & /*data*/ 1) && t2_value !== (t2_value = /*data*/ ctx[0].type + "")) set_data_dev(t2, t2_value);
-    			if ((!current || dirty & /*data*/ 1) && t4_value !== (t4_value = /*data*/ ctx[0].items + "")) set_data_dev(t4, t4_value);
-    			if ((!current || dirty & /*data*/ 1) && t6_value !== (t6_value = (/*data*/ ctx[0].items > 1 ? "entries" : "entry") + "")) set_data_dev(t6, t6_value);
-    			if ((!current || dirty & /*data*/ 1) && t9_value !== (t9_value = Math.round(/*data*/ ctx[0].sum) + "")) set_data_dev(t9, t9_value);
-    			if ((!current || dirty & /*data*/ 1) && t11_value !== (t11_value = Math.round(/*data*/ ctx[0].percentage) + "")) set_data_dev(t11, t11_value);
+    			if ((!current || dirty & /*data*/ 1) && t4_value !== (t4_value = Math.round(/*data*/ ctx[0].percentage) + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty & /*data*/ 1) && t8_value !== (t8_value = Math.round(/*data*/ ctx[0].sum) + "")) set_data_dev(t8, t8_value);
 
     			if (!current || dirty & /*data*/ 1) {
     				set_style(div3, "width", (window.innerWidth <= 768
@@ -29465,7 +29446,7 @@
     			i = element("i");
     			i.textContent = "attach_money";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$6, 145, 10, 4205);
+    			add_location(i, file$6, 145, 10, 4210);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -29505,7 +29486,7 @@
     			i = element("i");
     			i.textContent = "date_range";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$6, 141, 10, 4070);
+    			add_location(i, file$6, 141, 10, 4075);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -29665,7 +29646,7 @@
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
     			set_style(span, "color", "var(--text-color)");
     			set_style(span, "background-color", "var(--inactive-button-color)");
-    			add_location(span, file$6, 179, 12, 5399);
+    			add_location(span, file$6, 179, 12, 5404);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -29768,7 +29749,7 @@
     			div = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div, "class", "w-full");
-    			add_location(div, file$6, 199, 14, 6280);
+    			add_location(div, file$6, 199, 14, 6285);
     			dispose = listen_dev(div, "click", click_handler_2, false, false, false);
     			this.first = div;
     		},
@@ -29891,11 +29872,11 @@
     			attr_dev(span, "class", "relative font-bold px-4");
     			set_style(span, "color", "var(--text-color2)");
     			set_style(span, "background-color", "var(--background-color)");
-    			add_location(span, file$6, 189, 14, 5873);
+    			add_location(span, file$6, 189, 14, 5878);
     			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-1yywlwk");
-    			add_location(div0, file$6, 188, 12, 5801);
+    			add_location(div0, file$6, 188, 12, 5806);
     			attr_dev(div1, "class", "flex flex-col justify-center items-center");
-    			add_location(div1, file$6, 187, 10, 5732);
+    			add_location(div1, file$6, 187, 10, 5737);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -30071,39 +30052,39 @@
     			info.block.c();
     			attr_dev(i0, "class", "material-icons fill-current");
     			set_style(i0, "color", /*iconColor*/ ctx[3]);
-    			add_location(i0, file$6, 123, 6, 3571);
-    			add_location(button0, file$6, 122, 4, 3555);
+    			add_location(i0, file$6, 123, 6, 3576);
+    			add_location(button0, file$6, 122, 4, 3560);
     			attr_dev(div0, "class", "relative");
-    			add_location(div0, file$6, 139, 6, 4010);
+    			add_location(div0, file$6, 139, 6, 4015);
     			attr_dev(button1, "class", "fill-current");
     			set_style(button1, "color", /*iconColor*/ ctx[3]);
-    			add_location(button1, file$6, 134, 4, 3847);
+    			add_location(button1, file$6, 134, 4, 3852);
     			attr_dev(div1, "class", div1_class_value = "w-full flex flex-row p-4 " + (/*scrolling*/ ctx[4] ? "shadow" : "") + " fixed top-0\r\n    justify-between z-20");
     			set_style(div1, "height", "56px");
     			set_style(div1, "background-color", "var(--background-color)");
-    			add_location(div1, file$6, 118, 2, 3371);
+    			add_location(div1, file$6, 118, 2, 3376);
     			attr_dev(i1, "class", "material-icons fill-current");
     			set_style(i1, "display", "block", 1);
     			set_style(i1, "color", /*iconColor*/ ctx[3]);
     			set_style(i1, "font-size", "64px");
-    			add_location(i1, file$6, 163, 10, 4799);
+    			add_location(i1, file$6, 163, 10, 4804);
     			attr_dev(div2, "class", "icon rounded-full p-6 mt-20 mb-4");
     			attr_dev(div2, "id", "icon");
     			set_style(div2, "background-color", /*backgroundColor*/ ctx[2]);
-    			add_location(div2, file$6, 158, 8, 4589);
+    			add_location(div2, file$6, 158, 8, 4594);
     			attr_dev(span, "class", "text-2xl font-bold mb-8");
     			set_style(span, "color", /*iconColor*/ ctx[3]);
-    			add_location(span, file$6, 169, 8, 5004);
+    			add_location(span, file$6, 169, 8, 5009);
     			attr_dev(div3, "class", "flex flex-col items-center");
-    			add_location(div3, file$6, 157, 6, 4539);
+    			add_location(div3, file$6, 157, 6, 4544);
     			attr_dev(div4, "class", "content-wrapper svelte-1yywlwk");
-    			add_location(div4, file$6, 156, 4, 4502);
+    			add_location(div4, file$6, 156, 4, 4507);
     			attr_dev(div5, "id", "content");
     			attr_dev(div5, "class", "flex flex-col w-full items-center");
     			set_style(div5, "background-color", "var(--background-color)");
-    			add_location(div5, file$6, 152, 2, 4371);
+    			add_location(div5, file$6, 152, 2, 4376);
     			attr_dev(div6, "id", "detail-page");
-    			attr_dev(div6, "class", "h-screen w-full absolute top-0 overflow-auto");
+    			attr_dev(div6, "class", "h-screen w-full absolute top-0 overflow-auto z-10");
     			set_style(div6, "background-color", "var(--background-color)");
     			add_location(div6, file$6, 113, 0, 3202);
 
@@ -31993,28 +31974,28 @@
     			attr_dev(i, "class", "material-icons fill-current");
     			set_style(i, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i, "aria-label", "Back button");
-    			add_location(i, file$a, 84, 6, 3724);
-    			add_location(button, file$a, 83, 4, 3708);
+    			add_location(i, file$a, 84, 6, 3732);
+    			add_location(button, file$a, 83, 4, 3716);
     			attr_dev(input, "id", "search-input");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Search");
-    			attr_dev(input, "class", "svelte-3wpiho");
-    			add_location(input, file$a, 97, 4, 4096);
+    			attr_dev(input, "class", "svelte-wf5ami");
+    			add_location(input, file$a, 97, 4, 4104);
 
     			attr_dev(div0, "class", div0_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar " + (Object.keys(/*$filteredSearchData*/ ctx[4]).length > 0
     			? ""
-    			: "entry-anim") + " svelte-3wpiho"));
+    			: "entry-anim") + " svelte-wf5ami"));
 
-    			add_location(div0, file$a, 81, 2, 3580);
-    			attr_dev(div1, "class", "content-wrapper svelte-3wpiho");
-    			add_location(div1, file$a, 104, 4, 4289);
+    			add_location(div0, file$a, 81, 2, 3588);
+    			attr_dev(div1, "class", "content-wrapper svelte-wf5ami");
+    			add_location(div1, file$a, 104, 4, 4297);
     			attr_dev(div2, "id", "content");
     			attr_dev(div2, "class", "w-full flex flex-col items-center mt-16");
-    			add_location(div2, file$a, 103, 2, 4217);
+    			add_location(div2, file$a, 103, 2, 4225);
     			attr_dev(div3, "id", "search-page");
     			attr_dev(div3, "class", "h-screen w-full absolute top-0 overflow-auto");
     			set_style(div3, "background-color", "var(--background-color)");
-    			add_location(div3, file$a, 76, 0, 3411);
+    			add_location(div3, file$a, 76, 0, 3419);
 
     			dispose = [
     				listen_dev(i, "click", /*click_handler*/ ctx[8], false, false, false),
@@ -32045,7 +32026,7 @@
 
     			if (!current || dirty & /*scrolling, $filteredSearchData*/ 17 && div0_class_value !== (div0_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar " + (Object.keys(/*$filteredSearchData*/ ctx[4]).length > 0
     			? ""
-    			: "entry-anim") + " svelte-3wpiho"))) {
+    			: "entry-anim") + " svelte-wf5ami"))) {
     				attr_dev(div0, "class", div0_class_value);
     			}
 
