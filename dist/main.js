@@ -31537,134 +31537,116 @@
     const file$9 = "src\\components\\SearchListTile.svelte";
 
     function create_fragment$9(ctx) {
-    	let div3;
+    	let div2;
     	let div0;
     	let i;
     	let t0;
     	let t1;
-    	let div2;
     	let div1;
     	let span0;
     	let t2;
     	let span1;
     	let t3;
-    	let t4;
     	let span2;
-    	let t5;
-    	let span3;
-    	let t6;
+    	let t4;
     	let html_tag;
     	let raw2_value = /*data*/ ctx[0].amount.toFixed(2) + "";
-    	let div3_intro;
-    	let div3_outro;
+    	let div2_intro;
+    	let div2_outro;
     	let current;
     	let dispose;
 
     	const block = {
     		c: function create() {
-    			div3 = element("div");
+    			div2 = element("div");
     			div0 = element("div");
     			i = element("i");
-    			t0 = text(/*materialIcon*/ ctx[4]);
+    			t0 = text(/*materialIcon*/ ctx[3]);
     			t1 = space();
-    			div2 = element("div");
     			div1 = element("div");
     			span0 = element("span");
     			t2 = space();
     			span1 = element("span");
-    			t3 = text(/*date*/ ctx[1]);
-    			t4 = space();
+    			t3 = space();
     			span2 = element("span");
-    			t5 = space();
-    			span3 = element("span");
-    			t6 = text("$\r\n    ");
+    			t4 = text("$\r\n    ");
     			attr_dev(i, "class", "material-icons md-18");
     			set_style(i, "display", "block", 1);
-    			add_location(i, file$9, 73, 4, 2322);
+    			add_location(i, file$9, 73, 4, 2314);
     			attr_dev(div0, "id", "icon");
     			attr_dev(div0, "class", "rounded-full p-2 mr-2 fill-current");
-    			set_style(div0, "background-color", /*backgroundColor*/ ctx[5]);
-    			set_style(div0, "color", /*iconColor*/ ctx[6]);
-    			add_location(div0, file$9, 69, 2, 2180);
+    			set_style(div0, "background-color", /*backgroundColor*/ ctx[4]);
+    			set_style(div0, "color", /*iconColor*/ ctx[5]);
+    			add_location(div0, file$9, 69, 2, 2172);
     			attr_dev(span0, "class", "font-bold truncate mr-2");
-    			add_location(span0, file$9, 79, 6, 2554);
+    			add_location(span0, file$9, 78, 4, 2475);
     			attr_dev(span1, "class", "truncate");
     			set_style(span1, "color", "var(--text-color2)");
-    			add_location(span1, file$9, 82, 6, 2640);
-    			attr_dev(div1, "class", "flex flex-row items-start justify-around truncate");
-    			add_location(div1, file$9, 78, 4, 2483);
-    			attr_dev(span2, "class", "truncate");
-    			set_style(span2, "color", "var(--text-color2)");
-    			add_location(span2, file$9, 84, 4, 2728);
-    			attr_dev(div2, "class", "flex flex-col items-start mr-4");
-    			add_location(div2, file$9, 77, 2, 2433);
+    			add_location(span1, file$9, 81, 4, 2555);
+    			attr_dev(div1, "class", "flex flex-col items-start mr-4");
+    			add_location(div1, file$9, 77, 2, 2425);
     			html_tag = new HtmlTag(raw2_value, null);
-    			attr_dev(span3, "class", "flex-grow flex justify-end font-bold text-xl");
-    			add_location(span3, file$9, 88, 2, 2832);
-    			attr_dev(div3, "class", "flex flex-row p-4 items-center w-full");
-    			set_style(div3, "background-color", "var(--background-color)");
-    			set_style(div3, "color", "var(--text-color)");
-    			add_location(div3, file$9, 63, 0, 1940);
-    			dispose = listen_dev(div3, "click", /*click_handler*/ ctx[11], false, false, false);
+    			attr_dev(span2, "class", "flex-grow flex justify-end font-bold text-xl");
+    			add_location(span2, file$9, 85, 2, 2659);
+    			attr_dev(div2, "class", "flex flex-row p-4 items-center w-full");
+    			set_style(div2, "background-color", "var(--background-color)");
+    			set_style(div2, "color", "var(--text-color)");
+    			add_location(div2, file$9, 63, 0, 1932);
+    			dispose = listen_dev(div2, "click", /*click_handler*/ ctx[11], false, false, false);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div3, anchor);
-    			append_dev(div3, div0);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
     			append_dev(div0, i);
     			append_dev(i, t0);
-    			append_dev(div3, t1);
-    			append_dev(div3, div2);
+    			append_dev(div2, t1);
     			append_dev(div2, div1);
     			append_dev(div1, span0);
-    			span0.innerHTML = /*addedBy*/ ctx[2];
+    			span0.innerHTML = /*addedBy*/ ctx[1];
     			append_dev(div1, t2);
     			append_dev(div1, span1);
-    			append_dev(span1, t3);
-    			append_dev(div2, t4);
+    			span1.innerHTML = /*desc*/ ctx[2];
+    			append_dev(div2, t3);
     			append_dev(div2, span2);
-    			span2.innerHTML = /*desc*/ ctx[3];
-    			append_dev(div3, t5);
-    			append_dev(div3, span3);
-    			append_dev(span3, t6);
-    			html_tag.m(span3);
+    			append_dev(span2, t4);
+    			html_tag.m(span2);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*materialIcon*/ 16) set_data_dev(t0, /*materialIcon*/ ctx[4]);
+    			if (!current || dirty & /*materialIcon*/ 8) set_data_dev(t0, /*materialIcon*/ ctx[3]);
 
-    			if (!current || dirty & /*backgroundColor*/ 32) {
-    				set_style(div0, "background-color", /*backgroundColor*/ ctx[5]);
+    			if (!current || dirty & /*backgroundColor*/ 16) {
+    				set_style(div0, "background-color", /*backgroundColor*/ ctx[4]);
     			}
 
-    			if (!current || dirty & /*iconColor*/ 64) {
-    				set_style(div0, "color", /*iconColor*/ ctx[6]);
+    			if (!current || dirty & /*iconColor*/ 32) {
+    				set_style(div0, "color", /*iconColor*/ ctx[5]);
     			}
 
-    			if (!current || dirty & /*addedBy*/ 4) span0.innerHTML = /*addedBy*/ ctx[2];			if (!current || dirty & /*date*/ 2) set_data_dev(t3, /*date*/ ctx[1]);
-    			if (!current || dirty & /*desc*/ 8) span2.innerHTML = /*desc*/ ctx[3];			if ((!current || dirty & /*data*/ 1) && raw2_value !== (raw2_value = /*data*/ ctx[0].amount.toFixed(2) + "")) html_tag.p(raw2_value);
+    			if (!current || dirty & /*addedBy*/ 2) span0.innerHTML = /*addedBy*/ ctx[1];			if (!current || dirty & /*desc*/ 4) span1.innerHTML = /*desc*/ ctx[2];			if ((!current || dirty & /*data*/ 1) && raw2_value !== (raw2_value = /*data*/ ctx[0].amount.toFixed(2) + "")) html_tag.p(raw2_value);
     		},
     		i: function intro(local) {
     			if (current) return;
 
     			add_render_callback(() => {
-    				if (div3_outro) div3_outro.end(1);
-    				if (!div3_intro) div3_intro = create_in_transition(div3, fade, { duration: 120 });
-    				div3_intro.start();
+    				if (div2_outro) div2_outro.end(1);
+    				if (!div2_intro) div2_intro = create_in_transition(div2, fade, { duration: 120 });
+    				div2_intro.start();
     			});
 
     			current = true;
     		},
     		o: function outro(local) {
-    			if (div3_intro) div3_intro.invalidate();
-    			div3_outro = create_out_transition(div3, fade, { duration: 80 });
+    			if (div2_intro) div2_intro.invalidate();
+    			div2_outro = create_out_transition(div2, fade, { duration: 80 });
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div3);
-    			if (detaching && div3_outro) div3_outro.end();
+    			if (detaching) detach_dev(div2);
+    			if (detaching && div2_outro) div2_outro.end();
     			dispose();
     		}
     	};
@@ -31683,7 +31665,7 @@
     function insertHighlight(queryString, textToHighlight) {
     	const startHighlightIndex = textToHighlight.toLowerCase().trim().indexOf(queryString);
     	const endHighlightIndex = startHighlightIndex + queryString.length;
-    	return textToHighlight.slice(0, startHighlightIndex) + "<span class=\"font-bold rounded\" style=\"color: hsl(var(--secondary-hue), 50%, 50%); background-color: hsl(var(--secondary-hue), 35%, 80%)\">" + textToHighlight.slice(startHighlightIndex, endHighlightIndex) + "</span>" + textToHighlight.slice(endHighlightIndex, textToHighlight.length);
+    	return textToHighlight.slice(0, startHighlightIndex) + "<span class=\"font-bold\" style=\"color: hsl(var(--secondary-hue), 50%, 50%); background-color: hsl(var(--secondary-hue), 35%, 80%)\">" + textToHighlight.slice(startHighlightIndex, endHighlightIndex) + "</span>" + textToHighlight.slice(endHighlightIndex, textToHighlight.length);
     }
 
     function showEditDetail$1(data) {
@@ -31702,16 +31684,16 @@
     	let iconHue, materialIcon, backgroundColor, iconColor;
 
     	onMount(() => {
-    		$$invalidate(1, date = new Date(data.date).toString().substring(4, 15));
-    		$$invalidate(2, addedBy = data.addedBy);
+    		date = new Date(data.date).toString().substring(4, 15);
+    		$$invalidate(1, addedBy = data.addedBy);
     		amount = data.amount;
-    		$$invalidate(3, desc = data.desc);
+    		$$invalidate(2, desc = data.desc);
     		const typeDesign = typeDesigns.filter(obj => obj.type === data.type)[0];
     		const hue = typeDesign.hue;
-    		$$invalidate(4, materialIcon = typeDesign.materialIcon);
-    		$$invalidate(5, backgroundColor = "hsl(" + hue + ", 50%, 80%)");
-    		$$invalidate(6, iconColor = "hsl(" + hue + ", 65%, 40%)");
-    		$$invalidate(7, mounted = true);
+    		$$invalidate(3, materialIcon = typeDesign.materialIcon);
+    		$$invalidate(4, backgroundColor = "hsl(" + hue + ", 50%, 80%)");
+    		$$invalidate(5, iconColor = "hsl(" + hue + ", 65%, 40%)");
+    		$$invalidate(6, mounted = true);
     	});
 
     	const writable_props = ["data"];
@@ -31744,29 +31726,29 @@
 
     	$$self.$inject_state = $$props => {
     		if ("data" in $$props) $$invalidate(0, data = $$props.data);
-    		if ("mounted" in $$props) $$invalidate(7, mounted = $$props.mounted);
-    		if ("date" in $$props) $$invalidate(1, date = $$props.date);
-    		if ("addedBy" in $$props) $$invalidate(2, addedBy = $$props.addedBy);
-    		if ("desc" in $$props) $$invalidate(3, desc = $$props.desc);
+    		if ("mounted" in $$props) $$invalidate(6, mounted = $$props.mounted);
+    		if ("date" in $$props) date = $$props.date;
+    		if ("addedBy" in $$props) $$invalidate(1, addedBy = $$props.addedBy);
+    		if ("desc" in $$props) $$invalidate(2, desc = $$props.desc);
     		if ("amount" in $$props) amount = $$props.amount;
     		if ("iconHue" in $$props) iconHue = $$props.iconHue;
-    		if ("materialIcon" in $$props) $$invalidate(4, materialIcon = $$props.materialIcon);
-    		if ("backgroundColor" in $$props) $$invalidate(5, backgroundColor = $$props.backgroundColor);
-    		if ("iconColor" in $$props) $$invalidate(6, iconColor = $$props.iconColor);
+    		if ("materialIcon" in $$props) $$invalidate(3, materialIcon = $$props.materialIcon);
+    		if ("backgroundColor" in $$props) $$invalidate(4, backgroundColor = $$props.backgroundColor);
+    		if ("iconColor" in $$props) $$invalidate(5, iconColor = $$props.iconColor);
     		if ("$queryString" in $$props) queryString.set($queryString = $$props.$queryString);
     	};
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*data, mounted, $queryString, addedBy, desc*/ 653) {
+    		if ($$self.$$.dirty & /*data, mounted, $queryString, addedBy, desc*/ 583) {
     			$: if (data.highlightKey && mounted) {
     				const highlightKey = data.highlightKey;
-    				$$invalidate(2, addedBy = data.addedBy);
-    				$$invalidate(3, desc = data.desc);
+    				$$invalidate(1, addedBy = data.addedBy);
+    				$$invalidate(2, desc = data.desc);
 
     				if (highlightKey === "addedBy") {
-    					$$invalidate(2, addedBy = insertHighlight($queryString, addedBy));
+    					$$invalidate(1, addedBy = insertHighlight($queryString, addedBy));
     				} else if (highlightKey === "desc") {
-    					$$invalidate(3, desc = insertHighlight($queryString, desc));
+    					$$invalidate(2, desc = insertHighlight($queryString, desc));
     				}
     			}
     		}
@@ -31774,13 +31756,13 @@
 
     	return [
     		data,
-    		date,
     		addedBy,
     		desc,
     		materialIcon,
     		backgroundColor,
     		iconColor,
     		mounted,
+    		date,
     		amount,
     		$queryString,
     		iconHue,

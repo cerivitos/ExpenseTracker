@@ -35,7 +35,7 @@
 
     return (
       textToHighlight.slice(0, startHighlightIndex) +
-      '<span class="font-bold rounded" style="color: hsl(var(--secondary-hue), 50%, 50%); background-color: hsl(var(--secondary-hue), 35%, 80%)">' +
+      '<span class="font-bold" style="color: hsl(var(--secondary-hue), 50%, 50%); background-color: hsl(var(--secondary-hue), 35%, 80%)">' +
       textToHighlight.slice(startHighlightIndex, endHighlightIndex) +
       "</span>" +
       textToHighlight.slice(endHighlightIndex, textToHighlight.length)
@@ -76,12 +76,9 @@
     </i>
   </div>
   <div class="flex flex-col items-start mr-4">
-    <div class="flex flex-row items-start justify-around truncate">
-      <span class="font-bold truncate mr-2">
-        {@html addedBy}
-      </span>
-      <span class="truncate" style="color: var(--text-color2)">{date}</span>
-    </div>
+    <span class="font-bold truncate mr-2">
+      {@html addedBy}
+    </span>
     <span class="truncate" style="color: var(--text-color2)">
       {@html desc}
     </span>
