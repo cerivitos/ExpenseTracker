@@ -158,6 +158,16 @@
     color: var(--text-color2);
   }
 
+  .wrap::before {
+    border-top: 1px solid var(--inactive-button-color);
+    transform: translateY(-50%);
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 90%;
+    content: "";
+  }
+
   .content-wrapper {
     @apply flex flex-col w-full;
   }

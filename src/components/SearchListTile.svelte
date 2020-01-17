@@ -62,7 +62,7 @@
 </script>
 
 <div
-  class="flex flex-row p-4 items-center w-full"
+  class="flex flex-row p-4 items-center w-full cursor-pointer"
   style="background-color: var(--background-color); color: var(--text-color)"
   in:fade={{ duration: 120 }}
   out:fade={{ duration: 80 }}
