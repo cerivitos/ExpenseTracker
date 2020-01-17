@@ -62,7 +62,7 @@
 </script>
 
 <div
-  class="flex flex-row p-4 items-center"
+  class="flex flex-row p-4 items-center w-full"
   style="background-color: var(--background-color); color: var(--text-color)"
   in:fade={{ duration: 120 }}
   out:fade={{ duration: 80 }}
@@ -86,7 +86,7 @@
       {@html desc}
     </span>
   </div>
-  <span class="flex-grow flex justify-end">
+  <span class="flex-grow flex justify-end font-bold text-xl">
     $
     {@html data.amount.toFixed(2)}
   </span>

@@ -1,7 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
-  import { debounce, handleRouting } from "../util";
+  import { debounce, handleRouting, convertRemToPixels } from "../util";
   import {
     queryString,
     filteredSearchData,
@@ -13,6 +13,7 @@
   let scrolling = false;
   let query = "";
   let filteredDatas = [];
+  let buckets = [];
   let datas;
   let searchFuture;
 
@@ -44,7 +45,54 @@
     }
   });
 
+  function createBuckets() {
+    let buckets = [];
+
+    filteredDatas.forEach((data, i, arry) => {
+      const year = +data.date.substring(0, 4);
+      const month = +data.date.substring(5, 7);
+      let previousYear, previousMonth;
+
+      if (buckets.length > 0) {
+        previousYear = +buckets[buckets.length - 1].year;
+        previousMonth = +buckets[buckets.length - 1].month;
+      }
+
+      if (i > 0 && year + month !== previousYear + previousMonth) {
+        buckets.push({
+          year: year,
+          month: month
+        });
+      } else if (i === 0) {
+        buckets.push({
+          year: year,
+          month: month
+        });
+      }
+    });
+
+    buckets.sort((first, second) => {
+      if (first.month > second.month) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+
+    buckets.sort((first, second) => {
+      if (first.year < second.year) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+
+    return buckets;
+  }
+
   function searchData(query) {
+    buckets = [];
+
     if (datas && query.length > 0) {
       filteredDatas = datas.filter(data => {
         let keep = false;
@@ -67,6 +115,8 @@
 
         return keep;
       });
+
+      buckets = createBuckets();
       filteredSearchData.set(filteredDatas);
     }
   }
@@ -152,9 +202,34 @@
   </div>
   <div id="content" class="w-full flex flex-col items-center mt-16">
     <div class="content-wrapper">
-      {#if datas && query.length > 0}
-        {#each filteredDatas as data (data.id)}
-          <SearchListTile {data} />
+      {#if filteredDatas && query.length > 0}
+        {#each buckets as bucket, index}
+          {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
+            <span
+              class="rounded-full font-bold px-4 py-2 my-4 sticky top-0 z-10
+              m-auto"
+              style="top: {56 + convertRemToPixels(1)}px; color:
+              var(--text-color); background-color:var(--inactive-button-color)">
+              {bucket.year}
+            </span>
+          {/if}
+          <div class="flex flex-col justify-center items-center">
+            <div class="wrap w-full relative text-center mt-4 mb-2">
+              <span
+                class="relative font-bold px-4"
+                style="color:var(--text-color2); background-color:
+                var(--background-color)">
+                {new Date(2019, bucket.month - 1, 1)
+                  .toDateString()
+                  .substring(4, 7)}
+              </span>
+            </div>
+            {#each filteredDatas as data (data.id)}
+              {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
+                <SearchListTile {data} />
+              {/if}
+            {/each}
+          </div>
         {/each}
       {/if}
     </div>
