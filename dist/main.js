@@ -28086,12 +28086,12 @@
     			i = element("i");
     			i.textContent = "post_add";
     			t1 = text("\r\n      Add spending");
-    			attr_dev(i, "class", "material-icons svelte-5an7ig");
-    			add_location(i, file$3, 27, 6, 2885);
+    			attr_dev(i, "class", "material-icons svelte-1gzxjjb");
+    			add_location(i, file$3, 27, 6, 2921);
     			attr_dev(button, "id", "entry-button");
-    			attr_dev(button, "class", "svelte-5an7ig");
-    			add_location(button, file$3, 26, 4, 2817);
-    			dispose = listen_dev(button, "click", /*click_handler*/ ctx[4], false, false, false);
+    			attr_dev(button, "class", "svelte-1gzxjjb");
+    			add_location(button, file$3, 26, 4, 2853);
+    			dispose = listen_dev(button, "click", /*click_handler*/ ctx[5], false, false, false);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -28121,6 +28121,7 @@
     	let div;
     	let button;
     	let i;
+    	let div_class_value;
     	let dispose;
 
     	const block = {
@@ -28129,21 +28130,25 @@
     			button = element("button");
     			i = element("i");
     			i.textContent = "post_add";
-    			attr_dev(i, "class", "material-icons md-36 svelte-5an7ig");
-    			add_location(i, file$3, 47, 6, 3554);
+    			attr_dev(i, "class", "material-icons md-36 svelte-1gzxjjb");
+    			add_location(i, file$3, 47, 6, 3626);
     			attr_dev(button, "id", "entry-button");
-    			attr_dev(button, "class", "svelte-5an7ig");
-    			add_location(button, file$3, 46, 4, 3486);
-    			attr_dev(div, "class", "entry-wrapper svelte-5an7ig");
-    			add_location(div, file$3, 45, 2, 3453);
-    			dispose = listen_dev(button, "click", /*click_handler_3*/ ctx[7], false, false, false);
+    			attr_dev(button, "class", "svelte-1gzxjjb");
+    			add_location(button, file$3, 46, 4, 3558);
+    			attr_dev(div, "class", div_class_value = "entry-wrapper " + (/*$overlay*/ ctx[2].length > 0 ? "" : "z-10") + " svelte-1gzxjjb");
+    			add_location(div, file$3, 45, 2, 3489);
+    			dispose = listen_dev(button, "click", /*click_handler_3*/ ctx[8], false, false, false);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, button);
     			append_dev(button, i);
     		},
-    		p: noop,
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*$overlay*/ 4 && div_class_value !== (div_class_value = "entry-wrapper " + (/*$overlay*/ ctx[2].length > 0 ? "" : "z-10") + " svelte-1gzxjjb")) {
+    				attr_dev(div, "class", div_class_value);
+    			}
+    		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
     			dispose();
@@ -28182,8 +28187,8 @@
     	let if_block2_anchor;
     	let current;
     	let dispose;
-    	const default_slot_template = /*$$slots*/ ctx[3].default;
-    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[2], null);
+    	const default_slot_template = /*$$slots*/ ctx[4].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[3], null);
     	let if_block0 = /*$toastMessage*/ ctx[0] !== "" && create_if_block_2(ctx);
     	let if_block1 = window.innerWidth > 768 && create_if_block_1(ctx);
     	let if_block2 = window.innerWidth <= 768 && create_if_block$2(ctx);
@@ -28214,24 +28219,24 @@
     			t10 = space();
     			if (if_block2) if_block2.c();
     			if_block2_anchor = empty();
-    			attr_dev(div, "class", "content svelte-5an7ig");
-    			add_location(div, file$3, 18, 0, 2637);
-    			attr_dev(i0, "class", "material-icons svelte-5an7ig");
-    			add_location(i0, file$3, 34, 4, 3100);
-    			add_location(span0, file$3, 35, 4, 3146);
-    			attr_dev(button0, "class", button0_class_value = "nav-button " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-5an7ig");
-    			add_location(button0, file$3, 31, 2, 2971);
-    			attr_dev(i1, "class", "material-icons md-48 svelte-5an7ig");
-    			add_location(i1, file$3, 40, 4, 3312);
-    			add_location(span1, file$3, 41, 4, 3375);
-    			attr_dev(button1, "class", button1_class_value = "nav-button " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-5an7ig");
-    			add_location(button1, file$3, 37, 2, 3185);
-    			attr_dev(nav, "class", "navbar svelte-5an7ig");
-    			add_location(nav, file$3, 24, 0, 2758);
+    			attr_dev(div, "class", "content svelte-1gzxjjb");
+    			add_location(div, file$3, 18, 0, 2673);
+    			attr_dev(i0, "class", "material-icons svelte-1gzxjjb");
+    			add_location(i0, file$3, 34, 4, 3136);
+    			add_location(span0, file$3, 35, 4, 3182);
+    			attr_dev(button0, "class", button0_class_value = "nav-button " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-1gzxjjb");
+    			add_location(button0, file$3, 31, 2, 3007);
+    			attr_dev(i1, "class", "material-icons md-48 svelte-1gzxjjb");
+    			add_location(i1, file$3, 40, 4, 3348);
+    			add_location(span1, file$3, 41, 4, 3411);
+    			attr_dev(button1, "class", button1_class_value = "nav-button " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-1gzxjjb");
+    			add_location(button1, file$3, 37, 2, 3221);
+    			attr_dev(nav, "class", "navbar svelte-1gzxjjb");
+    			add_location(nav, file$3, 24, 0, 2794);
 
     			dispose = [
-    				listen_dev(button0, "click", /*click_handler_1*/ ctx[5], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_2*/ ctx[6], false, false, false)
+    				listen_dev(button0, "click", /*click_handler_1*/ ctx[6], false, false, false),
+    				listen_dev(button1, "click", /*click_handler_2*/ ctx[7], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
@@ -28265,8 +28270,8 @@
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (default_slot && default_slot.p && dirty & /*$$scope*/ 4) {
-    				default_slot.p(get_slot_context(default_slot_template, ctx, /*$$scope*/ ctx[2], null), get_slot_changes(default_slot_template, /*$$scope*/ ctx[2], dirty, null));
+    			if (default_slot && default_slot.p && dirty & /*$$scope*/ 8) {
+    				default_slot.p(get_slot_context(default_slot_template, ctx, /*$$scope*/ ctx[3], null), get_slot_changes(default_slot_template, /*$$scope*/ ctx[3], dirty, null));
     			}
 
     			if (/*$toastMessage*/ ctx[0] !== "") {
@@ -28291,11 +28296,11 @@
 
     			if (window.innerWidth > 768) if_block1.p(ctx, dirty);
 
-    			if (!current || dirty & /*$view*/ 2 && button0_class_value !== (button0_class_value = "nav-button " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-5an7ig")) {
+    			if (!current || dirty & /*$view*/ 2 && button0_class_value !== (button0_class_value = "nav-button " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-1gzxjjb")) {
     				attr_dev(button0, "class", button0_class_value);
     			}
 
-    			if (!current || dirty & /*$view*/ 2 && button1_class_value !== (button1_class_value = "nav-button " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-5an7ig")) {
+    			if (!current || dirty & /*$view*/ 2 && button1_class_value !== (button1_class_value = "nav-button " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-1gzxjjb")) {
     				attr_dev(button1, "class", button1_class_value);
     			}
 
@@ -28351,10 +28356,13 @@
     function instance$3($$self, $$props, $$invalidate) {
     	let $toastMessage;
     	let $view;
+    	let $overlay;
     	validate_store(toastMessage, "toastMessage");
     	component_subscribe($$self, toastMessage, $$value => $$invalidate(0, $toastMessage = $$value));
     	validate_store(view, "view");
     	component_subscribe($$self, view, $$value => $$invalidate(1, $view = $$value));
+    	validate_store(overlay, "overlay");
+    	component_subscribe($$self, overlay, $$value => $$invalidate(2, $overlay = $$value));
     	let { $$slots = {}, $$scope } = $$props;
     	const click_handler = () => setView("entry");
     	const click_handler_1 = () => setView("dashboard");
@@ -28362,7 +28370,7 @@
     	const click_handler_3 = () => setView("entry");
 
     	$$self.$set = $$props => {
-    		if ("$$scope" in $$props) $$invalidate(2, $$scope = $$props.$$scope);
+    		if ("$$scope" in $$props) $$invalidate(3, $$scope = $$props.$$scope);
     	};
 
     	$$self.$capture_state = () => {
@@ -28372,11 +28380,13 @@
     	$$self.$inject_state = $$props => {
     		if ("$toastMessage" in $$props) toastMessage.set($toastMessage = $$props.$toastMessage);
     		if ("$view" in $$props) view.set($view = $$props.$view);
+    		if ("$overlay" in $$props) overlay.set($overlay = $$props.$overlay);
     	};
 
     	return [
     		$toastMessage,
     		$view,
+    		$overlay,
     		$$scope,
     		$$slots,
     		click_handler,

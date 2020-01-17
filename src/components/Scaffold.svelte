@@ -74,6 +74,10 @@
       @apply flex flex-row items-center justify-start w-full py-1;
     }
 
+    button:nth-child(2) {
+      @apply mt-12 mb-8;
+    }
+
     .navbar .active {
       color: hsl(var(--primary-hue), 65%, 45%);
       transition: color 180ms;
@@ -95,7 +99,7 @@
     }
 
     #entry-button {
-      @apply rounded-full w-full flex flex-row justify-center items-center fill-current text-white font-bold text-xl shadow-lg pointer-events-auto mb-8;
+      @apply rounded-full w-full flex flex-row justify-center items-center fill-current text-white font-bold text-xl shadow-lg pointer-events-auto;
       background-color: hsl(var(--accent-hue), 50%, 50%);
       box-shadow: 0px 3px 6px 0px hsla(var(--accent-hue), 35%, 75%, 0.5);
     }
@@ -129,7 +133,7 @@
   </button>
 </nav>
 {#if window.innerWidth <= 768}
-  <div class="entry-wrapper">
+  <div class="entry-wrapper {$overlay.length > 0 ? '' : 'z-10'}">
     <button id="entry-button" on:click={() => setView('entry')}>
       <i class="material-icons md-36">post_add</i>
     </button>
