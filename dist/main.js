@@ -31826,7 +31826,7 @@
     	return child_ctx;
     }
 
-    // (157:6) {#if filteredDatas && query.length > 0}
+    // (162:6) {#if filteredDatas && query.length > 0}
     function create_if_block$6(ctx) {
     	let each_1_anchor;
     	let current;
@@ -31913,14 +31913,14 @@
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(157:6) {#if filteredDatas && query.length > 0}",
+    		source: "(162:6) {#if filteredDatas && query.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (159:10) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
+    // (164:10) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
     function create_if_block_2$2(ctx) {
     	let span;
     	let t_value = /*bucket*/ ctx[12].year + "";
@@ -31934,7 +31934,7 @@
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
     			set_style(span, "color", "var(--text-color)");
     			set_style(span, "background-color", "var(--inactive-button-color)");
-    			add_location(span, file$a, 159, 12, 5856);
+    			add_location(span, file$a, 164, 12, 6019);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -31952,14 +31952,14 @@
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(159:10) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
+    		source: "(164:10) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (180:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
+    // (185:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
     function create_if_block_1$3(ctx) {
     	let current;
 
@@ -32003,14 +32003,14 @@
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(180:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
+    		source: "(185:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (179:12) {#each filteredDatas as data, index (data.id)}
+    // (184:12) {#each filteredDatas as data, index (data.id)}
     function create_each_block_1$3(key_1, ctx) {
     	let first;
     	let show_if = /*data*/ ctx[15].date.substring(0, 4) == /*bucket*/ ctx[12].year && /*data*/ ctx[15].date.substring(5, 7) == /*bucket*/ ctx[12].month;
@@ -32076,14 +32076,14 @@
     		block,
     		id: create_each_block_1$3.name,
     		type: "each",
-    		source: "(179:12) {#each filteredDatas as data, index (data.id)}",
+    		source: "(184:12) {#each filteredDatas as data, index (data.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (158:8) {#each buckets as bucket, index}
+    // (163:8) {#each buckets as bucket, index}
     function create_each_block$3(ctx) {
     	let t0;
     	let div1;
@@ -32124,11 +32124,11 @@
     			attr_dev(span, "class", "relative font-bold px-4");
     			set_style(span, "color", "var(--text-color2)");
     			set_style(span, "background-color", "var(--background-color)");
-    			add_location(span, file$a, 169, 14, 6330);
-    			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-1dbqfxp");
-    			add_location(div0, file$a, 168, 12, 6258);
+    			add_location(span, file$a, 174, 14, 6493);
+    			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-1s5m3s4");
+    			add_location(div0, file$a, 173, 12, 6421);
     			attr_dev(div1, "class", "flex flex-col justify-center items-center");
-    			add_location(div1, file$a, 167, 10, 6189);
+    			add_location(div1, file$a, 172, 10, 6352);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -32197,7 +32197,7 @@
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(158:8) {#each buckets as bucket, index}",
+    		source: "(163:8) {#each buckets as bucket, index}",
     		ctx
     	});
 
@@ -32205,59 +32205,65 @@
     }
 
     function create_fragment$a(ctx) {
-    	let div3;
-    	let div0;
+    	let div4;
+    	let div1;
     	let button;
     	let i;
     	let t1;
+    	let div0;
     	let input;
-    	let div0_class_value;
+    	let div1_class_value;
     	let t2;
+    	let div3;
     	let div2;
-    	let div1;
-    	let div3_outro;
+    	let div4_outro;
     	let current;
     	let dispose;
     	let if_block = /*filteredDatas*/ ctx[2] && /*query*/ ctx[1].length > 0 && create_if_block$6(ctx);
 
     	const block = {
     		c: function create() {
-    			div3 = element("div");
-    			div0 = element("div");
+    			div4 = element("div");
+    			div1 = element("div");
     			button = element("button");
     			i = element("i");
     			i.textContent = "arrow_back";
     			t1 = space();
+    			div0 = element("div");
     			input = element("input");
     			t2 = space();
+    			div3 = element("div");
     			div2 = element("div");
-    			div1 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(i, "class", "material-icons fill-current");
     			set_style(i, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i, "aria-label", "Back button");
-    			add_location(i, file$a, 135, 6, 5072);
-    			add_location(button, file$a, 134, 4, 5056);
+    			add_location(i, file$a, 135, 6, 5100);
+    			add_location(button, file$a, 134, 4, 5084);
     			attr_dev(input, "id", "search-input");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Search");
-    			attr_dev(input, "class", "svelte-1dbqfxp");
-    			add_location(input, file$a, 148, 4, 5444);
+    			attr_dev(input, "class", "svelte-1s5m3s4");
+    			add_location(input, file$a, 152, 6, 5587);
+    			attr_dev(div0, "id", "input-wrapper");
+    			attr_dev(div0, "class", "flex justify-center w-full");
+    			set_style(div0, "margin-right", "40px");
+    			add_location(div0, file$a, 148, 4, 5472);
 
-    			attr_dev(div0, "class", div0_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar " + (Object.keys(/*$filteredSearchData*/ ctx[4]).length > 0
+    			attr_dev(div1, "class", div1_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar " + (Object.keys(/*$filteredSearchData*/ ctx[4]).length > 0
     			? ""
-    			: "entry-anim") + " svelte-1dbqfxp"));
+    			: "entry-anim") + " svelte-1s5m3s4"));
 
-    			add_location(div0, file$a, 132, 2, 4928);
-    			attr_dev(div1, "class", "content-wrapper svelte-1dbqfxp");
-    			add_location(div1, file$a, 155, 4, 5637);
-    			attr_dev(div2, "id", "content");
-    			attr_dev(div2, "class", "w-full flex flex-col items-center mt-16");
-    			add_location(div2, file$a, 154, 2, 5565);
-    			attr_dev(div3, "id", "search-page");
-    			attr_dev(div3, "class", "h-screen w-full absolute top-0 overflow-auto");
-    			set_style(div3, "background-color", "var(--background-color)");
-    			add_location(div3, file$a, 127, 0, 4759);
+    			add_location(div1, file$a, 132, 2, 4956);
+    			attr_dev(div2, "class", "content-wrapper svelte-1s5m3s4");
+    			add_location(div2, file$a, 160, 4, 5800);
+    			attr_dev(div3, "id", "content");
+    			attr_dev(div3, "class", "w-full flex flex-col items-center mt-16");
+    			add_location(div3, file$a, 159, 2, 5728);
+    			attr_dev(div4, "id", "search-page");
+    			attr_dev(div4, "class", "h-screen w-full absolute top-0 overflow-auto");
+    			set_style(div4, "background-color", "var(--background-color)");
+    			add_location(div4, file$a, 127, 0, 4787);
 
     			dispose = [
     				listen_dev(i, "click", /*click_handler*/ ctx[10], false, false, false),
@@ -32268,17 +32274,18 @@
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div3, anchor);
-    			append_dev(div3, div0);
-    			append_dev(div0, button);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, div1);
+    			append_dev(div1, button);
     			append_dev(button, i);
-    			append_dev(div0, t1);
+    			append_dev(div1, t1);
+    			append_dev(div1, div0);
     			append_dev(div0, input);
     			set_input_value(input, /*query*/ ctx[1]);
-    			append_dev(div3, t2);
+    			append_dev(div4, t2);
+    			append_dev(div4, div3);
     			append_dev(div3, div2);
-    			append_dev(div2, div1);
-    			if (if_block) if_block.m(div1, null);
+    			if (if_block) if_block.m(div2, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -32286,10 +32293,10 @@
     				set_input_value(input, /*query*/ ctx[1]);
     			}
 
-    			if (!current || dirty & /*scrolling, $filteredSearchData*/ 17 && div0_class_value !== (div0_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar " + (Object.keys(/*$filteredSearchData*/ ctx[4]).length > 0
+    			if (!current || dirty & /*scrolling, $filteredSearchData*/ 17 && div1_class_value !== (div1_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar " + (Object.keys(/*$filteredSearchData*/ ctx[4]).length > 0
     			? ""
-    			: "entry-anim") + " svelte-1dbqfxp"))) {
-    				attr_dev(div0, "class", div0_class_value);
+    			: "entry-anim") + " svelte-1s5m3s4"))) {
+    				attr_dev(div1, "class", div1_class_value);
     			}
 
     			if (/*filteredDatas*/ ctx[2] && /*query*/ ctx[1].length > 0) {
@@ -32300,7 +32307,7 @@
     					if_block = create_if_block$6(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
-    					if_block.m(div1, null);
+    					if_block.m(div2, null);
     				}
     			} else if (if_block) {
     				group_outros();
@@ -32315,18 +32322,18 @@
     		i: function intro(local) {
     			if (current) return;
     			transition_in(if_block);
-    			if (div3_outro) div3_outro.end(1);
+    			if (div4_outro) div4_outro.end(1);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(if_block);
-    			div3_outro = create_out_transition(div3, fade, { duration: 80 });
+    			div4_outro = create_out_transition(div4, fade, { duration: 80 });
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div3);
+    			if (detaching) detach_dev(div4);
     			if (if_block) if_block.d();
-    			if (detaching && div3_outro) div3_outro.end();
+    			if (detaching && div4_outro) div4_outro.end();
     			run_all(dispose);
     		}
     	};

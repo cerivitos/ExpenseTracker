@@ -179,7 +179,7 @@
     }
 
     #search-input {
-      @apply w-6/12;
+      @apply w-6/12 text-center;
     }
   }
 </style>
@@ -205,11 +205,16 @@
         arrow_back
       </i>
     </button>
-    <input
-      id="search-input"
-      type="text"
-      placeholder="Search"
-      bind:value={query} />
+    <div
+      id="input-wrapper"
+      class="flex justify-center w-full"
+      style="margin-right: 40px">
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Search"
+        bind:value={query} />
+    </div>
   </div>
   <div id="content" class="w-full flex flex-col items-center mt-16">
     <div class="content-wrapper">
