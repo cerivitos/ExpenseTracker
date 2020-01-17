@@ -133,12 +133,12 @@
 
 <div
   id="detail-page"
-  class="h-screen w-full absolute top-0 overflow-auto z-10"
+  class="h-screen w-full absolute top-0 overflow-auto"
   style="background-color: var(--background-color)"
   out:fade={{ duration: 80 }}>
   <div
     class="w-full flex flex-row p-4 {scrolling ? 'shadow' : ''} fixed top-0
-    justify-between z-20"
+    justify-between z-10"
     style="height: 56px; background-color: var(--background-color)">
     <button>
       <i

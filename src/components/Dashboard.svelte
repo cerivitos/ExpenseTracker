@@ -265,7 +265,7 @@
 </style>
 
 <div
-  class="flex flex-col w-full items-center my-8"
+  class="flex flex-col w-full items-center my-8 {$overlay.length > 0 ? 'hidden' : ''}"
   in:fade={{ duration: 80 }}
   style="color: var(--text-color)">
   <div class="overall-wrapper">

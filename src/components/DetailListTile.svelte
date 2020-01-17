@@ -19,7 +19,7 @@
 </script>
 
 <div
-  class="flex flex-row p-4 items-center"
+  class="flex flex-row p-4 items-center cursor-pointer"
   style="background-color: var(--background-color); color: var(--text-color)"
   in:fade={{ duration: 120, delay: index * 50 }}>
   <div
@@ -36,5 +36,5 @@
       {desc}
     </span>
   </div>
-  <span>$ {data.amount.toFixed(2)}</span>
+  <span class="font-bold text-xl">$ {data.amount.toFixed(2)}</span>
 </div>

@@ -224,7 +224,7 @@
   out:fade={{ duration: 80 }}>
   <div
     class="w-full flex flex-row p-4 {scrolling ? 'shadow' : ''} fixed top-0
-    justify-between z-20"
+    justify-between z-10"
     style="height: 56px; background-color: var(--background-color)">
     <button>
       <i
