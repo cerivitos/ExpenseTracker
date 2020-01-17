@@ -37,20 +37,19 @@
   <div id="items-wrapper" class="z-10 flex flex-row items-center w-full">
     <div
       id="icon"
-      class="rounded-full p-2 ml-4 mr-4 fill-current"
+      class="rounded-full p-2 ml-4 mr-2 fill-current"
       style="background-color: {backgroundColor}; color:{iconColor}">
       <i class="material-icons md-18" style="display:block !important">
         {materialIcon}
       </i>
     </div>
-    <div
-      class="flex flex-row justify-between truncate flex-grow text-xl font-bold ">
-      <span class="mr-4" id="label">{data.type}</span>
+    <div class="flex flex-row justify-between truncate flex-grow">
+      <span class="mr-2" id="label">{data.type}</span>
       <span style="color: var(--text-color2)">
         {Math.round(data.percentage)}%
       </span>
     </div>
-    <span class="mx-4 text-xl font-bold">${Math.round(data.sum)}</span>
+    <span class="ml-2 mr-4 font-bold">${Math.round(data.sum)}</span>
   </div>
   <div
     class="absolute left-0 top-0 h-full rounded-r opacity-25"

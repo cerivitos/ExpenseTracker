@@ -26814,19 +26814,19 @@
     			set_style(i, "display", "block", 1);
     			add_location(i, file, 41, 6, 1352);
     			attr_dev(div0, "id", "icon");
-    			attr_dev(div0, "class", "rounded-full p-2 ml-4 mr-4 fill-current");
+    			attr_dev(div0, "class", "rounded-full p-2 ml-4 mr-2 fill-current");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[3]);
     			set_style(div0, "color", /*iconColor*/ ctx[4]);
     			add_location(div0, file, 37, 4, 1197);
-    			attr_dev(span0, "class", "mr-4");
+    			attr_dev(span0, "class", "mr-2");
     			attr_dev(span0, "id", "label");
-    			add_location(span0, file, 47, 6, 1567);
+    			add_location(span0, file, 46, 6, 1541);
     			set_style(span1, "color", "var(--text-color2)");
-    			add_location(span1, file, 48, 6, 1623);
-    			attr_dev(div1, "class", "flex flex-row justify-between truncate flex-grow text-xl font-bold ");
+    			add_location(span1, file, 47, 6, 1597);
+    			attr_dev(div1, "class", "flex flex-row justify-between truncate flex-grow");
     			add_location(div1, file, 45, 4, 1471);
-    			attr_dev(span2, "class", "mx-4 text-xl font-bold");
-    			add_location(span2, file, 52, 4, 1736);
+    			attr_dev(span2, "class", "ml-2 mr-4 font-bold");
+    			add_location(span2, file, 51, 4, 1710);
     			attr_dev(div2, "id", "items-wrapper");
     			attr_dev(div2, "class", "z-10 flex flex-row items-center w-full");
     			add_location(div2, file, 36, 2, 1120);
@@ -26837,7 +26837,7 @@
     			: window.innerWidth * 1 / 2) * /*data*/ ctx[0].percentage / 100 + "px");
 
     			set_style(div3, "background-color", /*barColor*/ ctx[5]);
-    			add_location(div3, file, 54, 2, 1817);
+    			add_location(div3, file, 53, 2, 1788);
     			attr_dev(div4, "class", div4_class_value = "relative py-6 " + (window.innerWidth <= 768 ? "w-full" : "w-8/12") + " flex\r\n  flex-row items-center cursor-pointer");
     			add_location(div4, file, 30, 0, 878);
     			dispose = listen_dev(div4, "click", /*click_handler*/ ctx[9], false, false, false);
@@ -29249,7 +29249,7 @@
     			add_location(span3, file$5, 34, 4, 1196);
     			attr_dev(div1, "class", "flex flex-col flex-grow items-start justify-around truncate mr-4");
     			add_location(div1, file$5, 32, 2, 1050);
-    			attr_dev(span4, "class", "font-bold text-xl");
+    			attr_dev(span4, "class", "font-bold");
     			add_location(span4, file$5, 38, 2, 1301);
     			attr_dev(div2, "class", "flex flex-row p-4 items-center cursor-pointer");
     			set_style(div2, "background-color", "var(--background-color)");
@@ -31594,7 +31594,7 @@
     			attr_dev(div1, "class", "flex flex-col items-start mr-4");
     			add_location(div1, file$9, 77, 2, 2454);
     			html_tag = new HtmlTag(raw2_value, null);
-    			attr_dev(span2, "class", "flex-grow flex justify-end font-bold text-xl");
+    			attr_dev(span2, "class", "flex-grow flex justify-end font-bold");
     			add_location(span2, file$9, 85, 2, 2688);
     			attr_dev(div2, "class", "flex flex-row p-4 items-center w-full cursor-pointer");
     			set_style(div2, "background-color", "var(--background-color)");

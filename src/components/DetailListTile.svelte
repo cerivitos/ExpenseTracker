@@ -36,5 +36,5 @@
       {desc}
     </span>
   </div>
-  <span class="font-bold text-xl">$ {data.amount.toFixed(2)}</span>
+  <span class="font-bold">$ {data.amount.toFixed(2)}</span>
 </div>

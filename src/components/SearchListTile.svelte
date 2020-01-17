@@ -83,7 +83,7 @@
       {@html desc}
     </span>
   </div>
-  <span class="flex-grow flex justify-end font-bold text-xl">
+  <span class="flex-grow flex justify-end font-bold">
     $
     {@html data.amount.toFixed(2)}
   </span>
