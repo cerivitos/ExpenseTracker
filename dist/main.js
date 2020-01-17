@@ -29465,7 +29465,7 @@
     			i = element("i");
     			i.textContent = "attach_money";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$6, 145, 10, 4210);
+    			add_location(i, file$6, 145, 10, 4205);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -29505,7 +29505,7 @@
     			i = element("i");
     			i.textContent = "date_range";
     			attr_dev(i, "class", "material-icons md-18");
-    			add_location(i, file$6, 141, 10, 4075);
+    			add_location(i, file$6, 141, 10, 4070);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -29665,7 +29665,7 @@
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
     			set_style(span, "color", "var(--text-color)");
     			set_style(span, "background-color", "var(--inactive-button-color)");
-    			add_location(span, file$6, 179, 12, 5404);
+    			add_location(span, file$6, 179, 12, 5399);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -29768,7 +29768,7 @@
     			div = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div, "class", "w-full");
-    			add_location(div, file$6, 199, 14, 6285);
+    			add_location(div, file$6, 199, 14, 6280);
     			dispose = listen_dev(div, "click", click_handler_2, false, false, false);
     			this.first = div;
     		},
@@ -29891,11 +29891,11 @@
     			attr_dev(span, "class", "relative font-bold px-4");
     			set_style(span, "color", "var(--text-color2)");
     			set_style(span, "background-color", "var(--background-color)");
-    			add_location(span, file$6, 189, 14, 5878);
+    			add_location(span, file$6, 189, 14, 5873);
     			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-1yywlwk");
-    			add_location(div0, file$6, 188, 12, 5806);
+    			add_location(div0, file$6, 188, 12, 5801);
     			attr_dev(div1, "class", "flex flex-col justify-center items-center");
-    			add_location(div1, file$6, 187, 10, 5737);
+    			add_location(div1, file$6, 187, 10, 5732);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -30071,39 +30071,39 @@
     			info.block.c();
     			attr_dev(i0, "class", "material-icons fill-current");
     			set_style(i0, "color", /*iconColor*/ ctx[3]);
-    			add_location(i0, file$6, 123, 6, 3576);
-    			add_location(button0, file$6, 122, 4, 3560);
+    			add_location(i0, file$6, 123, 6, 3571);
+    			add_location(button0, file$6, 122, 4, 3555);
     			attr_dev(div0, "class", "relative");
-    			add_location(div0, file$6, 139, 6, 4015);
+    			add_location(div0, file$6, 139, 6, 4010);
     			attr_dev(button1, "class", "fill-current");
     			set_style(button1, "color", /*iconColor*/ ctx[3]);
-    			add_location(button1, file$6, 134, 4, 3852);
+    			add_location(button1, file$6, 134, 4, 3847);
     			attr_dev(div1, "class", div1_class_value = "w-full flex flex-row p-4 " + (/*scrolling*/ ctx[4] ? "shadow" : "") + " fixed top-0\r\n    justify-between z-20");
     			set_style(div1, "height", "56px");
     			set_style(div1, "background-color", "var(--background-color)");
-    			add_location(div1, file$6, 118, 2, 3376);
+    			add_location(div1, file$6, 118, 2, 3371);
     			attr_dev(i1, "class", "material-icons fill-current");
     			set_style(i1, "display", "block", 1);
     			set_style(i1, "color", /*iconColor*/ ctx[3]);
     			set_style(i1, "font-size", "64px");
-    			add_location(i1, file$6, 163, 10, 4804);
+    			add_location(i1, file$6, 163, 10, 4799);
     			attr_dev(div2, "class", "icon rounded-full p-6 mt-20 mb-4");
     			attr_dev(div2, "id", "icon");
     			set_style(div2, "background-color", /*backgroundColor*/ ctx[2]);
-    			add_location(div2, file$6, 158, 8, 4594);
+    			add_location(div2, file$6, 158, 8, 4589);
     			attr_dev(span, "class", "text-2xl font-bold mb-8");
     			set_style(span, "color", /*iconColor*/ ctx[3]);
-    			add_location(span, file$6, 169, 8, 5009);
+    			add_location(span, file$6, 169, 8, 5004);
     			attr_dev(div3, "class", "flex flex-col items-center");
-    			add_location(div3, file$6, 157, 6, 4544);
+    			add_location(div3, file$6, 157, 6, 4539);
     			attr_dev(div4, "class", "content-wrapper svelte-1yywlwk");
-    			add_location(div4, file$6, 156, 4, 4507);
+    			add_location(div4, file$6, 156, 4, 4502);
     			attr_dev(div5, "id", "content");
     			attr_dev(div5, "class", "flex flex-col w-full items-center");
     			set_style(div5, "background-color", "var(--background-color)");
-    			add_location(div5, file$6, 152, 2, 4376);
+    			add_location(div5, file$6, 152, 2, 4371);
     			attr_dev(div6, "id", "detail-page");
-    			attr_dev(div6, "class", "h-screen w-full absolute top-0 overflow-auto z-10");
+    			attr_dev(div6, "class", "h-screen w-full absolute top-0 overflow-auto");
     			set_style(div6, "background-color", "var(--background-color)");
     			add_location(div6, file$6, 113, 0, 3202);
 
