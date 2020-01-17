@@ -31815,7 +31815,7 @@
     	return child_ctx;
     }
 
-    // (156:6) {#if filteredDatas && query.length > 0}
+    // (157:6) {#if filteredDatas && query.length > 0}
     function create_if_block$6(ctx) {
     	let each_1_anchor;
     	let current;
@@ -31902,14 +31902,14 @@
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(156:6) {#if filteredDatas && query.length > 0}",
+    		source: "(157:6) {#if filteredDatas && query.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (158:10) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
+    // (159:10) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
     function create_if_block_2$2(ctx) {
     	let span;
     	let t_value = /*bucket*/ ctx[12].year + "";
@@ -31923,7 +31923,7 @@
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
     			set_style(span, "color", "var(--text-color)");
     			set_style(span, "background-color", "var(--inactive-button-color)");
-    			add_location(span, file$a, 158, 12, 5822);
+    			add_location(span, file$a, 159, 12, 5856);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -31941,14 +31941,14 @@
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(158:10) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
+    		source: "(159:10) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (179:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
+    // (180:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
     function create_if_block_1$3(ctx) {
     	let current;
 
@@ -31988,14 +31988,14 @@
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(179:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
+    		source: "(180:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (178:12) {#each filteredDatas as data (data.id)}
+    // (179:12) {#each filteredDatas as data (data.id)}
     function create_each_block_1$3(key_1, ctx) {
     	let first;
     	let show_if = /*data*/ ctx[15].date.substring(0, 4) == /*bucket*/ ctx[12].year && /*data*/ ctx[15].date.substring(5, 7) == /*bucket*/ ctx[12].month;
@@ -32061,14 +32061,14 @@
     		block,
     		id: create_each_block_1$3.name,
     		type: "each",
-    		source: "(178:12) {#each filteredDatas as data (data.id)}",
+    		source: "(179:12) {#each filteredDatas as data (data.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (157:8) {#each buckets as bucket, index}
+    // (158:8) {#each buckets as bucket, index}
     function create_each_block$3(ctx) {
     	let t0;
     	let div1;
@@ -32109,11 +32109,11 @@
     			attr_dev(span, "class", "relative font-bold px-4");
     			set_style(span, "color", "var(--text-color2)");
     			set_style(span, "background-color", "var(--background-color)");
-    			add_location(span, file$a, 168, 14, 6296);
+    			add_location(span, file$a, 169, 14, 6330);
     			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-1dbqfxp");
-    			add_location(div0, file$a, 167, 12, 6224);
+    			add_location(div0, file$a, 168, 12, 6258);
     			attr_dev(div1, "class", "flex flex-col justify-center items-center");
-    			add_location(div1, file$a, 166, 10, 6155);
+    			add_location(div1, file$a, 167, 10, 6189);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -32182,7 +32182,7 @@
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(157:8) {#each buckets as bucket, index}",
+    		source: "(158:8) {#each buckets as bucket, index}",
     		ctx
     	});
 
@@ -32221,28 +32221,28 @@
     			attr_dev(i, "class", "material-icons fill-current");
     			set_style(i, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i, "aria-label", "Back button");
-    			add_location(i, file$a, 134, 6, 5038);
-    			add_location(button, file$a, 133, 4, 5022);
+    			add_location(i, file$a, 135, 6, 5072);
+    			add_location(button, file$a, 134, 4, 5056);
     			attr_dev(input, "id", "search-input");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Search");
     			attr_dev(input, "class", "svelte-1dbqfxp");
-    			add_location(input, file$a, 147, 4, 5410);
+    			add_location(input, file$a, 148, 4, 5444);
 
     			attr_dev(div0, "class", div0_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar " + (Object.keys(/*$filteredSearchData*/ ctx[4]).length > 0
     			? ""
     			: "entry-anim") + " svelte-1dbqfxp"));
 
-    			add_location(div0, file$a, 131, 2, 4894);
+    			add_location(div0, file$a, 132, 2, 4928);
     			attr_dev(div1, "class", "content-wrapper svelte-1dbqfxp");
-    			add_location(div1, file$a, 154, 4, 5603);
+    			add_location(div1, file$a, 155, 4, 5637);
     			attr_dev(div2, "id", "content");
     			attr_dev(div2, "class", "w-full flex flex-col items-center mt-16");
-    			add_location(div2, file$a, 153, 2, 5531);
+    			add_location(div2, file$a, 154, 2, 5565);
     			attr_dev(div3, "id", "search-page");
     			attr_dev(div3, "class", "h-screen w-full absolute top-0 overflow-auto");
     			set_style(div3, "background-color", "var(--background-color)");
-    			add_location(div3, file$a, 126, 0, 4725);
+    			add_location(div3, file$a, 127, 0, 4759);
 
     			dispose = [
     				listen_dev(i, "click", /*click_handler*/ ctx[10], false, false, false),
@@ -32367,6 +32367,7 @@
     		if (Object.keys($filteredSearchData).length > 0) {
     			$$invalidate(1, query = $queryString);
     			$$invalidate(2, filteredDatas = $filteredSearchData);
+    			$$invalidate(3, buckets = createBuckets());
     		}
     	});
 
