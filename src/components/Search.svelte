@@ -235,9 +235,9 @@
                   .substring(4, 7)}
               </span>
             </div>
-            {#each filteredDatas as data (data.id)}
+            {#each filteredDatas as data, index (data.id)}
               {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
-                <SearchListTile {data} />
+                <SearchListTile {data} {index} />
               {/if}
             {/each}
           </div>

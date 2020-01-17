@@ -5,6 +5,7 @@
   import { typeDesigns, handleRouting } from "../util";
 
   export let data;
+  export let index;
 
   let mounted = false;
 
@@ -64,8 +65,7 @@
 <div
   class="flex flex-row p-4 items-center w-full cursor-pointer"
   style="background-color: var(--background-color); color: var(--text-color)"
-  in:fade={{ duration: 120 }}
-  out:fade={{ duration: 80 }}
+  in:fade={{ duration: 120, delay: index * 50 + 30 }}
   on:click={() => showEditDetail(data)}>
   <div
     id="icon"

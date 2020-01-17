@@ -31552,8 +31552,6 @@
     	let html_tag;
     	let raw2_value = /*data*/ ctx[0].amount.toFixed(2) + "";
     	let div2_intro;
-    	let div2_outro;
-    	let current;
     	let dispose;
 
     	const block = {
@@ -31561,7 +31559,7 @@
     			div2 = element("div");
     			div0 = element("div");
     			i = element("i");
-    			t0 = text(/*materialIcon*/ ctx[3]);
+    			t0 = text(/*materialIcon*/ ctx[4]);
     			t1 = space();
     			div1 = element("div");
     			span0 = element("span");
@@ -31572,27 +31570,27 @@
     			t4 = text("$\r\n    ");
     			attr_dev(i, "class", "material-icons md-18");
     			set_style(i, "display", "block", 1);
-    			add_location(i, file$9, 73, 4, 2329);
+    			add_location(i, file$9, 73, 4, 2343);
     			attr_dev(div0, "id", "icon");
     			attr_dev(div0, "class", "rounded-full p-2 mr-2 fill-current");
-    			set_style(div0, "background-color", /*backgroundColor*/ ctx[4]);
-    			set_style(div0, "color", /*iconColor*/ ctx[5]);
-    			add_location(div0, file$9, 69, 2, 2187);
+    			set_style(div0, "background-color", /*backgroundColor*/ ctx[5]);
+    			set_style(div0, "color", /*iconColor*/ ctx[6]);
+    			add_location(div0, file$9, 69, 2, 2201);
     			attr_dev(span0, "class", "font-bold truncate mr-2");
-    			add_location(span0, file$9, 78, 4, 2490);
+    			add_location(span0, file$9, 78, 4, 2504);
     			attr_dev(span1, "class", "truncate");
     			set_style(span1, "color", "var(--text-color2)");
-    			add_location(span1, file$9, 81, 4, 2570);
+    			add_location(span1, file$9, 81, 4, 2584);
     			attr_dev(div1, "class", "flex flex-col items-start mr-4");
-    			add_location(div1, file$9, 77, 2, 2440);
+    			add_location(div1, file$9, 77, 2, 2454);
     			html_tag = new HtmlTag(raw2_value, null);
     			attr_dev(span2, "class", "flex-grow flex justify-end font-bold text-xl");
-    			add_location(span2, file$9, 85, 2, 2674);
+    			add_location(span2, file$9, 85, 2, 2688);
     			attr_dev(div2, "class", "flex flex-row p-4 items-center w-full cursor-pointer");
     			set_style(div2, "background-color", "var(--background-color)");
     			set_style(div2, "color", "var(--text-color)");
-    			add_location(div2, file$9, 63, 0, 1932);
-    			dispose = listen_dev(div2, "click", /*click_handler*/ ctx[11], false, false, false);
+    			add_location(div2, file$9, 64, 0, 1953);
+    			dispose = listen_dev(div2, "click", /*click_handler*/ ctx[12], false, false, false);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -31605,48 +31603,43 @@
     			append_dev(div2, t1);
     			append_dev(div2, div1);
     			append_dev(div1, span0);
-    			span0.innerHTML = /*addedBy*/ ctx[1];
+    			span0.innerHTML = /*addedBy*/ ctx[2];
     			append_dev(div1, t2);
     			append_dev(div1, span1);
-    			span1.innerHTML = /*desc*/ ctx[2];
+    			span1.innerHTML = /*desc*/ ctx[3];
     			append_dev(div2, t3);
     			append_dev(div2, span2);
     			append_dev(span2, t4);
     			html_tag.m(span2);
-    			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*materialIcon*/ 8) set_data_dev(t0, /*materialIcon*/ ctx[3]);
+    			if (dirty & /*materialIcon*/ 16) set_data_dev(t0, /*materialIcon*/ ctx[4]);
 
-    			if (!current || dirty & /*backgroundColor*/ 16) {
-    				set_style(div0, "background-color", /*backgroundColor*/ ctx[4]);
+    			if (dirty & /*backgroundColor*/ 32) {
+    				set_style(div0, "background-color", /*backgroundColor*/ ctx[5]);
     			}
 
-    			if (!current || dirty & /*iconColor*/ 32) {
-    				set_style(div0, "color", /*iconColor*/ ctx[5]);
+    			if (dirty & /*iconColor*/ 64) {
+    				set_style(div0, "color", /*iconColor*/ ctx[6]);
     			}
 
-    			if (!current || dirty & /*addedBy*/ 2) span0.innerHTML = /*addedBy*/ ctx[1];			if (!current || dirty & /*desc*/ 4) span1.innerHTML = /*desc*/ ctx[2];			if ((!current || dirty & /*data*/ 1) && raw2_value !== (raw2_value = /*data*/ ctx[0].amount.toFixed(2) + "")) html_tag.p(raw2_value);
+    			if (dirty & /*addedBy*/ 4) span0.innerHTML = /*addedBy*/ ctx[2];			if (dirty & /*desc*/ 8) span1.innerHTML = /*desc*/ ctx[3];			if (dirty & /*data*/ 1 && raw2_value !== (raw2_value = /*data*/ ctx[0].amount.toFixed(2) + "")) html_tag.p(raw2_value);
     		},
     		i: function intro(local) {
-    			if (current) return;
+    			if (!div2_intro) {
+    				add_render_callback(() => {
+    					div2_intro = create_in_transition(div2, fade, {
+    						duration: 120,
+    						delay: /*index*/ ctx[1] * 50 + 30
+    					});
 
-    			add_render_callback(() => {
-    				if (div2_outro) div2_outro.end(1);
-    				if (!div2_intro) div2_intro = create_in_transition(div2, fade, { duration: 120 });
-    				div2_intro.start();
-    			});
-
-    			current = true;
+    					div2_intro.start();
+    				});
+    			}
     		},
-    		o: function outro(local) {
-    			if (div2_intro) div2_intro.invalidate();
-    			div2_outro = create_out_transition(div2, fade, { duration: 80 });
-    			current = false;
-    		},
+    		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div2);
-    			if (detaching && div2_outro) div2_outro.end();
     			dispose();
     		}
     	};
@@ -31677,26 +31670,27 @@
     function instance$9($$self, $$props, $$invalidate) {
     	let $queryString;
     	validate_store(queryString, "queryString");
-    	component_subscribe($$self, queryString, $$value => $$invalidate(9, $queryString = $$value));
+    	component_subscribe($$self, queryString, $$value => $$invalidate(10, $queryString = $$value));
     	let { data } = $$props;
+    	let { index } = $$props;
     	let mounted = false;
     	let date, addedBy, desc, amount;
     	let iconHue, materialIcon, backgroundColor, iconColor;
 
     	onMount(() => {
     		date = new Date(data.date).toString().substring(4, 15);
-    		$$invalidate(1, addedBy = data.addedBy);
+    		$$invalidate(2, addedBy = data.addedBy);
     		amount = data.amount;
-    		$$invalidate(2, desc = data.desc);
+    		$$invalidate(3, desc = data.desc);
     		const typeDesign = typeDesigns.filter(obj => obj.type === data.type)[0];
     		const hue = typeDesign.hue;
-    		$$invalidate(3, materialIcon = typeDesign.materialIcon);
-    		$$invalidate(4, backgroundColor = "hsl(" + hue + ", 50%, 80%)");
-    		$$invalidate(5, iconColor = "hsl(" + hue + ", 65%, 40%)");
-    		$$invalidate(6, mounted = true);
+    		$$invalidate(4, materialIcon = typeDesign.materialIcon);
+    		$$invalidate(5, backgroundColor = "hsl(" + hue + ", 50%, 80%)");
+    		$$invalidate(6, iconColor = "hsl(" + hue + ", 65%, 40%)");
+    		$$invalidate(7, mounted = true);
     	});
 
-    	const writable_props = ["data"];
+    	const writable_props = ["data", "index"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<SearchListTile> was created with unknown prop '${key}'`);
@@ -31706,11 +31700,13 @@
 
     	$$self.$set = $$props => {
     		if ("data" in $$props) $$invalidate(0, data = $$props.data);
+    		if ("index" in $$props) $$invalidate(1, index = $$props.index);
     	};
 
     	$$self.$capture_state = () => {
     		return {
     			data,
+    			index,
     			mounted,
     			date,
     			addedBy,
@@ -31726,29 +31722,30 @@
 
     	$$self.$inject_state = $$props => {
     		if ("data" in $$props) $$invalidate(0, data = $$props.data);
-    		if ("mounted" in $$props) $$invalidate(6, mounted = $$props.mounted);
+    		if ("index" in $$props) $$invalidate(1, index = $$props.index);
+    		if ("mounted" in $$props) $$invalidate(7, mounted = $$props.mounted);
     		if ("date" in $$props) date = $$props.date;
-    		if ("addedBy" in $$props) $$invalidate(1, addedBy = $$props.addedBy);
-    		if ("desc" in $$props) $$invalidate(2, desc = $$props.desc);
+    		if ("addedBy" in $$props) $$invalidate(2, addedBy = $$props.addedBy);
+    		if ("desc" in $$props) $$invalidate(3, desc = $$props.desc);
     		if ("amount" in $$props) amount = $$props.amount;
     		if ("iconHue" in $$props) iconHue = $$props.iconHue;
-    		if ("materialIcon" in $$props) $$invalidate(3, materialIcon = $$props.materialIcon);
-    		if ("backgroundColor" in $$props) $$invalidate(4, backgroundColor = $$props.backgroundColor);
-    		if ("iconColor" in $$props) $$invalidate(5, iconColor = $$props.iconColor);
+    		if ("materialIcon" in $$props) $$invalidate(4, materialIcon = $$props.materialIcon);
+    		if ("backgroundColor" in $$props) $$invalidate(5, backgroundColor = $$props.backgroundColor);
+    		if ("iconColor" in $$props) $$invalidate(6, iconColor = $$props.iconColor);
     		if ("$queryString" in $$props) queryString.set($queryString = $$props.$queryString);
     	};
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*data, mounted, $queryString, addedBy, desc*/ 583) {
+    		if ($$self.$$.dirty & /*data, mounted, $queryString, addedBy, desc*/ 1165) {
     			$: if (data.highlightKey && mounted) {
     				const highlightKey = data.highlightKey;
-    				$$invalidate(1, addedBy = data.addedBy);
-    				$$invalidate(2, desc = data.desc);
+    				$$invalidate(2, addedBy = data.addedBy);
+    				$$invalidate(3, desc = data.desc);
 
     				if (highlightKey === "addedBy") {
-    					$$invalidate(1, addedBy = insertHighlight($queryString, addedBy));
+    					$$invalidate(2, addedBy = insertHighlight($queryString, addedBy));
     				} else if (highlightKey === "desc") {
-    					$$invalidate(2, desc = insertHighlight($queryString, desc));
+    					$$invalidate(3, desc = insertHighlight($queryString, desc));
     				}
     			}
     		}
@@ -31756,6 +31753,7 @@
 
     	return [
     		data,
+    		index,
     		addedBy,
     		desc,
     		materialIcon,
@@ -31773,7 +31771,7 @@
     class SearchListTile extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$9, create_fragment$9, safe_not_equal, { data: 0 });
+    		init(this, options, instance$9, create_fragment$9, safe_not_equal, { data: 0, index: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -31788,6 +31786,10 @@
     		if (/*data*/ ctx[0] === undefined && !("data" in props)) {
     			console.warn("<SearchListTile> was created without expected prop 'data'");
     		}
+
+    		if (/*index*/ ctx[1] === undefined && !("index" in props)) {
+    			console.warn("<SearchListTile> was created without expected prop 'index'");
+    		}
     	}
 
     	get data() {
@@ -31795,6 +31797,14 @@
     	}
 
     	set data(value) {
+    		throw new Error("<SearchListTile>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get index() {
+    		throw new Error("<SearchListTile>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set index(value) {
     		throw new Error("<SearchListTile>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -31805,6 +31815,7 @@
     function get_each_context_1$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[15] = list[i];
+    	child_ctx[14] = i;
     	return child_ctx;
     }
 
@@ -31953,7 +31964,10 @@
     	let current;
 
     	const searchlisttile = new SearchListTile({
-    			props: { data: /*data*/ ctx[15] },
+    			props: {
+    				data: /*data*/ ctx[15],
+    				index: /*index*/ ctx[14]
+    			},
     			$$inline: true
     		});
 
@@ -31968,6 +31982,7 @@
     		p: function update(ctx, dirty) {
     			const searchlisttile_changes = {};
     			if (dirty & /*filteredDatas*/ 4) searchlisttile_changes.data = /*data*/ ctx[15];
+    			if (dirty & /*filteredDatas*/ 4) searchlisttile_changes.index = /*index*/ ctx[14];
     			searchlisttile.$set(searchlisttile_changes);
     		},
     		i: function intro(local) {
@@ -31995,7 +32010,7 @@
     	return block;
     }
 
-    // (179:12) {#each filteredDatas as data (data.id)}
+    // (179:12) {#each filteredDatas as data, index (data.id)}
     function create_each_block_1$3(key_1, ctx) {
     	let first;
     	let show_if = /*data*/ ctx[15].date.substring(0, 4) == /*bucket*/ ctx[12].year && /*data*/ ctx[15].date.substring(5, 7) == /*bucket*/ ctx[12].month;
@@ -32061,7 +32076,7 @@
     		block,
     		id: create_each_block_1$3.name,
     		type: "each",
-    		source: "(179:12) {#each filteredDatas as data (data.id)}",
+    		source: "(179:12) {#each filteredDatas as data, index (data.id)}",
     		ctx
     	});
 
