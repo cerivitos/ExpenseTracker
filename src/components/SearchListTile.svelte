@@ -86,22 +86,18 @@
   </div>
   <div
     id="icon"
-    class="rounded-full p-1 mr-4 fill-current"
+    class="rounded-full p-1 mr-2 fill-current"
     style="background-color: {backgroundColor}; color:{iconColor}">
     <i class="material-icons" style="display:block !important; font-size: 14px">
       {materialIcon}
     </i>
   </div>
-  <div class="{window.innerWidth >= 768 ? 'flex' : 'w-1/2'} items-start mr-4">
-    <span class="truncate mr-2 {window.innerWidth >= 768 ? '' : 'block'}">
-      {@html addedBy}
-    </span>
-    <span
-      class="truncate {window.innerWidth >= 768 ? '' : 'block'}"
-      style="color: var(--text-color2)">
-      {@html desc}
-    </span>
-  </div>
+  <span class="truncate mr-2 flex-none">
+    {@html addedBy}
+  </span>
+  <span class="truncate mr-2" style="color: var(--text-color2)">
+    {@html desc}
+  </span>
   <span class="flex-grow flex items-center justify-end font-bold amount">
     {@html data.amount.toLocaleString(undefined, {
       maximumFractionDigits: 2,

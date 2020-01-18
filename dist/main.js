@@ -29189,7 +29189,7 @@
     const file$5 = "src\\components\\SearchListTile.svelte";
 
     function create_fragment$5(ctx) {
-    	let div3;
+    	let div2;
     	let div0;
     	let span0;
     	let t0_value = new Date(/*data*/ ctx[0].date).toString().substring(4, 10) + "";
@@ -29199,13 +29199,9 @@
     	let i;
     	let t2;
     	let t3;
-    	let div2;
     	let span1;
-    	let span1_class_value;
     	let t4;
     	let span2;
-    	let span2_class_value;
-    	let div2_class_value;
     	let t5;
     	let span3;
 
@@ -29214,12 +29210,12 @@
     		minimumFractionDigits: 2
     	}) + "";
 
-    	let div3_intro;
+    	let div2_intro;
     	let dispose;
 
     	const block = {
     		c: function create() {
-    			div3 = element("div");
+    			div2 = element("div");
     			div0 = element("div");
     			span0 = element("span");
     			t0 = text(t0_value);
@@ -29228,7 +29224,6 @@
     			i = element("i");
     			t2 = text(/*materialIcon*/ ctx[4]);
     			t3 = space();
-    			div2 = element("div");
     			span1 = element("span");
     			t4 = space();
     			span2 = element("span");
@@ -29247,46 +29242,43 @@
     			set_style(i, "font-size", "14px");
     			add_location(i, file$5, 85, 4, 2713);
     			attr_dev(div1, "id", "icon");
-    			attr_dev(div1, "class", "rounded-full p-1 mr-4 fill-current");
+    			attr_dev(div1, "class", "rounded-full p-1 mr-2 fill-current");
     			set_style(div1, "background-color", /*backgroundColor*/ ctx[5]);
     			set_style(div1, "color", /*iconColor*/ ctx[6]);
     			add_location(div1, file$5, 81, 2, 2571);
-    			attr_dev(span1, "class", span1_class_value = "truncate mr-2 " + (window.innerWidth >= 768 ? "" : "block"));
-    			add_location(span1, file$5, 90, 4, 2917);
-    			attr_dev(span2, "class", span2_class_value = "truncate " + (window.innerWidth >= 768 ? "" : "block"));
+    			attr_dev(span1, "class", "truncate mr-2 flex-none");
+    			add_location(span1, file$5, 89, 2, 2835);
+    			attr_dev(span2, "class", "truncate mr-2");
     			set_style(span2, "color", "var(--text-color2)");
-    			add_location(span2, file$5, 93, 4, 3029);
-    			attr_dev(div2, "class", div2_class_value = "" + ((window.innerWidth >= 768 ? "flex" : "w-1/2") + " items-start mr-4"));
-    			add_location(div2, file$5, 89, 2, 2835);
+    			add_location(span2, file$5, 92, 2, 2909);
     			attr_dev(span3, "class", "flex-grow flex items-center justify-end font-bold amount svelte-yg0mqo");
-    			add_location(span3, file$5, 99, 2, 3189);
-    			attr_dev(div3, "class", "flex w-full p-4 items-center cursor-pointer");
-    			set_style(div3, "background-color", "var(--background-color)");
-    			set_style(div3, "color", "var(--text-color)");
-    			add_location(div3, file$5, 71, 0, 2111);
-    			dispose = listen_dev(div3, "click", /*click_handler*/ ctx[13], false, false, false);
+    			add_location(span3, file$5, 95, 2, 3004);
+    			attr_dev(div2, "class", "flex w-full p-4 items-center cursor-pointer");
+    			set_style(div2, "background-color", "var(--background-color)");
+    			set_style(div2, "color", "var(--text-color)");
+    			add_location(div2, file$5, 71, 0, 2111);
+    			dispose = listen_dev(div2, "click", /*click_handler*/ ctx[13], false, false, false);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div3, anchor);
-    			append_dev(div3, div0);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
     			append_dev(div0, span0);
     			append_dev(span0, t0);
-    			append_dev(div3, t1);
-    			append_dev(div3, div1);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
     			append_dev(div1, i);
     			append_dev(i, t2);
-    			append_dev(div3, t3);
-    			append_dev(div3, div2);
+    			append_dev(div2, t3);
     			append_dev(div2, span1);
     			span1.innerHTML = /*addedBy*/ ctx[2];
     			append_dev(div2, t4);
     			append_dev(div2, span2);
     			span2.innerHTML = /*desc*/ ctx[3];
-    			append_dev(div3, t5);
-    			append_dev(div3, span3);
+    			append_dev(div2, t5);
+    			append_dev(div2, span3);
     			span3.innerHTML = raw2_value;
     		},
     		p: function update(ctx, [dirty]) {
@@ -29314,20 +29306,20 @@
     				minimumFractionDigits: 2
     			}) + "")) span3.innerHTML = raw2_value;		},
     		i: function intro(local) {
-    			if (!div3_intro) {
+    			if (!div2_intro) {
     				add_render_callback(() => {
-    					div3_intro = create_in_transition(div3, fade, {
+    					div2_intro = create_in_transition(div2, fade, {
     						duration: 120,
     						delay: /*index*/ ctx[1] * 50 + 30
     					});
 
-    					div3_intro.start();
+    					div2_intro.start();
     				});
     			}
     		},
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div3);
+    			if (detaching) detach_dev(div2);
     			dispose();
     		}
     	};
