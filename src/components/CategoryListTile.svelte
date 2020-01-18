@@ -28,6 +28,13 @@
   }
 </script>
 
+<style type="text/postcss">
+  .amount::before {
+    content: "$";
+    @apply text-sm font-light mr-1;
+  }
+</style>
+
 <div
   class="relative py-6 {window.innerWidth <= 768 ? 'w-full' : 'w-8/12'} flex
   flex-row items-center cursor-pointer"
@@ -49,8 +56,8 @@
         {Math.round(data.percentage)}%
       </span>
     </div>
-    <span class="ml-2 mr-4 font-bold">
-      ${Math.round(data.sum).toLocaleString()}
+    <span class="ml-2 mr-4 font-bold amount">
+      {Math.round(data.sum).toLocaleString()}
     </span>
   </div>
   <div

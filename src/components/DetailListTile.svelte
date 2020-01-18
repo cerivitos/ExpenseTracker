@@ -18,6 +18,13 @@
   });
 </script>
 
+<style type="text/postcss">
+  .amount::before {
+    content: "$";
+    @apply text-sm font-light mr-1;
+  }
+</style>
+
 <div
   class="flex flex-row p-4 items-center cursor-pointer"
   style="background-color: var(--background-color); color: var(--text-color)"
@@ -36,8 +43,8 @@
       {desc}
     </span>
   </div>
-  <span class="font-bold">
-    $ {data.amount.toLocaleString(undefined, {
+  <span class="font-bold amount">
+    {data.amount.toLocaleString(undefined, {
       maximumFractionDigits: 2,
       minimumFractionDigits: 2
     })}

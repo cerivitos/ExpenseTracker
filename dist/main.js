@@ -170,31 +170,6 @@
         e.initCustomEvent(type, false, false, detail);
         return e;
     }
-    class HtmlTag {
-        constructor(html, anchor = null) {
-            this.e = element('div');
-            this.a = anchor;
-            this.u(html);
-        }
-        m(target, anchor = null) {
-            for (let i = 0; i < this.n.length; i += 1) {
-                insert(target, this.n[i], anchor);
-            }
-            this.t = target;
-        }
-        u(html) {
-            this.e.innerHTML = html;
-            this.n = Array.from(this.e.childNodes);
-        }
-        p(html) {
-            this.d();
-            this.u(html);
-            this.m(this.t, this.a);
-        }
-        d() {
-            this.n.forEach(detach);
-        }
-    }
 
     let stylesheet;
     let active = 0;
@@ -26777,10 +26752,9 @@
     	let t5;
     	let t6;
     	let span2;
+    	let t7_value = Math.round(/*data*/ ctx[0].sum).toLocaleString() + "";
     	let t7;
-    	let t8_value = Math.round(/*data*/ ctx[0].sum).toLocaleString() + "";
     	let t8;
-    	let t9;
     	let div3;
     	let div3_intro;
     	let div4_class_value;
@@ -26806,30 +26780,29 @@
     			t5 = text("%");
     			t6 = space();
     			span2 = element("span");
-    			t7 = text("$");
-    			t8 = text(t8_value);
-    			t9 = space();
+    			t7 = text(t7_value);
+    			t8 = space();
     			div3 = element("div");
     			attr_dev(i, "class", "material-icons md-18");
     			set_style(i, "display", "block", 1);
-    			add_location(i, file, 41, 6, 1352);
+    			add_location(i, file, 43, 6, 1472);
     			attr_dev(div0, "id", "icon");
     			attr_dev(div0, "class", "rounded-full p-2 ml-4 mr-2 fill-current");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[3]);
     			set_style(div0, "color", /*iconColor*/ ctx[4]);
-    			add_location(div0, file, 37, 4, 1197);
+    			add_location(div0, file, 39, 4, 1317);
     			attr_dev(span0, "class", "mr-2");
     			attr_dev(span0, "id", "label");
-    			add_location(span0, file, 46, 6, 1541);
+    			add_location(span0, file, 48, 6, 1661);
     			set_style(span1, "color", "var(--text-color2)");
-    			add_location(span1, file, 47, 6, 1597);
+    			add_location(span1, file, 49, 6, 1717);
     			attr_dev(div1, "class", "flex flex-row justify-between truncate flex-grow");
-    			add_location(div1, file, 45, 4, 1471);
-    			attr_dev(span2, "class", "ml-2 mr-4 font-bold");
-    			add_location(span2, file, 51, 4, 1710);
+    			add_location(div1, file, 47, 4, 1591);
+    			attr_dev(span2, "class", "ml-2 mr-4 font-bold amount svelte-yg0mqo");
+    			add_location(span2, file, 53, 4, 1830);
     			attr_dev(div2, "id", "items-wrapper");
     			attr_dev(div2, "class", "z-10 flex flex-row items-center w-full");
-    			add_location(div2, file, 36, 2, 1120);
+    			add_location(div2, file, 38, 2, 1240);
     			attr_dev(div3, "class", "absolute left-0 top-0 h-full rounded-r opacity-25");
 
     			set_style(div3, "width", (window.innerWidth <= 768
@@ -26837,9 +26810,9 @@
     			: window.innerWidth * 1 / 2) * /*data*/ ctx[0].percentage / 100 + "px");
 
     			set_style(div3, "background-color", /*barColor*/ ctx[5]);
-    			add_location(div3, file, 55, 2, 1819);
+    			add_location(div3, file, 57, 2, 1945);
     			attr_dev(div4, "class", div4_class_value = "relative py-6 " + (window.innerWidth <= 768 ? "w-full" : "w-8/12") + " flex\r\n  flex-row items-center cursor-pointer");
-    			add_location(div4, file, 30, 0, 878);
+    			add_location(div4, file, 32, 0, 998);
     			dispose = listen_dev(div4, "click", /*click_handler*/ ctx[9], false, false, false);
     		},
     		l: function claim(nodes) {
@@ -26862,8 +26835,7 @@
     			append_dev(div2, t6);
     			append_dev(div2, span2);
     			append_dev(span2, t7);
-    			append_dev(span2, t8);
-    			append_dev(div4, t9);
+    			append_dev(div4, t8);
     			append_dev(div4, div3);
     			current = true;
     		},
@@ -26880,7 +26852,7 @@
 
     			if ((!current || dirty & /*data*/ 1) && t2_value !== (t2_value = /*data*/ ctx[0].type + "")) set_data_dev(t2, t2_value);
     			if ((!current || dirty & /*data*/ 1) && t4_value !== (t4_value = Math.round(/*data*/ ctx[0].percentage) + "")) set_data_dev(t4, t4_value);
-    			if ((!current || dirty & /*data*/ 1) && t8_value !== (t8_value = Math.round(/*data*/ ctx[0].sum).toLocaleString() + "")) set_data_dev(t8, t8_value);
+    			if ((!current || dirty & /*data*/ 1) && t7_value !== (t7_value = Math.round(/*data*/ ctx[0].sum).toLocaleString() + "")) set_data_dev(t7, t7_value);
 
     			if (!current || dirty & /*data*/ 1) {
     				set_style(div3, "width", (window.innerWidth <= 768
@@ -29209,14 +29181,13 @@
     	let t6;
     	let t7;
     	let span4;
-    	let t8;
 
-    	let t9_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
+    	let t8_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
     		maximumFractionDigits: 2,
     		minimumFractionDigits: 2
     	}) + "";
 
-    	let t9;
+    	let t8;
     	let div2_intro;
 
     	const block = {
@@ -29237,29 +29208,28 @@
     			t6 = text(/*desc*/ ctx[5]);
     			t7 = space();
     			span4 = element("span");
-    			t8 = text("$ ");
-    			t9 = text(t9_value);
+    			t8 = text(t8_value);
     			attr_dev(span0, "class", "font-bold text-xs");
-    			add_location(span0, file$5, 27, 4, 867);
+    			add_location(span0, file$5, 29, 4, 987);
     			attr_dev(span1, "class", "font-bold");
-    			add_location(span1, file$5, 30, 4, 974);
+    			add_location(span1, file$5, 32, 4, 1094);
     			attr_dev(div0, "class", "w-10 rounded-lg flex flex-col items-center justify-between py-1 mr-4");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[1]);
     			set_style(div0, "color", /*iconColor*/ ctx[2]);
-    			add_location(div0, file$5, 24, 2, 707);
+    			add_location(div0, file$5, 26, 2, 827);
     			attr_dev(span2, "class", "font-bold w-full truncate");
-    			add_location(span2, file$5, 33, 4, 1134);
+    			add_location(span2, file$5, 35, 4, 1254);
     			attr_dev(span3, "class", "w-full truncate");
     			set_style(span3, "color", "var(--text-color2)");
-    			add_location(span3, file$5, 34, 4, 1196);
+    			add_location(span3, file$5, 36, 4, 1316);
     			attr_dev(div1, "class", "flex flex-col flex-grow items-start justify-around truncate mr-4");
-    			add_location(div1, file$5, 32, 2, 1050);
-    			attr_dev(span4, "class", "font-bold");
-    			add_location(span4, file$5, 38, 2, 1301);
+    			add_location(div1, file$5, 34, 2, 1170);
+    			attr_dev(span4, "class", "font-bold amount svelte-yg0mqo");
+    			add_location(span4, file$5, 40, 2, 1421);
     			attr_dev(div2, "class", "flex flex-row p-4 items-center cursor-pointer");
     			set_style(div2, "background-color", "var(--background-color)");
     			set_style(div2, "color", "var(--text-color)");
-    			add_location(div2, file$5, 20, 0, 512);
+    			add_location(div2, file$5, 22, 0, 632);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -29282,7 +29252,6 @@
     			append_dev(div2, t7);
     			append_dev(div2, span4);
     			append_dev(span4, t8);
-    			append_dev(span4, t9);
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*data*/ 1 && t0_value !== (t0_value = new Date(/*data*/ ctx[0].date).toString().substring(4, 7) + "")) set_data_dev(t0, t0_value);
@@ -29299,10 +29268,10 @@
     			if (dirty & /*addedBy*/ 16) set_data_dev(t4, /*addedBy*/ ctx[4]);
     			if (dirty & /*desc*/ 32) set_data_dev(t6, /*desc*/ ctx[5]);
 
-    			if (dirty & /*data*/ 1 && t9_value !== (t9_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
+    			if (dirty & /*data*/ 1 && t8_value !== (t8_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
     				maximumFractionDigits: 2,
     				minimumFractionDigits: 2
-    			}) + "")) set_data_dev(t9, t9_value);
+    			}) + "")) set_data_dev(t8, t8_value);
     		},
     		i: function intro(local) {
     			if (!div2_intro) {
@@ -31567,8 +31536,6 @@
     	let span1;
     	let t3;
     	let span2;
-    	let t4;
-    	let html_tag;
 
     	let raw2_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
     		maximumFractionDigits: 2,
@@ -31591,29 +31558,27 @@
     			span1 = element("span");
     			t3 = space();
     			span2 = element("span");
-    			t4 = text("$\r\n    ");
     			attr_dev(i, "class", "material-icons md-18");
     			set_style(i, "display", "block", 1);
-    			add_location(i, file$9, 73, 4, 2343);
+    			add_location(i, file$9, 75, 4, 2463);
     			attr_dev(div0, "id", "icon");
     			attr_dev(div0, "class", "rounded-full p-2 mr-2 fill-current");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[5]);
     			set_style(div0, "color", /*iconColor*/ ctx[6]);
-    			add_location(div0, file$9, 69, 2, 2201);
+    			add_location(div0, file$9, 71, 2, 2321);
     			attr_dev(span0, "class", "font-bold truncate mr-2");
-    			add_location(span0, file$9, 78, 4, 2504);
+    			add_location(span0, file$9, 80, 4, 2624);
     			attr_dev(span1, "class", "truncate");
     			set_style(span1, "color", "var(--text-color2)");
-    			add_location(span1, file$9, 81, 4, 2584);
+    			add_location(span1, file$9, 83, 4, 2704);
     			attr_dev(div1, "class", "flex flex-col items-start mr-4");
-    			add_location(div1, file$9, 77, 2, 2454);
-    			html_tag = new HtmlTag(raw2_value, null);
-    			attr_dev(span2, "class", "flex-grow flex justify-end font-bold");
-    			add_location(span2, file$9, 85, 2, 2688);
+    			add_location(div1, file$9, 79, 2, 2574);
+    			attr_dev(span2, "class", "flex-grow flex items-center justify-end font-bold amount svelte-yg0mqo");
+    			add_location(span2, file$9, 87, 2, 2808);
     			attr_dev(div2, "class", "flex flex-row p-4 items-center w-full cursor-pointer");
     			set_style(div2, "background-color", "var(--background-color)");
     			set_style(div2, "color", "var(--text-color)");
-    			add_location(div2, file$9, 64, 0, 1953);
+    			add_location(div2, file$9, 66, 0, 2073);
     			dispose = listen_dev(div2, "click", /*click_handler*/ ctx[12], false, false, false);
     		},
     		l: function claim(nodes) {
@@ -31633,8 +31598,7 @@
     			span1.innerHTML = /*desc*/ ctx[3];
     			append_dev(div2, t3);
     			append_dev(div2, span2);
-    			append_dev(span2, t4);
-    			html_tag.m(span2);
+    			span2.innerHTML = raw2_value;
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*materialIcon*/ 16) set_data_dev(t0, /*materialIcon*/ ctx[4]);
@@ -31651,8 +31615,7 @@
     			if (dirty & /*data*/ 1 && raw2_value !== (raw2_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
     				maximumFractionDigits: 2,
     				minimumFractionDigits: 2
-    			}) + "")) html_tag.p(raw2_value);
-    		},
+    			}) + "")) span2.innerHTML = raw2_value;		},
     		i: function intro(local) {
     			if (!div2_intro) {
     				add_render_callback(() => {

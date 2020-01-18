@@ -62,6 +62,13 @@
   }
 </script>
 
+<style type="text/postcss">
+  .amount:before {
+    content: "$";
+    @apply text-sm font-light mr-1;
+  }
+</style>
+
 <div
   class="flex flex-row p-4 items-center w-full cursor-pointer"
   style="background-color: var(--background-color); color: var(--text-color)"
@@ -83,8 +90,7 @@
       {@html desc}
     </span>
   </div>
-  <span class="flex-grow flex justify-end font-bold">
-    $
+  <span class="flex-grow flex items-center justify-end font-bold amount">
     {@html data.amount.toLocaleString(undefined, {
       maximumFractionDigits: 2,
       minimumFractionDigits: 2
