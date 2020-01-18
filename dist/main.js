@@ -29229,34 +29229,34 @@
     			span2 = element("span");
     			t5 = space();
     			span3 = element("span");
-    			add_location(span0, file$5, 79, 4, 2495);
+    			add_location(span0, file$5, 80, 4, 2512);
     			attr_dev(div0, "class", "rounded-full mr-2 font-bold text-sm whitespace-no-wrap");
 
     			set_style(div0, "color", /*$themeIsBright*/ ctx[7]
     			? /*iconColor*/ ctx[6]
     			: /*backgroundColor*/ ctx[5]);
 
-    			add_location(div0, file$5, 76, 2, 2350);
+    			add_location(div0, file$5, 77, 2, 2367);
     			attr_dev(i, "class", "material-icons");
     			set_style(i, "display", "block", 1);
     			set_style(i, "font-size", "14px");
-    			add_location(i, file$5, 85, 4, 2713);
+    			add_location(i, file$5, 86, 4, 2730);
     			attr_dev(div1, "id", "icon");
     			attr_dev(div1, "class", "rounded-full p-1 mr-2 fill-current");
     			set_style(div1, "background-color", /*backgroundColor*/ ctx[5]);
     			set_style(div1, "color", /*iconColor*/ ctx[6]);
-    			add_location(div1, file$5, 81, 2, 2571);
+    			add_location(div1, file$5, 82, 2, 2588);
     			attr_dev(span1, "class", "truncate mr-2 flex-none");
-    			add_location(span1, file$5, 89, 2, 2835);
+    			add_location(span1, file$5, 90, 2, 2852);
     			attr_dev(span2, "class", "truncate mr-2");
     			set_style(span2, "color", "var(--text-color2)");
-    			add_location(span2, file$5, 92, 2, 2909);
+    			add_location(span2, file$5, 93, 2, 2926);
     			attr_dev(span3, "class", "flex-grow flex items-center justify-end font-bold amount svelte-yg0mqo");
-    			add_location(span3, file$5, 95, 2, 3004);
+    			add_location(span3, file$5, 96, 2, 3021);
     			attr_dev(div2, "class", "flex w-full p-4 items-center cursor-pointer");
     			set_style(div2, "background-color", "var(--background-color)");
     			set_style(div2, "color", "var(--text-color)");
-    			add_location(div2, file$5, 71, 0, 2111);
+    			add_location(div2, file$5, 72, 0, 2128);
     			dispose = listen_dev(div2, "click", /*click_handler*/ ctx[13], false, false, false);
     		},
     		l: function claim(nodes) {
@@ -30691,32 +30691,32 @@
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[29] = list[i];
-    	child_ctx[31] = i;
+    	child_ctx[30] = list[i];
+    	child_ctx[32] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[32] = list[i];
+    	child_ctx[33] = list[i];
     	return child_ctx;
     }
 
-    // (222:10) {#each typeDesigns as typeDesign}
+    // (226:10) {#each typeDesigns as typeDesign}
     function create_each_block_1$2(ctx) {
     	let current;
 
     	const typebutton = new TypeButton({
     			props: {
-    				label: /*typeDesign*/ ctx[32].type,
-    				colorHue: /*typeDesign*/ ctx[32].hue,
-    				isActive: /*type*/ ctx[4] === /*typeDesign*/ ctx[32].type,
-    				materialIcon: /*typeDesign*/ ctx[32].materialIcon
+    				label: /*typeDesign*/ ctx[33].type,
+    				colorHue: /*typeDesign*/ ctx[33].hue,
+    				isActive: /*type*/ ctx[4] === /*typeDesign*/ ctx[33].type,
+    				materialIcon: /*typeDesign*/ ctx[33].materialIcon
     			},
     			$$inline: true
     		});
 
-    	typebutton.$on("dispatchType", /*receiveType*/ ctx[12]);
+    	typebutton.$on("dispatchType", /*receiveType*/ ctx[13]);
 
     	const block = {
     		c: function create() {
@@ -30728,7 +30728,7 @@
     		},
     		p: function update(ctx, dirty) {
     			const typebutton_changes = {};
-    			if (dirty[0] & /*type*/ 16) typebutton_changes.isActive = /*type*/ ctx[4] === /*typeDesign*/ ctx[32].type;
+    			if (dirty[0] & /*type*/ 16) typebutton_changes.isActive = /*type*/ ctx[4] === /*typeDesign*/ ctx[33].type;
     			typebutton.$set(typebutton_changes);
     		},
     		i: function intro(local) {
@@ -30749,20 +30749,20 @@
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(222:10) {#each typeDesigns as typeDesign}",
+    		source: "(226:10) {#each typeDesigns as typeDesign}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (243:8) {#if suggestedDescriptions}
+    // (247:8) {#if suggestedDescriptions}
     function create_if_block_1$2(ctx) {
     	let each_blocks = [];
     	let each_1_lookup = new Map_1();
     	let each_1_anchor;
     	let each_value = /*suggestedDescriptions*/ ctx[5];
-    	const get_key = ctx => /*suggestion*/ ctx[29];
+    	const get_key = ctx => /*suggestion*/ ctx[30];
 
     	for (let i = 0; i < each_value.length; i += 1) {
     		let child_ctx = get_each_context$2(ctx, each_value, i);
@@ -30808,24 +30808,24 @@
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(243:8) {#if suggestedDescriptions}",
+    		source: "(247:8) {#if suggestedDescriptions}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (244:10) {#each suggestedDescriptions as suggestion, index (suggestion)}
+    // (248:10) {#each suggestedDescriptions as suggestion, index (suggestion)}
     function create_each_block$2(key_1, ctx) {
     	let button;
-    	let t0_value = /*suggestion*/ ctx[29] + "";
+    	let t0_value = /*suggestion*/ ctx[30] + "";
     	let t0;
     	let t1;
     	let button_intro;
     	let dispose;
 
     	function click_handler_5(...args) {
-    		return /*click_handler_5*/ ctx[26](/*suggestion*/ ctx[29], ...args);
+    		return /*click_handler_5*/ ctx[27](/*suggestion*/ ctx[30], ...args);
     	}
 
     	const block = {
@@ -30838,7 +30838,7 @@
     			attr_dev(button, "class", "rounded-full px-3 py-1 self-start mr-2 mt-2");
     			set_style(button, "color", "var(--text-color2)");
     			set_style(button, "background-color", "var(--inactive-button-color)");
-    			add_location(button, file$8, 244, 12, 9069);
+    			add_location(button, file$8, 248, 12, 9221);
     			dispose = listen_dev(button, "click", click_handler_5, false, false, false);
     			this.first = button;
     		},
@@ -30849,14 +30849,14 @@
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*suggestedDescriptions*/ 32 && t0_value !== (t0_value = /*suggestion*/ ctx[29] + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*suggestedDescriptions*/ 32 && t0_value !== (t0_value = /*suggestion*/ ctx[30] + "")) set_data_dev(t0, t0_value);
     		},
     		i: function intro(local) {
     			if (!button_intro) {
     				add_render_callback(() => {
     					button_intro = create_in_transition(button, fade, {
     						duration: 180,
-    						delay: 30 * /*index*/ ctx[31]
+    						delay: 30 * /*index*/ ctx[32]
     					});
 
     					button_intro.start();
@@ -30874,14 +30874,14 @@
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(244:10) {#each suggestedDescriptions as suggestion, index (suggestion)}",
+    		source: "(248:10) {#each suggestedDescriptions as suggestion, index (suggestion)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (267:6) {#if Object.keys($entryData).length > 0}
+    // (271:6) {#if Object.keys($entryData).length > 0}
     function create_if_block$5(ctx) {
     	let button;
     	let dispose;
@@ -30891,8 +30891,8 @@
     			button = element("button");
     			button.textContent = "Delete";
     			attr_dev(button, "class", "w-full text-center mb-12 bg-transparent text-red-600");
-    			add_location(button, file$8, 267, 8, 10064);
-    			dispose = listen_dev(button, "click", /*click_handler_7*/ ctx[28], false, false, false);
+    			add_location(button, file$8, 271, 8, 10216);
+    			dispose = listen_dev(button, "click", /*click_handler_7*/ ctx[29], false, false, false);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -30908,7 +30908,7 @@
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(267:6) {#if Object.keys($entryData).length > 0}",
+    		source: "(271:6) {#if Object.keys($entryData).length > 0}",
     		ctx
     	});
 
@@ -30974,7 +30974,7 @@
 
     	function input0_input_handler() {
     		input0_updating = true;
-    		/*input0_input_handler*/ ctx[19].call(input0);
+    		/*input0_input_handler*/ ctx[20].call(input0);
     	}
 
     	let each_value_1 = typeDesigns;
@@ -31052,91 +31052,91 @@
     			attr_dev(i, "class", "material-icons fill-current");
     			set_style(i, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i, "aria-label", "Back button");
-    			add_location(i, file$8, 170, 6, 6364);
-    			add_location(button0, file$8, 169, 4, 6348);
+    			add_location(i, file$8, 174, 6, 6446);
+    			add_location(button0, file$8, 173, 4, 6430);
     			attr_dev(div0, "class", div0_class_value = "w-full flex flex-row p-4 " + (/*scrolling*/ ctx[0] ? "shadow" : "") + " fixed top-0\r\n    justify-between z-10");
     			set_style(div0, "height", "56px");
     			set_style(div0, "background-color", "var(--background-color)");
-    			add_location(div0, file$8, 165, 2, 6164);
+    			add_location(div0, file$8, 169, 2, 6246);
     			attr_dev(label0, "for", "amount-input");
     			attr_dev(label0, "class", "svelte-8wlyyu");
-    			add_location(label0, file$8, 184, 8, 6810);
+    			add_location(label0, file$8, 188, 8, 6962);
     			attr_dev(input0, "id", "amount-input");
     			attr_dev(input0, "class", "amount text-2xl svelte-8wlyyu");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$8, 185, 8, 6860);
+    			add_location(input0, file$8, 189, 8, 7012);
     			attr_dev(div1, "class", "input-row svelte-8wlyyu");
-    			add_location(div1, file$8, 183, 6, 6738);
+    			add_location(div1, file$8, 187, 6, 6890);
     			attr_dev(label1, "for", "date-input");
     			attr_dev(label1, "class", "svelte-8wlyyu");
-    			add_location(label1, file$8, 194, 8, 7177);
+    			add_location(label1, file$8, 198, 8, 7329);
     			attr_dev(button1, "id", "today-button");
     			attr_dev(button1, "class", "date-button active svelte-8wlyyu");
-    			add_location(button1, file$8, 196, 10, 7253);
+    			add_location(button1, file$8, 200, 10, 7405);
     			attr_dev(button2, "id", "yesterday-button");
     			attr_dev(button2, "class", "date-button svelte-8wlyyu");
-    			add_location(button2, file$8, 202, 10, 7431);
+    			add_location(button2, file$8, 206, 10, 7583);
     			attr_dev(div2, "class", "mr-4");
-    			add_location(div2, file$8, 195, 8, 7223);
+    			add_location(div2, file$8, 199, 8, 7375);
     			attr_dev(div3, "class", "input-row svelte-8wlyyu");
-    			add_location(div3, file$8, 193, 6, 7105);
-    			add_location(span, file$8, 215, 8, 7839);
+    			add_location(div3, file$8, 197, 6, 7257);
+    			add_location(span, file$8, 219, 8, 7991);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "svelte-8wlyyu");
-    			add_location(input1, file$8, 216, 8, 7872);
+    			add_location(input1, file$8, 220, 8, 8024);
     			attr_dev(div4, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n        ml-4");
     			set_style(div4, "color", "var(--text-color2)");
-    			add_location(div4, file$8, 210, 6, 7640);
+    			add_location(div4, file$8, 214, 6, 7792);
     			attr_dev(label2, "class", "svelte-8wlyyu");
-    			add_location(label2, file$8, 219, 8, 8032);
+    			add_location(label2, file$8, 223, 8, 8184);
     			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div5, file$8, 220, 8, 8061);
+    			add_location(div5, file$8, 224, 8, 8213);
     			attr_dev(div6, "class", "mt-12 flex flex-col");
-    			add_location(div6, file$8, 218, 6, 7949);
+    			add_location(div6, file$8, 222, 6, 8101);
     			attr_dev(label3, "for", "description-input");
     			attr_dev(label3, "class", "svelte-8wlyyu");
-    			add_location(label3, file$8, 232, 8, 8552);
+    			add_location(label3, file$8, 236, 8, 8704);
     			attr_dev(input2, "class", "truncate text-2xl svelte-8wlyyu");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "(Optional)");
-    			add_location(input2, file$8, 233, 8, 8612);
+    			add_location(input2, file$8, 237, 8, 8764);
     			attr_dev(div7, "class", "input-row svelte-8wlyyu");
-    			add_location(div7, file$8, 231, 6, 8479);
+    			add_location(div7, file$8, 235, 6, 8631);
     			attr_dev(div8, "class", "flex mt-4 mx-4 flex-wrap");
     			set_style(div8, "height", "80px");
-    			add_location(div8, file$8, 241, 6, 8884);
+    			add_location(div8, file$8, 245, 6, 9036);
     			attr_dev(button3, "class", "rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5\r\n          mt-24 mb-12 bg-gray-300");
 
     			attr_dev(button3, "style", button3_style_value = /*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
     			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
     			: "background-color:hsl(var(--accent-hue), 50%, 50%); opacity: 0.3");
 
-    			add_location(button3, file$8, 258, 8, 9589);
+    			add_location(button3, file$8, 262, 8, 9741);
     			attr_dev(div9, "class", "w-full text-center block");
-    			add_location(div9, file$8, 255, 6, 9483);
+    			add_location(div9, file$8, 259, 6, 9635);
     			attr_dev(div10, "class", "form-wrapper svelte-8wlyyu");
-    			add_location(div10, file$8, 182, 4, 6704);
+    			add_location(div10, file$8, 186, 4, 6856);
     			attr_dev(div11, "class", "flex flex-col items-center justify-around mt-8");
-    			add_location(div11, file$8, 181, 2, 6638);
+    			add_location(div11, file$8, 185, 2, 6790);
     			attr_dev(div12, "id", "entry-page");
     			attr_dev(div12, "class", "h-screen w-full absolute top-0 overflow-auto");
     			set_style(div12, "background-color", "var(--background-color)");
     			set_style(div12, "color", "var(--text-color)");
-    			add_location(div12, file$8, 160, 0, 5970);
+    			add_location(div12, file$8, 164, 0, 6052);
 
     			dispose = [
-    				listen_dev(i, "click", /*click_handler*/ ctx[18], false, false, false),
+    				listen_dev(i, "click", /*click_handler*/ ctx[19], false, false, false),
     				listen_dev(input0, "input", input0_input_handler),
-    				listen_dev(input0, "click", /*click_handler_1*/ ctx[20], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_2*/ ctx[21], false, false, false),
-    				listen_dev(button2, "click", /*click_handler_3*/ ctx[22], false, false, false),
-    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[23]),
-    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[24]),
-    				listen_dev(input2, "click", /*click_handler_4*/ ctx[25], false, false, false),
-    				listen_dev(button3, "click", /*click_handler_6*/ ctx[27], false, false, false)
+    				listen_dev(input0, "click", /*click_handler_1*/ ctx[21], false, false, false),
+    				listen_dev(button1, "click", /*click_handler_2*/ ctx[22], false, false, false),
+    				listen_dev(button2, "click", /*click_handler_3*/ ctx[23], false, false, false),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[24]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[25]),
+    				listen_dev(input2, "click", /*click_handler_4*/ ctx[26], false, false, false),
+    				listen_dev(button3, "click", /*click_handler_6*/ ctx[28], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
@@ -31211,7 +31211,7 @@
     				set_input_value(input1, /*date*/ ctx[3]);
     			}
 
-    			if (dirty[0] & /*type, receiveType*/ 4112) {
+    			if (dirty[0] & /*type, receiveType*/ 8208) {
     				each_value_1 = typeDesigns;
     				let i;
 
@@ -31368,10 +31368,13 @@
     function instance$8($$self, $$props, $$invalidate) {
     	let $entryData;
     	let $userInfo;
+    	let $filteredSearchData;
     	validate_store(entryData, "entryData");
     	component_subscribe($$self, entryData, $$value => $$invalidate(10, $entryData = $$value));
     	validate_store(userInfo, "userInfo");
-    	component_subscribe($$self, userInfo, $$value => $$invalidate(16, $userInfo = $$value));
+    	component_subscribe($$self, userInfo, $$value => $$invalidate(17, $userInfo = $$value));
+    	validate_store(filteredSearchData, "filteredSearchData");
+    	component_subscribe($$self, filteredSearchData, $$value => $$invalidate(11, $filteredSearchData = $$value));
     	let scrolling = false;
     	let description = "";
     	let amount = 0;
@@ -31441,7 +31444,9 @@
     	}
 
     	function sendEntry() {
-    		window.history.back();
+    		handleRouting("dashboard");
+    		view.set("dashboard");
+    		overlay.set("");
     		toastMessage.set("Submitting...");
     		const db = firebase$1.firestore();
 
@@ -31483,7 +31488,9 @@
     	}
 
     	const click_handler = () => {
-    		window.history.back();
+    		Object.keys($filteredSearchData).length > 0
+    		? window.history.back()
+    		: window.history.go(-2);
     	};
 
     	function input0_input_handler() {
@@ -31528,6 +31535,7 @@
     		if ("wrapperEl" in $$props) wrapperEl = $$props.wrapperEl;
     		if ("$entryData" in $$props) entryData.set($entryData = $$props.$entryData);
     		if ("$userInfo" in $$props) userInfo.set($userInfo = $$props.$userInfo);
+    		if ("$filteredSearchData" in $$props) filteredSearchData.set($filteredSearchData = $$props.$filteredSearchData);
     	};
 
     	$$self.$$.update = () => {
@@ -31569,6 +31577,7 @@
     		typeValid,
     		isUpdate,
     		$entryData,
+    		$filteredSearchData,
     		setDate,
     		receiveType,
     		sendEntry,

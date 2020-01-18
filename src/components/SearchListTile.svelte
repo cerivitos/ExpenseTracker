@@ -4,6 +4,7 @@
   import {
     queryString,
     entryData,
+    detailData,
     overlay,
     themeIsBright
   } from "../store/store";

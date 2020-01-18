@@ -6,7 +6,8 @@
     entryData,
     dashboardShouldReload,
     overlay,
-    detailData
+    detailData,
+    filteredSearchData
   } from "../store/store";
   import { onMount, onDestroy } from "svelte";
   import TypeButton from "./TypeButton.svelte";
@@ -91,7 +92,10 @@
   }
 
   function sendEntry() {
-    window.history.back();
+    handleRouting("dashboard");
+    view.set("dashboard");
+    overlay.set("");
+
     toastMessage.set("Submitting...");
 
     const db = firebase.firestore();
@@ -232,7 +236,7 @@
         style="color: hsl(var(--primary-hue), 50%, 50%)"
         aria-label="Back button"
         on:click={() => {
-          window.history.back();
+          Object.keys($filteredSearchData).length > 0 ? window.history.back() : window.history.go(-2);
         }}>
         arrow_back
       </i>
