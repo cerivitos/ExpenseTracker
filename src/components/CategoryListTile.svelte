@@ -49,7 +49,9 @@
         {Math.round(data.percentage)}%
       </span>
     </div>
-    <span class="ml-2 mr-4 font-bold">${Math.round(data.sum)}</span>
+    <span class="ml-2 mr-4 font-bold">
+      ${Math.round(data.sum).toLocaleString()}
+    </span>
   </div>
   <div
     class="absolute left-0 top-0 h-full rounded-r opacity-25"

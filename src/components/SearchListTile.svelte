@@ -85,6 +85,9 @@
   </div>
   <span class="flex-grow flex justify-end font-bold">
     $
-    {@html data.amount.toFixed(2)}
+    {@html data.amount.toLocaleString(undefined, {
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 2
+    })}
   </span>
 </div>

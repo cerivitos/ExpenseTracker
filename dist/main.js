@@ -26778,7 +26778,7 @@
     	let t6;
     	let span2;
     	let t7;
-    	let t8_value = Math.round(/*data*/ ctx[0].sum) + "";
+    	let t8_value = Math.round(/*data*/ ctx[0].sum).toLocaleString() + "";
     	let t8;
     	let t9;
     	let div3;
@@ -26837,7 +26837,7 @@
     			: window.innerWidth * 1 / 2) * /*data*/ ctx[0].percentage / 100 + "px");
 
     			set_style(div3, "background-color", /*barColor*/ ctx[5]);
-    			add_location(div3, file, 53, 2, 1788);
+    			add_location(div3, file, 55, 2, 1819);
     			attr_dev(div4, "class", div4_class_value = "relative py-6 " + (window.innerWidth <= 768 ? "w-full" : "w-8/12") + " flex\r\n  flex-row items-center cursor-pointer");
     			add_location(div4, file, 30, 0, 878);
     			dispose = listen_dev(div4, "click", /*click_handler*/ ctx[9], false, false, false);
@@ -26880,7 +26880,7 @@
 
     			if ((!current || dirty & /*data*/ 1) && t2_value !== (t2_value = /*data*/ ctx[0].type + "")) set_data_dev(t2, t2_value);
     			if ((!current || dirty & /*data*/ 1) && t4_value !== (t4_value = Math.round(/*data*/ ctx[0].percentage) + "")) set_data_dev(t4, t4_value);
-    			if ((!current || dirty & /*data*/ 1) && t8_value !== (t8_value = Math.round(/*data*/ ctx[0].sum) + "")) set_data_dev(t8, t8_value);
+    			if ((!current || dirty & /*data*/ 1) && t8_value !== (t8_value = Math.round(/*data*/ ctx[0].sum).toLocaleString() + "")) set_data_dev(t8, t8_value);
 
     			if (!current || dirty & /*data*/ 1) {
     				set_style(div3, "width", (window.innerWidth <= 768
@@ -29210,7 +29210,12 @@
     	let t7;
     	let span4;
     	let t8;
-    	let t9_value = /*data*/ ctx[0].amount.toFixed(2) + "";
+
+    	let t9_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
+    		maximumFractionDigits: 2,
+    		minimumFractionDigits: 2
+    	}) + "";
+
     	let t9;
     	let div2_intro;
 
@@ -29293,7 +29298,11 @@
 
     			if (dirty & /*addedBy*/ 16) set_data_dev(t4, /*addedBy*/ ctx[4]);
     			if (dirty & /*desc*/ 32) set_data_dev(t6, /*desc*/ ctx[5]);
-    			if (dirty & /*data*/ 1 && t9_value !== (t9_value = /*data*/ ctx[0].amount.toFixed(2) + "")) set_data_dev(t9, t9_value);
+
+    			if (dirty & /*data*/ 1 && t9_value !== (t9_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
+    				maximumFractionDigits: 2,
+    				minimumFractionDigits: 2
+    			}) + "")) set_data_dev(t9, t9_value);
     		},
     		i: function intro(local) {
     			if (!div2_intro) {
@@ -31560,7 +31569,12 @@
     	let span2;
     	let t4;
     	let html_tag;
-    	let raw2_value = /*data*/ ctx[0].amount.toFixed(2) + "";
+
+    	let raw2_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
+    		maximumFractionDigits: 2,
+    		minimumFractionDigits: 2
+    	}) + "";
+
     	let div2_intro;
     	let dispose;
 
@@ -31633,7 +31647,11 @@
     				set_style(div0, "color", /*iconColor*/ ctx[6]);
     			}
 
-    			if (dirty & /*addedBy*/ 4) span0.innerHTML = /*addedBy*/ ctx[2];			if (dirty & /*desc*/ 8) span1.innerHTML = /*desc*/ ctx[3];			if (dirty & /*data*/ 1 && raw2_value !== (raw2_value = /*data*/ ctx[0].amount.toFixed(2) + "")) html_tag.p(raw2_value);
+    			if (dirty & /*addedBy*/ 4) span0.innerHTML = /*addedBy*/ ctx[2];			if (dirty & /*desc*/ 8) span1.innerHTML = /*desc*/ ctx[3];
+    			if (dirty & /*data*/ 1 && raw2_value !== (raw2_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
+    				maximumFractionDigits: 2,
+    				minimumFractionDigits: 2
+    			}) + "")) html_tag.p(raw2_value);
     		},
     		i: function intro(local) {
     			if (!div2_intro) {

@@ -36,5 +36,10 @@
       {desc}
     </span>
   </div>
-  <span class="font-bold">$ {data.amount.toFixed(2)}</span>
+  <span class="font-bold">
+    $ {data.amount.toLocaleString(undefined, {
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 2
+    })}
+  </span>
 </div>
