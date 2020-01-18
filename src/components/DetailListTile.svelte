@@ -30,16 +30,13 @@
   style="background-color: var(--background-color); color: var(--text-color)"
   in:fade={{ duration: 120, delay: index * 50 }}>
   <div
-    class="w-10 rounded-lg flex flex-col items-center justify-between py-1 mr-4"
+    class="rounded-full px-2 mr-4 font-bold text-sm whitespace-no-wrap"
     style="background-color:{backgroundColor}; color:{iconColor}">
-    <span class="font-bold text-xs">
-      {new Date(data.date).toString().substring(4, 7)}
-    </span>
-    <span class="font-bold">{new Date(data.date).getDate()}</span>
+    <span>{new Date(data.date).toString().substring(4, 10)}</span>
   </div>
-  <div class="flex flex-col flex-grow items-start justify-around truncate mr-4">
-    <span class="font-bold w-full truncate">{addedBy}</span>
-    <span class="w-full truncate" style="color: var(--text-color2)">
+  <div class="flex flex-row w-full items-center justify-start truncate mr-4">
+    <span class="flex-grow-0 truncate mr-2">{addedBy}</span>
+    <span class="truncate flex-grow" style="color: var(--text-color2)">
       {desc}
     </span>
   </div>

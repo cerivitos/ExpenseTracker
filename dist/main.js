@@ -29192,28 +29192,24 @@
     	let div2;
     	let div0;
     	let span0;
-    	let t0_value = new Date(/*data*/ ctx[0].date).toString().substring(4, 7) + "";
+    	let t0_value = new Date(/*data*/ ctx[0].date).toString().substring(4, 10) + "";
     	let t0;
     	let t1;
+    	let div1;
     	let span1;
-    	let t2_value = new Date(/*data*/ ctx[0].date).getDate() + "";
     	let t2;
     	let t3;
-    	let div1;
     	let span2;
     	let t4;
     	let t5;
     	let span3;
-    	let t6;
-    	let t7;
-    	let span4;
 
-    	let t8_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
+    	let t6_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
     		maximumFractionDigits: 2,
     		minimumFractionDigits: 2
     	}) + "";
 
-    	let t8;
+    	let t6;
     	let div2_intro;
 
     	const block = {
@@ -29223,35 +29219,29 @@
     			span0 = element("span");
     			t0 = text(t0_value);
     			t1 = space();
-    			span1 = element("span");
-    			t2 = text(t2_value);
-    			t3 = space();
     			div1 = element("div");
+    			span1 = element("span");
+    			t2 = text(/*addedBy*/ ctx[4]);
+    			t3 = space();
     			span2 = element("span");
-    			t4 = text(/*addedBy*/ ctx[4]);
+    			t4 = text(/*desc*/ ctx[5]);
     			t5 = space();
     			span3 = element("span");
-    			t6 = text(/*desc*/ ctx[5]);
-    			t7 = space();
-    			span4 = element("span");
-    			t8 = text(t8_value);
-    			attr_dev(span0, "class", "font-bold text-xs");
-    			add_location(span0, file$5, 29, 4, 987);
-    			attr_dev(span1, "class", "font-bold");
-    			add_location(span1, file$5, 32, 4, 1094);
-    			attr_dev(div0, "class", "w-10 rounded-lg flex flex-col items-center justify-between py-1 mr-4");
+    			t6 = text(t6_value);
+    			add_location(span0, file$5, 29, 4, 978);
+    			attr_dev(div0, "class", "rounded-full px-2 mr-4 font-bold text-sm whitespace-no-wrap");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[1]);
     			set_style(div0, "color", /*iconColor*/ ctx[2]);
     			add_location(div0, file$5, 26, 2, 827);
-    			attr_dev(span2, "class", "font-bold w-full truncate");
-    			add_location(span2, file$5, 35, 4, 1254);
-    			attr_dev(span3, "class", "w-full truncate");
-    			set_style(span3, "color", "var(--text-color2)");
-    			add_location(span3, file$5, 36, 4, 1316);
-    			attr_dev(div1, "class", "flex flex-col flex-grow items-start justify-around truncate mr-4");
-    			add_location(div1, file$5, 34, 2, 1170);
-    			attr_dev(span4, "class", "font-bold amount svelte-yg0mqo");
-    			add_location(span4, file$5, 40, 2, 1421);
+    			attr_dev(span1, "class", "flex-grow-0 truncate mr-2");
+    			add_location(span1, file$5, 32, 4, 1135);
+    			attr_dev(span2, "class", "truncate flex-grow");
+    			set_style(span2, "color", "var(--text-color2)");
+    			add_location(span2, file$5, 33, 4, 1197);
+    			attr_dev(div1, "class", "flex flex-row w-full items-center justify-start truncate mr-4");
+    			add_location(div1, file$5, 31, 2, 1054);
+    			attr_dev(span3, "class", "font-bold amount svelte-yg0mqo");
+    			add_location(span3, file$5, 37, 2, 1305);
     			attr_dev(div2, "class", "flex flex-row p-4 items-center cursor-pointer");
     			set_style(div2, "background-color", "var(--background-color)");
     			set_style(div2, "color", "var(--text-color)");
@@ -29265,23 +29255,19 @@
     			append_dev(div2, div0);
     			append_dev(div0, span0);
     			append_dev(span0, t0);
-    			append_dev(div0, t1);
-    			append_dev(div0, span1);
-    			append_dev(span1, t2);
-    			append_dev(div2, t3);
+    			append_dev(div2, t1);
     			append_dev(div2, div1);
+    			append_dev(div1, span1);
+    			append_dev(span1, t2);
+    			append_dev(div1, t3);
     			append_dev(div1, span2);
     			append_dev(span2, t4);
-    			append_dev(div1, t5);
-    			append_dev(div1, span3);
+    			append_dev(div2, t5);
+    			append_dev(div2, span3);
     			append_dev(span3, t6);
-    			append_dev(div2, t7);
-    			append_dev(div2, span4);
-    			append_dev(span4, t8);
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*data*/ 1 && t0_value !== (t0_value = new Date(/*data*/ ctx[0].date).toString().substring(4, 7) + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*data*/ 1 && t2_value !== (t2_value = new Date(/*data*/ ctx[0].date).getDate() + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*data*/ 1 && t0_value !== (t0_value = new Date(/*data*/ ctx[0].date).toString().substring(4, 10) + "")) set_data_dev(t0, t0_value);
 
     			if (dirty & /*backgroundColor*/ 2) {
     				set_style(div0, "background-color", /*backgroundColor*/ ctx[1]);
@@ -29291,13 +29277,13 @@
     				set_style(div0, "color", /*iconColor*/ ctx[2]);
     			}
 
-    			if (dirty & /*addedBy*/ 16) set_data_dev(t4, /*addedBy*/ ctx[4]);
-    			if (dirty & /*desc*/ 32) set_data_dev(t6, /*desc*/ ctx[5]);
+    			if (dirty & /*addedBy*/ 16) set_data_dev(t2, /*addedBy*/ ctx[4]);
+    			if (dirty & /*desc*/ 32) set_data_dev(t4, /*desc*/ ctx[5]);
 
-    			if (dirty & /*data*/ 1 && t8_value !== (t8_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
+    			if (dirty & /*data*/ 1 && t6_value !== (t6_value = /*data*/ ctx[0].amount.toLocaleString(undefined, {
     				maximumFractionDigits: 2,
     				minimumFractionDigits: 2
-    			}) + "")) set_data_dev(t8, t8_value);
+    			}) + "")) set_data_dev(t6, t6_value);
     		},
     		i: function intro(local) {
     			if (!div2_intro) {
