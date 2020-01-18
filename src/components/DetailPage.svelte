@@ -228,11 +228,7 @@
                 class="w-full"
                 on:click={() => showEditDetail(data)}>
                 {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
-                  <DetailListTile
-                    {backgroundColor}
-                    {iconColor}
-                    {data}
-                    {index} />
+                  <DetailListTile {data} {index} />
                 {/if}
               </div>
             {/each}

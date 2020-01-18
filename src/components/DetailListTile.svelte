@@ -1,10 +1,11 @@
 <script>
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
+  import { typeDesigns } from "../util";
+  import { themeIsBright } from "../store/store";
 
   export let data;
-  export let backgroundColor = "hsl(var(--primary-hue), 50%, 50%)";
-  export let iconColor = "white";
+  let iconHue, materialIcon, backgroundColor, iconColor;
   export let index = 0;
 
   let month, date, addedBy, desc, amount;
@@ -15,6 +16,12 @@
     addedBy = data.addedBy;
     amount = data.amount;
     desc = data.desc;
+
+    const typeDesign = typeDesigns.filter(obj => obj.type === data.type)[0];
+    const hue = typeDesign.hue;
+    materialIcon = typeDesign.materialIcon;
+    backgroundColor = "hsl(" + hue + ", 50%, 80%)";
+    iconColor = "hsl(" + hue + ", 65%, 40%)";
   });
 </script>
 
@@ -30,12 +37,20 @@
   style="background-color: var(--background-color); color: var(--text-color)"
   in:fade={{ duration: 120, delay: index * 50 }}>
   <div
-    class="rounded-full px-2 mr-4 font-bold text-sm whitespace-no-wrap"
-    style="background-color:{backgroundColor}; color:{iconColor}">
+    class="rounded-full mr-2 font-bold text-sm whitespace-no-wrap"
+    style="color:{$themeIsBright ? iconColor : backgroundColor}">
     <span>{new Date(data.date).toString().substring(4, 10)}</span>
   </div>
+  <div
+    id="icon"
+    class="rounded-full p-1 mr-4 fill-current"
+    style="background-color: {backgroundColor}; color:{iconColor}">
+    <i class="material-icons" style="display:block !important; font-size: 14px">
+      {materialIcon}
+    </i>
+  </div>
   <div class="flex flex-row w-full items-center justify-start truncate mr-4">
-    <span class="flex-grow-0 truncate mr-2">{addedBy}</span>
+    <span class="mr-2">{addedBy}</span>
     <span class="truncate flex-grow" style="color: var(--text-color2)">
       {desc}
     </span>
