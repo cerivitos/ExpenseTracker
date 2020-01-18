@@ -3,7 +3,7 @@
   import scale from "../scale.js";
   import { onMount } from "svelte";
   import { typeDesigns, handleRouting } from "../util";
-  import { view, detailData, overlay } from "../store/store";
+  import { view, detailData, overlay, themeIsBright } from "../store/store";
 
   export let data;
   export let index;
@@ -36,8 +36,8 @@
 </style>
 
 <div
-  class="relative py-6 {window.innerWidth <= 768 ? 'w-full' : 'w-8/12'} flex
-  flex-row items-center cursor-pointer"
+  class="relative py-2 mb-2 {window.innerWidth <= 768 ? 'w-full' : 'w-8/12'}
+  flex flex-row items-center cursor-pointer"
   in:fade={{ duration: 80, delay: index * 50 }}
   out:fade={{ duration: 80 }}
   on:click={() => viewDetails()}>
@@ -50,11 +50,11 @@
         {materialIcon}
       </i>
     </div>
-    <div class="flex flex-row justify-between truncate flex-grow">
-      <span class="mr-2" id="label">{data.type}</span>
-      <span style="color: var(--text-color2)">
-        {Math.round(data.percentage)}%
-      </span>
+    <div
+      class="flex flex-row items-center truncate flex-grow"
+      style="color: {$themeIsBright ? iconColor : backgroundColor}">
+      <span class="mr-2 font-bold" id="label">{data.type}</span>
+      <span>{Math.round(data.percentage)}%</span>
     </div>
     <span class="ml-2 mr-4 font-bold amount">
       {Math.round(data.sum).toLocaleString()}

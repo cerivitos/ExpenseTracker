@@ -2,7 +2,13 @@
   import { onMount } from "svelte";
   import { fly, fade, scale, crossfade } from "svelte/transition";
   import { typeDesigns, convertRemToPixels, handleRouting } from "../util";
-  import { detailData, overlay, entryData, view } from "../store/store";
+  import {
+    detailData,
+    overlay,
+    entryData,
+    view,
+    themeIsBright
+  } from "../store/store";
   import { quintOut } from "svelte/easing";
   import { flip } from "svelte/animate";
   import DetailListTile from "./DetailListTile.svelte";
@@ -134,7 +140,7 @@
 <div
   id="detail-page"
   class="h-screen w-full absolute top-0 overflow-auto"
-  style="background-color: var(--background-color)"
+  style="background-color: var(--background-color); color: {$themeIsBright ? iconColor : backgroundColor}"
   out:fade={{ duration: 80 }}>
   <div
     class="w-full flex flex-row p-4 {scrolling ? 'shadow' : ''} fixed top-0
@@ -143,7 +149,6 @@
     <button>
       <i
         class="material-icons fill-current"
-        style="color:{iconColor}"
         on:click={() => {
           handleRouting('dashboard');
           view.set('dashboard');
@@ -155,7 +160,6 @@
     <button
       on:click={() => (sortByDate = !sortByDate)}
       class="fill-current"
-      style="color: {iconColor}"
       in:fade={{ duration: 80 }}>
       <div class="relative">
         {#if sortByDate}
@@ -190,7 +194,7 @@
         <span
           class="text-2xl font-bold mb-8"
           in:fly={{ y: 48, duration: 180, delay: 180 }}
-          style="color: {iconColor}">
+          style="color: {$themeIsBright ? iconColor : backgroundColor}">
           {$detailData.type}
         </span>
       </div>

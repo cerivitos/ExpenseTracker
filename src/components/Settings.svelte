@@ -1,5 +1,5 @@
 <script>
-  import { userInfo } from "../store/store";
+  import { userInfo, themeIsBright } from "../store/store";
   import firebase from "firebase/app";
   import "firebase/auth";
   import { fade } from "svelte/transition";
@@ -76,6 +76,12 @@
     document.getElementsByTagName("main")[0].setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
     selectedTheme = theme;
+
+    if (theme === "bright") {
+      themeIsBright.set(true);
+    } else if (theme === "dark") {
+      themeIsBright.set(false);
+    }
   }
 </script>
 

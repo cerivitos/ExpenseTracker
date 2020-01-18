@@ -7,6 +7,9 @@ export const view = writable("dashboard");
 export const overlay = writable("");
 export const dashboardShouldReload = writable(false);
 
+//Store whether color theme is bright or dark
+export const themeIsBright = writable(true);
+
 //Handle passing of search query string to allow highlighting in DetailListTile
 export const queryString = writable("");
 

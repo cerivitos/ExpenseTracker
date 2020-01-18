@@ -6,7 +6,13 @@
   import "firebase/auth";
   import "firebase/firestore";
   import { onMount } from "svelte";
-  import { view, userInfo, overlay, detailData } from "./store/store";
+  import {
+    view,
+    userInfo,
+    overlay,
+    detailData,
+    themeIsBright
+  } from "./store/store";
   import Toast from "./components/Toast.svelte";
   import Settings from "./components/Settings.svelte";
   import DetailPage from "./components/DetailPage.svelte";
@@ -47,9 +53,17 @@
 
     //Set color theme
     if (localStorage.getItem("theme")) {
+      const theme = localStorage.getItem("theme");
+
       document
         .getElementsByTagName("main")[0]
-        .setAttribute("data-theme", localStorage.getItem("theme"));
+        .setAttribute("data-theme", theme);
+
+      if (theme === "bright") {
+        themeIsBright.set(true);
+      } else if (theme === "dark") {
+        themeIsBright.set(false);
+      }
     }
 
     //Parse url to ui state on app load
