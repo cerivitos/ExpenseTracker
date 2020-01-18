@@ -1,7 +1,12 @@
 <script>
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
-  import { queryString, entryData, overlay } from "../store/store";
+  import {
+    queryString,
+    entryData,
+    overlay,
+    themeIsBright
+  } from "../store/store";
   import { typeDesigns, handleRouting } from "../util";
 
   export let data;
@@ -36,7 +41,7 @@
 
     return (
       textToHighlight.slice(0, startHighlightIndex) +
-      '<span class="font-bold" style="color: hsl(var(--secondary-hue), 50%, 50%); background-color: hsl(var(--secondary-hue), 35%, 80%)">' +
+      '<span class="font-bold" style="color: hsl(var(--secondary-hue), 50%, 50%); background-color: hsl(var(--secondary-hue), 35%, 90%)">' +
       textToHighlight.slice(startHighlightIndex, endHighlightIndex) +
       "</span>" +
       textToHighlight.slice(endHighlightIndex, textToHighlight.length)
@@ -70,23 +75,30 @@
 </style>
 
 <div
-  class="flex flex-row p-4 items-center w-full cursor-pointer"
+  class="flex w-full p-4 items-center cursor-pointer"
   style="background-color: var(--background-color); color: var(--text-color)"
   in:fade={{ duration: 120, delay: index * 50 + 30 }}
   on:click={() => showEditDetail(data)}>
   <div
+    class="rounded-full mr-2 font-bold text-sm whitespace-no-wrap"
+    style="color:{$themeIsBright ? iconColor : backgroundColor}">
+    <span>{new Date(data.date).toString().substring(4, 10)}</span>
+  </div>
+  <div
     id="icon"
-    class="rounded-full p-2 mr-2 fill-current"
+    class="rounded-full p-1 mr-4 fill-current"
     style="background-color: {backgroundColor}; color:{iconColor}">
-    <i class="material-icons md-18" style="display:block !important">
+    <i class="material-icons" style="display:block !important; font-size: 14px">
       {materialIcon}
     </i>
   </div>
-  <div class="flex flex-col items-start mr-4">
-    <span class="font-bold truncate mr-2">
+  <div class="{window.innerWidth >= 768 ? 'flex' : 'w-1/2'} items-start mr-4">
+    <span class="truncate mr-2 {window.innerWidth >= 768 ? '' : 'block'}">
       {@html addedBy}
     </span>
-    <span class="truncate" style="color: var(--text-color2)">
+    <span
+      class="truncate {window.innerWidth >= 768 ? '' : 'block'}"
+      style="color: var(--text-color2)">
       {@html desc}
     </span>
   </div>

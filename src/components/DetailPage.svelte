@@ -11,7 +11,7 @@
   } from "../store/store";
   import { quintOut } from "svelte/easing";
   import { flip } from "svelte/animate";
-  import DetailListTile from "./DetailListTile.svelte";
+  import SearchListTile from "./SearchListTile.svelte";
 
   let getBucketsPromise = createBuckets();
   let materialIcon, backgroundColor, iconColor;
@@ -228,7 +228,7 @@
                 class="w-full"
                 on:click={() => showEditDetail(data)}>
                 {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
-                  <DetailListTile {data} {index} />
+                  <SearchListTile {data} {index} />
                 {/if}
               </div>
             {/each}

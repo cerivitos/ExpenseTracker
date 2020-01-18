@@ -33,7 +33,7 @@
 </style>
 
 <div
-  class="flex flex-row p-4 items-center cursor-pointer"
+  class="flex flex-row p-4 items-center w-full cursor-pointer"
   style="background-color: var(--background-color); color: var(--text-color)"
   in:fade={{ duration: 120, delay: index * 50 }}>
   <div
