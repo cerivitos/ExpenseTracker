@@ -1,9 +1,16 @@
 <script>
-  import { userInfo, themeIsBright, toastMessage } from "../store/store";
+  import {
+    userInfo,
+    themeIsBright,
+    toastMessage,
+    view,
+    dashboardShouldReload
+  } from "../store/store";
   import firebase from "firebase/app";
   import "firebase/auth";
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
+  import { handleRouting } from "../util";
 
   let selectedTheme = "bright";
 
@@ -67,7 +74,7 @@
   }
 
   .label {
-    @apply text-lg font-bold;
+    @apply text-lg;
   }
 
   .theme-button {
@@ -151,7 +158,7 @@
         </div>
       </div>
     {/if}
-    <div class="w-full flex flex-row items-center justify-between my-12">
+    <div class="w-full flex flex-row items-center justify-between mt-12">
       <span class="label">Theme</span>
       <div class="flex flex-row">
         <div
@@ -163,6 +170,21 @@
       </div>
     </div>
     <div
+      class="w-full flex flex-row items-center justify-between my-12
+      fill-current"
+      on:click={() => {
+        dashboardShouldReload.set(true);
+        handleRouting('dashboard');
+        view.set('dashboard');
+      }}>
+      <span class="label">Full refresh from database</span>
+      <i
+        class="material-icons md-48"
+        style="color: hsl(var(--primary-hue), 50%, 50%)">
+        cloud_download
+      </i>
+    </div>
+    <div
       class="w-full text-center my-8 flex flex-row justify-center"
       style="color: var(--text-color2)">
       <a href="/privacy-policy.html" target="_blank" class="mr-2">
@@ -172,5 +194,4 @@
       <span class="text-center mb-8 ml-2">v0.1</span>
     </div>
   </div>
-
 </div>
