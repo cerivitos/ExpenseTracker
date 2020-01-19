@@ -89,7 +89,7 @@
     id="icon"
     class="rounded-full p-1 mr-2 fill-current"
     style="background-color: {backgroundColor}; color:{iconColor}">
-    <i class="material-icons" style="display:block !important; font-size: 14px">
+    <i class="material-icons-round" style="display:block !important; font-size: 14px">
       {materialIcon}
     </i>
   </div>

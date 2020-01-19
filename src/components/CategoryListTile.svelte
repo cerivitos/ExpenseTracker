@@ -46,7 +46,7 @@
       id="icon"
       class="rounded-full p-2 ml-4 mr-2 fill-current"
       style="background-color: {backgroundColor}; color:{iconColor}">
-      <i class="material-icons md-18" style="display:block !important">
+      <i class="material-icons-round md-18" style="display:block !important">
         {materialIcon}
       </i>
     </div>

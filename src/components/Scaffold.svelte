@@ -53,11 +53,11 @@
     box-shadow: 0px 3px 6px 0px hsla(var(--accent-hue), 35%, 75%, 0.5);
   }
 
-  .material-icons {
+  .material-icons-round {
     @apply mr-0;
   }
 
-  #entry-button .material-icons {
+  #entry-button .material-icons-round {
     font-size: 32px;
   }
 
@@ -89,7 +89,7 @@
       @apply text-gray-500 text-xl;
     }
 
-    .material-icons {
+    .material-icons-round {
       @apply mr-2 text-3xl;
     }
 
@@ -115,27 +115,27 @@
 <nav class="navbar">
   {#if window.innerWidth > 768}
     <button id="entry-button" on:click={() => setView('entry')}>
-      <i class="material-icons">post_add</i>
+      <i class="material-icons-round">post_add</i>
       Add spending
     </button>
   {/if}
   <button
     class="nav-button {$view === 'dashboard' ? 'active' : 'inactive'}"
     on:click={() => setView('dashboard')}>
-    <i class="material-icons">assessment</i>
+    <i class="material-icons-round">assessment</i>
     <span>Dashboard</span>
   </button>
   <button
     class="nav-button {$view === 'settings' ? 'active' : 'inactive'}"
     on:click={() => setView('settings')}>
-    <i class="material-icons md-48">settings_applications</i>
+    <i class="material-icons-round md-48">settings_applications</i>
     <span>Settings</span>
   </button>
 </nav>
 {#if window.innerWidth <= 768}
   <div class="entry-wrapper {$overlay.length > 0 ? '' : 'z-10'}">
     <button id="entry-button" on:click={() => setView('entry')}>
-      <i class="material-icons md-36">post_add</i>
+      <i class="material-icons-round md-36">post_add</i>
     </button>
   </div>
 {/if}

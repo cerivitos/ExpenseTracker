@@ -188,7 +188,7 @@
     class="{scrolling ? 'shadow' : ''} searchbar {Object.keys($filteredSearchData).length > 0 ? '' : 'entry-anim'}">
     <button>
       <i
-        class="material-icons fill-current"
+        class="material-icons-round fill-current"
         style="color: hsl(var(--primary-hue), 50%, 50%)"
         aria-label="Back button"
         on:click={() => {
@@ -214,7 +214,7 @@
         }} />
       <button>
         <i
-          class="material-icons fill-current"
+          class="material-icons-round fill-current"
           style="color: hsl(var(--primary-hue), 50%, 50%)"
           aria-label="Search button"
           on:click={() => {

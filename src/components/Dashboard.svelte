@@ -341,7 +341,7 @@
         handleRouting('search');
         overlay.set('search');
       }}>
-      <i class="material-icons fill-current">search</i>
+      <i class="material-icons-round fill-current">search</i>
       Search
     </button>
     <span class="w-full mb-1 text-4xl text-center font-bold" id="totalSpend">

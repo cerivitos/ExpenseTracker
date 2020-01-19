@@ -78,7 +78,7 @@
     title={label}
     id="{label}-button"
     on:click={() => dispatchType()}>
-    <i class="material-icons">{materialIcon}</i>
+    <i class="material-icons-round">{materialIcon}</i>
   </button>
   <span id="{label}-label">{label}</span>
 </div>

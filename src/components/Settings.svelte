@@ -179,7 +179,7 @@
       }}>
       <span class="label">Full refresh from database</span>
       <i
-        class="material-icons md-48"
+        class="material-icons-round md-48"
         style="color: hsl(var(--primary-hue), 50%, 50%)">
         cloud_download
       </i>

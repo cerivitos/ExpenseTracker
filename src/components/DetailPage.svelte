@@ -148,7 +148,7 @@
     style="height: 56px; background-color: var(--background-color)">
     <button>
       <i
-        class="material-icons fill-current"
+        class="material-icons-round fill-current"
         on:click={() => {
           handleRouting('dashboard');
           view.set('dashboard');
@@ -163,11 +163,11 @@
       in:fade={{ duration: 80 }}>
       <div class="relative">
         {#if sortByDate}
-          <i class="material-icons md-18" in:fly={{ y: -48, duration: 80 }}>
+          <i class="material-icons-round md-18" in:fly={{ y: -48, duration: 80 }}>
             date_range
           </i>
         {:else}
-          <i class="material-icons md-18" in:fly={{ y: -48, duration: 80 }}>
+          <i class="material-icons-round md-18" in:fly={{ y: -48, duration: 80 }}>
             attach_money
           </i>
         {/if}
@@ -186,7 +186,7 @@
           in:scale={{ initial: 0.0, duration: 240, delay: 80 }}
           style="background-color: {backgroundColor}">
           <i
-            class="material-icons fill-current"
+            class="material-icons-round fill-current"
             style="display:block !important; color: {iconColor}; font-size: 64px">
             {materialIcon}
           </i>

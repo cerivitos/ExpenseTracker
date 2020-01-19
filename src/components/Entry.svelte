@@ -232,7 +232,7 @@
     style="height: 56px; background-color: var(--background-color)">
     <button>
       <i
-        class="material-icons fill-current"
+        class="material-icons-round fill-current"
         style="color: hsl(var(--primary-hue), 50%, 50%)"
         aria-label="Back button"
         on:click={() => {
