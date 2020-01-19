@@ -2,7 +2,13 @@
   import { onMount } from "svelte";
   import firebase from "firebase/app";
   import "firebase/firestore";
-  import { toastMessage, dashboardShouldReload, overlay } from "../store/store";
+  import "firebase/auth";
+  import {
+    toastMessage,
+    dashboardShouldReload,
+    overlay,
+    userInfo
+  } from "../store/store";
   import { fade } from "svelte/transition";
   import CategoryListTile from "./CategoryListTile.svelte";
   import { CountUp } from "countup.js";
@@ -137,6 +143,10 @@
       } catch (error) {
         toastMessage.set(error.message);
         setTimeout(() => toastMessage.set(""), 3000);
+
+        if (error.code == "permission-denied") {
+          signIn();
+        }
       }
     }
 
@@ -248,6 +258,30 @@
     currentCounterValue = totalSpend;
 
     return categorizedData;
+  }
+
+  function signIn() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then(function(result) {
+        const user = result.user;
+        userInfo.set({
+          name: user.displayName,
+          photo: user.photoURL,
+          uid: user.uid
+        });
+
+        changeInterval(currentInterval);
+      })
+      .catch(function(error) {
+        console.error(error);
+
+        userInfo.set({});
+        toastMessage.set(error.message);
+        setTimeout(() => toastMessage.set(""), 3000);
+      });
   }
 
   $: if ($dashboardShouldReload) {

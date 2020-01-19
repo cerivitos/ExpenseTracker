@@ -1,5 +1,5 @@
 <script>
-  import { userInfo, themeIsBright } from "../store/store";
+  import { userInfo, themeIsBright, toastMessage } from "../store/store";
   import firebase from "firebase/app";
   import "firebase/auth";
   import { fade } from "svelte/transition";
@@ -39,37 +39,9 @@
         console.error(error);
 
         userInfo.set({});
-        signInError = true;
-        errorMsg = error.message;
-        setTimeout(() => (signInError = false), 3000);
+        toastMessage.set(error.message);
+        setTimeout(() => toastMessage.set(""), 3000);
       });
-  }
-
-  function importData() {
-    const expenses =
-      exportedData.boards["9K1QQfYAg7QoIMbxzUy26INrpbX21497536405497"].expenses;
-    const keys = Object.keys(expenses);
-    let newDataObj = [];
-    const db = firebase.firestore();
-
-    for (let i = 0; i < keys.length; i++) {
-      const expense = expenses[keys[i]];
-
-      db.collection("expenses")
-        .doc(keys[i])
-        .set({
-          amount: expense.amount,
-          date: expense.date,
-          desc: expense.description ? expense.description : "",
-          type: expense.type,
-          addedBy:
-            expense.addedBy === "9K1QQfYAg7QoIMbxzUy26INrpbX2"
-              ? "Wai Kit Chan"
-              : "Jie Lin Soong",
-          addedOn: expense.date,
-          id: keys[i]
-        });
-    }
   }
 
   function switchTheme(theme) {
