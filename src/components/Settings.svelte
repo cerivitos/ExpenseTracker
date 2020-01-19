@@ -59,8 +59,7 @@
 
 <style type="text/postcss">
   .sign-out-button {
-    @apply rounded-full px-2 py-1;
-    background-color: var(--inactive-button-color);
+    @apply py-2 text-red-600;
   }
 
   .name {
@@ -104,6 +103,7 @@
       <button
         class="flex bg-white rounded shadow text-gray-700 py-2 px-4 font-bold
         justify-center w-1/2 md: w-full"
+        transition:fade={{ duration: 80 }}
         on:click={() => signIn()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
