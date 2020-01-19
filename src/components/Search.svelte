@@ -183,6 +183,11 @@
   id="search-page"
   class="h-screen w-full absolute top-0 overflow-auto pb-8"
   style="background-color: var(--background-color)"
+  on:keyup={ev => {
+    if (ev.key === 'Escape') {
+      query = '';
+    }
+  }}
   out:fade={{ duration: 80 }}>
   <div
     class="{scrolling ? 'shadow' : ''} searchbar {Object.keys($filteredSearchData).length > 0 ? '' : 'entry-anim'}">

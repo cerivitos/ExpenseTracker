@@ -31827,19 +31827,19 @@
 
     function get_each_context_1$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[17] = list[i];
-    	child_ctx[16] = i;
+    	child_ctx[18] = list[i];
+    	child_ctx[17] = i;
     	return child_ctx;
     }
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[14] = list[i];
-    	child_ctx[16] = i;
+    	child_ctx[15] = list[i];
+    	child_ctx[17] = i;
     	return child_ctx;
     }
 
-    // (172:6) {#if filteredDatas && query.length > 0}
+    // (177:6) {#if filteredDatas && query.length > 0}
     function create_if_block$6(ctx) {
     	let each_1_anchor;
     	let current;
@@ -31926,17 +31926,17 @@
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(172:6) {#if filteredDatas && query.length > 0}",
+    		source: "(177:6) {#if filteredDatas && query.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (174:10) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
+    // (179:10) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
     function create_if_block_2$2(ctx) {
     	let span;
-    	let t_value = /*bucket*/ ctx[14].year + "";
+    	let t_value = /*bucket*/ ctx[15].year + "";
     	let t;
 
     	const block = {
@@ -31947,14 +31947,14 @@
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
     			set_style(span, "color", "var(--text-color)");
     			set_style(span, "background-color", "var(--inactive-button-color)");
-    			add_location(span, file$9, 174, 12, 6336);
+    			add_location(span, file$9, 179, 12, 6421);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
     			append_dev(span, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*buckets*/ 8 && t_value !== (t_value = /*bucket*/ ctx[14].year + "")) set_data_dev(t, t_value);
+    			if (dirty & /*buckets*/ 8 && t_value !== (t_value = /*bucket*/ ctx[15].year + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(span);
@@ -31965,21 +31965,21 @@
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(174:10) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
+    		source: "(179:10) {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (195:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
+    // (200:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
     function create_if_block_1$3(ctx) {
     	let current;
 
     	const searchlisttile = new SearchListTile({
     			props: {
-    				data: /*data*/ ctx[17],
-    				index: /*index*/ ctx[16]
+    				data: /*data*/ ctx[18],
+    				index: /*index*/ ctx[17]
     			},
     			$$inline: true
     		});
@@ -31994,8 +31994,8 @@
     		},
     		p: function update(ctx, dirty) {
     			const searchlisttile_changes = {};
-    			if (dirty & /*filteredDatas*/ 4) searchlisttile_changes.data = /*data*/ ctx[17];
-    			if (dirty & /*filteredDatas*/ 4) searchlisttile_changes.index = /*index*/ ctx[16];
+    			if (dirty & /*filteredDatas*/ 4) searchlisttile_changes.data = /*data*/ ctx[18];
+    			if (dirty & /*filteredDatas*/ 4) searchlisttile_changes.index = /*index*/ ctx[17];
     			searchlisttile.$set(searchlisttile_changes);
     		},
     		i: function intro(local) {
@@ -32016,17 +32016,17 @@
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(195:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
+    		source: "(200:14) {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (194:12) {#each filteredDatas as data, index (data.id)}
+    // (199:12) {#each filteredDatas as data, index (data.id)}
     function create_each_block_1$3(key_1, ctx) {
     	let first;
-    	let show_if = /*data*/ ctx[17].date.substring(0, 4) == /*bucket*/ ctx[14].year && /*data*/ ctx[17].date.substring(5, 7) == /*bucket*/ ctx[14].month;
+    	let show_if = /*data*/ ctx[18].date.substring(0, 4) == /*bucket*/ ctx[15].year && /*data*/ ctx[18].date.substring(5, 7) == /*bucket*/ ctx[15].month;
     	let if_block_anchor;
     	let current;
     	let if_block = show_if && create_if_block_1$3(ctx);
@@ -32047,7 +32047,7 @@
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*filteredDatas, buckets*/ 12) show_if = /*data*/ ctx[17].date.substring(0, 4) == /*bucket*/ ctx[14].year && /*data*/ ctx[17].date.substring(5, 7) == /*bucket*/ ctx[14].month;
+    			if (dirty & /*filteredDatas, buckets*/ 12) show_if = /*data*/ ctx[18].date.substring(0, 4) == /*bucket*/ ctx[15].year && /*data*/ ctx[18].date.substring(5, 7) == /*bucket*/ ctx[15].month;
 
     			if (show_if) {
     				if (if_block) {
@@ -32089,29 +32089,29 @@
     		block,
     		id: create_each_block_1$3.name,
     		type: "each",
-    		source: "(194:12) {#each filteredDatas as data, index (data.id)}",
+    		source: "(199:12) {#each filteredDatas as data, index (data.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (173:8) {#each buckets as bucket, index}
+    // (178:8) {#each buckets as bucket, index}
     function create_each_block$3(ctx) {
     	let t0;
     	let div1;
     	let div0;
     	let span;
-    	let t1_value = new Date(2019, /*bucket*/ ctx[14].month - 1, 1).toDateString().substring(4, 7) + "";
+    	let t1_value = new Date(2019, /*bucket*/ ctx[15].month - 1, 1).toDateString().substring(4, 7) + "";
     	let t1;
     	let t2;
     	let each_blocks = [];
     	let each_1_lookup = new Map();
     	let t3;
     	let current;
-    	let if_block = (/*index*/ ctx[16] === 0 || /*index*/ ctx[16] > 0 && /*buckets*/ ctx[3][/*index*/ ctx[16] - 1].year !== /*bucket*/ ctx[14].year) && create_if_block_2$2(ctx);
+    	let if_block = (/*index*/ ctx[17] === 0 || /*index*/ ctx[17] > 0 && /*buckets*/ ctx[3][/*index*/ ctx[17] - 1].year !== /*bucket*/ ctx[15].year) && create_if_block_2$2(ctx);
     	let each_value_1 = /*filteredDatas*/ ctx[2];
-    	const get_key = ctx => /*data*/ ctx[17].id;
+    	const get_key = ctx => /*data*/ ctx[18].id;
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
     		let child_ctx = get_each_context_1$3(ctx, each_value_1, i);
@@ -32137,11 +32137,11 @@
     			attr_dev(span, "class", "relative font-bold px-4");
     			set_style(span, "color", "var(--text-color2)");
     			set_style(span, "background-color", "var(--background-color)");
-    			add_location(span, file$9, 184, 14, 6810);
+    			add_location(span, file$9, 189, 14, 6895);
     			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-1s5m3s4");
-    			add_location(div0, file$9, 183, 12, 6738);
+    			add_location(div0, file$9, 188, 12, 6823);
     			attr_dev(div1, "class", "flex flex-col justify-center items-center");
-    			add_location(div1, file$9, 182, 10, 6669);
+    			add_location(div1, file$9, 187, 10, 6754);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -32160,7 +32160,7 @@
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (/*index*/ ctx[16] === 0 || /*index*/ ctx[16] > 0 && /*buckets*/ ctx[3][/*index*/ ctx[16] - 1].year !== /*bucket*/ ctx[14].year) {
+    			if (/*index*/ ctx[17] === 0 || /*index*/ ctx[17] > 0 && /*buckets*/ ctx[3][/*index*/ ctx[17] - 1].year !== /*bucket*/ ctx[15].year) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -32173,7 +32173,7 @@
     				if_block = null;
     			}
 
-    			if ((!current || dirty & /*buckets*/ 8) && t1_value !== (t1_value = new Date(2019, /*bucket*/ ctx[14].month - 1, 1).toDateString().substring(4, 7) + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty & /*buckets*/ 8) && t1_value !== (t1_value = new Date(2019, /*bucket*/ ctx[15].month - 1, 1).toDateString().substring(4, 7) + "")) set_data_dev(t1, t1_value);
     			const each_value_1 = /*filteredDatas*/ ctx[2];
     			group_outros();
     			each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value_1, each_1_lookup, div1, outro_and_destroy_block, create_each_block_1$3, t3, get_each_context_1$3);
@@ -32210,7 +32210,7 @@
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(173:8) {#each buckets as bucket, index}",
+    		source: "(178:8) {#each buckets as bucket, index}",
     		ctx
     	});
 
@@ -32258,32 +32258,32 @@
     			attr_dev(i0, "class", "material-icons-round fill-current");
     			set_style(i0, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i0, "aria-label", "Back button");
-    			add_location(i0, file$9, 130, 6, 4960);
-    			add_location(button0, file$9, 129, 4, 4944);
+    			add_location(i0, file$9, 135, 6, 5045);
+    			add_location(button0, file$9, 134, 4, 5029);
     			attr_dev(input, "id", "search-input");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Search");
     			attr_dev(input, "class", "svelte-1s5m3s4");
-    			add_location(input, file$9, 144, 6, 5405);
+    			add_location(input, file$9, 149, 6, 5490);
     			attr_dev(i1, "class", "material-icons-round fill-current");
     			set_style(i1, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i1, "aria-label", "Search button");
-    			add_location(i1, file$9, 156, 8, 5704);
-    			add_location(button1, file$9, 155, 6, 5686);
+    			add_location(i1, file$9, 161, 8, 5789);
+    			add_location(button1, file$9, 160, 6, 5771);
     			attr_dev(div0, "id", "input-wrapper");
     			attr_dev(div0, "class", "flex justify-center w-full");
-    			add_location(div0, file$9, 143, 4, 5338);
+    			add_location(div0, file$9, 148, 4, 5423);
 
     			attr_dev(div1, "class", div1_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar " + (Object.keys(/*$filteredSearchData*/ ctx[4]).length > 0
     			? ""
     			: "entry-anim") + " svelte-1s5m3s4"));
 
-    			add_location(div1, file$9, 127, 2, 4816);
+    			add_location(div1, file$9, 132, 2, 4901);
     			attr_dev(div2, "class", "content-wrapper svelte-1s5m3s4");
-    			add_location(div2, file$9, 170, 4, 6117);
+    			add_location(div2, file$9, 175, 4, 6202);
     			attr_dev(div3, "id", "content");
     			attr_dev(div3, "class", "w-full flex flex-col items-center mt-16");
-    			add_location(div3, file$9, 169, 2, 6045);
+    			add_location(div3, file$9, 174, 2, 6130);
     			attr_dev(div4, "id", "search-page");
     			attr_dev(div4, "class", "h-screen w-full absolute top-0 overflow-auto pb-8");
     			set_style(div4, "background-color", "var(--background-color)");
@@ -32293,7 +32293,8 @@
     				listen_dev(i0, "click", /*click_handler*/ ctx[10], false, false, false),
     				listen_dev(input, "input", /*input_input_handler*/ ctx[11]),
     				listen_dev(input, "keyup", /*keyup_handler*/ ctx[12], false, false, false),
-    				listen_dev(i1, "click", /*click_handler_1*/ ctx[13], false, false, false)
+    				listen_dev(i1, "click", /*click_handler_1*/ ctx[13], false, false, false),
+    				listen_dev(div4, "keyup", /*keyup_handler_1*/ ctx[14], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
@@ -32508,6 +32509,12 @@
     		searchData(query);
     	};
 
+    	const keyup_handler_1 = ev => {
+    		if (ev.key === "Escape") {
+    			$$invalidate(1, query = "");
+    		}
+    	};
+
     	$$self.$capture_state = () => {
     		return {};
     	};
@@ -32537,7 +32544,8 @@
     		click_handler,
     		input_input_handler,
     		keyup_handler,
-    		click_handler_1
+    		click_handler_1,
+    		keyup_handler_1
     	];
     }
 
