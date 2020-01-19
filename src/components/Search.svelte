@@ -34,11 +34,6 @@
       ev.target.scrollTop > 0 ? (scrolling = true) : (scrolling = false);
     });
 
-    document.getElementById("search-input").oninput = () => {
-      queryString.set(query);
-      debounce(searchData(query), 800);
-    };
-
     if (Object.keys($filteredSearchData).length > 0) {
       query = $queryString;
       filteredDatas = $filteredSearchData;
@@ -186,7 +181,7 @@
 
 <div
   id="search-page"
-  class="h-screen w-full absolute top-0 overflow-auto"
+  class="h-screen w-full absolute top-0 overflow-auto pb-8"
   style="background-color: var(--background-color)"
   out:fade={{ duration: 80 }}>
   <div
@@ -205,15 +200,30 @@
         arrow_back
       </i>
     </button>
-    <div
-      id="input-wrapper"
-      class="flex justify-center w-full"
-      style="margin-right: 40px">
+    <div id="input-wrapper" class="flex justify-center w-full">
       <input
         id="search-input"
         type="text"
         placeholder="Search"
-        bind:value={query} />
+        bind:value={query}
+        on:keyup={ev => {
+          if (ev.key === 'Enter') {
+            queryString.set(query);
+            searchData(query);
+          }
+        }} />
+      <button>
+        <i
+          class="material-icons fill-current"
+          style="color: hsl(var(--primary-hue), 50%, 50%)"
+          aria-label="Search button"
+          on:click={() => {
+            queryString.set(query);
+            searchData(query);
+          }}>
+          search
+        </i>
+      </button>
     </div>
   </div>
   <div id="content" class="w-full flex flex-col items-center mt-16">
