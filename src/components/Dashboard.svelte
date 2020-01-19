@@ -109,9 +109,11 @@
   async function fetchData(queryInterval, endDate) {
     toastMessage.set("Updating...");
 
+    const lastUpdated = localStorage.getItem("lastUpdated");
+
     let rawData = [];
     let categorizedData = [];
-    let snapshot;
+    let snapshot, snapshotNewlyUpdated;
 
     try {
       snapshot = await db
@@ -122,6 +124,22 @@
     } catch (error) {
       toastMessage.set(error.message);
       setTimeout(() => toastMessage.set(""), 3000);
+    }
+
+    //Get data that has been updated after the last user download from firestore. This is because entries may be updated/edited again at a different date from the expense date (addedOn !== date)
+    if (lastUpdated) {
+      try {
+        snapshotNewlyUpdated = await db
+          .collection("expenses")
+          .where("addedOn", ">=", lastUpdated)
+          .where("addedOn", "<=", new Date().toISOString().substring(0, 10))
+          .get();
+
+        console.log(snapshotNewlyUpdated);
+      } catch (error) {
+        toastMessage.set(error.message);
+        setTimeout(() => toastMessage.set(""), 3000);
+      }
     }
 
     let rawCache = [];
@@ -139,6 +157,18 @@
         rawCache.push(data);
       }
     });
+
+    //Handle existing data that has changed since user last downloaded from firestore
+    if (snapshotNewlyUpdated) {
+      snapshotNewlyUpdated.forEach(doc => {
+        const data = doc.data();
+        rawCache.forEach((rawData, index) => {
+          if (rawData.id === doc.id) {
+            rawCache[index] = data;
+          }
+        });
+      });
+    }
 
     //Only keep data that is at or after the real queryInterval (not the modified queryInterval which is to reduce firestore reads)
     rawData = rawCache.filter(
@@ -161,6 +191,10 @@
     toastMessage.set("");
 
     localStorage.setItem("rawCache", JSON.stringify(rawCache));
+    localStorage.setItem(
+      "lastUpdated",
+      new Date().toISOString().substring(0, 10)
+    );
 
     const types = [...new Set(rawData.map(item => item.type))];
 
