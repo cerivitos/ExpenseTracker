@@ -134,8 +134,6 @@
           .where("addedOn", ">=", lastUpdated)
           .where("addedOn", "<=", new Date().toISOString().substring(0, 10))
           .get();
-
-        console.log(snapshotNewlyUpdated);
       } catch (error) {
         toastMessage.set(error.message);
         setTimeout(() => toastMessage.set(""), 3000);
