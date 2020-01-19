@@ -139,7 +139,7 @@
 
 <div
   id="detail-page"
-  class="h-screen w-full absolute top-0 overflow-auto"
+  class="h-screen w-full absolute top-0 overflow-auto pb-8"
   style="background-color: var(--background-color); color: {$themeIsBright ? iconColor : backgroundColor}"
   out:fade={{ duration: 80 }}>
   <div
