@@ -248,6 +248,22 @@
     transition: background-color 250ms ease-out;
   }
 
+  .sign-out-button {
+    @apply py-2 text-red-600 rounded-full px-4 mb-12 text-center w-1/4;
+    background-color: transparent;
+    transition: background-color 250ms ease-out;
+  }
+
+  .sign-out-button:hover {
+    background-color: hsla(var(--secondary-hue), 30%, 85%, 0.2);
+    transition: background-color 250ms ease-out;
+  }
+
+  .sign-out-button:active {
+    background-color: hsla(var(--secondary-hue), 30%, 75%, 0.4);
+    transition: background-color 80ms ease-in;
+  }
+
   @media only screen and (min-width: 768px) {
     .form-wrapper {
       @apply w-6/12;
@@ -358,11 +374,11 @@
         </button>
       </div>
       {#if Object.keys($entryData).length > 0}
-        <button
-          class="w-full text-center mb-12 bg-transparent text-red-600"
-          on:click={() => deleteEntry()}>
-          Delete
-        </button>
+        <div class="w-full text-center">
+          <button class="sign-out-button" on:click={() => deleteEntry()}>
+            Delete
+          </button>
+        </div>
       {/if}
     </div>
   </div>
