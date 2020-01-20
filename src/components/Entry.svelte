@@ -201,17 +201,51 @@
     color: whitesmoke;
   }
 
-  .type-button {
-    @apply rounded-full p-2 fill-current text-gray-800 mr-4 mt-4;
-    background-color: var(--inactive-button-color);
-  }
-
-  .type-button svg {
-    @apply w-8 h-8;
-  }
-
   .form-wrapper {
     @apply flex flex-col w-full;
+  }
+
+  .suggestion-button {
+    @apply rounded-full px-3 py-1 self-start mr-2 mt-2;
+    color: var(--text-color2);
+    background-color: var(--inactive-button-color);
+    transition: background-color 250ms ease-out;
+  }
+
+  .submit-button {
+    @apply rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-24 mb-12 bg-gray-300;
+    transition: background-color 250ms ease-out;
+  }
+
+  .submit-button.active {
+    background-color: hsl(var(--accent-hue), 50%, 50%);
+  }
+
+  .submit-button.inactive {
+    background-color: hsl(var(--accent-hue), 50%, 50%);
+    opacity: 0.3;
+  }
+
+  .submit-button:hover {
+    background-color: hsl(var(--accent-hue), 70%, 55%);
+    transition: background-color 250ms ease-out;
+  }
+
+  .submit-button:active {
+    background-color: hsl(var(--accent-hue), 70%, 45%);
+    transition: background-color 80ms ease-out;
+  }
+
+  .suggestion-button:hover,
+  .date-button:hover {
+    background-color: hsla(var(--secondary-hue), 30%, 85%, 0.4);
+    transition: background-color 250ms ease-out;
+  }
+
+  .suggestion-button:hover,
+  .date-button:active {
+    background-color: hsl(var(--secondary-hue), 30%, 85%, 0.4);
+    transition: background-color 250ms ease-out;
   }
 
   @media only screen and (min-width: 768px) {
@@ -306,10 +340,8 @@
         {#if suggestedDescriptions}
           {#each suggestedDescriptions as suggestion, index (suggestion)}
             <button
+              class="suggestion-button"
               in:fade={{ duration: 180, delay: 30 * index }}
-              class="rounded-full px-3 py-1 self-start mr-2 mt-2"
-              style="color: var(--text-color2);
-              background-color:var(--inactive-button-color)"
               on:click={() => (description = suggestion)}>
               {suggestion}
             </button>
@@ -320,10 +352,8 @@
         class="w-full text-center block"
         in:fade={{ duration: 120, delay: 180 }}>
         <button
-          class="rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5
-          mt-24 mb-12 bg-gray-300"
-          on:click={() => sendEntry()}
-          style={typeValid && dateValid && amountValid ? 'background-color:hsl(var(--accent-hue), 50%, 50%)' : 'background-color:hsl(var(--accent-hue), 50%, 50%); opacity: 0.3'}>
+          class="submit-button {typeValid && dateValid && amountValid ? 'active' : 'inactive'}"
+          on:click={() => sendEntry()}>
           {isUpdate ? 'Update' : 'Submit'}
         </button>
       </div>

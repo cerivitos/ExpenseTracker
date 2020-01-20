@@ -1,6 +1,7 @@
 <script>
   import { createEventDispatcher } from "svelte";
   import { onMount } from "svelte";
+  import { themeIsBright } from "../store/store";
 
   export let label = "";
   export let colorHue = 180;
@@ -30,10 +31,13 @@
       document
         .getElementById(label + "-button")
         .style.setProperty("color", "hsl(" + colorHue + ", 65%, 40%)");
-
-      document
-        .getElementById(label + "-label")
-        .style.setProperty("color", "hsl(" + colorHue + ", 65%, 55%)");
+      $themeIsBright
+        ? document
+            .getElementById(label + "-label")
+            .style.setProperty("color", "hsl(" + colorHue + ", 65%, 55%)")
+        : document
+            .getElementById(label + "-label")
+            .style.setProperty("color", "hsl(" + colorHue + ", 50%, 80%)");
     } else {
       document
         .getElementById(label + "-button")
@@ -41,7 +45,6 @@
       document
         .getElementById(label + "-button")
         .style.setProperty("color", "var(--text-color2)");
-
       document
         .getElementById(label + "-label")
         .style.setProperty("color", "var(--text-color2)");
@@ -65,6 +68,7 @@
     @apply rounded-full p-2 fill-current text-center align-middle;
     background-color: var(--inactive-button-color);
     color: var(--text-color2);
+    transition: background-color 250ms ease-out;
   }
 
   .type-button i {

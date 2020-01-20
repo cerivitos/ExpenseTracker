@@ -30707,17 +30707,17 @@
     			t1 = space();
     			span = element("span");
     			t2 = text(/*label*/ ctx[0]);
-    			attr_dev(i, "class", "material-icons-round svelte-1ysrvtz");
-    			add_location(i, file$7, 63, 4, 2060);
-    			attr_dev(button, "class", "type-button svelte-1ysrvtz");
+    			attr_dev(i, "class", "material-icons-round svelte-1qbw50s");
+    			add_location(i, file$7, 66, 4, 2326);
+    			attr_dev(button, "class", "type-button svelte-1qbw50s");
     			attr_dev(button, "title", /*label*/ ctx[0]);
     			attr_dev(button, "id", button_id_value = "" + (/*label*/ ctx[0] + "-button"));
-    			add_location(button, file$7, 58, 2, 1940);
+    			add_location(button, file$7, 61, 2, 2206);
     			attr_dev(span, "id", span_id_value = "" + (/*label*/ ctx[0] + "-label"));
-    			add_location(span, file$7, 65, 2, 2127);
-    			attr_dev(div, "class", "wrapper svelte-1ysrvtz");
-    			add_location(div, file$7, 57, 0, 1915);
-    			dispose = listen_dev(button, "click", /*click_handler*/ ctx[7], false, false, false);
+    			add_location(span, file$7, 68, 2, 2393);
+    			attr_dev(div, "class", "wrapper svelte-1qbw50s");
+    			add_location(div, file$7, 60, 0, 2181);
+    			dispose = listen_dev(button, "click", /*click_handler*/ ctx[8], false, false, false);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -30768,6 +30768,9 @@
     }
 
     function instance$7($$self, $$props, $$invalidate) {
+    	let $themeIsBright;
+    	validate_store(themeIsBright, "themeIsBright");
+    	component_subscribe($$self, themeIsBright, $$value => $$invalidate(5, $themeIsBright = $$value));
     	let { label = "" } = $$props;
     	let { colorHue = 180 } = $$props;
     	let { isActive = false } = $$props;
@@ -30787,7 +30790,10 @@
     		if (buttonActive) {
     			document.getElementById(label + "-button").style.setProperty("background-color", "hsl(" + colorHue + ", 50%, 80%)");
     			document.getElementById(label + "-button").style.setProperty("color", "hsl(" + colorHue + ", 65%, 40%)");
-    			document.getElementById(label + "-label").style.setProperty("color", "hsl(" + colorHue + ", 65%, 55%)");
+
+    			$themeIsBright
+    			? document.getElementById(label + "-label").style.setProperty("color", "hsl(" + colorHue + ", 65%, 55%)")
+    			: document.getElementById(label + "-label").style.setProperty("color", "hsl(" + colorHue + ", 50%, 80%)");
     		} else {
     			document.getElementById(label + "-button").style.setProperty("background-color", "var(--inactive-button-color)");
     			document.getElementById(label + "-button").style.setProperty("color", "var(--text-color2)");
@@ -30811,7 +30817,13 @@
     	};
 
     	$$self.$capture_state = () => {
-    		return { label, colorHue, isActive, materialIcon };
+    		return {
+    			label,
+    			colorHue,
+    			isActive,
+    			materialIcon,
+    			$themeIsBright
+    		};
     	};
 
     	$$self.$inject_state = $$props => {
@@ -30819,6 +30831,7 @@
     		if ("colorHue" in $$props) $$invalidate(3, colorHue = $$props.colorHue);
     		if ("isActive" in $$props) $$invalidate(4, isActive = $$props.isActive);
     		if ("materialIcon" in $$props) $$invalidate(1, materialIcon = $$props.materialIcon);
+    		if ("$themeIsBright" in $$props) themeIsBright.set($themeIsBright = $$props.$themeIsBright);
     	};
 
     	$$self.$$.update = () => {
@@ -30835,6 +30848,7 @@
     		dispatchType,
     		colorHue,
     		isActive,
+    		$themeIsBright,
     		dispatch,
     		setButtonColors,
     		click_handler
@@ -31046,10 +31060,8 @@
     			button = element("button");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(button, "class", "rounded-full px-3 py-1 self-start mr-2 mt-2");
-    			set_style(button, "color", "var(--text-color2)");
-    			set_style(button, "background-color", "var(--inactive-button-color)");
-    			add_location(button, file$8, 248, 12, 9227);
+    			attr_dev(button, "class", "suggestion-button svelte-3s0ka6");
+    			add_location(button, file$8, 248, 12, 10076);
     			dispose = listen_dev(button, "click", click_handler_5, false, false, false);
     			this.first = button;
     		},
@@ -31092,7 +31104,7 @@
     	return block;
     }
 
-    // (271:6) {#if Object.keys($entryData).length > 0}
+    // (267:6) {#if Object.keys($entryData).length > 0}
     function create_if_block$5(ctx) {
     	let button;
     	let dispose;
@@ -31102,7 +31114,7 @@
     			button = element("button");
     			button.textContent = "Delete";
     			attr_dev(button, "class", "w-full text-center mb-12 bg-transparent text-red-600");
-    			add_location(button, file$8, 271, 8, 10222);
+    			add_location(button, file$8, 267, 8, 10739);
     			dispose = listen_dev(button, "click", /*click_handler_7*/ ctx[29], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -31119,7 +31131,7 @@
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(271:6) {#if Object.keys($entryData).length > 0}",
+    		source: "(267:6) {#if Object.keys($entryData).length > 0}",
     		ctx
     	});
 
@@ -31175,7 +31187,7 @@
     	let button3;
     	let t21_value = (/*isUpdate*/ ctx[9] ? "Update" : "Submit") + "";
     	let t21;
-    	let button3_style_value;
+    	let button3_class_value;
     	let div9_intro;
     	let t22;
     	let show_if = Object.keys(/*$entryData*/ ctx[10]).length > 0;
@@ -31263,80 +31275,79 @@
     			attr_dev(i, "class", "material-icons-round fill-current");
     			set_style(i, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i, "aria-label", "Back button");
-    			add_location(i, file$8, 174, 6, 6446);
-    			add_location(button0, file$8, 173, 4, 6430);
+    			add_location(i, file$8, 174, 6, 7295);
+    			add_location(button0, file$8, 173, 4, 7279);
     			attr_dev(div0, "class", div0_class_value = "w-full flex flex-row p-4 " + (/*scrolling*/ ctx[0] ? "shadow" : "") + " fixed top-0\r\n    justify-between z-10");
     			set_style(div0, "height", "56px");
     			set_style(div0, "background-color", "var(--background-color)");
-    			add_location(div0, file$8, 169, 2, 6246);
+    			add_location(div0, file$8, 169, 2, 7095);
     			attr_dev(label0, "for", "amount-input");
-    			attr_dev(label0, "class", "svelte-8wlyyu");
-    			add_location(label0, file$8, 188, 8, 6968);
+    			attr_dev(label0, "class", "svelte-3s0ka6");
+    			add_location(label0, file$8, 188, 8, 7817);
     			attr_dev(input0, "id", "amount-input");
-    			attr_dev(input0, "class", "amount text-2xl svelte-8wlyyu");
+    			attr_dev(input0, "class", "amount text-2xl svelte-3s0ka6");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$8, 189, 8, 7018);
-    			attr_dev(div1, "class", "input-row svelte-8wlyyu");
-    			add_location(div1, file$8, 187, 6, 6896);
+    			add_location(input0, file$8, 189, 8, 7867);
+    			attr_dev(div1, "class", "input-row svelte-3s0ka6");
+    			add_location(div1, file$8, 187, 6, 7745);
     			attr_dev(label1, "for", "date-input");
-    			attr_dev(label1, "class", "svelte-8wlyyu");
-    			add_location(label1, file$8, 198, 8, 7335);
+    			attr_dev(label1, "class", "svelte-3s0ka6");
+    			add_location(label1, file$8, 198, 8, 8184);
     			attr_dev(button1, "id", "today-button");
-    			attr_dev(button1, "class", "date-button active svelte-8wlyyu");
-    			add_location(button1, file$8, 200, 10, 7411);
+    			attr_dev(button1, "class", "date-button active svelte-3s0ka6");
+    			add_location(button1, file$8, 200, 10, 8260);
     			attr_dev(button2, "id", "yesterday-button");
-    			attr_dev(button2, "class", "date-button svelte-8wlyyu");
-    			add_location(button2, file$8, 206, 10, 7589);
+    			attr_dev(button2, "class", "date-button svelte-3s0ka6");
+    			add_location(button2, file$8, 206, 10, 8438);
     			attr_dev(div2, "class", "mr-4");
-    			add_location(div2, file$8, 199, 8, 7381);
-    			attr_dev(div3, "class", "input-row svelte-8wlyyu");
-    			add_location(div3, file$8, 197, 6, 7263);
-    			add_location(span, file$8, 219, 8, 7997);
+    			add_location(div2, file$8, 199, 8, 8230);
+    			attr_dev(div3, "class", "input-row svelte-3s0ka6");
+    			add_location(div3, file$8, 197, 6, 8112);
+    			add_location(span, file$8, 219, 8, 8846);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
-    			attr_dev(input1, "class", "svelte-8wlyyu");
-    			add_location(input1, file$8, 220, 8, 8030);
+    			attr_dev(input1, "class", "svelte-3s0ka6");
+    			add_location(input1, file$8, 220, 8, 8879);
     			attr_dev(div4, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n        ml-4");
     			set_style(div4, "color", "var(--text-color2)");
-    			add_location(div4, file$8, 214, 6, 7798);
-    			attr_dev(label2, "class", "svelte-8wlyyu");
-    			add_location(label2, file$8, 223, 8, 8190);
+    			add_location(div4, file$8, 214, 6, 8647);
+    			attr_dev(label2, "class", "svelte-3s0ka6");
+    			add_location(label2, file$8, 223, 8, 9039);
     			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div5, file$8, 224, 8, 8219);
+    			add_location(div5, file$8, 224, 8, 9068);
     			attr_dev(div6, "class", "mt-12 flex flex-col");
-    			add_location(div6, file$8, 222, 6, 8107);
+    			add_location(div6, file$8, 222, 6, 8956);
     			attr_dev(label3, "for", "description-input");
-    			attr_dev(label3, "class", "svelte-8wlyyu");
-    			add_location(label3, file$8, 236, 8, 8710);
-    			attr_dev(input2, "class", "truncate text-2xl svelte-8wlyyu");
+    			attr_dev(label3, "class", "svelte-3s0ka6");
+    			add_location(label3, file$8, 236, 8, 9559);
+    			attr_dev(input2, "class", "truncate text-2xl svelte-3s0ka6");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "(Optional)");
-    			add_location(input2, file$8, 237, 8, 8770);
-    			attr_dev(div7, "class", "input-row svelte-8wlyyu");
-    			add_location(div7, file$8, 235, 6, 8637);
+    			add_location(input2, file$8, 237, 8, 9619);
+    			attr_dev(div7, "class", "input-row svelte-3s0ka6");
+    			add_location(div7, file$8, 235, 6, 9486);
     			attr_dev(div8, "class", "flex mt-4 mx-4 flex-wrap");
     			set_style(div8, "height", "80px");
-    			add_location(div8, file$8, 245, 6, 9042);
-    			attr_dev(button3, "class", "rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5\r\n          mt-24 mb-12 bg-gray-300");
+    			add_location(div8, file$8, 245, 6, 9891);
 
-    			attr_dev(button3, "style", button3_style_value = /*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
-    			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
-    			: "background-color:hsl(var(--accent-hue), 50%, 50%); opacity: 0.3");
+    			attr_dev(button3, "class", button3_class_value = "submit-button " + (/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
+    			? "active"
+    			: "inactive") + " svelte-3s0ka6");
 
-    			add_location(button3, file$8, 262, 8, 9747);
+    			add_location(button3, file$8, 260, 8, 10459);
     			attr_dev(div9, "class", "w-full text-center block");
-    			add_location(div9, file$8, 259, 6, 9641);
-    			attr_dev(div10, "class", "form-wrapper svelte-8wlyyu");
-    			add_location(div10, file$8, 186, 4, 6862);
+    			add_location(div9, file$8, 257, 6, 10353);
+    			attr_dev(div10, "class", "form-wrapper svelte-3s0ka6");
+    			add_location(div10, file$8, 186, 4, 7711);
     			attr_dev(div11, "class", "flex flex-col items-center justify-around mt-8");
-    			add_location(div11, file$8, 185, 2, 6796);
+    			add_location(div11, file$8, 185, 2, 7645);
     			attr_dev(div12, "id", "entry-page");
     			attr_dev(div12, "class", "h-screen w-full absolute top-0 overflow-auto");
     			set_style(div12, "background-color", "var(--background-color)");
     			set_style(div12, "color", "var(--text-color)");
-    			add_location(div12, file$8, 164, 0, 6052);
+    			add_location(div12, file$8, 164, 0, 6901);
 
     			dispose = [
     				listen_dev(i, "click", /*click_handler*/ ctx[19], false, false, false),
@@ -31470,10 +31481,10 @@
 
     			if ((!current || dirty[0] & /*isUpdate*/ 512) && t21_value !== (t21_value = (/*isUpdate*/ ctx[9] ? "Update" : "Submit") + "")) set_data_dev(t21, t21_value);
 
-    			if (!current || dirty[0] & /*typeValid, dateValid, amountValid*/ 448 && button3_style_value !== (button3_style_value = /*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
-    			? "background-color:hsl(var(--accent-hue), 50%, 50%)"
-    			: "background-color:hsl(var(--accent-hue), 50%, 50%); opacity: 0.3")) {
-    				attr_dev(button3, "style", button3_style_value);
+    			if (!current || dirty[0] & /*typeValid, dateValid, amountValid*/ 448 && button3_class_value !== (button3_class_value = "submit-button " + (/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
+    			? "active"
+    			: "inactive") + " svelte-3s0ka6")) {
+    				attr_dev(button3, "class", button3_class_value);
     			}
 
     			if (dirty[0] & /*$entryData*/ 1024) show_if = Object.keys(/*$entryData*/ ctx[10]).length > 0;
