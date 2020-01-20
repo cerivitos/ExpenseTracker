@@ -217,19 +217,19 @@
             searchData(query);
           }
         }} />
-      <button>
-        <i
-          class="material-icons-round fill-current"
-          style="color: hsl(var(--primary-hue), 50%, 50%)"
-          aria-label="Search button"
-          on:click={() => {
-            queryString.set(query);
-            searchData(query);
-          }}>
-          search
-        </i>
-      </button>
     </div>
+    <button>
+      <i
+        class="material-icons-round fill-current"
+        style="color: hsl(var(--primary-hue), 50%, 50%)"
+        aria-label="Search button"
+        on:click={() => {
+          queryString.set(query);
+          searchData(query);
+        }}>
+        search
+      </i>
+    </button>
   </div>
   <div id="content" class="w-full flex flex-col items-center mt-16">
     <div class="content-wrapper">

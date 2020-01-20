@@ -31947,7 +31947,7 @@
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
     			set_style(span, "color", "var(--text-color)");
     			set_style(span, "background-color", "var(--inactive-button-color)");
-    			add_location(span, file$9, 179, 12, 6421);
+    			add_location(span, file$9, 179, 12, 6397);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -32137,11 +32137,11 @@
     			attr_dev(span, "class", "relative font-bold px-4");
     			set_style(span, "color", "var(--text-color2)");
     			set_style(span, "background-color", "var(--background-color)");
-    			add_location(span, file$9, 189, 14, 6895);
+    			add_location(span, file$9, 189, 14, 6871);
     			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-1s5m3s4");
-    			add_location(div0, file$9, 188, 12, 6823);
+    			add_location(div0, file$9, 188, 12, 6799);
     			attr_dev(div1, "class", "flex flex-col justify-center items-center");
-    			add_location(div1, file$9, 187, 10, 6754);
+    			add_location(div1, file$9, 187, 10, 6730);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -32265,14 +32265,14 @@
     			attr_dev(input, "placeholder", "Search");
     			attr_dev(input, "class", "svelte-1s5m3s4");
     			add_location(input, file$9, 149, 6, 5490);
-    			attr_dev(i1, "class", "material-icons-round fill-current");
-    			set_style(i1, "color", "hsl(var(--primary-hue), 50%, 50%)");
-    			attr_dev(i1, "aria-label", "Search button");
-    			add_location(i1, file$9, 161, 8, 5789);
-    			add_location(button1, file$9, 160, 6, 5771);
     			attr_dev(div0, "id", "input-wrapper");
     			attr_dev(div0, "class", "flex justify-center w-full");
     			add_location(div0, file$9, 148, 4, 5423);
+    			attr_dev(i1, "class", "material-icons-round fill-current");
+    			set_style(i1, "color", "hsl(var(--primary-hue), 50%, 50%)");
+    			attr_dev(i1, "aria-label", "Search button");
+    			add_location(i1, file$9, 162, 6, 5797);
+    			add_location(button1, file$9, 161, 4, 5781);
 
     			attr_dev(div1, "class", div1_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar " + (Object.keys(/*$filteredSearchData*/ ctx[4]).length > 0
     			? ""
@@ -32280,10 +32280,10 @@
 
     			add_location(div1, file$9, 132, 2, 4901);
     			attr_dev(div2, "class", "content-wrapper svelte-1s5m3s4");
-    			add_location(div2, file$9, 175, 4, 6202);
+    			add_location(div2, file$9, 175, 4, 6178);
     			attr_dev(div3, "id", "content");
     			attr_dev(div3, "class", "w-full flex flex-col items-center mt-16");
-    			add_location(div3, file$9, 174, 2, 6130);
+    			add_location(div3, file$9, 174, 2, 6106);
     			attr_dev(div4, "id", "search-page");
     			attr_dev(div4, "class", "h-screen w-full absolute top-0 overflow-auto pb-8");
     			set_style(div4, "background-color", "var(--background-color)");
@@ -32309,8 +32309,8 @@
     			append_dev(div1, div0);
     			append_dev(div0, input);
     			set_input_value(input, /*query*/ ctx[1]);
-    			append_dev(div0, t2);
-    			append_dev(div0, button1);
+    			append_dev(div1, t2);
+    			append_dev(div1, button1);
     			append_dev(button1, i1);
     			append_dev(div4, t4);
     			append_dev(div4, div3);
