@@ -24,6 +24,18 @@
 
   .nav-button {
     @apply flex flex-col items-center justify-center w-1/2 py-1;
+    background-color: transparent;
+    transition: background-color 250ms ease-out;
+  }
+
+  .nav-button:hover {
+    background-color: hsla(var(--secondary-hue), 30%, 85%, 0.2);
+    transition: background-color 250ms ease-out;
+  }
+
+  .nav-button:active {
+    background-color: hsla(var(--secondary-hue), 30%, 75%, 0.4);
+    transition: background-color 80ms ease-in;
   }
 
   .navbar .active {
@@ -51,6 +63,17 @@
     @apply rounded-full w-16 h-16 flex items-center justify-center p-4 fill-current text-white shadow-lg pointer-events-auto;
     background-color: hsl(var(--accent-hue), 50%, 50%);
     box-shadow: 0px 3px 6px 0px hsla(var(--accent-hue), 35%, 75%, 0.5);
+    transition: background-color 250ms ease-out;
+  }
+
+  #entry-button:hover {
+    background-color: hsl(var(--accent-hue), 70%, 55%);
+    transition: background-color 250ms ease-out;
+  }
+
+  #entry-button:active {
+    background-color: hsl(var(--accent-hue), 70%, 45%);
+    transition: background-color 80ms ease-out;
   }
 
   .material-icons-round {
@@ -71,11 +94,11 @@
     }
 
     .nav-button {
-      @apply flex flex-row items-center justify-start w-full py-1;
+      @apply flex flex-row items-center justify-start w-full py-4;
     }
 
     button:nth-child(2) {
-      @apply mt-12 mb-8;
+      @apply mt-8 mb-2;
     }
 
     .navbar .active {
