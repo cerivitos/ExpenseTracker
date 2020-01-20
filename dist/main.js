@@ -29439,34 +29439,34 @@
     			span2 = element("span");
     			t5 = space();
     			span3 = element("span");
-    			add_location(span0, file$5, 80, 4, 2512);
+    			add_location(span0, file$5, 81, 4, 2801);
     			attr_dev(div0, "class", "rounded-full mr-2 font-bold text-sm whitespace-no-wrap");
 
     			set_style(div0, "color", /*$themeIsBright*/ ctx[7]
     			? /*iconColor*/ ctx[6]
     			: /*backgroundColor*/ ctx[5]);
 
-    			add_location(div0, file$5, 77, 2, 2367);
+    			add_location(div0, file$5, 78, 2, 2656);
     			attr_dev(i, "class", "material-icons-round");
     			set_style(i, "display", "block", 1);
     			set_style(i, "font-size", "14px");
-    			add_location(i, file$5, 86, 4, 2730);
+    			add_location(i, file$5, 87, 4, 3019);
     			attr_dev(div1, "id", "icon");
     			attr_dev(div1, "class", "rounded-full p-1 mr-2 fill-current");
     			set_style(div1, "background-color", /*backgroundColor*/ ctx[5]);
     			set_style(div1, "color", /*iconColor*/ ctx[6]);
-    			add_location(div1, file$5, 82, 2, 2588);
+    			add_location(div1, file$5, 83, 2, 2877);
     			attr_dev(span1, "class", "truncate mr-2 flex-none");
-    			add_location(span1, file$5, 90, 2, 2858);
+    			add_location(span1, file$5, 93, 2, 3161);
     			attr_dev(span2, "class", "truncate mr-2");
     			set_style(span2, "color", "var(--text-color2)");
-    			add_location(span2, file$5, 93, 2, 2932);
-    			attr_dev(span3, "class", "flex-grow flex items-center justify-end font-bold amount svelte-yg0mqo");
-    			add_location(span3, file$5, 96, 2, 3027);
-    			attr_dev(div2, "class", "flex w-full p-4 items-center cursor-pointer");
-    			set_style(div2, "background-color", "var(--background-color)");
+    			add_location(span2, file$5, 96, 2, 3235);
+    			attr_dev(span3, "class", "flex-grow flex items-center justify-end font-bold amount svelte-1f8xers");
+    			add_location(span3, file$5, 99, 2, 3330);
+    			attr_dev(div2, "id", "tile-wrapper");
+    			attr_dev(div2, "class", "flex w-full p-4 items-center cursor-pointer svelte-1f8xers");
     			set_style(div2, "color", "var(--text-color)");
-    			add_location(div2, file$5, 72, 0, 2128);
+    			add_location(div2, file$5, 72, 0, 2439);
     			dispose = listen_dev(div2, "click", /*click_handler*/ ctx[13], false, false, false);
     		},
     		l: function claim(nodes) {

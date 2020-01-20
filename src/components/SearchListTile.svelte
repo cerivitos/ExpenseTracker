@@ -73,11 +73,27 @@
     content: "$";
     @apply text-sm font-light mr-1;
   }
+
+  #tile-wrapper {
+    background-color: transparent;
+    transition: background-color 250ms ease-out;
+  }
+
+  #tile-wrapper:hover {
+    background-color: hsla(var(--secondary-hue), 30%, 85%, 0.2);
+    transition: background-color 250ms ease-out;
+  }
+
+  #tile-wrapper:active {
+    background-color: hsla(var(--secondary-hue), 30%, 75%, 0.4);
+    transition: background-color 80ms ease-in;
+  }
 </style>
 
 <div
+  id="tile-wrapper"
   class="flex w-full p-4 items-center cursor-pointer"
-  style="background-color: var(--background-color); color: var(--text-color)"
+  style="color: var(--text-color)"
   in:fade={{ duration: 120, delay: index * 50 + 30 }}
   on:click={() => showEditDetail(data)}>
   <div
@@ -89,7 +105,9 @@
     id="icon"
     class="rounded-full p-1 mr-2 fill-current"
     style="background-color: {backgroundColor}; color:{iconColor}">
-    <i class="material-icons-round" style="display:block !important; font-size: 14px">
+    <i
+      class="material-icons-round"
+      style="display:block !important; font-size: 14px">
       {materialIcon}
     </i>
   </div>
