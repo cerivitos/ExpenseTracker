@@ -28905,15 +28905,15 @@
     			if (img.src !== (img_src_value = /*$userInfo*/ ctx[1].photo)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "User photo");
     			attr_dev(img, "class", "rounded-full w-8 h-8 mr-4");
-    			add_location(img, file$4, 113, 8, 3703);
-    			attr_dev(span, "class", "name svelte-1nrrn29");
-    			add_location(span, file$4, 117, 8, 3826);
-    			attr_dev(button, "class", "sign-out-button svelte-1nrrn29");
-    			add_location(button, file$4, 119, 10, 3924);
+    			add_location(img, file$4, 113, 8, 4379);
+    			attr_dev(span, "class", "name svelte-17ige3d");
+    			add_location(span, file$4, 117, 8, 4502);
+    			attr_dev(button, "class", "sign-out-button svelte-17ige3d");
+    			add_location(button, file$4, 119, 10, 4600);
     			attr_dev(div0, "class", "flex-grow text-right");
-    			add_location(div0, file$4, 118, 8, 3878);
-    			attr_dev(div1, "class", "flex flex-row items-center");
-    			add_location(div1, file$4, 112, 6, 3653);
+    			add_location(div0, file$4, 118, 8, 4554);
+    			attr_dev(div1, "class", "flex flex-row items-center px-4");
+    			add_location(div1, file$4, 112, 6, 4324);
     			dispose = listen_dev(button, "click", /*click_handler_1*/ ctx[4], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -28987,37 +28987,37 @@
     			span.textContent = "Sign in with Google";
     			attr_dev(path0, "id", "a");
     			attr_dev(path0, "d", "M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2\r\n              0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1\r\n              29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22\r\n              0-1.3-.2-2.7-.5-4z");
-    			add_location(path0, file$4, 85, 12, 2688);
-    			add_location(defs, file$4, 84, 10, 2668);
+    			add_location(path0, file$4, 85, 12, 3359);
+    			add_location(defs, file$4, 84, 10, 3339);
     			xlink_attr(use, "xlink:href", "#a");
     			attr_dev(use, "overflow", "visible");
-    			add_location(use, file$4, 93, 12, 3040);
+    			add_location(use, file$4, 93, 12, 3711);
     			attr_dev(clipPath, "id", "b");
-    			add_location(clipPath, file$4, 92, 10, 3009);
+    			add_location(clipPath, file$4, 92, 10, 3680);
     			attr_dev(path1, "clip-path", "url(#b)");
     			attr_dev(path1, "fill", "#FBBC05");
     			attr_dev(path1, "d", "M0 37V11l17 13z");
-    			add_location(path1, file$4, 95, 10, 3117);
+    			add_location(path1, file$4, 95, 10, 3788);
     			attr_dev(path2, "clip-path", "url(#b)");
     			attr_dev(path2, "fill", "#EA4335");
     			attr_dev(path2, "d", "M0 11l17 13 7-6.1L48 14V0H0z");
-    			add_location(path2, file$4, 96, 10, 3192);
+    			add_location(path2, file$4, 96, 10, 3863);
     			attr_dev(path3, "clip-path", "url(#b)");
     			attr_dev(path3, "fill", "#34A853");
     			attr_dev(path3, "d", "M0 37l30-23 7.9 1L48 0v48H0z");
-    			add_location(path3, file$4, 100, 10, 3319);
+    			add_location(path3, file$4, 100, 10, 3990);
     			attr_dev(path4, "clip-path", "url(#b)");
     			attr_dev(path4, "fill", "#4285F4");
     			attr_dev(path4, "d", "M48 48L17 24l-4-3 35-10z");
-    			add_location(path4, file$4, 104, 10, 3446);
+    			add_location(path4, file$4, 104, 10, 4117);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg, "viewBox", "0 0 48 48");
     			attr_dev(svg, "class", "w-6 h-6 pr-2");
-    			add_location(svg, file$4, 79, 8, 2488);
-    			add_location(span, file$4, 109, 8, 3583);
+    			add_location(svg, file$4, 79, 8, 3159);
+    			add_location(span, file$4, 109, 8, 4254);
     			attr_dev(button, "class", "flex bg-white rounded shadow text-gray-700 py-2 px-4 font-bold\r\n        justify-center w-1/2 md: w-full");
-    			add_location(button, file$4, 74, 6, 2270);
+    			add_location(button, file$4, 74, 6, 2941);
     			dispose = listen_dev(button, "click", /*click_handler*/ ctx[3], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -29138,45 +29138,46 @@
     			t10 = text("\r\n      •\r\n      ");
     			span2 = element("span");
     			span2.textContent = "v0.1";
-    			attr_dev(span0, "class", "label svelte-1nrrn29");
-    			add_location(span0, file$4, 126, 6, 4150);
+    			attr_dev(span0, "class", "label svelte-17ige3d");
+    			add_location(span0, file$4, 127, 6, 4843);
 
     			attr_dev(div0, "class", div0_class_value = "theme-button bg-white " + (/*selectedTheme*/ ctx[0] === "bright"
     			? "selected-theme"
-    			: "border-4 border-gray-400") + " svelte-1nrrn29");
+    			: "border-4 border-gray-400") + " svelte-17ige3d");
 
-    			add_location(div0, file$4, 128, 8, 4227);
+    			add_location(div0, file$4, 129, 8, 4920);
 
     			attr_dev(div1, "class", div1_class_value = "theme-button bg-black " + (/*selectedTheme*/ ctx[0] === "dark"
     			? "selected-theme"
-    			: "border-4 border-gray-400") + " svelte-1nrrn29");
+    			: "border-4 border-gray-400") + " svelte-17ige3d");
 
-    			add_location(div1, file$4, 131, 8, 4412);
+    			add_location(div1, file$4, 132, 8, 5105);
     			attr_dev(div2, "class", "flex flex-row");
-    			add_location(div2, file$4, 127, 6, 4190);
-    			attr_dev(div3, "class", "w-full flex flex-row items-center justify-between mt-12");
-    			add_location(div3, file$4, 125, 4, 4073);
-    			attr_dev(span1, "class", "label svelte-1nrrn29");
-    			add_location(span1, file$4, 144, 6, 4865);
+    			add_location(div2, file$4, 128, 6, 4883);
+    			attr_dev(div3, "class", "w-full flex flex-row items-center justify-between mt-12 px-4 py-4");
+    			add_location(div3, file$4, 125, 4, 4749);
+    			attr_dev(span1, "class", "label svelte-17ige3d");
+    			add_location(span1, file$4, 145, 6, 5573);
     			attr_dev(i, "class", "material-icons-round md-48");
     			set_style(i, "color", "hsl(var(--primary-hue), 50%, 50%)");
-    			add_location(i, file$4, 145, 6, 4926);
-    			attr_dev(div4, "class", "w-full flex flex-row items-center justify-between my-12\r\n      fill-current");
-    			add_location(div4, file$4, 136, 4, 4615);
+    			add_location(i, file$4, 146, 6, 5634);
+    			attr_dev(div4, "id", "refresh-wrapper");
+    			attr_dev(div4, "class", "w-full flex flex-row items-center justify-between fill-current svelte-17ige3d");
+    			add_location(div4, file$4, 137, 4, 5308);
     			attr_dev(a, "href", "/privacy-policy.html");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "class", "mr-2");
-    			add_location(a, file$4, 154, 6, 5207);
+    			add_location(a, file$4, 155, 6, 5915);
     			attr_dev(span2, "class", "text-center mb-8 ml-2");
-    			add_location(span2, file$4, 158, 6, 5320);
+    			add_location(span2, file$4, 159, 6, 6028);
     			attr_dev(div5, "class", "w-full text-center my-8 flex flex-row justify-center");
     			set_style(div5, "color", "var(--text-color2)");
-    			add_location(div5, file$4, 151, 4, 5085);
-    			attr_dev(div6, "class", "wrapper svelte-1nrrn29");
-    			add_location(div6, file$4, 72, 2, 2194);
+    			add_location(div5, file$4, 152, 4, 5793);
+    			attr_dev(div6, "class", "wrapper svelte-17ige3d");
+    			add_location(div6, file$4, 72, 2, 2865);
     			attr_dev(div7, "class", "flex flex-col mx-4 my-8 items-center");
     			set_style(div7, "color", "var(--text-color)");
-    			add_location(div7, file$4, 68, 0, 2071);
+    			add_location(div7, file$4, 68, 0, 2742);
 
     			dispose = [
     				listen_dev(div0, "click", /*click_handler_2*/ ctx[5], false, false, false),
@@ -29238,13 +29239,13 @@
 
     			if (!current || dirty & /*selectedTheme*/ 1 && div0_class_value !== (div0_class_value = "theme-button bg-white " + (/*selectedTheme*/ ctx[0] === "bright"
     			? "selected-theme"
-    			: "border-4 border-gray-400") + " svelte-1nrrn29")) {
+    			: "border-4 border-gray-400") + " svelte-17ige3d")) {
     				attr_dev(div0, "class", div0_class_value);
     			}
 
     			if (!current || dirty & /*selectedTheme*/ 1 && div1_class_value !== (div1_class_value = "theme-button bg-black " + (/*selectedTheme*/ ctx[0] === "dark"
     			? "selected-theme"
-    			: "border-4 border-gray-400") + " svelte-1nrrn29")) {
+    			: "border-4 border-gray-400") + " svelte-17ige3d")) {
     				attr_dev(div1, "class", div1_class_value);
     			}
     		},

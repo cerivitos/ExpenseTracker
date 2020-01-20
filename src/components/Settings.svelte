@@ -66,7 +66,19 @@
 
 <style type="text/postcss">
   .sign-out-button {
-    @apply py-2 text-red-600;
+    @apply py-2 text-red-600 rounded-full px-4;
+    background-color: transparent;
+    transition: background-color 250ms ease-out;
+  }
+
+  .sign-out-button:hover {
+    background-color: hsla(var(--secondary-hue), 30%, 85%, 0.2);
+    transition: background-color 250ms ease-out;
+  }
+
+  .sign-out-button:active {
+    background-color: hsla(var(--secondary-hue), 30%, 75%, 0.4);
+    transition: background-color 80ms ease-in;
   }
 
   .name {
@@ -92,6 +104,22 @@
 
   .wrapper {
     @apply w-full flex flex-col;
+  }
+
+  #refresh-wrapper {
+    @apply cursor-pointer py-6 px-4;
+    background-color: transparent;
+    transition: background-color 250ms ease-out;
+  }
+
+  #refresh-wrapper:hover {
+    background-color: hsla(var(--secondary-hue), 30%, 85%, 0.2);
+    transition: background-color 250ms ease-out;
+  }
+
+  #refresh-wrapper:active {
+    background-color: hsla(var(--secondary-hue), 30%, 75%, 0.4);
+    transition: background-color 80ms ease-in;
   }
 
   @media only screen and (min-width: 768px) {
@@ -145,7 +173,7 @@
         <span>Sign in with Google</span>
       </button>
     {:else}
-      <div class="flex flex-row items-center">
+      <div class="flex flex-row items-center px-4">
         <img
           src={$userInfo.photo}
           alt="User photo"
@@ -158,7 +186,8 @@
         </div>
       </div>
     {/if}
-    <div class="w-full flex flex-row items-center justify-between mt-12">
+    <div
+      class="w-full flex flex-row items-center justify-between mt-12 px-4 py-4">
       <span class="label">Theme</span>
       <div class="flex flex-row">
         <div
@@ -170,8 +199,8 @@
       </div>
     </div>
     <div
-      class="w-full flex flex-row items-center justify-between my-12
-      fill-current"
+      id="refresh-wrapper"
+      class="w-full flex flex-row items-center justify-between fill-current"
       on:click={() => {
         dashboardShouldReload.set(true);
         handleRouting('dashboard');
