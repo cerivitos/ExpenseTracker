@@ -27210,28 +27210,28 @@
     			div3 = element("div");
     			attr_dev(i, "class", "material-icons-round md-18");
     			set_style(i, "display", "block", 1);
-    			add_location(i, file, 43, 6, 1492);
+    			add_location(i, file, 44, 6, 1824);
     			attr_dev(div0, "id", "icon");
     			attr_dev(div0, "class", "rounded-full p-2 ml-4 mr-2 fill-current");
     			set_style(div0, "background-color", /*backgroundColor*/ ctx[3]);
     			set_style(div0, "color", /*iconColor*/ ctx[4]);
-    			add_location(div0, file, 39, 4, 1337);
+    			add_location(div0, file, 40, 4, 1669);
     			attr_dev(span0, "class", "mr-2 font-bold");
     			attr_dev(span0, "id", "label");
-    			add_location(span0, file, 50, 6, 1760);
-    			add_location(span1, file, 51, 6, 1826);
+    			add_location(span0, file, 51, 6, 2092);
+    			add_location(span1, file, 52, 6, 2158);
     			attr_dev(div1, "class", "flex flex-row items-center truncate flex-grow");
 
     			set_style(div1, "color", /*$themeIsBright*/ ctx[6]
     			? /*iconColor*/ ctx[4]
     			: /*backgroundColor*/ ctx[3]);
 
-    			add_location(div1, file, 47, 4, 1617);
-    			attr_dev(span2, "class", "ml-2 mr-4 font-bold amount svelte-yg0mqo");
-    			add_location(span2, file, 53, 4, 1887);
+    			add_location(div1, file, 48, 4, 1949);
+    			attr_dev(span2, "class", "ml-2 mr-4 font-bold amount svelte-1f8xers");
+    			add_location(span2, file, 54, 4, 2219);
     			attr_dev(div2, "id", "items-wrapper");
     			attr_dev(div2, "class", "z-10 flex flex-row items-center w-full");
-    			add_location(div2, file, 38, 2, 1260);
+    			add_location(div2, file, 39, 2, 1592);
     			attr_dev(div3, "class", "absolute left-0 top-0 h-full rounded-r opacity-25");
 
     			set_style(div3, "width", (window.innerWidth <= 768
@@ -27239,9 +27239,10 @@
     			: window.innerWidth * 1 / 2) * /*data*/ ctx[0].percentage / 100 + "px");
 
     			set_style(div3, "background-color", /*barColor*/ ctx[5]);
-    			add_location(div3, file, 57, 2, 2002);
-    			attr_dev(div4, "class", div4_class_value = "relative py-2 mb-2 " + (window.innerWidth <= 768 ? "w-full" : "w-8/12") + "\r\n  flex flex-row items-center cursor-pointer");
-    			add_location(div4, file, 32, 0, 1013);
+    			add_location(div3, file, 58, 2, 2334);
+    			attr_dev(div4, "id", "tile-wrapper");
+    			attr_dev(div4, "class", div4_class_value = "relative py-2 mb-2 " + (window.innerWidth <= 768 ? "w-full" : "w-8/12") + "\r\n  flex flex-row items-center cursor-pointer" + " svelte-1f8xers");
+    			add_location(div4, file, 32, 0, 1324);
     			dispose = listen_dev(div4, "click", /*click_handler*/ ctx[10], false, false, false);
     		},
     		l: function claim(nodes) {

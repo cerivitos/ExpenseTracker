@@ -33,9 +33,25 @@
     content: "$";
     @apply text-sm font-light mr-1;
   }
+
+  #tile-wrapper {
+    background-color: transparent;
+    transition: background-color 250ms ease-out;
+  }
+
+  #tile-wrapper:hover {
+    background-color: hsla(var(--secondary-hue), 30%, 85%, 0.2);
+    transition: background-color 250ms ease-out;
+  }
+
+  #tile-wrapper:active {
+    background-color: hsla(var(--secondary-hue), 30%, 75%, 0.4);
+    transition: background-color 80ms ease-in;
+  }
 </style>
 
 <div
+  id="tile-wrapper"
   class="relative py-2 mb-2 {window.innerWidth <= 768 ? 'w-full' : 'w-8/12'}
   flex flex-row items-center cursor-pointer"
   in:fade={{ duration: 80, delay: index * 50 }}
