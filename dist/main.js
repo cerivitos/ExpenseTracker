@@ -27498,7 +27498,7 @@
     			span = element("span");
     			span.textContent = " ";
     			attr_dev(span, "class", "w-full text-center text-transparent font-light mb-8");
-    			add_location(span, file$1, 320, 6, 10064);
+    			add_location(span, file$1, 320, 6, 10439);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -27535,7 +27535,7 @@
     			t = text(t_value);
     			attr_dev(span, "class", "w-full text-center font-light mb-12");
     			set_style(span, "color", "var(--text-color2)");
-    			add_location(span, file$1, 313, 6, 9849);
+    			add_location(span, file$1, 313, 6, 10224);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -27589,9 +27589,9 @@
 
     			attr_dev(button, "class", button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[21]
     			? "active"
-    			: "") + " svelte-1fwvoqm");
+    			: "") + " svelte-1fsuttd");
 
-    			add_location(button, file$1, 326, 8, 10278);
+    			add_location(button, file$1, 326, 8, 10653);
     			dispose = listen_dev(button, "click", click_handler_1, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -27604,7 +27604,7 @@
 
     			if (dirty & /*currentInterval*/ 2 && button_class_value !== (button_class_value = "interval-button " + (/*currentInterval*/ ctx[1] === /*interval*/ ctx[21]
     			? "active"
-    			: "") + " svelte-1fwvoqm")) {
+    			: "") + " svelte-1fsuttd")) {
     				attr_dev(button, "class", button_class_value);
     			}
     		},
@@ -27881,19 +27881,19 @@
     			t6 = space();
     			info.block.c();
     			attr_dev(i, "class", "material-icons-round fill-current");
-    			add_location(i, file$1, 306, 6, 9600);
-    			attr_dev(button, "class", "searchbar svelte-1fwvoqm");
-    			add_location(button, file$1, 300, 4, 9458);
+    			add_location(i, file$1, 306, 6, 9975);
+    			attr_dev(button, "class", "searchbar svelte-1fsuttd");
+    			add_location(button, file$1, 300, 4, 9833);
     			attr_dev(span, "class", "w-full mb-1 text-4xl text-center font-bold");
     			attr_dev(span, "id", "totalSpend");
-    			add_location(span, file$1, 309, 4, 9690);
-    			attr_dev(div0, "class", "interval-button-wrapper svelte-1fwvoqm");
-    			add_location(div0, file$1, 324, 4, 10178);
-    			attr_dev(div1, "class", "overall-wrapper svelte-1fwvoqm");
-    			add_location(div1, file$1, 299, 2, 9423);
+    			add_location(span, file$1, 309, 4, 10065);
+    			attr_dev(div0, "class", "interval-button-wrapper svelte-1fsuttd");
+    			add_location(div0, file$1, 324, 4, 10553);
+    			attr_dev(div1, "class", "overall-wrapper svelte-1fsuttd");
+    			add_location(div1, file$1, 299, 2, 9798);
     			attr_dev(div2, "class", div2_class_value = "flex flex-col w-full items-center my-8 " + (/*$overlay*/ ctx[4].length > 0 ? "hidden" : ""));
     			set_style(div2, "color", "var(--text-color)");
-    			add_location(div2, file$1, 295, 0, 9260);
+    			add_location(div2, file$1, 295, 0, 9635);
     			dispose = listen_dev(button, "click", /*click_handler*/ ctx[15], false, false, false);
     		},
     		l: function claim(nodes) {

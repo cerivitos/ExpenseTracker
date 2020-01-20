@@ -303,12 +303,17 @@
     color: var(--text-color2);
   }
 
+  .interval-button:hover {
+    background-color: hsla(var(--secondary-hue), 40%, 85%, 0.4);
+    transition: background-color 250ms ease-out;
+  }
+
   .interval-button:not(:last-child) {
     @apply mr-2;
   }
 
   .interval-button.active {
-    background-color: hsla(var(--secondary-hue), 50%, 50%);
+    background-color: hsl(var(--secondary-hue), 50%, 50%);
     color: whitesmoke;
   }
 
@@ -317,6 +322,17 @@
     text-center;
     color: var(--text-color2);
     background-color: var(--inactive-button-color);
+    transition: background-color 250ms ease-out;
+  }
+
+  .searchbar:hover {
+    background-color: hsla(var(--secondary-hue), 30%, 85%, 0.4);
+    transition: background-color 250ms ease-out;
+  }
+
+  .searchbar:active {
+    background-color: hsl(var(--secondary-hue), 30%, 85%, 0.4);
+    transition: background-color 250ms ease-out;
   }
 
   .overall-wrapper {
