@@ -28,16 +28,6 @@
     transition: background-color 250ms ease-out;
   }
 
-  .nav-button:hover {
-    background-color: hsla(var(--secondary-hue), 30%, 85%, 0.2);
-    transition: background-color 250ms ease-out;
-  }
-
-  .nav-button:active {
-    background-color: hsla(var(--secondary-hue), 30%, 75%, 0.4);
-    transition: background-color 80ms ease-in;
-  }
-
   .navbar .active {
     color: hsl(var(--primary-hue), 65%, 45%);
     transition: all 180ms;
@@ -95,6 +85,16 @@
 
     .nav-button {
       @apply flex flex-row items-center justify-start w-full p-4;
+    }
+
+    .nav-button:hover {
+      background-color: hsla(var(--secondary-hue), 30%, 85%, 0.2);
+      transition: background-color 250ms ease-out;
+    }
+
+    .nav-button:active {
+      background-color: hsla(var(--secondary-hue), 30%, 75%, 0.4);
+      transition: background-color 80ms ease-in;
     }
 
     button:nth-child(2) {
