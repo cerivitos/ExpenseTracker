@@ -174,15 +174,14 @@
     @apply text-lg font-normal;
   }
 
-  .input-error {
-    background-color: rgba(220, 20, 60, 0.2);
-    box-shadow: 0 0 0 2px rgba(220, 20, 60) inset;
-    color: rgba(220, 20, 60);
-  }
-
-  label {
+  .label {
     @apply text-2xl font-bold ml-4 mr-2 w-1/3;
     color: var(--text-color);
+  }
+
+  .label-error:after {
+    content: "•";
+    @apply relative ml-2 mb-4 text-red-600;
   }
 
   .input-row {
@@ -295,7 +294,11 @@
   <div class="flex flex-col items-center justify-around mt-8">
     <div class="form-wrapper">
       <div class="input-row" in:fade={{ duration: 120, delay: 30 }}>
-        <label for="amount-input">Amount</label>
+        <label
+          for="amount-input"
+          class={amountValid ? 'label' : 'label label-error'}>
+          Amount
+        </label>
         <input
           id="amount-input"
           class="amount text-2xl"
@@ -305,7 +308,11 @@
           on:click={() => document.execCommand('selectall', null, false)} />
       </div>
       <div class="input-row" in:fade={{ duration: 120, delay: 60 }}>
-        <label for="date-input">Date</label>
+        <label
+          for="date-input"
+          class={dateValid ? 'label' : 'label label-error'}>
+          Date
+        </label>
         <div class="mr-4">
           <button
             id="today-button"
@@ -330,7 +337,7 @@
         <input id="date-input" type="date" bind:value={date} />
       </div>
       <div class="mt-12 flex flex-col" in:fade={{ duration: 120, delay: 150 }}>
-        <label>Type</label>
+        <label class="label">Type</label>
         <div class="w-full flex flex-row flex-wrap justify-start">
           {#each typeDesigns as typeDesign}
             <TypeButton
@@ -343,7 +350,7 @@
         </div>
       </div>
       <div class="input-row" in:fade={{ duration: 120, delay: 120 }}>
-        <label for="description-input">Description</label>
+        <label for="description-input" class="label">Description</label>
         <input
           class="truncate text-2xl"
           id="description-input"
