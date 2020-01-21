@@ -90,11 +90,11 @@
     }
 
     .navbar {
-      @apply w-3/12 h-screen flex flex-col fixed left-0 fill-current items-start justify-center p-4;
+      @apply w-3/12 h-screen flex flex-col fixed left-0 fill-current items-start justify-center;
     }
 
     .nav-button {
-      @apply flex flex-row items-center justify-start w-full py-4;
+      @apply flex flex-row items-center justify-start w-full p-4;
     }
 
     button:nth-child(2) {
@@ -122,7 +122,7 @@
     }
 
     #entry-button {
-      @apply rounded-full w-full flex flex-row justify-center items-center fill-current text-white font-bold text-xl shadow-lg pointer-events-auto;
+      @apply rounded-full w-10/12 flex flex-row justify-center items-center fill-current text-white font-bold text-xl shadow-lg pointer-events-auto;
       background-color: hsl(var(--accent-hue), 50%, 50%);
       box-shadow: 0px 3px 6px 0px hsla(var(--accent-hue), 35%, 75%, 0.5);
     }
@@ -137,10 +137,12 @@
 </div>
 <nav class="navbar">
   {#if window.innerWidth > 768}
-    <button id="entry-button" on:click={() => setView('entry')}>
-      <i class="material-icons-round">post_add</i>
-      Add spending
-    </button>
+    <div class="w-full flex items-center justify-center">
+      <button id="entry-button" on:click={() => setView('entry')}>
+        <i class="material-icons-round">post_add</i>
+        Add spending
+      </button>
+    </div>
   {/if}
   <button
     class="nav-button {$view === 'dashboard' ? 'active' : 'inactive'}"
