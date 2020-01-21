@@ -27496,7 +27496,7 @@
     	return child_ctx;
     }
 
-    // (320:4) {:else}
+    // (321:4) {:else}
     function create_else_block(ctx) {
     	let span;
 
@@ -27505,7 +27505,7 @@
     			span = element("span");
     			span.textContent = " ";
     			attr_dev(span, "class", "w-full text-center text-transparent font-light mb-8");
-    			add_location(span, file$1, 320, 6, 10439);
+    			add_location(span, file$1, 321, 6, 10484);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -27522,14 +27522,14 @@
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(320:4) {:else}",
+    		source: "(321:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (313:4) {#if firstDate.length > 0 && lastDate.length > 0}
+    // (314:4) {#if firstDate.length > 0 && lastDate.length > 0}
     function create_if_block(ctx) {
     	let span;
     	let t_value = /*lastDate*/ ctx[3] + " — " + /*firstDate*/ ctx[2] + "";
@@ -27542,7 +27542,7 @@
     			t = text(t_value);
     			attr_dev(span, "class", "w-full text-center font-light mb-12");
     			set_style(span, "color", "var(--text-color2)");
-    			add_location(span, file$1, 313, 6, 10224);
+    			add_location(span, file$1, 314, 6, 10269);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -27569,14 +27569,14 @@
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(313:4) {#if firstDate.length > 0 && lastDate.length > 0}",
+    		source: "(314:4) {#if firstDate.length > 0 && lastDate.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (326:6) {#each ['1M', '6M', '1Y', 'All'] as interval}
+    // (327:6) {#each ['1M', '6M', '1Y', 'All'] as interval}
     function create_each_block_1(ctx) {
     	let button;
     	let t0;
@@ -27598,7 +27598,7 @@
     			? "active"
     			: "") + " svelte-1fsuttd");
 
-    			add_location(button, file$1, 326, 8, 10653);
+    			add_location(button, file$1, 327, 8, 10698);
     			dispose = listen_dev(button, "click", click_handler_1, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -27625,7 +27625,7 @@
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(326:6) {#each ['1M', '6M', '1Y', 'All'] as interval}",
+    		source: "(327:6) {#each ['1M', '6M', '1Y', 'All'] as interval}",
     		ctx
     	});
 
@@ -27654,7 +27654,7 @@
     	return block;
     }
 
-    // (335:37)       {#each result as data, index}
+    // (336:37)       {#each result as data, index}
     function create_then_block(ctx) {
     	let each_1_anchor;
     	let current;
@@ -27741,14 +27741,14 @@
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(335:37)       {#each result as data, index}",
+    		source: "(336:37)       {#each result as data, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (336:4) {#each result as data, index}
+    // (337:4) {#each result as data, index}
     function create_each_block(ctx) {
     	let current;
 
@@ -27791,7 +27791,7 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(336:4) {#each result as data, index}",
+    		source: "(337:4) {#each result as data, index}",
     		ctx
     	});
 
@@ -27888,19 +27888,19 @@
     			t6 = space();
     			info.block.c();
     			attr_dev(i, "class", "material-icons-round fill-current");
-    			add_location(i, file$1, 306, 6, 9975);
+    			add_location(i, file$1, 307, 6, 10020);
     			attr_dev(button, "class", "searchbar svelte-1fsuttd");
-    			add_location(button, file$1, 300, 4, 9833);
+    			add_location(button, file$1, 301, 4, 9878);
     			attr_dev(span, "class", "w-full mb-1 text-4xl text-center font-bold");
     			attr_dev(span, "id", "totalSpend");
-    			add_location(span, file$1, 309, 4, 10065);
+    			add_location(span, file$1, 310, 4, 10110);
     			attr_dev(div0, "class", "interval-button-wrapper svelte-1fsuttd");
-    			add_location(div0, file$1, 324, 4, 10553);
+    			add_location(div0, file$1, 325, 4, 10598);
     			attr_dev(div1, "class", "overall-wrapper svelte-1fsuttd");
-    			add_location(div1, file$1, 299, 2, 9798);
+    			add_location(div1, file$1, 300, 2, 9843);
     			attr_dev(div2, "class", div2_class_value = "flex flex-col w-full items-center my-8 " + (/*$overlay*/ ctx[4].length > 0 ? "hidden" : ""));
     			set_style(div2, "color", "var(--text-color)");
-    			add_location(div2, file$1, 295, 0, 9635);
+    			add_location(div2, file$1, 296, 0, 9680);
     			dispose = listen_dev(button, "click", /*click_handler*/ ctx[15], false, false, false);
     		},
     		l: function claim(nodes) {
@@ -28284,6 +28284,7 @@
     		if ($$self.$$.dirty & /*$dashboardShouldReload, currentInterval*/ 4098) {
     			$: if ($dashboardShouldReload) {
     				localStorage.removeItem("rawCache");
+    				localStorage.removeItem("lastUpdated");
     				changeInterval(currentInterval);
     				dashboardShouldReload.set(false);
     			}
