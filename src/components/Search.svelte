@@ -11,11 +11,13 @@
   import SearchListTile from "./SearchListTile.svelte";
 
   let scrolling = false;
+  let hasClickedSearch = false;
   let query = "";
   let filteredDatas = [];
   let buckets = [];
   let datas;
   let searchFuture;
+  let firstDate, lastDate;
 
   onMount(() => {
     document.getElementById("search-input").focus();
@@ -30,9 +32,18 @@
       }
     });
 
+    firstDate = new Date(datas[0].date).toString().substring(4, 15);
+    lastDate = new Date(datas[datas.length - 1].date)
+      .toString()
+      .substring(4, 15);
+
     document.getElementById("search-page").addEventListener("scroll", ev => {
       ev.target.scrollTop > 0 ? (scrolling = true) : (scrolling = false);
     });
+
+    document
+      .getElementById("search-input")
+      .addEventListener("input", () => (hasClickedSearch = false));
 
     if (Object.keys($filteredSearchData).length > 0) {
       query = $queryString;
@@ -87,6 +98,8 @@
   }
 
   function searchData(query) {
+    hasClickedSearch = true;
+
     buckets = [];
 
     if (datas && query.length > 0) {
@@ -210,6 +223,7 @@
         id="search-input"
         type="text"
         placeholder="Search"
+        autocomplete="off"
         bind:value={query}
         on:keyup={ev => {
           if (ev.key === 'Enter') {
@@ -233,7 +247,7 @@
   </div>
   <div id="content" class="w-full flex flex-col items-center mt-16">
     <div class="content-wrapper">
-      {#if filteredDatas && query.length > 0}
+      {#if filteredDatas.length > 0 && query.length > 0}
         {#each buckets as bucket, index}
           {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
             <span
@@ -262,6 +276,21 @@
             {/each}
           </div>
         {/each}
+      {:else if filteredDatas.length === 0 && hasClickedSearch}
+        <div
+          transition:fade={{ duration: 120 }}
+          class="w-auto mt-24 text-center flex flex-col items-center
+          justify-center mx-4">
+          <span class="text-2xl" style="color: var(--text-color)">
+            Nothing found between
+          </span>
+          <span class="text-2xl font-bold" style="color: var(--text-color2)">
+            {lastDate} — {firstDate}
+          </span>
+          <span class="mt-2 text-lg" style="color: var(--text-color)">
+            Try changing the Dashboard interval to download more data
+          </span>
+        </div>
       {/if}
     </div>
   </div>
