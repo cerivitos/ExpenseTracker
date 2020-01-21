@@ -962,6 +962,10 @@
         else
             dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
     }
+    function prop_dev(node, property, value) {
+        node[property] = value;
+        dispatch_dev("SvelteDOMSetProperty", { node, property, value });
+    }
     function set_data_dev(text, data) {
         data = '' + data;
         if (text.data === data)
@@ -31109,7 +31113,7 @@
     	return block;
     }
 
-    // (267:6) {#if Object.keys($entryData).length > 0}
+    // (268:6) {#if Object.keys($entryData).length > 0}
     function create_if_block$5(ctx) {
     	let div;
     	let button;
@@ -31121,9 +31125,9 @@
     			button = element("button");
     			button.textContent = "Delete";
     			attr_dev(button, "class", "sign-out-button svelte-69l3sb");
-    			add_location(button, file$8, 268, 10, 11210);
+    			add_location(button, file$8, 269, 10, 11292);
     			attr_dev(div, "class", "w-full text-center");
-    			add_location(div, file$8, 267, 8, 11166);
+    			add_location(div, file$8, 268, 8, 11248);
     			dispose = listen_dev(button, "click", /*click_handler_7*/ ctx[29], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -31141,7 +31145,7 @@
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(267:6) {#if Object.keys($entryData).length > 0}",
+    		source: "(268:6) {#if Object.keys($entryData).length > 0}",
     		ctx
     	});
 
@@ -31198,6 +31202,7 @@
     	let t21_value = (/*isUpdate*/ ctx[9] ? "Update" : "Submit") + "";
     	let t21;
     	let button3_class_value;
+    	let button3_disabled_value;
     	let div9_intro;
     	let t22;
     	let show_if = Object.keys(/*$entryData*/ ctx[10]).length > 0;
@@ -31344,8 +31349,9 @@
 
     			attr_dev(button3, "class", button3_class_value = "submit-button " + (/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
     			? "active"
-    			: "inactive") + " svelte-69l3sb");
+    			: "inactive cursor-not-allowed") + " svelte-69l3sb");
 
+    			button3.disabled = button3_disabled_value = !(/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]);
     			add_location(button3, file$8, 260, 8, 10886);
     			attr_dev(div9, "class", "w-full text-center block");
     			add_location(div9, file$8, 257, 6, 10780);
@@ -31493,8 +31499,12 @@
 
     			if (!current || dirty[0] & /*typeValid, dateValid, amountValid*/ 448 && button3_class_value !== (button3_class_value = "submit-button " + (/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
     			? "active"
-    			: "inactive") + " svelte-69l3sb")) {
+    			: "inactive cursor-not-allowed") + " svelte-69l3sb")) {
     				attr_dev(button3, "class", button3_class_value);
+    			}
+
+    			if (!current || dirty[0] & /*typeValid, dateValid, amountValid*/ 448 && button3_disabled_value !== (button3_disabled_value = !(/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]))) {
+    				prop_dev(button3, "disabled", button3_disabled_value);
     			}
 
     			if (dirty[0] & /*$entryData*/ 1024) show_if = Object.keys(/*$entryData*/ ctx[10]).length > 0;

@@ -368,7 +368,8 @@
         class="w-full text-center block"
         in:fade={{ duration: 120, delay: 180 }}>
         <button
-          class="submit-button {typeValid && dateValid && amountValid ? 'active' : 'inactive'}"
+          class="submit-button {typeValid && dateValid && amountValid ? 'active' : 'inactive cursor-not-allowed'}"
+          disabled={!(typeValid && dateValid && amountValid)}
           on:click={() => sendEntry()}>
           {isUpdate ? 'Update' : 'Submit'}
         </button>
