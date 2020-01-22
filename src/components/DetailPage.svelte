@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, onDestroy } from "svelte";
   import { fly, fade, scale, crossfade } from "svelte/transition";
   import { typeDesigns, convertRemToPixels, handleRouting } from "../util";
   import {
@@ -48,6 +48,8 @@
 
     getBucketsPromise = createBuckets();
   });
+
+  onDestroy(() => detailData.set({}));
 
   async function createBuckets() {
     let buckets = [];
@@ -151,7 +153,6 @@
         class="material-icons-round fill-current"
         on:click={() => {
           handleRouting('dashboard');
-          detailData.set({});
           view.set('dashboard');
           overlay.set('');
         }}>
