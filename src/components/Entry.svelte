@@ -212,7 +212,7 @@
   }
 
   .submit-button {
-    @apply rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-24 mb-12 bg-gray-300;
+    @apply rounded-full px-4 py-2 text-white text-2xl font-bold w-4/5 mt-24 mb-8 bg-gray-300;
     transition: background-color 250ms ease-out;
   }
 

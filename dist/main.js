@@ -31079,7 +31079,7 @@
     			button = element("button");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(button, "class", "suggestion-button svelte-y85f9s");
+    			attr_dev(button, "class", "suggestion-button svelte-1nhpnlf");
     			add_location(button, file$8, 256, 12, 10724);
     			dispose = listen_dev(button, "click", click_handler_5, false, false, false);
     			this.first = button;
@@ -31134,7 +31134,7 @@
     			div = element("div");
     			button = element("button");
     			button.textContent = "Delete";
-    			attr_dev(button, "class", "sign-out-button svelte-y85f9s");
+    			attr_dev(button, "class", "sign-out-button svelte-1nhpnlf");
     			add_location(button, file$8, 277, 10, 11513);
     			attr_dev(div, "class", "w-full text-center");
     			add_location(div, file$8, 276, 8, 11469);
@@ -31311,51 +31311,51 @@
     			set_style(div0, "background-color", "var(--background-color)");
     			add_location(div0, file$8, 169, 2, 7525);
     			attr_dev(label0, "for", "amount-input");
-    			attr_dev(label0, "class", label0_class_value = "" + (null_to_empty(/*amountValid*/ ctx[6] ? "label" : "label label-error") + " svelte-y85f9s"));
+    			attr_dev(label0, "class", label0_class_value = "" + (null_to_empty(/*amountValid*/ ctx[6] ? "label" : "label label-error") + " svelte-1nhpnlf"));
     			add_location(label0, file$8, 188, 8, 8247);
     			attr_dev(input0, "id", "amount-input");
-    			attr_dev(input0, "class", "amount text-2xl svelte-y85f9s");
+    			attr_dev(input0, "class", "amount text-2xl svelte-1nhpnlf");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
     			add_location(input0, file$8, 193, 8, 8393);
-    			attr_dev(div1, "class", "input-row svelte-y85f9s");
+    			attr_dev(div1, "class", "input-row svelte-1nhpnlf");
     			add_location(div1, file$8, 187, 6, 8175);
     			attr_dev(label1, "for", "date-input");
-    			attr_dev(label1, "class", label1_class_value = "" + (null_to_empty(/*dateValid*/ ctx[7] ? "label" : "label label-error") + " svelte-y85f9s"));
+    			attr_dev(label1, "class", label1_class_value = "" + (null_to_empty(/*dateValid*/ ctx[7] ? "label" : "label label-error") + " svelte-1nhpnlf"));
     			add_location(label1, file$8, 202, 8, 8710);
     			attr_dev(button1, "id", "today-button");
-    			attr_dev(button1, "class", "date-button active svelte-y85f9s");
+    			attr_dev(button1, "class", "date-button active svelte-1nhpnlf");
     			add_location(button1, file$8, 208, 10, 8880);
     			attr_dev(button2, "id", "yesterday-button");
-    			attr_dev(button2, "class", "date-button svelte-y85f9s");
+    			attr_dev(button2, "class", "date-button svelte-1nhpnlf");
     			add_location(button2, file$8, 214, 10, 9058);
     			attr_dev(div2, "class", "mr-4");
     			add_location(div2, file$8, 207, 8, 8850);
-    			attr_dev(div3, "class", "input-row svelte-y85f9s");
+    			attr_dev(div3, "class", "input-row svelte-1nhpnlf");
     			add_location(div3, file$8, 201, 6, 8638);
     			add_location(span, file$8, 227, 8, 9466);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
-    			attr_dev(input1, "class", "svelte-y85f9s");
+    			attr_dev(input1, "class", "svelte-1nhpnlf");
     			add_location(input1, file$8, 228, 8, 9499);
     			attr_dev(div4, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n        ml-4");
     			set_style(div4, "color", "var(--text-color2)");
     			add_location(div4, file$8, 222, 6, 9267);
-    			attr_dev(label2, "class", "label svelte-y85f9s");
+    			attr_dev(label2, "class", "label svelte-1nhpnlf");
     			add_location(label2, file$8, 231, 8, 9659);
     			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
     			add_location(div5, file$8, 232, 8, 9702);
     			attr_dev(div6, "class", "mt-12 flex flex-col");
     			add_location(div6, file$8, 230, 6, 9576);
     			attr_dev(label3, "for", "description-input");
-    			attr_dev(label3, "class", "label svelte-y85f9s");
+    			attr_dev(label3, "class", "label svelte-1nhpnlf");
     			add_location(label3, file$8, 244, 8, 10193);
-    			attr_dev(input2, "class", "truncate text-2xl svelte-y85f9s");
+    			attr_dev(input2, "class", "truncate text-2xl svelte-1nhpnlf");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "(Optional)");
     			add_location(input2, file$8, 245, 8, 10267);
-    			attr_dev(div7, "class", "input-row svelte-y85f9s");
+    			attr_dev(div7, "class", "input-row svelte-1nhpnlf");
     			add_location(div7, file$8, 243, 6, 10120);
     			attr_dev(div8, "class", "flex mt-4 mx-4 flex-wrap");
     			set_style(div8, "height", "80px");
@@ -31363,13 +31363,13 @@
 
     			attr_dev(button3, "class", button3_class_value = "submit-button " + (/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
     			? "active"
-    			: "inactive cursor-not-allowed") + " svelte-y85f9s");
+    			: "inactive cursor-not-allowed") + " svelte-1nhpnlf");
 
     			button3.disabled = button3_disabled_value = !(/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]);
     			add_location(button3, file$8, 268, 8, 11107);
     			attr_dev(div9, "class", "w-full text-center block");
     			add_location(div9, file$8, 265, 6, 11001);
-    			attr_dev(div10, "class", "form-wrapper svelte-y85f9s");
+    			attr_dev(div10, "class", "form-wrapper svelte-1nhpnlf");
     			add_location(div10, file$8, 186, 4, 8141);
     			attr_dev(div11, "class", "flex flex-col items-center justify-around mt-8");
     			add_location(div11, file$8, 185, 2, 8075);
@@ -31455,7 +31455,7 @@
     				attr_dev(div0, "class", div0_class_value);
     			}
 
-    			if (!current || dirty[0] & /*amountValid*/ 64 && label0_class_value !== (label0_class_value = "" + (null_to_empty(/*amountValid*/ ctx[6] ? "label" : "label label-error") + " svelte-y85f9s"))) {
+    			if (!current || dirty[0] & /*amountValid*/ 64 && label0_class_value !== (label0_class_value = "" + (null_to_empty(/*amountValid*/ ctx[6] ? "label" : "label label-error") + " svelte-1nhpnlf"))) {
     				attr_dev(label0, "class", label0_class_value);
     			}
 
@@ -31465,7 +31465,7 @@
 
     			input0_updating = false;
 
-    			if (!current || dirty[0] & /*dateValid*/ 128 && label1_class_value !== (label1_class_value = "" + (null_to_empty(/*dateValid*/ ctx[7] ? "label" : "label label-error") + " svelte-y85f9s"))) {
+    			if (!current || dirty[0] & /*dateValid*/ 128 && label1_class_value !== (label1_class_value = "" + (null_to_empty(/*dateValid*/ ctx[7] ? "label" : "label label-error") + " svelte-1nhpnlf"))) {
     				attr_dev(label1, "class", label1_class_value);
     			}
 
@@ -31523,7 +31523,7 @@
 
     			if (!current || dirty[0] & /*typeValid, dateValid, amountValid*/ 448 && button3_class_value !== (button3_class_value = "submit-button " + (/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
     			? "active"
-    			: "inactive cursor-not-allowed") + " svelte-y85f9s")) {
+    			: "inactive cursor-not-allowed") + " svelte-1nhpnlf")) {
     				attr_dev(button3, "class", button3_class_value);
     			}
 
