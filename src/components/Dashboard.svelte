@@ -286,6 +286,7 @@
 
   $: if ($dashboardShouldReload) {
     localStorage.removeItem("rawCache");
+    rawData = [];
     localStorage.removeItem("lastUpdated");
     changeInterval(currentInterval);
     dashboardShouldReload.set(false);
