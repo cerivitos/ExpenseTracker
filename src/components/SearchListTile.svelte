@@ -97,8 +97,8 @@
   in:fade={{ duration: 120, delay: index * 50 + 30 }}
   on:click={() => showEditDetail(data)}>
   <div
-    class="rounded-full mr-2 font-bold text-sm whitespace-no-wrap"
-    style="color:{$themeIsBright ? iconColor : backgroundColor}">
+    class="mr-2 font-bold text-sm whitespace-no-wrap"
+    style="color:{$themeIsBright ? iconColor : backgroundColor}; width: 11.5%">
     <span>{new Date(data.date).toString().substring(4, 10)}</span>
   </div>
   <div
@@ -111,7 +111,7 @@
       {materialIcon}
     </i>
   </div>
-  <span class="truncate mr-2 flex-none">
+  <span class="truncate mr-2 flex-none font-medium">
     {@html addedBy}
   </span>
   <span class="truncate mr-2" style="color: var(--text-color2)">
