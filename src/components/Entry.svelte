@@ -285,7 +285,7 @@
         style="color: hsl(var(--primary-hue), 50%, 50%)"
         aria-label="Back button"
         on:click={() => {
-          Object.keys($filteredSearchData).length > 0 ? window.history.back() : window.history.go(-2);
+          Object.keys($detailData).length > 0 ? window.history.go(-2) : window.history.back();
         }}>
         arrow_back
       </i>

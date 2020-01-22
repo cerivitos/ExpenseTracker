@@ -151,6 +151,7 @@
         class="material-icons-round fill-current"
         on:click={() => {
           handleRouting('dashboard');
+          detailData.set({});
           view.set('dashboard');
           overlay.set('');
         }}>
@@ -163,11 +164,15 @@
       in:fade={{ duration: 80 }}>
       <div class="relative">
         {#if sortByDate}
-          <i class="material-icons-round md-18" in:fly={{ y: -48, duration: 80 }}>
+          <i
+            class="material-icons-round md-18"
+            in:fly={{ y: -48, duration: 80 }}>
             date_range
           </i>
         {:else}
-          <i class="material-icons-round md-18" in:fly={{ y: -48, duration: 80 }}>
+          <i
+            class="material-icons-round md-18"
+            in:fly={{ y: -48, duration: 80 }}>
             attach_money
           </i>
         {/if}
