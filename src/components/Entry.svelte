@@ -248,7 +248,7 @@
   }
 
   .sign-out-button {
-    @apply py-2 text-red-600 rounded-full px-4 mb-12 text-center w-1/4;
+    @apply py-2 text-red-600 rounded-full px-4 mb-8 text-center w-1/4;
     background-color: transparent;
     transition: background-color 250ms ease-out;
   }
