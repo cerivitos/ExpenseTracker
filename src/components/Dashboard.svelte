@@ -127,8 +127,7 @@
         .where("date", "<=", endDate)
         .get();
     } catch (error) {
-      toastMessage.set(error.message);
-      setTimeout(() => toastMessage.set(""), 3000);
+      console.error(error.message);
     }
 
     //Get data that has been updated after the last user download from firestore. This is because entries may be updated/edited again at a different date from the expense date (addedOn !== date)
@@ -140,8 +139,7 @@
           .where("addedOn", "<=", new Date().toISOString().substring(0, 10))
           .get();
       } catch (error) {
-        toastMessage.set(error.message);
-        setTimeout(() => toastMessage.set(""), 3000);
+        console.error(error.message);
 
         if (error.code == "permission-denied") {
           signIn();

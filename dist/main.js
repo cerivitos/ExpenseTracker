@@ -27676,7 +27676,7 @@
     	return child_ctx;
     }
 
-    // (319:4) {:else}
+    // (317:4) {:else}
     function create_else_block(ctx) {
     	let span;
 
@@ -27685,7 +27685,7 @@
     			span = element("span");
     			span.textContent = " ";
     			attr_dev(span, "class", "w-full text-center text-transparent font-light mb-12");
-    			add_location(span, file$2, 319, 6, 10491);
+    			add_location(span, file$2, 317, 6, 10377);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -27702,14 +27702,14 @@
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(319:4) {:else}",
+    		source: "(317:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (312:4) {#if firstDate.length > 0 && lastDate.length > 0}
+    // (310:4) {#if firstDate.length > 0 && lastDate.length > 0}
     function create_if_block$1(ctx) {
     	let span;
     	let t_value = /*lastDate*/ ctx[3] + " — " + /*firstDate*/ ctx[2] + "";
@@ -27722,7 +27722,7 @@
     			t = text(t_value);
     			attr_dev(span, "class", "w-full text-center font-light mb-12");
     			set_style(span, "color", "var(--text-color2)");
-    			add_location(span, file$2, 312, 6, 10276);
+    			add_location(span, file$2, 310, 6, 10162);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -27749,14 +27749,14 @@
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(312:4) {#if firstDate.length > 0 && lastDate.length > 0}",
+    		source: "(310:4) {#if firstDate.length > 0 && lastDate.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (325:6) {#each ['1M', '6M', '1Y', 'All'] as interval}
+    // (323:6) {#each ['1M', '6M', '1Y', 'All'] as interval}
     function create_each_block_1(ctx) {
     	let button;
     	let t0;
@@ -27778,7 +27778,7 @@
     			? "active"
     			: "") + " svelte-1fsuttd");
 
-    			add_location(button, file$2, 325, 8, 10706);
+    			add_location(button, file$2, 323, 8, 10592);
     			dispose = listen_dev(button, "click", click_handler_1, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -27805,7 +27805,7 @@
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(325:6) {#each ['1M', '6M', '1Y', 'All'] as interval}",
+    		source: "(323:6) {#each ['1M', '6M', '1Y', 'All'] as interval}",
     		ctx
     	});
 
@@ -27834,7 +27834,7 @@
     	return block;
     }
 
-    // (336:2) {:then result}
+    // (334:2) {:then result}
     function create_then_block(ctx) {
     	let each_1_anchor;
     	let current;
@@ -27921,14 +27921,14 @@
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(336:2) {:then result}",
+    		source: "(334:2) {:then result}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (337:4) {#each result as data, index}
+    // (335:4) {#each result as data, index}
     function create_each_block(ctx) {
     	let current;
 
@@ -27971,14 +27971,14 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(337:4) {#each result as data, index}",
+    		source: "(335:4) {#each result as data, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (334:25)       <LoadingSpinner />    {:then result}
+    // (332:25)       <LoadingSpinner />    {:then result}
     function create_pending_block(ctx) {
     	let current;
     	const loadingspinner = new LoadingSpinner({ $$inline: true });
@@ -28010,7 +28010,7 @@
     		block,
     		id: create_pending_block.name,
     		type: "pending",
-    		source: "(334:25)       <LoadingSpinner />    {:then result}",
+    		source: "(332:25)       <LoadingSpinner />    {:then result}",
     		ctx
     	});
 
@@ -28085,19 +28085,19 @@
     			t6 = space();
     			info.block.c();
     			attr_dev(i, "class", "material-icons-round fill-current");
-    			add_location(i, file$2, 305, 6, 10027);
+    			add_location(i, file$2, 303, 6, 9913);
     			attr_dev(button, "class", "searchbar svelte-1fsuttd");
-    			add_location(button, file$2, 299, 4, 9885);
+    			add_location(button, file$2, 297, 4, 9771);
     			attr_dev(span, "class", "w-full mb-1 text-4xl text-center font-bold");
     			attr_dev(span, "id", "totalSpend");
-    			add_location(span, file$2, 308, 4, 10117);
+    			add_location(span, file$2, 306, 4, 10003);
     			attr_dev(div0, "class", "interval-button-wrapper svelte-1fsuttd");
-    			add_location(div0, file$2, 323, 4, 10606);
+    			add_location(div0, file$2, 321, 4, 10492);
     			attr_dev(div1, "class", "overall-wrapper svelte-1fsuttd");
-    			add_location(div1, file$2, 298, 2, 9850);
+    			add_location(div1, file$2, 296, 2, 9736);
     			attr_dev(div2, "class", div2_class_value = "flex flex-col w-full items-center my-8 " + (/*$overlay*/ ctx[4].length > 0 ? "hidden" : ""));
     			set_style(div2, "color", "var(--text-color)");
-    			add_location(div2, file$2, 294, 0, 9687);
+    			add_location(div2, file$2, 292, 0, 9573);
     			dispose = listen_dev(button, "click", /*click_handler*/ ctx[15], false, false, false);
     		},
     		l: function claim(nodes) {
@@ -28319,16 +28319,14 @@
     		try {
     			snapshot = await db.collection("expenses").where("date", ">=", queryInterval).where("date", "<=", endDate).get();
     		} catch(error) {
-    			toastMessage.set(error.message);
-    			setTimeout(() => toastMessage.set(""), 3000);
+    			console.error(error.message);
     		}
 
     		if (lastUpdated) {
     			try {
     				snapshotNewlyUpdated = await db.collection("expenses").where("addedOn", ">=", lastUpdated).where("addedOn", "<=", new Date().toISOString().substring(0, 10)).get();
     			} catch(error) {
-    				toastMessage.set(error.message);
-    				setTimeout(() => toastMessage.set(""), 3000);
+    				console.error(error.message);
 
     				if (error.code == "permission-denied") {
     					signIn();
