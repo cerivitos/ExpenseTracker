@@ -41,9 +41,10 @@
       ev.target.scrollTop > 0 ? (scrolling = true) : (scrolling = false);
     });
 
-    document
-      .getElementById("search-input")
-      .addEventListener("input", () => (hasClickedSearch = false));
+    document.getElementById("search-input").addEventListener("input", () => {
+      hasClickedSearch = false;
+      filteredDatas = [];
+    });
 
     if (Object.keys($filteredSearchData).length > 0) {
       query = $queryString;
@@ -202,8 +203,7 @@
     }
   }}
   out:fade={{ duration: 80 }}>
-  <div
-    class="{scrolling ? 'shadow' : ''} searchbar {Object.keys($filteredSearchData).length > 0 ? '' : 'entry-anim'}">
+  <div class="{scrolling ? 'shadow' : ''} searchbar entry-anim">
     <button>
       <i
         class="material-icons-round fill-current"

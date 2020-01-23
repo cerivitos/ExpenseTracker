@@ -31941,18 +31941,18 @@
     			span3 = element("span");
     			span3.textContent = "Try changing the Dashboard interval to download more data";
     			attr_dev(span0, "class", "text-4xl mb-2");
-    			add_location(span0, file$9, 224, 10, 8169);
+    			add_location(span0, file$9, 224, 10, 8135);
     			attr_dev(span1, "class", "text-2xl");
     			set_style(span1, "color", "var(--text-color)");
-    			add_location(span1, file$9, 225, 10, 8218);
+    			add_location(span1, file$9, 225, 10, 8184);
     			attr_dev(span2, "class", "text-2xl font-bold");
     			set_style(span2, "color", "var(--text-color2)");
-    			add_location(span2, file$9, 228, 10, 8340);
+    			add_location(span2, file$9, 228, 10, 8306);
     			attr_dev(span3, "class", "mt-2");
     			set_style(span3, "color", "var(--text-color)");
-    			add_location(span3, file$9, 231, 10, 8476);
+    			add_location(span3, file$9, 231, 10, 8442);
     			attr_dev(div, "class", "w-auto mt-24 text-center flex flex-col items-center\r\n          justify-center mx-4");
-    			add_location(div, file$9, 220, 8, 8003);
+    			add_location(div, file$9, 220, 8, 7969);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -32112,7 +32112,7 @@
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
     			set_style(span, "color", "var(--text-color)");
     			set_style(span, "background-color", "var(--inactive-button-color)");
-    			add_location(span, file$9, 193, 12, 6825);
+    			add_location(span, file$9, 193, 12, 6791);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -32302,11 +32302,11 @@
     			attr_dev(span, "class", "relative font-bold px-4");
     			set_style(span, "color", "var(--text-color2)");
     			set_style(span, "background-color", "var(--background-color)");
-    			add_location(span, file$9, 203, 14, 7299);
+    			add_location(span, file$9, 203, 14, 7265);
     			attr_dev(div0, "class", "wrap w-full relative text-center mt-4 mb-2 svelte-1s5m3s4");
-    			add_location(div0, file$9, 202, 12, 7227);
+    			add_location(div0, file$9, 202, 12, 7193);
     			attr_dev(div1, "class", "flex flex-col justify-center items-center");
-    			add_location(div1, file$9, 201, 10, 7158);
+    			add_location(div1, file$9, 201, 10, 7124);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -32436,37 +32436,33 @@
     			attr_dev(i0, "class", "material-icons-round fill-current");
     			set_style(i0, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i0, "aria-label", "Back button");
-    			add_location(i0, file$9, 148, 6, 5434);
-    			add_location(button0, file$9, 147, 4, 5418);
+    			add_location(i0, file$9, 148, 6, 5400);
+    			add_location(button0, file$9, 147, 4, 5384);
     			attr_dev(input, "id", "search-input");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Search");
     			attr_dev(input, "autocomplete", "off");
     			attr_dev(input, "class", "svelte-1s5m3s4");
-    			add_location(input, file$9, 162, 6, 5879);
+    			add_location(input, file$9, 162, 6, 5845);
     			attr_dev(div0, "id", "input-wrapper");
     			attr_dev(div0, "class", "flex justify-center w-full");
-    			add_location(div0, file$9, 161, 4, 5812);
+    			add_location(div0, file$9, 161, 4, 5778);
     			attr_dev(i1, "class", "material-icons-round fill-current");
     			set_style(i1, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i1, "aria-label", "Search button");
-    			add_location(i1, file$9, 176, 6, 6214);
-    			add_location(button1, file$9, 175, 4, 6198);
-
-    			attr_dev(div1, "class", div1_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar " + (Object.keys(/*$filteredSearchData*/ ctx[7]).length > 0
-    			? ""
-    			: "entry-anim") + " svelte-1s5m3s4"));
-
-    			add_location(div1, file$9, 145, 2, 5290);
+    			add_location(i1, file$9, 176, 6, 6180);
+    			add_location(button1, file$9, 175, 4, 6164);
+    			attr_dev(div1, "class", div1_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar entry-anim" + " svelte-1s5m3s4"));
+    			add_location(div1, file$9, 146, 2, 5316);
     			attr_dev(div2, "class", "content-wrapper svelte-1s5m3s4");
-    			add_location(div2, file$9, 189, 4, 6595);
+    			add_location(div2, file$9, 189, 4, 6561);
     			attr_dev(div3, "id", "content");
     			attr_dev(div3, "class", "w-full flex flex-col items-center mt-16");
-    			add_location(div3, file$9, 188, 2, 6523);
+    			add_location(div3, file$9, 188, 2, 6489);
     			attr_dev(div4, "id", "search-page");
     			attr_dev(div4, "class", "h-screen w-full absolute top-0 overflow-auto pb-8");
     			set_style(div4, "background-color", "var(--background-color)");
-    			add_location(div4, file$9, 135, 0, 5031);
+    			add_location(div4, file$9, 136, 0, 5057);
 
     			dispose = [
     				listen_dev(i0, "click", /*click_handler*/ ctx[13], false, false, false),
@@ -32506,9 +32502,7 @@
     				set_input_value(input, /*query*/ ctx[2]);
     			}
 
-    			if (!current || dirty & /*scrolling, $filteredSearchData*/ 129 && div1_class_value !== (div1_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar " + (Object.keys(/*$filteredSearchData*/ ctx[7]).length > 0
-    			? ""
-    			: "entry-anim") + " svelte-1s5m3s4"))) {
+    			if (!current || dirty & /*scrolling*/ 1 && div1_class_value !== (div1_class_value = "" + ((/*scrolling*/ ctx[0] ? "shadow" : "") + " searchbar entry-anim" + " svelte-1s5m3s4"))) {
     				attr_dev(div1, "class", div1_class_value);
     			}
 
@@ -32583,7 +32577,7 @@
     	let $filteredSearchData;
     	let $queryString;
     	validate_store(filteredSearchData, "filteredSearchData");
-    	component_subscribe($$self, filteredSearchData, $$value => $$invalidate(7, $filteredSearchData = $$value));
+    	component_subscribe($$self, filteredSearchData, $$value => $$invalidate(9, $filteredSearchData = $$value));
     	validate_store(queryString, "queryString");
     	component_subscribe($$self, queryString, $$value => $$invalidate(10, $queryString = $$value));
     	let scrolling = false;
@@ -32616,7 +32610,10 @@
     			: $$invalidate(0, scrolling = false);
     		});
 
-    		document.getElementById("search-input").addEventListener("input", () => $$invalidate(1, hasClickedSearch = false));
+    		document.getElementById("search-input").addEventListener("input", () => {
+    			$$invalidate(1, hasClickedSearch = false);
+    			$$invalidate(3, filteredDatas = []);
+    		});
 
     		if (Object.keys($filteredSearchData).length > 0) {
     			$$invalidate(2, query = $queryString);
@@ -32749,9 +32746,9 @@
     		buckets,
     		firstDate,
     		lastDate,
-    		$filteredSearchData,
     		searchData,
     		datas,
+    		$filteredSearchData,
     		$queryString,
     		searchFuture,
     		createBuckets,
