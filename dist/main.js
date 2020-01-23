@@ -28038,8 +28038,7 @@
     	let t4;
     	let span2;
     	let button_style_value;
-    	let div1_transition;
-    	let current;
+    	let div1_intro;
     	let dispose;
 
     	const block = {
@@ -28066,53 +28065,53 @@
     			span2 = element("span");
     			span2.textContent = "Sign in with Google";
     			attr_dev(span0, "class", "text-4xl mx-4");
-    			add_location(span0, file$2, 346, 6, 11218);
+    			add_location(span0, file$2, 346, 6, 11210);
     			attr_dev(span1, "class", "mx-4 mt-2 mb-8 text-lg");
     			set_style(span1, "color", "var(--text-color)");
-    			add_location(span1, file$2, 347, 6, 11263);
+    			add_location(span1, file$2, 347, 6, 11255);
     			attr_dev(path0, "id", "a");
     			attr_dev(path0, "d", "M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2\r\n                0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6\r\n                4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22\r\n                0-1.3-.2-2.7-.5-4z");
-    			add_location(path0, file$2, 365, 14, 12136);
-    			add_location(defs, file$2, 364, 12, 12114);
+    			add_location(path0, file$2, 365, 14, 12128);
+    			add_location(defs, file$2, 364, 12, 12106);
     			xlink_attr(use, "xlink:href", "#a");
     			attr_dev(use, "overflow", "visible");
-    			add_location(use, file$2, 373, 14, 12504);
+    			add_location(use, file$2, 373, 14, 12496);
     			attr_dev(clipPath, "id", "b");
-    			add_location(clipPath, file$2, 372, 12, 12471);
+    			add_location(clipPath, file$2, 372, 12, 12463);
     			attr_dev(path1, "clip-path", "url(#b)");
     			attr_dev(path1, "fill", "#FBBC05");
     			attr_dev(path1, "d", "M0 37V11l17 13z");
-    			add_location(path1, file$2, 375, 12, 12585);
+    			add_location(path1, file$2, 375, 12, 12577);
     			attr_dev(path2, "clip-path", "url(#b)");
     			attr_dev(path2, "fill", "#EA4335");
     			attr_dev(path2, "d", "M0 11l17 13 7-6.1L48 14V0H0z");
-    			add_location(path2, file$2, 376, 12, 12662);
+    			add_location(path2, file$2, 376, 12, 12654);
     			attr_dev(path3, "clip-path", "url(#b)");
     			attr_dev(path3, "fill", "#34A853");
     			attr_dev(path3, "d", "M0 37l30-23 7.9 1L48 0v48H0z");
-    			add_location(path3, file$2, 380, 12, 12797);
+    			add_location(path3, file$2, 380, 12, 12789);
     			attr_dev(path4, "clip-path", "url(#b)");
     			attr_dev(path4, "fill", "#4285F4");
     			attr_dev(path4, "d", "M48 48L17 24l-4-3 35-10z");
-    			add_location(path4, file$2, 384, 12, 12932);
+    			add_location(path4, file$2, 384, 12, 12924);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg, "viewBox", "0 0 48 48");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file$2, 359, 10, 11929);
+    			add_location(svg, file$2, 359, 10, 11921);
     			attr_dev(div0, "class", "bg-white rounded-l flex items-center justify-center");
     			set_style(div0, "height", "40px");
     			set_style(div0, "width", "40px");
-    			add_location(div0, file$2, 356, 8, 11796);
+    			add_location(div0, file$2, 356, 8, 11788);
     			attr_dev(span2, "class", "mx-4");
-    			add_location(span2, file$2, 390, 8, 13093);
+    			add_location(span2, file$2, 390, 8, 13085);
     			attr_dev(button, "class", "flex bg-white rounded shadow text-gray-700 mx-4 font-bold\r\n        items-center justify-center w-auto");
 
     			attr_dev(button, "style", button_style_value = "" + ((/*$themeIsBright*/ ctx[6]
     			? "background-color: hsl(var(--secondary-hue), 50%, 50%); color:var(--background-color)"
     			: "background-color: var(--text-color); color: var(--inactive-button-color)") + ";\r\n        ; height: 40px"));
 
-    			add_location(button, file$2, 350, 6, 11399);
+    			add_location(button, file$2, 350, 6, 11391);
     			attr_dev(div1, "class", "flex flex-col items-center justify-center w-full");
     			add_location(div1, file$2, 343, 4, 11098);
     			dispose = listen_dev(button, "click", /*click_handler_2*/ ctx[19], false, false, false);
@@ -28136,33 +28135,25 @@
     			append_dev(svg, path4);
     			append_dev(button, t4);
     			append_dev(button, span2);
-    			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*$themeIsBright*/ 64 && button_style_value !== (button_style_value = "" + ((/*$themeIsBright*/ ctx[6]
+    			if (dirty & /*$themeIsBright*/ 64 && button_style_value !== (button_style_value = "" + ((/*$themeIsBright*/ ctx[6]
     			? "background-color: hsl(var(--secondary-hue), 50%, 50%); color:var(--background-color)"
     			: "background-color: var(--text-color); color: var(--inactive-button-color)") + ";\r\n        ; height: 40px"))) {
     				attr_dev(button, "style", button_style_value);
     			}
     		},
     		i: function intro(local) {
-    			if (current) return;
-
-    			add_render_callback(() => {
-    				if (!div1_transition) div1_transition = create_bidirectional_transition(div1, fade, { duration: 180 }, true);
-    				div1_transition.run(1);
-    			});
-
-    			current = true;
+    			if (!div1_intro) {
+    				add_render_callback(() => {
+    					div1_intro = create_in_transition(div1, fade, { duration: 180 });
+    					div1_intro.start();
+    				});
+    			}
     		},
-    		o: function outro(local) {
-    			if (!div1_transition) div1_transition = create_bidirectional_transition(div1, fade, { duration: 180 }, false);
-    			div1_transition.run(0);
-    			current = false;
-    		},
+    		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div1);
-    			if (detaching && div1_transition) div1_transition.end();
     			dispose();
     		}
     	};
@@ -28349,13 +28340,8 @@
     					if_block1.m(div2, null);
     				}
     			} else if (if_block1) {
-    				group_outros();
-
-    				transition_out(if_block1, 1, 1, () => {
-    					if_block1 = null;
-    				});
-
-    				check_outros();
+    				if_block1.d(1);
+    				if_block1 = null;
     			}
 
     			if (!current || dirty & /*$overlay*/ 32 && div2_class_value !== (div2_class_value = "flex flex-col w-full items-center my-8 " + (/*$overlay*/ ctx[5].length > 0 ? "hidden" : ""))) {
@@ -28383,7 +28369,6 @@
     				transition_out(block);
     			}
 
-    			transition_out(if_block1);
     			current = false;
     		},
     		d: function destroy(detaching) {

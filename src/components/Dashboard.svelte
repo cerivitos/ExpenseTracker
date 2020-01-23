@@ -396,7 +396,7 @@
   {#if showSignIn}
     <div
       class="flex flex-col items-center justify-center w-full"
-      transition:fade={{ duration: 180 }}>
+      in:fade={{ duration: 180 }}>
       <span class="text-4xl mx-4">📝</span>
       <span class="mx-4 mt-2 mb-8 text-lg" style="color: var(--text-color)">
         You must be signed in to continue
