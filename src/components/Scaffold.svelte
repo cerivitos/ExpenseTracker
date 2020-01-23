@@ -52,7 +52,7 @@
   #entry-button {
     @apply rounded-full w-16 h-16 flex items-center justify-center p-4 fill-current text-white shadow-lg pointer-events-auto;
     background-color: hsl(var(--accent-hue), 50%, 50%);
-    box-shadow: 0px 3px 6px 0px hsla(var(--accent-hue), 35%, 75%, 0.5);
+    box-shadow: 0px 3px 6px 0px hsla(var(--accent-hue), 35%, 25%, 0.4);
     transition: background-color 250ms ease-out;
   }
 
@@ -122,9 +122,9 @@
     }
 
     #entry-button {
-      @apply rounded-full w-10/12 flex flex-row justify-center items-center fill-current text-white font-bold text-xl shadow-lg pointer-events-auto;
+      @apply rounded-full w-10/12 flex flex-row justify-center items-center fill-current text-white font-bold text-xl pointer-events-auto;
       background-color: hsl(var(--accent-hue), 50%, 50%);
-      box-shadow: 0px 3px 6px 0px hsla(var(--accent-hue), 35%, 75%, 0.5);
+      box-shadow: 0px 3px 6px 0px hsla(var(--accent-hue), 35%, 25%, 0.4);
     }
   }
 </style>
