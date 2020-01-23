@@ -18,7 +18,7 @@
   .navbar {
     box-shadow: 0 0 1px 0 grey;
     height: 56px;
-    background-color: var(--background-color);
+    background-color: var(--navbar-color);
     @apply w-full flex fixed bottom-0 fill-current items-center;
   }
 
