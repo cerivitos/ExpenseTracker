@@ -7,7 +7,8 @@
     toastMessage,
     dashboardShouldReload,
     overlay,
-    userInfo
+    userInfo,
+    themeIsBright
   } from "../store/store";
   import { fade } from "svelte/transition";
   import CategoryListTile from "./CategoryListTile.svelte";
@@ -22,6 +23,7 @@
   let currentInterval = "1M";
   let totalSpend = 0;
   let currentCounterValue = 0;
+  let showSignIn = false;
 
   let firstDate = "";
   let lastDate = "";
@@ -142,7 +144,7 @@
         console.error(error.message);
 
         if (error.code == "permission-denied") {
-          signIn();
+          showSignIn = true;
         }
       }
     }
@@ -268,6 +270,8 @@
           uid: user.uid
         });
 
+        showSignIn = false;
+
         changeInterval(currentInterval);
       })
       .catch(function(error) {
@@ -389,4 +393,56 @@
       <CategoryListTile {data} {index} />
     {/each}
   {/await}
+  {#if showSignIn}
+    <div
+      class="flex flex-col items-center justify-center w-full"
+      transition:fade={{ duration: 180 }}>
+      <span class="text-4xl mx-4">📝</span>
+      <span class="mx-4 mt-2 mb-8 text-lg" style="color: var(--text-color)">
+        You must be signed in to continue
+      </span>
+      <button
+        class="flex bg-white rounded shadow text-gray-700 mx-4 font-bold
+        items-center justify-center w-auto"
+        style="{$themeIsBright ? 'background-color: hsl(var(--secondary-hue), 50%, 50%); color:var(--background-color)' : 'background-color: var(--text-color); color: var(--inactive-button-color)'};
+        ; height: 40px"
+        on:click={() => signIn()}>
+        <div
+          class="bg-white rounded-l flex items-center justify-center"
+          style="height: 40px; width: 40px">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 48 48"
+            class="w-6 h-6">
+            <defs>
+              <path
+                id="a"
+                d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2
+                0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6
+                4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22
+                0-1.3-.2-2.7-.5-4z" />
+            </defs>
+            <clipPath id="b">
+              <use xlink:href="#a" overflow="visible" />
+            </clipPath>
+            <path clip-path="url(#b)" fill="#FBBC05" d="M0 37V11l17 13z" />
+            <path
+              clip-path="url(#b)"
+              fill="#EA4335"
+              d="M0 11l17 13 7-6.1L48 14V0H0z" />
+            <path
+              clip-path="url(#b)"
+              fill="#34A853"
+              d="M0 37l30-23 7.9 1L48 0v48H0z" />
+            <path
+              clip-path="url(#b)"
+              fill="#4285F4"
+              d="M48 48L17 24l-4-3 35-10z" />
+          </svg>
+        </div>
+        <span class="mx-4">Sign in with Google</span>
+      </button>
+    </div>
+  {/if}
 </div>
