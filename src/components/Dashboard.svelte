@@ -114,8 +114,6 @@
   }
 
   async function fetchData(queryInterval, endDate) {
-    toastMessage.set("Updating...");
-
     const lastUpdated = localStorage.getItem("lastUpdated");
 
     let rawData = [];
@@ -196,8 +194,6 @@
     lastDate = new Date(rawData[rawData.length - 1].date)
       .toString()
       .substring(4, 15);
-
-    toastMessage.set("");
 
     localStorage.setItem("rawCache", JSON.stringify(rawCache));
     localStorage.setItem(
