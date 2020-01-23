@@ -370,11 +370,11 @@
       <span
         class="w-full text-center font-light mb-12"
         style="color: var(--text-color2)"
-        in:fade={{ duration: 120 }}>
+        in:fade={{ duration: 180 }}>
         {lastDate + ' — ' + firstDate}
       </span>
     {:else}
-      <span class="w-full text-center text-transparent font-light mb-8">
+      <span class="w-full text-center text-transparent font-light mb-12">
         &nbsp;
       </span>
     {/if}

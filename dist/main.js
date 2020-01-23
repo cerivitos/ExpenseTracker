@@ -27684,7 +27684,7 @@
     		c: function create() {
     			span = element("span");
     			span.textContent = " ";
-    			attr_dev(span, "class", "w-full text-center text-transparent font-light mb-8");
+    			attr_dev(span, "class", "w-full text-center text-transparent font-light mb-12");
     			add_location(span, file$2, 323, 6, 10560);
     		},
     		m: function mount(target, anchor) {
@@ -27734,7 +27734,7 @@
     		i: function intro(local) {
     			if (!span_intro) {
     				add_render_callback(() => {
-    					span_intro = create_in_transition(span, fade, { duration: 120 });
+    					span_intro = create_in_transition(span, fade, { duration: 180 });
     					span_intro.start();
     				});
     			}
@@ -27778,7 +27778,7 @@
     			? "active"
     			: "") + " svelte-1fsuttd");
 
-    			add_location(button, file$2, 329, 8, 10774);
+    			add_location(button, file$2, 329, 8, 10775);
     			dispose = listen_dev(button, "click", click_handler_1, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -28092,7 +28092,7 @@
     			attr_dev(span, "id", "totalSpend");
     			add_location(span, file$2, 312, 4, 10186);
     			attr_dev(div0, "class", "interval-button-wrapper svelte-1fsuttd");
-    			add_location(div0, file$2, 327, 4, 10674);
+    			add_location(div0, file$2, 327, 4, 10675);
     			attr_dev(div1, "class", "overall-wrapper svelte-1fsuttd");
     			add_location(div1, file$2, 302, 2, 9919);
     			attr_dev(div2, "class", div2_class_value = "flex flex-col w-full items-center my-8 " + (/*$overlay*/ ctx[4].length > 0 ? "hidden" : ""));
