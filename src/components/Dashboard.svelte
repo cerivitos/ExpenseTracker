@@ -11,6 +11,7 @@
   } from "../store/store";
   import { fade } from "svelte/transition";
   import CategoryListTile from "./CategoryListTile.svelte";
+  import LoadingSpinner from "./LoadingSpinner.svelte";
   import { CountUp } from "countup.js";
   import { handleRouting } from "../util";
 
@@ -387,7 +388,9 @@
       {/each}
     </div>
   </div>
-  {#await getDataPromise then result}
+  {#await getDataPromise}
+    <LoadingSpinner />
+  {:then result}
     {#each result as data, index}
       <CategoryListTile {data} {index} />
     {/each}

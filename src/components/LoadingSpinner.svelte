@@ -7,15 +7,18 @@
     animation: scale 1s 1.4s infinite ease-in-out both,
       fade 1s 1.4s infinite ease-in-out both;
     line-height: 0.5;
-    @apply text-white text-5xl opacity-0;
+    color: hsl(var(--accent-hue), 40%, 50%);
+    @apply text-4xl opacity-0;
   }
 
   .dot:nth-child(1) {
     animation-delay: -0.32s;
+    @apply mr-1;
   }
 
   .dot:nth-child(2) {
     animation-delay: -0.16s;
+    @apply mr-1;
   }
 
   .dot:nth-child(3) {
@@ -60,7 +63,9 @@
     </div>
   </div>
   {#if text !== undefined}
-    <body class="w-full text-center text-primaryColor absolute bottom-0">
+    <body
+      class="mt-4 block w-full text-center"
+      style="color: var(--text-color)">
       {text}
     </body>
   {/if}
