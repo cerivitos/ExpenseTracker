@@ -281,13 +281,14 @@
           transition:fade={{ duration: 120 }}
           class="w-auto mt-24 text-center flex flex-col items-center
           justify-center mx-4">
+          <span class="text-4xl mb-2">🔍</span>
           <span class="text-2xl" style="color: var(--text-color)">
             Nothing found between
           </span>
           <span class="text-2xl font-bold" style="color: var(--text-color2)">
             {lastDate} — {firstDate}
           </span>
-          <span class="mt-2 text-lg" style="color: var(--text-color)">
+          <span class="mt-2" style="color: var(--text-color)">
             Try changing the Dashboard interval to download more data
           </span>
         </div>

@@ -28561,13 +28561,13 @@
     			i = element("i");
     			i.textContent = "post_add";
     			t1 = text("\r\n        Add spending");
-    			attr_dev(i, "class", "material-icons-round svelte-10xp3gt");
-    			add_location(i, file$3, 28, 8, 3519);
+    			attr_dev(i, "class", "material-icons-round svelte-1dh7dps");
+    			add_location(i, file$3, 28, 8, 3445);
     			attr_dev(button, "id", "entry-button");
-    			attr_dev(button, "class", "svelte-10xp3gt");
-    			add_location(button, file$3, 27, 6, 3449);
+    			attr_dev(button, "class", "svelte-1dh7dps");
+    			add_location(button, file$3, 27, 6, 3375);
     			attr_dev(div, "class", "w-full flex items-center justify-center");
-    			add_location(div, file$3, 26, 4, 3388);
+    			add_location(div, file$3, 26, 4, 3314);
     			dispose = listen_dev(button, "click", /*click_handler*/ ctx[5], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -28608,13 +28608,13 @@
     			button = element("button");
     			i = element("i");
     			i.textContent = "post_add";
-    			attr_dev(i, "class", "material-icons-round md-36 svelte-10xp3gt");
-    			add_location(i, file$3, 49, 6, 4258);
+    			attr_dev(i, "class", "material-icons-round md-36 svelte-1dh7dps");
+    			add_location(i, file$3, 49, 6, 4184);
     			attr_dev(button, "id", "entry-button");
-    			attr_dev(button, "class", "svelte-10xp3gt");
-    			add_location(button, file$3, 48, 4, 4190);
-    			attr_dev(div, "class", div_class_value = "entry-wrapper " + (/*$overlay*/ ctx[2].length > 0 ? "" : "z-10") + " svelte-10xp3gt");
-    			add_location(div, file$3, 47, 2, 4121);
+    			attr_dev(button, "class", "svelte-1dh7dps");
+    			add_location(button, file$3, 48, 4, 4116);
+    			attr_dev(div, "class", div_class_value = "entry-wrapper " + (/*$overlay*/ ctx[2].length > 0 ? "" : "z-10") + " svelte-1dh7dps");
+    			add_location(div, file$3, 47, 2, 4047);
     			dispose = listen_dev(button, "click", /*click_handler_3*/ ctx[8], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -28623,7 +28623,7 @@
     			append_dev(button, i);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*$overlay*/ 4 && div_class_value !== (div_class_value = "entry-wrapper " + (/*$overlay*/ ctx[2].length > 0 ? "" : "z-10") + " svelte-10xp3gt")) {
+    			if (dirty & /*$overlay*/ 4 && div_class_value !== (div_class_value = "entry-wrapper " + (/*$overlay*/ ctx[2].length > 0 ? "" : "z-10") + " svelte-1dh7dps")) {
     				attr_dev(div, "class", div_class_value);
     			}
     		},
@@ -28697,20 +28697,20 @@
     			t10 = space();
     			if (if_block2) if_block2.c();
     			if_block2_anchor = empty();
-    			attr_dev(div, "class", "content svelte-10xp3gt");
-    			add_location(div, file$3, 18, 0, 3208);
-    			attr_dev(i0, "class", "material-icons-round svelte-10xp3gt");
-    			add_location(i0, file$3, 36, 4, 3756);
-    			add_location(span0, file$3, 37, 4, 3808);
-    			attr_dev(button0, "class", button0_class_value = "nav-button " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-10xp3gt");
-    			add_location(button0, file$3, 33, 2, 3627);
-    			attr_dev(i1, "class", "material-icons-round md-48 svelte-10xp3gt");
-    			add_location(i1, file$3, 42, 4, 3974);
-    			add_location(span1, file$3, 43, 4, 4043);
-    			attr_dev(button1, "class", button1_class_value = "nav-button " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-10xp3gt");
-    			add_location(button1, file$3, 39, 2, 3847);
-    			attr_dev(nav, "class", "navbar svelte-10xp3gt");
-    			add_location(nav, file$3, 24, 0, 3329);
+    			attr_dev(div, "class", "content svelte-1dh7dps");
+    			add_location(div, file$3, 18, 0, 3134);
+    			attr_dev(i0, "class", "material-icons-round svelte-1dh7dps");
+    			add_location(i0, file$3, 36, 4, 3682);
+    			add_location(span0, file$3, 37, 4, 3734);
+    			attr_dev(button0, "class", button0_class_value = "nav-button " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-1dh7dps");
+    			add_location(button0, file$3, 33, 2, 3553);
+    			attr_dev(i1, "class", "material-icons-round md-48 svelte-1dh7dps");
+    			add_location(i1, file$3, 42, 4, 3900);
+    			add_location(span1, file$3, 43, 4, 3969);
+    			attr_dev(button1, "class", button1_class_value = "nav-button " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-1dh7dps");
+    			add_location(button1, file$3, 39, 2, 3773);
+    			attr_dev(nav, "class", "navbar svelte-1dh7dps");
+    			add_location(nav, file$3, 24, 0, 3255);
 
     			dispose = [
     				listen_dev(button0, "click", /*click_handler_1*/ ctx[6], false, false, false),
@@ -28774,11 +28774,11 @@
 
     			if (window.innerWidth > 768) if_block1.p(ctx, dirty);
 
-    			if (!current || dirty & /*$view*/ 2 && button0_class_value !== (button0_class_value = "nav-button " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-10xp3gt")) {
+    			if (!current || dirty & /*$view*/ 2 && button0_class_value !== (button0_class_value = "nav-button " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-1dh7dps")) {
     				attr_dev(button0, "class", button0_class_value);
     			}
 
-    			if (!current || dirty & /*$view*/ 2 && button1_class_value !== (button1_class_value = "nav-button " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-10xp3gt")) {
+    			if (!current || dirty & /*$view*/ 2 && button1_class_value !== (button1_class_value = "nav-button " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-1dh7dps")) {
     				attr_dev(button1, "class", button1_class_value);
     			}
 
@@ -31914,11 +31914,13 @@
     	let span0;
     	let t1;
     	let span1;
-    	let t2;
     	let t3;
+    	let span2;
     	let t4;
     	let t5;
-    	let span2;
+    	let t6;
+    	let t7;
+    	let span3;
     	let div_transition;
     	let current;
 
@@ -31926,24 +31928,29 @@
     		c: function create() {
     			div = element("div");
     			span0 = element("span");
-    			span0.textContent = "Nothing found between";
+    			span0.textContent = "🔍";
     			t1 = space();
     			span1 = element("span");
-    			t2 = text(/*lastDate*/ ctx[6]);
-    			t3 = text(" — ");
-    			t4 = text(/*firstDate*/ ctx[5]);
-    			t5 = space();
+    			span1.textContent = "Nothing found between";
+    			t3 = space();
     			span2 = element("span");
-    			span2.textContent = "Try changing the Dashboard interval to download more data";
-    			attr_dev(span0, "class", "text-2xl");
-    			set_style(span0, "color", "var(--text-color)");
+    			t4 = text(/*lastDate*/ ctx[6]);
+    			t5 = text(" — ");
+    			t6 = text(/*firstDate*/ ctx[5]);
+    			t7 = space();
+    			span3 = element("span");
+    			span3.textContent = "Try changing the Dashboard interval to download more data";
+    			attr_dev(span0, "class", "text-4xl mb-2");
     			add_location(span0, file$9, 224, 10, 8169);
-    			attr_dev(span1, "class", "text-2xl font-bold");
-    			set_style(span1, "color", "var(--text-color2)");
-    			add_location(span1, file$9, 227, 10, 8291);
-    			attr_dev(span2, "class", "mt-2 text-lg");
-    			set_style(span2, "color", "var(--text-color)");
-    			add_location(span2, file$9, 230, 10, 8427);
+    			attr_dev(span1, "class", "text-2xl");
+    			set_style(span1, "color", "var(--text-color)");
+    			add_location(span1, file$9, 225, 10, 8218);
+    			attr_dev(span2, "class", "text-2xl font-bold");
+    			set_style(span2, "color", "var(--text-color2)");
+    			add_location(span2, file$9, 228, 10, 8340);
+    			attr_dev(span3, "class", "mt-2");
+    			set_style(span3, "color", "var(--text-color)");
+    			add_location(span3, file$9, 231, 10, 8476);
     			attr_dev(div, "class", "w-auto mt-24 text-center flex flex-col items-center\r\n          justify-center mx-4");
     			add_location(div, file$9, 220, 8, 8003);
     		},
@@ -31952,16 +31959,18 @@
     			append_dev(div, span0);
     			append_dev(div, t1);
     			append_dev(div, span1);
-    			append_dev(span1, t2);
-    			append_dev(span1, t3);
-    			append_dev(span1, t4);
-    			append_dev(div, t5);
+    			append_dev(div, t3);
     			append_dev(div, span2);
+    			append_dev(span2, t4);
+    			append_dev(span2, t5);
+    			append_dev(span2, t6);
+    			append_dev(div, t7);
+    			append_dev(div, span3);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*lastDate*/ 64) set_data_dev(t2, /*lastDate*/ ctx[6]);
-    			if (!current || dirty & /*firstDate*/ 32) set_data_dev(t4, /*firstDate*/ ctx[5]);
+    			if (!current || dirty & /*lastDate*/ 64) set_data_dev(t4, /*lastDate*/ ctx[6]);
+    			if (!current || dirty & /*firstDate*/ 32) set_data_dev(t6, /*firstDate*/ ctx[5]);
     		},
     		i: function intro(local) {
     			if (current) return;
