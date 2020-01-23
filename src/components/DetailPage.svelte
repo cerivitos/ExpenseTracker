@@ -49,7 +49,11 @@
     getBucketsPromise = createBuckets();
   });
 
-  onDestroy(() => detailData.set({}));
+  onDestroy(() => {
+    if ($overlay !== "entry") {
+      detailData.set({});
+    }
+  });
 
   async function createBuckets() {
     let buckets = [];
