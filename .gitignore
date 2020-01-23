@@ -76,5 +76,4 @@ typings/
 .fusebox/
 .vscode/tasks.json
 
-src/assets/expensetracker-fe56d-export.json
 config.js
