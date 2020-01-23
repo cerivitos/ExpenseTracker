@@ -30,8 +30,6 @@
   let app;
 
   onMount(() => {
-    const firebaseConfig = firebaseConfig;
-
     app = firebase.initializeApp(firebaseConfig);
 
     firebase.auth().onAuthStateChanged(user => {
