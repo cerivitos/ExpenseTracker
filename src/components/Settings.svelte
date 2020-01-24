@@ -226,7 +226,7 @@
         Privacy policy
       </a>
       •
-      <span class="text-center mb-8 ml-2">v0.1</span>
+      <span class="text-center mb-8 ml-2">v0.22</span>
     </div>
   </div>
 </div>

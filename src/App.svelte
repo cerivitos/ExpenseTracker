@@ -20,10 +20,39 @@
   import Search from "./components/Search.svelte";
   import { handleRouting } from "./util";
   import { firebaseConfig } from "./config";
+  import { fly } from "svelte/transition";
 
-  // if ("serviceWorker" in navigator) {
-  //   navigator.serviceWorker.register("/service-worker.js");
-  // }
+  let newWorker;
+  let updateAvailable = false;
+
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js").then(reg => {
+      reg.addEventListener("updatefound", () => {
+        newWorker = reg.installing;
+
+        newWorker.addEventListener("statechange", () => {
+          switch (newWorker.state) {
+            case "installed":
+              if (navigator.serviceWorker.controller) {
+                updateAvailable = true;
+              }
+              break;
+          }
+        });
+      });
+    });
+
+    let refreshing;
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (refreshing) return;
+      window.location.reload();
+      refreshing = true;
+    });
+  }
+
+  function handleUpdate() {
+    newWorker.postMessage({ action: "skipWaiting" });
+  }
 
   let signInError = false;
   let errorMsg = "";
@@ -111,8 +140,42 @@
   };
 </script>
 
-<style lang="postcss">
+<style type="text/postcss">
+  .update-message-wrapper {
+    @apply absolute mb-12 w-full z-10;
+    bottom: 56px;
+  }
 
+  .update-message {
+    @apply mx-4 rounded flex items-center justify-between p-4 shadow;
+    background-color: var(--inactive-button-color);
+    color: var(--text-color2);
+  }
+
+  @media only screen and (min-width: 768px) {
+    .update-message-wrapper {
+      @apply flex justify-center;
+      bottom: 0;
+    }
+    .update-message {
+      @apply w-6/12;
+    }
+  }
+
+  .update-button {
+    @apply bg-transparent p-2;
+    color: hsl(var(--accent-hue), 50%, 55%);
+  }
+
+  .update-button:hover {
+    background-color: hsla(var(--secondary-hue), 30%, 85%, 0.2);
+    transition: background-color 250ms ease-out;
+  }
+
+  .update-button:active {
+    background-color: hsla(var(--secondary-hue), 30%, 75%, 0.4);
+    transition: background-color 80ms ease-in;
+  }
 </style>
 
 <main class="overflow-hidden" data-theme="dark">
@@ -132,5 +195,15 @@
   {/if}
   {#if signInError}
     <Toast message={errorMsg} />
+  {/if}
+  {#if updateAvailable}
+    <div class="update-message-wrapper">
+      <div transition:fly={{ y: 72, duration: 120 }} class="update-message">
+        A new update is available
+        <button class="update-button" on:click={() => handleUpdate()}>
+          Update
+        </button>
+      </div>
+    </div>
   {/if}
 </main>

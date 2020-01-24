@@ -1,11 +1,12 @@
-var cacheName = "sgtoilet-cache-" + Date.now();
+var cacheName = "expenses-cache-v0.22";
 var filesToCache = [
   "/",
   "/index.html",
   "/main.css",
   "/main.js",
   "/components.css",
-  "https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap"
+  "https://fonts.googleapis.com/css?family=Rubik&display=swap",
+  "https://fonts.googleapis.com/icon?family=Material+Icons+Round"
 ];
 self.addEventListener("install", function(e) {
   e.waitUntil(
@@ -14,24 +15,21 @@ self.addEventListener("install", function(e) {
     })
   );
 });
+self.addEventListener("message", function(e) {
+  if (e.data.action === "skipWaiting") {
+    self.skipWaiting();
+  }
+});
 self.addEventListener("activate", e => {
-  e.waitUntil(
-    caches.keys().then(function(cacheNames) {
-      return Promise.all(
-        cacheNames.map(function(thisCacheName) {
-          if (thisCacheName !== cacheName) {
-            return caches.delete(thisCacheName);
-          }
-        })
-      );
-    })
-  );
+  return self.clients.claim();
 });
 self.addEventListener("fetch", e => {
   e.respondWith(
-    (async function() {
-      const response = await caches.match(e.request);
-      return response || fetch(e.request);
-    })()
+    caches.match(e.request).then(function(response) {
+      if (response) {
+        return response;
+      }
+      return fetch(e.request);
+    })
   );
 });
