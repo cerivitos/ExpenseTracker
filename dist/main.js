@@ -27103,10 +27103,6 @@
       );
     }
 
-    function convertRemToPixels(rem) {
-      return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
-    }
-
     const typeDesigns = [
       {
         type: "Food",
@@ -30079,7 +30075,7 @@
     }
 
     // (118:8) {:else}
-    function create_else_block_1(ctx) {
+    function create_else_block$2(ctx) {
     	let i;
     	let i_intro;
 
@@ -30109,7 +30105,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_1.name,
+    		id: create_else_block$2.name,
     		type: "else",
     		source: "(118:8) {:else}",
     		ctx
@@ -30158,104 +30154,30 @@
     	return block;
     }
 
-    // (179:10) {:else}
-    function create_else_block$2(ctx) {
-    	let current;
-
-    	const searchlisttile = new SearchListTile({
-    			props: { data: /*data*/ ctx[15] },
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(searchlisttile.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(searchlisttile, target, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const searchlisttile_changes = {};
-    			if (dirty & /*sortedData*/ 32) searchlisttile_changes.data = /*data*/ ctx[15];
-    			searchlisttile.$set(searchlisttile_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(searchlisttile.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(searchlisttile.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(searchlisttile, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_else_block$2.name,
-    		type: "else",
-    		source: "(179:10) {:else}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
     // (170:10) {#if index === 0 || new Date(data.date).getFullYear() !== new Date(sortedData[index - 1].date).getFullYear()}
     function create_if_block$5(ctx) {
     	let span;
-    	let t0_value = new Date(/*data*/ ctx[15].date).getFullYear() + "";
-    	let t0;
-    	let t1;
-    	let current;
-
-    	const searchlisttile = new SearchListTile({
-    			props: { data: /*data*/ ctx[15] },
-    			$$inline: true
-    		});
+    	let t_value = new Date(/*data*/ ctx[15].date).getFullYear() + "";
+    	let t;
 
     	const block = {
     		c: function create() {
     			span = element("span");
-    			t0 = text(t0_value);
-    			t1 = space();
-    			create_component(searchlisttile.$$.fragment);
-    			attr_dev(span, "class", "rounded-full font-bold px-4 py-2 my-4 sticky top-0\r\n              inline-block z-10 m-auto");
-    			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
+    			t = text(t_value);
+    			attr_dev(span, "class", "rounded-full font-bold px-4 py-2 my-4 inline-block m-auto");
     			set_style(span, "color", "var(--text-color)");
     			set_style(span, "background-color", "var(--inactive-button-color)");
     			add_location(span, file$7, 170, 12, 5343);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
-    			append_dev(span, t0);
-    			insert_dev(target, t1, anchor);
-    			mount_component(searchlisttile, target, anchor);
-    			current = true;
+    			append_dev(span, t);
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty & /*sortedData*/ 32) && t0_value !== (t0_value = new Date(/*data*/ ctx[15].date).getFullYear() + "")) set_data_dev(t0, t0_value);
-    			const searchlisttile_changes = {};
-    			if (dirty & /*sortedData*/ 32) searchlisttile_changes.data = /*data*/ ctx[15];
-    			searchlisttile.$set(searchlisttile_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(searchlisttile.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(searchlisttile.$$.fragment, local);
-    			current = false;
+    			if (dirty & /*sortedData*/ 32 && t_value !== (t_value = new Date(/*data*/ ctx[15].date).getFullYear() + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(span);
-    			if (detaching) detach_dev(t1);
-    			destroy_component(searchlisttile, detaching);
     		}
     	};
 
@@ -30273,68 +30195,61 @@
     // (164:6) {#each sortedData as data, index (data.id)}
     function create_each_block$1(key_1, ctx) {
     	let div;
-    	let show_if;
-    	let current_block_type_index;
-    	let if_block;
-    	let t;
+    	let show_if = /*index*/ ctx[17] === 0 || new Date(/*data*/ ctx[15].date).getFullYear() !== new Date(/*sortedData*/ ctx[5][/*index*/ ctx[17] - 1].date).getFullYear();
+    	let t0;
+    	let t1;
     	let div_intro;
     	let div_outro;
     	let rect;
     	let stop_animation = noop;
     	let current;
-    	const if_block_creators = [create_if_block$5, create_else_block$2];
-    	const if_blocks = [];
+    	let if_block = show_if && create_if_block$5(ctx);
 
-    	function select_block_type_1(ctx, dirty) {
-    		if (dirty & /*sortedData*/ 32) show_if = !!(/*index*/ ctx[17] === 0 || new Date(/*data*/ ctx[15].date).getFullYear() !== new Date(/*sortedData*/ ctx[5][/*index*/ ctx[17] - 1].date).getFullYear());
-    		if (show_if) return 0;
-    		return 1;
-    	}
-
-    	current_block_type_index = select_block_type_1(ctx, -1);
-    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    	const searchlisttile = new SearchListTile({
+    			props: { data: /*data*/ ctx[15] },
+    			$$inline: true
+    		});
 
     	const block = {
     		key: key_1,
     		first: null,
     		c: function create() {
     			div = element("div");
-    			if_block.c();
-    			t = space();
+    			if (if_block) if_block.c();
+    			t0 = space();
+    			create_component(searchlisttile.$$.fragment);
+    			t1 = space();
     			attr_dev(div, "class", "w-full text-center");
     			add_location(div, file$7, 164, 8, 5041);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			if_blocks[current_block_type_index].m(div, null);
-    			append_dev(div, t);
+    			if (if_block) if_block.m(div, null);
+    			append_dev(div, t0);
+    			mount_component(searchlisttile, div, null);
+    			append_dev(div, t1);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			let previous_block_index = current_block_type_index;
-    			current_block_type_index = select_block_type_1(ctx, dirty);
+    			if (dirty & /*sortedData*/ 32) show_if = /*index*/ ctx[17] === 0 || new Date(/*data*/ ctx[15].date).getFullYear() !== new Date(/*sortedData*/ ctx[5][/*index*/ ctx[17] - 1].date).getFullYear();
 
-    			if (current_block_type_index === previous_block_index) {
-    				if_blocks[current_block_type_index].p(ctx, dirty);
-    			} else {
-    				group_outros();
-
-    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
-    					if_blocks[previous_block_index] = null;
-    				});
-
-    				check_outros();
-    				if_block = if_blocks[current_block_type_index];
-
-    				if (!if_block) {
-    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$5(ctx);
     					if_block.c();
+    					if_block.m(div, t0);
     				}
-
-    				transition_in(if_block, 1);
-    				if_block.m(div, t);
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
     			}
+
+    			const searchlisttile_changes = {};
+    			if (dirty & /*sortedData*/ 32) searchlisttile_changes.data = /*data*/ ctx[15];
+    			searchlisttile.$set(searchlisttile_changes);
     		},
     		r: function measure() {
     			rect = div.getBoundingClientRect();
@@ -30350,7 +30265,7 @@
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(if_block);
+    			transition_in(searchlisttile.$$.fragment, local);
 
     			add_render_callback(() => {
     				if (div_outro) div_outro.end(1);
@@ -30361,14 +30276,15 @@
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(if_block);
+    			transition_out(searchlisttile.$$.fragment, local);
     			if (div_intro) div_intro.invalidate();
     			div_outro = create_out_transition(div, /*send*/ ctx[10], { key: /*data*/ ctx[15].id });
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
-    			if_blocks[current_block_type_index].d();
+    			if (if_block) if_block.d();
+    			destroy_component(searchlisttile);
     			if (detaching && div_outro) div_outro.end();
     		}
     	};
@@ -30428,7 +30344,7 @@
 
     	function select_block_type(ctx, dirty) {
     		if (/*sortByDate*/ ctx[4]) return create_if_block_1$2;
-    		return create_else_block_1;
+    		return create_else_block$2;
     	}
 
     	let current_block_type = select_block_type(ctx, -1);
@@ -32016,7 +31932,7 @@
     	return child_ctx;
     }
 
-    // (205:63) 
+    // (202:63) 
     function create_if_block_2$1(ctx) {
     	let div;
     	let span0;
@@ -32049,18 +31965,18 @@
     			span3 = element("span");
     			span3.textContent = "Try changing the Dashboard interval to download more data";
     			attr_dev(span0, "class", "text-4xl mb-2");
-    			add_location(span0, file$a, 209, 10, 7519);
+    			add_location(span0, file$a, 206, 10, 7389);
     			attr_dev(span1, "class", "text-2xl");
     			set_style(span1, "color", "var(--text-color)");
-    			add_location(span1, file$a, 210, 10, 7568);
+    			add_location(span1, file$a, 207, 10, 7438);
     			attr_dev(span2, "class", "text-2xl font-bold");
     			set_style(span2, "color", "var(--text-color2)");
-    			add_location(span2, file$a, 213, 10, 7690);
+    			add_location(span2, file$a, 210, 10, 7560);
     			attr_dev(span3, "class", "mt-2");
     			set_style(span3, "color", "var(--text-color)");
-    			add_location(span3, file$a, 216, 10, 7826);
+    			add_location(span3, file$a, 213, 10, 7696);
     			attr_dev(div, "class", "w-auto mt-24 text-center flex flex-col items-center\r\n          justify-center mx-4");
-    			add_location(div, file$a, 205, 8, 7353);
+    			add_location(div, file$a, 202, 8, 7223);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -32105,7 +32021,7 @@
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(205:63) ",
+    		source: "(202:63) ",
     		ctx
     	});
 
@@ -32185,104 +32101,30 @@
     	return block;
     }
 
-    // (201:10) {:else}
-    function create_else_block$3(ctx) {
-    	let current;
-
-    	const searchlisttile = new SearchListTile({
-    			props: { data: /*data*/ ctx[18] },
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(searchlisttile.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(searchlisttile, target, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const searchlisttile_changes = {};
-    			if (dirty & /*filteredDatas*/ 8) searchlisttile_changes.data = /*data*/ ctx[18];
-    			searchlisttile.$set(searchlisttile_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(searchlisttile.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(searchlisttile.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(searchlisttile, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_else_block$3.name,
-    		type: "else",
-    		source: "(201:10) {:else}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
     // (192:10) {#if index === 0 || new Date(data.date).getFullYear() !== new Date(filteredDatas[index - 1].date).getFullYear()}
     function create_if_block_1$4(ctx) {
     	let span;
-    	let t0_value = new Date(/*data*/ ctx[18].date).getFullYear() + "";
-    	let t0;
-    	let t1;
-    	let current;
-
-    	const searchlisttile = new SearchListTile({
-    			props: { data: /*data*/ ctx[18] },
-    			$$inline: true
-    		});
+    	let t_value = new Date(/*data*/ ctx[18].date).getFullYear() + "";
+    	let t;
 
     	const block = {
     		c: function create() {
     			span = element("span");
-    			t0 = text(t0_value);
-    			t1 = space();
-    			create_component(searchlisttile.$$.fragment);
-    			attr_dev(span, "class", "rounded-full font-bold px-4 py-2 my-4 sticky top-0\r\n              inline-block z-10 m-auto");
-    			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
+    			t = text(t_value);
+    			attr_dev(span, "class", "rounded-full font-bold px-4 py-2 my-4 inline-block m-auto");
     			set_style(span, "color", "var(--text-color)");
     			set_style(span, "background-color", "var(--inactive-button-color)");
     			add_location(span, file$a, 192, 12, 6808);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
-    			append_dev(span, t0);
-    			insert_dev(target, t1, anchor);
-    			mount_component(searchlisttile, target, anchor);
-    			current = true;
+    			append_dev(span, t);
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty & /*filteredDatas*/ 8) && t0_value !== (t0_value = new Date(/*data*/ ctx[18].date).getFullYear() + "")) set_data_dev(t0, t0_value);
-    			const searchlisttile_changes = {};
-    			if (dirty & /*filteredDatas*/ 8) searchlisttile_changes.data = /*data*/ ctx[18];
-    			searchlisttile.$set(searchlisttile_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(searchlisttile.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(searchlisttile.$$.fragment, local);
-    			current = false;
+    			if (dirty & /*filteredDatas*/ 8 && t_value !== (t_value = new Date(/*data*/ ctx[18].date).getFullYear() + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(span);
-    			if (detaching) detach_dev(t1);
-    			destroy_component(searchlisttile, detaching);
     		}
     	};
 
@@ -32300,76 +32142,67 @@
     // (191:8) {#each filteredDatas as data, index (data.id)}
     function create_each_block$3(key_1, ctx) {
     	let first;
-    	let show_if;
-    	let current_block_type_index;
-    	let if_block;
-    	let if_block_anchor;
+    	let show_if = /*index*/ ctx[20] === 0 || new Date(/*data*/ ctx[18].date).getFullYear() !== new Date(/*filteredDatas*/ ctx[3][/*index*/ ctx[20] - 1].date).getFullYear();
+    	let t;
     	let current;
-    	const if_block_creators = [create_if_block_1$4, create_else_block$3];
-    	const if_blocks = [];
+    	let if_block = show_if && create_if_block_1$4(ctx);
 
-    	function select_block_type_1(ctx, dirty) {
-    		if (dirty & /*filteredDatas*/ 8) show_if = !!(/*index*/ ctx[20] === 0 || new Date(/*data*/ ctx[18].date).getFullYear() !== new Date(/*filteredDatas*/ ctx[3][/*index*/ ctx[20] - 1].date).getFullYear());
-    		if (show_if) return 0;
-    		return 1;
-    	}
-
-    	current_block_type_index = select_block_type_1(ctx, -1);
-    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    	const searchlisttile = new SearchListTile({
+    			props: { data: /*data*/ ctx[18] },
+    			$$inline: true
+    		});
 
     	const block = {
     		key: key_1,
     		first: null,
     		c: function create() {
     			first = empty();
-    			if_block.c();
-    			if_block_anchor = empty();
+    			if (if_block) if_block.c();
+    			t = space();
+    			create_component(searchlisttile.$$.fragment);
     			this.first = first;
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, first, anchor);
-    			if_blocks[current_block_type_index].m(target, anchor);
-    			insert_dev(target, if_block_anchor, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(searchlisttile, target, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			let previous_block_index = current_block_type_index;
-    			current_block_type_index = select_block_type_1(ctx, dirty);
+    			if (dirty & /*filteredDatas*/ 8) show_if = /*index*/ ctx[20] === 0 || new Date(/*data*/ ctx[18].date).getFullYear() !== new Date(/*filteredDatas*/ ctx[3][/*index*/ ctx[20] - 1].date).getFullYear();
 
-    			if (current_block_type_index === previous_block_index) {
-    				if_blocks[current_block_type_index].p(ctx, dirty);
-    			} else {
-    				group_outros();
-
-    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
-    					if_blocks[previous_block_index] = null;
-    				});
-
-    				check_outros();
-    				if_block = if_blocks[current_block_type_index];
-
-    				if (!if_block) {
-    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_1$4(ctx);
     					if_block.c();
+    					if_block.m(t.parentNode, t);
     				}
-
-    				transition_in(if_block, 1);
-    				if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
     			}
+
+    			const searchlisttile_changes = {};
+    			if (dirty & /*filteredDatas*/ 8) searchlisttile_changes.data = /*data*/ ctx[18];
+    			searchlisttile.$set(searchlisttile_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(if_block);
+    			transition_in(searchlisttile.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(if_block);
+    			transition_out(searchlisttile.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(first);
-    			if_blocks[current_block_type_index].d(detaching);
-    			if (detaching) detach_dev(if_block_anchor);
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(t);
+    			destroy_component(searchlisttile, detaching);
     		}
     	};
 

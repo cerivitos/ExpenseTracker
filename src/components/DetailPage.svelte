@@ -189,16 +189,13 @@
           class="w-full text-center">
           {#if index === 0 || new Date(data.date).getFullYear() !== new Date(sortedData[index - 1].date).getFullYear()}
             <span
-              class="rounded-full font-bold px-4 py-2 my-4 sticky top-0
-              inline-block z-10 m-auto"
-              style="top: {56 + convertRemToPixels(1)}px; color:
-              var(--text-color); background-color:var(--inactive-button-color)">
+              class="rounded-full font-bold px-4 py-2 my-4 inline-block m-auto"
+              style="color: var(--text-color);
+              background-color:var(--inactive-button-color)">
               {new Date(data.date).getFullYear()}
             </span>
-            <SearchListTile {data} />
-          {:else}
-            <SearchListTile {data} />
           {/if}
+          <SearchListTile {data} />
         </div>
       {/each}
     </div>
