@@ -49,7 +49,6 @@
     if (Object.keys($filteredSearchData).length > 0) {
       query = $queryString;
       filteredDatas = $filteredSearchData;
-      buckets = createBuckets();
     }
   });
 

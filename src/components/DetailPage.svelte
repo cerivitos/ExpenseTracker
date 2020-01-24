@@ -13,7 +13,6 @@
   import { flip } from "svelte/animate";
   import SearchListTile from "./SearchListTile.svelte";
 
-  let getBucketsPromise = createBuckets();
   let materialIcon, backgroundColor, iconColor;
   let scrolling = false;
   let sortByDate = true;
@@ -34,6 +33,8 @@
   });
 
   onMount(() => {
+    console.log($detailData);
+
     const typeDesign = typeDesigns.filter(
       obj => obj.type === $detailData.type
     )[0];
@@ -52,57 +53,6 @@
       detailData.set({});
     }
   });
-
-  async function createBuckets() {
-    let buckets = [];
-
-    await $detailData.data.forEach((data, i, arry) => {
-      const year = +data.date.substring(0, 4);
-      const month = +data.date.substring(5, 7);
-      let previousYear, previousMonth;
-
-      if (buckets.length > 0) {
-        previousYear = +buckets[buckets.length - 1].year;
-        previousMonth = +buckets[buckets.length - 1].month;
-      }
-
-      if (i > 0 && year + month !== previousYear + previousMonth) {
-        buckets.push({
-          year: year,
-          month: month
-        });
-      } else if (i === 0) {
-        buckets.push({
-          year: year,
-          month: month
-        });
-      }
-    });
-
-    buckets.sort((first, second) => {
-      if (first.month > second.month) {
-        return 1;
-      } else {
-        return -1;
-      }
-    });
-
-    buckets.sort((first, second) => {
-      if (first.year < second.year) {
-        return 1;
-      } else {
-        return -1;
-      }
-    });
-
-    return buckets;
-  }
-
-  function showEditDetail(data) {
-    handleRouting("entry");
-    entryData.set(data);
-    overlay.set("entry");
-  }
 
   $: if ($detailData.data) {
     if (sortByDate) {
@@ -226,43 +176,6 @@
           {/if}
         </div>
       {/each}
-      <!-- {#await getBucketsPromise then buckets}
-        {#each buckets as bucket, index}
-          {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
-            <span
-              class="rounded-full font-bold px-4 py-2 my-4 sticky top-0 z-10
-              m-auto"
-              style="top: {56 + convertRemToPixels(1)}px; color:
-              var(--text-color); background-color:var(--inactive-button-color)">
-              {bucket.year}
-            </span>
-          {/if}
-          <div class="flex flex-col justify-center items-center">
-            <div class="wrap w-full relative text-center mt-4 mb-2">
-              <span
-                class="relative font-bold px-4"
-                style="color:var(--text-color2); background-color:
-                var(--background-color)">
-                {new Date(2019, bucket.month - 1, 1)
-                  .toDateString()
-                  .substring(4, 7)}
-              </span>
-            </div>
-            {#each sortedData as data, index (data.id)}
-              <div
-                in:receive={{ key: data.id }}
-                out:send={{ key: data.id }}
-                animate:flip={{ duration: 350 }}
-                class="w-full"
-                on:click={() => showEditDetail(data)}>
-                {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
-                  <SearchListTile {data} {index} />
-                {/if}
-              </div>
-            {/each}
-          </div>
-        {/each}
-      {/await} -->
     </div>
   </div>
 </div>
