@@ -7,11 +7,14 @@
     overlay,
     entryData,
     view,
-    themeIsBright
+    themeIsBright,
+    firstDate,
+    lastDate
   } from "../store/store";
   import { quintOut } from "svelte/easing";
   import { flip } from "svelte/animate";
   import SearchListTile from "./SearchListTile.svelte";
+  import { CountUp } from "countup.js";
 
   let materialIcon, backgroundColor, iconColor;
   let scrolling = false;
@@ -33,8 +36,7 @@
   });
 
   onMount(() => {
-    console.log($detailData);
-
+    console.log(Math.round($detailData.sum));
     const typeDesign = typeDesigns.filter(
       obj => obj.type === $detailData.type
     )[0];
@@ -46,6 +48,17 @@
     document.getElementById("detail-page").addEventListener("scroll", ev => {
       ev.target.scrollTop > 0 ? (scrolling = true) : (scrolling = false);
     });
+
+    const counter = new CountUp(
+      "totalCategorySpend",
+      Math.round($detailData.sum),
+      {
+        prefix: "$",
+        duration: 1,
+        startVal: 0
+      }
+    );
+    counter.start();
   });
 
   onDestroy(() => {
@@ -155,6 +168,18 @@
           style="color: {$themeIsBright ? iconColor : backgroundColor}">
           {$detailData.type}
         </span>
+        <span
+          class="w-full mb-1 text-4xl text-center font-bold"
+          id="totalCategorySpend">
+          $0
+        </span>
+        <span
+          class="w-full text-center font-light mb-2"
+          style="color: var(--text-color2)"
+          in:fade={{ duration: 180 }}>
+          {$lastDate + ' — ' + $firstDate}
+        </span>
+        <span class="w-full text-center mb-12">{$detailData.items} items</span>
       </div>
       {#each sortedData as data, index (data.id)}
         <div

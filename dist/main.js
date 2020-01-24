@@ -26937,6 +26937,8 @@
 
     //Handle passing of data for Detail page
     const detailData = writable({});
+    const firstDate = writable("");
+    const lastDate = writable("");
 
     //Handle passing of data to Entry page for editing
     const entryData = writable({});
@@ -27676,7 +27678,7 @@
     	return child_ctx;
     }
 
-    // (321:4) {:else}
+    // (320:4) {:else}
     function create_else_block(ctx) {
     	let span;
 
@@ -27685,7 +27687,7 @@
     			span = element("span");
     			span.textContent = " ";
     			attr_dev(span, "class", "w-full text-center text-transparent font-light mb-12");
-    			add_location(span, file$2, 321, 6, 10464);
+    			add_location(span, file$2, 320, 6, 10456);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -27702,17 +27704,17 @@
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(321:4) {:else}",
+    		source: "(320:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (314:4) {#if firstDate.length > 0 && lastDate.length > 0}
+    // (313:4) {#if $firstDate.length > 0 && $lastDate.length > 0}
     function create_if_block_1(ctx) {
     	let span;
-    	let t_value = /*lastDate*/ ctx[4] + " — " + /*firstDate*/ ctx[3] + "";
+    	let t_value = /*$lastDate*/ ctx[5] + " — " + /*$firstDate*/ ctx[4] + "";
     	let t;
     	let span_intro;
 
@@ -27722,14 +27724,14 @@
     			t = text(t_value);
     			attr_dev(span, "class", "w-full text-center font-light mb-12");
     			set_style(span, "color", "var(--text-color2)");
-    			add_location(span, file$2, 314, 6, 10249);
+    			add_location(span, file$2, 313, 6, 10239);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
     			append_dev(span, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*lastDate, firstDate*/ 24 && t_value !== (t_value = /*lastDate*/ ctx[4] + " — " + /*firstDate*/ ctx[3] + "")) set_data_dev(t, t_value);
+    			if (dirty & /*$lastDate, $firstDate*/ 48 && t_value !== (t_value = /*$lastDate*/ ctx[5] + " — " + /*$firstDate*/ ctx[4] + "")) set_data_dev(t, t_value);
     		},
     		i: function intro(local) {
     			if (!span_intro) {
@@ -27749,14 +27751,14 @@
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(314:4) {#if firstDate.length > 0 && lastDate.length > 0}",
+    		source: "(313:4) {#if $firstDate.length > 0 && $lastDate.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (327:6) {#each ['1M', '6M', '1Y', 'All'] as interval}
+    // (326:6) {#each ['1M', '6M', '1Y', 'All'] as interval}
     function create_each_block_1(ctx) {
     	let button;
     	let t0;
@@ -27778,7 +27780,7 @@
     			? "active"
     			: "") + " svelte-1fsuttd");
 
-    			add_location(button, file$2, 327, 8, 10679);
+    			add_location(button, file$2, 326, 8, 10671);
     			dispose = listen_dev(button, "click", click_handler_1, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -27805,7 +27807,7 @@
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(327:6) {#each ['1M', '6M', '1Y', 'All'] as interval}",
+    		source: "(326:6) {#each ['1M', '6M', '1Y', 'All'] as interval}",
     		ctx
     	});
 
@@ -27834,7 +27836,7 @@
     	return block;
     }
 
-    // (338:2) {:then result}
+    // (337:2) {:then result}
     function create_then_block(ctx) {
     	let each_1_anchor;
     	let current;
@@ -27921,14 +27923,14 @@
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(338:2) {:then result}",
+    		source: "(337:2) {:then result}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (339:4) {#each result as data, index}
+    // (338:4) {#each result as data, index}
     function create_each_block(ctx) {
     	let current;
 
@@ -27971,14 +27973,14 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(339:4) {#each result as data, index}",
+    		source: "(338:4) {#each result as data, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (336:25)       <LoadingSpinner />    {:then result}
+    // (335:25)       <LoadingSpinner />    {:then result}
     function create_pending_block(ctx) {
     	let current;
     	const loadingspinner = new LoadingSpinner({ $$inline: true });
@@ -28010,14 +28012,14 @@
     		block,
     		id: create_pending_block.name,
     		type: "pending",
-    		source: "(336:25)       <LoadingSpinner />    {:then result}",
+    		source: "(335:25)       <LoadingSpinner />    {:then result}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (343:2) {#if showSignIn}
+    // (342:2) {#if showSignIn}
     function create_if_block$1(ctx) {
     	let div1;
     	let span0;
@@ -28065,55 +28067,55 @@
     			span2 = element("span");
     			span2.textContent = "Sign in with Google";
     			attr_dev(span0, "class", "text-4xl mx-4");
-    			add_location(span0, file$2, 346, 6, 11210);
+    			add_location(span0, file$2, 345, 6, 11202);
     			attr_dev(span1, "class", "mx-4 mt-2 mb-8 text-lg");
     			set_style(span1, "color", "var(--text-color)");
-    			add_location(span1, file$2, 347, 6, 11255);
+    			add_location(span1, file$2, 346, 6, 11247);
     			attr_dev(path0, "id", "a");
     			attr_dev(path0, "d", "M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2\r\n                0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6\r\n                4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22\r\n                0-1.3-.2-2.7-.5-4z");
-    			add_location(path0, file$2, 365, 14, 12128);
-    			add_location(defs, file$2, 364, 12, 12106);
+    			add_location(path0, file$2, 364, 14, 12120);
+    			add_location(defs, file$2, 363, 12, 12098);
     			xlink_attr(use, "xlink:href", "#a");
     			attr_dev(use, "overflow", "visible");
-    			add_location(use, file$2, 373, 14, 12496);
+    			add_location(use, file$2, 372, 14, 12488);
     			attr_dev(clipPath, "id", "b");
-    			add_location(clipPath, file$2, 372, 12, 12463);
+    			add_location(clipPath, file$2, 371, 12, 12455);
     			attr_dev(path1, "clip-path", "url(#b)");
     			attr_dev(path1, "fill", "#FBBC05");
     			attr_dev(path1, "d", "M0 37V11l17 13z");
-    			add_location(path1, file$2, 375, 12, 12577);
+    			add_location(path1, file$2, 374, 12, 12569);
     			attr_dev(path2, "clip-path", "url(#b)");
     			attr_dev(path2, "fill", "#EA4335");
     			attr_dev(path2, "d", "M0 11l17 13 7-6.1L48 14V0H0z");
-    			add_location(path2, file$2, 376, 12, 12654);
+    			add_location(path2, file$2, 375, 12, 12646);
     			attr_dev(path3, "clip-path", "url(#b)");
     			attr_dev(path3, "fill", "#34A853");
     			attr_dev(path3, "d", "M0 37l30-23 7.9 1L48 0v48H0z");
-    			add_location(path3, file$2, 380, 12, 12789);
+    			add_location(path3, file$2, 379, 12, 12781);
     			attr_dev(path4, "clip-path", "url(#b)");
     			attr_dev(path4, "fill", "#4285F4");
     			attr_dev(path4, "d", "M48 48L17 24l-4-3 35-10z");
-    			add_location(path4, file$2, 384, 12, 12924);
+    			add_location(path4, file$2, 383, 12, 12916);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg, "viewBox", "0 0 48 48");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file$2, 359, 10, 11921);
+    			add_location(svg, file$2, 358, 10, 11913);
     			attr_dev(div0, "class", "bg-white rounded-l flex items-center justify-center");
     			set_style(div0, "height", "40px");
     			set_style(div0, "width", "40px");
-    			add_location(div0, file$2, 356, 8, 11788);
+    			add_location(div0, file$2, 355, 8, 11780);
     			attr_dev(span2, "class", "mx-4");
-    			add_location(span2, file$2, 390, 8, 13085);
+    			add_location(span2, file$2, 389, 8, 13077);
     			attr_dev(button, "class", "flex bg-white rounded shadow text-gray-700 mx-4 font-bold\r\n        items-center justify-center w-auto");
 
     			attr_dev(button, "style", button_style_value = "" + ((/*$themeIsBright*/ ctx[6]
     			? "background-color: hsl(var(--secondary-hue), 50%, 50%); color:var(--background-color)"
     			: "background-color: var(--text-color); color: var(--inactive-button-color)") + ";\r\n        ; height: 40px"));
 
-    			add_location(button, file$2, 350, 6, 11391);
+    			add_location(button, file$2, 349, 6, 11383);
     			attr_dev(div1, "class", "flex flex-col items-center justify-center w-full");
-    			add_location(div1, file$2, 343, 4, 11098);
+    			add_location(div1, file$2, 342, 4, 11090);
     			dispose = listen_dev(button, "click", /*click_handler_2*/ ctx[19], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -28162,7 +28164,7 @@
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(343:2) {#if showSignIn}",
+    		source: "(342:2) {#if showSignIn}",
     		ctx
     	});
 
@@ -28189,7 +28191,7 @@
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*firstDate*/ ctx[3].length > 0 && /*lastDate*/ ctx[4].length > 0) return create_if_block_1;
+    		if (/*$firstDate*/ ctx[4].length > 0 && /*$lastDate*/ ctx[5].length > 0) return create_if_block_1;
     		return create_else_block;
     	}
 
@@ -28241,19 +28243,19 @@
     			t7 = space();
     			if (if_block1) if_block1.c();
     			attr_dev(i, "class", "material-icons-round fill-current");
-    			add_location(i, file$2, 307, 6, 10000);
+    			add_location(i, file$2, 306, 6, 9988);
     			attr_dev(button, "class", "searchbar svelte-1fsuttd");
-    			add_location(button, file$2, 301, 4, 9858);
+    			add_location(button, file$2, 300, 4, 9846);
     			attr_dev(span, "class", "w-full mb-1 text-4xl text-center font-bold");
     			attr_dev(span, "id", "totalSpend");
-    			add_location(span, file$2, 310, 4, 10090);
+    			add_location(span, file$2, 309, 4, 10078);
     			attr_dev(div0, "class", "interval-button-wrapper svelte-1fsuttd");
-    			add_location(div0, file$2, 325, 4, 10579);
+    			add_location(div0, file$2, 324, 4, 10571);
     			attr_dev(div1, "class", "overall-wrapper svelte-1fsuttd");
-    			add_location(div1, file$2, 300, 2, 9823);
-    			attr_dev(div2, "class", div2_class_value = "flex flex-col w-full items-center my-8 " + (/*$overlay*/ ctx[5].length > 0 ? "hidden" : ""));
+    			add_location(div1, file$2, 299, 2, 9811);
+    			attr_dev(div2, "class", div2_class_value = "flex flex-col w-full items-center my-8 " + (/*$overlay*/ ctx[3].length > 0 ? "hidden" : ""));
     			set_style(div2, "color", "var(--text-color)");
-    			add_location(div2, file$2, 296, 0, 9660);
+    			add_location(div2, file$2, 295, 0, 9648);
     			dispose = listen_dev(button, "click", /*click_handler*/ ctx[17], false, false, false);
     		},
     		l: function claim(nodes) {
@@ -28344,7 +28346,7 @@
     				if_block1 = null;
     			}
 
-    			if (!current || dirty & /*$overlay*/ 32 && div2_class_value !== (div2_class_value = "flex flex-col w-full items-center my-8 " + (/*$overlay*/ ctx[5].length > 0 ? "hidden" : ""))) {
+    			if (!current || dirty & /*$overlay*/ 8 && div2_class_value !== (div2_class_value = "flex flex-col w-full items-center my-8 " + (/*$overlay*/ ctx[3].length > 0 ? "hidden" : ""))) {
     				attr_dev(div2, "class", div2_class_value);
     			}
     		},
@@ -28432,11 +28434,17 @@
     function instance$2($$self, $$props, $$invalidate) {
     	let $dashboardShouldReload;
     	let $overlay;
+    	let $firstDate;
+    	let $lastDate;
     	let $themeIsBright;
     	validate_store(dashboardShouldReload, "dashboardShouldReload");
     	component_subscribe($$self, dashboardShouldReload, $$value => $$invalidate(15, $dashboardShouldReload = $$value));
     	validate_store(overlay, "overlay");
-    	component_subscribe($$self, overlay, $$value => $$invalidate(5, $overlay = $$value));
+    	component_subscribe($$self, overlay, $$value => $$invalidate(3, $overlay = $$value));
+    	validate_store(firstDate, "firstDate");
+    	component_subscribe($$self, firstDate, $$value => $$invalidate(4, $firstDate = $$value));
+    	validate_store(lastDate, "lastDate");
+    	component_subscribe($$self, lastDate, $$value => $$invalidate(5, $lastDate = $$value));
     	validate_store(themeIsBright, "themeIsBright");
     	component_subscribe($$self, themeIsBright, $$value => $$invalidate(6, $themeIsBright = $$value));
     	let db, queryInterval;
@@ -28447,8 +28455,6 @@
     	let totalSpend = 0;
     	let currentCounterValue = 0;
     	let showSignIn = false;
-    	let firstDate = "";
-    	let lastDate = "";
 
     	onMount(() => {
     		if (localStorage.getItem("interval")) {
@@ -28550,8 +28556,8 @@
     			}
     		});
 
-    		$$invalidate(3, firstDate = new Date(rawData[0].date).toString().substring(4, 15));
-    		$$invalidate(4, lastDate = new Date(rawData[rawData.length - 1].date).toString().substring(4, 15));
+    		firstDate.set(new Date(rawData[0].date).toString().substring(4, 15));
+    		lastDate.set(new Date(rawData[rawData.length - 1].date).toString().substring(4, 15));
     		localStorage.setItem("rawCache", JSON.stringify(rawCache));
     		localStorage.setItem("lastUpdated", new Date().toISOString().substring(0, 10));
     		const types = [...new Set(rawData.map(item => item.type))];
@@ -28649,10 +28655,10 @@
     		if ("totalSpend" in $$props) totalSpend = $$props.totalSpend;
     		if ("currentCounterValue" in $$props) currentCounterValue = $$props.currentCounterValue;
     		if ("showSignIn" in $$props) $$invalidate(2, showSignIn = $$props.showSignIn);
-    		if ("firstDate" in $$props) $$invalidate(3, firstDate = $$props.firstDate);
-    		if ("lastDate" in $$props) $$invalidate(4, lastDate = $$props.lastDate);
     		if ("$dashboardShouldReload" in $$props) dashboardShouldReload.set($dashboardShouldReload = $$props.$dashboardShouldReload);
     		if ("$overlay" in $$props) overlay.set($overlay = $$props.$overlay);
+    		if ("$firstDate" in $$props) firstDate.set($firstDate = $$props.$firstDate);
+    		if ("$lastDate" in $$props) lastDate.set($lastDate = $$props.$lastDate);
     		if ("$themeIsBright" in $$props) themeIsBright.set($themeIsBright = $$props.$themeIsBright);
     	};
 
@@ -28672,9 +28678,9 @@
     		getDataPromise,
     		currentInterval,
     		showSignIn,
-    		firstDate,
-    		lastDate,
     		$overlay,
+    		$firstDate,
+    		$lastDate,
     		$themeIsBright,
     		changeInterval,
     		signIn,
@@ -30067,12 +30073,12 @@
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[13] = list[i];
-    	child_ctx[15] = i;
+    	child_ctx[15] = list[i];
+    	child_ctx[17] = i;
     	return child_ctx;
     }
 
-    // (105:8) {:else}
+    // (118:8) {:else}
     function create_else_block_1(ctx) {
     	let i;
     	let i_intro;
@@ -30082,7 +30088,7 @@
     			i = element("i");
     			i.textContent = "attach_money";
     			attr_dev(i, "class", "material-icons-round md-18");
-    			add_location(i, file$7, 105, 10, 3163);
+    			add_location(i, file$7, 118, 10, 3463);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -30105,14 +30111,14 @@
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(105:8) {:else}",
+    		source: "(118:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (99:8) {#if sortByDate}
+    // (112:8) {#if sortByDate}
     function create_if_block_1$2(ctx) {
     	let i;
     	let i_intro;
@@ -30122,7 +30128,7 @@
     			i = element("i");
     			i.textContent = "date_range";
     			attr_dev(i, "class", "material-icons-round md-18");
-    			add_location(i, file$7, 99, 10, 2996);
+    			add_location(i, file$7, 112, 10, 3296);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -30145,19 +30151,19 @@
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(99:8) {#if sortByDate}",
+    		source: "(112:8) {#if sortByDate}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (154:10) {:else}
+    // (179:10) {:else}
     function create_else_block$2(ctx) {
     	let current;
 
     	const searchlisttile = new SearchListTile({
-    			props: { data: /*data*/ ctx[13] },
+    			props: { data: /*data*/ ctx[15] },
     			$$inline: true
     		});
 
@@ -30171,7 +30177,7 @@
     		},
     		p: function update(ctx, dirty) {
     			const searchlisttile_changes = {};
-    			if (dirty & /*sortedData*/ 32) searchlisttile_changes.data = /*data*/ ctx[13];
+    			if (dirty & /*sortedData*/ 32) searchlisttile_changes.data = /*data*/ ctx[15];
     			searchlisttile.$set(searchlisttile_changes);
     		},
     		i: function intro(local) {
@@ -30192,23 +30198,23 @@
     		block,
     		id: create_else_block$2.name,
     		type: "else",
-    		source: "(154:10) {:else}",
+    		source: "(179:10) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (145:10) {#if index === 0 || new Date(data.date).getFullYear() !== new Date(sortedData[index - 1].date).getFullYear()}
+    // (170:10) {#if index === 0 || new Date(data.date).getFullYear() !== new Date(sortedData[index - 1].date).getFullYear()}
     function create_if_block$5(ctx) {
     	let span;
-    	let t0_value = new Date(/*data*/ ctx[13].date).getFullYear() + "";
+    	let t0_value = new Date(/*data*/ ctx[15].date).getFullYear() + "";
     	let t0;
     	let t1;
     	let current;
 
     	const searchlisttile = new SearchListTile({
-    			props: { data: /*data*/ ctx[13] },
+    			props: { data: /*data*/ ctx[15] },
     			$$inline: true
     		});
 
@@ -30222,7 +30228,7 @@
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
     			set_style(span, "color", "var(--text-color)");
     			set_style(span, "background-color", "var(--inactive-button-color)");
-    			add_location(span, file$7, 145, 12, 4603);
+    			add_location(span, file$7, 170, 12, 5343);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -30232,9 +30238,9 @@
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty & /*sortedData*/ 32) && t0_value !== (t0_value = new Date(/*data*/ ctx[13].date).getFullYear() + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*sortedData*/ 32) && t0_value !== (t0_value = new Date(/*data*/ ctx[15].date).getFullYear() + "")) set_data_dev(t0, t0_value);
     			const searchlisttile_changes = {};
-    			if (dirty & /*sortedData*/ 32) searchlisttile_changes.data = /*data*/ ctx[13];
+    			if (dirty & /*sortedData*/ 32) searchlisttile_changes.data = /*data*/ ctx[15];
     			searchlisttile.$set(searchlisttile_changes);
     		},
     		i: function intro(local) {
@@ -30257,14 +30263,14 @@
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(145:10) {#if index === 0 || new Date(data.date).getFullYear() !== new Date(sortedData[index - 1].date).getFullYear()}",
+    		source: "(170:10) {#if index === 0 || new Date(data.date).getFullYear() !== new Date(sortedData[index - 1].date).getFullYear()}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (139:6) {#each sortedData as data, index (data.id)}
+    // (164:6) {#each sortedData as data, index (data.id)}
     function create_each_block$1(key_1, ctx) {
     	let div;
     	let show_if;
@@ -30280,7 +30286,7 @@
     	const if_blocks = [];
 
     	function select_block_type_1(ctx, dirty) {
-    		if (dirty & /*sortedData*/ 32) show_if = !!(/*index*/ ctx[15] === 0 || new Date(/*data*/ ctx[13].date).getFullYear() !== new Date(/*sortedData*/ ctx[5][/*index*/ ctx[15] - 1].date).getFullYear());
+    		if (dirty & /*sortedData*/ 32) show_if = !!(/*index*/ ctx[17] === 0 || new Date(/*data*/ ctx[15].date).getFullYear() !== new Date(/*sortedData*/ ctx[5][/*index*/ ctx[17] - 1].date).getFullYear());
     		if (show_if) return 0;
     		return 1;
     	}
@@ -30296,7 +30302,7 @@
     			if_block.c();
     			t = space();
     			attr_dev(div, "class", "w-full text-center");
-    			add_location(div, file$7, 139, 8, 4301);
+    			add_location(div, file$7, 164, 8, 5041);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -30348,7 +30354,7 @@
 
     			add_render_callback(() => {
     				if (div_outro) div_outro.end(1);
-    				if (!div_intro) div_intro = create_in_transition(div, /*receive*/ ctx[9], { key: /*data*/ ctx[13].id });
+    				if (!div_intro) div_intro = create_in_transition(div, /*receive*/ ctx[11], { key: /*data*/ ctx[15].id });
     				div_intro.start();
     			});
 
@@ -30357,7 +30363,7 @@
     		o: function outro(local) {
     			transition_out(if_block);
     			if (div_intro) div_intro.invalidate();
-    			div_outro = create_out_transition(div, /*send*/ ctx[8], { key: /*data*/ ctx[13].id });
+    			div_outro = create_out_transition(div, /*send*/ ctx[10], { key: /*data*/ ctx[15].id });
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -30371,7 +30377,7 @@
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(139:6) {#each sortedData as data, index (data.id)}",
+    		source: "(164:6) {#each sortedData as data, index (data.id)}",
     		ctx
     	});
 
@@ -30397,11 +30403,23 @@
     	let t3;
     	let div2_intro;
     	let t4;
-    	let span;
+    	let span0;
     	let t5_value = /*$detailData*/ ctx[6].type + "";
     	let t5;
-    	let span_intro;
+    	let span0_intro;
     	let t6;
+    	let span1;
+    	let t8;
+    	let span2;
+    	let t9_value = /*$lastDate*/ ctx[8] + " — " + /*$firstDate*/ ctx[9] + "";
+    	let t9;
+    	let span2_intro;
+    	let t10;
+    	let span3;
+    	let t11_value = /*$detailData*/ ctx[6].items + "";
+    	let t11;
+    	let t12;
+    	let t13;
     	let each_blocks = [];
     	let each_1_lookup = new Map();
     	let div6_outro;
@@ -30416,7 +30434,7 @@
     	let current_block_type = select_block_type(ctx, -1);
     	let if_block = current_block_type(ctx);
     	let each_value = /*sortedData*/ ctx[5];
-    	const get_key = ctx => /*data*/ ctx[13].id;
+    	const get_key = ctx => /*data*/ ctx[15].id;
 
     	for (let i = 0; i < each_value.length; i += 1) {
     		let child_ctx = get_each_context$1(ctx, each_value, i);
@@ -30443,49 +30461,67 @@
     			i1 = element("i");
     			t3 = text(/*materialIcon*/ ctx[0]);
     			t4 = space();
-    			span = element("span");
+    			span0 = element("span");
     			t5 = text(t5_value);
     			t6 = space();
+    			span1 = element("span");
+    			span1.textContent = "$0";
+    			t8 = space();
+    			span2 = element("span");
+    			t9 = text(t9_value);
+    			t10 = space();
+    			span3 = element("span");
+    			t11 = text(t11_value);
+    			t12 = text(" items");
+    			t13 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
     			attr_dev(i0, "class", "material-icons-round fill-current");
-    			add_location(i0, file$7, 83, 6, 2560);
-    			add_location(button0, file$7, 82, 4, 2544);
+    			add_location(i0, file$7, 96, 6, 2860);
+    			add_location(button0, file$7, 95, 4, 2844);
     			attr_dev(div0, "class", "relative");
-    			add_location(div0, file$7, 97, 6, 2936);
+    			add_location(div0, file$7, 110, 6, 3236);
     			attr_dev(button1, "class", "fill-current");
-    			add_location(button1, file$7, 93, 4, 2807);
+    			add_location(button1, file$7, 106, 4, 3107);
     			attr_dev(div1, "class", div1_class_value = "w-full flex flex-row p-4 " + (/*scrolling*/ ctx[3] ? "shadow" : "") + " fixed top-0\r\n    justify-between z-10");
     			set_style(div1, "height", "56px");
     			set_style(div1, "background-color", "var(--background-color)");
-    			add_location(div1, file$7, 78, 2, 2360);
+    			add_location(div1, file$7, 91, 2, 2660);
     			attr_dev(i1, "class", "material-icons-round fill-current");
     			set_style(i1, "display", "block", 1);
     			set_style(i1, "color", /*iconColor*/ ctx[2]);
     			set_style(i1, "font-size", "64px");
-    			add_location(i1, file$7, 125, 10, 3789);
+    			add_location(i1, file$7, 138, 10, 4089);
     			attr_dev(div2, "class", "icon rounded-full p-6 mt-20 mb-4");
     			attr_dev(div2, "id", "icon");
     			set_style(div2, "background-color", /*backgroundColor*/ ctx[1]);
-    			add_location(div2, file$7, 120, 8, 3579);
-    			attr_dev(span, "class", "text-2xl font-bold mb-8");
+    			add_location(div2, file$7, 133, 8, 3879);
+    			attr_dev(span0, "class", "text-2xl font-bold mb-8");
 
-    			set_style(span, "color", /*$themeIsBright*/ ctx[7]
+    			set_style(span0, "color", /*$themeIsBright*/ ctx[7]
     			? /*iconColor*/ ctx[2]
     			: /*backgroundColor*/ ctx[1]);
 
-    			add_location(span, file$7, 131, 8, 4000);
+    			add_location(span0, file$7, 144, 8, 4300);
+    			attr_dev(span1, "class", "w-full mb-1 text-4xl text-center font-bold");
+    			attr_dev(span1, "id", "totalCategorySpend");
+    			add_location(span1, file$7, 150, 8, 4536);
+    			attr_dev(span2, "class", "w-full text-center font-light mb-2");
+    			set_style(span2, "color", "var(--text-color2)");
+    			add_location(span2, file$7, 155, 8, 4680);
+    			attr_dev(span3, "class", "w-full text-center mb-12");
+    			add_location(span3, file$7, 161, 8, 4895);
     			attr_dev(div3, "class", "flex flex-col items-center");
-    			add_location(div3, file$7, 119, 6, 3529);
+    			add_location(div3, file$7, 132, 6, 3829);
     			attr_dev(div4, "class", "content-wrapper svelte-1yywlwk");
-    			add_location(div4, file$7, 118, 4, 3492);
+    			add_location(div4, file$7, 131, 4, 3792);
     			attr_dev(div5, "id", "content");
     			attr_dev(div5, "class", "flex flex-col w-full items-center");
     			set_style(div5, "background-color", "var(--background-color)");
-    			add_location(div5, file$7, 114, 2, 3361);
+    			add_location(div5, file$7, 127, 2, 3661);
     			attr_dev(div6, "id", "detail-page");
     			attr_dev(div6, "class", "h-screen w-full absolute top-0 overflow-auto pb-8");
     			set_style(div6, "background-color", "var(--background-color)");
@@ -30494,11 +30530,11 @@
     			? /*iconColor*/ ctx[2]
     			: /*backgroundColor*/ ctx[1]);
 
-    			add_location(div6, file$7, 73, 0, 2131);
+    			add_location(div6, file$7, 86, 0, 2431);
 
     			dispose = [
-    				listen_dev(i0, "click", /*click_handler*/ ctx[11], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_1*/ ctx[12], false, false, false)
+    				listen_dev(i0, "click", /*click_handler*/ ctx[13], false, false, false),
+    				listen_dev(button1, "click", /*click_handler_1*/ ctx[14], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
@@ -30521,9 +30557,18 @@
     			append_dev(div2, i1);
     			append_dev(i1, t3);
     			append_dev(div3, t4);
-    			append_dev(div3, span);
-    			append_dev(span, t5);
-    			append_dev(div4, t6);
+    			append_dev(div3, span0);
+    			append_dev(span0, t5);
+    			append_dev(div3, t6);
+    			append_dev(div3, span1);
+    			append_dev(div3, t8);
+    			append_dev(div3, span2);
+    			append_dev(span2, t9);
+    			append_dev(div3, t10);
+    			append_dev(div3, span3);
+    			append_dev(span3, t11);
+    			append_dev(span3, t12);
+    			append_dev(div4, t13);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div4, null);
@@ -30560,11 +30605,13 @@
     			if ((!current || dirty & /*$detailData*/ 64) && t5_value !== (t5_value = /*$detailData*/ ctx[6].type + "")) set_data_dev(t5, t5_value);
 
     			if (!current || dirty & /*$themeIsBright, iconColor, backgroundColor*/ 134) {
-    				set_style(span, "color", /*$themeIsBright*/ ctx[7]
+    				set_style(span0, "color", /*$themeIsBright*/ ctx[7]
     				? /*iconColor*/ ctx[2]
     				: /*backgroundColor*/ ctx[1]);
     			}
 
+    			if ((!current || dirty & /*$lastDate, $firstDate*/ 768) && t9_value !== (t9_value = /*$lastDate*/ ctx[8] + " — " + /*$firstDate*/ ctx[9] + "")) set_data_dev(t9, t9_value);
+    			if ((!current || dirty & /*$detailData*/ 64) && t11_value !== (t11_value = /*$detailData*/ ctx[6].items + "")) set_data_dev(t11, t11_value);
     			const each_value = /*sortedData*/ ctx[5];
     			group_outros();
     			for (let i = 0; i < each_blocks.length; i += 1) each_blocks[i].r();
@@ -30596,10 +30643,17 @@
     				});
     			}
 
-    			if (!span_intro) {
+    			if (!span0_intro) {
     				add_render_callback(() => {
-    					span_intro = create_in_transition(span, fly, { y: 48, duration: 180, delay: 180 });
-    					span_intro.start();
+    					span0_intro = create_in_transition(span0, fly, { y: 48, duration: 180, delay: 180 });
+    					span0_intro.start();
+    				});
+    			}
+
+    			if (!span2_intro) {
+    				add_render_callback(() => {
+    					span2_intro = create_in_transition(span2, fade, { duration: 180 });
+    					span2_intro.start();
     				});
     			}
 
@@ -30646,12 +30700,18 @@
     	let $detailData;
     	let $overlay;
     	let $themeIsBright;
+    	let $lastDate;
+    	let $firstDate;
     	validate_store(detailData, "detailData");
     	component_subscribe($$self, detailData, $$value => $$invalidate(6, $detailData = $$value));
     	validate_store(overlay, "overlay");
-    	component_subscribe($$self, overlay, $$value => $$invalidate(10, $overlay = $$value));
+    	component_subscribe($$self, overlay, $$value => $$invalidate(12, $overlay = $$value));
     	validate_store(themeIsBright, "themeIsBright");
     	component_subscribe($$self, themeIsBright, $$value => $$invalidate(7, $themeIsBright = $$value));
+    	validate_store(lastDate, "lastDate");
+    	component_subscribe($$self, lastDate, $$value => $$invalidate(8, $lastDate = $$value));
+    	validate_store(firstDate, "firstDate");
+    	component_subscribe($$self, firstDate, $$value => $$invalidate(9, $firstDate = $$value));
     	let materialIcon, backgroundColor, iconColor;
     	let scrolling = false;
     	let sortByDate = true;
@@ -30671,7 +30731,7 @@
     	});
 
     	onMount(() => {
-    		console.log($detailData);
+    		console.log(Math.round($detailData.sum));
     		const typeDesign = typeDesigns.filter(obj => obj.type === $detailData.type)[0];
     		const hue = typeDesign.hue;
     		$$invalidate(0, materialIcon = typeDesign.materialIcon);
@@ -30683,6 +30743,9 @@
     			? $$invalidate(3, scrolling = true)
     			: $$invalidate(3, scrolling = false);
     		});
+
+    		const counter = new CountUp("totalCategorySpend", Math.round($detailData.sum), { prefix: "$", duration: 1, startVal: 0 });
+    		counter.start();
     	});
 
     	onDestroy(() => {
@@ -30713,6 +30776,8 @@
     		if ("$detailData" in $$props) detailData.set($detailData = $$props.$detailData);
     		if ("$overlay" in $$props) overlay.set($overlay = $$props.$overlay);
     		if ("$themeIsBright" in $$props) themeIsBright.set($themeIsBright = $$props.$themeIsBright);
+    		if ("$lastDate" in $$props) lastDate.set($lastDate = $$props.$lastDate);
+    		if ("$firstDate" in $$props) firstDate.set($firstDate = $$props.$firstDate);
     	};
 
     	$$self.$$.update = () => {
@@ -30742,6 +30807,8 @@
     		sortedData,
     		$detailData,
     		$themeIsBright,
+    		$lastDate,
+    		$firstDate,
     		send,
     		receive,
     		$overlay,

@@ -18,6 +18,8 @@ export const filteredSearchData = writable({});
 
 //Handle passing of data for Detail page
 export const detailData = writable({});
+export const firstDate = writable("");
+export const lastDate = writable("");
 
 //Handle passing of data to Entry page for editing
 export const entryData = writable({});

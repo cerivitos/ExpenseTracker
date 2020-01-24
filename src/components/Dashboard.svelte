@@ -8,7 +8,9 @@
     dashboardShouldReload,
     overlay,
     userInfo,
-    themeIsBright
+    themeIsBright,
+    firstDate,
+    lastDate
   } from "../store/store";
   import { fade } from "svelte/transition";
   import CategoryListTile from "./CategoryListTile.svelte";
@@ -24,9 +26,6 @@
   let totalSpend = 0;
   let currentCounterValue = 0;
   let showSignIn = false;
-
-  let firstDate = "";
-  let lastDate = "";
 
   onMount(() => {
     if (localStorage.getItem("interval")) {
@@ -190,10 +189,10 @@
       }
     });
 
-    firstDate = new Date(rawData[0].date).toString().substring(4, 15);
-    lastDate = new Date(rawData[rawData.length - 1].date)
-      .toString()
-      .substring(4, 15);
+    firstDate.set(new Date(rawData[0].date).toString().substring(4, 15));
+    lastDate.set(
+      new Date(rawData[rawData.length - 1].date).toString().substring(4, 15)
+    );
 
     localStorage.setItem("rawCache", JSON.stringify(rawCache));
     localStorage.setItem(
@@ -364,12 +363,12 @@
     <span class="w-full mb-1 text-4xl text-center font-bold" id="totalSpend">
       $0
     </span>
-    {#if firstDate.length > 0 && lastDate.length > 0}
+    {#if $firstDate.length > 0 && $lastDate.length > 0}
       <span
         class="w-full text-center font-light mb-12"
         style="color: var(--text-color2)"
         in:fade={{ duration: 180 }}>
-        {lastDate + ' — ' + firstDate}
+        {$lastDate + ' — ' + $firstDate}
       </span>
     {:else}
       <span class="w-full text-center text-transparent font-light mb-12">
