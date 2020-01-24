@@ -30067,8 +30067,8 @@
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[17] = list[i];
-    	child_ctx[19] = i;
+    	child_ctx[15] = list[i];
+    	child_ctx[17] = i;
     	return child_ctx;
     }
 
@@ -30152,38 +30152,26 @@
     	return block;
     }
 
-    // (206:10) {:else}
+    // (204:10) {:else}
     function create_else_block$2(ctx) {
-    	let div;
     	let current;
-    	let dispose;
 
     	const searchlisttile = new SearchListTile({
-    			props: { data: /*data*/ ctx[17] },
+    			props: { data: /*data*/ ctx[15] },
     			$$inline: true
     		});
 
-    	function click_handler_3(...args) {
-    		return /*click_handler_3*/ ctx[16](/*data*/ ctx[17], ...args);
-    	}
-
     	const block = {
     		c: function create() {
-    			div = element("div");
     			create_component(searchlisttile.$$.fragment);
-    			attr_dev(div, "class", "w-full");
-    			add_location(div, file$7, 206, 12, 6286);
-    			dispose = listen_dev(div, "click", click_handler_3, false, false, false);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(searchlisttile, div, null);
+    			mount_component(searchlisttile, target, anchor);
     			current = true;
     		},
-    		p: function update(new_ctx, dirty) {
-    			ctx = new_ctx;
+    		p: function update(ctx, dirty) {
     			const searchlisttile_changes = {};
-    			if (dirty & /*sortedData*/ 32) searchlisttile_changes.data = /*data*/ ctx[17];
+    			if (dirty & /*sortedData*/ 32) searchlisttile_changes.data = /*data*/ ctx[15];
     			searchlisttile.$set(searchlisttile_changes);
     		},
     		i: function intro(local) {
@@ -30196,9 +30184,7 @@
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			destroy_component(searchlisttile);
-    			dispose();
+    			destroy_component(searchlisttile, detaching);
     		}
     	};
 
@@ -30206,7 +30192,7 @@
     		block,
     		id: create_else_block$2.name,
     		type: "else",
-    		source: "(206:10) {:else}",
+    		source: "(204:10) {:else}",
     		ctx
     	});
 
@@ -30216,51 +30202,39 @@
     // (195:10) {#if index === 0 || new Date(data.date).getFullYear() !== new Date(sortedData[index - 1].date).getFullYear()}
     function create_if_block$5(ctx) {
     	let span;
-    	let t0_value = new Date(/*data*/ ctx[17].date).getFullYear() + "";
+    	let t0_value = new Date(/*data*/ ctx[15].date).getFullYear() + "";
     	let t0;
     	let t1;
-    	let div;
     	let current;
-    	let dispose;
 
     	const searchlisttile = new SearchListTile({
-    			props: { data: /*data*/ ctx[17] },
+    			props: { data: /*data*/ ctx[15] },
     			$$inline: true
     		});
-
-    	function click_handler_2(...args) {
-    		return /*click_handler_2*/ ctx[15](/*data*/ ctx[17], ...args);
-    	}
 
     	const block = {
     		c: function create() {
     			span = element("span");
     			t0 = text(t0_value);
     			t1 = space();
-    			div = element("div");
     			create_component(searchlisttile.$$.fragment);
     			attr_dev(span, "class", "rounded-full font-bold px-4 py-2 my-4 sticky top-0\r\n              inline-block z-10 m-auto");
     			set_style(span, "top", 56 + convertRemToPixels(1) + "px");
     			set_style(span, "color", "var(--text-color)");
     			set_style(span, "background-color", "var(--inactive-button-color)");
     			add_location(span, file$7, 195, 12, 5781);
-    			attr_dev(div, "class", "w-full");
-    			add_location(div, file$7, 202, 12, 6134);
-    			dispose = listen_dev(div, "click", click_handler_2, false, false, false);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
     			append_dev(span, t0);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, div, anchor);
-    			mount_component(searchlisttile, div, null);
+    			mount_component(searchlisttile, target, anchor);
     			current = true;
     		},
-    		p: function update(new_ctx, dirty) {
-    			ctx = new_ctx;
-    			if ((!current || dirty & /*sortedData*/ 32) && t0_value !== (t0_value = new Date(/*data*/ ctx[17].date).getFullYear() + "")) set_data_dev(t0, t0_value);
+    		p: function update(ctx, dirty) {
+    			if ((!current || dirty & /*sortedData*/ 32) && t0_value !== (t0_value = new Date(/*data*/ ctx[15].date).getFullYear() + "")) set_data_dev(t0, t0_value);
     			const searchlisttile_changes = {};
-    			if (dirty & /*sortedData*/ 32) searchlisttile_changes.data = /*data*/ ctx[17];
+    			if (dirty & /*sortedData*/ 32) searchlisttile_changes.data = /*data*/ ctx[15];
     			searchlisttile.$set(searchlisttile_changes);
     		},
     		i: function intro(local) {
@@ -30275,9 +30249,7 @@
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(span);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(div);
-    			destroy_component(searchlisttile);
-    			dispose();
+    			destroy_component(searchlisttile, detaching);
     		}
     	};
 
@@ -30308,7 +30280,7 @@
     	const if_blocks = [];
 
     	function select_block_type_1(ctx, dirty) {
-    		if (dirty & /*sortedData*/ 32) show_if = !!(/*index*/ ctx[19] === 0 || new Date(/*data*/ ctx[17].date).getFullYear() !== new Date(/*sortedData*/ ctx[5][/*index*/ ctx[19] - 1].date).getFullYear());
+    		if (dirty & /*sortedData*/ 32) show_if = !!(/*index*/ ctx[17] === 0 || new Date(/*data*/ ctx[15].date).getFullYear() !== new Date(/*sortedData*/ ctx[5][/*index*/ ctx[17] - 1].date).getFullYear());
     		if (show_if) return 0;
     		return 1;
     	}
@@ -30376,7 +30348,7 @@
 
     			add_render_callback(() => {
     				if (div_outro) div_outro.end(1);
-    				if (!div_intro) div_intro = create_in_transition(div, /*receive*/ ctx[9], { key: /*data*/ ctx[17].id });
+    				if (!div_intro) div_intro = create_in_transition(div, /*receive*/ ctx[9], { key: /*data*/ ctx[15].id });
     				div_intro.start();
     			});
 
@@ -30385,7 +30357,7 @@
     		o: function outro(local) {
     			transition_out(if_block);
     			if (div_intro) div_intro.invalidate();
-    			div_outro = create_out_transition(div, /*send*/ ctx[8], { key: /*data*/ ctx[17].id });
+    			div_outro = create_out_transition(div, /*send*/ ctx[8], { key: /*data*/ ctx[15].id });
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -30444,7 +30416,7 @@
     	let current_block_type = select_block_type(ctx, -1);
     	let if_block = current_block_type(ctx);
     	let each_value = /*sortedData*/ ctx[5];
-    	const get_key = ctx => /*data*/ ctx[17].id;
+    	const get_key = ctx => /*data*/ ctx[15].id;
 
     	for (let i = 0; i < each_value.length; i += 1) {
     		let child_ctx = get_each_context$1(ctx, each_value, i);
@@ -30670,12 +30642,6 @@
     	return block;
     }
 
-    function showEditDetail$1(data) {
-    	handleRouting("entry");
-    	entryData.set(data);
-    	overlay.set("entry");
-    }
-
     function instance$7($$self, $$props, $$invalidate) {
     	let $detailData;
     	let $overlay;
@@ -30771,8 +30737,6 @@
     	};
 
     	const click_handler_1 = () => $$invalidate(4, sortByDate = !sortByDate);
-    	const click_handler_2 = data => showEditDetail$1(data);
-    	const click_handler_3 = data => showEditDetail$1(data);
 
     	$$self.$capture_state = () => {
     		return {};
@@ -30824,9 +30788,7 @@
     		getBucketsPromise,
     		createBuckets,
     		click_handler,
-    		click_handler_1,
-    		click_handler_2,
-    		click_handler_3
+    		click_handler_1
     	];
     }
 

@@ -220,13 +220,9 @@
               var(--text-color); background-color:var(--inactive-button-color)">
               {new Date(data.date).getFullYear()}
             </span>
-            <div class="w-full" on:click={() => showEditDetail(data)}>
-              <SearchListTile {data} />
-            </div>
+            <SearchListTile {data} />
           {:else}
-            <div class="w-full" on:click={() => showEditDetail(data)}>
-              <SearchListTile {data} />
-            </div>
+            <SearchListTile {data} />
           {/if}
         </div>
       {/each}
