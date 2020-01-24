@@ -22,9 +22,9 @@
   });
 
   function viewDetails() {
-    detailData.set(data);
     handleRouting("detail#" + data.type);
     overlay.set("detail");
+    detailData.set(data);
   }
 </script>
 

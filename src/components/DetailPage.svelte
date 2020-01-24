@@ -45,8 +45,6 @@
     document.getElementById("detail-page").addEventListener("scroll", ev => {
       ev.target.scrollTop > 0 ? (scrolling = true) : (scrolling = false);
     });
-
-    getBucketsPromise = createBuckets();
   });
 
   onDestroy(() => {
@@ -208,7 +206,31 @@
           {$detailData.type}
         </span>
       </div>
-      {#await getBucketsPromise then buckets}
+      {#each sortedData as data, index (data.id)}
+        <div
+          in:receive={{ key: data.id }}
+          out:send={{ key: data.id }}
+          animate:flip={{ duration: 350 }}
+          class="w-full text-center">
+          {#if index === 0 || new Date(data.date).getFullYear() !== new Date(sortedData[index - 1].date).getFullYear()}
+            <span
+              class="rounded-full font-bold px-4 py-2 my-4 sticky inline-block
+              z-10 m-auto"
+              style="color: var(--text-color);
+              background-color:var(--inactive-button-color)">
+              {new Date(data.date).getFullYear()}
+            </span>
+            <div class="w-full" on:click={() => showEditDetail(data)}>
+              <SearchListTile {data} />
+            </div>
+          {:else}
+            <div class="w-full" on:click={() => showEditDetail(data)}>
+              <SearchListTile {data} />
+            </div>
+          {/if}
+        </div>
+      {/each}
+      <!-- {#await getBucketsPromise then buckets}
         {#each buckets as bucket, index}
           {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
             <span
@@ -244,7 +266,7 @@
             {/each}
           </div>
         {/each}
-      {/await}
+      {/await} -->
     </div>
   </div>
 </div>

@@ -11,7 +11,6 @@
   import { typeDesigns, handleRouting } from "../util";
 
   export let data;
-  export let index;
 
   let mounted = false;
 
@@ -94,7 +93,7 @@
   id="tile-wrapper"
   class="flex w-full p-4 items-center cursor-pointer"
   style="color: var(--text-color)"
-  in:fade={{ duration: 120, delay: index * 50 + 30 }}
+  in:fade={{ duration: 120 }}
   on:click={() => showEditDetail(data)}>
   <div
     class="mr-2 font-bold text-sm whitespace-no-wrap"
