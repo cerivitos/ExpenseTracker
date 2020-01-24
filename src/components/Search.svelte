@@ -248,33 +248,19 @@
   <div id="content" class="w-full flex flex-col items-center mt-16">
     <div class="content-wrapper">
       {#if filteredDatas.length > 0 && query.length > 0}
-        {#each buckets as bucket, index}
-          {#if index === 0 || (index > 0 && buckets[index - 1].year !== bucket.year)}
+        {#each filteredDatas as data, index (data.id)}
+          {#if index === 0 || new Date(data.date).getFullYear() !== new Date(filteredDatas[index - 1].date).getFullYear()}
             <span
-              class="rounded-full font-bold px-4 py-2 my-4 sticky top-0 z-10
-              m-auto"
+              class="rounded-full font-bold px-4 py-2 my-4 sticky top-0
+              inline-block z-10 m-auto"
               style="top: {56 + convertRemToPixels(1)}px; color:
               var(--text-color); background-color:var(--inactive-button-color)">
-              {bucket.year}
+              {new Date(data.date).getFullYear()}
             </span>
+            <SearchListTile {data} />
+          {:else}
+            <SearchListTile {data} />
           {/if}
-          <div class="flex flex-col justify-center items-center">
-            <div class="wrap w-full relative text-center mt-4 mb-2">
-              <span
-                class="relative font-bold px-4"
-                style="color:var(--text-color2); background-color:
-                var(--background-color)">
-                {new Date(2019, bucket.month - 1, 1)
-                  .toDateString()
-                  .substring(4, 7)}
-              </span>
-            </div>
-            {#each filteredDatas as data, index (data.id)}
-              {#if data.date.substring(0, 4) == bucket.year && data.date.substring(5, 7) == bucket.month}
-                <SearchListTile {data} {index} />
-              {/if}
-            {/each}
-          </div>
         {/each}
       {:else if filteredDatas.length === 0 && hasClickedSearch}
         <div
