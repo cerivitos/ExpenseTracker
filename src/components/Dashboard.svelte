@@ -16,7 +16,7 @@
   import CategoryListTile from "./CategoryListTile.svelte";
   import LoadingSpinner from "./LoadingSpinner.svelte";
   import { CountUp } from "countup.js";
-  import { handleRouting } from "../util";
+  import { handleRouting, getDateString } from "../util";
 
   let db, queryInterval;
   let getDataPromise = fetchData(queryInterval);
@@ -57,7 +57,7 @@
       );
       const earliestDate = sortedRawData[0].addedOn;
       const lastDate = sortedRawData[sortedRawData.length - 1].addedOn;
-      const currentDate = new Date().toISOString().substring(0, 10);
+      const currentDate = getDateString();
 
       if (queryInterval >= earliestDate) {
         //Existing data already covers queryInterval, only get new data after last date
@@ -67,10 +67,7 @@
         getDataPromise = fetchData(queryInterval, earliestDate);
       }
     } else {
-      getDataPromise = fetchData(
-        queryInterval,
-        new Date().toISOString().substring(0, 10)
-      );
+      getDataPromise = fetchData(queryInterval, getDateString());
     }
   }
 
@@ -89,29 +86,11 @@
       queryDate = new Date("1999-01-01");
     }
 
-    return parseDateString(
+    return getDateString(
       queryDate.getFullYear(),
       queryDate.getMonth() + 1,
       queryDate.getDate()
     );
-  }
-
-  function parseDateString(year, month, date) {
-    let monthString, dateString;
-
-    if (month < 10) {
-      monthString = "0" + month;
-    } else {
-      monthString = month;
-    }
-
-    if (date < 10) {
-      dateString = "0" + date;
-    } else {
-      dateString = date;
-    }
-
-    return year + "-" + monthString + "-" + dateString;
   }
 
   async function fetchData(queryInterval, endDate) {
@@ -137,7 +116,7 @@
         snapshotNewlyUpdated = await db
           .collection("expenses")
           .where("addedOn", ">=", lastUpdated)
-          .where("addedOn", "<=", new Date().toISOString().substring(0, 10))
+          .where("addedOn", "<=", getDateString())
           .get();
       } catch (error) {
         console.error(error.message);
@@ -178,7 +157,9 @@
 
     //Only keep data that is at or after the real queryInterval (not the modified queryInterval which is to reduce firestore reads)
     rawData = rawCache.filter(
-      rawData => rawData.date >= getQueryInterval(currentInterval)
+      rawData =>
+        rawData.date >= getQueryInterval(currentInterval) &&
+        rawData.date < getDateString()
     );
 
     rawData.sort((a, b) => {
@@ -195,10 +176,7 @@
     );
 
     localStorage.setItem("rawCache", JSON.stringify(rawCache));
-    localStorage.setItem(
-      "lastUpdated",
-      new Date().toISOString().substring(0, 10)
-    );
+    localStorage.setItem("lastUpdated", getDateString());
 
     const types = [...new Set(rawData.map(item => item.type))];
 
@@ -285,6 +263,7 @@
   $: if ($dashboardShouldReload) {
     localStorage.removeItem("rawCache");
     rawData = [];
+    categorizedData = [];
     localStorage.removeItem("lastUpdated");
     changeInterval(currentInterval);
     dashboardShouldReload.set(false);

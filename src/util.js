@@ -35,6 +35,34 @@ export function convertRemToPixels(rem) {
   return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
 
+export function getDateString(year, month, date) {
+  let _year, _month, _date;
+
+  if (year) {
+    _year = year;
+  } else {
+    _year = new Date().getFullYear();
+  }
+
+  if (month) {
+    _month = month;
+  } else {
+    _month = new Date().getMonth() + 1;
+  }
+  if (_month < 10) _month = _month.toString().padStart(2, "0");
+
+  if (date) {
+    _date = date;
+  } else {
+    _date = new Date().getDate();
+  }
+  if (date < 10) _date = _date.toString().padStart(2, "0");
+
+  console.log(_year + "-" + _month + "-" + _date);
+
+  return _year + "-" + _month + "-" + _date;
+}
+
 export const typeDesigns = [
   {
     type: "Food",

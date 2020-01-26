@@ -12,7 +12,7 @@
   import { onMount, onDestroy } from "svelte";
   import TypeButton from "./TypeButton.svelte";
   import LoadingSpinner from "./LoadingSpinner.svelte";
-  import { typeDesigns, handleRouting } from "../util";
+  import { typeDesigns, handleRouting, getDateString } from "../util";
   import { fly, fade } from "svelte/transition";
   import firebase from "firebase/app";
   import "firebase/firestore";
@@ -21,7 +21,7 @@
 
   let description = "";
   let amount = 0;
-  let date = new Date().toISOString().substring(0, 10);
+  let date = getDateString();
   let type = "Food";
   let suggestedDescriptions = [];
 
@@ -77,11 +77,16 @@
 
   function setDate(dateToSet) {
     if (dateToSet === "today") {
-      date = new Date().toISOString().substring(0, 10);
+      date = getDateString();
       document.getElementById("today-button").classList.add("active");
       document.getElementById("yesterday-button").classList.remove("active");
     } else if (dateToSet === "yesterday") {
-      date = new Date(Date.now() - 86400000).toISOString().substring(0, 10);
+      const yesterday = new Date(Date.now() - 86400000);
+      const year = yesterday.getFullYear();
+      const month = yesterday.getMonth() + 1;
+      const date = yesterday.getDate();
+
+      date = getDateString(year, month, date);
       document.getElementById("yesterday-button").classList.add("active");
       document.getElementById("today-button").classList.remove("active");
     }
@@ -107,7 +112,7 @@
         desc: description,
         type: type,
         addedBy: $userInfo.name,
-        addedOn: new Date().toISOString().substring(0, 10),
+        addedOn: getDateString(),
         id: $entryData.id ? $entryData.id : Date.now().toString() + amount
       })
       .then(() => {

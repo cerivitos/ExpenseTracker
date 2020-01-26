@@ -36,7 +36,6 @@
   });
 
   onMount(() => {
-    console.log(Math.round($detailData.sum));
     const typeDesign = typeDesigns.filter(
       obj => obj.type === $detailData.type
     )[0];
