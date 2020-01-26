@@ -58,8 +58,6 @@ export function getDateString(year, month, date) {
   }
   if (date < 10) _date = _date.toString().padStart(2, "0");
 
-  console.log(_year + "-" + _month + "-" + _date);
-
   return _year + "-" + _month + "-" + _date;
 }
 
