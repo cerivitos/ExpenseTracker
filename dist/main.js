@@ -1592,7 +1592,6 @@
     function noop$1() {
         // do nothing
     }
-    //# sourceMappingURL=index.esm.js.map
 
     /**
      * Component for service name T, e.g. `auth`, `auth-internal`
@@ -1897,7 +1896,6 @@
         };
         return ComponentContainer;
     }());
-    //# sourceMappingURL=index.esm.js.map
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -2069,7 +2067,6 @@
         };
         return Logger;
     }());
-    //# sourceMappingURL=index.esm.js.map
 
     /**
      * @license
@@ -2722,7 +2719,6 @@
     };
     var firebase$1 = firebase;
     registerCoreComponents(firebase$1);
-    //# sourceMappingURL=index.esm.js.map
 
     var name$c = "firebase";
     var version$2 = "7.6.1";
@@ -2744,7 +2740,6 @@
      * limitations under the License.
      */
     firebase$1.registerVersion(name$c, version$2, 'app');
-    //# sourceMappingURL=index.esm.js.map
 
     // shim for using process in browser
     // based off https://github.com/defunctzombie/node-process/blob/master/browser.js
@@ -3062,7 +3057,6 @@
     var tmp_3 = tmp.EventType;
     var tmp_4 = tmp.WebChannel;
     var tmp_5 = tmp.XhrIo;
-    //# sourceMappingURL=index.esm.js.map
 
     /**
      * @license
@@ -26523,9 +26517,6 @@
         instance.registerVersion(name$d, version$4);
     }
     registerFirestore(firebase$1);
-    //# sourceMappingURL=index.esm.js.map
-
-    //# sourceMappingURL=index.esm.js.map
 
     (function() {var k,aa="function"==typeof Object.defineProperties?Object.defineProperty:function(a,b,c){a!=Array.prototype&&a!=Object.prototype&&(a[b]=c.value);},ba="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global$1&&null!=global$1?global$1:this;function ca(a,b){if(b){var c=ba;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];e in c||(c[e]={});c=c[e];}a=a[a.length-1];d=c[a];b=b(d);b!=d&&null!=b&&aa(c,a,{configurable:!0,writable:!0,value:b});}}
     function da(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function ea(a){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];return b?b.call(a):{next:da(a)}}
@@ -26862,10 +26853,6 @@
     (function(){if("undefined"!==typeof firebase$1&&firebase$1.INTERNAL&&firebase$1.INTERNAL.registerComponent){var a={ActionCodeInfo:{Operation:{EMAIL_SIGNIN:hf,PASSWORD_RESET:"PASSWORD_RESET",RECOVER_EMAIL:"RECOVER_EMAIL",VERIFY_EMAIL:"VERIFY_EMAIL"}},Auth:Km,AuthCredential:jg,Error:M};Z(a,"EmailAuthProvider",Gg,[]);Z(a,"FacebookAuthProvider",xg,[]);Z(a,"GithubAuthProvider",zg,[]);Z(a,"GoogleAuthProvider",Bg,[]);Z(a,"TwitterAuthProvider",Dg,[]);Z(a,"OAuthProvider",O,[V("providerId")]);Z(a,"SAMLAuthProvider",
     wg,[V("providerId")]);Z(a,"PhoneAuthProvider",Tg,[Dn()]);Z(a,"RecaptchaVerifier",wn,[X(V(),Cn(),"recaptchaContainer"),W("recaptchaParameters",!0),En()]);Z(a,"ActionCodeURL",qf,[]);firebase$1.INTERNAL.registerComponent({name:"auth",instanceFactory:function(b){b=b.getProvider("app").getImmediate();return new Km(b)},multipleInstances:!1,serviceProps:a,instantiationMode:"LAZY",type:"PUBLIC"});firebase$1.INTERNAL.registerComponent({name:"auth-internal",instanceFactory:function(b){b=b.getProvider("auth").getImmediate();
     return {getUid:t(b.getUid,b),getToken:t(b.cc,b),addAuthTokenListener:t(b.Wb,b),removeAuthTokenListener:t(b.Ec,b)}},multipleInstances:!1,instantiationMode:"LAZY",type:"PRIVATE"});firebase$1.registerVersion("@firebase/auth","0.13.3");firebase$1.INTERNAL.extendNamespace({User:Q});}else throw Error("Cannot find the firebase namespace; be sure to include firebase-app.js before this library.");})();}).apply(typeof global$1 !== 'undefined' ? global$1 : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {});
-
-    //# sourceMappingURL=auth.esm.js.map
-
-    //# sourceMappingURL=index.esm.js.map
 
     const subscriber_queue = [];
     /**
