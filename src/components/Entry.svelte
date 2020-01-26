@@ -104,8 +104,10 @@
     toastMessage.set("Submitting...");
 
     const db = firebase.firestore();
+    const newId = Date.now().toString() + amount;
+
     db.collection("expenses")
-      .doc($entryData.id ? $entryData.id : Date.now().toString() + amount)
+      .doc($entryData.id ? $entryData.id : newId)
       .set({
         amount: amount,
         date: date,
@@ -113,7 +115,7 @@
         type: type,
         addedBy: $userInfo.name,
         addedOn: getDateString(),
-        id: $entryData.id ? $entryData.id : Date.now().toString() + amount
+        id: $entryData.id ? $entryData.id : newId
       })
       .then(() => {
         toastMessage.set("Expense created!");

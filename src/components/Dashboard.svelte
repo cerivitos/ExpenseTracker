@@ -136,9 +136,8 @@
     //Only append new data if they do not exist in rawCache
     snapshot.forEach(doc => {
       const data = doc.data();
-      if (rawCache.filter(rawData => rawData.id === data.id).length === 0) {
+      if (rawCache.filter(cacheItem => cacheItem.id === data.id).length === 0) {
         //Doc doesn't exist, push it to local cache
-        data.id = doc.id;
         rawCache.push(data);
       }
     });
@@ -148,7 +147,7 @@
       snapshotNewlyUpdated.forEach(doc => {
         const data = doc.data();
         rawCache.forEach((rawData, index) => {
-          if (rawData.id === doc.id) {
+          if (rawData.id === data.id) {
             rawCache[index] = data;
           }
         });
