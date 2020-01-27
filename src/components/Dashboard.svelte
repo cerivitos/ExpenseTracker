@@ -108,6 +108,13 @@
         .get();
     } catch (error) {
       console.error(error.message);
+
+      if (
+        error.code == "permission-denied" ||
+        Object.keys($userInfo).length === 0
+      ) {
+        showSignIn = true;
+      }
     }
 
     //Get data that has been updated after the last user download from firestore. This is because entries may be updated/edited again at a different date from the expense date (addedOn !== date)
@@ -121,7 +128,10 @@
       } catch (error) {
         console.error(error.message);
 
-        if (error.code == "permission-denied") {
+        if (
+          error.code == "permission-denied" ||
+          Object.keys($userInfo).length === 0
+        ) {
           showSignIn = true;
         }
       }
