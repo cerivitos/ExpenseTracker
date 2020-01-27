@@ -82,11 +82,11 @@
       document.getElementById("yesterday-button").classList.remove("active");
     } else if (dateToSet === "yesterday") {
       const yesterday = new Date(Date.now() - 86400000);
-      const year = yesterday.getFullYear();
-      const month = yesterday.getMonth() + 1;
-      const date = yesterday.getDate();
+      const _year = yesterday.getFullYear();
+      const _month = yesterday.getMonth() + 1;
+      const _date = yesterday.getDate();
 
-      date = getDateString(year, month, date);
+      date = getDateString(_year, _month, _date);
       document.getElementById("yesterday-button").classList.add("active");
       document.getElementById("today-button").classList.remove("active");
     }

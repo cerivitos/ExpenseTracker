@@ -31142,7 +31142,7 @@
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(button, "class", "suggestion-button svelte-db15df");
-    			add_location(button, file$9, 263, 12, 10842);
+    			add_location(button, file$9, 263, 12, 10848);
     			dispose = listen_dev(button, "click", click_handler_5, false, false, false);
     			this.first = button;
     		},
@@ -31197,9 +31197,9 @@
     			button = element("button");
     			button.textContent = "Delete";
     			attr_dev(button, "class", "sign-out-button svelte-db15df");
-    			add_location(button, file$9, 284, 10, 11631);
+    			add_location(button, file$9, 284, 10, 11637);
     			attr_dev(div, "class", "w-full text-center");
-    			add_location(div, file$9, 283, 8, 11587);
+    			add_location(div, file$9, 283, 8, 11593);
     			dispose = listen_dev(button, "click", /*click_handler_7*/ ctx[29], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -31366,80 +31366,80 @@
     			attr_dev(i, "class", "material-icons-round fill-current");
     			set_style(i, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i, "aria-label", "Back button");
-    			add_location(i, file$9, 181, 6, 7851);
-    			add_location(button0, file$9, 180, 4, 7835);
+    			add_location(i, file$9, 181, 6, 7857);
+    			add_location(button0, file$9, 180, 4, 7841);
     			attr_dev(div0, "class", div0_class_value = "w-full flex flex-row p-4 " + (/*scrolling*/ ctx[0] ? "shadow" : "") + " fixed top-0\r\n    justify-between z-10");
     			set_style(div0, "height", "56px");
     			set_style(div0, "background-color", "var(--background-color)");
-    			add_location(div0, file$9, 176, 2, 7651);
+    			add_location(div0, file$9, 176, 2, 7657);
     			attr_dev(label0, "for", "amount-input");
     			attr_dev(label0, "class", label0_class_value = "" + (null_to_empty(/*amountValid*/ ctx[6] ? "label" : "label label-error") + " svelte-db15df"));
-    			add_location(label0, file$9, 195, 8, 8365);
+    			add_location(label0, file$9, 195, 8, 8371);
     			attr_dev(input0, "id", "amount-input");
     			attr_dev(input0, "class", "amount text-2xl svelte-db15df");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$9, 200, 8, 8511);
+    			add_location(input0, file$9, 200, 8, 8517);
     			attr_dev(div1, "class", "input-row svelte-db15df");
-    			add_location(div1, file$9, 194, 6, 8293);
+    			add_location(div1, file$9, 194, 6, 8299);
     			attr_dev(label1, "for", "date-input");
     			attr_dev(label1, "class", label1_class_value = "" + (null_to_empty(/*dateValid*/ ctx[7] ? "label" : "label label-error") + " svelte-db15df"));
-    			add_location(label1, file$9, 209, 8, 8828);
+    			add_location(label1, file$9, 209, 8, 8834);
     			attr_dev(button1, "id", "today-button");
     			attr_dev(button1, "class", "date-button active svelte-db15df");
-    			add_location(button1, file$9, 215, 10, 8998);
+    			add_location(button1, file$9, 215, 10, 9004);
     			attr_dev(button2, "id", "yesterday-button");
     			attr_dev(button2, "class", "date-button svelte-db15df");
-    			add_location(button2, file$9, 221, 10, 9176);
+    			add_location(button2, file$9, 221, 10, 9182);
     			attr_dev(div2, "class", "mr-4");
-    			add_location(div2, file$9, 214, 8, 8968);
+    			add_location(div2, file$9, 214, 8, 8974);
     			attr_dev(div3, "class", "input-row svelte-db15df");
-    			add_location(div3, file$9, 208, 6, 8756);
-    			add_location(span, file$9, 234, 8, 9584);
+    			add_location(div3, file$9, 208, 6, 8762);
+    			add_location(span, file$9, 234, 8, 9590);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "svelte-db15df");
-    			add_location(input1, file$9, 235, 8, 9617);
+    			add_location(input1, file$9, 235, 8, 9623);
     			attr_dev(div4, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n        ml-4");
     			set_style(div4, "color", "var(--text-color2)");
-    			add_location(div4, file$9, 229, 6, 9385);
+    			add_location(div4, file$9, 229, 6, 9391);
     			attr_dev(label2, "class", "label svelte-db15df");
-    			add_location(label2, file$9, 238, 8, 9777);
+    			add_location(label2, file$9, 238, 8, 9783);
     			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div5, file$9, 239, 8, 9820);
+    			add_location(div5, file$9, 239, 8, 9826);
     			attr_dev(div6, "class", "mt-12 flex flex-col");
-    			add_location(div6, file$9, 237, 6, 9694);
+    			add_location(div6, file$9, 237, 6, 9700);
     			attr_dev(label3, "for", "description-input");
     			attr_dev(label3, "class", "label svelte-db15df");
-    			add_location(label3, file$9, 251, 8, 10311);
+    			add_location(label3, file$9, 251, 8, 10317);
     			attr_dev(input2, "class", "truncate text-2xl svelte-db15df");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "(Optional)");
-    			add_location(input2, file$9, 252, 8, 10385);
+    			add_location(input2, file$9, 252, 8, 10391);
     			attr_dev(div7, "class", "input-row svelte-db15df");
-    			add_location(div7, file$9, 250, 6, 10238);
+    			add_location(div7, file$9, 250, 6, 10244);
     			attr_dev(div8, "class", "flex mt-4 mx-4 flex-wrap");
     			set_style(div8, "height", "80px");
-    			add_location(div8, file$9, 260, 6, 10657);
+    			add_location(div8, file$9, 260, 6, 10663);
 
     			attr_dev(button3, "class", button3_class_value = "submit-button " + (/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
     			? "active"
     			: "inactive cursor-not-allowed") + " svelte-db15df");
 
     			button3.disabled = button3_disabled_value = !(/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]);
-    			add_location(button3, file$9, 275, 8, 11225);
+    			add_location(button3, file$9, 275, 8, 11231);
     			attr_dev(div9, "class", "w-full text-center block");
-    			add_location(div9, file$9, 272, 6, 11119);
+    			add_location(div9, file$9, 272, 6, 11125);
     			attr_dev(div10, "class", "form-wrapper svelte-db15df");
-    			add_location(div10, file$9, 193, 4, 8259);
+    			add_location(div10, file$9, 193, 4, 8265);
     			attr_dev(div11, "class", "flex flex-col items-center justify-around mt-8");
-    			add_location(div11, file$9, 192, 2, 8193);
+    			add_location(div11, file$9, 192, 2, 8199);
     			attr_dev(div12, "id", "entry-page");
     			attr_dev(div12, "class", "h-screen w-full absolute top-0 overflow-auto");
     			set_style(div12, "background-color", "var(--background-color)");
     			set_style(div12, "color", "var(--text-color)");
-    			add_location(div12, file$9, 171, 0, 7457);
+    			add_location(div12, file$9, 171, 0, 7463);
 
     			dispose = [
     				listen_dev(i, "click", /*click_handler*/ ctx[19], false, false, false),
@@ -31762,10 +31762,10 @@
     			document.getElementById("yesterday-button").classList.remove("active");
     		} else if (dateToSet === "yesterday") {
     			const yesterday = new Date(Date.now() - 86400000);
-    			const year = yesterday.getFullYear();
-    			const month = yesterday.getMonth() + 1;
-    			const date = yesterday.getDate();
-    			date = getDateString(year, month, date);
+    			const _year = yesterday.getFullYear();
+    			const _month = yesterday.getMonth() + 1;
+    			const _date = yesterday.getDate();
+    			$$invalidate(3, date = getDateString(_year, _month, _date));
     			document.getElementById("yesterday-button").classList.add("active");
     			document.getElementById("today-button").classList.remove("active");
     		}
