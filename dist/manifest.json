@@ -1,8 +1,8 @@
 {
-  "name": "Svelte PWA Tailwind starter",
-  "short_name": "SveltePWAStarter",
-  "theme_color": "#5bd1d7",
-  "background_color": "#f6f5f5",
+  "name": "Expense tracker",
+  "short_name": "ExpenseTracker",
+  "theme_color": "#5bbad5",
+  "background_color": "#5bbad5",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/index.html",
