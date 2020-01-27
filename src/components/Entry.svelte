@@ -281,7 +281,7 @@
 
 <div
   id="entry-page"
-  class="h-screen w-full absolute top-0 overflow-auto"
+  class="h-screen w-full absolute top-0 overflow-y-auto overflow-x-hidden"
   style="background-color: var(--background-color); color: var(--text-color)"
   out:fade={{ duration: 80 }}>
   <div
