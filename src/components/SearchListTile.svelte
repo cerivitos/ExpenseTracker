@@ -39,6 +39,13 @@
       .indexOf(queryString);
     const endHighlightIndex = startHighlightIndex + queryString.length;
 
+    console.log(
+      queryString,
+      textToHighlight,
+      startHighlightIndex,
+      endHighlightIndex
+    );
+
     return (
       textToHighlight.slice(0, startHighlightIndex) +
       '<span class="font-bold" style="color: hsl(var(--secondary-hue), 50%, 50%); background-color: hsl(var(--secondary-hue), 35%, 90%)">' +
