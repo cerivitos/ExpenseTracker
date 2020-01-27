@@ -61,14 +61,14 @@
     @apply flex flex-col items-center justify-center w-1/3 mt-4;
     color: var(--text-color);
     transition-timing-function: ease-in;
-    transition: all 350ms;
+    transition: all 180ms;
   }
 
   .type-button {
     @apply rounded-full p-2 fill-current text-center align-middle;
     background-color: var(--inactive-button-color);
     color: var(--text-color2);
-    transition: background-color 250ms ease-out;
+    transition: background-color 120ms ease-out;
   }
 
   .type-button i {

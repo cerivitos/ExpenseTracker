@@ -201,7 +201,7 @@
 
   .date-button {
     @apply rounded-full px-3 py-1 font-bold;
-    transition: background-color 350ms;
+    transition: background-color 120ms;
     color: var(--text-color2);
     background-color: var(--inactive-button-color);
   }
@@ -246,27 +246,25 @@
     transition: background-color 80ms ease-out;
   }
 
-  .suggestion-button:hover,
-  .date-button:hover {
+  .suggestion-button:hover {
     background-color: hsla(var(--secondary-hue), 30%, 85%, 0.4);
-    transition: background-color 250ms ease-out;
+    transition: background-color 120ms ease-out;
   }
 
-  .suggestion-button:hover,
-  .date-button:active {
+  .suggestion-button:hover {
     background-color: hsl(var(--secondary-hue), 30%, 85%, 0.4);
-    transition: background-color 250ms ease-out;
+    transition: background-color 120ms ease-out;
   }
 
   .sign-out-button {
     @apply py-2 text-red-600 rounded-full px-4 mb-8 text-center w-1/4;
     background-color: transparent;
-    transition: background-color 250ms ease-out;
+    transition: background-color 120ms ease-out;
   }
 
   .sign-out-button:hover {
     background-color: hsla(var(--secondary-hue), 30%, 85%, 0.2);
-    transition: background-color 250ms ease-out;
+    transition: background-color 120ms ease-out;
   }
 
   .sign-out-button:active {
