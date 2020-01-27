@@ -1,8 +1,8 @@
 {
-  "name": "Expense tracker",
-  "short_name": "ExpenseTracker",
-  "theme_color": "#5bbad5",
-  "background_color": "#5bbad5",
+  "name": "Expense Tracker",
+  "short_name": "Expense",
+  "theme_color": "#b6cfd6",
+  "background_color": "#b6cfd6",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/index.html",
@@ -16,6 +16,12 @@
       "src": "/assets/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/assets/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "splash_pages": null
