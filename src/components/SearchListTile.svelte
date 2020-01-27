@@ -97,7 +97,7 @@
   on:click={() => showEditDetail(data)}>
   <div
     class="mr-2 font-bold text-sm whitespace-no-wrap"
-    style="color:{$themeIsBright ? iconColor : backgroundColor}; width: 11.5%">
+    style="color:{$themeIsBright ? iconColor : backgroundColor}; width: 12.5%">
     <span>{new Date(data.date).toString().substring(4, 10)}</span>
   </div>
   <div

@@ -29842,7 +29842,7 @@
     			? /*iconColor*/ ctx[5]
     			: /*backgroundColor*/ ctx[4]);
 
-    			set_style(div0, "width", "11.5%");
+    			set_style(div0, "width", "12.5%");
     			add_location(div0, file$6, 77, 2, 2611);
     			attr_dev(i, "class", "material-icons-round");
     			set_style(i, "display", "block", 1);
