@@ -84,6 +84,9 @@
       } else if (theme === "dark") {
         themeIsBright.set(false);
       }
+    } else {
+      localStorage.setItem("theme", "bright");
+      themeIsBright.set(true);
     }
 
     //Parse url to ui state on app load
