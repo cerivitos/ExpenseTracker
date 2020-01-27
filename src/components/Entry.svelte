@@ -177,6 +177,10 @@
     @apply px-2 py-1 mr-4 w-2/3 appearance-none text-right font-bold text-gray-600 bg-transparent;
   }
 
+  #date-input {
+    @apply w-auto;
+  }
+
   #description-input {
     @apply text-lg font-normal;
   }
