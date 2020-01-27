@@ -27709,7 +27709,7 @@
     			span = element("span");
     			span.textContent = " ";
     			attr_dev(span, "class", "w-full text-center text-transparent font-light mb-12");
-    			add_location(span, file$2, 298, 6, 10014);
+    			add_location(span, file$2, 298, 6, 10015);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -27746,7 +27746,7 @@
     			t = text(t_value);
     			attr_dev(span, "class", "w-full text-center font-light mb-12");
     			set_style(span, "color", "var(--text-color2)");
-    			add_location(span, file$2, 291, 6, 9797);
+    			add_location(span, file$2, 291, 6, 9798);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -27802,7 +27802,7 @@
     			? "active"
     			: "") + " svelte-1fsuttd");
 
-    			add_location(button, file$2, 304, 8, 10229);
+    			add_location(button, file$2, 304, 8, 10230);
     			dispose = listen_dev(button, "click", click_handler_1, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -28089,55 +28089,55 @@
     			span2 = element("span");
     			span2.textContent = "Sign in with Google";
     			attr_dev(span0, "class", "text-4xl mx-4");
-    			add_location(span0, file$2, 323, 6, 10760);
+    			add_location(span0, file$2, 323, 6, 10761);
     			attr_dev(span1, "class", "mx-4 mt-2 mb-8 text-lg");
     			set_style(span1, "color", "var(--text-color)");
-    			add_location(span1, file$2, 324, 6, 10805);
+    			add_location(span1, file$2, 324, 6, 10806);
     			attr_dev(path0, "id", "a");
     			attr_dev(path0, "d", "M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2\r\n                0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6\r\n                4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22\r\n                0-1.3-.2-2.7-.5-4z");
-    			add_location(path0, file$2, 342, 14, 11678);
-    			add_location(defs, file$2, 341, 12, 11656);
+    			add_location(path0, file$2, 342, 14, 11679);
+    			add_location(defs, file$2, 341, 12, 11657);
     			xlink_attr(use, "xlink:href", "#a");
     			attr_dev(use, "overflow", "visible");
-    			add_location(use, file$2, 350, 14, 12046);
+    			add_location(use, file$2, 350, 14, 12047);
     			attr_dev(clipPath, "id", "b");
-    			add_location(clipPath, file$2, 349, 12, 12013);
+    			add_location(clipPath, file$2, 349, 12, 12014);
     			attr_dev(path1, "clip-path", "url(#b)");
     			attr_dev(path1, "fill", "#FBBC05");
     			attr_dev(path1, "d", "M0 37V11l17 13z");
-    			add_location(path1, file$2, 352, 12, 12127);
+    			add_location(path1, file$2, 352, 12, 12128);
     			attr_dev(path2, "clip-path", "url(#b)");
     			attr_dev(path2, "fill", "#EA4335");
     			attr_dev(path2, "d", "M0 11l17 13 7-6.1L48 14V0H0z");
-    			add_location(path2, file$2, 353, 12, 12204);
+    			add_location(path2, file$2, 353, 12, 12205);
     			attr_dev(path3, "clip-path", "url(#b)");
     			attr_dev(path3, "fill", "#34A853");
     			attr_dev(path3, "d", "M0 37l30-23 7.9 1L48 0v48H0z");
-    			add_location(path3, file$2, 357, 12, 12339);
+    			add_location(path3, file$2, 357, 12, 12340);
     			attr_dev(path4, "clip-path", "url(#b)");
     			attr_dev(path4, "fill", "#4285F4");
     			attr_dev(path4, "d", "M48 48L17 24l-4-3 35-10z");
-    			add_location(path4, file$2, 361, 12, 12474);
+    			add_location(path4, file$2, 361, 12, 12475);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg, "viewBox", "0 0 48 48");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file$2, 336, 10, 11471);
+    			add_location(svg, file$2, 336, 10, 11472);
     			attr_dev(div0, "class", "bg-white rounded-l flex items-center justify-center");
     			set_style(div0, "height", "40px");
     			set_style(div0, "width", "40px");
-    			add_location(div0, file$2, 333, 8, 11338);
+    			add_location(div0, file$2, 333, 8, 11339);
     			attr_dev(span2, "class", "mx-4");
-    			add_location(span2, file$2, 367, 8, 12635);
+    			add_location(span2, file$2, 367, 8, 12636);
     			attr_dev(button, "class", "flex bg-white rounded shadow text-gray-700 mx-4 font-bold\r\n        items-center justify-center w-auto");
 
     			attr_dev(button, "style", button_style_value = "" + ((/*$themeIsBright*/ ctx[6]
     			? "background-color: hsl(var(--secondary-hue), 50%, 50%); color:var(--background-color)"
     			: "background-color: var(--text-color); color: var(--inactive-button-color)") + ";\r\n        ; height: 40px"));
 
-    			add_location(button, file$2, 327, 6, 10941);
+    			add_location(button, file$2, 327, 6, 10942);
     			attr_dev(div1, "class", "flex flex-col items-center justify-center w-full");
-    			add_location(div1, file$2, 320, 4, 10648);
+    			add_location(div1, file$2, 320, 4, 10649);
     			dispose = listen_dev(button, "click", /*click_handler_2*/ ctx[19], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -28265,19 +28265,19 @@
     			t7 = space();
     			if (if_block1) if_block1.c();
     			attr_dev(i, "class", "material-icons-round fill-current");
-    			add_location(i, file$2, 284, 6, 9546);
+    			add_location(i, file$2, 284, 6, 9547);
     			attr_dev(button, "class", "searchbar svelte-1fsuttd");
-    			add_location(button, file$2, 278, 4, 9404);
+    			add_location(button, file$2, 278, 4, 9405);
     			attr_dev(span, "class", "w-full mb-1 text-4xl text-center font-bold");
     			attr_dev(span, "id", "totalSpend");
-    			add_location(span, file$2, 287, 4, 9636);
+    			add_location(span, file$2, 287, 4, 9637);
     			attr_dev(div0, "class", "interval-button-wrapper svelte-1fsuttd");
-    			add_location(div0, file$2, 302, 4, 10129);
+    			add_location(div0, file$2, 302, 4, 10130);
     			attr_dev(div1, "class", "overall-wrapper svelte-1fsuttd");
-    			add_location(div1, file$2, 277, 2, 9369);
+    			add_location(div1, file$2, 277, 2, 9370);
     			attr_dev(div2, "class", div2_class_value = "flex flex-col w-full items-center my-8 " + (/*$overlay*/ ctx[3].length > 0 ? "hidden" : ""));
     			set_style(div2, "color", "var(--text-color)");
-    			add_location(div2, file$2, 273, 0, 9206);
+    			add_location(div2, file$2, 273, 0, 9207);
     			dispose = listen_dev(button, "click", /*click_handler*/ ctx[17], false, false, false);
     		},
     		l: function claim(nodes) {
@@ -28549,7 +28549,7 @@
     			});
     		}
 
-    		rawData = rawCache.filter(rawData => rawData.date >= getQueryInterval(currentInterval) && rawData.date < getDateString());
+    		rawData = rawCache.filter(rawData => rawData.date >= getQueryInterval(currentInterval) && rawData.date <= getDateString());
 
     		rawData.sort((a, b) => {
     			if (b.date > a.date) {

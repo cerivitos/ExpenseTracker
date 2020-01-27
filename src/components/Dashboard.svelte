@@ -158,7 +158,7 @@
     rawData = rawCache.filter(
       rawData =>
         rawData.date >= getQueryInterval(currentInterval) &&
-        rawData.date < getDateString()
+        rawData.date <= getDateString()
     );
 
     rawData.sort((a, b) => {
