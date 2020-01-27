@@ -36,15 +36,8 @@
     const startHighlightIndex = textToHighlight
       .toLowerCase()
       .trim()
-      .indexOf(queryString);
+      .indexOf(queryString.toLowerCase());
     const endHighlightIndex = startHighlightIndex + queryString.length;
-
-    console.log(
-      queryString,
-      textToHighlight,
-      startHighlightIndex,
-      endHighlightIndex
-    );
 
     return (
       textToHighlight.slice(0, startHighlightIndex) +
