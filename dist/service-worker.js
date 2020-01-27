@@ -1,4 +1,4 @@
-var cacheName = "expenses-cache-v0.24";
+var cacheName = "expenses-cache-v0.25";
 var filesToCache = [
   "/",
   "/index.html",
