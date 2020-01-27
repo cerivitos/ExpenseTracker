@@ -84,7 +84,7 @@
     }
 
     .nav-button {
-      @apply flex flex-row items-center justify-start w-full p-4;
+      @apply flex flex-row items-center justify-start w-full py-4 pr-4 pl-12;
     }
 
     .nav-button:hover {

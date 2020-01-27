@@ -28959,13 +28959,13 @@
     			i = element("i");
     			i.textContent = "post_add";
     			t1 = text("\r\n        Add spending");
-    			attr_dev(i, "class", "material-icons-round svelte-1dh7dps");
-    			add_location(i, file$4, 28, 8, 3445);
+    			attr_dev(i, "class", "material-icons-round svelte-1g26ph");
+    			add_location(i, file$4, 28, 8, 3460);
     			attr_dev(button, "id", "entry-button");
-    			attr_dev(button, "class", "svelte-1dh7dps");
-    			add_location(button, file$4, 27, 6, 3375);
+    			attr_dev(button, "class", "svelte-1g26ph");
+    			add_location(button, file$4, 27, 6, 3390);
     			attr_dev(div, "class", "w-full flex items-center justify-center");
-    			add_location(div, file$4, 26, 4, 3314);
+    			add_location(div, file$4, 26, 4, 3329);
     			dispose = listen_dev(button, "click", /*click_handler*/ ctx[5], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -29006,13 +29006,13 @@
     			button = element("button");
     			i = element("i");
     			i.textContent = "post_add";
-    			attr_dev(i, "class", "material-icons-round md-36 svelte-1dh7dps");
-    			add_location(i, file$4, 49, 6, 4184);
+    			attr_dev(i, "class", "material-icons-round md-36 svelte-1g26ph");
+    			add_location(i, file$4, 49, 6, 4199);
     			attr_dev(button, "id", "entry-button");
-    			attr_dev(button, "class", "svelte-1dh7dps");
-    			add_location(button, file$4, 48, 4, 4116);
-    			attr_dev(div, "class", div_class_value = "entry-wrapper " + (/*$overlay*/ ctx[2].length > 0 ? "" : "z-10") + " svelte-1dh7dps");
-    			add_location(div, file$4, 47, 2, 4047);
+    			attr_dev(button, "class", "svelte-1g26ph");
+    			add_location(button, file$4, 48, 4, 4131);
+    			attr_dev(div, "class", div_class_value = "entry-wrapper " + (/*$overlay*/ ctx[2].length > 0 ? "" : "z-10") + " svelte-1g26ph");
+    			add_location(div, file$4, 47, 2, 4062);
     			dispose = listen_dev(button, "click", /*click_handler_3*/ ctx[8], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -29021,7 +29021,7 @@
     			append_dev(button, i);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*$overlay*/ 4 && div_class_value !== (div_class_value = "entry-wrapper " + (/*$overlay*/ ctx[2].length > 0 ? "" : "z-10") + " svelte-1dh7dps")) {
+    			if (dirty & /*$overlay*/ 4 && div_class_value !== (div_class_value = "entry-wrapper " + (/*$overlay*/ ctx[2].length > 0 ? "" : "z-10") + " svelte-1g26ph")) {
     				attr_dev(div, "class", div_class_value);
     			}
     		},
@@ -29095,20 +29095,20 @@
     			t10 = space();
     			if (if_block2) if_block2.c();
     			if_block2_anchor = empty();
-    			attr_dev(div, "class", "content svelte-1dh7dps");
-    			add_location(div, file$4, 18, 0, 3134);
-    			attr_dev(i0, "class", "material-icons-round svelte-1dh7dps");
-    			add_location(i0, file$4, 36, 4, 3682);
-    			add_location(span0, file$4, 37, 4, 3734);
-    			attr_dev(button0, "class", button0_class_value = "nav-button " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-1dh7dps");
-    			add_location(button0, file$4, 33, 2, 3553);
-    			attr_dev(i1, "class", "material-icons-round md-48 svelte-1dh7dps");
-    			add_location(i1, file$4, 42, 4, 3900);
-    			add_location(span1, file$4, 43, 4, 3969);
-    			attr_dev(button1, "class", button1_class_value = "nav-button " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-1dh7dps");
-    			add_location(button1, file$4, 39, 2, 3773);
-    			attr_dev(nav, "class", "navbar svelte-1dh7dps");
-    			add_location(nav, file$4, 24, 0, 3255);
+    			attr_dev(div, "class", "content svelte-1g26ph");
+    			add_location(div, file$4, 18, 0, 3149);
+    			attr_dev(i0, "class", "material-icons-round svelte-1g26ph");
+    			add_location(i0, file$4, 36, 4, 3697);
+    			add_location(span0, file$4, 37, 4, 3749);
+    			attr_dev(button0, "class", button0_class_value = "nav-button " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-1g26ph");
+    			add_location(button0, file$4, 33, 2, 3568);
+    			attr_dev(i1, "class", "material-icons-round md-48 svelte-1g26ph");
+    			add_location(i1, file$4, 42, 4, 3915);
+    			add_location(span1, file$4, 43, 4, 3984);
+    			attr_dev(button1, "class", button1_class_value = "nav-button " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-1g26ph");
+    			add_location(button1, file$4, 39, 2, 3788);
+    			attr_dev(nav, "class", "navbar svelte-1g26ph");
+    			add_location(nav, file$4, 24, 0, 3270);
 
     			dispose = [
     				listen_dev(button0, "click", /*click_handler_1*/ ctx[6], false, false, false),
@@ -29172,11 +29172,11 @@
 
     			if (window.innerWidth > 768) if_block1.p(ctx, dirty);
 
-    			if (!current || dirty & /*$view*/ 2 && button0_class_value !== (button0_class_value = "nav-button " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-1dh7dps")) {
+    			if (!current || dirty & /*$view*/ 2 && button0_class_value !== (button0_class_value = "nav-button " + (/*$view*/ ctx[1] === "dashboard" ? "active" : "inactive") + " svelte-1g26ph")) {
     				attr_dev(button0, "class", button0_class_value);
     			}
 
-    			if (!current || dirty & /*$view*/ 2 && button1_class_value !== (button1_class_value = "nav-button " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-1dh7dps")) {
+    			if (!current || dirty & /*$view*/ 2 && button1_class_value !== (button1_class_value = "nav-button " + (/*$view*/ ctx[1] === "settings" ? "active" : "inactive") + " svelte-1g26ph")) {
     				attr_dev(button1, "class", button1_class_value);
     			}
 
