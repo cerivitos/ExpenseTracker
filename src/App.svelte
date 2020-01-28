@@ -183,9 +183,13 @@
     <Search />
   {/if}
   {#if signInError}
-    <Toast message={errorMsg} />
+    <div class="z-20 relative">
+      <Toast message={errorMsg} />
+    </div>
   {/if}
   {#if appUpdated}
-    <Toast message="App updating..." />
+    <div class="z-20 relative">
+      <Toast message="App updating..." />
+    </div>
   {/if}
 </main>

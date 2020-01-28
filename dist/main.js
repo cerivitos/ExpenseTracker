@@ -29548,7 +29548,7 @@
     			a.textContent = "Privacy policy";
     			t10 = text("\r\n      •\r\n      ");
     			span2 = element("span");
-    			span2.textContent = "v0.25.8";
+    			span2.textContent = "v0.25.9";
     			attr_dev(span0, "class", "label svelte-17ige3d");
     			add_location(span0, file$5, 137, 6, 5539);
 
@@ -32926,6 +32926,7 @@
 
     // (149:2) {#if signInError}
     function create_if_block_1$5(ctx) {
+    	let div;
     	let current;
 
     	const toast = new Toast({
@@ -32935,10 +32936,14 @@
 
     	const block = {
     		c: function create() {
+    			div = element("div");
     			create_component(toast.$$.fragment);
+    			attr_dev(div, "class", "z-20 relative");
+    			add_location(div, file$b, 149, 4, 5091);
     		},
     		m: function mount(target, anchor) {
-    			mount_component(toast, target, anchor);
+    			insert_dev(target, div, anchor);
+    			mount_component(toast, div, null);
     			current = true;
     		},
     		p: noop,
@@ -32952,7 +32957,8 @@
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			destroy_component(toast, detaching);
+    			if (detaching) detach_dev(div);
+    			destroy_component(toast);
     		}
     	};
 
@@ -32967,8 +32973,9 @@
     	return block;
     }
 
-    // (152:2) {#if appUpdated}
+    // (154:2) {#if appUpdated}
     function create_if_block$8(ctx) {
+    	let div;
     	let current;
 
     	const toast = new Toast({
@@ -32978,10 +32985,14 @@
 
     	const block = {
     		c: function create() {
+    			div = element("div");
     			create_component(toast.$$.fragment);
+    			attr_dev(div, "class", "z-20 relative");
+    			add_location(div, file$b, 154, 4, 5201);
     		},
     		m: function mount(target, anchor) {
-    			mount_component(toast, target, anchor);
+    			insert_dev(target, div, anchor);
+    			mount_component(toast, div, null);
     			current = true;
     		},
     		i: function intro(local) {
@@ -32994,7 +33005,8 @@
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			destroy_component(toast, detaching);
+    			if (detaching) detach_dev(div);
+    			destroy_component(toast);
     		}
     	};
 
@@ -33002,7 +33014,7 @@
     		block,
     		id: create_if_block$8.name,
     		type: "if",
-    		source: "(152:2) {#if appUpdated}",
+    		source: "(154:2) {#if appUpdated}",
     		ctx
     	});
 
