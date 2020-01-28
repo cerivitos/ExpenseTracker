@@ -2909,19 +2909,19 @@
     }function umask() { return 0; }
 
     // from https://github.com/kumavis/browser-process-hrtime/blob/master/index.js
-    var performance = global$1.performance || {};
+    var performance$1 = global$1.performance || {};
     var performanceNow =
-      performance.now        ||
-      performance.mozNow     ||
-      performance.msNow      ||
-      performance.oNow       ||
-      performance.webkitNow  ||
+      performance$1.now        ||
+      performance$1.mozNow     ||
+      performance$1.msNow      ||
+      performance$1.oNow       ||
+      performance$1.webkitNow  ||
       function(){ return (new Date()).getTime() };
 
     // generate timestamp or delta
     // see http://nodejs.org/api/process.html#process_process_hrtime
     function hrtime(previousTimestamp){
-      var clocktime = performanceNow.call(performance)*1e-3;
+      var clocktime = performanceNow.call(performance$1)*1e-3;
       var seconds = Math.floor(clocktime);
       var nanoseconds = Math.floor((clocktime%1)*1e9);
       if (previousTimestamp) {
@@ -29548,7 +29548,7 @@
     			a.textContent = "Privacy policy";
     			t10 = text("\r\n      •\r\n      ");
     			span2 = element("span");
-    			span2.textContent = "v0.25.2";
+    			span2.textContent = "v0.25.7";
     			attr_dev(span0, "class", "label svelte-17ige3d");
     			add_location(span0, file$5, 137, 6, 5539);
 
@@ -32638,10 +32638,12 @@
       appId: "1:680552838328:web:d7d7ef47348fbb3920f04d"
     };
 
+    try{self["workbox:window:4.3.1"]&&_();}catch(n){}var n$1=function(n,t){return new Promise(function(i){var e=new MessageChannel;e.port1.onmessage=function(n){return i(n.data)},n.postMessage(t,[e.port2]);})};function t$1(n,t){for(var i=0;i<t.length;i++){var e=t[i];e.enumerable=e.enumerable||!1,e.configurable=!0,"value"in e&&(e.writable=!0),Object.defineProperty(n,e.key,e);}}function i(n){if(void 0===n)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return n}try{self["workbox:core:4.3.1"]&&_();}catch(n){}var e=function(){var n=this;this.promise=new Promise(function(t,i){n.resolve=t,n.reject=i;});},r$1=function(n,t){return new URL(n,location).href===new URL(t,location).href},o=function(n,t){Object.assign(this,t,{type:n});};function u$1(n){return function(){for(var t=[],i=0;i<arguments.length;i++)t[i]=arguments[i];try{return Promise.resolve(n.apply(this,t))}catch(n){return Promise.reject(n)}}}function a(n,t,i){return i?t?t(n):n:(n&&n.then||(n=Promise.resolve(n)),t?n.then(t):n)}function s(){}var c=function(c){var f,h;function v(n,t){var r;return void 0===t&&(t={}),(r=c.call(this)||this).t=n,r.i=t,r.o=0,r.u=new e,r.s=new e,r.h=new e,r.v=r.v.bind(i(i(r))),r.l=r.l.bind(i(i(r))),r.g=r.g.bind(i(i(r))),r.m=r.m.bind(i(i(r))),r}h=c,(f=v).prototype=Object.create(h.prototype),f.prototype.constructor=f,f.__proto__=h;var l,w,d=v.prototype;return d.register=u$1(function(n){var t,i,e=this,u=(void 0===n?{}:n).immediate,c=void 0!==u&&u;return t=function(){return e.p=Boolean(navigator.serviceWorker.controller),e.P=e.R(),a(e.k(),function(n){e.B=n,e.P&&(e.O=e.P,e.s.resolve(e.P),e.h.resolve(e.P),e.j(e.P),e.P.addEventListener("statechange",e.l,{once:!0}));var t=e.B.waiting;return t&&r$1(t.scriptURL,e.t)&&(e.O=t,Promise.resolve().then(function(){e.dispatchEvent(new o("waiting",{sw:t,wasWaitingBeforeRegister:!0}));})),e.O&&e.u.resolve(e.O),e.B.addEventListener("updatefound",e.g),navigator.serviceWorker.addEventListener("controllerchange",e.m,{once:!0}),"BroadcastChannel"in self&&(e.C=new BroadcastChannel("workbox"),e.C.addEventListener("message",e.v)),navigator.serviceWorker.addEventListener("message",e.v),e.B})},(i=function(){if(!c&&"complete"!==document.readyState)return function(n,t){if(!t)return n&&n.then?n.then(s):Promise.resolve()}(new Promise(function(n){return addEventListener("load",n)}))}())&&i.then?i.then(t):t(i)}),d.getSW=u$1(function(){return this.O||this.u.promise}),d.messageSW=u$1(function(t){return a(this.getSW(),function(i){return n$1(i,t)})}),d.R=function(){var n=navigator.serviceWorker.controller;if(n&&r$1(n.scriptURL,this.t))return n},d.k=u$1(function(){var n=this;return function(n,t){try{var i=n();}catch(n){return t(n)}return i&&i.then?i.then(void 0,t):i}(function(){return a(navigator.serviceWorker.register(n.t,n.i),function(t){return n.L=performance.now(),t})},function(n){throw n})}),d.j=function(t){n$1(t,{type:"WINDOW_READY",meta:"workbox-window"});},d.g=function(){var n=this.B.installing;this.o>0||!r$1(n.scriptURL,this.t)||performance.now()>this.L+6e4?(this.W=n,this.B.removeEventListener("updatefound",this.g)):(this.O=n,this.u.resolve(n)),++this.o,n.addEventListener("statechange",this.l);},d.l=function(n){var t=this,i=n.target,e=i.state,r=i===this.W,u=r?"external":"",a={sw:i,originalEvent:n};!r&&this.p&&(a.isUpdate=!0),this.dispatchEvent(new o(u+e,a)),"installed"===e?this._=setTimeout(function(){"installed"===e&&t.B.waiting===i&&t.dispatchEvent(new o(u+"waiting",a));},200):"activating"===e&&(clearTimeout(this._),r||this.s.resolve(i));},d.m=function(n){var t=this.O;t===navigator.serviceWorker.controller&&(this.dispatchEvent(new o("controlling",{sw:t,originalEvent:n})),this.h.resolve(t));},d.v=function(n){var t=n.data;this.dispatchEvent(new o("message",{data:t,originalEvent:n}));},l=v,(w=[{key:"active",get:function(){return this.s.promise}},{key:"controlling",get:function(){return this.h.promise}}])&&t$1(l.prototype,w),v}(function(){function n(){this.D={};}var t=n.prototype;return t.addEventListener=function(n,t){this.T(n).add(t);},t.removeEventListener=function(n,t){this.T(n).delete(t);},t.dispatchEvent=function(n){n.target=this,this.T(n.type).forEach(function(t){return t(n)});},t.T=function(n){return this.D[n]=this.D[n]||new Set},n}());//# sourceMappingURL=workbox-window.prod.es5.mjs.map
+
     /* src\App.svelte generated by Svelte v3.16.7 */
     const file$b = "src\\App.svelte";
 
-    // (157:43) 
+    // (138:43) 
     function create_if_block_6(ctx) {
     	let current;
     	const dashboard = new Dashboard({ $$inline: true });
@@ -32672,14 +32674,14 @@
     		block,
     		id: create_if_block_6.name,
     		type: "if",
-    		source: "(157:43) ",
+    		source: "(138:43) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (155:4) {#if $view === 'settings'}
+    // (136:4) {#if $view === 'settings'}
     function create_if_block_5(ctx) {
     	let current;
     	const settings = new Settings({ $$inline: true });
@@ -32710,14 +32712,14 @@
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(155:4) {#if $view === 'settings'}",
+    		source: "(136:4) {#if $view === 'settings'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (154:2) <Scaffold>
+    // (135:2) <Scaffold>
     function create_default_slot(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -32801,14 +32803,14 @@
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(154:2) <Scaffold>",
+    		source: "(135:2) <Scaffold>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (165:34) 
+    // (146:34) 
     function create_if_block_4(ctx) {
     	let current;
     	const search = new Search({ $$inline: true });
@@ -32839,14 +32841,14 @@
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(165:34) ",
+    		source: "(146:34) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (163:33) 
+    // (144:33) 
     function create_if_block_3(ctx) {
     	let current;
     	const entry = new Entry({ $$inline: true });
@@ -32877,14 +32879,14 @@
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(163:33) ",
+    		source: "(144:33) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (161:2) {#if $overlay === 'detail'}
+    // (142:2) {#if $overlay === 'detail'}
     function create_if_block_2$2(ctx) {
     	let current;
     	const detailpage = new DetailPage({ $$inline: true });
@@ -32915,19 +32917,19 @@
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(161:2) {#if $overlay === 'detail'}",
+    		source: "(142:2) {#if $overlay === 'detail'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (168:2) {#if signInError}
+    // (149:2) {#if signInError}
     function create_if_block_1$5(ctx) {
     	let current;
 
     	const toast = new Toast({
-    			props: { message: /*errorMsg*/ ctx[6] },
+    			props: { message: /*errorMsg*/ ctx[5] },
     			$$inline: true
     		});
 
@@ -32958,65 +32960,41 @@
     		block,
     		id: create_if_block_1$5.name,
     		type: "if",
-    		source: "(168:2) {#if signInError}",
+    		source: "(149:2) {#if signInError}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (171:2) {#if updateAvailable}
+    // (152:2) {#if appUpdated}
     function create_if_block$8(ctx) {
-    	let div1;
-    	let div0;
-    	let t0;
-    	let button;
-    	let div0_transition;
     	let current;
-    	let dispose;
+
+    	const toast = new Toast({
+    			props: { message: "App updating..." },
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
-    			div1 = element("div");
-    			div0 = element("div");
-    			t0 = text("A new update is available\r\n        ");
-    			button = element("button");
-    			button.textContent = "Update";
-    			attr_dev(button, "class", "update-button svelte-y6fjll");
-    			add_location(button, file$b, 174, 8, 5854);
-    			attr_dev(div0, "class", "update-message svelte-y6fjll");
-    			add_location(div0, file$b, 172, 6, 5739);
-    			attr_dev(div1, "class", "update-message-wrapper svelte-y6fjll");
-    			add_location(div1, file$b, 171, 4, 5695);
-    			dispose = listen_dev(button, "click", /*click_handler*/ ctx[9], false, false, false);
+    			create_component(toast.$$.fragment);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, div0);
-    			append_dev(div0, t0);
-    			append_dev(div0, button);
+    			mount_component(toast, target, anchor);
     			current = true;
     		},
-    		p: noop,
     		i: function intro(local) {
     			if (current) return;
-
-    			add_render_callback(() => {
-    				if (!div0_transition) div0_transition = create_bidirectional_transition(div0, fly, { y: 72, duration: 120 }, true);
-    				div0_transition.run(1);
-    			});
-
+    			transition_in(toast.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			if (!div0_transition) div0_transition = create_bidirectional_transition(div0, fly, { y: 72, duration: 120 }, false);
-    			div0_transition.run(0);
+    			transition_out(toast.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
-    			if (detaching && div0_transition) div0_transition.end();
-    			dispose();
+    			destroy_component(toast, detaching);
     		}
     	};
 
@@ -33024,7 +33002,7 @@
     		block,
     		id: create_if_block$8.name,
     		type: "if",
-    		source: "(171:2) {#if updateAvailable}",
+    		source: "(152:2) {#if appUpdated}",
     		ctx
     	});
 
@@ -33062,8 +33040,8 @@
     		if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
     	}
 
-    	let if_block1 = /*signInError*/ ctx[5] && create_if_block_1$5(ctx);
-    	let if_block2 = /*updateAvailable*/ ctx[0] && create_if_block$8(ctx);
+    	let if_block1 = /*signInError*/ ctx[4] && create_if_block_1$5(ctx);
+    	let if_block2 = /*appUpdated*/ ctx[0] && create_if_block$8(ctx);
 
     	const block = {
     		c: function create() {
@@ -33077,7 +33055,7 @@
     			if (if_block2) if_block2.c();
     			attr_dev(main, "class", "overflow-hidden");
     			attr_dev(main, "data-theme", "dark");
-    			add_location(main, file$b, 152, 0, 5232);
+    			add_location(main, file$b, 133, 0, 4696);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -33100,7 +33078,7 @@
     		p: function update(ctx, [dirty]) {
     			const scaffold_changes = {};
 
-    			if (dirty & /*$$scope, $view, app*/ 1030) {
+    			if (dirty & /*$$scope, $view, app*/ 262) {
     				scaffold_changes.$$scope = { dirty, ctx };
     			}
 
@@ -33134,17 +33112,16 @@
     				}
     			}
 
-    			if (/*signInError*/ ctx[5]) if_block1.p(ctx, dirty);
+    			if (/*signInError*/ ctx[4]) if_block1.p(ctx, dirty);
 
-    			if (/*updateAvailable*/ ctx[0]) {
-    				if (if_block2) {
-    					if_block2.p(ctx, dirty);
-    					transition_in(if_block2, 1);
-    				} else {
+    			if (/*appUpdated*/ ctx[0]) {
+    				if (!if_block2) {
     					if_block2 = create_if_block$8(ctx);
     					if_block2.c();
     					transition_in(if_block2, 1);
     					if_block2.m(main, null);
+    				} else {
+    					transition_in(if_block2, 1);
     				}
     			} else if (if_block2) {
     				group_outros();
@@ -33200,42 +33177,21 @@
     	let $view;
     	let $overlay;
     	validate_store(detailData, "detailData");
-    	component_subscribe($$self, detailData, $$value => $$invalidate(8, $detailData = $$value));
+    	component_subscribe($$self, detailData, $$value => $$invalidate(6, $detailData = $$value));
     	validate_store(view, "view");
     	component_subscribe($$self, view, $$value => $$invalidate(2, $view = $$value));
     	validate_store(overlay, "overlay");
     	component_subscribe($$self, overlay, $$value => $$invalidate(3, $overlay = $$value));
-    	let newWorker;
-    	let updateAvailable = false;
+    	let appUpdated = false;
+    	const wb = new c("/service-worker.js");
 
     	if ("serviceWorker" in navigator) {
-    		navigator.serviceWorker.register("/service-worker.js").then(reg => {
-    			reg.addEventListener("updatefound", () => {
-    				newWorker = reg.installing;
-
-    				newWorker.addEventListener("statechange", () => {
-    					switch (newWorker.state) {
-    						case "installed":
-    							if (navigator.serviceWorker.controller) {
-    								$$invalidate(0, updateAvailable = true);
-    							}
-    							break;
-    					}
-    				});
-    			});
-    		});
-
-    		let refreshing;
-
-    		navigator.serviceWorker.addEventListener("controllerchange", () => {
-    			if (refreshing) return;
+    		wb.addEventListener("controlling", ev => {
     			window.location.reload();
-    			refreshing = true;
+    			$$invalidate(0, appUpdated = true);
     		});
-    	}
 
-    	function handleUpdate() {
-    		newWorker.postMessage({ action: "skipWaiting" });
+    		wb.register();
     	}
 
     	let signInError = false;
@@ -33326,35 +33282,21 @@
     		}
     	};
 
-    	const click_handler = () => handleUpdate();
-
     	$$self.$capture_state = () => {
     		return {};
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("newWorker" in $$props) newWorker = $$props.newWorker;
-    		if ("updateAvailable" in $$props) $$invalidate(0, updateAvailable = $$props.updateAvailable);
-    		if ("signInError" in $$props) $$invalidate(5, signInError = $$props.signInError);
-    		if ("errorMsg" in $$props) $$invalidate(6, errorMsg = $$props.errorMsg);
+    		if ("appUpdated" in $$props) $$invalidate(0, appUpdated = $$props.appUpdated);
+    		if ("signInError" in $$props) $$invalidate(4, signInError = $$props.signInError);
+    		if ("errorMsg" in $$props) $$invalidate(5, errorMsg = $$props.errorMsg);
     		if ("app" in $$props) $$invalidate(1, app = $$props.app);
     		if ("$detailData" in $$props) detailData.set($detailData = $$props.$detailData);
     		if ("$view" in $$props) view.set($view = $$props.$view);
     		if ("$overlay" in $$props) overlay.set($overlay = $$props.$overlay);
     	};
 
-    	return [
-    		updateAvailable,
-    		app,
-    		$view,
-    		$overlay,
-    		handleUpdate,
-    		signInError,
-    		errorMsg,
-    		newWorker,
-    		$detailData,
-    		click_handler
-    	];
+    	return [appUpdated, app, $view, $overlay, signInError, errorMsg];
     }
 
     class App extends SvelteComponentDev {
