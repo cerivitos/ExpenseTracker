@@ -11,7 +11,8 @@
     userInfo,
     overlay,
     detailData,
-    themeIsBright
+    themeIsBright,
+    toastMessage
   } from "./store/store";
   import Toast from "./components/Toast.svelte";
   import Settings from "./components/Settings.svelte";
@@ -21,37 +22,17 @@
   import { handleRouting } from "./util";
   import { firebaseConfig } from "./config";
   import { fly } from "svelte/transition";
+  import { Workbox } from "workbox-window";
 
-  let newWorker;
-  let updateAvailable = false;
+  let appUpdated = false;
+  const wb = new Workbox("/service-worker.js");
 
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/service-worker.js").then(reg => {
-      reg.addEventListener("updatefound", () => {
-        newWorker = reg.installing;
-
-        newWorker.addEventListener("statechange", () => {
-          switch (newWorker.state) {
-            case "installed":
-              if (navigator.serviceWorker.controller) {
-                updateAvailable = true;
-              }
-              break;
-          }
-        });
-      });
-    });
-
-    let refreshing;
-    navigator.serviceWorker.addEventListener("controllerchange", () => {
-      if (refreshing) return;
+    wb.addEventListener("controlling", ev => {
       window.location.reload();
-      refreshing = true;
+      appUpdated = true;
     });
-  }
-
-  function handleUpdate() {
-    newWorker.postMessage({ action: "skipWaiting" });
+    wb.register();
   }
 
   let signInError = false;
@@ -204,14 +185,7 @@
   {#if signInError}
     <Toast message={errorMsg} />
   {/if}
-  {#if updateAvailable}
-    <div class="update-message-wrapper">
-      <div transition:fly={{ y: 72, duration: 120 }} class="update-message">
-        A new update is available
-        <button class="update-button" on:click={() => handleUpdate()}>
-          Update
-        </button>
-      </div>
-    </div>
+  {#if appUpdated}
+    <Toast message="App updating..." />
   {/if}
 </main>
