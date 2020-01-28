@@ -79,14 +79,19 @@
         .getElementsByTagName("main")[0]
         .setAttribute("data-theme", theme);
 
+      const metaTheme = document.querySelector("meta[name=theme-color]");
+
       if (theme === "bright") {
         themeIsBright.set(true);
+        metaTheme.setAttribute("content", "#fdfdfd");
       } else if (theme === "dark") {
         themeIsBright.set(false);
+        metaTheme.setAttribute("content", "#0E131C");
       }
     } else {
       localStorage.setItem("theme", "bright");
       themeIsBright.set(true);
+      metaTheme.setAttribute("content", "#fdfdfd");
     }
 
     //Parse url to ui state on app load

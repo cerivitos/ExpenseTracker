@@ -56,10 +56,14 @@
     localStorage.setItem("theme", theme);
     selectedTheme = theme;
 
+    const metaTheme = document.querySelector("meta[name=theme-color]");
+
     if (theme === "bright") {
       themeIsBright.set(true);
+      metaTheme.setAttribute("content", "#fdfdfd");
     } else if (theme === "dark") {
       themeIsBright.set(false);
+      metaTheme.setAttribute("content", "#0E131C");
     }
   }
 </script>
