@@ -7,6 +7,7 @@ Simple Expense Tracker
 <img width="240" src="https://github.com/cerivitos/ExpenseTracker/blob/master/expensetracker.now.sh__dashboard(iPhone%206_7_8%20Plus)%20(2).png"/>|
 <img src="https://github.com/cerivitos/ExpenseTracker/blob/master/expensetracker.now.sh_(Laptop%20with%20MDPI%20screen).png"/>
 
+
 ## Features
 - Made with [Svelte](https://svelte.dev)
 - Installable PWA with service worker
@@ -14,6 +15,7 @@ Simple Expense Tracker
 - Firestore cloud storage
 - Firebase authentication using Google sign in
 - Dark mode
+
 
 ## Getting started
 
@@ -58,6 +60,7 @@ npm run build
 
 and serve the `dist` folder.
 
+
 ## Details
 
 ### Service Worker
@@ -85,9 +88,31 @@ metaTheme.setAttribute("content", "#fdfdfd");
 
 and Android will update your app bar color on the fly.
 
+### Maskable icon in Android
+
+There is support for maskable icons for PWAs installed on Android devices. In your `dist/manifest.json` you can specify the maskable icon using `"purpose": "maskable"`. Ensure that your icon design has sufficient gutter space so that your logo isn't cut off.
+
+```bash
+{
+  ...
+  "icons": [
+    ...
+    {
+      "src": "/assets/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+}
+```
+
+More details [here](https://web.dev/maskable-icon/).
+
 ### Cypress testing
 
 Currently there are no tests written but Cypress is built in if required.
+
 
 ## License
 
