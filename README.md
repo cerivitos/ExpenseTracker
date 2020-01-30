@@ -1,5 +1,5 @@
 ![icon](https://github.com/cerivitos/ExpenseTracker/blob/master/src/assets/favicon-32x32.png)
-Simple Expense Tracker made with Svelte
+Simple Expense Tracker
 =============
 
 <img width="240" src="https://github.com/cerivitos/ExpenseTracker/blob/master/expensetracker.now.sh__dashboard(iPhone%206_7_8%20Plus).png"/>|
@@ -8,6 +8,7 @@ Simple Expense Tracker made with Svelte
 <img src="https://github.com/cerivitos/ExpenseTracker/blob/master/expensetracker.now.sh_(Laptop%20with%20MDPI%20screen).png"/>
 
 ## Features
+- Made with [Svelte](https://svelte.dev)
 - Installable PWA with service worker
 - Responsive layout for mobile and desktop
 - Firestore cloud storage
@@ -68,6 +69,21 @@ Note that we are using the Rollup bundler hence the relevant docs are [here](htt
 ### Now integration
 
 The [Now hosting service](https://zeit.co/now) is a convenient way to host the app. You can use theire built-in [integrations with Git](https://zeit.co/docs/v2/git-integrations) to automatically stage your app with each push to your repo.
+
+### Changing app bar color in Android
+
+Most of us would know that we can control the app bar color using the `<meta name="theme-color"/>` element attribute. However, what if the user can switch color themes and you want the app bar color to change dynamically?
+
+Since I don't see this mentioned much, here is a [little trick courtesy of Gordon Lesti](https://gordonlesti.com/change-theme-color-via-javascript/).
+
+Basically you can programatically update change `theme-color`
+
+```bash
+const metaTheme = document.querySelector("meta[name=theme-color]");
+metaTheme.setAttribute("content", "#fdfdfd");
+```
+
+and Android will update your app bar color on the fly.
 
 ### Cypress testing
 
