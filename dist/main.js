@@ -31192,14 +31192,14 @@
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[30] = list[i];
-    	child_ctx[32] = i;
+    	child_ctx[29] = list[i];
+    	child_ctx[31] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[33] = list[i];
+    	child_ctx[32] = list[i];
     	return child_ctx;
     }
 
@@ -31209,15 +31209,15 @@
 
     	const typebutton = new TypeButton({
     			props: {
-    				label: /*typeDesign*/ ctx[33].type,
-    				colorHue: /*typeDesign*/ ctx[33].hue,
-    				isActive: /*type*/ ctx[4] === /*typeDesign*/ ctx[33].type,
-    				materialIcon: /*typeDesign*/ ctx[33].materialIcon
+    				label: /*typeDesign*/ ctx[32].type,
+    				colorHue: /*typeDesign*/ ctx[32].hue,
+    				isActive: /*type*/ ctx[4] === /*typeDesign*/ ctx[32].type,
+    				materialIcon: /*typeDesign*/ ctx[32].materialIcon
     			},
     			$$inline: true
     		});
 
-    	typebutton.$on("dispatchType", /*receiveType*/ ctx[13]);
+    	typebutton.$on("dispatchType", /*receiveType*/ ctx[12]);
 
     	const block = {
     		c: function create() {
@@ -31229,7 +31229,7 @@
     		},
     		p: function update(ctx, dirty) {
     			const typebutton_changes = {};
-    			if (dirty[0] & /*type*/ 16) typebutton_changes.isActive = /*type*/ ctx[4] === /*typeDesign*/ ctx[33].type;
+    			if (dirty[0] & /*type*/ 16) typebutton_changes.isActive = /*type*/ ctx[4] === /*typeDesign*/ ctx[32].type;
     			typebutton.$set(typebutton_changes);
     		},
     		i: function intro(local) {
@@ -31263,7 +31263,7 @@
     	let each_1_lookup = new Map_1();
     	let each_1_anchor;
     	let each_value = /*suggestedDescriptions*/ ctx[5];
-    	const get_key = ctx => /*suggestion*/ ctx[30];
+    	const get_key = ctx => /*suggestion*/ ctx[29];
 
     	for (let i = 0; i < each_value.length; i += 1) {
     		let child_ctx = get_each_context$2(ctx, each_value, i);
@@ -31319,14 +31319,14 @@
     // (263:10) {#each suggestedDescriptions as suggestion, index (suggestion)}
     function create_each_block$2(key_1, ctx) {
     	let button;
-    	let t0_value = /*suggestion*/ ctx[30] + "";
+    	let t0_value = /*suggestion*/ ctx[29] + "";
     	let t0;
     	let t1;
     	let button_intro;
     	let dispose;
 
     	function click_handler_5(...args) {
-    		return /*click_handler_5*/ ctx[27](/*suggestion*/ ctx[30], ...args);
+    		return /*click_handler_5*/ ctx[26](/*suggestion*/ ctx[29], ...args);
     	}
 
     	const block = {
@@ -31337,7 +31337,7 @@
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(button, "class", "suggestion-button svelte-1sle21b");
-    			add_location(button, file$9, 263, 12, 10762);
+    			add_location(button, file$9, 263, 12, 10700);
     			dispose = listen_dev(button, "click", click_handler_5, false, false, false);
     			this.first = button;
     		},
@@ -31348,14 +31348,14 @@
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*suggestedDescriptions*/ 32 && t0_value !== (t0_value = /*suggestion*/ ctx[30] + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*suggestedDescriptions*/ 32 && t0_value !== (t0_value = /*suggestion*/ ctx[29] + "")) set_data_dev(t0, t0_value);
     		},
     		i: function intro(local) {
     			if (!button_intro) {
     				add_render_callback(() => {
     					button_intro = create_in_transition(button, fade, {
     						duration: 180,
-    						delay: 30 * /*index*/ ctx[32]
+    						delay: 30 * /*index*/ ctx[31]
     					});
 
     					button_intro.start();
@@ -31392,10 +31392,10 @@
     			button = element("button");
     			button.textContent = "Delete";
     			attr_dev(button, "class", "sign-out-button svelte-1sle21b");
-    			add_location(button, file$9, 284, 10, 11551);
+    			add_location(button, file$9, 284, 10, 11489);
     			attr_dev(div, "class", "w-full text-center");
-    			add_location(div, file$9, 283, 8, 11507);
-    			dispose = listen_dev(button, "click", /*click_handler_7*/ ctx[29], false, false, false);
+    			add_location(div, file$9, 283, 8, 11445);
+    			dispose = listen_dev(button, "click", /*click_handler_7*/ ctx[28], false, false, false);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -31483,7 +31483,7 @@
 
     	function input0_input_handler() {
     		input0_updating = true;
-    		/*input0_input_handler*/ ctx[20].call(input0);
+    		/*input0_input_handler*/ ctx[19].call(input0);
     	}
 
     	let each_value_1 = typeDesigns;
@@ -31569,67 +31569,67 @@
     			add_location(div0, file$9, 176, 2, 7571);
     			attr_dev(label0, "for", "amount-input");
     			attr_dev(label0, "class", label0_class_value = "" + (null_to_empty(/*amountValid*/ ctx[6] ? "label" : "label label-error") + " svelte-1sle21b"));
-    			add_location(label0, file$9, 195, 8, 8285);
+    			add_location(label0, file$9, 195, 8, 8223);
     			attr_dev(input0, "id", "amount-input");
     			attr_dev(input0, "class", "amount text-2xl svelte-1sle21b");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$9, 200, 8, 8431);
+    			add_location(input0, file$9, 200, 8, 8369);
     			attr_dev(div1, "class", "input-row svelte-1sle21b");
-    			add_location(div1, file$9, 194, 6, 8213);
+    			add_location(div1, file$9, 194, 6, 8151);
     			attr_dev(label1, "for", "date-input");
     			attr_dev(label1, "class", label1_class_value = "" + (null_to_empty(/*dateValid*/ ctx[7] ? "label" : "label label-error") + " svelte-1sle21b"));
-    			add_location(label1, file$9, 209, 8, 8748);
+    			add_location(label1, file$9, 209, 8, 8686);
     			attr_dev(button1, "id", "today-button");
     			attr_dev(button1, "class", "date-button active svelte-1sle21b");
-    			add_location(button1, file$9, 215, 10, 8918);
+    			add_location(button1, file$9, 215, 10, 8856);
     			attr_dev(button2, "id", "yesterday-button");
     			attr_dev(button2, "class", "date-button svelte-1sle21b");
-    			add_location(button2, file$9, 221, 10, 9096);
+    			add_location(button2, file$9, 221, 10, 9034);
     			attr_dev(div2, "class", "mr-4");
-    			add_location(div2, file$9, 214, 8, 8888);
+    			add_location(div2, file$9, 214, 8, 8826);
     			attr_dev(div3, "class", "input-row svelte-1sle21b");
-    			add_location(div3, file$9, 208, 6, 8676);
-    			add_location(span, file$9, 234, 8, 9504);
+    			add_location(div3, file$9, 208, 6, 8614);
+    			add_location(span, file$9, 234, 8, 9442);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "svelte-1sle21b");
-    			add_location(input1, file$9, 235, 8, 9537);
+    			add_location(input1, file$9, 235, 8, 9475);
     			attr_dev(div4, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n        ml-4");
     			set_style(div4, "color", "var(--text-color2)");
-    			add_location(div4, file$9, 229, 6, 9305);
+    			add_location(div4, file$9, 229, 6, 9243);
     			attr_dev(label2, "class", "label svelte-1sle21b");
-    			add_location(label2, file$9, 238, 8, 9697);
+    			add_location(label2, file$9, 238, 8, 9635);
     			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div5, file$9, 239, 8, 9740);
+    			add_location(div5, file$9, 239, 8, 9678);
     			attr_dev(div6, "class", "mt-12 flex flex-col");
-    			add_location(div6, file$9, 237, 6, 9614);
+    			add_location(div6, file$9, 237, 6, 9552);
     			attr_dev(label3, "for", "description-input");
     			attr_dev(label3, "class", "label svelte-1sle21b");
-    			add_location(label3, file$9, 251, 8, 10231);
+    			add_location(label3, file$9, 251, 8, 10169);
     			attr_dev(input2, "class", "truncate text-2xl svelte-1sle21b");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "(Optional)");
-    			add_location(input2, file$9, 252, 8, 10305);
+    			add_location(input2, file$9, 252, 8, 10243);
     			attr_dev(div7, "class", "input-row svelte-1sle21b");
-    			add_location(div7, file$9, 250, 6, 10158);
+    			add_location(div7, file$9, 250, 6, 10096);
     			attr_dev(div8, "class", "flex mt-4 mx-4 flex-wrap");
     			set_style(div8, "height", "80px");
-    			add_location(div8, file$9, 260, 6, 10577);
+    			add_location(div8, file$9, 260, 6, 10515);
 
     			attr_dev(button3, "class", button3_class_value = "submit-button " + (/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
     			? "active"
     			: "inactive cursor-not-allowed") + " svelte-1sle21b");
 
     			button3.disabled = button3_disabled_value = !(/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]);
-    			add_location(button3, file$9, 275, 8, 11145);
+    			add_location(button3, file$9, 275, 8, 11083);
     			attr_dev(div9, "class", "w-full text-center block");
-    			add_location(div9, file$9, 272, 6, 11039);
+    			add_location(div9, file$9, 272, 6, 10977);
     			attr_dev(div10, "class", "form-wrapper svelte-1sle21b");
-    			add_location(div10, file$9, 193, 4, 8179);
+    			add_location(div10, file$9, 193, 4, 8117);
     			attr_dev(div11, "class", "flex flex-col items-center justify-around mt-8");
-    			add_location(div11, file$9, 192, 2, 8113);
+    			add_location(div11, file$9, 192, 2, 8051);
     			attr_dev(div12, "id", "entry-page");
     			attr_dev(div12, "class", "h-screen w-full absolute top-0 overflow-y-auto overflow-x-hidden");
     			set_style(div12, "background-color", "var(--background-color)");
@@ -31637,15 +31637,15 @@
     			add_location(div12, file$9, 171, 0, 7357);
 
     			dispose = [
-    				listen_dev(i, "click", /*click_handler*/ ctx[19], false, false, false),
+    				listen_dev(i, "click", /*click_handler*/ ctx[18], false, false, false),
     				listen_dev(input0, "input", input0_input_handler),
-    				listen_dev(input0, "click", /*click_handler_1*/ ctx[21], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_2*/ ctx[22], false, false, false),
-    				listen_dev(button2, "click", /*click_handler_3*/ ctx[23], false, false, false),
-    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[24]),
-    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[25]),
-    				listen_dev(input2, "click", /*click_handler_4*/ ctx[26], false, false, false),
-    				listen_dev(button3, "click", /*click_handler_6*/ ctx[28], false, false, false)
+    				listen_dev(input0, "click", /*click_handler_1*/ ctx[20], false, false, false),
+    				listen_dev(button1, "click", /*click_handler_2*/ ctx[21], false, false, false),
+    				listen_dev(button2, "click", /*click_handler_3*/ ctx[22], false, false, false),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[23]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[24]),
+    				listen_dev(input2, "click", /*click_handler_4*/ ctx[25], false, false, false),
+    				listen_dev(button3, "click", /*click_handler_6*/ ctx[27], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
@@ -31730,7 +31730,7 @@
     				set_input_value(input1, /*date*/ ctx[3]);
     			}
 
-    			if (dirty[0] & /*type, receiveType*/ 8208) {
+    			if (dirty[0] & /*type, receiveType*/ 4112) {
     				each_value_1 = typeDesigns;
     				let i;
 
@@ -31891,13 +31891,10 @@
     function instance$9($$self, $$props, $$invalidate) {
     	let $entryData;
     	let $userInfo;
-    	let $detailData;
     	validate_store(entryData, "entryData");
     	component_subscribe($$self, entryData, $$value => $$invalidate(10, $entryData = $$value));
     	validate_store(userInfo, "userInfo");
-    	component_subscribe($$self, userInfo, $$value => $$invalidate(17, $userInfo = $$value));
-    	validate_store(detailData, "detailData");
-    	component_subscribe($$self, detailData, $$value => $$invalidate(11, $detailData = $$value));
+    	component_subscribe($$self, userInfo, $$value => $$invalidate(16, $userInfo = $$value));
     	let scrolling = false;
     	let description = "";
     	let amount = 0;
@@ -32012,9 +32009,7 @@
     	}
 
     	const click_handler = () => {
-    		Object.keys($detailData).length > 0
-    		? window.history.go(-2)
-    		: window.history.back();
+    		window.history.back();
     	};
 
     	function input0_input_handler() {
@@ -32059,7 +32054,6 @@
     		if ("wrapperEl" in $$props) wrapperEl = $$props.wrapperEl;
     		if ("$entryData" in $$props) entryData.set($entryData = $$props.$entryData);
     		if ("$userInfo" in $$props) userInfo.set($userInfo = $$props.$userInfo);
-    		if ("$detailData" in $$props) detailData.set($detailData = $$props.$detailData);
     	};
 
     	$$self.$$.update = () => {
@@ -32101,7 +32095,6 @@
     		typeValid,
     		isUpdate,
     		$entryData,
-    		$detailData,
     		setDate,
     		receiveType,
     		sendEntry,
