@@ -1,16 +1,42 @@
-![icon](https://github.com/cerivitos/svelte-pwa-now/blob/master/src/assets/favicon-32x32.png)
-Svelte PWA Now starter
+![icon](https://github.com/cerivitos/ExpenseTracker/blob/master/src/assets/favicon-32x32.png)
+Simple Expense Tracker
 =============
-A simple Svelte starter template with:
 
-- Tailwind CSS (from [https://github.com/marcograhl/tailwindcss-svelte-starter](https://github.com/marcograhl/tailwindcss-svelte-starter))
-- Rollup copy assets plugin to serve static folders (eg. data or images)
-- Now integration
-- Cypress for testing
-- PWA ready, including basic service worker and social sharing meta data boilerplate
-- Typescript support (switch to the `implement-ts` branch)
+<img width="240" src="https://github.com/cerivitos/ExpenseTracker/blob/master/expensetracker.now.sh__dashboard(iPhone%206_7_8%20Plus).png"/>|
+<img width="240" src="https://github.com/cerivitos/ExpenseTracker/blob/master/expensetracker.now.sh__dashboard(iPhone%206_7_8%20Plus)%20(1).png"/>|
+<img width="240" src="https://github.com/cerivitos/ExpenseTracker/blob/master/expensetracker.now.sh__dashboard(iPhone%206_7_8%20Plus)%20(2).png"/>|
+<img src="https://github.com/cerivitos/ExpenseTracker/blob/master/expensetracker.now.sh_(Laptop%20with%20MDPI%20screen).png"/>
+
+
+## Features
+- Made with [Svelte](https://svelte.dev)
+- Installable PWA with service worker
+- Responsive layout for mobile and desktop
+- Firestore cloud storage
+- Firebase authentication using Google sign in
+- Dark mode
+
 
 ## Getting started
+
+Create your own Firebase project following the instructions [here](https://firebase.google.com/docs/web/setup/).
+
+Copy your own Firebase config object
+
+```bash
+var firebaseConfig = {
+  apiKey: "api-key",
+  authDomain: "project-id.firebaseapp.com",
+  databaseURL: "https://project-id.firebaseio.com",
+  projectId: "project-id",
+  storageBucket: "project-id.appspot.com",
+  messagingSenderId: "sender-id",
+  appId: "app-id",
+  measurementId: "G-measurement-id",
+};
+```
+
+and replace it [here](https://github.com/cerivitos/ExpenseTracker/blob/master/src/config.js).
 
 Make sure [Node.js](https://nodejs.org) is installed. Clone the repo and
 
@@ -34,153 +60,59 @@ npm run build
 
 and serve the `dist` folder.
 
+
 ## Details
 
-### Tailwind
+### Service Worker
 
-Find out more about Tailwind CSS [here](https://tailwindcss.com). To extend Tailwind classes, go to `tailwind.config.js` and put in your customizations as an object under `extend`.
+[Workbox](https://developers.google.com/web/tools/workbox) is set up to automatically generate the service worker file in the `dist` folder using the `rollup-plugin-workbox` plugin.
 
-```bash
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        backgroundColor: "#f6f5f5",
-        primaryColor: "#5bd1d7",
-        secondaryColor: "#248ea9",
-        accentColor: "#556fb5"
-      }
-    }
-  },
-  variants: {},
-  plugins: []
-};
-```
-
-For example, the template comes with custom colors which can then be used in html like `<div class="backgroundColor"></div>`.
-
-Be sure to indicate `postcss` to your style tags like this
-
-```bash
-<style type="text/postcss"></style>
-```
-
-to see proper syntax highlighting and parsing in VS code.
-
-More details can be found [here](https://tailwindcss.com/docs/configuration).
+Note that we are using the Rollup bundler hence the relevant docs are [here](https://developers.google.com/web/tools/workbox/guides/using-bundlers). The `rollup-plugin-workbox` plugin can be configured in [rollup.config.js](https://github.com/cerivitos/ExpenseTracker/blob/master/rollup.config.js).
 
 ### Now integration
 
-The template includes optional integration with the [Now hosting service](https://zeit.co/now). The easiest way to get started is to link your Github repo to Now, which allows all pushes to be built and served automatically. The included `now.json` tells Now to automatically run the rollup build command (via `package.json`) and serve the `dist` folder.
+The [Now hosting service](https://zeit.co/now) is a convenient way to host the app. You can use theire built-in [integrations with Git](https://zeit.co/docs/v2/git-integrations) to automatically stage your app with each push to your repo.
 
-If applicable, be sure to include your custom web domain under `alias` to tell Now to automatically alias your output to your domain.
+### Changing app bar color in Android
+
+Most of us would know that we can control the app bar color using the `<meta name="theme-color"/>` element attribute. However, what if the user can switch color themes and you want the app bar color to change dynamically?
+
+Since I don't see this mentioned much, here is a [little trick courtesy of Gordon Lesti](https://gordonlesti.com/change-theme-color-via-javascript/).
+
+Basically you can programatically update change `theme-color`
+
+```bash
+const metaTheme = document.querySelector("meta[name=theme-color]");
+metaTheme.setAttribute("content", "#fdfdfd");
+```
+
+and Android will update your app bar color on the fly.
+
+### Maskable icon in Android
+
+There is support for maskable icons for PWAs installed on Android devices. In your `dist/manifest.json` you can specify the maskable icon using `"purpose": "maskable"`. Ensure that your icon design has sufficient gutter space so that your logo isn't cut off.
 
 ```bash
 {
-  "version": 2,
-  "alias": "https://ADD-DOMAIN-NAME-HERE",
-  "builds": [
+  ...
+  "icons": [
+    ...
     {
-      "src": "package.json",
-      "use": "@now/static-build"
+      "src": "/assets/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "headers": { "cache-control": "max-age=0,must-revalidate" },
-      "dest": "dist/$1"
-    }
-  ]
 }
 ```
 
-There is also a `.nowignore` file which tells Now to ignore specified files, similar to `.gitignore`.
-
-More info on Now integration with Github can be found [here](https://zeit.co/docs/v2/integrations/now-for-github#staging-aliases-for-each-pull-request).
-
-If you do not need Now integration, feel free to remove `now.json` and `.nowignore`.
+More details [here](https://web.dev/maskable-icon/).
 
 ### Cypress testing
 
-Cypress is included in the template. Simply use `npm run test` to start cypress integration testing. More info about writing cypress tests can be found at [cypress.io](https://cypress.io).
+Currently there are no tests written but Cypress is built in if required.
 
-### Rollup copy assets plugin
-
-By default, Rollup does not copy static folders to `dist` when building. If you have folders with static assets like data files or images, put the folder path in `rollup.config.js` like so.
-
-```bash
-...
-import copy from "rollup-plugin-copy-assets";
-
-const production = !process.env.ROLLUP_WATCH;
-export default {
-  ...
-  plugins: [
-    ...
-    copy({
-      assets: ["src/assets", "src/MORE-STATIC-FOLDERS"]
-    }),
-    ...
-  ]
-  ...
-};
-```
-
-### PWA boilerplate
-
-#### Icons
-
-The commonly required icons are at `src/assets`. Be sure to use the same filenames as they are referred to in the metadata at `dist/index.html`. Tip: Use [Real Favicon Generator](https://realfavicongenerator.net/) which automatically creates all the required icon sizes, and simply unzip the generated asset bundle into `src/assets`.
-
-#### index.html metadata
-
-The icons are all utilized in the `<meta></meta>` tags for Facebook, Twitter and Google indexing among others. Be sure to customize your app title and descriptions in all the tags.
-
-#### Service worker
-
-This template includes a basic service worker at `dist/service-worker.js` which simply checks against the currently held cache and loads from network if required. Feel free to further customize it for your needs.
-
-#### Manifest
-
-Customize `dist/manifest.json` with your PWA's info for installation. Note that the manifest requires a 512x512 icon which is not generated by [Real Favicon Generator](https://realfavicongenerator.net/). You have to manually create that one on your own using something like [https://onlinepngtools.com/resize-png](https://onlinepngtools.com/resize-png).
-
-### Basic router
-
-A very basic router is included as a renderless component at `src/components/Router.svelte`. It simply uses the browser [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) to manage the browser history stack and updating the browser url. To use, you must manually do something like
-
-```bash
-window.history.pushState(
-        {
-          state1: newValue1,
-          state2: newValue2
-        },
-        null,
-        "?state1=" + newValue1 + "&state2=" + newValue2
-      );
-```
-
-in the component where the state was updated, which will then change your browser window url to show the new state for your SPA.
-
-The router also takes care of parsing incoming url parameters, which you must then manually pass to your state store (in this case `src/store/store.js`).
-
-```bash
-window.onload = function() {
-    if (window.location.search.length > 0) {
-      const params = window.location.search.substr(1);
-      params.split("&").forEach(param => {
-        const key = param.split("=")[0];
-        const value = parseFloat(param.split("=")[1]);
-        console.log(`Parameter of ${key} is ${value}`);
-      });
-
-      //UPDATE STATE WITH THESE PARAMS
-      updateState();
-    }
-  };
-```
-
-This [article](https://medium.com/@george.norberg/history-api-getting-started-36bfc82ddefc) probably explains it much better.
 
 ## License
 

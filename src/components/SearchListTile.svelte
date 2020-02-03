@@ -95,31 +95,75 @@
   style="color: var(--text-color)"
   in:fade={{ duration: 120 }}
   on:click={() => showEditDetail(data)}>
-  <div
-    class="mr-2 font-bold text-sm whitespace-no-wrap"
-    style="color:{$themeIsBright ? iconColor : backgroundColor}; width: 12.5%">
-    <span>{new Date(data.date).toString().substring(4, 10)}</span>
-  </div>
-  <div
-    id="icon"
-    class="rounded-full p-1 mr-2 fill-current"
-    style="background-color: {backgroundColor}; color:{iconColor}">
-    <i
-      class="material-icons-round"
-      style="display:block !important; font-size: 14px">
-      {materialIcon}
-    </i>
-  </div>
-  <span class="truncate mr-2 flex-none font-medium">
-    {@html addedBy}
-  </span>
-  <span class="truncate mr-2" style="color: var(--text-color2)">
-    {@html desc}
-  </span>
-  <span class="flex-grow flex items-center justify-end font-bold amount">
-    {@html data.amount.toLocaleString(undefined, {
-      maximumFractionDigits: 2,
-      minimumFractionDigits: 2
-    })}
-  </span>
+  {#if window.innerWidth > 768}
+    <div
+      class="mr-2 font-bold text-sm whitespace-no-wrap"
+      style="color:{$themeIsBright ? iconColor : backgroundColor}; width: 12.5%">
+      <span>{new Date(data.date).toString().substring(4, 10)}</span>
+    </div>
+    <div
+      id="icon"
+      class="rounded-full p-1 mr-2 fill-current"
+      style="background-color: {backgroundColor}; color:{iconColor}">
+      <i
+        class="material-icons-round"
+        style="display:block !important; font-size: 14px">
+        {materialIcon}
+      </i>
+    </div>
+    <span class="truncate mr-2 flex-none font-medium">
+      {@html addedBy}
+    </span>
+    <span class="truncate mr-2" style="color: var(--text-color2)">
+      {@html desc}
+    </span>
+    <span class="flex-grow flex items-center justify-end font-bold amount">
+      {@html data.amount.toLocaleString(undefined, {
+        maximumFractionDigits: 2,
+        minimumFractionDigits: 2
+      })}
+    </span>
+  {:else}
+    <div class="flex flex-col w-full">
+      <div
+        id="icon-date-amount-wrapper"
+        class="w-full justify-between items-center">
+        <div id="icon-date-wrapper" class="flex items-center justify-start">
+          <div
+            class="mr-2 font-bold text-sm text-left whitespace-no-wrap"
+            style="color:{$themeIsBright ? iconColor : backgroundColor}; width:
+            12.5%">
+            <span>{new Date(data.date).toString().substring(4, 10)}</span>
+          </div>
+          <div
+            id="icon"
+            class="rounded-full p-1 mr-2 fill-current"
+            style="background-color: {backgroundColor}; color:{iconColor}">
+            <i
+              class="material-icons-round"
+              style="display:block !important; font-size: 14px">
+              {materialIcon}
+            </i>
+          </div>
+          <span
+            class="flex-grow h-full flex items-center justify-end font-bold
+            amount">
+            {@html data.amount.toLocaleString(undefined, {
+              maximumFractionDigits: 2,
+              minimumFractionDigits: 2
+            })}
+          </span>
+        </div>
+      </div>
+      <div id="name-desc-wrapper" class="flex items-center justify-start">
+        <span class="truncate mr-2 flex-none font-medium">
+          {@html addedBy}
+        </span>
+        <span class="truncate" style="color: var(--text-color2)">
+          {@html desc}
+        </span>
+      </div>
+    </div>
+  {/if}
+
 </div>
