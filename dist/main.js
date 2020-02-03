@@ -28732,6 +28732,7 @@
 
     // (22:0) {#if show}
     function create_if_block$2(ctx) {
+    	let div2;
     	let div1;
     	let div0;
     	let t;
@@ -28740,18 +28741,22 @@
 
     	const block = {
     		c: function create() {
+    			div2 = element("div");
     			div1 = element("div");
     			div0 = element("div");
     			t = text(/*message*/ ctx[0]);
-    			attr_dev(div0, "class", "rounded-full text-center text-white px-4 py-2 max-w-lg truncate\r\n      mx-4");
+    			attr_dev(div0, "class", "rounded-full text-center text-white px-4 py-2 max-w-lg truncate\r\n        mx-4");
     			set_style(div0, "background-color", "hsl(var(--accent-hue), 40%, 60%)");
-    			add_location(div0, file$3, 23, 4, 633);
+    			add_location(div0, file$3, 24, 6, 668);
     			attr_dev(div1, "class", "wrapper svelte-19k4qys");
     			set_style(div1, "bottom", /*yPos*/ ctx[1] + "px");
-    			add_location(div1, file$3, 22, 2, 581);
+    			add_location(div1, file$3, 23, 4, 614);
+    			attr_dev(div2, "class", "z-20 relative");
+    			add_location(div2, file$3, 22, 2, 581);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div1);
     			append_dev(div1, div0);
     			append_dev(div0, t);
     			current = true;
@@ -28773,7 +28778,7 @@
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(div2);
     			if (detaching && div0_outro) div0_outro.end();
     		}
     	};
@@ -33116,7 +33121,6 @@
 
     // (149:2) {#if signInError}
     function create_if_block_1$5(ctx) {
-    	let div;
     	let current;
 
     	const toast = new Toast({
@@ -33126,14 +33130,10 @@
 
     	const block = {
     		c: function create() {
-    			div = element("div");
     			create_component(toast.$$.fragment);
-    			attr_dev(div, "class", "z-20 relative");
-    			add_location(div, file$b, 149, 4, 5091);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(toast, div, null);
+    			mount_component(toast, target, anchor);
     			current = true;
     		},
     		p: noop,
@@ -33147,8 +33147,7 @@
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			destroy_component(toast);
+    			destroy_component(toast, detaching);
     		}
     	};
 
@@ -33163,9 +33162,8 @@
     	return block;
     }
 
-    // (154:2) {#if appUpdated}
+    // (152:2) {#if appUpdated}
     function create_if_block$9(ctx) {
-    	let div;
     	let current;
 
     	const toast = new Toast({
@@ -33175,14 +33173,10 @@
 
     	const block = {
     		c: function create() {
-    			div = element("div");
     			create_component(toast.$$.fragment);
-    			attr_dev(div, "class", "z-20 relative");
-    			add_location(div, file$b, 154, 4, 5201);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(toast, div, null);
+    			mount_component(toast, target, anchor);
     			current = true;
     		},
     		i: function intro(local) {
@@ -33195,8 +33189,7 @@
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			destroy_component(toast);
+    			destroy_component(toast, detaching);
     		}
     	};
 
@@ -33204,7 +33197,7 @@
     		block,
     		id: create_if_block$9.name,
     		type: "if",
-    		source: "(154:2) {#if appUpdated}",
+    		source: "(152:2) {#if appUpdated}",
     		ctx
     	});
 
