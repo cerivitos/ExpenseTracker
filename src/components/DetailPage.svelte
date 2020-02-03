@@ -163,7 +163,7 @@
         </div>
         <span
           class="text-2xl font-bold mb-8"
-          in:fly={{ y: 48, duration: 180, delay: 180 }}
+          in:fade={{ duration: 180, delay: 180 }}
           style="color: {$themeIsBright ? iconColor : backgroundColor}">
           {$detailData.type}
         </span>

@@ -30374,7 +30374,7 @@
     			attr_dev(span, "class", "rounded-full font-bold px-4 py-2 my-4 inline-block m-auto");
     			set_style(span, "color", "var(--text-color)");
     			set_style(span, "background-color", "var(--inactive-button-color)");
-    			add_location(span, file$7, 169, 12, 5296);
+    			add_location(span, file$7, 169, 12, 5290);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -30427,7 +30427,7 @@
     			create_component(searchlisttile.$$.fragment);
     			t1 = space();
     			attr_dev(div, "class", "w-full text-center");
-    			add_location(div, file$7, 163, 8, 4994);
+    			add_location(div, file$7, 163, 8, 4988);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -30631,12 +30631,12 @@
     			add_location(span0, file$7, 143, 8, 4253);
     			attr_dev(span1, "class", "w-full mb-1 text-4xl text-center font-bold");
     			attr_dev(span1, "id", "totalCategorySpend");
-    			add_location(span1, file$7, 149, 8, 4489);
+    			add_location(span1, file$7, 149, 8, 4483);
     			attr_dev(span2, "class", "w-full text-center font-light mb-2");
     			set_style(span2, "color", "var(--text-color2)");
-    			add_location(span2, file$7, 154, 8, 4633);
+    			add_location(span2, file$7, 154, 8, 4627);
     			attr_dev(span3, "class", "w-full text-center mb-12");
-    			add_location(span3, file$7, 160, 8, 4848);
+    			add_location(span3, file$7, 160, 8, 4842);
     			attr_dev(div3, "class", "flex flex-col items-center");
     			add_location(div3, file$7, 131, 6, 3782);
     			attr_dev(div4, "class", "content-wrapper svelte-1yywlwk");
@@ -30768,7 +30768,7 @@
 
     			if (!span0_intro) {
     				add_render_callback(() => {
-    					span0_intro = create_in_transition(span0, fly, { y: 48, duration: 180, delay: 180 });
+    					span0_intro = create_in_transition(span0, fade, { duration: 180, delay: 180 });
     					span0_intro.start();
     				});
     			}
