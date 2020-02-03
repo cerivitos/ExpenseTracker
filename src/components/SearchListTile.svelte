@@ -93,7 +93,6 @@
   id="tile-wrapper"
   class="flex w-full p-4 items-center cursor-pointer"
   style="color: var(--text-color)"
-  in:fade={{ duration: 120 }}
   on:click={() => showEditDetail(data)}>
   {#if window.innerWidth > 768}
     <div
