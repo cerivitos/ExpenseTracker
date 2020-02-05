@@ -24,6 +24,7 @@
   let date = getDateString();
   let type = "Food";
   let suggestedDescriptions = [];
+  let gpsPlaces = [];
 
   let amountValid = false;
   let dateValid = false;
@@ -147,6 +148,45 @@
       });
   }
 
+  function getLocation() {
+    if (navigator.geolocation) {
+      document
+        .getElementById("location-button")
+        .style.setProperty("color", "red");
+
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          const lat = pos.coords.latitude;
+          const long = pos.coords.longitude;
+
+          const query = `https://api.mapbox.com/geocoding/v5/mapbox.places/${long},${lat}.json?types=poi&limit=5&access_token=pk.eyJ1IjoiY2VyaXZpdG9zIiwiYSI6ImNrNjloN2VudjBla2Iza3BrejRwNGJvMGUifQ.ZHcdvLfvzTjpZtAT0vAvaQ`;
+
+          gpsPlaces = [];
+
+          fetch(query)
+            .then(response => response.json())
+            .then(parsed => {
+              parsed.features.forEach(place => gpsPlaces.push(place.text));
+
+              suggestedDescriptions = [...gpsPlaces, ...suggestedDescriptions];
+            });
+        },
+        error => {
+          document
+            .getElementById("location-button")
+            .style.setProperty("color", "var(--text-color2)");
+
+          toastMessage.set(error.message);
+          setTimeout(() => toastMessage.set(""), 3000);
+        },
+        {
+          timeout: 500,
+          enableHighAccuracy: true
+        }
+      );
+    }
+  }
+
   $: if (amount <= 0 || amount === undefined) {
     amountValid = false;
   } else {
@@ -197,6 +237,14 @@
 
   .input-row {
     @apply flex flex-row w-full justify-between items-center mt-12;
+  }
+
+  .input-row.description-row-small {
+    @apply flex-col items-start;
+  }
+
+  .description-row-small input {
+    @apply text-left p-0 mr-2;
   }
 
   .date-button {
@@ -358,17 +406,29 @@
           {/each}
         </div>
       </div>
-      <div class="input-row" in:fade={{ duration: 120, delay: 120 }}>
+      <div
+        class="input-row {window.innerWidth < 768 ? 'description-row-small' : ''}"
+        in:fade={{ duration: 120, delay: 120 }}>
         <label for="description-input" class="label">Description</label>
-        <input
-          class="truncate text-2xl"
-          id="description-input"
-          type="text"
-          placeholder="(Optional)"
-          bind:value={description}
-          on:click={() => document.execCommand('selectall', null, false)} />
+        <div class="flex w-full justify-between items-center px-4 mt-2">
+          <input
+            class="truncate text-2xl flex-grow"
+            id="description-input"
+            type="text"
+            placeholder="(Optional)"
+            bind:value={description}
+            on:click={() => document.execCommand('selectall', null, false)} />
+          <button on:click={() => getLocation()}>
+            <i
+              id="location-button"
+              class="material-icons-round fill-current"
+              style="color: var(--text-color2)">
+              location_on
+            </i>
+          </button>
+        </div>
       </div>
-      <div class="flex mt-4 mx-4 flex-wrap" style="height: 80px">
+      <div class="flex mt-4 mx-4 flex-wrap">
         {#if suggestedDescriptions}
           {#each suggestedDescriptions as suggestion, index (suggestion)}
             <button
