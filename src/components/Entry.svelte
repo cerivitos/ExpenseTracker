@@ -264,7 +264,7 @@
   }
 
   .suggestion-button {
-    @apply rounded-full px-3 py-1 self-start mr-2 mt-2;
+    @apply rounded-full px-3 py-1 self-start mr-2 mt-2 truncate;
     color: var(--text-color2);
     background-color: var(--inactive-button-color);
     transition: background-color 250ms ease-out;
