@@ -56,7 +56,7 @@ export function getDateString(year, month, date) {
   } else {
     _date = new Date().getDate();
   }
-  if (date < 10) _date = _date.toString().padStart(2, "0");
+  if (_date < 10) _date = _date.toString().padStart(2, "0");
 
   return _year + "-" + _month + "-" + _date;
 }
