@@ -34997,7 +34997,7 @@
     	return block;
     }
 
-    // (424:6) {#if picturePreview || pictureURL}
+    // (423:6) {#if picturePreview || pictureURL}
     function create_if_block_2$2(ctx) {
     	let img;
     	let img_alt_value;
@@ -35019,7 +35019,7 @@
     			? /*picturePreview*/ ctx[6]
     			: /*pictureURL*/ ctx[7])) attr_dev(img, "src", img_src_value);
 
-    			add_location(img, file$9, 424, 8, 15851);
+    			add_location(img, file$9, 423, 8, 15816);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, img, anchor);
@@ -35055,14 +35055,14 @@
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(424:6) {#if picturePreview || pictureURL}",
+    		source: "(423:6) {#if picturePreview || pictureURL}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (433:8) {#if suggestedDescriptions}
+    // (432:8) {#if suggestedDescriptions}
     function create_if_block_1$4(ctx) {
     	let each_blocks = [];
     	let each_1_lookup = new Map_1();
@@ -35114,14 +35114,14 @@
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(433:8) {#if suggestedDescriptions}",
+    		source: "(432:8) {#if suggestedDescriptions}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (434:10) {#each suggestedDescriptions as suggestion, index (suggestion)}
+    // (433:10) {#each suggestedDescriptions as suggestion, index (suggestion)}
     function create_each_block$2(key_1, ctx) {
     	let button;
     	let t0_value = /*suggestion*/ ctx[40] + "";
@@ -35142,7 +35142,7 @@
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(button, "class", "suggestion-button svelte-1r30idg");
-    			add_location(button, file$9, 434, 12, 16267);
+    			add_location(button, file$9, 433, 12, 16232);
     			dispose = listen_dev(button, "click", click_handler_7, false, false, false);
     			this.first = button;
     		},
@@ -35178,14 +35178,14 @@
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(434:10) {#each suggestedDescriptions as suggestion, index (suggestion)}",
+    		source: "(433:10) {#each suggestedDescriptions as suggestion, index (suggestion)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (454:6) {#if Object.keys($entryData).length > 0}
+    // (453:6) {#if Object.keys($entryData).length > 0}
     function create_if_block$7(ctx) {
     	let div;
     	let button;
@@ -35197,9 +35197,9 @@
     			button = element("button");
     			button.textContent = "Delete";
     			attr_dev(button, "class", "sign-out-button svelte-1r30idg");
-    			add_location(button, file$9, 455, 10, 17056);
+    			add_location(button, file$9, 454, 10, 17021);
     			attr_dev(div, "class", "w-full text-center");
-    			add_location(div, file$9, 454, 8, 17012);
+    			add_location(div, file$9, 453, 8, 16977);
     			dispose = listen_dev(button, "click", /*click_handler_9*/ ctx[39], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -35217,7 +35217,7 @@
     		block,
     		id: create_if_block$7.name,
     		type: "if",
-    		source: "(454:6) {#if Object.keys($entryData).length > 0}",
+    		source: "(453:6) {#if Object.keys($entryData).length > 0}",
     		ctx
     	});
 
@@ -35451,30 +35451,29 @@
     			attr_dev(input3, "type", "file");
     			attr_dev(input3, "name", "image");
     			attr_dev(input3, "accept", "image/*");
-    			attr_dev(input3, "capture", "environment");
     			set_style(input3, "display", "none");
     			attr_dev(input3, "class", "svelte-1r30idg");
     			add_location(input3, file$9, 404, 10, 15200);
     			attr_dev(i2, "id", "picture-button");
     			attr_dev(i2, "class", "material-icons-round fill-current");
     			set_style(i2, "color", "var(--text-color2)");
-    			add_location(i2, file$9, 414, 12, 15558);
-    			add_location(button4, file$9, 412, 10, 15457);
+    			add_location(i2, file$9, 413, 12, 15523);
+    			add_location(button4, file$9, 411, 10, 15422);
     			attr_dev(div7, "class", "flex w-full justify-between items-center px-4 mt-2");
     			add_location(div7, file$9, 388, 8, 14559);
     			attr_dev(div8, "class", div8_class_value = "input-row " + (window.innerWidth < 768 ? "description-row-small" : "") + " svelte-1r30idg");
     			add_location(div8, file$9, 384, 6, 14337);
     			attr_dev(div9, "class", "flex mt-4 mx-4 flex-wrap");
-    			add_location(div9, file$9, 431, 6, 16103);
+    			add_location(div9, file$9, 430, 6, 16068);
 
     			attr_dev(button5, "class", button5_class_value = "submit-button " + (/*typeValid*/ ctx[10] && /*dateValid*/ ctx[9] && /*amountValid*/ ctx[8]
     			? "active"
     			: "inactive cursor-not-allowed") + " svelte-1r30idg");
 
     			button5.disabled = button5_disabled_value = !(/*typeValid*/ ctx[10] && /*dateValid*/ ctx[9] && /*amountValid*/ ctx[8]);
-    			add_location(button5, file$9, 446, 8, 16650);
+    			add_location(button5, file$9, 445, 8, 16615);
     			attr_dev(div10, "class", "w-full text-center block");
-    			add_location(div10, file$9, 443, 6, 16544);
+    			add_location(div10, file$9, 442, 6, 16509);
     			attr_dev(div11, "class", "form-wrapper svelte-1r30idg");
     			add_location(div11, file$9, 327, 4, 12358);
     			attr_dev(div12, "class", "flex flex-col items-center justify-around mt-8");

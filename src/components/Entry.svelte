@@ -525,7 +525,6 @@
             type="file"
             name="image"
             accept="image/*"
-            capture="environment"
             style="display:none"
             on:change={result => getPicture(result)} />
           <button
