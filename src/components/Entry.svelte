@@ -55,6 +55,7 @@
       amount = $entryData.amount;
       date = $entryData.date;
       type = $entryData.type;
+      pictureURL = $entryData.pictureURL;
 
       document.getElementById("today-button").classList.remove("active");
       document.getElementById("yesterday-button").classList.remove("active");
@@ -519,13 +520,13 @@
           </button>
         </div>
       </div>
-      {#if picturePreview}
+      {#if picturePreview || pictureURL}
         <img
           id="picture-preview"
-          alt={picturePreview}
+          alt={picturePreview ? picturePreview : pictureURL}
           in:fade
           class="object-cover h-48 w-full mt-4"
-          src={picturePreview} />
+          src={picturePreview ? picturePreview : pictureURL} />
       {/if}
       <div class="flex mt-4 mx-4 flex-wrap">
         {#if suggestedDescriptions}
