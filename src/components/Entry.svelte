@@ -135,7 +135,8 @@
         addedBy: $userInfo.name,
         addedOn: getDateString(),
         id: $entryData.id ? $entryData.id : newId,
-        picture: pictureURL ? pictureURL : ""
+        pictureURL: pictureURL ? pictureURL : "",
+        pictureName: pictureURL ? pictureFile.name : ""
       })
       .then(() => {
         toastMessage.set("Expense created!");
@@ -171,9 +172,28 @@
       .doc($entryData.id)
       .delete()
       .then(() => {
-        toastMessage.set("Entry deleted");
-        setTimeout(() => toastMessage.set(""), 1000);
-        dashboardShouldReload.set(true);
+        if ($entryData.pictureURL) {
+          const picture = firebase
+            .storage()
+            .ref()
+            .child("expense_pics/" + $entryData.pictureName);
+
+          picture
+            .delete()
+            .then(() => {
+              toastMessage.set("Entry deleted");
+              setTimeout(() => toastMessage.set(""), 1000);
+              dashboardShouldReload.set(true);
+            })
+            .catch(error => {
+              toastMessage.set(error.message);
+              setTimeout(() => toastMessage.set(""), 1000);
+            });
+        } else {
+          toastMessage.set("Entry deleted");
+          setTimeout(() => toastMessage.set(""), 1000);
+          dashboardShouldReload.set(true);
+        }
       })
       .catch(error => {
         toastMessage.set(error);
