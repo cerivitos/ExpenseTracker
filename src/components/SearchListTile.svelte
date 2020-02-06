@@ -174,7 +174,7 @@
         {/if}
         {#if data.pictureURL}
           <i
-            class="material-icons-round fill-current"
+            class="material-icons-round fill-current ml-2"
             style="color: var(--text-color2)">
             image
           </i>

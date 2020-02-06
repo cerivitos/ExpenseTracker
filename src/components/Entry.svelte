@@ -132,6 +132,19 @@
     const db = firebase.firestore();
     const newId = Date.now().toString() + amount;
 
+    let _pictureURL, _pictureName;
+
+    if (pictureFile) {
+      _pictureURL = pictureURL;
+      _pictureName = pictureFile.name;
+    } else if (pictureURL && !pictureFile) {
+      _pictureURL = pictureURL;
+      _pictureName = $entryData.pictureName;
+    } else {
+      _pictureURL = "";
+      _pictureName = "";
+    }
+
     db.collection("expenses")
       .doc($entryData.id ? $entryData.id : newId)
       .set({
@@ -142,8 +155,8 @@
         addedBy: $userInfo.name,
         addedOn: getDateString(),
         id: $entryData.id ? $entryData.id : newId,
-        pictureURL: pictureURL ? pictureURL : "",
-        pictureName: pictureURL ? pictureFile.name : ""
+        pictureURL: _pictureURL,
+        pictureName: _pictureName
       })
       .then(() => {
         toastMessage.set("Expense created!");
