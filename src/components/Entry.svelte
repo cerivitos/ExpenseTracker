@@ -16,6 +16,7 @@
   import { fly, fade } from "svelte/transition";
   import firebase from "firebase/app";
   import "firebase/firestore";
+  import "firebase/storage";
 
   let scrolling = false;
 
@@ -184,6 +185,17 @@
           enableHighAccuracy: true
         }
       );
+    } else {
+      toastMessage.set("Unable to get your location");
+      setTimeout(() => toastMessage.set(""), 3000);
+    }
+  }
+
+  function getPicture() {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    } else {
+      toastMessage.set("Unable to access the camera");
+      setTimeout(() => toastMessage.set(""), 3000);
     }
   }
 
@@ -421,11 +433,18 @@
           <button on:click={() => getLocation()}>
             <i
               id="location-button"
-              class="material-icons-round fill-current"
+              class="material-icons-round fill-current mr-4"
               style="color: var(--text-color2)">
               location_on
             </i>
           </button>
+          <input type="file" name="image" accept="image/*" capture />
+          <i
+            id="picture-button"
+            class="material-icons-round fill-current"
+            style="color: var(--text-color2)">
+            photo_camera
+          </i>
         </div>
       </div>
       <div class="flex mt-4 mx-4 flex-wrap">
