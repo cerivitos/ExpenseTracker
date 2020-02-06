@@ -29553,7 +29553,7 @@
     			a.textContent = "Privacy policy";
     			t10 = text("\r\n      •\r\n      ");
     			span2 = element("span");
-    			span2.textContent = "v0.26.2";
+    			span2.textContent = "v0.27.0";
     			attr_dev(span0, "class", "label svelte-17ige3d");
     			add_location(span0, file$5, 137, 6, 5539);
 

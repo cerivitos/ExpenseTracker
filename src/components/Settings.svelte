@@ -230,7 +230,7 @@
         Privacy policy
       </a>
       •
-      <span class="text-center mb-8 ml-2">v0.26.2</span>
+      <span class="text-center mb-8 ml-2">v0.27.0</span>
     </div>
   </div>
 </div>
