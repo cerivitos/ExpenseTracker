@@ -113,9 +113,18 @@
     <span class="truncate mr-2 flex-none font-medium">
       {@html addedBy}
     </span>
-    <span class="truncate mr-2" style="color: var(--text-color2)">
-      {@html desc}
-    </span>
+    {#if desc}
+      <span class="truncate mr-2" style="color: var(--text-color2)">
+        {@html desc}
+      </span>
+    {/if}
+    {#if data.pictureURL}
+      <i
+        class="material-icons-round fill-current mr-2"
+        style="color: var(--text-color2)">
+        image
+      </i>
+    {/if}
     <span class="flex-grow flex items-center justify-end font-bold amount">
       {@html data.amount.toLocaleString(undefined, {
         maximumFractionDigits: 2,
@@ -126,7 +135,7 @@
     <div class="flex flex-col w-full">
       <div
         id="icon-date-amount-wrapper"
-        class="w-full justify-between items-center">
+        class="w-full justify-between items-center mb-1">
         <div id="icon-date-wrapper" class="flex items-center justify-start">
           <div
             class="mr-2 font-bold text-sm text-left whitespace-no-wrap"
@@ -158,9 +167,18 @@
         <span class="truncate mr-2 flex-none font-medium">
           {@html addedBy}
         </span>
-        <span class="truncate" style="color: var(--text-color2)">
-          {@html desc}
-        </span>
+        {#if desc}
+          <span class="truncate" style="color: var(--text-color2)">
+            {@html desc}
+          </span>
+        {/if}
+        {#if data.pictureURL}
+          <i
+            class="material-icons-round fill-current"
+            style="color: var(--text-color2)">
+            image
+          </i>
+        {/if}
       </div>
     </div>
   {/if}
