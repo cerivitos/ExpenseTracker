@@ -26,6 +26,9 @@
   let type = "Food";
   let suggestedDescriptions = [];
   let gpsPlaces = [];
+  let pictureFile;
+  let picturePreview;
+  let pictureURL;
 
   let amountValid = false;
   let dateValid = false;
@@ -98,13 +101,27 @@
     type = e.detail.selectedType;
   }
 
-  function sendEntry() {
-    handleRouting("dashboard");
-    view.set("dashboard");
-    overlay.set("");
+  function uploadPictureAndFirestore() {
+    const storage = firebase
+      .storage()
+      .ref()
+      .child("expense_pics/" + pictureFile.name);
 
-    toastMessage.set("Submitting...");
+    storage
+      .put(pictureFile)
+      .then(snapshot => {
+        snapshot.ref.getDownloadURL().then(url => {
+          pictureURL = url;
+          writeToFirestore();
+        });
+      })
+      .catch(error => {
+        toastMessage.set(error.message);
+        setTimeout(() => toastMessage.set(""), 3000);
+      });
+  }
 
+  function writeToFirestore() {
     const db = firebase.firestore();
     const newId = Date.now().toString() + amount;
 
@@ -117,7 +134,8 @@
         type: type,
         addedBy: $userInfo.name,
         addedOn: getDateString(),
-        id: $entryData.id ? $entryData.id : newId
+        id: $entryData.id ? $entryData.id : newId,
+        picture: pictureURL ? pictureURL : ""
       })
       .then(() => {
         toastMessage.set("Expense created!");
@@ -125,9 +143,23 @@
         dashboardShouldReload.set(true);
       })
       .catch(error => {
-        toastMessage.set(error);
+        toastMessage.set(error.message);
         setTimeout(() => toastMessage.set(""), 3000);
       });
+  }
+
+  function sendEntry() {
+    handleRouting("dashboard");
+    view.set("dashboard");
+    overlay.set("");
+
+    toastMessage.set("Submitting...");
+
+    if (pictureFile) {
+      uploadPictureAndFirestore();
+    } else {
+      writeToFirestore();
+    }
   }
 
   function deleteEntry() {
@@ -153,7 +185,7 @@
     if (navigator.geolocation) {
       document
         .getElementById("location-button")
-        .style.setProperty("color", "red");
+        .style.setProperty("color", "hsl(var(--accent-hue), 50%, 50%)");
 
       navigator.geolocation.getCurrentPosition(
         pos => {
@@ -191,11 +223,21 @@
     }
   }
 
-  function getPicture() {
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    } else {
-      toastMessage.set("Unable to access the camera");
+  function getPicture(result) {
+    pictureFile = result.target.files[0];
+
+    if (!pictureFile.type.match(/^image\//)) {
+      toastMessage.set("Please select an image file!");
       setTimeout(() => toastMessage.set(""), 3000);
+    } else if (pictureFile.size > 5242880) {
+      toastMessage.set("Pictures must be less than 5mb!");
+      setTimeout(() => toastMessage.set(""), 3000);
+    } else {
+      document
+        .getElementById("picture-button")
+        .style.setProperty("color", "hsl(var(--secondary-hue), 50%, 50%)");
+
+      picturePreview = URL.createObjectURL(pictureFile);
     }
   }
 
@@ -438,15 +480,33 @@
               location_on
             </i>
           </button>
-          <input type="file" name="image" accept="image/*" capture />
-          <i
-            id="picture-button"
-            class="material-icons-round fill-current"
-            style="color: var(--text-color2)">
-            photo_camera
-          </i>
+          <input
+            id="picture-input"
+            type="file"
+            name="image"
+            accept="image/*"
+            capture="environment"
+            style="display:none"
+            on:change={result => getPicture(result)} />
+          <button
+            on:click={() => document.getElementById('picture-input').click()}>
+            <i
+              id="picture-button"
+              class="material-icons-round fill-current"
+              style="color: var(--text-color2)">
+              photo_camera
+            </i>
+          </button>
         </div>
       </div>
+      {#if picturePreview}
+        <img
+          id="picture-preview"
+          alt={picturePreview}
+          in:fade
+          class="object-cover h-48 w-full mt-4"
+          src={picturePreview} />
+      {/if}
       <div class="flex mt-4 mx-4 flex-wrap">
         {#if suggestedDescriptions}
           {#each suggestedDescriptions as suggestion, index (suggestion)}

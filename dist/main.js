@@ -34747,32 +34747,32 @@
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[32] = list[i];
-    	child_ctx[34] = i;
+    	child_ctx[40] = list[i];
+    	child_ctx[42] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[35] = list[i];
+    	child_ctx[43] = list[i];
     	return child_ctx;
     }
 
-    // (293:10) {#each typeDesigns as typeDesign}
+    // (335:10) {#each typeDesigns as typeDesign}
     function create_each_block_1$1(ctx) {
     	let current;
 
     	const typebutton = new TypeButton({
     			props: {
-    				label: /*typeDesign*/ ctx[35].type,
-    				colorHue: /*typeDesign*/ ctx[35].hue,
-    				isActive: /*type*/ ctx[4] === /*typeDesign*/ ctx[35].type,
-    				materialIcon: /*typeDesign*/ ctx[35].materialIcon
+    				label: /*typeDesign*/ ctx[43].type,
+    				colorHue: /*typeDesign*/ ctx[43].hue,
+    				isActive: /*type*/ ctx[4] === /*typeDesign*/ ctx[43].type,
+    				materialIcon: /*typeDesign*/ ctx[43].materialIcon
     			},
     			$$inline: true
     		});
 
-    	typebutton.$on("dispatchType", /*receiveType*/ ctx[12]);
+    	typebutton.$on("dispatchType", /*receiveType*/ ctx[13]);
 
     	const block = {
     		c: function create() {
@@ -34784,7 +34784,7 @@
     		},
     		p: function update(ctx, dirty) {
     			const typebutton_changes = {};
-    			if (dirty[0] & /*type*/ 16) typebutton_changes.isActive = /*type*/ ctx[4] === /*typeDesign*/ ctx[35].type;
+    			if (dirty[0] & /*type*/ 16) typebutton_changes.isActive = /*type*/ ctx[4] === /*typeDesign*/ ctx[43].type;
     			typebutton.$set(typebutton_changes);
     		},
     		i: function intro(local) {
@@ -34805,20 +34805,72 @@
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(293:10) {#each typeDesigns as typeDesign}",
+    		source: "(335:10) {#each typeDesigns as typeDesign}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (333:8) {#if suggestedDescriptions}
+    // (384:6) {#if picturePreview}
+    function create_if_block_2$1(ctx) {
+    	let img;
+    	let img_src_value;
+    	let img_intro;
+
+    	const block = {
+    		c: function create() {
+    			img = element("img");
+    			attr_dev(img, "id", "picture-preview");
+    			attr_dev(img, "alt", /*picturePreview*/ ctx[6]);
+    			attr_dev(img, "class", "object-cover h-48 w-full mt-4");
+    			if (img.src !== (img_src_value = /*picturePreview*/ ctx[6])) attr_dev(img, "src", img_src_value);
+    			add_location(img, file$9, 384, 8, 14641);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, img, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*picturePreview*/ 64) {
+    				attr_dev(img, "alt", /*picturePreview*/ ctx[6]);
+    			}
+
+    			if (dirty[0] & /*picturePreview*/ 64 && img.src !== (img_src_value = /*picturePreview*/ ctx[6])) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+    		},
+    		i: function intro(local) {
+    			if (!img_intro) {
+    				add_render_callback(() => {
+    					img_intro = create_in_transition(img, fade, {});
+    					img_intro.start();
+    				});
+    			}
+    		},
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(img);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2$1.name,
+    		type: "if",
+    		source: "(384:6) {#if picturePreview}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (393:8) {#if suggestedDescriptions}
     function create_if_block_1$3(ctx) {
     	let each_blocks = [];
     	let each_1_lookup = new Map_1();
     	let each_1_anchor;
     	let each_value = /*suggestedDescriptions*/ ctx[5];
-    	const get_key = ctx => /*suggestion*/ ctx[32];
+    	const get_key = ctx => /*suggestion*/ ctx[40];
 
     	for (let i = 0; i < each_value.length; i += 1) {
     		let child_ctx = get_each_context$2(ctx, each_value, i);
@@ -34864,24 +34916,24 @@
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(333:8) {#if suggestedDescriptions}",
+    		source: "(393:8) {#if suggestedDescriptions}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (334:10) {#each suggestedDescriptions as suggestion, index (suggestion)}
+    // (394:10) {#each suggestedDescriptions as suggestion, index (suggestion)}
     function create_each_block$2(key_1, ctx) {
     	let button;
-    	let t0_value = /*suggestion*/ ctx[32] + "";
+    	let t0_value = /*suggestion*/ ctx[40] + "";
     	let t0;
     	let t1;
     	let button_intro;
     	let dispose;
 
-    	function click_handler_6(...args) {
-    		return /*click_handler_6*/ ctx[29](/*suggestion*/ ctx[32], ...args);
+    	function click_handler_7(...args) {
+    		return /*click_handler_7*/ ctx[37](/*suggestion*/ ctx[40], ...args);
     	}
 
     	const block = {
@@ -34892,8 +34944,8 @@
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(button, "class", "suggestion-button svelte-1r30idg");
-    			add_location(button, file$9, 334, 12, 13283);
-    			dispose = listen_dev(button, "click", click_handler_6, false, false, false);
+    			add_location(button, file$9, 394, 12, 14997);
+    			dispose = listen_dev(button, "click", click_handler_7, false, false, false);
     			this.first = button;
     		},
     		m: function mount(target, anchor) {
@@ -34903,14 +34955,14 @@
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*suggestedDescriptions*/ 32 && t0_value !== (t0_value = /*suggestion*/ ctx[32] + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*suggestedDescriptions*/ 32 && t0_value !== (t0_value = /*suggestion*/ ctx[40] + "")) set_data_dev(t0, t0_value);
     		},
     		i: function intro(local) {
     			if (!button_intro) {
     				add_render_callback(() => {
     					button_intro = create_in_transition(button, fade, {
     						duration: 180,
-    						delay: 30 * /*index*/ ctx[34]
+    						delay: 30 * /*index*/ ctx[42]
     					});
 
     					button_intro.start();
@@ -34928,14 +34980,14 @@
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(334:10) {#each suggestedDescriptions as suggestion, index (suggestion)}",
+    		source: "(394:10) {#each suggestedDescriptions as suggestion, index (suggestion)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (354:6) {#if Object.keys($entryData).length > 0}
+    // (414:6) {#if Object.keys($entryData).length > 0}
     function create_if_block$7(ctx) {
     	let div;
     	let button;
@@ -34947,10 +34999,10 @@
     			button = element("button");
     			button.textContent = "Delete";
     			attr_dev(button, "class", "sign-out-button svelte-1r30idg");
-    			add_location(button, file$9, 355, 10, 14072);
+    			add_location(button, file$9, 415, 10, 15786);
     			attr_dev(div, "class", "w-full text-center");
-    			add_location(div, file$9, 354, 8, 14028);
-    			dispose = listen_dev(button, "click", /*click_handler_8*/ ctx[31], false, false, false);
+    			add_location(div, file$9, 414, 8, 15742);
+    			dispose = listen_dev(button, "click", /*click_handler_9*/ ctx[39], false, false, false);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -34967,7 +35019,7 @@
     		block,
     		id: create_if_block$7.name,
     		type: "if",
-    		source: "(354:6) {#if Object.keys($entryData).length > 0}",
+    		source: "(414:6) {#if Object.keys($entryData).length > 0}",
     		ctx
     	});
 
@@ -35026,28 +35078,30 @@
     	let t21;
     	let input3;
     	let t22;
+    	let button4;
     	let i2;
     	let div8_class_value;
     	let div8_intro;
     	let t24;
-    	let div9;
     	let t25;
-    	let div10;
-    	let button4;
-    	let t26_value = (/*isUpdate*/ ctx[9] ? "Update" : "Submit") + "";
+    	let div9;
     	let t26;
-    	let button4_class_value;
-    	let button4_disabled_value;
-    	let div10_intro;
+    	let div10;
+    	let button5;
+    	let t27_value = (/*isUpdate*/ ctx[10] ? "Update" : "Submit") + "";
     	let t27;
-    	let show_if = Object.keys(/*$entryData*/ ctx[10]).length > 0;
+    	let button5_class_value;
+    	let button5_disabled_value;
+    	let div10_intro;
+    	let t28;
+    	let show_if = Object.keys(/*$entryData*/ ctx[11]).length > 0;
     	let div13_outro;
     	let current;
     	let dispose;
 
     	function input0_input_handler() {
     		input0_updating = true;
-    		/*input0_input_handler*/ ctx[21].call(input0);
+    		/*input0_input_handler*/ ctx[27].call(input0);
     	}
 
     	let each_value_1 = typeDesigns;
@@ -35061,8 +35115,9 @@
     		each_blocks[i] = null;
     	});
 
-    	let if_block0 = /*suggestedDescriptions*/ ctx[5] && create_if_block_1$3(ctx);
-    	let if_block1 = show_if && create_if_block$7(ctx);
+    	let if_block0 = /*picturePreview*/ ctx[6] && create_if_block_2$1(ctx);
+    	let if_block1 = /*suggestedDescriptions*/ ctx[5] && create_if_block_1$3(ctx);
+    	let if_block2 = show_if && create_if_block$7(ctx);
 
     	const block = {
     		c: function create() {
@@ -35121,122 +35176,130 @@
     			t21 = space();
     			input3 = element("input");
     			t22 = space();
+    			button4 = element("button");
     			i2 = element("i");
     			i2.textContent = "photo_camera";
     			t24 = space();
-    			div9 = element("div");
     			if (if_block0) if_block0.c();
     			t25 = space();
-    			div10 = element("div");
-    			button4 = element("button");
-    			t26 = text(t26_value);
-    			t27 = space();
+    			div9 = element("div");
     			if (if_block1) if_block1.c();
+    			t26 = space();
+    			div10 = element("div");
+    			button5 = element("button");
+    			t27 = text(t27_value);
+    			t28 = space();
+    			if (if_block2) if_block2.c();
     			attr_dev(i0, "class", "material-icons-round fill-current");
     			set_style(i0, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i0, "aria-label", "Back button");
-    			add_location(i0, file$9, 233, 6, 9642);
-    			add_location(button0, file$9, 232, 4, 9626);
+    			add_location(i0, file$9, 275, 6, 10816);
+    			add_location(button0, file$9, 274, 4, 10800);
     			attr_dev(div0, "class", div0_class_value = "w-full flex flex-row p-4 " + (/*scrolling*/ ctx[0] ? "shadow" : "") + " fixed top-0\r\n    justify-between z-10");
     			set_style(div0, "height", "56px");
     			set_style(div0, "background-color", "var(--background-color)");
-    			add_location(div0, file$9, 228, 2, 9442);
+    			add_location(div0, file$9, 270, 2, 10616);
     			attr_dev(label0, "for", "amount-input");
-    			attr_dev(label0, "class", label0_class_value = "" + (null_to_empty(/*amountValid*/ ctx[6] ? "label" : "label label-error") + " svelte-1r30idg"));
-    			add_location(label0, file$9, 247, 8, 10094);
+    			attr_dev(label0, "class", label0_class_value = "" + (null_to_empty(/*amountValid*/ ctx[7] ? "label" : "label label-error") + " svelte-1r30idg"));
+    			add_location(label0, file$9, 289, 8, 11268);
     			attr_dev(input0, "id", "amount-input");
     			attr_dev(input0, "class", "amount text-2xl svelte-1r30idg");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$9, 252, 8, 10240);
+    			add_location(input0, file$9, 294, 8, 11414);
     			attr_dev(div1, "class", "input-row svelte-1r30idg");
-    			add_location(div1, file$9, 246, 6, 10022);
+    			add_location(div1, file$9, 288, 6, 11196);
     			attr_dev(label1, "for", "date-input");
-    			attr_dev(label1, "class", label1_class_value = "" + (null_to_empty(/*dateValid*/ ctx[7] ? "label" : "label label-error") + " svelte-1r30idg"));
-    			add_location(label1, file$9, 261, 8, 10557);
+    			attr_dev(label1, "class", label1_class_value = "" + (null_to_empty(/*dateValid*/ ctx[8] ? "label" : "label label-error") + " svelte-1r30idg"));
+    			add_location(label1, file$9, 303, 8, 11731);
     			attr_dev(button1, "id", "today-button");
     			attr_dev(button1, "class", "date-button active svelte-1r30idg");
-    			add_location(button1, file$9, 267, 10, 10727);
+    			add_location(button1, file$9, 309, 10, 11901);
     			attr_dev(button2, "id", "yesterday-button");
     			attr_dev(button2, "class", "date-button svelte-1r30idg");
-    			add_location(button2, file$9, 273, 10, 10905);
+    			add_location(button2, file$9, 315, 10, 12079);
     			attr_dev(div2, "class", "mr-4");
-    			add_location(div2, file$9, 266, 8, 10697);
+    			add_location(div2, file$9, 308, 8, 11871);
     			attr_dev(div3, "class", "input-row svelte-1r30idg");
-    			add_location(div3, file$9, 260, 6, 10485);
-    			add_location(span, file$9, 286, 8, 11313);
+    			add_location(div3, file$9, 302, 6, 11659);
+    			add_location(span, file$9, 328, 8, 12487);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "svelte-1r30idg");
-    			add_location(input1, file$9, 287, 8, 11346);
+    			add_location(input1, file$9, 329, 8, 12520);
     			attr_dev(div4, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n        ml-4");
     			set_style(div4, "color", "var(--text-color2)");
-    			add_location(div4, file$9, 281, 6, 11114);
+    			add_location(div4, file$9, 323, 6, 12288);
     			attr_dev(label2, "class", "label svelte-1r30idg");
-    			add_location(label2, file$9, 290, 8, 11506);
+    			add_location(label2, file$9, 332, 8, 12680);
     			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div5, file$9, 291, 8, 11549);
+    			add_location(div5, file$9, 333, 8, 12723);
     			attr_dev(div6, "class", "mt-12 flex flex-col");
-    			add_location(div6, file$9, 289, 6, 11423);
+    			add_location(div6, file$9, 331, 6, 12597);
     			attr_dev(label3, "for", "description-input");
     			attr_dev(label3, "class", "label svelte-1r30idg");
-    			add_location(label3, file$9, 305, 8, 12115);
+    			add_location(label3, file$9, 347, 8, 13289);
     			attr_dev(input2, "class", "truncate text-2xl flex-grow svelte-1r30idg");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "(Optional)");
-    			add_location(input2, file$9, 307, 10, 12265);
+    			add_location(input2, file$9, 349, 10, 13439);
     			attr_dev(i1, "id", "location-button");
     			attr_dev(i1, "class", "material-icons-round fill-current mr-4");
     			set_style(i1, "color", "var(--text-color2)");
-    			add_location(i1, file$9, 315, 12, 12602);
-    			add_location(button3, file$9, 314, 10, 12549);
+    			add_location(i1, file$9, 357, 12, 13776);
+    			add_location(button3, file$9, 356, 10, 13723);
+    			attr_dev(input3, "id", "picture-input");
     			attr_dev(input3, "type", "file");
     			attr_dev(input3, "name", "image");
     			attr_dev(input3, "accept", "image/*");
-    			attr_dev(input3, "capture", "");
+    			attr_dev(input3, "capture", "environment");
+    			set_style(input3, "display", "none");
     			attr_dev(input3, "class", "svelte-1r30idg");
-    			add_location(input3, file$9, 322, 10, 12830);
+    			add_location(input3, file$9, 364, 10, 14004);
     			attr_dev(i2, "id", "picture-button");
     			attr_dev(i2, "class", "material-icons-round fill-current");
     			set_style(i2, "color", "var(--text-color2)");
-    			add_location(i2, file$9, 323, 10, 12901);
+    			add_location(i2, file$9, 374, 12, 14362);
+    			add_location(button4, file$9, 372, 10, 14261);
     			attr_dev(div7, "class", "flex w-full justify-between items-center px-4 mt-2");
-    			add_location(div7, file$9, 306, 8, 12189);
+    			add_location(div7, file$9, 348, 8, 13363);
     			attr_dev(div8, "class", div8_class_value = "input-row " + (window.innerWidth < 768 ? "description-row-small" : "") + " svelte-1r30idg");
-    			add_location(div8, file$9, 302, 6, 11967);
+    			add_location(div8, file$9, 344, 6, 13141);
     			attr_dev(div9, "class", "flex mt-4 mx-4 flex-wrap");
-    			add_location(div9, file$9, 331, 6, 13119);
+    			add_location(div9, file$9, 391, 6, 14833);
 
-    			attr_dev(button4, "class", button4_class_value = "submit-button " + (/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
+    			attr_dev(button5, "class", button5_class_value = "submit-button " + (/*typeValid*/ ctx[9] && /*dateValid*/ ctx[8] && /*amountValid*/ ctx[7]
     			? "active"
     			: "inactive cursor-not-allowed") + " svelte-1r30idg");
 
-    			button4.disabled = button4_disabled_value = !(/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]);
-    			add_location(button4, file$9, 346, 8, 13666);
+    			button5.disabled = button5_disabled_value = !(/*typeValid*/ ctx[9] && /*dateValid*/ ctx[8] && /*amountValid*/ ctx[7]);
+    			add_location(button5, file$9, 406, 8, 15380);
     			attr_dev(div10, "class", "w-full text-center block");
-    			add_location(div10, file$9, 343, 6, 13560);
+    			add_location(div10, file$9, 403, 6, 15274);
     			attr_dev(div11, "class", "form-wrapper svelte-1r30idg");
-    			add_location(div11, file$9, 245, 4, 9988);
+    			add_location(div11, file$9, 287, 4, 11162);
     			attr_dev(div12, "class", "flex flex-col items-center justify-around mt-8");
-    			add_location(div12, file$9, 244, 2, 9922);
+    			add_location(div12, file$9, 286, 2, 11096);
     			attr_dev(div13, "id", "entry-page");
     			attr_dev(div13, "class", "h-screen w-full absolute top-0 overflow-y-auto overflow-x-hidden");
     			set_style(div13, "background-color", "var(--background-color)");
     			set_style(div13, "color", "var(--text-color)");
-    			add_location(div13, file$9, 223, 0, 9228);
+    			add_location(div13, file$9, 265, 0, 10402);
 
     			dispose = [
-    				listen_dev(i0, "click", /*click_handler*/ ctx[20], false, false, false),
+    				listen_dev(i0, "click", /*click_handler*/ ctx[26], false, false, false),
     				listen_dev(input0, "input", input0_input_handler),
-    				listen_dev(input0, "click", /*click_handler_1*/ ctx[22], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_2*/ ctx[23], false, false, false),
-    				listen_dev(button2, "click", /*click_handler_3*/ ctx[24], false, false, false),
-    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[25]),
-    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[26]),
-    				listen_dev(input2, "click", /*click_handler_4*/ ctx[27], false, false, false),
-    				listen_dev(button3, "click", /*click_handler_5*/ ctx[28], false, false, false),
-    				listen_dev(button4, "click", /*click_handler_7*/ ctx[30], false, false, false)
+    				listen_dev(input0, "click", /*click_handler_1*/ ctx[28], false, false, false),
+    				listen_dev(button1, "click", /*click_handler_2*/ ctx[29], false, false, false),
+    				listen_dev(button2, "click", /*click_handler_3*/ ctx[30], false, false, false),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[31]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[32]),
+    				listen_dev(input2, "click", /*click_handler_4*/ ctx[33], false, false, false),
+    				listen_dev(button3, "click", /*click_handler_5*/ ctx[34], false, false, false),
+    				listen_dev(input3, "change", /*change_handler*/ ctx[35], false, false, false),
+    				listen_dev(button4, "click", /*click_handler_6*/ ctx[36], false, false, false),
+    				listen_dev(button5, "click", /*click_handler_8*/ ctx[38], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
@@ -35294,16 +35357,19 @@
     			append_dev(div7, t21);
     			append_dev(div7, input3);
     			append_dev(div7, t22);
-    			append_dev(div7, i2);
+    			append_dev(div7, button4);
+    			append_dev(button4, i2);
     			append_dev(div11, t24);
-    			append_dev(div11, div9);
-    			if (if_block0) if_block0.m(div9, null);
+    			if (if_block0) if_block0.m(div11, null);
     			append_dev(div11, t25);
+    			append_dev(div11, div9);
+    			if (if_block1) if_block1.m(div9, null);
+    			append_dev(div11, t26);
     			append_dev(div11, div10);
-    			append_dev(div10, button4);
-    			append_dev(button4, t26);
-    			append_dev(div11, t27);
-    			if (if_block1) if_block1.m(div11, null);
+    			append_dev(div10, button5);
+    			append_dev(button5, t27);
+    			append_dev(div11, t28);
+    			if (if_block2) if_block2.m(div11, null);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -35311,7 +35377,7 @@
     				attr_dev(div0, "class", div0_class_value);
     			}
 
-    			if (!current || dirty[0] & /*amountValid*/ 64 && label0_class_value !== (label0_class_value = "" + (null_to_empty(/*amountValid*/ ctx[6] ? "label" : "label label-error") + " svelte-1r30idg"))) {
+    			if (!current || dirty[0] & /*amountValid*/ 128 && label0_class_value !== (label0_class_value = "" + (null_to_empty(/*amountValid*/ ctx[7] ? "label" : "label label-error") + " svelte-1r30idg"))) {
     				attr_dev(label0, "class", label0_class_value);
     			}
 
@@ -35321,7 +35387,7 @@
 
     			input0_updating = false;
 
-    			if (!current || dirty[0] & /*dateValid*/ 128 && label1_class_value !== (label1_class_value = "" + (null_to_empty(/*dateValid*/ ctx[7] ? "label" : "label label-error") + " svelte-1r30idg"))) {
+    			if (!current || dirty[0] & /*dateValid*/ 256 && label1_class_value !== (label1_class_value = "" + (null_to_empty(/*dateValid*/ ctx[8] ? "label" : "label label-error") + " svelte-1r30idg"))) {
     				attr_dev(label1, "class", label1_class_value);
     			}
 
@@ -35329,7 +35395,7 @@
     				set_input_value(input1, /*date*/ ctx[3]);
     			}
 
-    			if (dirty[0] & /*type, receiveType*/ 4112) {
+    			if (dirty[0] & /*type, receiveType*/ 8208) {
     				each_value_1 = typeDesigns;
     				let i;
 
@@ -35360,46 +35426,61 @@
     				set_input_value(input2, /*description*/ ctx[1]);
     			}
 
-    			if (/*suggestedDescriptions*/ ctx[5]) {
+    			if (/*picturePreview*/ ctx[6]) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     					transition_in(if_block0, 1);
     				} else {
-    					if_block0 = create_if_block_1$3(ctx);
+    					if_block0 = create_if_block_2$1(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
-    					if_block0.m(div9, null);
+    					if_block0.m(div11, t25);
     				}
     			} else if (if_block0) {
     				if_block0.d(1);
     				if_block0 = null;
     			}
 
-    			if ((!current || dirty[0] & /*isUpdate*/ 512) && t26_value !== (t26_value = (/*isUpdate*/ ctx[9] ? "Update" : "Submit") + "")) set_data_dev(t26, t26_value);
-
-    			if (!current || dirty[0] & /*typeValid, dateValid, amountValid*/ 448 && button4_class_value !== (button4_class_value = "submit-button " + (/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
-    			? "active"
-    			: "inactive cursor-not-allowed") + " svelte-1r30idg")) {
-    				attr_dev(button4, "class", button4_class_value);
-    			}
-
-    			if (!current || dirty[0] & /*typeValid, dateValid, amountValid*/ 448 && button4_disabled_value !== (button4_disabled_value = !(/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]))) {
-    				prop_dev(button4, "disabled", button4_disabled_value);
-    			}
-
-    			if (dirty[0] & /*$entryData*/ 1024) show_if = Object.keys(/*$entryData*/ ctx[10]).length > 0;
-
-    			if (show_if) {
+    			if (/*suggestedDescriptions*/ ctx[5]) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
+    					transition_in(if_block1, 1);
     				} else {
-    					if_block1 = create_if_block$7(ctx);
+    					if_block1 = create_if_block_1$3(ctx);
     					if_block1.c();
-    					if_block1.m(div11, null);
+    					transition_in(if_block1, 1);
+    					if_block1.m(div9, null);
     				}
     			} else if (if_block1) {
     				if_block1.d(1);
     				if_block1 = null;
+    			}
+
+    			if ((!current || dirty[0] & /*isUpdate*/ 1024) && t27_value !== (t27_value = (/*isUpdate*/ ctx[10] ? "Update" : "Submit") + "")) set_data_dev(t27, t27_value);
+
+    			if (!current || dirty[0] & /*typeValid, dateValid, amountValid*/ 896 && button5_class_value !== (button5_class_value = "submit-button " + (/*typeValid*/ ctx[9] && /*dateValid*/ ctx[8] && /*amountValid*/ ctx[7]
+    			? "active"
+    			: "inactive cursor-not-allowed") + " svelte-1r30idg")) {
+    				attr_dev(button5, "class", button5_class_value);
+    			}
+
+    			if (!current || dirty[0] & /*typeValid, dateValid, amountValid*/ 896 && button5_disabled_value !== (button5_disabled_value = !(/*typeValid*/ ctx[9] && /*dateValid*/ ctx[8] && /*amountValid*/ ctx[7]))) {
+    				prop_dev(button5, "disabled", button5_disabled_value);
+    			}
+
+    			if (dirty[0] & /*$entryData*/ 2048) show_if = Object.keys(/*$entryData*/ ctx[11]).length > 0;
+
+    			if (show_if) {
+    				if (if_block2) {
+    					if_block2.p(ctx, dirty);
+    				} else {
+    					if_block2 = create_if_block$7(ctx);
+    					if_block2.c();
+    					if_block2.m(div11, null);
+    				}
+    			} else if (if_block2) {
+    				if_block2.d(1);
+    				if_block2 = null;
     			}
     		},
     		i: function intro(local) {
@@ -35445,6 +35526,7 @@
     			}
 
     			transition_in(if_block0);
+    			transition_in(if_block1);
 
     			if (!div10_intro) {
     				add_render_callback(() => {
@@ -35471,6 +35553,7 @@
     			destroy_each(each_blocks, detaching);
     			if (if_block0) if_block0.d();
     			if (if_block1) if_block1.d();
+    			if (if_block2) if_block2.d();
     			if (detaching && div13_outro) div13_outro.end();
     			run_all(dispose);
     		}
@@ -35491,9 +35574,9 @@
     	let $entryData;
     	let $userInfo;
     	validate_store(entryData, "entryData");
-    	component_subscribe($$self, entryData, $$value => $$invalidate(10, $entryData = $$value));
+    	component_subscribe($$self, entryData, $$value => $$invalidate(11, $entryData = $$value));
     	validate_store(userInfo, "userInfo");
-    	component_subscribe($$self, userInfo, $$value => $$invalidate(18, $userInfo = $$value));
+    	component_subscribe($$self, userInfo, $$value => $$invalidate(22, $userInfo = $$value));
     	let scrolling = false;
     	let description = "";
     	let amount = 0;
@@ -35501,6 +35584,9 @@
     	let type = "Food";
     	let suggestedDescriptions = [];
     	let gpsPlaces = [];
+    	let pictureFile;
+    	let picturePreview;
+    	let pictureURL;
     	let amountValid = false;
     	let dateValid = false;
     	let typeValid = false;
@@ -35517,7 +35603,7 @@
 
     	onMount(() => {
     		if (Object.keys($entryData).length > 0) {
-    			$$invalidate(9, isUpdate = true);
+    			$$invalidate(10, isUpdate = true);
     			$$invalidate(1, description = $entryData.desc);
     			$$invalidate(2, amount = $entryData.amount);
     			$$invalidate(3, date = $entryData.date);
@@ -35567,11 +35653,21 @@
     		$$invalidate(4, type = e.detail.selectedType);
     	}
 
-    	function sendEntry() {
-    		handleRouting("dashboard");
-    		view.set("dashboard");
-    		overlay.set("");
-    		toastMessage.set("Submitting...");
+    	function uploadPictureAndFirestore() {
+    		const storage = firebase$1.storage().ref().child("expense_pics/" + pictureFile.name);
+
+    		storage.put(pictureFile).then(snapshot => {
+    			snapshot.ref.getDownloadURL().then(url => {
+    				pictureURL = url;
+    				writeToFirestore();
+    			});
+    		}).catch(error => {
+    			toastMessage.set(error.message);
+    			setTimeout(() => toastMessage.set(""), 3000);
+    		});
+    	}
+
+    	function writeToFirestore() {
     		const db = firebase$1.firestore();
     		const newId = Date.now().toString() + amount;
 
@@ -35582,15 +35678,29 @@
     			type,
     			addedBy: $userInfo.name,
     			addedOn: getDateString(),
-    			id: $entryData.id ? $entryData.id : newId
+    			id: $entryData.id ? $entryData.id : newId,
+    			picture: pictureURL ? pictureURL : ""
     		}).then(() => {
     			toastMessage.set("Expense created!");
     			setTimeout(() => toastMessage.set(""), 1000);
     			dashboardShouldReload.set(true);
     		}).catch(error => {
-    			toastMessage.set(error);
+    			toastMessage.set(error.message);
     			setTimeout(() => toastMessage.set(""), 3000);
     		});
+    	}
+
+    	function sendEntry() {
+    		handleRouting("dashboard");
+    		view.set("dashboard");
+    		overlay.set("");
+    		toastMessage.set("Submitting...");
+
+    		if (pictureFile) {
+    			uploadPictureAndFirestore();
+    		} else {
+    			writeToFirestore();
+    		}
     	}
 
     	function deleteEntry() {
@@ -35610,7 +35720,7 @@
 
     	function getLocation() {
     		if (navigator.geolocation) {
-    			document.getElementById("location-button").style.setProperty("color", "red");
+    			document.getElementById("location-button").style.setProperty("color", "hsl(var(--accent-hue), 50%, 50%)");
 
     			navigator.geolocation.getCurrentPosition(
     				pos => {
@@ -35634,6 +35744,21 @@
     		} else {
     			toastMessage.set("Unable to get your location");
     			setTimeout(() => toastMessage.set(""), 3000);
+    		}
+    	}
+
+    	function getPicture(result) {
+    		pictureFile = result.target.files[0];
+
+    		if (!pictureFile.type.match(/^image\//)) {
+    			toastMessage.set("Please select an image file!");
+    			setTimeout(() => toastMessage.set(""), 3000);
+    		} else if (pictureFile.size > 5242880) {
+    			toastMessage.set("Pictures must be less than 5mb!");
+    			setTimeout(() => toastMessage.set(""), 3000);
+    		} else {
+    			document.getElementById("picture-button").style.setProperty("color", "hsl(var(--secondary-hue), 50%, 50%)");
+    			$$invalidate(6, picturePreview = URL.createObjectURL(pictureFile));
     		}
     	}
 
@@ -35662,9 +35787,11 @@
 
     	const click_handler_4 = () => document.execCommand("selectall", null, false);
     	const click_handler_5 = () => getLocation();
-    	const click_handler_6 = suggestion => $$invalidate(1, description = suggestion);
-    	const click_handler_7 = () => sendEntry();
-    	const click_handler_8 = () => deleteEntry();
+    	const change_handler = result => getPicture(result);
+    	const click_handler_6 = () => document.getElementById("picture-input").click();
+    	const click_handler_7 = suggestion => $$invalidate(1, description = suggestion);
+    	const click_handler_8 = () => sendEntry();
+    	const click_handler_9 = () => deleteEntry();
 
     	$$self.$capture_state = () => {
     		return {};
@@ -35678,10 +35805,13 @@
     		if ("type" in $$props) $$invalidate(4, type = $$props.type);
     		if ("suggestedDescriptions" in $$props) $$invalidate(5, suggestedDescriptions = $$props.suggestedDescriptions);
     		if ("gpsPlaces" in $$props) gpsPlaces = $$props.gpsPlaces;
-    		if ("amountValid" in $$props) $$invalidate(6, amountValid = $$props.amountValid);
-    		if ("dateValid" in $$props) $$invalidate(7, dateValid = $$props.dateValid);
-    		if ("typeValid" in $$props) $$invalidate(8, typeValid = $$props.typeValid);
-    		if ("isUpdate" in $$props) $$invalidate(9, isUpdate = $$props.isUpdate);
+    		if ("pictureFile" in $$props) pictureFile = $$props.pictureFile;
+    		if ("picturePreview" in $$props) $$invalidate(6, picturePreview = $$props.picturePreview);
+    		if ("pictureURL" in $$props) pictureURL = $$props.pictureURL;
+    		if ("amountValid" in $$props) $$invalidate(7, amountValid = $$props.amountValid);
+    		if ("dateValid" in $$props) $$invalidate(8, dateValid = $$props.dateValid);
+    		if ("typeValid" in $$props) $$invalidate(9, typeValid = $$props.typeValid);
+    		if ("isUpdate" in $$props) $$invalidate(10, isUpdate = $$props.isUpdate);
     		if ("wrapperEl" in $$props) wrapperEl = $$props.wrapperEl;
     		if ("$entryData" in $$props) entryData.set($entryData = $$props.$entryData);
     		if ("$userInfo" in $$props) userInfo.set($userInfo = $$props.$userInfo);
@@ -35690,26 +35820,26 @@
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty[0] & /*amount*/ 4) {
     			$: if (amount <= 0 || amount === undefined) {
-    				$$invalidate(6, amountValid = false);
+    				$$invalidate(7, amountValid = false);
     			} else {
-    				$$invalidate(6, amountValid = true);
+    				$$invalidate(7, amountValid = true);
     			}
     		}
 
     		if ($$self.$$.dirty[0] & /*date*/ 8) {
     			$: if (date !== "") {
-    				$$invalidate(7, dateValid = true);
+    				$$invalidate(8, dateValid = true);
     			} else {
-    				$$invalidate(7, dateValid = false);
+    				$$invalidate(8, dateValid = false);
     			}
     		}
 
     		if ($$self.$$.dirty[0] & /*type*/ 16) {
     			$: if (type !== "") {
-    				$$invalidate(8, typeValid = true);
+    				$$invalidate(9, typeValid = true);
     				$$invalidate(5, suggestedDescriptions = commonDescriptions.get(type));
     			} else {
-    				$$invalidate(8, typeValid = false);
+    				$$invalidate(9, typeValid = false);
     			}
     		}
     	};
@@ -35721,6 +35851,7 @@
     		date,
     		type,
     		suggestedDescriptions,
+    		picturePreview,
     		amountValid,
     		dateValid,
     		typeValid,
@@ -35731,10 +35862,15 @@
     		sendEntry,
     		deleteEntry,
     		getLocation,
+    		getPicture,
     		gpsPlaces,
+    		pictureFile,
+    		pictureURL,
     		wrapperEl,
     		$userInfo,
     		commonDescriptions,
+    		uploadPictureAndFirestore,
+    		writeToFirestore,
     		click_handler,
     		input0_input_handler,
     		click_handler_1,
@@ -35744,9 +35880,11 @@
     		input2_input_handler,
     		click_handler_4,
     		click_handler_5,
+    		change_handler,
     		click_handler_6,
     		click_handler_7,
-    		click_handler_8
+    		click_handler_8,
+    		click_handler_9
     	];
     }
 
@@ -35775,7 +35913,7 @@
     }
 
     // (202:63) 
-    function create_if_block_2$1(ctx) {
+    function create_if_block_2$2(ctx) {
     	let div;
     	let span0;
     	let t1;
@@ -35861,7 +35999,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$1.name,
+    		id: create_if_block_2$2.name,
     		type: "if",
     		source: "(202:63) ",
     		ctx
@@ -36079,7 +36217,7 @@
     	let div4_outro;
     	let current;
     	let dispose;
-    	const if_block_creators = [create_if_block$8, create_if_block_2$1];
+    	const if_block_creators = [create_if_block$8, create_if_block_2$2];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -36709,7 +36847,7 @@
     }
 
     // (142:2) {#if $overlay === 'detail'}
-    function create_if_block_2$2(ctx) {
+    function create_if_block_2$3(ctx) {
     	let current;
     	const detailpage = new DetailPage({ $$inline: true });
 
@@ -36737,7 +36875,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$2.name,
+    		id: create_if_block_2$3.name,
     		type: "if",
     		source: "(142:2) {#if $overlay === 'detail'}",
     		ctx
@@ -36848,7 +36986,7 @@
     			$$inline: true
     		});
 
-    	const if_block_creators = [create_if_block_2$2, create_if_block_3, create_if_block_4];
+    	const if_block_creators = [create_if_block_2$3, create_if_block_3, create_if_block_4];
     	const if_blocks = [];
 
     	function select_block_type_1(ctx, dirty) {
