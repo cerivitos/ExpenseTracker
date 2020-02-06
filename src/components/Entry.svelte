@@ -59,6 +59,12 @@
 
       document.getElementById("today-button").classList.remove("active");
       document.getElementById("yesterday-button").classList.remove("active");
+
+      if (pictureURL) {
+        document
+          .getElementById("picture-button")
+          .style.setProperty("color", "hsl(var(--secondary-hue), 50%, 50%)");
+      }
     }
 
     wrapperEl = document.getElementById("entry-page");
