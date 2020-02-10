@@ -12,10 +12,17 @@
   import { onMount, onDestroy } from "svelte";
   import TypeButton from "./TypeButton.svelte";
   import LoadingSpinner from "./LoadingSpinner.svelte";
-  import { typeDesigns, handleRouting, getDateString } from "../util";
+  import {
+    typeDesigns,
+    handleRouting,
+    getDateString,
+    getOrientation
+  } from "../util";
   import { fly, fade } from "svelte/transition";
   import firebase from "firebase/app";
   import "firebase/firestore";
+  import "firebase/storage";
+  import fixOrientation from "fix-orientation";
 
   let scrolling = false;
 
@@ -25,6 +32,9 @@
   let type = "Food";
   let suggestedDescriptions = [];
   let gpsPlaces = [];
+  let pictureFile;
+  let pictureOrientation;
+  let pictureURL;
 
   let amountValid = false;
   let dateValid = false;
@@ -51,9 +61,37 @@
       amount = $entryData.amount;
       date = $entryData.date;
       type = $entryData.type;
+      pictureURL = $entryData.pictureURL;
 
       document.getElementById("today-button").classList.remove("active");
       document.getElementById("yesterday-button").classList.remove("active");
+
+      if (pictureURL) {
+        document
+          .getElementById("picture-button")
+          .style.setProperty("color", "hsl(var(--secondary-hue), 50%, 50%)");
+
+        loadImage(
+          pictureURL,
+          img => {
+            const previewEl = document.getElementById("picture-preview");
+            if (previewEl && previewEl.childElementCount > 0)
+              previewEl.removeChild(previewEl.firstChild);
+
+            document.getElementById("picture-preview").appendChild(img);
+          },
+          {
+            orientation:
+              $entryData.pictureOrientation ||
+              $entryData.pictureOrientation.length > 0
+                ? $entryData.pictureOrientation
+                : true,
+            contain: true,
+            maxWidth: window.innerWidth,
+            minWidth: window.innerWidth
+          }
+        );
+      }
     }
 
     wrapperEl = document.getElementById("entry-page");
@@ -97,15 +135,42 @@
     type = e.detail.selectedType;
   }
 
-  function sendEntry() {
-    handleRouting("dashboard");
-    view.set("dashboard");
-    overlay.set("");
+  function uploadPictureAndFirestore() {
+    const storage = firebase
+      .storage()
+      .ref()
+      .child("expense_pics/" + pictureFile.name);
 
-    toastMessage.set("Submitting...");
+    storage
+      .put(pictureFile)
+      .then(snapshot => {
+        snapshot.ref.getDownloadURL().then(url => {
+          pictureURL = url;
+          writeToFirestore();
+        });
+      })
+      .catch(error => {
+        toastMessage.set(error.message);
+        setTimeout(() => toastMessage.set(""), 3000);
+      });
+  }
 
+  function writeToFirestore() {
     const db = firebase.firestore();
     const newId = Date.now().toString() + amount;
+
+    let _pictureURL, _pictureName;
+
+    if (pictureFile) {
+      _pictureURL = pictureURL;
+      _pictureName = pictureFile.name;
+    } else if (pictureURL && !pictureFile) {
+      _pictureURL = pictureURL;
+      _pictureName = $entryData.pictureName;
+    } else {
+      _pictureURL = "";
+      _pictureName = "";
+    }
 
     db.collection("expenses")
       .doc($entryData.id ? $entryData.id : newId)
@@ -116,7 +181,10 @@
         type: type,
         addedBy: $userInfo.name,
         addedOn: getDateString(),
-        id: $entryData.id ? $entryData.id : newId
+        id: $entryData.id ? $entryData.id : newId,
+        pictureURL: _pictureURL,
+        pictureName: _pictureName,
+        pictureOrientation: pictureOrientation ? pictureOrientation : ""
       })
       .then(() => {
         toastMessage.set("Expense created!");
@@ -124,9 +192,23 @@
         dashboardShouldReload.set(true);
       })
       .catch(error => {
-        toastMessage.set(error);
+        toastMessage.set(error.message);
         setTimeout(() => toastMessage.set(""), 3000);
       });
+  }
+
+  function sendEntry() {
+    handleRouting("dashboard");
+    view.set("dashboard");
+    overlay.set("");
+
+    toastMessage.set("Submitting...");
+
+    if (pictureFile) {
+      uploadPictureAndFirestore();
+    } else {
+      writeToFirestore();
+    }
   }
 
   function deleteEntry() {
@@ -138,9 +220,28 @@
       .doc($entryData.id)
       .delete()
       .then(() => {
-        toastMessage.set("Entry deleted");
-        setTimeout(() => toastMessage.set(""), 1000);
-        dashboardShouldReload.set(true);
+        if ($entryData.pictureURL) {
+          const picture = firebase
+            .storage()
+            .ref()
+            .child("expense_pics/" + $entryData.pictureName);
+
+          picture
+            .delete()
+            .then(() => {
+              toastMessage.set("Entry deleted");
+              setTimeout(() => toastMessage.set(""), 1000);
+              dashboardShouldReload.set(true);
+            })
+            .catch(error => {
+              toastMessage.set(error.message);
+              setTimeout(() => toastMessage.set(""), 1000);
+            });
+        } else {
+          toastMessage.set("Entry deleted");
+          setTimeout(() => toastMessage.set(""), 1000);
+          dashboardShouldReload.set(true);
+        }
       })
       .catch(error => {
         toastMessage.set(error);
@@ -152,7 +253,7 @@
     if (navigator.geolocation) {
       document
         .getElementById("location-button")
-        .style.setProperty("color", "red");
+        .style.setProperty("color", "hsl(var(--accent-hue), 50%, 50%)");
 
       navigator.geolocation.getCurrentPosition(
         pos => {
@@ -182,6 +283,46 @@
         {
           timeout: 500,
           enableHighAccuracy: true
+        }
+      );
+    } else {
+      toastMessage.set("Unable to get your location");
+      setTimeout(() => toastMessage.set(""), 3000);
+    }
+  }
+
+  function getPicture(result) {
+    pictureFile = result.target.files[0];
+
+    if (!pictureFile.type.match(/^image\//)) {
+      toastMessage.set("Please select an image file!");
+      setTimeout(() => toastMessage.set(""), 3000);
+    } else if (pictureFile.size > 5242880) {
+      toastMessage.set("Pictures must be less than 5mb!");
+      setTimeout(() => toastMessage.set(""), 3000);
+    } else {
+      document
+        .getElementById("picture-button")
+        .style.setProperty("color", "hsl(var(--secondary-hue), 50%, 50%)");
+
+      loadImage(
+        pictureFile,
+        (img, data) => {
+          pictureURL = img.src;
+
+          if (data.exif) pictureOrientation = data.exif.get("Orientation");
+
+          const previewEl = document.getElementById("picture-preview");
+          if (previewEl && previewEl.childElementCount > 0)
+            previewEl.removeChild(previewEl.firstChild);
+
+          document.getElementById("picture-preview").appendChild(img);
+        },
+        {
+          orientation: true,
+          contain: true,
+          maxWidth: window.innerWidth,
+          minWidth: window.innerWidth
         }
       );
     }
@@ -421,13 +562,30 @@
           <button on:click={() => getLocation()}>
             <i
               id="location-button"
-              class="material-icons-round fill-current"
+              class="material-icons-round fill-current mr-4"
               style="color: var(--text-color2)">
               location_on
             </i>
           </button>
+          <input
+            id="picture-input"
+            type="file"
+            name="image"
+            accept="image/*"
+            style="display:none"
+            on:change={result => getPicture(result)} />
+          <button
+            on:click={() => document.getElementById('picture-input').click()}>
+            <i
+              id="picture-button"
+              class="material-icons-round fill-current"
+              style="color: var(--text-color2)">
+              photo_camera
+            </i>
+          </button>
         </div>
       </div>
+      <div id="picture-preview" class="w-full mt-4" />
       <div class="flex mt-4 mx-4 flex-wrap">
         {#if suggestedDescriptions}
           {#each suggestedDescriptions as suggestion, index (suggestion)}
