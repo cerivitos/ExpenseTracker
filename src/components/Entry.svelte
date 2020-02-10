@@ -17,7 +17,7 @@
   import firebase from "firebase/app";
   import "firebase/firestore";
   import "firebase/storage";
-  import "fix-orientation";
+  import fixOrientation from "fix-orientation";
 
   let scrolling = false;
 
@@ -280,13 +280,15 @@
 
       const unrotatedPicturePreview = URL.createObjectURL(pictureFile);
 
-      fixOrientation(
-        unrotatedPicturePreview,
-        { image: true },
-        (fixed, image) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(pictureFile);
+
+      reader.onload = ev => {
+        const url = ev.target.result;
+        fixOrientation(url, { image: true }, (fixed, image) => {
           picturePreview = fixed;
-        }
-      );
+        });
+      };
     }
   }
 
