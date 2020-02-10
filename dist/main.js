@@ -2970,7 +2970,7 @@
 
     var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global$1 !== 'undefined' ? global$1 : typeof self !== 'undefined' ? self : {};
 
-    var g,goog=goog||{},k=commonjsGlobal;function m(a){return "string"==typeof a}function aa(a){return "number"==typeof a}function n(a,b){a=a.split(".");b=b||k;for(var c=0;c<a.length;c++)if(b=b[a[c]],null==b)return null;return b}function ba(){}
+    var g,goog=goog||{},k=commonjsGlobal;function m(a){return "string"==typeof a}function aa(a){return "number"==typeof a}function n$1(a,b){a=a.split(".");b=b||k;for(var c=0;c<a.length;c++)if(b=b[a[c]],null==b)return null;return b}function ba(){}
     function p(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return "array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return "object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return "array";if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("call"))return "function"}else return "null";
     else if("function"==b&&"undefined"==typeof a.call)return "object";return b}function q(a){return "array"==p(a)}function ca(a){var b=p(a);return "array"==b||"object"==b&&"number"==typeof a.length}function r(a){var b=typeof a;return "object"==b&&null!=a||"function"==b}var t="closure_uid_"+(1E9*Math.random()>>>0),da=0;function ea(a,b,c){return a.call.apply(a.bind,arguments)}
     function fa(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var e=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(e,d);return a.apply(b,e)}}return function(){return a.apply(b,arguments)}}function u(a,b,c){Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?u=ea:u=fa;return u.apply(null,arguments)}
@@ -2985,7 +2985,7 @@
     function eb(a,b,c,d,e,f){if(!b)throw Error("Invalid event type");var h=r(e)?!!e.capture:!!e;if(h&&!Pa)return null;var l=fb(a);l||(a[Za]=l=new Wa(a));c=l.add(b,c,d,h,f);if(c.proxy)return c;d=gb();c.proxy=d;d.src=a;d.listener=c;if(a.addEventListener)Ra||(e=h),void 0===e&&(e=!1),a.addEventListener(b.toString(),d,e);else if(a.attachEvent)a.attachEvent(hb(b.toString()),d);else if(a.addListener&&a.removeListener)a.addListener(d);else throw Error("addEventListener and attachEvent are unavailable.");return c}function gb(){var a=ib,b=Pa?function(c){return a.call(b.src,b.listener,c)}:function(c){c=a.call(b.src,b.listener,c);if(!c)return c};return b}function cb(a,b,c,d,e){if(q(b)){for(var f=0;f<b.length;f++)cb(a,b[f],c,d,e);return null}c=db(c);return a&&a[F]?a.Aa(b,c,r(d)?!!d.capture:!!d,e):eb(a,b,c,!0,d,e)}
     function jb(a,b,c,d,e){if(q(b))for(var f=0;f<b.length;f++)jb(a,b[f],c,d,e);else(d=r(d)?!!d.capture:!!d,c=db(c),a&&a[F])?(a=a.c,b=String(b).toString(),b in a.a&&(f=a.a[b],c=Xa(f,c,d,e),-1<c&&(Va(f[c]),Array.prototype.splice.call(f,c,1),0==f.length&&(delete a.a[b],a.b--)))):a&&(a=fb(a))&&(b=a.a[b.toString()],a=-1,b&&(a=Xa(b,c,d,e)),(c=-1<a?b[a]:null)&&kb(c));}
     function kb(a){if(!aa(a)&&a&&!a.X){var b=a.src;if(b&&b[F])Ya(b.c,a);else{var c=a.type,d=a.proxy;b.removeEventListener?b.removeEventListener(c,d,a.capture):b.detachEvent?b.detachEvent(hb(c),d):b.addListener&&b.removeListener&&b.removeListener(d);(c=fb(b))?(Ya(c,a),0==c.b&&(c.src=null,b[Za]=null)):Va(a);}}}function hb(a){return a in $a?$a[a]:$a[a]="on"+a}function lb(a,b){var c=a.listener,d=a.da||a.src;a.Z&&kb(a);return c.call(d,b)}
-    function ib(a,b){return a.X?!0:Pa?lb(a,new D(b,this)):(b=new D(b||n("window.event"),this),lb(a,b))}function fb(a){a=a[Za];return a instanceof Wa?a:null}var mb="__closure_events_fn_"+(1E9*Math.random()>>>0);function db(a){if("function"==p(a))return a;a[mb]||(a[mb]=function(b){return a.handleEvent(b)});return a[mb]}function G(){y.call(this);this.c=new Wa(this);this.J=this;this.B=null;}x(G,y);G.prototype[F]=!0;g=G.prototype;g.addEventListener=function(a,b,c,d){bb(this,a,b,c,d);};g.removeEventListener=function(a,b,c,d){jb(this,a,b,c,d);};
+    function ib(a,b){return a.X?!0:Pa?lb(a,new D(b,this)):(b=new D(b||n$1("window.event"),this),lb(a,b))}function fb(a){a=a[Za];return a instanceof Wa?a:null}var mb="__closure_events_fn_"+(1E9*Math.random()>>>0);function db(a){if("function"==p(a))return a;a[mb]||(a[mb]=function(b){return a.handleEvent(b)});return a[mb]}function G(){y.call(this);this.c=new Wa(this);this.J=this;this.B=null;}x(G,y);G.prototype[F]=!0;g=G.prototype;g.addEventListener=function(a,b,c,d){bb(this,a,b,c,d);};g.removeEventListener=function(a,b,c,d){jb(this,a,b,c,d);};
     g.dispatchEvent=function(a){var b,c=this.B;if(c)for(b=[];c;c=c.B)b.push(c);c=this.J;var d=a.type||a;if(m(a))a=new C(a,c);else if(a instanceof C)a.target=a.target||c;else{var e=a;a=new C(d,c);ya(a,e);}e=!0;if(b)for(var f=b.length-1;0<=f;f--){var h=a.a=b[f];e=nb(h,d,!0,a)&&e;}h=a.a=c;e=nb(h,d,!0,a)&&e;e=nb(h,d,!1,a)&&e;if(b)for(f=0;f<b.length;f++)h=a.a=b[f],e=nb(h,d,!1,a)&&e;return e};
     g.G=function(){G.N.G.call(this);if(this.c){var a=this.c,c;for(c in a.a){for(var d=a.a[c],e=0;e<d.length;e++)Va(d[e]);delete a.a[c];a.b--;}}this.B=null;};g.za=function(a,b,c,d){return this.c.add(String(a),b,!1,c,d)};g.Aa=function(a,b,c,d){return this.c.add(String(a),b,!0,c,d)};
     function nb(a,b,c,d){b=a.c.a[String(b)];if(!b)return !0;b=b.concat();for(var e=!0,f=0;f<b.length;++f){var h=b[f];if(h&&!h.X&&h.capture==c){var l=h.listener,E=h.da||h.src;h.Z&&Ya(a.c,h);e=!1!==l.call(E,d)&&e;}}return e&&0!=d.Ia}var ob=k.JSON.stringify;function pb(a,b){this.c=a;this.f=b;this.b=0;this.a=null;}pb.prototype.get=function(){if(0<this.b){this.b--;var a=this.a;this.a=a.next;a.next=null;}else a=this.c();return a};function qb(){this.b=this.a=null;}var sb=new pb(function(){return new rb},function(a){a.reset();});qb.prototype.add=function(a,b){var c=sb.get();c.set(a,b);this.b?this.b.next=c:this.a=c;this.b=c;};function tb(){var a=ub,b=null;a.a&&(b=a.a,a.a=a.a.next,a.a||(a.b=null),b.next=null);return b}function rb(){this.next=this.b=this.a=null;}rb.prototype.set=function(a,b){this.a=a;this.b=b;this.next=null;};rb.prototype.reset=function(){this.next=this.b=this.a=null;};function vb(a){k.setTimeout(function(){throw a;},0);}function wb(a,b){xb||yb();zb||(xb(),zb=!0);ub.add(a,b);}var xb;function yb(){var a=k.Promise.resolve(void 0);xb=function(){a.then(Ab);};}var zb=!1,ub=new qb;function Ab(){for(var a;a=tb();){try{a.a.call(a.b);}catch(c){vb(c);}var b=sb;b.f(a);100>b.b&&(b.b++,a.next=b.a,b.a=a);}zb=!1;}function Cb(a,b){G.call(this);this.b=a||1;this.a=b||k;this.f=u(this.fb,this);this.g=w();}x(Cb,G);g=Cb.prototype;g.ba=!1;g.L=null;g.fb=function(){if(this.ba){var a=w()-this.g;0<a&&a<.8*this.b?this.L=this.a.setTimeout(this.f,this.b-a):(this.L&&(this.a.clearTimeout(this.L),this.L=null),this.dispatchEvent("tick"),this.ba&&(Db(this),this.start()));}};g.start=function(){this.ba=!0;this.L||(this.L=this.a.setTimeout(this.f,this.b),this.g=w());};function Db(a){a.ba=!1;a.L&&(a.a.clearTimeout(a.L),a.L=null);}
@@ -3017,7 +3017,7 @@
     g.abort=function(a){this.a&&this.b&&(this.b=!1,this.g=!0,this.a.abort(),this.g=!1,this.h=a||7,this.dispatchEvent("complete"),this.dispatchEvent("abort"),wd(this));};g.G=function(){this.a&&(this.b&&(this.b=!1,this.g=!0,this.a.abort(),this.g=!1),wd(this,!0));X.N.G.call(this);};g.Ea=function(){this.j||(this.w||this.l||this.g?xd(this):this.Za());};g.Za=function(){xd(this);};
     function xd(a){if(a.b&&"undefined"!=typeof goog&&(!a.s[1]||4!=O(a)||2!=a.T()))if(a.l&&4==O(a))Eb(a.Ea,0,a);else if(a.dispatchEvent("readystatechange"),4==O(a)){a.b=!1;try{var b=a.T();a:switch(b){case 200:case 201:case 202:case 204:case 206:case 304:case 1223:var c=!0;break a;default:c=!1;}var d;if(!(d=c)){var e;if(e=0===b){var f=String(a.A).match(sc)[1]||null;if(!f&&k.self&&k.self.location){var h=k.self.location.protocol;f=h.substr(0,h.length-1);}e=!qd.test(f?f.toLowerCase():"");}d=e;}if(d)a.dispatchEvent("complete"),
     a.dispatchEvent("success");else{a.h=6;try{var l=2<O(a)?a.a.statusText:"";}catch(E){l="";}a.f=l+" ["+a.T()+"]";vd(a);}}finally{wd(a);}}}function wd(a,b){if(a.a){td(a);var c=a.a,d=a.s[0]?ba:null;a.a=null;a.s=null;b||a.dispatchEvent("ready");try{c.onreadystatechange=d;}catch(e){}}}function td(a){a.a&&a.D&&(a.a.ontimeout=null);a.m&&(k.clearTimeout(a.m),a.m=null);}function O(a){return a.a?a.a.readyState:0}g.T=function(){try{return 2<O(this)?this.a.status:-1}catch(a){return -1}};
-    g.aa=function(){try{return this.a?this.a.responseText:""}catch(a){return ""}};g.Ua=function(a){if(this.a){var b=this.a.responseText;a&&0==b.indexOf(a)&&(b=b.substring(a.length));return od(b)}};function hc(a,b){return a.a?a.a.getResponseHeader(b):null}g.ya=function(){return this.h};g.Xa=function(){return m(this.f)?this.f:String(this.f)};function yd(a){var b="";va(a,function(c,d){b+=d;b+=":";b+=c;b+="\r\n";});return b}function zd(a,b,c){a:{for(d in c){var d=!1;break a}d=!0;}if(d)return a;c=yd(c);if(m(a)){b=encodeURIComponent(String(b));c=null!=c?"="+encodeURIComponent(String(c)):"";if(b+=c){c=a.indexOf("#");0>c&&(c=a.length);d=a.indexOf("?");if(0>d||d>c){d=c;var e="";}else e=a.substring(d+1,c);a=[a.substr(0,d),e,a.substr(c)];c=a[1];a[1]=b?c?c+"&"+b:b:c;a=a[0]+(a[1]?"?"+a[1]:"")+a[2];}return a}T(a,b,c);return a}function Ad(a){this.f=[];this.F=new Xc;this.ga=this.pa=this.B=this.ha=this.a=this.I=this.j=this.V=this.g=this.J=this.i=null;this.Qa=this.P=0;this.Oa=!!n("internalChannelParams.failFast",a);this.ia=this.w=this.s=this.l=this.h=this.c=null;this.oa=!0;this.m=this.ra=this.O=-1;this.S=this.v=this.A=0;this.Na=n("internalChannelParams.baseRetryDelayMs",a)||5E3;this.Ra=n("internalChannelParams.retryDelaySeedMs",a)||1E4;this.Pa=n("internalChannelParams.forwardChannelMaxRetries",a)||2;this.qa=n("internalChannelParams.forwardChannelRequestTimeoutMs",
+    g.aa=function(){try{return this.a?this.a.responseText:""}catch(a){return ""}};g.Ua=function(a){if(this.a){var b=this.a.responseText;a&&0==b.indexOf(a)&&(b=b.substring(a.length));return od(b)}};function hc(a,b){return a.a?a.a.getResponseHeader(b):null}g.ya=function(){return this.h};g.Xa=function(){return m(this.f)?this.f:String(this.f)};function yd(a){var b="";va(a,function(c,d){b+=d;b+=":";b+=c;b+="\r\n";});return b}function zd(a,b,c){a:{for(d in c){var d=!1;break a}d=!0;}if(d)return a;c=yd(c);if(m(a)){b=encodeURIComponent(String(b));c=null!=c?"="+encodeURIComponent(String(c)):"";if(b+=c){c=a.indexOf("#");0>c&&(c=a.length);d=a.indexOf("?");if(0>d||d>c){d=c;var e="";}else e=a.substring(d+1,c);a=[a.substr(0,d),e,a.substr(c)];c=a[1];a[1]=b?c?c+"&"+b:b:c;a=a[0]+(a[1]?"?"+a[1]:"")+a[2];}return a}T(a,b,c);return a}function Ad(a){this.f=[];this.F=new Xc;this.ga=this.pa=this.B=this.ha=this.a=this.I=this.j=this.V=this.g=this.J=this.i=null;this.Qa=this.P=0;this.Oa=!!n$1("internalChannelParams.failFast",a);this.ia=this.w=this.s=this.l=this.h=this.c=null;this.oa=!0;this.m=this.ra=this.O=-1;this.S=this.v=this.A=0;this.Na=n$1("internalChannelParams.baseRetryDelayMs",a)||5E3;this.Ra=n$1("internalChannelParams.retryDelaySeedMs",a)||1E4;this.Pa=n$1("internalChannelParams.forwardChannelMaxRetries",a)||2;this.qa=n$1("internalChannelParams.forwardChannelRequestTimeoutMs",
     a)||2E4;this.Ka=a&&a.zb||void 0;this.D=void 0;this.R=a&&a.supportsCrossDomainXhr||!1;this.H="";this.b=new ad(a&&a.concurrentRequestLimit);this.ja=new kd;this.o=a&&void 0!==a.backgroundChannelTest?a.backgroundChannelTest:!0;(this.W=a&&a.fastHandshake||!1)&&!this.o&&(this.o=!0);a&&a.forceLongPolling&&(this.oa=!1);this.fa=void 0;}g=Ad.prototype;g.wa=8;g.u=1;
     function Bd(a){Cd(a);if(3==a.u){var b=a.P++,c=N(a.B);T(c,"SID",a.H);T(c,"RID",b);T(c,"TYPE","terminate");Dd(a,c);b=new M(a,b,void 0);b.F=2;b.f=bc(N(c));c=!1;k.navigator&&k.navigator.sendBeacon&&(c=k.navigator.sendBeacon(b.f.toString(),""));!c&&k.Image&&((new Image).src=b.f,c=!0);c||(b.a=b.g.$(null),b.a.ca(b.f));b.v=w();ec(b);}Ed(a);}
     function Cd(a){a.w&&(a.w.abort(),a.w=null);a.a&&(a.a.cancel(),a.a=null);a.l&&(k.clearTimeout(a.l),a.l=null);Fd(a);a.b.cancel();a.h&&(aa(a.h)&&k.clearTimeout(a.h),a.h=null);}function Gd(a,b){a.f.push(new $c(a.Qa++,b));3==a.u&&Hd(a);}g.Ca=function(){return 0==this.u};function Hd(a){ed(a.b)||a.h||(a.h=!0,wb(a.Ha,a),a.A=0);}
@@ -34925,6 +34925,1050 @@
 
     //# sourceMappingURL=index.esm.js.map
 
+    var commonjsGlobal$1 = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+    function createCommonjsModule(fn, module) {
+    	return module = { exports: {} }, fn(module, module.exports), module.exports;
+    }
+
+    var exif = createCommonjsModule(function (module, exports) {
+    (function() {
+
+        var debug = false;
+
+        var EXIF = function(obj) {
+            if (obj instanceof EXIF) return obj;
+            if (!(this instanceof EXIF)) return new EXIF(obj);
+            this.EXIFwrapped = obj;
+        };
+
+        {
+            if (module.exports) {
+                exports = module.exports = EXIF;
+            }
+            exports.EXIF = EXIF;
+        }
+
+        var ExifTags = EXIF.Tags = {
+
+            // version tags
+            0x9000 : "ExifVersion",             // EXIF version
+            0xA000 : "FlashpixVersion",         // Flashpix format version
+
+            // colorspace tags
+            0xA001 : "ColorSpace",              // Color space information tag
+
+            // image configuration
+            0xA002 : "PixelXDimension",         // Valid width of meaningful image
+            0xA003 : "PixelYDimension",         // Valid height of meaningful image
+            0x9101 : "ComponentsConfiguration", // Information about channels
+            0x9102 : "CompressedBitsPerPixel",  // Compressed bits per pixel
+
+            // user information
+            0x927C : "MakerNote",               // Any desired information written by the manufacturer
+            0x9286 : "UserComment",             // Comments by user
+
+            // related file
+            0xA004 : "RelatedSoundFile",        // Name of related sound file
+
+            // date and time
+            0x9003 : "DateTimeOriginal",        // Date and time when the original image was generated
+            0x9004 : "DateTimeDigitized",       // Date and time when the image was stored digitally
+            0x9290 : "SubsecTime",              // Fractions of seconds for DateTime
+            0x9291 : "SubsecTimeOriginal",      // Fractions of seconds for DateTimeOriginal
+            0x9292 : "SubsecTimeDigitized",     // Fractions of seconds for DateTimeDigitized
+
+            // picture-taking conditions
+            0x829A : "ExposureTime",            // Exposure time (in seconds)
+            0x829D : "FNumber",                 // F number
+            0x8822 : "ExposureProgram",         // Exposure program
+            0x8824 : "SpectralSensitivity",     // Spectral sensitivity
+            0x8827 : "ISOSpeedRatings",         // ISO speed rating
+            0x8828 : "OECF",                    // Optoelectric conversion factor
+            0x9201 : "ShutterSpeedValue",       // Shutter speed
+            0x9202 : "ApertureValue",           // Lens aperture
+            0x9203 : "BrightnessValue",         // Value of brightness
+            0x9204 : "ExposureBias",            // Exposure bias
+            0x9205 : "MaxApertureValue",        // Smallest F number of lens
+            0x9206 : "SubjectDistance",         // Distance to subject in meters
+            0x9207 : "MeteringMode",            // Metering mode
+            0x9208 : "LightSource",             // Kind of light source
+            0x9209 : "Flash",                   // Flash status
+            0x9214 : "SubjectArea",             // Location and area of main subject
+            0x920A : "FocalLength",             // Focal length of the lens in mm
+            0xA20B : "FlashEnergy",             // Strobe energy in BCPS
+            0xA20C : "SpatialFrequencyResponse",    //
+            0xA20E : "FocalPlaneXResolution",   // Number of pixels in width direction per FocalPlaneResolutionUnit
+            0xA20F : "FocalPlaneYResolution",   // Number of pixels in height direction per FocalPlaneResolutionUnit
+            0xA210 : "FocalPlaneResolutionUnit",    // Unit for measuring FocalPlaneXResolution and FocalPlaneYResolution
+            0xA214 : "SubjectLocation",         // Location of subject in image
+            0xA215 : "ExposureIndex",           // Exposure index selected on camera
+            0xA217 : "SensingMethod",           // Image sensor type
+            0xA300 : "FileSource",              // Image source (3 == DSC)
+            0xA301 : "SceneType",               // Scene type (1 == directly photographed)
+            0xA302 : "CFAPattern",              // Color filter array geometric pattern
+            0xA401 : "CustomRendered",          // Special processing
+            0xA402 : "ExposureMode",            // Exposure mode
+            0xA403 : "WhiteBalance",            // 1 = auto white balance, 2 = manual
+            0xA404 : "DigitalZoomRation",       // Digital zoom ratio
+            0xA405 : "FocalLengthIn35mmFilm",   // Equivalent foacl length assuming 35mm film camera (in mm)
+            0xA406 : "SceneCaptureType",        // Type of scene
+            0xA407 : "GainControl",             // Degree of overall image gain adjustment
+            0xA408 : "Contrast",                // Direction of contrast processing applied by camera
+            0xA409 : "Saturation",              // Direction of saturation processing applied by camera
+            0xA40A : "Sharpness",               // Direction of sharpness processing applied by camera
+            0xA40B : "DeviceSettingDescription",    //
+            0xA40C : "SubjectDistanceRange",    // Distance to subject
+
+            // other tags
+            0xA005 : "InteroperabilityIFDPointer",
+            0xA420 : "ImageUniqueID"            // Identifier assigned uniquely to each image
+        };
+
+        var TiffTags = EXIF.TiffTags = {
+            0x0100 : "ImageWidth",
+            0x0101 : "ImageHeight",
+            0x8769 : "ExifIFDPointer",
+            0x8825 : "GPSInfoIFDPointer",
+            0xA005 : "InteroperabilityIFDPointer",
+            0x0102 : "BitsPerSample",
+            0x0103 : "Compression",
+            0x0106 : "PhotometricInterpretation",
+            0x0112 : "Orientation",
+            0x0115 : "SamplesPerPixel",
+            0x011C : "PlanarConfiguration",
+            0x0212 : "YCbCrSubSampling",
+            0x0213 : "YCbCrPositioning",
+            0x011A : "XResolution",
+            0x011B : "YResolution",
+            0x0128 : "ResolutionUnit",
+            0x0111 : "StripOffsets",
+            0x0116 : "RowsPerStrip",
+            0x0117 : "StripByteCounts",
+            0x0201 : "JPEGInterchangeFormat",
+            0x0202 : "JPEGInterchangeFormatLength",
+            0x012D : "TransferFunction",
+            0x013E : "WhitePoint",
+            0x013F : "PrimaryChromaticities",
+            0x0211 : "YCbCrCoefficients",
+            0x0214 : "ReferenceBlackWhite",
+            0x0132 : "DateTime",
+            0x010E : "ImageDescription",
+            0x010F : "Make",
+            0x0110 : "Model",
+            0x0131 : "Software",
+            0x013B : "Artist",
+            0x8298 : "Copyright"
+        };
+
+        var GPSTags = EXIF.GPSTags = {
+            0x0000 : "GPSVersionID",
+            0x0001 : "GPSLatitudeRef",
+            0x0002 : "GPSLatitude",
+            0x0003 : "GPSLongitudeRef",
+            0x0004 : "GPSLongitude",
+            0x0005 : "GPSAltitudeRef",
+            0x0006 : "GPSAltitude",
+            0x0007 : "GPSTimeStamp",
+            0x0008 : "GPSSatellites",
+            0x0009 : "GPSStatus",
+            0x000A : "GPSMeasureMode",
+            0x000B : "GPSDOP",
+            0x000C : "GPSSpeedRef",
+            0x000D : "GPSSpeed",
+            0x000E : "GPSTrackRef",
+            0x000F : "GPSTrack",
+            0x0010 : "GPSImgDirectionRef",
+            0x0011 : "GPSImgDirection",
+            0x0012 : "GPSMapDatum",
+            0x0013 : "GPSDestLatitudeRef",
+            0x0014 : "GPSDestLatitude",
+            0x0015 : "GPSDestLongitudeRef",
+            0x0016 : "GPSDestLongitude",
+            0x0017 : "GPSDestBearingRef",
+            0x0018 : "GPSDestBearing",
+            0x0019 : "GPSDestDistanceRef",
+            0x001A : "GPSDestDistance",
+            0x001B : "GPSProcessingMethod",
+            0x001C : "GPSAreaInformation",
+            0x001D : "GPSDateStamp",
+            0x001E : "GPSDifferential"
+        };
+
+         // EXIF 2.3 Spec
+        var IFD1Tags = EXIF.IFD1Tags = {
+            0x0100: "ImageWidth",
+            0x0101: "ImageHeight",
+            0x0102: "BitsPerSample",
+            0x0103: "Compression",
+            0x0106: "PhotometricInterpretation",
+            0x0111: "StripOffsets",
+            0x0112: "Orientation",
+            0x0115: "SamplesPerPixel",
+            0x0116: "RowsPerStrip",
+            0x0117: "StripByteCounts",
+            0x011A: "XResolution",
+            0x011B: "YResolution",
+            0x011C: "PlanarConfiguration",
+            0x0128: "ResolutionUnit",
+            0x0201: "JpegIFOffset",    // When image format is JPEG, this value show offset to JPEG data stored.(aka "ThumbnailOffset" or "JPEGInterchangeFormat")
+            0x0202: "JpegIFByteCount", // When image format is JPEG, this value shows data size of JPEG image (aka "ThumbnailLength" or "JPEGInterchangeFormatLength")
+            0x0211: "YCbCrCoefficients",
+            0x0212: "YCbCrSubSampling",
+            0x0213: "YCbCrPositioning",
+            0x0214: "ReferenceBlackWhite"
+        };
+
+        var StringValues = EXIF.StringValues = {
+            ExposureProgram : {
+                0 : "Not defined",
+                1 : "Manual",
+                2 : "Normal program",
+                3 : "Aperture priority",
+                4 : "Shutter priority",
+                5 : "Creative program",
+                6 : "Action program",
+                7 : "Portrait mode",
+                8 : "Landscape mode"
+            },
+            MeteringMode : {
+                0 : "Unknown",
+                1 : "Average",
+                2 : "CenterWeightedAverage",
+                3 : "Spot",
+                4 : "MultiSpot",
+                5 : "Pattern",
+                6 : "Partial",
+                255 : "Other"
+            },
+            LightSource : {
+                0 : "Unknown",
+                1 : "Daylight",
+                2 : "Fluorescent",
+                3 : "Tungsten (incandescent light)",
+                4 : "Flash",
+                9 : "Fine weather",
+                10 : "Cloudy weather",
+                11 : "Shade",
+                12 : "Daylight fluorescent (D 5700 - 7100K)",
+                13 : "Day white fluorescent (N 4600 - 5400K)",
+                14 : "Cool white fluorescent (W 3900 - 4500K)",
+                15 : "White fluorescent (WW 3200 - 3700K)",
+                17 : "Standard light A",
+                18 : "Standard light B",
+                19 : "Standard light C",
+                20 : "D55",
+                21 : "D65",
+                22 : "D75",
+                23 : "D50",
+                24 : "ISO studio tungsten",
+                255 : "Other"
+            },
+            Flash : {
+                0x0000 : "Flash did not fire",
+                0x0001 : "Flash fired",
+                0x0005 : "Strobe return light not detected",
+                0x0007 : "Strobe return light detected",
+                0x0009 : "Flash fired, compulsory flash mode",
+                0x000D : "Flash fired, compulsory flash mode, return light not detected",
+                0x000F : "Flash fired, compulsory flash mode, return light detected",
+                0x0010 : "Flash did not fire, compulsory flash mode",
+                0x0018 : "Flash did not fire, auto mode",
+                0x0019 : "Flash fired, auto mode",
+                0x001D : "Flash fired, auto mode, return light not detected",
+                0x001F : "Flash fired, auto mode, return light detected",
+                0x0020 : "No flash function",
+                0x0041 : "Flash fired, red-eye reduction mode",
+                0x0045 : "Flash fired, red-eye reduction mode, return light not detected",
+                0x0047 : "Flash fired, red-eye reduction mode, return light detected",
+                0x0049 : "Flash fired, compulsory flash mode, red-eye reduction mode",
+                0x004D : "Flash fired, compulsory flash mode, red-eye reduction mode, return light not detected",
+                0x004F : "Flash fired, compulsory flash mode, red-eye reduction mode, return light detected",
+                0x0059 : "Flash fired, auto mode, red-eye reduction mode",
+                0x005D : "Flash fired, auto mode, return light not detected, red-eye reduction mode",
+                0x005F : "Flash fired, auto mode, return light detected, red-eye reduction mode"
+            },
+            SensingMethod : {
+                1 : "Not defined",
+                2 : "One-chip color area sensor",
+                3 : "Two-chip color area sensor",
+                4 : "Three-chip color area sensor",
+                5 : "Color sequential area sensor",
+                7 : "Trilinear sensor",
+                8 : "Color sequential linear sensor"
+            },
+            SceneCaptureType : {
+                0 : "Standard",
+                1 : "Landscape",
+                2 : "Portrait",
+                3 : "Night scene"
+            },
+            SceneType : {
+                1 : "Directly photographed"
+            },
+            CustomRendered : {
+                0 : "Normal process",
+                1 : "Custom process"
+            },
+            WhiteBalance : {
+                0 : "Auto white balance",
+                1 : "Manual white balance"
+            },
+            GainControl : {
+                0 : "None",
+                1 : "Low gain up",
+                2 : "High gain up",
+                3 : "Low gain down",
+                4 : "High gain down"
+            },
+            Contrast : {
+                0 : "Normal",
+                1 : "Soft",
+                2 : "Hard"
+            },
+            Saturation : {
+                0 : "Normal",
+                1 : "Low saturation",
+                2 : "High saturation"
+            },
+            Sharpness : {
+                0 : "Normal",
+                1 : "Soft",
+                2 : "Hard"
+            },
+            SubjectDistanceRange : {
+                0 : "Unknown",
+                1 : "Macro",
+                2 : "Close view",
+                3 : "Distant view"
+            },
+            FileSource : {
+                3 : "DSC"
+            },
+
+            Components : {
+                0 : "",
+                1 : "Y",
+                2 : "Cb",
+                3 : "Cr",
+                4 : "R",
+                5 : "G",
+                6 : "B"
+            }
+        };
+
+        function imageHasData(img) {
+            return !!(img.exifdata);
+        }
+
+
+        function base64ToArrayBuffer(base64, contentType) {
+            contentType = contentType || base64.match(/^data\:([^\;]+)\;base64,/mi)[1] || ''; // e.g. 'data:image/jpeg;base64,...' => 'image/jpeg'
+            base64 = base64.replace(/^data\:([^\;]+)\;base64,/gmi, '');
+            var binary = atob(base64);
+            var len = binary.length;
+            var buffer = new ArrayBuffer(len);
+            var view = new Uint8Array(buffer);
+            for (var i = 0; i < len; i++) {
+                view[i] = binary.charCodeAt(i);
+            }
+            return buffer;
+        }
+
+        function objectURLToBlob(url, callback) {
+            var http = new XMLHttpRequest();
+            http.open("GET", url, true);
+            http.responseType = "blob";
+            http.onload = function(e) {
+                if (this.status == 200 || this.status === 0) {
+                    callback(this.response);
+                }
+            };
+            http.send();
+        }
+
+        function getImageData(img, callback) {
+            function handleBinaryFile(binFile) {
+                var data = findEXIFinJPEG(binFile);
+                img.exifdata = data || {};
+                var iptcdata = findIPTCinJPEG(binFile);
+                img.iptcdata = iptcdata || {};
+                if (EXIF.isXmpEnabled) {
+                   var xmpdata= findXMPinJPEG(binFile);
+                   img.xmpdata = xmpdata || {};               
+                }
+                if (callback) {
+                    callback.call(img);
+                }
+            }
+
+            if (img.src) {
+                if (/^data\:/i.test(img.src)) { // Data URI
+                    var arrayBuffer = base64ToArrayBuffer(img.src);
+                    handleBinaryFile(arrayBuffer);
+
+                } else if (/^blob\:/i.test(img.src)) { // Object URL
+                    var fileReader = new FileReader();
+                    fileReader.onload = function(e) {
+                        handleBinaryFile(e.target.result);
+                    };
+                    objectURLToBlob(img.src, function (blob) {
+                        fileReader.readAsArrayBuffer(blob);
+                    });
+                } else {
+                    var http = new XMLHttpRequest();
+                    http.onload = function() {
+                        if (this.status == 200 || this.status === 0) {
+                            handleBinaryFile(http.response);
+                        } else {
+                            throw "Could not load image";
+                        }
+                        http = null;
+                    };
+                    http.open("GET", img.src, true);
+                    http.responseType = "arraybuffer";
+                    http.send(null);
+                }
+            } else if (self.FileReader && (img instanceof self.Blob || img instanceof self.File)) {
+                var fileReader = new FileReader();
+                fileReader.onload = function(e) {
+                    handleBinaryFile(e.target.result);
+                };
+
+                fileReader.readAsArrayBuffer(img);
+            }
+        }
+
+        function findEXIFinJPEG(file) {
+            var dataView = new DataView(file);
+            if ((dataView.getUint8(0) != 0xFF) || (dataView.getUint8(1) != 0xD8)) {
+                return false; // not a valid jpeg
+            }
+
+            var offset = 2,
+                length = file.byteLength,
+                marker;
+
+            while (offset < length) {
+                if (dataView.getUint8(offset) != 0xFF) {
+                    return false; // not a valid marker, something is wrong
+                }
+
+                marker = dataView.getUint8(offset + 1);
+
+                // we could implement handling for other markers here,
+                // but we're only looking for 0xFFE1 for EXIF data
+
+                if (marker == 225) {
+
+                    return readEXIFData(dataView, offset + 4, dataView.getUint16(offset + 2) - 2);
+
+                    // offset += 2 + file.getShortAt(offset+2, true);
+
+                } else {
+                    offset += 2 + dataView.getUint16(offset+2);
+                }
+
+            }
+
+        }
+
+        function findIPTCinJPEG(file) {
+            var dataView = new DataView(file);
+            if ((dataView.getUint8(0) != 0xFF) || (dataView.getUint8(1) != 0xD8)) {
+                return false; // not a valid jpeg
+            }
+
+            var offset = 2,
+                length = file.byteLength;
+
+
+            var isFieldSegmentStart = function(dataView, offset){
+                return (
+                    dataView.getUint8(offset) === 0x38 &&
+                    dataView.getUint8(offset+1) === 0x42 &&
+                    dataView.getUint8(offset+2) === 0x49 &&
+                    dataView.getUint8(offset+3) === 0x4D &&
+                    dataView.getUint8(offset+4) === 0x04 &&
+                    dataView.getUint8(offset+5) === 0x04
+                );
+            };
+
+            while (offset < length) {
+
+                if ( isFieldSegmentStart(dataView, offset )){
+
+                    // Get the length of the name header (which is padded to an even number of bytes)
+                    var nameHeaderLength = dataView.getUint8(offset+7);
+                    if(nameHeaderLength % 2 !== 0) nameHeaderLength += 1;
+                    // Check for pre photoshop 6 format
+                    if(nameHeaderLength === 0) {
+                        // Always 4
+                        nameHeaderLength = 4;
+                    }
+
+                    var startOffset = offset + 8 + nameHeaderLength;
+                    var sectionLength = dataView.getUint16(offset + 6 + nameHeaderLength);
+
+                    return readIPTCData(file, startOffset, sectionLength);
+
+                    break;
+
+                }
+
+
+                // Not the marker, continue searching
+                offset++;
+
+            }
+
+        }
+        var IptcFieldMap = {
+            0x78 : 'caption',
+            0x6E : 'credit',
+            0x19 : 'keywords',
+            0x37 : 'dateCreated',
+            0x50 : 'byline',
+            0x55 : 'bylineTitle',
+            0x7A : 'captionWriter',
+            0x69 : 'headline',
+            0x74 : 'copyright',
+            0x0F : 'category'
+        };
+        function readIPTCData(file, startOffset, sectionLength){
+            var dataView = new DataView(file);
+            var data = {};
+            var fieldValue, fieldName, dataSize, segmentType;
+            var segmentStartPos = startOffset;
+            while(segmentStartPos < startOffset+sectionLength) {
+                if(dataView.getUint8(segmentStartPos) === 0x1C && dataView.getUint8(segmentStartPos+1) === 0x02){
+                    segmentType = dataView.getUint8(segmentStartPos+2);
+                    if(segmentType in IptcFieldMap) {
+                        dataSize = dataView.getInt16(segmentStartPos+3);
+                        fieldName = IptcFieldMap[segmentType];
+                        fieldValue = getStringFromDB(dataView, segmentStartPos+5, dataSize);
+                        // Check if we already stored a value with this name
+                        if(data.hasOwnProperty(fieldName)) {
+                            // Value already stored with this name, create multivalue field
+                            if(data[fieldName] instanceof Array) {
+                                data[fieldName].push(fieldValue);
+                            }
+                            else {
+                                data[fieldName] = [data[fieldName], fieldValue];
+                            }
+                        }
+                        else {
+                            data[fieldName] = fieldValue;
+                        }
+                    }
+
+                }
+                segmentStartPos++;
+            }
+            return data;
+        }
+
+
+
+        function readTags(file, tiffStart, dirStart, strings, bigEnd) {
+            var entries = file.getUint16(dirStart, !bigEnd),
+                tags = {},
+                entryOffset, tag,
+                i;
+
+            for (i=0;i<entries;i++) {
+                entryOffset = dirStart + i*12 + 2;
+                tag = strings[file.getUint16(entryOffset, !bigEnd)];
+                if (!tag && debug) console.log("Unknown tag: " + file.getUint16(entryOffset, !bigEnd));
+                tags[tag] = readTagValue(file, entryOffset, tiffStart, dirStart, bigEnd);
+            }
+            return tags;
+        }
+
+
+        function readTagValue(file, entryOffset, tiffStart, dirStart, bigEnd) {
+            var type = file.getUint16(entryOffset+2, !bigEnd),
+                numValues = file.getUint32(entryOffset+4, !bigEnd),
+                valueOffset = file.getUint32(entryOffset+8, !bigEnd) + tiffStart,
+                offset,
+                vals, val, n,
+                numerator, denominator;
+
+            switch (type) {
+                case 1: // byte, 8-bit unsigned int
+                case 7: // undefined, 8-bit byte, value depending on field
+                    if (numValues == 1) {
+                        return file.getUint8(entryOffset + 8, !bigEnd);
+                    } else {
+                        offset = numValues > 4 ? valueOffset : (entryOffset + 8);
+                        vals = [];
+                        for (n=0;n<numValues;n++) {
+                            vals[n] = file.getUint8(offset + n);
+                        }
+                        return vals;
+                    }
+
+                case 2: // ascii, 8-bit byte
+                    offset = numValues > 4 ? valueOffset : (entryOffset + 8);
+                    return getStringFromDB(file, offset, numValues-1);
+
+                case 3: // short, 16 bit int
+                    if (numValues == 1) {
+                        return file.getUint16(entryOffset + 8, !bigEnd);
+                    } else {
+                        offset = numValues > 2 ? valueOffset : (entryOffset + 8);
+                        vals = [];
+                        for (n=0;n<numValues;n++) {
+                            vals[n] = file.getUint16(offset + 2*n, !bigEnd);
+                        }
+                        return vals;
+                    }
+
+                case 4: // long, 32 bit int
+                    if (numValues == 1) {
+                        return file.getUint32(entryOffset + 8, !bigEnd);
+                    } else {
+                        vals = [];
+                        for (n=0;n<numValues;n++) {
+                            vals[n] = file.getUint32(valueOffset + 4*n, !bigEnd);
+                        }
+                        return vals;
+                    }
+
+                case 5:    // rational = two long values, first is numerator, second is denominator
+                    if (numValues == 1) {
+                        numerator = file.getUint32(valueOffset, !bigEnd);
+                        denominator = file.getUint32(valueOffset+4, !bigEnd);
+                        val = new Number(numerator / denominator);
+                        val.numerator = numerator;
+                        val.denominator = denominator;
+                        return val;
+                    } else {
+                        vals = [];
+                        for (n=0;n<numValues;n++) {
+                            numerator = file.getUint32(valueOffset + 8*n, !bigEnd);
+                            denominator = file.getUint32(valueOffset+4 + 8*n, !bigEnd);
+                            vals[n] = new Number(numerator / denominator);
+                            vals[n].numerator = numerator;
+                            vals[n].denominator = denominator;
+                        }
+                        return vals;
+                    }
+
+                case 9: // slong, 32 bit signed int
+                    if (numValues == 1) {
+                        return file.getInt32(entryOffset + 8, !bigEnd);
+                    } else {
+                        vals = [];
+                        for (n=0;n<numValues;n++) {
+                            vals[n] = file.getInt32(valueOffset + 4*n, !bigEnd);
+                        }
+                        return vals;
+                    }
+
+                case 10: // signed rational, two slongs, first is numerator, second is denominator
+                    if (numValues == 1) {
+                        return file.getInt32(valueOffset, !bigEnd) / file.getInt32(valueOffset+4, !bigEnd);
+                    } else {
+                        vals = [];
+                        for (n=0;n<numValues;n++) {
+                            vals[n] = file.getInt32(valueOffset + 8*n, !bigEnd) / file.getInt32(valueOffset+4 + 8*n, !bigEnd);
+                        }
+                        return vals;
+                    }
+            }
+        }
+
+        /**
+        * Given an IFD (Image File Directory) start offset
+        * returns an offset to next IFD or 0 if it's the last IFD.
+        */
+        function getNextIFDOffset(dataView, dirStart, bigEnd){
+            //the first 2bytes means the number of directory entries contains in this IFD
+            var entries = dataView.getUint16(dirStart, !bigEnd);
+
+            // After last directory entry, there is a 4bytes of data,
+            // it means an offset to next IFD.
+            // If its value is '0x00000000', it means this is the last IFD and there is no linked IFD.
+
+            return dataView.getUint32(dirStart + 2 + entries * 12, !bigEnd); // each entry is 12 bytes long
+        }
+
+        function readThumbnailImage(dataView, tiffStart, firstIFDOffset, bigEnd){
+            // get the IFD1 offset
+            var IFD1OffsetPointer = getNextIFDOffset(dataView, tiffStart+firstIFDOffset, bigEnd);
+
+            if (!IFD1OffsetPointer) {
+                // console.log('******** IFD1Offset is empty, image thumb not found ********');
+                return {};
+            }
+            else if (IFD1OffsetPointer > dataView.byteLength) { // this should not happen
+                // console.log('******** IFD1Offset is outside the bounds of the DataView ********');
+                return {};
+            }
+            // console.log('*******  thumbnail IFD offset (IFD1) is: %s', IFD1OffsetPointer);
+
+            var thumbTags = readTags(dataView, tiffStart, tiffStart + IFD1OffsetPointer, IFD1Tags, bigEnd);
+
+            // EXIF 2.3 specification for JPEG format thumbnail
+
+            // If the value of Compression(0x0103) Tag in IFD1 is '6', thumbnail image format is JPEG.
+            // Most of Exif image uses JPEG format for thumbnail. In that case, you can get offset of thumbnail
+            // by JpegIFOffset(0x0201) Tag in IFD1, size of thumbnail by JpegIFByteCount(0x0202) Tag.
+            // Data format is ordinary JPEG format, starts from 0xFFD8 and ends by 0xFFD9. It seems that
+            // JPEG format and 160x120pixels of size are recommended thumbnail format for Exif2.1 or later.
+
+            if (thumbTags['Compression']) {
+                // console.log('Thumbnail image found!');
+
+                switch (thumbTags['Compression']) {
+                    case 6:
+                        // console.log('Thumbnail image format is JPEG');
+                        if (thumbTags.JpegIFOffset && thumbTags.JpegIFByteCount) {
+                        // extract the thumbnail
+                            var tOffset = tiffStart + thumbTags.JpegIFOffset;
+                            var tLength = thumbTags.JpegIFByteCount;
+                            thumbTags['blob'] = new Blob([new Uint8Array(dataView.buffer, tOffset, tLength)], {
+                                type: 'image/jpeg'
+                            });
+                        }
+                    break;
+
+                case 1:
+                    console.log("Thumbnail image format is TIFF, which is not implemented.");
+                    break;
+                default:
+                    console.log("Unknown thumbnail image format '%s'", thumbTags['Compression']);
+                }
+            }
+            else if (thumbTags['PhotometricInterpretation'] == 2) {
+                console.log("Thumbnail image format is RGB, which is not implemented.");
+            }
+            return thumbTags;
+        }
+
+        function getStringFromDB(buffer, start, length) {
+            var outstr = "";
+            for (n = start; n < start+length; n++) {
+                outstr += String.fromCharCode(buffer.getUint8(n));
+            }
+            return outstr;
+        }
+
+        function readEXIFData(file, start) {
+            if (getStringFromDB(file, start, 4) != "Exif") {
+                return false;
+            }
+
+            var bigEnd,
+                tags, tag,
+                exifData, gpsData,
+                tiffOffset = start + 6;
+
+            // test for TIFF validity and endianness
+            if (file.getUint16(tiffOffset) == 0x4949) {
+                bigEnd = false;
+            } else if (file.getUint16(tiffOffset) == 0x4D4D) {
+                bigEnd = true;
+            } else {
+                return false;
+            }
+
+            if (file.getUint16(tiffOffset+2, !bigEnd) != 0x002A) {
+                return false;
+            }
+
+            var firstIFDOffset = file.getUint32(tiffOffset+4, !bigEnd);
+
+            if (firstIFDOffset < 0x00000008) {
+                return false;
+            }
+
+            tags = readTags(file, tiffOffset, tiffOffset + firstIFDOffset, TiffTags, bigEnd);
+
+            if (tags.ExifIFDPointer) {
+                exifData = readTags(file, tiffOffset, tiffOffset + tags.ExifIFDPointer, ExifTags, bigEnd);
+                for (tag in exifData) {
+                    switch (tag) {
+                        case "LightSource" :
+                        case "Flash" :
+                        case "MeteringMode" :
+                        case "ExposureProgram" :
+                        case "SensingMethod" :
+                        case "SceneCaptureType" :
+                        case "SceneType" :
+                        case "CustomRendered" :
+                        case "WhiteBalance" :
+                        case "GainControl" :
+                        case "Contrast" :
+                        case "Saturation" :
+                        case "Sharpness" :
+                        case "SubjectDistanceRange" :
+                        case "FileSource" :
+                            exifData[tag] = StringValues[tag][exifData[tag]];
+                            break;
+
+                        case "ExifVersion" :
+                        case "FlashpixVersion" :
+                            exifData[tag] = String.fromCharCode(exifData[tag][0], exifData[tag][1], exifData[tag][2], exifData[tag][3]);
+                            break;
+
+                        case "ComponentsConfiguration" :
+                            exifData[tag] =
+                                StringValues.Components[exifData[tag][0]] +
+                                StringValues.Components[exifData[tag][1]] +
+                                StringValues.Components[exifData[tag][2]] +
+                                StringValues.Components[exifData[tag][3]];
+                            break;
+                    }
+                    tags[tag] = exifData[tag];
+                }
+            }
+
+            if (tags.GPSInfoIFDPointer) {
+                gpsData = readTags(file, tiffOffset, tiffOffset + tags.GPSInfoIFDPointer, GPSTags, bigEnd);
+                for (tag in gpsData) {
+                    switch (tag) {
+                        case "GPSVersionID" :
+                            gpsData[tag] = gpsData[tag][0] +
+                                "." + gpsData[tag][1] +
+                                "." + gpsData[tag][2] +
+                                "." + gpsData[tag][3];
+                            break;
+                    }
+                    tags[tag] = gpsData[tag];
+                }
+            }
+
+            // extract thumbnail
+            tags['thumbnail'] = readThumbnailImage(file, tiffOffset, firstIFDOffset, bigEnd);
+
+            return tags;
+        }
+
+       function findXMPinJPEG(file) {
+
+            if (!('DOMParser' in self)) {
+                // console.warn('XML parsing not supported without DOMParser');
+                return;
+            }
+            var dataView = new DataView(file);
+            if ((dataView.getUint8(0) != 0xFF) || (dataView.getUint8(1) != 0xD8)) {
+               return false; // not a valid jpeg
+            }
+
+            var offset = 2,
+                length = file.byteLength,
+                dom = new DOMParser();
+
+            while (offset < (length-4)) {
+                if (getStringFromDB(dataView, offset, 4) == "http") {
+                    var startOffset = offset - 1;
+                    var sectionLength = dataView.getUint16(offset - 2) - 1;
+                    var xmpString = getStringFromDB(dataView, startOffset, sectionLength);
+                    var xmpEndIndex = xmpString.indexOf('xmpmeta>') + 8;
+                    xmpString = xmpString.substring( xmpString.indexOf( '<x:xmpmeta' ), xmpEndIndex );
+
+                    var indexOfXmp = xmpString.indexOf('x:xmpmeta') + 10;
+                    //Many custom written programs embed xmp/xml without any namespace. Following are some of them.
+                    //Without these namespaces, XML is thought to be invalid by parsers
+                    xmpString = xmpString.slice(0, indexOfXmp)
+                                + 'xmlns:Iptc4xmpCore="http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/" '
+                                + 'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
+                                + 'xmlns:tiff="http://ns.adobe.com/tiff/1.0/" '
+                                + 'xmlns:plus="http://schemas.android.com/apk/lib/com.google.android.gms.plus" '
+                                + 'xmlns:ext="http://www.gettyimages.com/xsltExtension/1.0" '
+                                + 'xmlns:exif="http://ns.adobe.com/exif/1.0/" '
+                                + 'xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#" '
+                                + 'xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#" '
+                                + 'xmlns:crs="http://ns.adobe.com/camera-raw-settings/1.0/" '
+                                + 'xmlns:xapGImg="http://ns.adobe.com/xap/1.0/g/img/" '
+                                + 'xmlns:Iptc4xmpExt="http://iptc.org/std/Iptc4xmpExt/2008-02-29/" '
+                                + xmpString.slice(indexOfXmp);
+
+                    var domDocument = dom.parseFromString( xmpString, 'text/xml' );
+                    return xml2Object(domDocument);
+                } else{
+                 offset++;
+                }
+            }
+        }
+
+        function xml2json(xml) {
+            var json = {};
+          
+            if (xml.nodeType == 1) { // element node
+              if (xml.attributes.length > 0) {
+                json['@attributes'] = {};
+                for (var j = 0; j < xml.attributes.length; j++) {
+                  var attribute = xml.attributes.item(j);
+                  json['@attributes'][attribute.nodeName] = attribute.nodeValue;
+                }
+              }
+            } else if (xml.nodeType == 3) { // text node
+              return xml.nodeValue;
+            }
+          
+            // deal with children
+            if (xml.hasChildNodes()) {
+              for(var i = 0; i < xml.childNodes.length; i++) {
+                var child = xml.childNodes.item(i);
+                var nodeName = child.nodeName;
+                if (json[nodeName] == null) {
+                  json[nodeName] = xml2json(child);
+                } else {
+                  if (json[nodeName].push == null) {
+                    var old = json[nodeName];
+                    json[nodeName] = [];
+                    json[nodeName].push(old);
+                  }
+                  json[nodeName].push(xml2json(child));
+                }
+              }
+            }
+            
+            return json;
+        }
+
+        function xml2Object(xml) {
+            try {
+                var obj = {};
+                if (xml.children.length > 0) {
+                  for (var i = 0; i < xml.children.length; i++) {
+                    var item = xml.children.item(i);
+                    var attributes = item.attributes;
+                    for(var idx in attributes) {
+                        var itemAtt = attributes[idx];
+                        var dataKey = itemAtt.nodeName;
+                        var dataValue = itemAtt.nodeValue;
+
+                        if(dataKey !== undefined) {
+                            obj[dataKey] = dataValue;
+                        }
+                    }
+                    var nodeName = item.nodeName;
+
+                    if (typeof (obj[nodeName]) == "undefined") {
+                      obj[nodeName] = xml2json(item);
+                    } else {
+                      if (typeof (obj[nodeName].push) == "undefined") {
+                        var old = obj[nodeName];
+
+                        obj[nodeName] = [];
+                        obj[nodeName].push(old);
+                      }
+                      obj[nodeName].push(xml2json(item));
+                    }
+                  }
+                } else {
+                  obj = xml.textContent;
+                }
+                return obj;
+              } catch (e) {
+                  console.log(e.message);
+              }
+        }
+
+        EXIF.enableXmp = function() {
+            EXIF.isXmpEnabled = true;
+        };
+
+        EXIF.disableXmp = function() {
+            EXIF.isXmpEnabled = false;
+        };
+
+        EXIF.getData = function(img, callback) {
+            if (((self.Image && img instanceof self.Image)
+                || (self.HTMLImageElement && img instanceof self.HTMLImageElement))
+                && !img.complete)
+                return false;
+
+            if (!imageHasData(img)) {
+                getImageData(img, callback);
+            } else {
+                if (callback) {
+                    callback.call(img);
+                }
+            }
+            return true;
+        };
+
+        EXIF.getTag = function(img, tag) {
+            if (!imageHasData(img)) return;
+            return img.exifdata[tag];
+        };
+        
+        EXIF.getIptcTag = function(img, tag) {
+            if (!imageHasData(img)) return;
+            return img.iptcdata[tag];
+        };
+
+        EXIF.getAllTags = function(img) {
+            if (!imageHasData(img)) return {};
+            var a,
+                data = img.exifdata,
+                tags = {};
+            for (a in data) {
+                if (data.hasOwnProperty(a)) {
+                    tags[a] = data[a];
+                }
+            }
+            return tags;
+        };
+        
+        EXIF.getAllIptcTags = function(img) {
+            if (!imageHasData(img)) return {};
+            var a,
+                data = img.iptcdata,
+                tags = {};
+            for (a in data) {
+                if (data.hasOwnProperty(a)) {
+                    tags[a] = data[a];
+                }
+            }
+            return tags;
+        };
+
+        EXIF.pretty = function(img) {
+            if (!imageHasData(img)) return "";
+            var a,
+                data = img.exifdata,
+                strPretty = "";
+            for (a in data) {
+                if (data.hasOwnProperty(a)) {
+                    if (typeof data[a] == "object") {
+                        if (data[a] instanceof Number) {
+                            strPretty += a + " : " + data[a] + " [" + data[a].numerator + "/" + data[a].denominator + "]\r\n";
+                        } else {
+                            strPretty += a + " : [" + data[a].length + " values]\r\n";
+                        }
+                    } else {
+                        strPretty += a + " : " + data[a] + "\r\n";
+                    }
+                }
+            }
+            return strPretty;
+        };
+
+        EXIF.readFromBinaryFile = function(file) {
+            return findEXIFinJPEG(file);
+        };
+    }.call(commonjsGlobal$1));
+    });
+    var exif_1 = exif.EXIF;
+
+    /**
+     * Return a `Blob` for the given data `uri`.
+     *
+     * @param {String} uri
+     * @return {Blob}
+     * @api public
+     */
+
+    /**
+     * Expose `size`.
+     */
+
     /* src\components\Entry.svelte generated by Svelte v3.16.7 */
 
     const { Map: Map_1 } = globals;
@@ -34943,7 +35987,7 @@
     	return child_ctx;
     }
 
-    // (375:10) {#each typeDesigns as typeDesign}
+    // (380:10) {#each typeDesigns as typeDesign}
     function create_each_block_1$1(ctx) {
     	let current;
 
@@ -34990,14 +36034,14 @@
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(375:10) {#each typeDesigns as typeDesign}",
+    		source: "(380:10) {#each typeDesigns as typeDesign}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (423:6) {#if picturePreview || pictureURL}
+    // (428:6) {#if picturePreview || pictureURL}
     function create_if_block_2$2(ctx) {
     	let img;
     	let img_alt_value;
@@ -35019,7 +36063,7 @@
     			? /*picturePreview*/ ctx[6]
     			: /*pictureURL*/ ctx[7])) attr_dev(img, "src", img_src_value);
 
-    			add_location(img, file$9, 423, 8, 15816);
+    			add_location(img, file$9, 428, 8, 15966);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, img, anchor);
@@ -35055,14 +36099,14 @@
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(423:6) {#if picturePreview || pictureURL}",
+    		source: "(428:6) {#if picturePreview || pictureURL}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (432:8) {#if suggestedDescriptions}
+    // (437:8) {#if suggestedDescriptions}
     function create_if_block_1$4(ctx) {
     	let each_blocks = [];
     	let each_1_lookup = new Map_1();
@@ -35114,14 +36158,14 @@
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(432:8) {#if suggestedDescriptions}",
+    		source: "(437:8) {#if suggestedDescriptions}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (433:10) {#each suggestedDescriptions as suggestion, index (suggestion)}
+    // (438:10) {#each suggestedDescriptions as suggestion, index (suggestion)}
     function create_each_block$2(key_1, ctx) {
     	let button;
     	let t0_value = /*suggestion*/ ctx[40] + "";
@@ -35142,7 +36186,7 @@
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(button, "class", "suggestion-button svelte-1r30idg");
-    			add_location(button, file$9, 433, 12, 16232);
+    			add_location(button, file$9, 438, 12, 16382);
     			dispose = listen_dev(button, "click", click_handler_7, false, false, false);
     			this.first = button;
     		},
@@ -35178,14 +36222,14 @@
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(433:10) {#each suggestedDescriptions as suggestion, index (suggestion)}",
+    		source: "(438:10) {#each suggestedDescriptions as suggestion, index (suggestion)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (453:6) {#if Object.keys($entryData).length > 0}
+    // (458:6) {#if Object.keys($entryData).length > 0}
     function create_if_block$7(ctx) {
     	let div;
     	let button;
@@ -35197,9 +36241,9 @@
     			button = element("button");
     			button.textContent = "Delete";
     			attr_dev(button, "class", "sign-out-button svelte-1r30idg");
-    			add_location(button, file$9, 454, 10, 17021);
+    			add_location(button, file$9, 459, 10, 17171);
     			attr_dev(div, "class", "w-full text-center");
-    			add_location(div, file$9, 453, 8, 16977);
+    			add_location(div, file$9, 458, 8, 17127);
     			dispose = listen_dev(button, "click", /*click_handler_9*/ ctx[39], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -35217,7 +36261,7 @@
     		block,
     		id: create_if_block$7.name,
     		type: "if",
-    		source: "(453:6) {#if Object.keys($entryData).length > 0}",
+    		source: "(458:6) {#if Object.keys($entryData).length > 0}",
     		ctx
     	});
 
@@ -35391,98 +36435,98 @@
     			attr_dev(i0, "class", "material-icons-round fill-current");
     			set_style(i0, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i0, "aria-label", "Back button");
-    			add_location(i0, file$9, 315, 6, 12012);
-    			add_location(button0, file$9, 314, 4, 11996);
+    			add_location(i0, file$9, 320, 6, 12162);
+    			add_location(button0, file$9, 319, 4, 12146);
     			attr_dev(div0, "class", div0_class_value = "w-full flex flex-row p-4 " + (/*scrolling*/ ctx[0] ? "shadow" : "") + " fixed top-0\r\n    justify-between z-10");
     			set_style(div0, "height", "56px");
     			set_style(div0, "background-color", "var(--background-color)");
-    			add_location(div0, file$9, 310, 2, 11812);
+    			add_location(div0, file$9, 315, 2, 11962);
     			attr_dev(label0, "for", "amount-input");
     			attr_dev(label0, "class", label0_class_value = "" + (null_to_empty(/*amountValid*/ ctx[8] ? "label" : "label label-error") + " svelte-1r30idg"));
-    			add_location(label0, file$9, 329, 8, 12464);
+    			add_location(label0, file$9, 334, 8, 12614);
     			attr_dev(input0, "id", "amount-input");
     			attr_dev(input0, "class", "amount text-2xl svelte-1r30idg");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$9, 334, 8, 12610);
+    			add_location(input0, file$9, 339, 8, 12760);
     			attr_dev(div1, "class", "input-row svelte-1r30idg");
-    			add_location(div1, file$9, 328, 6, 12392);
+    			add_location(div1, file$9, 333, 6, 12542);
     			attr_dev(label1, "for", "date-input");
     			attr_dev(label1, "class", label1_class_value = "" + (null_to_empty(/*dateValid*/ ctx[9] ? "label" : "label label-error") + " svelte-1r30idg"));
-    			add_location(label1, file$9, 343, 8, 12927);
+    			add_location(label1, file$9, 348, 8, 13077);
     			attr_dev(button1, "id", "today-button");
     			attr_dev(button1, "class", "date-button active svelte-1r30idg");
-    			add_location(button1, file$9, 349, 10, 13097);
+    			add_location(button1, file$9, 354, 10, 13247);
     			attr_dev(button2, "id", "yesterday-button");
     			attr_dev(button2, "class", "date-button svelte-1r30idg");
-    			add_location(button2, file$9, 355, 10, 13275);
+    			add_location(button2, file$9, 360, 10, 13425);
     			attr_dev(div2, "class", "mr-4");
-    			add_location(div2, file$9, 348, 8, 13067);
+    			add_location(div2, file$9, 353, 8, 13217);
     			attr_dev(div3, "class", "input-row svelte-1r30idg");
-    			add_location(div3, file$9, 342, 6, 12855);
-    			add_location(span, file$9, 368, 8, 13683);
+    			add_location(div3, file$9, 347, 6, 13005);
+    			add_location(span, file$9, 373, 8, 13833);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "svelte-1r30idg");
-    			add_location(input1, file$9, 369, 8, 13716);
+    			add_location(input1, file$9, 374, 8, 13866);
     			attr_dev(div4, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n        ml-4");
     			set_style(div4, "color", "var(--text-color2)");
-    			add_location(div4, file$9, 363, 6, 13484);
+    			add_location(div4, file$9, 368, 6, 13634);
     			attr_dev(label2, "class", "label svelte-1r30idg");
-    			add_location(label2, file$9, 372, 8, 13876);
+    			add_location(label2, file$9, 377, 8, 14026);
     			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div5, file$9, 373, 8, 13919);
+    			add_location(div5, file$9, 378, 8, 14069);
     			attr_dev(div6, "class", "mt-12 flex flex-col");
-    			add_location(div6, file$9, 371, 6, 13793);
+    			add_location(div6, file$9, 376, 6, 13943);
     			attr_dev(label3, "for", "description-input");
     			attr_dev(label3, "class", "label svelte-1r30idg");
-    			add_location(label3, file$9, 387, 8, 14485);
+    			add_location(label3, file$9, 392, 8, 14635);
     			attr_dev(input2, "class", "truncate text-2xl flex-grow svelte-1r30idg");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "(Optional)");
-    			add_location(input2, file$9, 389, 10, 14635);
+    			add_location(input2, file$9, 394, 10, 14785);
     			attr_dev(i1, "id", "location-button");
     			attr_dev(i1, "class", "material-icons-round fill-current mr-4");
     			set_style(i1, "color", "var(--text-color2)");
-    			add_location(i1, file$9, 397, 12, 14972);
-    			add_location(button3, file$9, 396, 10, 14919);
+    			add_location(i1, file$9, 402, 12, 15122);
+    			add_location(button3, file$9, 401, 10, 15069);
     			attr_dev(input3, "id", "picture-input");
     			attr_dev(input3, "type", "file");
     			attr_dev(input3, "name", "image");
     			attr_dev(input3, "accept", "image/*");
     			set_style(input3, "display", "none");
     			attr_dev(input3, "class", "svelte-1r30idg");
-    			add_location(input3, file$9, 404, 10, 15200);
+    			add_location(input3, file$9, 409, 10, 15350);
     			attr_dev(i2, "id", "picture-button");
     			attr_dev(i2, "class", "material-icons-round fill-current");
     			set_style(i2, "color", "var(--text-color2)");
-    			add_location(i2, file$9, 413, 12, 15523);
-    			add_location(button4, file$9, 411, 10, 15422);
+    			add_location(i2, file$9, 418, 12, 15673);
+    			add_location(button4, file$9, 416, 10, 15572);
     			attr_dev(div7, "class", "flex w-full justify-between items-center px-4 mt-2");
-    			add_location(div7, file$9, 388, 8, 14559);
+    			add_location(div7, file$9, 393, 8, 14709);
     			attr_dev(div8, "class", div8_class_value = "input-row " + (window.innerWidth < 768 ? "description-row-small" : "") + " svelte-1r30idg");
-    			add_location(div8, file$9, 384, 6, 14337);
+    			add_location(div8, file$9, 389, 6, 14487);
     			attr_dev(div9, "class", "flex mt-4 mx-4 flex-wrap");
-    			add_location(div9, file$9, 430, 6, 16068);
+    			add_location(div9, file$9, 435, 6, 16218);
 
     			attr_dev(button5, "class", button5_class_value = "submit-button " + (/*typeValid*/ ctx[10] && /*dateValid*/ ctx[9] && /*amountValid*/ ctx[8]
     			? "active"
     			: "inactive cursor-not-allowed") + " svelte-1r30idg");
 
     			button5.disabled = button5_disabled_value = !(/*typeValid*/ ctx[10] && /*dateValid*/ ctx[9] && /*amountValid*/ ctx[8]);
-    			add_location(button5, file$9, 445, 8, 16615);
+    			add_location(button5, file$9, 450, 8, 16765);
     			attr_dev(div10, "class", "w-full text-center block");
-    			add_location(div10, file$9, 442, 6, 16509);
+    			add_location(div10, file$9, 447, 6, 16659);
     			attr_dev(div11, "class", "form-wrapper svelte-1r30idg");
-    			add_location(div11, file$9, 327, 4, 12358);
+    			add_location(div11, file$9, 332, 4, 12508);
     			attr_dev(div12, "class", "flex flex-col items-center justify-around mt-8");
-    			add_location(div12, file$9, 326, 2, 12292);
+    			add_location(div12, file$9, 331, 2, 12442);
     			attr_dev(div13, "id", "entry-page");
     			attr_dev(div13, "class", "h-screen w-full absolute top-0 overflow-y-auto overflow-x-hidden");
     			set_style(div13, "background-color", "var(--background-color)");
     			set_style(div13, "color", "var(--text-color)");
-    			add_location(div13, file$9, 305, 0, 11598);
+    			add_location(div13, file$9, 310, 0, 11748);
 
     			dispose = [
     				listen_dev(i0, "click", /*click_handler*/ ctx[26], false, false, false),
@@ -35987,6 +37031,10 @@
     		} else {
     			document.getElementById("picture-button").style.setProperty("color", "hsl(var(--secondary-hue), 50%, 50%)");
     			$$invalidate(6, picturePreview = URL.createObjectURL(pictureFile));
+
+    			fixOrientation(picturePreview, { image: true }, (fixed, image) => {
+    				$$invalidate(6, picturePreview = fixed);
+    			});
     		}
     	}
 
@@ -36826,7 +37874,7 @@
       appId: "1:680552838328:web:d7d7ef47348fbb3920f04d"
     };
 
-    try{self["workbox:window:4.3.1"]&&_();}catch(n){}var n$1=function(n,t){return new Promise(function(i){var e=new MessageChannel;e.port1.onmessage=function(n){return i(n.data)},n.postMessage(t,[e.port2]);})};function t$1(n,t){for(var i=0;i<t.length;i++){var e=t[i];e.enumerable=e.enumerable||!1,e.configurable=!0,"value"in e&&(e.writable=!0),Object.defineProperty(n,e.key,e);}}function i(n){if(void 0===n)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return n}try{self["workbox:core:4.3.1"]&&_();}catch(n){}var e=function(){var n=this;this.promise=new Promise(function(t,i){n.resolve=t,n.reject=i;});},r$1=function(n,t){return new URL(n,location).href===new URL(t,location).href},o=function(n,t){Object.assign(this,t,{type:n});};function u$1(n){return function(){for(var t=[],i=0;i<arguments.length;i++)t[i]=arguments[i];try{return Promise.resolve(n.apply(this,t))}catch(n){return Promise.reject(n)}}}function a(n,t,i){return i?t?t(n):n:(n&&n.then||(n=Promise.resolve(n)),t?n.then(t):n)}function s(){}var c=function(c){var f,h;function v(n,t){var r;return void 0===t&&(t={}),(r=c.call(this)||this).t=n,r.i=t,r.o=0,r.u=new e,r.s=new e,r.h=new e,r.v=r.v.bind(i(i(r))),r.l=r.l.bind(i(i(r))),r.g=r.g.bind(i(i(r))),r.m=r.m.bind(i(i(r))),r}h=c,(f=v).prototype=Object.create(h.prototype),f.prototype.constructor=f,f.__proto__=h;var l,w,d=v.prototype;return d.register=u$1(function(n){var t,i,e=this,u=(void 0===n?{}:n).immediate,c=void 0!==u&&u;return t=function(){return e.p=Boolean(navigator.serviceWorker.controller),e.P=e.R(),a(e.k(),function(n){e.B=n,e.P&&(e.O=e.P,e.s.resolve(e.P),e.h.resolve(e.P),e.j(e.P),e.P.addEventListener("statechange",e.l,{once:!0}));var t=e.B.waiting;return t&&r$1(t.scriptURL,e.t)&&(e.O=t,Promise.resolve().then(function(){e.dispatchEvent(new o("waiting",{sw:t,wasWaitingBeforeRegister:!0}));})),e.O&&e.u.resolve(e.O),e.B.addEventListener("updatefound",e.g),navigator.serviceWorker.addEventListener("controllerchange",e.m,{once:!0}),"BroadcastChannel"in self&&(e.C=new BroadcastChannel("workbox"),e.C.addEventListener("message",e.v)),navigator.serviceWorker.addEventListener("message",e.v),e.B})},(i=function(){if(!c&&"complete"!==document.readyState)return function(n,t){if(!t)return n&&n.then?n.then(s):Promise.resolve()}(new Promise(function(n){return addEventListener("load",n)}))}())&&i.then?i.then(t):t(i)}),d.getSW=u$1(function(){return this.O||this.u.promise}),d.messageSW=u$1(function(t){return a(this.getSW(),function(i){return n$1(i,t)})}),d.R=function(){var n=navigator.serviceWorker.controller;if(n&&r$1(n.scriptURL,this.t))return n},d.k=u$1(function(){var n=this;return function(n,t){try{var i=n();}catch(n){return t(n)}return i&&i.then?i.then(void 0,t):i}(function(){return a(navigator.serviceWorker.register(n.t,n.i),function(t){return n.L=performance.now(),t})},function(n){throw n})}),d.j=function(t){n$1(t,{type:"WINDOW_READY",meta:"workbox-window"});},d.g=function(){var n=this.B.installing;this.o>0||!r$1(n.scriptURL,this.t)||performance.now()>this.L+6e4?(this.W=n,this.B.removeEventListener("updatefound",this.g)):(this.O=n,this.u.resolve(n)),++this.o,n.addEventListener("statechange",this.l);},d.l=function(n){var t=this,i=n.target,e=i.state,r=i===this.W,u=r?"external":"",a={sw:i,originalEvent:n};!r&&this.p&&(a.isUpdate=!0),this.dispatchEvent(new o(u+e,a)),"installed"===e?this._=setTimeout(function(){"installed"===e&&t.B.waiting===i&&t.dispatchEvent(new o(u+"waiting",a));},200):"activating"===e&&(clearTimeout(this._),r||this.s.resolve(i));},d.m=function(n){var t=this.O;t===navigator.serviceWorker.controller&&(this.dispatchEvent(new o("controlling",{sw:t,originalEvent:n})),this.h.resolve(t));},d.v=function(n){var t=n.data;this.dispatchEvent(new o("message",{data:t,originalEvent:n}));},l=v,(w=[{key:"active",get:function(){return this.s.promise}},{key:"controlling",get:function(){return this.h.promise}}])&&t$1(l.prototype,w),v}(function(){function n(){this.D={};}var t=n.prototype;return t.addEventListener=function(n,t){this.T(n).add(t);},t.removeEventListener=function(n,t){this.T(n).delete(t);},t.dispatchEvent=function(n){n.target=this,this.T(n.type).forEach(function(t){return t(n)});},t.T=function(n){return this.D[n]=this.D[n]||new Set},n}());//# sourceMappingURL=workbox-window.prod.es5.mjs.map
+    try{self["workbox:window:4.3.1"]&&_();}catch(n){}var n$2=function(n,t){return new Promise(function(i){var e=new MessageChannel;e.port1.onmessage=function(n){return i(n.data)},n.postMessage(t,[e.port2]);})};function t$1(n,t){for(var i=0;i<t.length;i++){var e=t[i];e.enumerable=e.enumerable||!1,e.configurable=!0,"value"in e&&(e.writable=!0),Object.defineProperty(n,e.key,e);}}function i(n){if(void 0===n)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return n}try{self["workbox:core:4.3.1"]&&_();}catch(n){}var e=function(){var n=this;this.promise=new Promise(function(t,i){n.resolve=t,n.reject=i;});},r$1=function(n,t){return new URL(n,location).href===new URL(t,location).href},o=function(n,t){Object.assign(this,t,{type:n});};function u$1(n){return function(){for(var t=[],i=0;i<arguments.length;i++)t[i]=arguments[i];try{return Promise.resolve(n.apply(this,t))}catch(n){return Promise.reject(n)}}}function a(n,t,i){return i?t?t(n):n:(n&&n.then||(n=Promise.resolve(n)),t?n.then(t):n)}function s(){}var c=function(c){var f,h;function v(n,t){var r;return void 0===t&&(t={}),(r=c.call(this)||this).t=n,r.i=t,r.o=0,r.u=new e,r.s=new e,r.h=new e,r.v=r.v.bind(i(i(r))),r.l=r.l.bind(i(i(r))),r.g=r.g.bind(i(i(r))),r.m=r.m.bind(i(i(r))),r}h=c,(f=v).prototype=Object.create(h.prototype),f.prototype.constructor=f,f.__proto__=h;var l,w,d=v.prototype;return d.register=u$1(function(n){var t,i,e=this,u=(void 0===n?{}:n).immediate,c=void 0!==u&&u;return t=function(){return e.p=Boolean(navigator.serviceWorker.controller),e.P=e.R(),a(e.k(),function(n){e.B=n,e.P&&(e.O=e.P,e.s.resolve(e.P),e.h.resolve(e.P),e.j(e.P),e.P.addEventListener("statechange",e.l,{once:!0}));var t=e.B.waiting;return t&&r$1(t.scriptURL,e.t)&&(e.O=t,Promise.resolve().then(function(){e.dispatchEvent(new o("waiting",{sw:t,wasWaitingBeforeRegister:!0}));})),e.O&&e.u.resolve(e.O),e.B.addEventListener("updatefound",e.g),navigator.serviceWorker.addEventListener("controllerchange",e.m,{once:!0}),"BroadcastChannel"in self&&(e.C=new BroadcastChannel("workbox"),e.C.addEventListener("message",e.v)),navigator.serviceWorker.addEventListener("message",e.v),e.B})},(i=function(){if(!c&&"complete"!==document.readyState)return function(n,t){if(!t)return n&&n.then?n.then(s):Promise.resolve()}(new Promise(function(n){return addEventListener("load",n)}))}())&&i.then?i.then(t):t(i)}),d.getSW=u$1(function(){return this.O||this.u.promise}),d.messageSW=u$1(function(t){return a(this.getSW(),function(i){return n$2(i,t)})}),d.R=function(){var n=navigator.serviceWorker.controller;if(n&&r$1(n.scriptURL,this.t))return n},d.k=u$1(function(){var n=this;return function(n,t){try{var i=n();}catch(n){return t(n)}return i&&i.then?i.then(void 0,t):i}(function(){return a(navigator.serviceWorker.register(n.t,n.i),function(t){return n.L=performance.now(),t})},function(n){throw n})}),d.j=function(t){n$2(t,{type:"WINDOW_READY",meta:"workbox-window"});},d.g=function(){var n=this.B.installing;this.o>0||!r$1(n.scriptURL,this.t)||performance.now()>this.L+6e4?(this.W=n,this.B.removeEventListener("updatefound",this.g)):(this.O=n,this.u.resolve(n)),++this.o,n.addEventListener("statechange",this.l);},d.l=function(n){var t=this,i=n.target,e=i.state,r=i===this.W,u=r?"external":"",a={sw:i,originalEvent:n};!r&&this.p&&(a.isUpdate=!0),this.dispatchEvent(new o(u+e,a)),"installed"===e?this._=setTimeout(function(){"installed"===e&&t.B.waiting===i&&t.dispatchEvent(new o(u+"waiting",a));},200):"activating"===e&&(clearTimeout(this._),r||this.s.resolve(i));},d.m=function(n){var t=this.O;t===navigator.serviceWorker.controller&&(this.dispatchEvent(new o("controlling",{sw:t,originalEvent:n})),this.h.resolve(t));},d.v=function(n){var t=n.data;this.dispatchEvent(new o("message",{data:t,originalEvent:n}));},l=v,(w=[{key:"active",get:function(){return this.s.promise}},{key:"controlling",get:function(){return this.h.promise}}])&&t$1(l.prototype,w),v}(function(){function n(){this.D={};}var t=n.prototype;return t.addEventListener=function(n,t){this.T(n).add(t);},t.removeEventListener=function(n,t){this.T(n).delete(t);},t.dispatchEvent=function(n){n.target=this,this.T(n.type).forEach(function(t){return t(n)});},t.T=function(n){return this.D[n]=this.D[n]||new Set},n}());//# sourceMappingURL=workbox-window.prod.es5.mjs.map
 
     /* src\App.svelte generated by Svelte v3.16.7 */
     const file$b = "src\\App.svelte";

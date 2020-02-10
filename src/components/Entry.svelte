@@ -17,6 +17,7 @@
   import firebase from "firebase/app";
   import "firebase/firestore";
   import "firebase/storage";
+  import "fix-orientation";
 
   let scrolling = false;
 
@@ -278,6 +279,10 @@
         .style.setProperty("color", "hsl(var(--secondary-hue), 50%, 50%)");
 
       picturePreview = URL.createObjectURL(pictureFile);
+
+      fixOrientation(picturePreview, { image: true }, (fixed, image) => {
+        picturePreview = fixed;
+      });
     }
   }
 
