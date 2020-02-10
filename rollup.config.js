@@ -44,6 +44,10 @@ export default {
           handler: "StaleWhileRevalidate"
         },
         {
+          urlPattern: "/load-image.all.min.js",
+          handler: "StaleWhileRevalidate"
+        },
+        {
           urlPattern: "/main.css",
           handler: "StaleWhileRevalidate"
         },
