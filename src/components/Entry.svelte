@@ -278,11 +278,15 @@
         .getElementById("picture-button")
         .style.setProperty("color", "hsl(var(--secondary-hue), 50%, 50%)");
 
-      picturePreview = URL.createObjectURL(pictureFile);
+      const unrotatedPicturePreview = URL.createObjectURL(pictureFile);
 
-      fixOrientation(picturePreview, { image: true }, (fixed, image) => {
-        picturePreview = fixed;
-      });
+      fixOrientation(
+        unrotatedPicturePreview,
+        { image: true },
+        (fixed, image) => {
+          picturePreview = fixed;
+        }
+      );
     }
   }
 
