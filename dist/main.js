@@ -29553,7 +29553,7 @@
     			a.textContent = "Privacy policy";
     			t10 = text("\r\n      •\r\n      ");
     			span2 = element("span");
-    			span2.textContent = "v0.27.0";
+    			span2.textContent = "v0.28.0";
     			attr_dev(span0, "class", "label svelte-17ige3d");
     			add_location(span0, file$5, 137, 6, 5539);
 
@@ -35987,7 +35987,7 @@
     	return child_ctx;
     }
 
-    // (415:10) {#each typeDesigns as typeDesign}
+    // (418:10) {#each typeDesigns as typeDesign}
     function create_each_block_1$1(ctx) {
     	let current;
 
@@ -36034,14 +36034,14 @@
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(415:10) {#each typeDesigns as typeDesign}",
+    		source: "(418:10) {#each typeDesigns as typeDesign}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (465:8) {#if suggestedDescriptions}
+    // (468:8) {#if suggestedDescriptions}
     function create_if_block_1$4(ctx) {
     	let each_blocks = [];
     	let each_1_lookup = new Map_1();
@@ -36093,14 +36093,14 @@
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(465:8) {#if suggestedDescriptions}",
+    		source: "(468:8) {#if suggestedDescriptions}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (466:10) {#each suggestedDescriptions as suggestion, index (suggestion)}
+    // (469:10) {#each suggestedDescriptions as suggestion, index (suggestion)}
     function create_each_block$2(key_1, ctx) {
     	let button;
     	let t0_value = /*suggestion*/ ctx[40] + "";
@@ -36121,7 +36121,7 @@
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(button, "class", "suggestion-button svelte-1r30idg");
-    			add_location(button, file$9, 466, 12, 17098);
+    			add_location(button, file$9, 469, 12, 17244);
     			dispose = listen_dev(button, "click", click_handler_7, false, false, false);
     			this.first = button;
     		},
@@ -36157,14 +36157,14 @@
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(466:10) {#each suggestedDescriptions as suggestion, index (suggestion)}",
+    		source: "(469:10) {#each suggestedDescriptions as suggestion, index (suggestion)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (486:6) {#if Object.keys($entryData).length > 0}
+    // (489:6) {#if Object.keys($entryData).length > 0}
     function create_if_block$7(ctx) {
     	let div;
     	let button;
@@ -36176,9 +36176,9 @@
     			button = element("button");
     			button.textContent = "Delete";
     			attr_dev(button, "class", "sign-out-button svelte-1r30idg");
-    			add_location(button, file$9, 487, 10, 17887);
+    			add_location(button, file$9, 490, 10, 18033);
     			attr_dev(div, "class", "w-full text-center");
-    			add_location(div, file$9, 486, 8, 17843);
+    			add_location(div, file$9, 489, 8, 17989);
     			dispose = listen_dev(button, "click", /*click_handler_9*/ ctx[39], false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -36196,7 +36196,7 @@
     		block,
     		id: create_if_block$7.name,
     		type: "if",
-    		source: "(486:6) {#if Object.keys($entryData).length > 0}",
+    		source: "(489:6) {#if Object.keys($entryData).length > 0}",
     		ctx
     	});
 
@@ -36370,100 +36370,101 @@
     			attr_dev(i0, "class", "material-icons-round fill-current");
     			set_style(i0, "color", "hsl(var(--primary-hue), 50%, 50%)");
     			attr_dev(i0, "aria-label", "Back button");
-    			add_location(i0, file$9, 355, 6, 13138);
-    			add_location(button0, file$9, 354, 4, 13122);
+    			add_location(i0, file$9, 358, 6, 13264);
+    			add_location(button0, file$9, 357, 4, 13248);
     			attr_dev(div0, "class", div0_class_value = "w-full flex flex-row p-4 " + (/*scrolling*/ ctx[0] ? "shadow" : "") + " fixed top-0\r\n    justify-between z-10");
     			set_style(div0, "height", "56px");
     			set_style(div0, "background-color", "var(--background-color)");
-    			add_location(div0, file$9, 350, 2, 12938);
+    			add_location(div0, file$9, 353, 2, 13064);
     			attr_dev(label0, "for", "amount-input");
     			attr_dev(label0, "class", label0_class_value = "" + (null_to_empty(/*amountValid*/ ctx[6] ? "label" : "label label-error") + " svelte-1r30idg"));
-    			add_location(label0, file$9, 369, 8, 13590);
+    			add_location(label0, file$9, 372, 8, 13716);
     			attr_dev(input0, "id", "amount-input");
     			attr_dev(input0, "class", "amount text-2xl svelte-1r30idg");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$9, 374, 8, 13736);
+    			add_location(input0, file$9, 377, 8, 13862);
     			attr_dev(div1, "class", "input-row svelte-1r30idg");
-    			add_location(div1, file$9, 368, 6, 13518);
+    			add_location(div1, file$9, 371, 6, 13644);
     			attr_dev(label1, "for", "date-input");
     			attr_dev(label1, "class", label1_class_value = "" + (null_to_empty(/*dateValid*/ ctx[7] ? "label" : "label label-error") + " svelte-1r30idg"));
-    			add_location(label1, file$9, 383, 8, 14053);
+    			add_location(label1, file$9, 386, 8, 14179);
     			attr_dev(button1, "id", "today-button");
     			attr_dev(button1, "class", "date-button active svelte-1r30idg");
-    			add_location(button1, file$9, 389, 10, 14223);
+    			add_location(button1, file$9, 392, 10, 14349);
     			attr_dev(button2, "id", "yesterday-button");
     			attr_dev(button2, "class", "date-button svelte-1r30idg");
-    			add_location(button2, file$9, 395, 10, 14401);
+    			add_location(button2, file$9, 398, 10, 14527);
     			attr_dev(div2, "class", "mr-4");
-    			add_location(div2, file$9, 388, 8, 14193);
+    			add_location(div2, file$9, 391, 8, 14319);
     			attr_dev(div3, "class", "input-row svelte-1r30idg");
-    			add_location(div3, file$9, 382, 6, 13981);
-    			add_location(span, file$9, 408, 8, 14809);
+    			add_location(div3, file$9, 385, 6, 14107);
+    			add_location(span, file$9, 411, 8, 14935);
     			attr_dev(input1, "id", "date-input");
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "svelte-1r30idg");
-    			add_location(input1, file$9, 409, 8, 14842);
+    			add_location(input1, file$9, 412, 8, 14968);
     			attr_dev(div4, "class", "flex flex-row w-full justify-between items-center mt-2 text-lg\r\n        ml-4");
     			set_style(div4, "color", "var(--text-color2)");
-    			add_location(div4, file$9, 403, 6, 14610);
+    			add_location(div4, file$9, 406, 6, 14736);
     			attr_dev(label2, "class", "label svelte-1r30idg");
-    			add_location(label2, file$9, 412, 8, 15002);
+    			add_location(label2, file$9, 415, 8, 15128);
     			attr_dev(div5, "class", "w-full flex flex-row flex-wrap justify-start");
-    			add_location(div5, file$9, 413, 8, 15045);
+    			add_location(div5, file$9, 416, 8, 15171);
     			attr_dev(div6, "class", "mt-12 flex flex-col");
-    			add_location(div6, file$9, 411, 6, 14919);
+    			add_location(div6, file$9, 414, 6, 15045);
     			attr_dev(label3, "for", "description-input");
     			attr_dev(label3, "class", "label svelte-1r30idg");
-    			add_location(label3, file$9, 427, 8, 15611);
+    			add_location(label3, file$9, 430, 8, 15737);
     			attr_dev(input2, "class", "truncate text-2xl flex-grow svelte-1r30idg");
     			attr_dev(input2, "id", "description-input");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "(Optional)");
-    			add_location(input2, file$9, 429, 10, 15761);
+    			add_location(input2, file$9, 432, 10, 15887);
     			attr_dev(i1, "id", "location-button");
     			attr_dev(i1, "class", "material-icons-round fill-current mr-4");
     			set_style(i1, "color", "var(--text-color2)");
-    			add_location(i1, file$9, 437, 12, 16098);
-    			add_location(button3, file$9, 436, 10, 16045);
+    			add_location(i1, file$9, 440, 12, 16224);
+    			add_location(button3, file$9, 439, 10, 16171);
     			attr_dev(input3, "id", "picture-input");
     			attr_dev(input3, "type", "file");
     			attr_dev(input3, "name", "image");
     			attr_dev(input3, "accept", "image/*");
     			set_style(input3, "display", "none");
     			attr_dev(input3, "class", "svelte-1r30idg");
-    			add_location(input3, file$9, 444, 10, 16326);
+    			add_location(input3, file$9, 447, 10, 16452);
     			attr_dev(i2, "id", "picture-button");
     			attr_dev(i2, "class", "material-icons-round fill-current");
     			set_style(i2, "color", "var(--text-color2)");
-    			add_location(i2, file$9, 453, 12, 16649);
-    			add_location(button4, file$9, 451, 10, 16548);
+    			add_location(i2, file$9, 456, 12, 16775);
+    			add_location(button4, file$9, 454, 10, 16674);
     			attr_dev(div7, "class", "flex w-full justify-between items-center px-4 mt-2");
-    			add_location(div7, file$9, 428, 8, 15685);
+    			add_location(div7, file$9, 431, 8, 15811);
     			attr_dev(div8, "class", div8_class_value = "input-row " + (window.innerWidth < 768 ? "description-row-small" : "") + " svelte-1r30idg");
-    			add_location(div8, file$9, 424, 6, 15463);
+    			add_location(div8, file$9, 427, 6, 15589);
     			attr_dev(div9, "id", "picture-preview");
-    			add_location(div9, file$9, 462, 6, 16898);
+    			attr_dev(div9, "class", "w-full mt-4");
+    			add_location(div9, file$9, 465, 6, 17024);
     			attr_dev(div10, "class", "flex mt-4 mx-4 flex-wrap");
-    			add_location(div10, file$9, 463, 6, 16934);
+    			add_location(div10, file$9, 466, 6, 17080);
 
     			attr_dev(button5, "class", button5_class_value = "submit-button " + (/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]
     			? "active"
     			: "inactive cursor-not-allowed") + " svelte-1r30idg");
 
     			button5.disabled = button5_disabled_value = !(/*typeValid*/ ctx[8] && /*dateValid*/ ctx[7] && /*amountValid*/ ctx[6]);
-    			add_location(button5, file$9, 478, 8, 17481);
+    			add_location(button5, file$9, 481, 8, 17627);
     			attr_dev(div11, "class", "w-full text-center block");
-    			add_location(div11, file$9, 475, 6, 17375);
+    			add_location(div11, file$9, 478, 6, 17521);
     			attr_dev(div12, "class", "form-wrapper svelte-1r30idg");
-    			add_location(div12, file$9, 367, 4, 13484);
+    			add_location(div12, file$9, 370, 4, 13610);
     			attr_dev(div13, "class", "flex flex-col items-center justify-around mt-8");
-    			add_location(div13, file$9, 366, 2, 13418);
+    			add_location(div13, file$9, 369, 2, 13544);
     			attr_dev(div14, "id", "entry-page");
     			attr_dev(div14, "class", "h-screen w-full absolute top-0 overflow-y-auto overflow-x-hidden");
     			set_style(div14, "background-color", "var(--background-color)");
     			set_style(div14, "color", "var(--text-color)");
-    			add_location(div14, file$9, 345, 0, 12724);
+    			add_location(div14, file$9, 348, 0, 12850);
 
     			dispose = [
     				listen_dev(i0, "click", /*click_handler*/ ctx[26], false, false, false),
@@ -36737,7 +36738,7 @@
     	validate_store(entryData, "entryData");
     	component_subscribe($$self, entryData, $$value => $$invalidate(10, $entryData = $$value));
     	validate_store(userInfo, "userInfo");
-    	component_subscribe($$self, userInfo, $$value => $$invalidate(21, $userInfo = $$value));
+    	component_subscribe($$self, userInfo, $$value => $$invalidate(22, $userInfo = $$value));
     	let scrolling = false;
     	let description = "";
     	let amount = 0;
@@ -36746,7 +36747,7 @@
     	let suggestedDescriptions = [];
     	let gpsPlaces = [];
     	let pictureFile;
-    	let picturePreview;
+    	let pictureOrientation;
     	let pictureURL;
     	let amountValid = false;
     	let dateValid = false;
@@ -36781,12 +36782,13 @@
     					img => {
     						const previewEl = document.getElementById("picture-preview");
     						if (previewEl && previewEl.childElementCount > 0) previewEl.removeChild(previewEl.firstChild);
-    						img.classList.add("object-cover", "h-64", "w-full", "mt-4");
     						document.getElementById("picture-preview").appendChild(img);
     					},
     					{
-    						orientation: 1,
-    						maxHeight: window.innerHeight * 0.2
+    						orientation: $entryData.pictureOrientation,
+    						contain: true,
+    						maxWidth: window.innerWidth,
+    						minWidth: window.innerWidth
     					}
     				);
     			}
@@ -36872,7 +36874,8 @@
     			addedOn: getDateString(),
     			id: $entryData.id ? $entryData.id : newId,
     			pictureURL: _pictureURL,
-    			pictureName: _pictureName
+    			pictureName: _pictureName,
+    			pictureOrientation
     		}).then(() => {
     			toastMessage.set("Expense created!");
     			setTimeout(() => toastMessage.set(""), 1000);
@@ -36967,16 +36970,18 @@
 
     			loadImage(
     				pictureFile,
-    				img => {
+    				(img, data) => {
     					pictureURL = img.src;
+    					pictureOrientation = data.exif.get("Orientation");
     					const previewEl = document.getElementById("picture-preview");
     					if (previewEl && previewEl.childElementCount > 0) previewEl.removeChild(previewEl.firstChild);
-    					img.classList.add("object-cover", "h-64", "w-full", "mt-4");
     					document.getElementById("picture-preview").appendChild(img);
     				},
     				{
-    					orientation: 1,
-    					maxHeight: window.innerHeight * 0.2
+    					orientation: true,
+    					contain: true,
+    					maxWidth: window.innerWidth,
+    					minWidth: window.innerWidth
     				}
     			);
     		}
@@ -37026,7 +37031,7 @@
     		if ("suggestedDescriptions" in $$props) $$invalidate(5, suggestedDescriptions = $$props.suggestedDescriptions);
     		if ("gpsPlaces" in $$props) gpsPlaces = $$props.gpsPlaces;
     		if ("pictureFile" in $$props) pictureFile = $$props.pictureFile;
-    		if ("picturePreview" in $$props) picturePreview = $$props.picturePreview;
+    		if ("pictureOrientation" in $$props) pictureOrientation = $$props.pictureOrientation;
     		if ("pictureURL" in $$props) pictureURL = $$props.pictureURL;
     		if ("amountValid" in $$props) $$invalidate(6, amountValid = $$props.amountValid);
     		if ("dateValid" in $$props) $$invalidate(7, dateValid = $$props.dateValid);
@@ -37084,10 +37089,10 @@
     		getPicture,
     		gpsPlaces,
     		pictureFile,
+    		pictureOrientation,
     		pictureURL,
     		wrapperEl,
     		$userInfo,
-    		picturePreview,
     		commonDescriptions,
     		uploadPictureAndFirestore,
     		writeToFirestore,

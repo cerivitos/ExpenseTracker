@@ -33,7 +33,7 @@
   let suggestedDescriptions = [];
   let gpsPlaces = [];
   let pictureFile;
-  let picturePreview;
+  let pictureOrientation;
   let pictureURL;
 
   let amountValid = false;
@@ -78,13 +78,13 @@
             if (previewEl && previewEl.childElementCount > 0)
               previewEl.removeChild(previewEl.firstChild);
 
-            img.classList.add("object-cover", "h-64", "w-full", "mt-4");
-
             document.getElementById("picture-preview").appendChild(img);
           },
           {
-            orientation: 1,
-            maxHeight: window.innerHeight * 0.2
+            orientation: $entryData.pictureOrientation,
+            contain: true,
+            maxWidth: window.innerWidth,
+            minWidth: window.innerWidth
           }
         );
       }
@@ -179,7 +179,8 @@
         addedOn: getDateString(),
         id: $entryData.id ? $entryData.id : newId,
         pictureURL: _pictureURL,
-        pictureName: _pictureName
+        pictureName: _pictureName,
+        pictureOrientation: pictureOrientation
       })
       .then(() => {
         toastMessage.set("Expense created!");
@@ -302,20 +303,22 @@
 
       loadImage(
         pictureFile,
-        img => {
+        (img, data) => {
           pictureURL = img.src;
+
+          pictureOrientation = data.exif.get("Orientation");
 
           const previewEl = document.getElementById("picture-preview");
           if (previewEl && previewEl.childElementCount > 0)
             previewEl.removeChild(previewEl.firstChild);
 
-          img.classList.add("object-cover", "h-64", "w-full", "mt-4");
-
           document.getElementById("picture-preview").appendChild(img);
         },
         {
-          orientation: 1,
-          maxHeight: window.innerHeight * 0.2
+          orientation: true,
+          contain: true,
+          maxWidth: window.innerWidth,
+          minWidth: window.innerWidth
         }
       );
     }
@@ -578,7 +581,7 @@
           </button>
         </div>
       </div>
-      <div id="picture-preview" />
+      <div id="picture-preview" class="w-full mt-4" />
       <div class="flex mt-4 mx-4 flex-wrap">
         {#if suggestedDescriptions}
           {#each suggestedDescriptions as suggestion, index (suggestion)}

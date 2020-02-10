@@ -31,11 +31,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "1ec9fc15e877bac461fe02af5f863d9e"
+    "revision": "0c2f73d7c6eaa848561846c6ca173ea1"
   },
   {
-    "url": "load-image-orientation.js",
-    "revision": "e38f273c1eabfde3c0fd159d1d796e27"
+    "url": "load-image.all.min.js",
+    "revision": "1bbfc74fcc88384c1c703bc605787cae"
   },
   {
     "url": "load-image.js",
@@ -47,7 +47,7 @@ self.__precacheManifest = [
   },
   {
     "url": "main.js",
-    "revision": "3332b4049b5a1b5a63b5a5b3594f2669"
+    "revision": "12786c3723f8ad605a7eae967fa1c23b"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
