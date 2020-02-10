@@ -35013,7 +35013,7 @@
     			? /*picturePreview*/ ctx[6]
     			: /*pictureURL*/ ctx[7]);
 
-    			attr_dev(img, "class", "object-cover h-48 w-full mt-4");
+    			attr_dev(img, "class", "object-cover h-64 w-full mt-4");
 
     			if (img.src !== (img_src_value = /*picturePreview*/ ctx[6]
     			? /*picturePreview*/ ctx[6]

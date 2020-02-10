@@ -543,7 +543,7 @@
           id="picture-preview"
           alt={picturePreview ? picturePreview : pictureURL}
           in:fade
-          class="object-cover h-48 w-full mt-4"
+          class="object-cover h-64 w-full mt-4"
           src={picturePreview ? picturePreview : pictureURL} />
       {/if}
       <div class="flex mt-4 mx-4 flex-wrap">
