@@ -12,7 +12,12 @@
   import { onMount, onDestroy } from "svelte";
   import TypeButton from "./TypeButton.svelte";
   import LoadingSpinner from "./LoadingSpinner.svelte";
-  import { typeDesigns, handleRouting, getDateString } from "../util";
+  import {
+    typeDesigns,
+    handleRouting,
+    getDateString,
+    getOrientation
+  } from "../util";
   import { fly, fade } from "svelte/transition";
   import firebase from "firebase/app";
   import "firebase/firestore";
@@ -65,6 +70,23 @@
         document
           .getElementById("picture-button")
           .style.setProperty("color", "hsl(var(--secondary-hue), 50%, 50%)");
+
+        loadImage(
+          pictureURL,
+          img => {
+            const previewEl = document.getElementById("picture-preview");
+            if (previewEl && previewEl.childElementCount > 0)
+              previewEl.removeChild(previewEl.firstChild);
+
+            img.classList.add("object-cover", "h-64", "w-full", "mt-4");
+
+            document.getElementById("picture-preview").appendChild(img);
+          },
+          {
+            orientation: 1,
+            maxHeight: window.innerHeight * 0.2
+          }
+        );
       }
     }
 
@@ -278,17 +300,24 @@
         .getElementById("picture-button")
         .style.setProperty("color", "hsl(var(--secondary-hue), 50%, 50%)");
 
-      const unrotatedPicturePreview = URL.createObjectURL(pictureFile);
+      loadImage(
+        pictureFile,
+        img => {
+          pictureURL = img.src;
 
-      const reader = new FileReader();
-      reader.readAsDataURL(pictureFile);
+          const previewEl = document.getElementById("picture-preview");
+          if (previewEl && previewEl.childElementCount > 0)
+            previewEl.removeChild(previewEl.firstChild);
 
-      reader.onload = ev => {
-        const url = ev.target.result;
-        fixOrientation(url, { image: true }, (fixed, image) => {
-          picturePreview = fixed;
-        });
-      };
+          img.classList.add("object-cover", "h-64", "w-full", "mt-4");
+
+          document.getElementById("picture-preview").appendChild(img);
+        },
+        {
+          orientation: 1,
+          maxHeight: window.innerHeight * 0.2
+        }
+      );
     }
   }
 
@@ -549,14 +578,7 @@
           </button>
         </div>
       </div>
-      {#if picturePreview || pictureURL}
-        <img
-          id="picture-preview"
-          alt={picturePreview ? picturePreview : pictureURL}
-          in:fade
-          class="object-cover h-64 w-full mt-4"
-          src={picturePreview ? picturePreview : pictureURL} />
-      {/if}
+      <div id="picture-preview" />
       <div class="flex mt-4 mx-4 flex-wrap">
         {#if suggestedDescriptions}
           {#each suggestedDescriptions as suggestion, index (suggestion)}
