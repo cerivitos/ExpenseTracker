@@ -30140,7 +30140,7 @@
     	const block = {
     		c: function create() {
     			span = element("span");
-    			attr_dev(span, "class", "truncate");
+    			attr_dev(span, "class", "truncate mr-2");
     			set_style(span, "color", "var(--text-color2)");
     			add_location(span, file$6, 150, 10, 5207);
     		},
@@ -30174,9 +30174,9 @@
     		c: function create() {
     			i = element("i");
     			i.textContent = "image";
-    			attr_dev(i, "class", "material-icons-round fill-current ml-2");
+    			attr_dev(i, "class", "material-icons-round fill-current");
     			set_style(i, "color", "var(--text-color2)");
-    			add_location(i, file$6, 155, 10, 5367);
+    			add_location(i, file$6, 155, 10, 5372);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);

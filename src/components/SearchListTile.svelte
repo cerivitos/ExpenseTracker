@@ -168,13 +168,13 @@
           {@html addedBy}
         </span>
         {#if desc}
-          <span class="truncate" style="color: var(--text-color2)">
+          <span class="truncate mr-2" style="color: var(--text-color2)">
             {@html desc}
           </span>
         {/if}
         {#if data.pictureURL}
           <i
-            class="material-icons-round fill-current ml-2"
+            class="material-icons-round fill-current"
             style="color: var(--text-color2)">
             image
           </i>
