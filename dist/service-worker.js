@@ -27,7 +27,7 @@ self.__precacheManifest = [
   },
   {
     "url": "components.css",
-    "revision": "85e240bbd45e72917aeaf997809c3257"
+    "revision": "787667fba41323bdfac2932b5e4cd4d5"
   },
   {
     "url": "index.html",
@@ -47,12 +47,13 @@ self.__precacheManifest = [
   },
   {
     "url": "main.js",
-    "revision": "cad647a0584ac3b3aef88be7796db0e9"
+    "revision": "ad1e40da168ba9d959db3ff1deee7a17"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute("/main.js", new workbox.strategies.StaleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute("/load-image.all.min.js", new workbox.strategies.StaleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute("/main.css", new workbox.strategies.StaleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute("/components.css", new workbox.strategies.StaleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute("/^https://fonts.googleapis.com/", new workbox.strategies.StaleWhileRevalidate(), 'GET');
