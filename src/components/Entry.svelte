@@ -81,7 +81,11 @@
             document.getElementById("picture-preview").appendChild(img);
           },
           {
-            orientation: $entryData.pictureOrientation,
+            orientation:
+              $entryData.pictureOrientation ||
+              $entryData.pictureOrientation.length > 0
+                ? $entryData.pictureOrientation
+                : true,
             contain: true,
             maxWidth: window.innerWidth,
             minWidth: window.innerWidth
@@ -180,7 +184,7 @@
         id: $entryData.id ? $entryData.id : newId,
         pictureURL: _pictureURL,
         pictureName: _pictureName,
-        pictureOrientation: pictureOrientation
+        pictureOrientation: pictureOrientation ? pictureOrientation : ""
       })
       .then(() => {
         toastMessage.set("Expense created!");
@@ -306,7 +310,7 @@
         (img, data) => {
           pictureURL = img.src;
 
-          pictureOrientation = data.exif.get("Orientation");
+          if (data.exif) pictureOrientation = data.exif.get("Orientation");
 
           const previewEl = document.getElementById("picture-preview");
           if (previewEl && previewEl.childElementCount > 0)
