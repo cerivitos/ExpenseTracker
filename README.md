@@ -12,7 +12,9 @@ Simple Expense Tracker
 - Made with [Svelte](https://svelte.dev)
 - Installable PWA with service worker
 - Responsive layout for mobile and desktop
-- Firestore cloud storage
+- Firestore to store expense entries
+- Firebase Storage for image attachments
+- Ability to add current location as a description tag
 - Firebase authentication using Google sign in
 - Dark mode
 
